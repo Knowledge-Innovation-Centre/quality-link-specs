@@ -1,0 +1,65 @@
+{
+    "ECTS": {
+        "href": "https://op.europa.eu/publication-detail/-/publication/da7467e6-8450-11e5-b8b7-01aa75ed71a1",
+        "authors": [
+            "European Commission"
+        ],
+        "title": "ECTS Users' Guide",
+        "date": "2015"
+    },
+    "CR-MC": {
+        "href": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022H0627(02)",
+        "authors": [
+            "European Union"
+        ],
+        "title": "Council Recommendation on a European approach to micro-credentials for lifelong learning and employability",
+        "status": "2022/C 243/02",
+        "date": "16 June 2022"
+    },
+    "ELM": {
+        "href": "https://europa.eu/europass/elm-browser/index.html",
+        "authors": [
+            "European Commission"
+        ],
+        "status": "v3",
+        "title": "European Learning Model (ELM)"
+    },
+    "DEQAR": {
+        "href": "https://docs.deqar.eu/stable/",
+        "authors": [
+            "European Quality Assurance Register (EQAR)"
+        ],
+        "title": "DEQAR Documentation",
+        "status": "v1.2"
+    },
+    "EWP-COURSES": {
+        "href": "https://github.com/erasmus-without-paper/ewp-specs-api-courses/tree/master",
+        "authors": [
+            "Erasmus Without Paper consortium"
+        ],
+        "title": "EWP Courses API"
+    },
+    "OCCAPI": {
+        "href": "https://occapi.uni-foundation.eu/",
+        "authors": [
+            "European University Foundation (EUF)"
+        ],
+        "title": "Open Course Catalogue API"
+    },
+    "OOAPI": {
+        "href": "https://openonderwijsapi.nl/specification/v5/docs.html",
+        "authors": [
+            "Bureau Edustandaard"
+        ],
+        "status": "v5",
+        "title": "Open Education API"
+    },
+    "EDU-API": {
+        "href": "https://www.imsglobal.org/spec/eduapi/v1p0#uc1",
+        "authors": [
+            "1EdTech"
+        ],
+        "title": "Edu-API Specification",
+        "status": "Candidate Final"
+    }
+}

@@ -1,0 +1,124 @@
+<pre class="metadata">
+Title: QualityLink Sample Specification
+!Project Reference: Task 3.6 (Creation of a Technical Trusted List Standard)
+Shortname: quality-link-abc-123
+Status: LS
+Level: 0
+Warning: Not Ready
+Editor: Colin Tück, Knowledge Innovation Centre; KIC, colin@knowledgeinnovation.eu, https://knowledgeinnovation.eu
+Editor: Tiago Simões, European University Foundation; EUF, tiago.simoes@uni-foundation.eu, https://uni-foundation.eu/
+Local Boilerplate: defaults yes
+Abstract: The QualityLink ABC specification describes how higher education institutions design micro-credentials and publish interoperable data on their learning opportunities - to let students make well-informed choices.
+</pre>
+
+Note: this template is loosely based on an [unofficial W3C template](https://www.w3.org/People/Schepers/unoffical_template.html). When populating the template, use the [W3C Manual of Style](https://www.w3.org/guide/manual-of-style/) as far as applicable.
+
+Introduction {#intro}
+============
+
+<div class="informative">
+
+Status of This Document {#status}
+-----------------------
+
+This section describes the status of this document at the time of its publication. Other documents may supersede this document.
+
+This document is a draft of this specification, drafted by KIC and EUF within the [QualityLink](https://quality-link.eu/) project. It has been discussed with the QualityLink Standards Consultation Board.
+
+Goals and Rationale {#rationale}
+-------------------
+
+Briefly explain the rationale for writing this specification.
+
+For example: The ECTS Users' Guide [[ECTS]] defines the content of a course catalogue. Similar, a recommendation by the Council of the European Union [[CR-MC]] includes elements to descibre a [=micro-credential=]. The European Learning Model [[ELM]] is a data model in which such descriptions can be expressed.
+
+Add more references to the file `biblio.json`.
+
+Audience {#audience}
+--------
+
+Describe its audience, and its intended use - especially who is envisaged to implement this.
+
+Changes Since the Previous Draft {#changes}
+--------------------------------
+
+Insert a list of substantive changes since the previous version of the specification, or state that no changes have been made.
+
+</div>
+
+Key Concepts {#concepts}
+============
+
+The following key concepts and terminology are used throughout the document, as well as other QualityLink specifications:
+
+Note: initial list based on QualityLink glossary. Add specific terms needed for this spec as needed.
+
+: <dfn>learning opportunity</dfn>
+:: an opportunity to realise a given set of learning outcomes through a learning activity or assessment [[ELM]]. Offered by a [=higher education institution=] or [=other provider=]. A learning opportunity can be part of a larger one and contain smaller ones. Specific learning opportunities are [=courses=], [=modules=] and [=programmes=].
+: <dfn>course</dfn>
+:: smallest learning opportunity that awards credits (i.e. ECTS) to the learner, either in the context of a study programme or as a self-standing offer. A course can be part of a [=module=] or [=programme=].
+: <dfn>module</dfn>
+:: a [=learning opportunity=] that is a group or collection of [=courses=]. A module may be part of a [=programme=].
+: <dfn>micro-credential</dfn>
+:: a proof of the learning outcomes that a learner has acquired following a short learning experience. These learning outcomes have been assessed against transparent standards. [[CR-MC]]
+: <dfn>programme</dfn>
+:: collection of [=learning opportunities=]. Finalising a study programme usually leads to a degree (e.g. Bachelor degree, Master degree, etc.) or to another type of certificate, e.g. a [=micro-credential=], for a shorter programme. A programme is a "top-level" [=learning opportunity=] and has no parent.
+: <dfn>joint programme</dfn>
+:: an integrated curriculum coordinated and offered jointly by different [=higher education institutions=], and leading to double/multiple degrees or a joint degree. [[DEQAR]]
+: <dfn>education provider</dfn>
+:: any actor that provides degree programmes, micro-credentials or other [=learning opportunities=]. This may include [=higher education institutions=] as well as [=other providers=], including employers, companies, social partners, NGOs, public authorities and others. [[DEQAR]]
+: <dfn>higher education institution</dfn>
+:: an entity that has full degree awarding powers at higher education level (i.e. EQF levels 5 to 8; QF-EHEA cycle first to third) recognised by at least one national authority. [[DEQAR]]
+: <dfn>other provider</dfn>
+:: an entity that provides learning opportunities, but that does not have officially-recognised authority to award degrees or other formally recognised qualifications.
+
+Issue: check whether list of shared terms can be included from file
+
+User Stories {#user-stories}
+============
+
+The following usage scenarios illustrate ways in which this specification might be used or desired features it should enable:
+
+User story 1: ABC {#uc-1}
+-----------------
+
+Describe the user story: As a *user*, I want to *action* so that ...
+
+User story 1: ABC {#uc-2}
+-----------------
+
+Describe the user story: As a *user*, I want to *action* so that ...
+
+Requirements {#requirements}
+============
+
+Define the requirements arising from the user stories.
+
+Specific chapter A {#chapter-a}
+==================
+
+Structure this part of the document how it is suitable for the specification in question.
+
+Specific chapter B {#chapter-b}
+==================
+
+Structure this part of the document how it is suitable for the specification in question.
+
+Security Considerations {#security}
+=======================
+
+Provide security considerations for the implementation and authoring of this technology here.
+
+Examples {#examples}
+========
+
+<div class="informative">
+
+Provide examples of the usage of the technology here. Alternately, examples may be provided inline in the section on features, in which case, this section should be removed.
+
+You can quote normative reference [[!ELM]] or informative references [[ECTS]] from the bibliography.
+
+Terms defined in the key concepts, such as [=programmes=] or [=micro-credentials=], should be referenced.
+
+</div>
+

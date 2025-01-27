@@ -1,0 +1,10 @@
+{
+  "!Project Website": "<a href=https://quality-link.eu/>https://quality-link.eu/</a>",
+  "Favicon": "https://quality-link.eu/wp-content/uploads/sites/90/2024/03/Quality-Link_Website-Favicon.png",
+  "Logo": "https://quality-link.eu/wp-content/uploads/sites/90/2024/03/Quality-Link_Logo-mark.png",
+  "Repository": "https://github.com/Knowledge-Innovation-Centre/quality-link-specs",
+  "Inline Github Issues": "title",
+  "Markup Shorthands": "markdown yes",
+  "Local Boilerplate": "copyright yes, logo yes"
+}
+
