@@ -1,0 +1,245 @@
+<pre class="metadata">
+Title: QualityLink Data Exchange Specification
+!Project Reference: Task 3.6 (Creation of a Technical Trusted List Standard)
+Shortname: quality-link-data-exchange
+Status: LS
+Level: 0
+Warning: Not Ready
+Editor: Colin Tück, Knowledge Innovation Centre; KIC, colin@knowledgeinnovation.eu, https://knowledgeinnovation.eu
+Editor: Tiago Simões, European University Foundation; EUF, tiago.simoes@uni-foundation.eu, https://uni-foundation.eu/
+Local Boilerplate: defaults yes
+Abstract: This specification standardises how HEIs and other data providers can make data available for aggregation.
+Text Macro: HEI [=higher education institution=]
+Text Macro: HEIS [=higher education institutions=]
+</pre>
+
+Introduction {#intro}
+============
+
+<div class="informative">
+
+Status of This Document {#status}
+-----------------------
+
+This document is a draft specification, developed by KIC and EUF within the [QualityLink](https://quality-link.eu/) project. It is currently being discussed with the QualityLink Standards Consultation Board.
+
+Goals and Rationale {#rationale}
+-------------------
+
+Briefly explain the rationale for writing this specification.
+
+Audience {#audience}
+--------
+
+This specification is intended for use by higher education institutions and other data providers that would like their data to be available for aggregation.
+
+Secondly, it targets data aggregators. The QualityLink project will implement a data aggregator to test and demonstrate this specification in practice.
+
+Existing standards {#existing-standards}
+------------------
+
+* The European Learning Model [[ELM]] itself does not address the transport layer. The QDR uses RDF serialised as XML, which can be manually uploaded, hosted by the data provider and regularly pulled, or pushed by the data provider.
+
+* [[Edu-API]], [[OOAPI]] and the [[OCCAPI]] define a REST API to expose the information in JSON format. Edu-API also plans additional bindings, e.g. async and message queues.
+
+* The EWP Courses API [[EWP-COURSES]] defines an XML schema in which a list of courses should be returned.
+
+* [[DEQAR]] and the Credential Registry each allow submission of data through manual entry, upload of a CSV file or use of a JSON-based REST API.
+
+Changes {#changes}
+-------
+
+n/a
+
+</div>
+
+Key Concepts {#concepts}
+============
+
+The following key concepts and terminology are used throughout the document, as well as other QualityLink specifications:
+
+Note: initial list based on QualityLink glossary. Add specific terms needed for this spec as needed.
+
+: <dfn>learning opportunity</dfn>
+:: an opportunity to realise a given set of learning outcomes through a learning activity or assessment [[ELM]]. Offered by a [=higher education institution=] or [=other provider=]. A learning opportunity can be part of a larger one and contain smaller ones. Specific learning opportunities are [=courses=], [=modules=] and [=programmes=].
+: <dfn>course</dfn>
+:: smallest learning opportunity that awards credits (i.e. ECTS) to the learner, either in the context of a study programme or as a self-standing offer. A course can be part of a [=module=] or [=programme=].
+: <dfn>module</dfn>
+:: a [=learning opportunity=] that is a group or collection of [=courses=]. A module may be part of a [=programme=].
+: <dfn>micro-credential</dfn>
+:: a proof of the learning outcomes that a learner has acquired following a short learning experience. These learning outcomes have been assessed against transparent standards. [[CR-MC]]
+: <dfn>programme</dfn>
+:: collection of [=learning opportunities=]. Finalising a study programme usually leads to a degree (e.g. Bachelor degree, Master degree, etc.) or to another type of certificate, e.g. a [=micro-credential=], for a shorter programme. A programme is a "top-level" [=learning opportunity=] and has no parent.
+: <dfn>joint programme</dfn>
+:: an integrated curriculum coordinated and offered jointly by different [=higher education institutions=], and leading to double/multiple degrees or a joint degree. [[DEQAR]]
+: <dfn>education provider</dfn>
+:: any actor that provides degree programmes, micro-credentials or other [=learning opportunities=]. This may include [=higher education institutions=] as well as [=other providers=], including employers, companies, social partners, NGOs, public authorities and others. [[DEQAR]]
+: <dfn>higher education institution</dfn>
+:: an entity that has full degree awarding powers at higher education level (i.e. EQF levels 5 to 8; QF-EHEA cycle first to third) recognised by at least one national authority. [[DEQAR]]
+: <dfn>other provider</dfn>
+:: an entity that provides learning opportunities, but that does not have officially-recognised authority to award degrees or other formally recognised qualifications.
+: <dfn>data provider</dfn>
+:: an entity providing data on [=learning opportunities=]. This can be an [=education provider=] providing data on its own learning opportunities or another organisation providing data on various [=education providers=].
+: <dfn>aggregator</dfn>
+:: any service that harvests data from different [=data providers=], matches and compiles the data into one single dataset. For example, the aggregator service developed within the QualityLink project.
+
+User Stories {#user-stories}
+============
+
+The following usage scenarios illustrate ways in which this specification might be used or desired features it should enable:
+
+Feed data {#uc-1}
+---------
+
+As a [HEI] I want to feed my data into a Europe-wide aggregator easily and flexibly, in order to avoid unnecessary burden.
+
+Efficient aggregation {#uc-2}
+---------------------
+
+As a data aggregator I want to aggregate data from [HEIS] and other [=data providers=] efficiently, i.e. avoiding too much overhead or redundant data transfers.
+
+Access control {#uc-3}
+--------------
+
+As a [=data provider=] I want to ensure that only specified [=aggregators=] (e.g. the QualityLink one) can harvest my data.
+
+Requirements {#requirements}
+============
+
+- [=Data providers=] should be able to choose between several widely-used formats in which to provide their data.
+
+- [=Data providers=] must be able to implement access control mechanisms so that only the QualityLink aggregator can harvest their data.
+
+- There needs to be a mechanism to indicate whether data has changed since the last harvest/connection.
+
+- The QualityLink [=aggregator=] should be able to harvest data from several sources of one [=data provider=], e.g. different faculties or sub-units of a [HEI]
+
+Note: The current version specifies a pull strategy only, where the QualityLink aggregator periodically polls the available data sources. A push option might be realised later.
+
+Methods {#methods}
+=======
+
+The following sections outline the available data transport methods and formats, as well as their specific requirements.
+
+A [=data provider=] may choose one or several options in which to provide their data.
+
+An [=aggregator=] should support all formats described.
+
+Note: To be discussed which formats QualityLink aggregator can support initially.
+
+Static ELM File {#elm}
+---------------
+
+Data on learning opportunities described in [[!ELM]] format can be serialised as:
+
+- RDF/XML (`application/rdf+xml`)
+- Turtle (`text/turtle`)
+- JSON-LD (`application/ld+json`)
+
+Note: List of accepted serialisations to be confirmed.
+
+The data source must return the correct content type for the serialisation used.
+
+### Required Fields ### {#elm-required}
+
+Note: use ELM Application Profile "Learning Opportunities and Qualifcations" or provide own SCHACL constraints based on this
+
+### Incremental Transport ### {#elm-incremental}
+
+[=Data providers=] should implement at least one of two options:
+
+- Provide an accurate `Last-Modified` [[!RFC9110]] header in response to a HTTP `HEAD` request, indicate when the data was last changed/updated.
+
+- Process the `If-Modified-Since` [[!RFC9110]] header if provided in a HTTP request and only return data if modifications occured.
+
+[=Aggregators=] should harvest data sources less frequently if neither of the two options are implemented.
+
+Note: consider whether to indicate frequency of QualityLink aggregator runs here or elsewhere
+
+### Metadata ### {#elm-metadata}
+
+[=Data providers=] must provide the following metadata in their manifest file for this method:
+
+<pre class=simpledef>
+type: `elm`
+path: a URL where the static file is hosted at
+</pre>
+
+OOAPI {#ooapi}
+-----
+
+[=Education providers=] can expose data on their learning opportunities according to the Open Edcuation API specification [[!OOAPI]].
+
+The [=aggregator=] may use the following endpoints to acquire data:
+
+- list to add
+
+### Required Fields ### {#ooapi-required}
+
+Note: check if requirements beyond vanilla OOAPI would be needed
+
+### Incremental Transport ### {#ooapi-incremental}
+
+Note: propose extension to vanilla OOAPI: additional query parametrs to list only courses modified since a given point in time
+
+### Metadata ### {#ooapi-metadata}
+
+[=Data providers=] must provide the following metadata in their manifest file for this method:
+
+<pre class=simpledef>
+type: `ooapi`
+path: the URL of the OOAPI root
+</pre>
+
+Edu-API {#edu-api}
+-------
+
+Note: similar structure as for OOAPI
+
+OCCAPI {#occapi}
+------
+
+Note: similar structure as for OOAPI
+
+EWP Courses API {#ewp}
+---------------
+
+Note: similar structure as for OOAPI
+
+Access Control {#access-control}
+==============
+
+Currently all transport methods operate over HTTP. Hence the following access control strategies can all be used for either method.
+
+A [=data provider=] may choose one of the strategies if they wish to control access to their data, but no access control is required.
+
+An [=aggregator=] should support all formats described.
+
+Based on IP address {#access-control-ip}
+-------------------
+
+A [=data provider=] can limit access to certain ranges of IP addresses. To that end, [=aggregators=] should publish the IP address ranges from which their services may contact the exposed methods.
+
+Note: The QualityLink aggregator operates from the IP address range 1.2.3.4
+
+TLS Client Certificates {#access-control-tls-client}
+-----------------------
+
+The [=aggregator=] should authenticate itself with a specified client certificate.
+
+Note: more details needed, plus info on QualityLink client certificate.
+
+HTTP Request Header {#access-control-header}
+-------------------
+
+The [=data provider=] may request that the [=aggregator=] include a specific HTTP header in all requests, e.g. a secret token.
+
+Note: this option requires the data provider to have an account in the QualityLink aggregator/data source registry to manage this. To be described further.
+
+Security Considerations {#security}
+=======================
+
+The previous chapter describes how [=data providers=] can implement access control to their exposed data.
+
+This specification is about exchange of data on [=learning opportunities=], which is generally meant to be public. [=Data providers=] should not expose any data through the methods described herein that is not meant to be public, especially no personal data.
+
