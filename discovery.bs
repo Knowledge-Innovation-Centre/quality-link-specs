@@ -1,0 +1,175 @@
+<pre class="metadata">
+Title: QualityLink Data Source Discovery Specification
+!Project Reference: Task 3.6 (Creation of a Technical Trusted List Standard)
+Shortname: quality-link-discovery
+Status: LS
+Level: 0
+Warning: Not Ready
+Editor: Colin Tück, Knowledge Innovation Centre; KIC, colin@knowledgeinnovation.eu, https://knowledgeinnovation.eu
+Local Boilerplate: defaults yes
+Abstract: This specification describes how the QualityLink aggregator discovers data sources exposed by higher education institutions and other data providers.
+Text Macro: HEI [=higher education institution=]
+Text Macro: HEIS [=higher education institutions=]
+</pre>
+
+Introduction {#intro}
+============
+
+<div class="informative">
+
+Status of This Document {#status}
+-----------------------
+
+This document is a draft specification, developed by KIC and EUF within the [QualityLink](https://quality-link.eu/) project. It is currently being discussed with the QualityLink Standards Consultation Board.
+
+Goals and Rationale {#rationale}
+-------------------
+
+Briefly explain the rationale for writing this specification.
+
+Audience {#audience}
+--------
+
+This specification is intended for use by higher education institutions and other data providers that would like their data to be available for aggregation.
+
+Secondly, it targets data aggregators. The QualityLink project will implement a data aggregator to test and demonstrate this specification in practice.
+
+Changes {#changes}
+-------
+
+n/a
+
+</div>
+
+Key Concepts {#concepts}
+============
+
+The following key concepts and terminology are used throughout the document, as well as other QualityLink specifications:
+
+Note: initial list based on QualityLink glossary. Add specific terms needed for this spec as needed.
+
+: <dfn>learning opportunity</dfn>
+:: an opportunity to realise a given set of learning outcomes through a learning activity or assessment [[ELM]]. Offered by a [=higher education institution=] or [=other provider=]. A learning opportunity can be part of a larger one and contain smaller ones. Specific learning opportunities are [=courses=], [=modules=] and [=programmes=].
+: <dfn>course</dfn>
+:: smallest learning opportunity that awards credits (i.e. ECTS) to the learner, either in the context of a study programme or as a self-standing offer. A course can be part of a [=module=] or [=programme=].
+: <dfn>module</dfn>
+:: a [=learning opportunity=] that is a group or collection of [=courses=]. A module may be part of a [=programme=].
+: <dfn>micro-credential</dfn>
+:: a proof of the learning outcomes that a learner has acquired following a short learning experience. These learning outcomes have been assessed against transparent standards. [[CR-MC]]
+: <dfn>programme</dfn>
+:: collection of [=learning opportunities=]. Finalising a study programme usually leads to a degree (e.g. Bachelor degree, Master degree, etc.) or to another type of certificate, e.g. a [=micro-credential=], for a shorter programme. A programme is a "top-level" [=learning opportunity=] and has no parent.
+: <dfn>joint programme</dfn>
+:: an integrated curriculum coordinated and offered jointly by different [=higher education institutions=], and leading to double/multiple degrees or a joint degree. [[DEQAR]]
+: <dfn>education provider</dfn>
+:: any actor that provides degree programmes, micro-credentials or other [=learning opportunities=]. This may include [=higher education institutions=] as well as [=other providers=], including employers, companies, social partners, NGOs, public authorities and others. [[DEQAR]]
+: <dfn>higher education institution</dfn>
+:: an entity that has full degree awarding powers at higher education level (i.e. EQF levels 5 to 8; QF-EHEA cycle first to third) recognised by at least one national authority. [[DEQAR]]
+: <dfn>other provider</dfn>
+:: an entity that provides learning opportunities, but that does not have officially-recognised authority to award degrees or other formally recognised qualifications.
+: <dfn>data provider</dfn>
+:: an entity providing data on [=learning opportunities=]. This can be an [=education provider=] providing data on its own learning opportunities or another organisation providing data on various [=education providers=].
+: <dfn>aggregator</dfn>
+:: any service that harvests data from different [=data providers=], matches and compiles the data into one single dataset. For example, the aggregator service developed within the QualityLink project.
+
+User Stories {#user-stories}
+============
+
+The following usage scenarios illustrate ways in which this specification might be used or desired features it should enable:
+
+Expose data {#uc-1}
+-----------
+
+As a [HEI] or [=education provider=] I want to advertise my data source to a Europe-wide [=aggregator=] in a secure way, but without the need for additional action or manual intervention by another organisation.
+
+Manage data sources {#uc-2}
+-------------------
+
+As manager of an [=aggregator=] (e.g. the QualityLink consortium) I want to manage trusted sources of [=data providers=] whose data should be integrated in the QualityLink platform.
+
+Access statistics {#uc-3}
+-----------------
+
+As a [=data provider=] I want to access a dashboard or similar to manage my data sources and get insights/stats on how my data was harvested and processed.
+
+Requirements {#requirements}
+============
+
+- The approach should be as flexible and as easy to adopt as possible for HEIs and other data providers.
+
+- The approach should be scalable. Hence, data sources of HEIs need to be discovered automatically and without manual registration or intervention, in line with the policies defined above. (Authoritative sources and other data sources are managed manually, as each case will need to be screened against the applicable policies.)
+
+- Discovery of data from education providers/HEIs should be based on data from the EWP Registry, the EUF HEI API and DEQAR (which includes all HEIs listed in ETER and OrgReg).
+
+Manifest Files {#manifest}
+==============
+
+The location of one or several data files or API endpoints (see [Data Exchange](data_exchange.html) spec) is indicated in a simple, standardised “manifest” file published by the [=data provider=].
+
+Note: format of manifest files to be described
+
+For authoritative sources and other data sources, the location of the manifest file is managed manually. For [HEIS] the location of the manifest file is auto-discovered as described in the following chapter.
+
+Discovery Mechanism {#discovery}
+===================
+
+The specification offers two options how to auto-discover a manifest file.
+
+[HEIS] may use either option. [=Aggregators=] must support both options.
+
+DNS TXT Record {#discovery-dns}
+--------------
+
+The [HEI] can create a DNS TXT record of the following format:
+
+...
+
+The URL must point to a manifest file.
+
+Well-known URL {#discovery-well-known}
+--------------
+
+The [HEI] can place a manifest file at a URL of the form:
+
+```
+[DOMAIN]/.well-known/quality-link-manifest
+```
+
+Domain Search Order {#discovery-domains}
+-------------------
+
+An [=aggregator=] should consider a combined list of [HEIS] appearing in one or more of the following datasets:
+
+- EUF HEI API
+- EWP Registry
+- eduGAIN (?)
+- DEQAR (including institutions from OrgReg and ETER)
+
+For each [HEI], the [=aggregator=] attempts to fetch a manifest file from a known domain in this order:
+
+1. domain/host name that is the [HEI]'s SCHAC code (if available)
+1. host name of the [HEI]'s website (as indicated in OrgReg or DEQAR)
+1. website host name stripped off `www` or similar generic first component
+1. highest level registrable domain name determined from the website host name (i.e. public suffix \+ one further DNS component)
+
+For each domain, both of the above mechanisms are tried.
+
+Once a manifest file has successfully been obtained, no further domains or mechanisms are tried.
+
+Security Considerations {#security}
+=======================
+
+Provide security considerations for the implementation and authoring of this technology here.
+
+Examples {#examples}
+========
+
+<div class="informative">
+
+Provide examples of the usage of the technology here. Alternately, examples may be provided inline in the section on features, in which case, this section should be removed.
+
+You can quote normative reference [[!ELM]] or informative references [[ECTS]] from the bibliography.
+
+Terms defined in the key concepts, such as [=programmes=] or [=micro-credentials=], should be referenced.
+
+</div>
+
