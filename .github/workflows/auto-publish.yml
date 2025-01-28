@@ -1,0 +1,27 @@
+# based on example at https://w3c.github.io/spec-prod/#multiple-specs-in-same-repository
+name: Build Specifications
+on:
+  pull_request: {}
+  push:
+    branches: [main]
+jobs:
+  main:
+    name: Build, Validate and Deploy
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    strategy:
+      max-parallel: 1
+      matrix:
+        include:
+          - source: template.bs
+          - source: data_exchange.bs
+          - source: discovery.bs
+    steps:
+      - uses: actions/checkout@v4
+      - uses: w3c/spec-prod@v2
+        with:
+          SOURCE: ${{ matrix.source }}
+          TOOLCHAIN: bikeshed
+          GH_PAGES_BRANCH: gh-pages
+
