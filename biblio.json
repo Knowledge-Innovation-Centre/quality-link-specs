@@ -61,5 +61,34 @@
         ],
         "title": "Edu-API Specification",
         "status": "Candidate Final"
+    },
+    "EHESO": {
+        "href": "https://national-policies.eacea.ec.europa.eu/eheso/micro-data-access",
+        "authors": [
+            "European Commission"
+        ],
+        "title": "European Higher Education Sector Observatory",
+        "status": "Microdata on higher education institution"
+    },
+    "ORGREG": {
+        "href": "https://www.risis2.eu/registers-orgreg/",
+        "authors": [
+            "RISIS"
+        ],
+        "title": "Register of Public Sector Organisations"
+    },
+    "ECHE": {
+        "href": "https://eche-list.erasmuswithoutpaper.eu/",
+        "authors": [
+            "European Commission"
+        ],
+        "title": "Erasmus Charter for Higher Education"
+    },
+    "CC-BY-NC": {
+        "href": "https://creativecommons.org/licenses/by-nc/4.0/",
+        "authors": [
+            "Creative Commons"
+        ],
+        "title": "Attribution-NonCommercial 4.0 International License"
     }
 }

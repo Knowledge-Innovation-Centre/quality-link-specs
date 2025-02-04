@@ -1,4 +1,4 @@
-all: template.html data_exchange.html discovery.html
+all: template.html data_exchange.html discovery.html policy.html
 
 %.html: %.bs
 	bikeshed spec $< $@ && open $@

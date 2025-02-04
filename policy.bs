@@ -1,0 +1,183 @@
+<pre class="metadata">
+Title: QualityLink Data Sources and Access Policy
+!Project Reference: Task 3.6 (Creation of a Technical Trusted List Standard)
+Shortname: quality-link-policy
+Status: LD
+Level: 0
+Warning: Custom
+Custom Warning Title: Draft Document
+Custom Warning Text: This policy is a work-in-progress draft. All content is subject to change without notice.
+Editor: Colin Tück, Knowledge Innovation Centre; KIC, colin@knowledgeinnovation.eu, https://knowledgeinnovation.eu
+Local Boilerplate: defaults yes
+Abstract: This policy underpins the QualityLink technical specifications and describes on which data sources the QualityLink aggregator draws. It further sets out how the aggregated dataset may be accessed and used.
+</pre>
+
+Introduction {#intro}
+============
+
+<div class="informative">
+
+Status of This Document {#status}
+-----------------------
+
+This document sets out key policies followed in the [QualityLink](https://quality-link.eu/) project. These policies are first and foremost applicable for the lifetime of the project, which includes the testing and piloting of data aggregation and the publication of aggregated data. Any organisation possibly taking up Europe-wide data aggregation on micro-credentials and courses on a permanent basis might develop a different policy.
+
+Goals and Rationale {#rationale}
+-------------------
+
+The main focus of the QualityLink project is to design a technical architecture and propose technical specifications. Policies on key issues, however, influence some architectural choices and thus need to be defined beforehand to ensure that the architecture aligns with these policies.
+
+Since the QualityLink will not only propose specifications, but also pilot aggregation, there is a need for a clear policy on data sources that are considered.
+
+Furthermore, a policy on data use and sharing needs to clarify for education providers and other data sources how their aggregated data will be available to the public and can be used.
+
+Audience {#audience}
+--------
+
+This policy primarily targets [HEIS] and the QualityLink project consortium iteself.
+
+In addition, it targets other data providers that have an interest to feed data into the QualityLink aggregator.
+
+Changes Since the Previous Draft {#changes}
+--------------------------------
+
+n/a
+
+</div>
+
+Key Concepts {#concepts}
+============
+
+The following key concepts and terminology are used throughout the document, as well as other QualityLink specifications:
+
+Note: initial list based on QualityLink glossary. Add specific terms needed for this spec as needed.
+
+: <dfn>learning opportunity</dfn>
+:: an opportunity to realise a given set of learning outcomes through a learning activity or assessment [[ELM]]. Offered by a [=higher education institution=] or [=other provider=]. A learning opportunity can be part of a larger one and contain smaller ones. Specific learning opportunities are [=courses=], [=modules=] and [=programmes=].
+: <dfn>course</dfn>
+:: smallest learning opportunity that awards credits (i.e. ECTS) to the learner, either in the context of a study programme or as a self-standing offer. A course can be part of a [=module=] or [=programme=].
+: <dfn>module</dfn>
+:: a [=learning opportunity=] that is a group or collection of [=courses=]. A module may be part of a [=programme=].
+: <dfn>micro-credential</dfn>
+:: a proof of the learning outcomes that a learner has acquired following a short learning experience. These learning outcomes have been assessed against transparent standards. [[CR-MC]]
+: <dfn>programme</dfn>
+:: collection of [=learning opportunities=]. Finalising a study programme usually leads to a degree (e.g. Bachelor degree, Master degree, etc.) or to another type of certificate, e.g. a [=micro-credential=], for a shorter programme. A programme is a "top-level" [=learning opportunity=] and has no parent.
+: <dfn>joint programme</dfn>
+:: an integrated curriculum coordinated and offered jointly by different [=higher education institutions=], and leading to double/multiple degrees or a joint degree. [[DEQAR]]
+: <dfn>education provider</dfn>
+:: any actor that provides degree programmes, micro-credentials or other [=learning opportunities=]. This may include [=higher education institutions=] as well as [=other providers=], including employers, companies, social partners, NGOs, public authorities and others. [[DEQAR]]
+: <dfn>higher education institution</dfn>
+:: an entity that has full degree awarding powers at higher education level (i.e. EQF levels 5 to 8; QF-EHEA cycle first to third) recognised by at least one national authority. [[DEQAR]]
+: <dfn>other provider</dfn>
+:: an entity that provides learning opportunities, but that does not have officially-recognised authority to award degrees or other formally recognised qualifications.
+: <dfn>user</dfn>
+:: any person or organisations accessing the [=QualityLink dataset=]
+: <dfn>data provider</dfn>
+:: any organisation providing data for aggregation by the [=QualityLink aggregator=]; can be an [=education provider=] or [=XYZ=]
+: <dfn>XYZ</dfn>
+:: third party data provider
+: <dfn>QualityLink dataset</dfn>
+:: the dataset created within the scope of the current project, made publicly available through a prototype platform
+: <dfn>QualityLink aggregator</dfn>
+:: a set of software components developed and deployed to aggregate data from various sources into the [=QualityLink dataset=]
+
+Issue: check whether list of shared terms can be included from file
+
+Objectives {#objectives}
+==========
+
+This policy has the following objectives, formulated as user stories:
+
+1. As a [=user=] I want to be assured that aggregated data in the [=QualityLink dataset=] is trustworthy and does not include flawed or rogue data.
+
+1. As a [HEI] I want to expore my course data for aggregation by the [=QualityLink aggregator=] without the need for endorsement or clearance by any other organisation.
+
+1. As a [=data provider=] I want clarity which data can be aggregated into the [=QualityLink dataset=].
+
+1. As a [=data provider=] I want to have clarity on how my data will be published and might be used by [=users=].
+
+1. As an advanced [=user=] (e.g. researcher) I want to access the [=QualityLink dataset=] under clear terms and conditions, in order to have legal certainty when copying, re-using or embedding QualityLink data in my own applications.
+
+Data sources {#source}
+============
+
+For the purpose of QualityLink, we distinguish between three classes of [=data providers=]:
+
+<table class="def">
+	<tr>
+		<th>Data provider
+		<th>Which data
+		<th>For which learning opportunities
+	<tr>
+		<td>authoritative source
+		<td>any
+		<td>any providers'
+	<tr>
+		<td>[=education provider=]
+		<td>any
+		<td>only own
+	<tr>
+		<td>third party
+		<td>specific indicators
+		<td>any
+</table>
+
+Authoritative sources {#source-authoritative}
+---------------------
+
+These organisations may provide trusted data on any [=education provider=] and their [=learning opportunities=].
+
+Currently, the following sources are considered authoritative:
+
+- Database of External Quality Assurance Results [[!DEQAR]]
+- European Higher Education Sector Observatory [[!EHESO]] (formerly ETER)
+
+In general, official national authorities, e.g. a database operated by the ministry of education, can be considered authoritative in addition.
+
+Additional sources can be approved by the QualityLink consortium as authoritative, based on an ad-hoc assessment.
+
+Education providers {#source-provider}
+-------------------
+
+[HEIS] and [=other providers=] may provide trusted data on their own [=learning opportunities=]. In principle, any *bona fide* organisation can provide data.
+
+All organisations listed in [[!DEQAR]], the Register of Pulic Sector Organisations [[!ORGREG]] or holding an Erasmus Charter [[!ECHE]] are considered officially recognised [HEIS]. The technical specification ensure that these can decide to publish data and have it harvested by the [=QualityLink aggregator=] without the need for manual intervention from the QualityLink consortium/admins or anyone else.
+
+For [=other providers=], automatic management/discovery is not feasible at the moment. These will be considered by the QualityLink consortium on an ad-hoc basis.
+
+Third party {#source-other}
+-----------
+
+Other third parties may provide data on existing [=learning opportunities=] of any [=education provider=], but limited to specific domains.
+
+Any organisation can propose that its data be harvested by the [=QualityLink aggregator=]. The QualityLink consortium will only consider eligible data providers that:
+
+- provide data on [LOS] in several countries/education systems, or data on a large number of [LOS] in one system,
+- provide data that is relevant to the QualityLink [Quality Domains and Indicators](https://quality-link.eu/quality-domains-and-indicators/),
+- ensure transparency of their methodology and how their data/indicators are collected, and
+- do not present data in a biased way to favour specific [=education providers=] and their [LOS].
+
+Currently, the [=QualityLink dataset=] includes data from the following third-party sources:
+
+- abc
+- def
+
+Note: list to add if we start using third-party sources.
+
+Data access and usage {#access}
+=====================
+
+License {#license}
+-------
+
+The [=QualityLink dataset=] is made available under Creative Commons Attribution-NonCommercial 4.0 International [[!CC-BY-NC]].
+
+This license requires that [=users=] give credit to the QualityLink consortium. It allows [=users=] to distribute, remix, adapt and build upon the material in any medium or format, but for noncommercial purposes only.
+
+API usage {#api}
+---------
+
+The QualityLink API is available for public use. Anonymous access to the API may be subject to rate limits, which will be mentioned in the documentation.
+
+The QualityLink consortium may grant authenticated access to non-commercial registered users (e.g. researchers, non-commercial platforms) with higher or no rate limits.
+
