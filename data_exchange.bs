@@ -9,8 +9,6 @@ Editor: Colin Tück, Knowledge Innovation Centre; KIC, colin@knowledgeinnovation
 Editor: Tiago Simões, European University Foundation; EUF, tiago.simoes@uni-foundation.eu, https://uni-foundation.eu/
 Local Boilerplate: defaults yes
 Abstract: This specification standardises how HEIs and other data providers can make data available for aggregation.
-Text Macro: HEI [=higher education institution=]
-Text Macro: HEIS [=higher education institutions=]
 </pre>
 
 Introduction {#intro}

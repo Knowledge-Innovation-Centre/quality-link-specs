@@ -8,8 +8,6 @@ Warning: Not Ready
 Editor: Colin Tück, Knowledge Innovation Centre; KIC, colin@knowledgeinnovation.eu, https://knowledgeinnovation.eu
 Local Boilerplate: defaults yes
 Abstract: This specification describes how the QualityLink aggregator discovers data sources exposed by higher education institutions and other data providers.
-Text Macro: HEI [=higher education institution=]
-Text Macro: HEIS [=higher education institutions=]
 </pre>
 
 Introduction {#intro}

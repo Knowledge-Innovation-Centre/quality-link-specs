@@ -5,6 +5,12 @@
   "Repository": "https://github.com/Knowledge-Innovation-Centre/quality-link-specs",
   "Inline Github Issues": "title",
   "Markup Shorthands": "markdown yes",
-  "Local Boilerplate": "copyright yes, logo yes"
+  "Local Boilerplate": "copyright yes, logo yes",
+  "Text Macro": [
+    "HEI [=higher education institution=]",
+    "HEIS [=higher education institutions=]",
+    "LO [=learning opportunity=]",
+    "LOS [=learning opportunities=]"
+  ]
 }
 
