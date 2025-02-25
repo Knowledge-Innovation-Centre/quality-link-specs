@@ -1,0 +1,30 @@
+@prefix qlac: <http://data.quality-link.eu/mapping/abstract-classes/v1#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.quality-link.eu/mapping/abstract-classes/v1> a skos:ConceptScheme ;
+    dcterms:title "QualityLink Abstract Mapping Classes"@en ;
+	dcterms:description "This scheme identifies the abstract mapping classes used by the QualityLink project, focusing on course catalogues."@en ;
+    dcterms:publisher <http://quality-link.eu/> ;
+	dcterms:created "2025-02-25"^^xsd:date ;
+    dcterms:modified "2025-02-25"^^xsd:date ;
+	skos:hasTopConcept qlac:LearningOpportunitySpecification , qlac:LearningOpportunityInstance , qlac:EducationProvider .
+
+qlac:LearningOpportunitySpecification a skos:Concept ;
+    skos:prefLabel "Learning Opportunity Specification"@en ;
+    dcterms:description "The permanent specification of a learning opportunity (such as a course, study programme, ...), not bound to a specific instance offered at a specific time or place."@en ;
+    skos:inScheme <http://data.quality-link.eu/mapping/abstract-classes/v1> .
+
+qlac:LearningOpportunityInstance a skos:Concept ;
+    skos:prefLabel "Learning Opportunity Instance"@en ;
+    dcterms:description "The specific instance or offering of a learning opportunity, offered at a specific time (e.g. year or semester) or place/mode of learning."@en ;
+    skos:inScheme <http://data.quality-link.eu/mapping/abstract-classes/v1> .
+
+qlac:EducationProvider a skos:Concept ;
+    skos:prefLabel "Education Provider"@en ;
+    dcterms:description "The organisation providing/offering a learning opportunity."@en ;
+    skos:inScheme <http://data.quality-link.eu/mapping/abstract-classes/v1> .
+
