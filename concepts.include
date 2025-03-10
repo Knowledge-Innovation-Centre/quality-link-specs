@@ -1,0 +1,24 @@
+Note: initial list based on QualityLink glossary. Add specific terms needed for this spec as needed.
+
+: <dfn>learning opportunity</dfn>
+:: an opportunity to realise a given set of learning outcomes through a learning activity or assessment [[ELM]]. Offered by a [=higher education institution=] or [=other provider=]. A learning opportunity can be part of a larger one and contain smaller ones. Specific learning opportunities are [=courses=], [=modules=] and [=programmes=].
+: <dfn>course</dfn>
+:: smallest learning opportunity that awards credits (i.e. ECTS) to the learner, either in the context of a study programme or as a self-standing offer. A course can be part of a [=module=] or [=programme=].
+: <dfn>module</dfn>
+:: a [=learning opportunity=] that is a group or collection of [=courses=]. A module may be part of a [=programme=].
+: <dfn>micro-credential</dfn>
+:: a proof of the learning outcomes that a learner has acquired following a short learning experience. These learning outcomes have been assessed against transparent standards. [[CR-MC]]
+: <dfn>programme</dfn>
+:: collection of [=learning opportunities=]. Finalising a study programme usually leads to a degree (e.g. Bachelor degree, Master degree, etc.) or to another type of certificate, e.g. a [=micro-credential=], for a shorter programme. A programme is a "top-level" [=learning opportunity=] and has no parent.
+: <dfn>joint programme</dfn>
+:: an integrated curriculum coordinated and offered jointly by different [=higher education institutions=], and leading to double/multiple degrees or a joint degree. [[DEQAR]]
+: <dfn>education provider</dfn>
+:: any actor that provides degree programmes, micro-credentials or other [=learning opportunities=]. This may include [=higher education institutions=] as well as [=other providers=], including employers, companies, social partners, NGOs, public authorities and others. [[DEQAR]]
+: <dfn>higher education institution</dfn>
+:: an entity that has full degree awarding powers at higher education level (i.e. EQF levels 5 to 8; QF-EHEA cycle first to third) recognised by at least one national authority. [[DEQAR]]
+: <dfn>other provider</dfn>
+:: an entity that provides learning opportunities, but that does not have officially-recognised authority to award degrees or other formally recognised qualifications.
+: <dfn>data provider</dfn>
+:: an entity providing data on [=learning opportunities=]. This can be an [=education provider=] providing data on its own learning opportunities or another organisation providing data on various [=education providers=].
+: <dfn>aggregator</dfn>
+:: any service that harvests data from different [=data providers=], matches and compiles the data into one single dataset. For example, the aggregator service developed within the QualityLink project.
