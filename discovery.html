@@ -1490,7 +1490,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version 4b8aed3f7, updated Thu Mar 6 12:35:01 2025 -0800" name="generator">
   <link href="https://quality-link.eu/wp-content/uploads/sites/90/2024/03/Quality-Link_Website-Favicon.png" rel="icon">
-  <meta content="06716a88ee91f01b9a201f807a369aa552edb3f0" name="revision">
+  <meta content="f28b18e24744962324f713af4756562beb1a2d23" name="revision">
   <meta content="dark light" name="color-scheme">
 <style>/* Boilerplate: style-autolinks */
 .css.css, .property.property, .descriptor.descriptor {
@@ -2051,7 +2051,7 @@ dfn > a.self-link::before      { content: "#"; }
   <div class="head">
    <p data-fill-with="logo"></p>
    <h1 class="p-name no-ref" id="title">QualityLink Data Source Discovery Specification</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Living Standard, <time class="dt-updated" datetime="2025-03-10">10 March 2025</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Living Standard, <time class="dt-updated" datetime="2025-03-11">11 March 2025</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>Issue Tracking:
@@ -2131,7 +2131,7 @@ dfn > a.self-link::before      { content: "#"; }
     <h3 class="heading settled" data-level="1.1" id="status"><span class="secno">1.1. </span><span class="content">Status of This Document</span><a class="self-link" href="#status"></a></h3>
     <p>This document is a draft specification, developed by KIC and EUF within the <a href="https://quality-link.eu/">QualityLink</a> project. It is currently being discussed with the QualityLink Standards Consultation Board.</p>
     <h3 class="heading settled" data-level="1.2" id="rationale"><span class="secno">1.2. </span><span class="content">Goals and Rationale</span><a class="self-link" href="#rationale"></a></h3>
-    <p>Briefly explain the rationale for writing this specification.</p>
+    <p>The QualityLink project aims to develop a scalable architecture that allows higher education institutions and others to publish data on their learning opportunities in different interoperable formats easily. This specification describes how data sources can be exposed by higher education institutions and other data providers, and how they can be discovered by aggregators.</p>
     <h3 class="heading settled" data-level="1.3" id="audience"><span class="secno">1.3. </span><span class="content">Audience</span><a class="self-link" href="#audience"></a></h3>
     <p>This specification is intended for use by higher education institutions and other data providers that would like their data to be available for aggregation.</p>
     <p>Secondly, it targets data aggregators. The QualityLink project will implement a data aggregator to test and demonstrate this specification in practice.</p>
@@ -2202,7 +2202,8 @@ dfn > a.self-link::before      { content: "#"; }
    <p><a data-link-type="dfn" href="#higher-education-institution" id="ref-for-higher-education-institution⑤">higher education institutions</a> may use either option. <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator②">Aggregators</a> must support both options.</p>
    <h3 class="heading settled" data-level="6.1" id="discovery-dns"><span class="secno">6.1. </span><span class="content">DNS TXT Record</span><a class="self-link" href="#discovery-dns"></a></h3>
    <p>The <a data-link-type="dfn" href="#higher-education-institution" id="ref-for-higher-education-institution⑥">higher education institution</a> can create a DNS TXT record of the following format:</p>
-   <p>...</p>
+<pre>v=qldiscover1; m=URL
+</pre>
    <p>The URL must point to a manifest file.</p>
    <h3 class="heading settled" data-level="6.2" id="discovery-well-known"><span class="secno">6.2. </span><span class="content">Well-known URL</span><a class="self-link" href="#discovery-well-known"></a></h3>
    <p>The <a data-link-type="dfn" href="#higher-education-institution" id="ref-for-higher-education-institution⑦">higher education institution</a> can place a manifest file at a URL of the form:</p>
