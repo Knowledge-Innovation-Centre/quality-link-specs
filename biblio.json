@@ -1,4 +1,13 @@
 {
+    "QL-ONT": {
+        "href": "https://knowledge-innovation-centre.github.io/quality-link-specs/ontology-shacl.html",
+        "authors": [
+            "QualityLink Consortium"
+        ],
+        "title": "SHACL constraints for learning opportunities",
+        "status": "draft",
+        "date": "2025"
+    },
     "ECTS": {
         "href": "https://op.europa.eu/publication-detail/-/publication/da7467e6-8450-11e5-b8b7-01aa75ed71a1",
         "authors": [

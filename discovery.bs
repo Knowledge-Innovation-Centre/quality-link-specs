@@ -23,7 +23,7 @@ This document is a draft specification, developed by KIC and EUF within the [Qua
 Goals and Rationale {#rationale}
 -------------------
 
-Briefly explain the rationale for writing this specification.
+The QualityLink project aims to develop a scalable architecture that allows higher education institutions and others to publish data on their learning opportunities in different interoperable formats easily. This specification describes how data sources can be exposed by higher education institutions and other data providers, and how they can be discovered by aggregators.
 
 Audience {#audience}
 --------
@@ -98,7 +98,9 @@ DNS TXT Record {#discovery-dns}
 
 The [HEI] can create a DNS TXT record of the following format:
 
-...
+```
+v=qldiscover1; m=URL
+```
 
 The URL must point to a manifest file.
 

@@ -24,7 +24,7 @@ This document is a draft specification, developed by KIC and EUF within the [Qua
 Goals and Rationale {#rationale}
 -------------------
 
-Briefly explain the rationale for writing this specification.
+The QualityLink project aims to develop a scalable architecture that allows higher education institutions and others to publish data on their learning opportunities in different interoperable formats easily. This specification describes the formats in which HEIs and other data providers can make data available for aggregation.
 
 Audience {#audience}
 --------
@@ -113,13 +113,13 @@ Data on learning opportunities described in [[!ELM]] format can be serialised as
 - Turtle (`text/turtle`)
 - JSON-LD (`application/ld+json`)
 
-Note: List of accepted serialisations to be confirmed.
-
 The data source must return the correct content type for the serialisation used.
 
 ### Required Fields ### {#elm-required}
 
-Note: use ELM Application Profile "Learning Opportunities and Qualifcations" or provide own SCHACL constraints based on this
+The minimum required fields are defined by a set of [[!SHACL]] constraints, which are based on the [[!ELM]] Application Profile "Learning Opportunities and Qualifcations".
+
+ELM data must comply with the requirements specified by the shape `http://data.quality-link.eu/ontology/v1#LearningOpportunity` [[!QL-ONT]].
 
 ### Incremental Transport ### {#elm-incremental}
 
@@ -149,7 +149,13 @@ OOAPI {#ooapi}
 
 The [=aggregator=] may use the following endpoints to acquire data:
 
-- list to add
+- `GET /education-specifications`
+- `GET /education-specifications/{educationSpecificationId}`
+- `GET /courses/{courseId}/offerings`
+- `GET /courses/{courseId}/components`
+- `GET /programs/{programId}/offerings`
+- `GET /components/{componentId}/offerings`
+- `GET /offerings/{offeringId}`
 
 ### Required Fields ### {#ooapi-required}
 
@@ -157,7 +163,13 @@ Note: check if requirements beyond vanilla OOAPI would be needed
 
 ### Incremental Transport ### {#ooapi-incremental}
 
-Note: propose extension to vanilla OOAPI: additional query parametrs to list only courses modified since a given point in time
+While OOAPI does include the ability to query learning opportunities based on the year/semester in which they are offered, the standard does not include query parameters based on modification dates or similar.
+
+Standard HTTP headers are, however, compatible with OOAPI and [=data providers=] should thus implement at least one of two options, at least for the `GET /education-specifications` endpoint:
+
+- Provide an accurate `Last-Modified` [[!RFC9110]] header in response to a HTTP `HEAD` request, indicate when the data was last changed/updated.
+
+- Process the `If-Modified-Since` [[!RFC9110]] header if provided in a HTTP request and only return data if modifications occured.
 
 ### Metadata ### {#ooapi-metadata}
 
