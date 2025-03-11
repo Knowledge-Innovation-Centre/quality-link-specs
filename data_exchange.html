@@ -1490,7 +1490,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version 4b8aed3f7, updated Thu Mar 6 12:35:01 2025 -0800" name="generator">
   <link href="https://quality-link.eu/wp-content/uploads/sites/90/2024/03/Quality-Link_Website-Favicon.png" rel="icon">
-  <meta content="06716a88ee91f01b9a201f807a369aa552edb3f0" name="revision">
+  <meta content="f28b18e24744962324f713af4756562beb1a2d23" name="revision">
   <meta content="dark light" name="color-scheme">
 <style>/* Boilerplate: style-autolinks */
 .css.css, .property.property, .descriptor.descriptor {
@@ -2051,7 +2051,7 @@ dfn > a.self-link::before      { content: "#"; }
   <div class="head">
    <p data-fill-with="logo"></p>
    <h1 class="p-name no-ref" id="title">QualityLink Data Exchange Specification</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Living Standard, <time class="dt-updated" datetime="2025-03-10">10 March 2025</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Living Standard, <time class="dt-updated" datetime="2025-03-11">11 March 2025</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>Issue Tracking:
@@ -2152,7 +2152,7 @@ dfn > a.self-link::before      { content: "#"; }
     <h3 class="heading settled" data-level="1.1" id="status"><span class="secno">1.1. </span><span class="content">Status of This Document</span><a class="self-link" href="#status"></a></h3>
     <p>This document is a draft specification, developed by KIC and EUF within the <a href="https://quality-link.eu/">QualityLink</a> project. It is currently being discussed with the QualityLink Standards Consultation Board.</p>
     <h3 class="heading settled" data-level="1.2" id="rationale"><span class="secno">1.2. </span><span class="content">Goals and Rationale</span><a class="self-link" href="#rationale"></a></h3>
-    <p>Briefly explain the rationale for writing this specification.</p>
+    <p>The QualityLink project aims to develop a scalable architecture that allows higher education institutions and others to publish data on their learning opportunities in different interoperable formats easily. This specification describes the formats in which HEIs and other data providers can make data available for aggregation.</p>
     <h3 class="heading settled" data-level="1.3" id="audience"><span class="secno">1.3. </span><span class="content">Audience</span><a class="self-link" href="#audience"></a></h3>
     <p>This specification is intended for use by higher education institutions and other data providers that would like their data to be available for aggregation.</p>
     <p>Secondly, it targets data aggregators. The QualityLink project will implement a data aggregator to test and demonstrate this specification in practice.</p>
@@ -2243,10 +2243,10 @@ dfn > a.self-link::before      { content: "#"; }
     <li data-md>
      <p>JSON-LD (<code>application/ld+json</code>)</p>
    </ul>
-   <p class="note" role="note"><span class="marker">Note:</span> List of accepted serialisations to be confirmed.</p>
    <p>The data source must return the correct content type for the serialisation used.</p>
    <h4 class="heading settled" data-level="5.1.1" id="elm-required"><span class="secno">5.1.1. </span><span class="content">Required Fields</span><a class="self-link" href="#elm-required"></a></h4>
-   <p class="note" role="note"><span class="marker">Note:</span> use ELM Application Profile "Learning Opportunities and Qualifcations" or provide own SCHACL constraints based on this</p>
+   <p>The minimum required fields are defined by a set of <a data-link-type="biblio" href="#biblio-shacl" title="Shapes Constraint Language (SHACL)">[SHACL]</a> constraints, which are based on the <a data-link-type="biblio" href="#biblio-elm" title="European Learning Model (ELM)">[ELM]</a> Application Profile "Learning Opportunities and Qualifcations".</p>
+   <p>ELM data must comply with the requirements specified by the shape <code>http://data.quality-link.eu/ontology/v1#LearningOpportunity</code> <a data-link-type="biblio" href="#biblio-ql-ont" title="SHACL constraints for learning opportunities">[QL-ONT]</a>.</p>
    <h4 class="heading settled" data-level="5.1.2" id="elm-incremental"><span class="secno">5.1.2. </span><span class="content">Incremental Transport</span><a class="self-link" href="#elm-incremental"></a></h4>
    <p><a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider⑦">Data providers</a> should implement at least one of two options:</p>
    <ul>
@@ -2273,14 +2273,33 @@ dfn > a.self-link::before      { content: "#"; }
    <p>The <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator④">aggregator</a> may use the following endpoints to acquire data:</p>
    <ul>
     <li data-md>
-     <p>list to add</p>
+     <p><code>GET /education-specifications</code></p>
+    <li data-md>
+     <p><code>GET /education-specifications/{educationSpecificationId}</code></p>
+    <li data-md>
+     <p><code>GET /courses/{courseId}/offerings</code></p>
+    <li data-md>
+     <p><code>GET /courses/{courseId}/components</code></p>
+    <li data-md>
+     <p><code>GET /programs/{programId}/offerings</code></p>
+    <li data-md>
+     <p><code>GET /components/{componentId}/offerings</code></p>
+    <li data-md>
+     <p><code>GET /offerings/{offeringId}</code></p>
    </ul>
    <h4 class="heading settled" data-level="5.2.1" id="ooapi-required"><span class="secno">5.2.1. </span><span class="content">Required Fields</span><a class="self-link" href="#ooapi-required"></a></h4>
    <p class="note" role="note"><span class="marker">Note:</span> check if requirements beyond vanilla OOAPI would be needed</p>
    <h4 class="heading settled" data-level="5.2.2" id="ooapi-incremental"><span class="secno">5.2.2. </span><span class="content">Incremental Transport</span><a class="self-link" href="#ooapi-incremental"></a></h4>
-   <p class="note" role="note"><span class="marker">Note:</span> propose extension to vanilla OOAPI: additional query parametrs to list only courses modified since a given point in time</p>
+   <p>While OOAPI does include the ability to query learning opportunities based on the year/semester in which they are offered, the standard does not include query parameters based on modification dates or similar.</p>
+   <p>Standard HTTP headers are, however, compatible with OOAPI and <a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider⑨">data providers</a> should thus implement at least one of two options, at least for the <code>GET /education-specifications</code> endpoint:</p>
+   <ul>
+    <li data-md>
+     <p>Provide an accurate <code>Last-Modified</code> <a data-link-type="biblio" href="#biblio-rfc9110" title="HTTP Semantics">[RFC9110]</a> header in response to a HTTP <code>HEAD</code> request, indicate when the data was last changed/updated.</p>
+    <li data-md>
+     <p>Process the <code>If-Modified-Since</code> <a data-link-type="biblio" href="#biblio-rfc9110" title="HTTP Semantics">[RFC9110]</a> header if provided in a HTTP request and only return data if modifications occured.</p>
+   </ul>
    <h4 class="heading settled" data-level="5.2.3" id="ooapi-metadata"><span class="secno">5.2.3. </span><span class="content">Metadata</span><a class="self-link" href="#ooapi-metadata"></a></h4>
-   <p><a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider⑨">Data providers</a> must provide the following metadata in their manifest file for this method:</p>
+   <p><a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider①⓪">Data providers</a> must provide the following metadata in their manifest file for this method:</p>
    <table class="def">
     <tbody>
      <tr>
@@ -2298,20 +2317,20 @@ dfn > a.self-link::before      { content: "#"; }
    <p class="note" role="note"><span class="marker">Note:</span> similar structure as for OOAPI</p>
    <h2 class="heading settled" data-level="6" id="access-control"><span class="secno">6. </span><span class="content">Access Control</span><a class="self-link" href="#access-control"></a></h2>
    <p>Currently all transport methods operate over HTTP. Hence the following access control strategies can all be used for either method.</p>
-   <p>A <a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider①⓪">data provider</a> may choose one of the strategies if they wish to control access to their data, but no access control is required.</p>
+   <p>A <a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider①①">data provider</a> may choose one of the strategies if they wish to control access to their data, but no access control is required.</p>
    <p>An <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator⑤">aggregator</a> should support all formats described.</p>
    <h3 class="heading settled" data-level="6.1" id="access-control-ip"><span class="secno">6.1. </span><span class="content">Based on IP address</span><a class="self-link" href="#access-control-ip"></a></h3>
-   <p>A <a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider①①">data provider</a> can limit access to certain ranges of IP addresses. To that end, <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator⑥">aggregators</a> should publish the IP address ranges from which their services may contact the exposed methods.</p>
+   <p>A <a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider①②">data provider</a> can limit access to certain ranges of IP addresses. To that end, <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator⑥">aggregators</a> should publish the IP address ranges from which their services may contact the exposed methods.</p>
    <p class="note" role="note"><span class="marker">Note:</span> The QualityLink aggregator operates from the IP address range 1.2.3.4</p>
    <h3 class="heading settled" data-level="6.2" id="access-control-tls-client"><span class="secno">6.2. </span><span class="content">TLS Client Certificates</span><a class="self-link" href="#access-control-tls-client"></a></h3>
    <p>The <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator⑦">aggregator</a> should authenticate itself with a specified client certificate.</p>
    <p class="note" role="note"><span class="marker">Note:</span> more details needed, plus info on QualityLink client certificate.</p>
    <h3 class="heading settled" data-level="6.3" id="access-control-header"><span class="secno">6.3. </span><span class="content">HTTP Request Header</span><a class="self-link" href="#access-control-header"></a></h3>
-   <p>The <a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider①②">data provider</a> may request that the <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator⑧">aggregator</a> include a specific HTTP header in all requests, e.g. a secret token.</p>
+   <p>The <a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider①③">data provider</a> may request that the <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator⑧">aggregator</a> include a specific HTTP header in all requests, e.g. a secret token.</p>
    <p class="note" role="note"><span class="marker">Note:</span> this option requires the data provider to have an account in the QualityLink aggregator/data source registry to manage this. To be described further.</p>
    <h2 class="heading settled" data-level="7" id="security"><span class="secno">7. </span><span class="content">Security Considerations</span><a class="self-link" href="#security"></a></h2>
-   <p>The previous chapter describes how <a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider①③">data providers</a> can implement access control to their exposed data.</p>
-   <p>This specification is about exchange of data on <a data-link-type="dfn" href="#learning-opportunity" id="ref-for-learning-opportunity⑤">learning opportunities</a>, which is generally meant to be public. <a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider①④">Data providers</a> should not expose any data through the methods described herein that is not meant to be public, especially no personal data.</p>
+   <p>The previous chapter describes how <a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider①④">data providers</a> can implement access control to their exposed data.</p>
+   <p>This specification is about exchange of data on <a data-link-type="dfn" href="#learning-opportunity" id="ref-for-learning-opportunity⑤">learning opportunities</a>, which is generally meant to be public. <a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider①⑤">Data providers</a> should not expose any data through the methods described herein that is not meant to be public, especially no personal data.</p>
   </main>
   <div data-fill-with="conformance">
    <h2 class="no-ref no-num heading settled" id="conformance"><span class="content"> Conformance</span><a class="self-link" href="#conformance"></a></h2>
@@ -2481,10 +2500,14 @@ dfn > a.self-link::before      { content: "#"; }
    <dd>European Commission. <a href="https://europa.eu/europass/elm-browser/index.html"><cite>European Learning Model (ELM)</cite></a>. v3. URL: <a href="https://europa.eu/europass/elm-browser/index.html">https://europa.eu/europass/elm-browser/index.html</a>
    <dt id="biblio-ooapi">[OOAPI]
    <dd>Bureau Edustandaard. <a href="https://openonderwijsapi.nl/specification/v5/docs.html"><cite>Open Education API</cite></a>. v5. URL: <a href="https://openonderwijsapi.nl/specification/v5/docs.html">https://openonderwijsapi.nl/specification/v5/docs.html</a>
+   <dt id="biblio-ql-ont">[QL-ONT]
+   <dd>QualityLink Consortium. <a href="https://knowledge-innovation-centre.github.io/quality-link-specs/ontology-shacl.html"><cite>SHACL constraints for learning opportunities</cite></a>. 2025. draft. URL: <a href="https://knowledge-innovation-centre.github.io/quality-link-specs/ontology-shacl.html">https://knowledge-innovation-centre.github.io/quality-link-specs/ontology-shacl.html</a>
    <dt id="biblio-rfc2119">[RFC2119]
    <dd>S. Bradner. <a href="https://datatracker.ietf.org/doc/html/rfc2119"><cite>Key words for use in RFCs to Indicate Requirement Levels</cite></a>. March 1997. Best Current Practice. URL: <a href="https://datatracker.ietf.org/doc/html/rfc2119">https://datatracker.ietf.org/doc/html/rfc2119</a>
    <dt id="biblio-rfc9110">[RFC9110]
    <dd>R. Fielding, Ed.; M. Nottingham, Ed.; J. Reschke, Ed.. <a href="https://httpwg.org/specs/rfc9110.html"><cite>HTTP Semantics</cite></a>. June 2022. Internet Standard. URL: <a href="https://httpwg.org/specs/rfc9110.html">https://httpwg.org/specs/rfc9110.html</a>
+   <dt id="biblio-shacl">[SHACL]
+   <dd>Holger Knublauch; Dimitris Kontokostas. <a href="https://w3c.github.io/data-shapes/shacl/"><cite>Shapes Constraint Language (SHACL)</cite></a>. URL: <a href="https://w3c.github.io/data-shapes/shacl/">https://w3c.github.io/data-shapes/shacl/</a>
   </dl>
   <h3 class="no-num no-ref heading settled" id="informative"><span class="content">Informative References</span><a class="self-link" href="#informative"></a></h3>
   <dl>
@@ -2701,7 +2724,7 @@ function parseHTML(markup) {
 let dfnPanelData = {
 "aggregator": {"dfnID":"aggregator","dfnText":"aggregator","external":false,"refSections":[{"refs":[{"id":"ref-for-aggregator"}],"title":"3.3. Access control"},{"refs":[{"id":"ref-for-aggregator\u2460"}],"title":"4. Requirements"},{"refs":[{"id":"ref-for-aggregator\u2461"}],"title":"5. Methods"},{"refs":[{"id":"ref-for-aggregator\u2462"}],"title":"5.1.2. Incremental Transport"},{"refs":[{"id":"ref-for-aggregator\u2463"}],"title":"5.2. OOAPI"},{"refs":[{"id":"ref-for-aggregator\u2464"}],"title":"6. Access Control"},{"refs":[{"id":"ref-for-aggregator\u2465"}],"title":"6.1. Based on IP address"},{"refs":[{"id":"ref-for-aggregator\u2466"}],"title":"6.2. TLS Client Certificates"},{"refs":[{"id":"ref-for-aggregator\u2467"}],"title":"6.3. HTTP Request Header"}],"url":"#aggregator"},
 "course": {"dfnID":"course","dfnText":"course","external":false,"refSections":[{"refs":[{"id":"ref-for-course"},{"id":"ref-for-course\u2460"}],"title":"2. Key Concepts"}],"url":"#course"},
-"data-provider": {"dfnID":"data-provider","dfnText":"data provider","external":false,"refSections":[{"refs":[{"id":"ref-for-data-provider"}],"title":"2. Key Concepts"},{"refs":[{"id":"ref-for-data-provider\u2460"}],"title":"3.2. Efficient aggregation"},{"refs":[{"id":"ref-for-data-provider\u2461"}],"title":"3.3. Access control"},{"refs":[{"id":"ref-for-data-provider\u2462"},{"id":"ref-for-data-provider\u2463"},{"id":"ref-for-data-provider\u2464"}],"title":"4. Requirements"},{"refs":[{"id":"ref-for-data-provider\u2465"}],"title":"5. Methods"},{"refs":[{"id":"ref-for-data-provider\u2466"}],"title":"5.1.2. Incremental Transport"},{"refs":[{"id":"ref-for-data-provider\u2467"}],"title":"5.1.3. Metadata"},{"refs":[{"id":"ref-for-data-provider\u2468"}],"title":"5.2.3. Metadata"},{"refs":[{"id":"ref-for-data-provider\u2460\u24ea"}],"title":"6. Access Control"},{"refs":[{"id":"ref-for-data-provider\u2460\u2460"}],"title":"6.1. Based on IP address"},{"refs":[{"id":"ref-for-data-provider\u2460\u2461"}],"title":"6.3. HTTP Request Header"},{"refs":[{"id":"ref-for-data-provider\u2460\u2462"},{"id":"ref-for-data-provider\u2460\u2463"}],"title":"7. Security Considerations"}],"url":"#data-provider"},
+"data-provider": {"dfnID":"data-provider","dfnText":"data provider","external":false,"refSections":[{"refs":[{"id":"ref-for-data-provider"}],"title":"2. Key Concepts"},{"refs":[{"id":"ref-for-data-provider\u2460"}],"title":"3.2. Efficient aggregation"},{"refs":[{"id":"ref-for-data-provider\u2461"}],"title":"3.3. Access control"},{"refs":[{"id":"ref-for-data-provider\u2462"},{"id":"ref-for-data-provider\u2463"},{"id":"ref-for-data-provider\u2464"}],"title":"4. Requirements"},{"refs":[{"id":"ref-for-data-provider\u2465"}],"title":"5. Methods"},{"refs":[{"id":"ref-for-data-provider\u2466"}],"title":"5.1.2. Incremental Transport"},{"refs":[{"id":"ref-for-data-provider\u2467"}],"title":"5.1.3. Metadata"},{"refs":[{"id":"ref-for-data-provider\u2468"}],"title":"5.2.2. Incremental Transport"},{"refs":[{"id":"ref-for-data-provider\u2460\u24ea"}],"title":"5.2.3. Metadata"},{"refs":[{"id":"ref-for-data-provider\u2460\u2460"}],"title":"6. Access Control"},{"refs":[{"id":"ref-for-data-provider\u2460\u2461"}],"title":"6.1. Based on IP address"},{"refs":[{"id":"ref-for-data-provider\u2460\u2462"}],"title":"6.3. HTTP Request Header"},{"refs":[{"id":"ref-for-data-provider\u2460\u2463"},{"id":"ref-for-data-provider\u2460\u2464"}],"title":"7. Security Considerations"}],"url":"#data-provider"},
 "education-provider": {"dfnID":"education-provider","dfnText":"education provider","external":false,"refSections":[{"refs":[{"id":"ref-for-education-provider"},{"id":"ref-for-education-provider\u2460"}],"title":"2. Key Concepts"},{"refs":[{"id":"ref-for-education-provider\u2461"}],"title":"5.2. OOAPI"}],"url":"#education-provider"},
 "higher-education-institution": {"dfnID":"higher-education-institution","dfnText":"higher education institution","external":false,"refSections":[{"refs":[{"id":"ref-for-higher-education-institution"},{"id":"ref-for-higher-education-institution\u2460"},{"id":"ref-for-higher-education-institution\u2461"}],"title":"2. Key Concepts"},{"refs":[{"id":"ref-for-higher-education-institution\u2462"}],"title":"3.1. Feed data"},{"refs":[{"id":"ref-for-higher-education-institution\u2463"}],"title":"3.2. Efficient aggregation"},{"refs":[{"id":"ref-for-higher-education-institution\u2464"}],"title":"4. Requirements"}],"url":"#higher-education-institution"},
 "joint-programme": {"dfnID":"joint-programme","dfnText":"joint programme","external":false,"refSections":[],"url":"#joint-programme"},
