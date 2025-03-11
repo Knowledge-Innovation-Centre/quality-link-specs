@@ -25,3 +25,30 @@ jobs:
           TOOLCHAIN: bikeshed
           GH_PAGES_BRANCH: gh-pages
 
+  copy-resources:
+    name: Copy Resources to GH Pages
+    needs: main
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout main branch
+        uses: actions/checkout@v4
+        with:
+          path: main-branch
+      
+      - name: Checkout gh-pages branch
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          path: gh-pages-branch
+      
+      - name: Copy resources directory
+        run: |
+          cp -r main-branch/resources gh-pages-branch/
+          cd gh-pages-branch
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add resources/
+          git commit -m "Update resources directory" || echo "No changes to commit"
+          git push
