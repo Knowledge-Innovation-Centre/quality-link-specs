@@ -1490,7 +1490,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version 4b8aed3f7, updated Thu Mar 6 12:35:01 2025 -0800" name="generator">
   <link href="https://quality-link.eu/wp-content/uploads/sites/90/2024/03/Quality-Link_Website-Favicon.png" rel="icon">
-  <meta content="06716a88ee91f01b9a201f807a369aa552edb3f0" name="revision">
+  <meta content="f28b18e24744962324f713af4756562beb1a2d23" name="revision">
   <meta content="dark light" name="color-scheme">
 <style>/* Boilerplate: style-autolinks */
 .css.css, .property.property, .descriptor.descriptor {
@@ -2051,12 +2051,11 @@ dfn > a.self-link::before      { content: "#"; }
   <div class="head">
    <p data-fill-with="logo"></p>
    <h1 class="p-name no-ref" id="title">QualityLink Data Sources and Access Policy</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Living Document, <time class="dt-updated" datetime="2025-03-10">10 March 2025</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Living Document, <time class="dt-updated" datetime="2025-03-11">11 March 2025</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>Issue Tracking:
      <dd><a href="https://github.com/Knowledge-Innovation-Centre/quality-link-specs/issues/">GitHub</a>
-     <dd><a href="#issues-index">Inline In Spec</a>
      <dt class="editor">Editor:
      <dd class="editor p-author h-card vcard"><a class="p-name fn u-url url" href="https://knowledgeinnovation.eu">Colin Tück</a> (<span class="p-org org">Knowledge Innovation Centre; KIC</span>) <a class="u-email email" href="mailto:colin@knowledgeinnovation.eu">colin@knowledgeinnovation.eu</a>
      <dt>Project Website:
@@ -2117,7 +2116,6 @@ dfn > a.self-link::before      { content: "#"; }
       <li><a href="#normative"><span class="secno"></span> <span class="content">Normative References</span></a>
       <li><a href="#informative"><span class="secno"></span> <span class="content">Informative References</span></a>
      </ol>
-    <li><a href="#issues-index"><span class="secno"></span> <span class="content">Issues Index</span></a>
    </ol>
   </nav>
   <main>
@@ -2166,39 +2164,40 @@ dfn > a.self-link::before      { content: "#"; }
     <dt data-md><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="other-provider">other provider</dfn>
     <dd data-md>
      <p>an entity that provides learning opportunities, but that does not have officially-recognised authority to award degrees or other formally recognised qualifications.</p>
-    <dt data-md><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="user">user</dfn>
-    <dd data-md>
-     <p>any person or organisations accessing the <a data-link-type="dfn" href="#qualitylink-dataset" id="ref-for-qualitylink-dataset">QualityLink dataset</a></p>
     <dt data-md><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="data-provider">data provider</dfn>
     <dd data-md>
-     <p>any organisation providing data for aggregation by the <a data-link-type="dfn" href="#qualitylink-aggregator" id="ref-for-qualitylink-aggregator">QualityLink aggregator</a>; can be an <a data-link-type="dfn" href="#education-provider" id="ref-for-education-provider">education provider</a> or <a data-link-type="dfn" href="#xyz" id="ref-for-xyz">XYZ</a></p>
-    <dt data-md><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="xyz">XYZ</dfn>
+     <p>an entity providing data on <a data-link-type="dfn" href="#learning-opportunity" id="ref-for-learning-opportunity④">learning opportunities</a>. This can be an <a data-link-type="dfn" href="#education-provider" id="ref-for-education-provider">education provider</a> providing data on its own learning opportunities or another organisation providing data on various <a data-link-type="dfn" href="#education-provider" id="ref-for-education-provider①">education providers</a>.</p>
+    <dt data-md><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="aggregator">aggregator</dfn>
     <dd data-md>
-     <p>third party data provider</p>
+     <p>any service that harvests data from different <a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider">data providers</a>, matches and compiles the data into one single dataset. For example, the aggregator service developed within the QualityLink project.</p>
+   </dl>
+   <dl>
     <dt data-md><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="qualitylink-dataset">QualityLink dataset</dfn>
     <dd data-md>
      <p>the dataset created within the scope of the current project, made publicly available through a prototype platform</p>
     <dt data-md><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="qualitylink-aggregator">QualityLink aggregator</dfn>
     <dd data-md>
-     <p>a set of software components developed and deployed to aggregate data from various sources into the <a data-link-type="dfn" href="#qualitylink-dataset" id="ref-for-qualitylink-dataset①">QualityLink dataset</a></p>
+     <p>the specific <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator">aggregator</a> developed and deployed within the the QualityLink project, aggregating data from various <a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider①">data providers</a> into the <a data-link-type="dfn" href="#qualitylink-dataset" id="ref-for-qualitylink-dataset">QualityLink dataset</a></p>
+    <dt data-md><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="user">user</dfn>
+    <dd data-md>
+     <p>any person or organisations accessing the <a data-link-type="dfn" href="#qualitylink-dataset" id="ref-for-qualitylink-dataset①">QualityLink dataset</a></p>
    </dl>
-   <p class="issue" id="issue-11052efe"><a class="self-link" href="#issue-11052efe"></a> check whether list of shared terms can be included from file</p>
    <h2 class="heading settled" data-level="3" id="objectives"><span class="secno">3. </span><span class="content">Objectives</span><a class="self-link" href="#objectives"></a></h2>
    <p>This policy has the following objectives, formulated as user stories:</p>
    <ol>
     <li data-md>
      <p>As a <a data-link-type="dfn" href="#user" id="ref-for-user">user</a> I want to be assured that aggregated data in the <a data-link-type="dfn" href="#qualitylink-dataset" id="ref-for-qualitylink-dataset②">QualityLink dataset</a> is trustworthy and does not include flawed or rogue data.</p>
     <li data-md>
-     <p>As a <a data-link-type="dfn" href="#higher-education-institution" id="ref-for-higher-education-institution④">higher education institution</a> I want to expore my course data for aggregation by the <a data-link-type="dfn" href="#qualitylink-aggregator" id="ref-for-qualitylink-aggregator①">QualityLink aggregator</a> without the need for endorsement or clearance by any other organisation.</p>
+     <p>As a <a data-link-type="dfn" href="#higher-education-institution" id="ref-for-higher-education-institution④">higher education institution</a> I want to expore my course data for aggregation by the <a data-link-type="dfn" href="#qualitylink-aggregator" id="ref-for-qualitylink-aggregator">QualityLink aggregator</a> without the need for endorsement or clearance by any other organisation.</p>
     <li data-md>
-     <p>As a <a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider">data provider</a> I want clarity which data can be aggregated into the <a data-link-type="dfn" href="#qualitylink-dataset" id="ref-for-qualitylink-dataset③">QualityLink dataset</a>.</p>
+     <p>As a <a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider②">data provider</a> I want clarity which data can be aggregated into the <a data-link-type="dfn" href="#qualitylink-dataset" id="ref-for-qualitylink-dataset③">QualityLink dataset</a>.</p>
     <li data-md>
-     <p>As a <a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider①">data provider</a> I want to have clarity on how my data will be published and might be used by <a data-link-type="dfn" href="#user" id="ref-for-user①">users</a>.</p>
+     <p>As a <a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider③">data provider</a> I want to have clarity on how my data will be published and might be used by <a data-link-type="dfn" href="#user" id="ref-for-user①">users</a>.</p>
     <li data-md>
      <p>As an advanced <a data-link-type="dfn" href="#user" id="ref-for-user②">user</a> (e.g. researcher) I want to access the <a data-link-type="dfn" href="#qualitylink-dataset" id="ref-for-qualitylink-dataset④">QualityLink dataset</a> under clear terms and conditions, in order to have legal certainty when copying, re-using or embedding QualityLink data in my own applications.</p>
    </ol>
    <h2 class="heading settled" data-level="4" id="source"><span class="secno">4. </span><span class="content">Data sources</span><a class="self-link" href="#source"></a></h2>
-   <p>For the purpose of QualityLink, we distinguish between three classes of <a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider②">data providers</a>:</p>
+   <p>For the purpose of QualityLink, we distinguish between three classes of <a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider④">data providers</a>:</p>
    <table class="def">
     <tbody>
      <tr>
@@ -2210,7 +2209,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td>any 
       <td>any providers' 
      <tr>
-      <td><a data-link-type="dfn" href="#education-provider" id="ref-for-education-provider①">education provider</a> 
+      <td><a data-link-type="dfn" href="#education-provider" id="ref-for-education-provider②">education provider</a> 
       <td>any 
       <td>only own 
      <tr>
@@ -2219,7 +2218,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td>any 
    </table>
    <h3 class="heading settled" data-level="4.1" id="source-authoritative"><span class="secno">4.1. </span><span class="content">Authoritative sources</span><a class="self-link" href="#source-authoritative"></a></h3>
-   <p>These organisations may provide trusted data on any <a data-link-type="dfn" href="#education-provider" id="ref-for-education-provider②">education provider</a> and their <a data-link-type="dfn" href="#learning-opportunity" id="ref-for-learning-opportunity④">learning opportunities</a>.</p>
+   <p>These organisations may provide trusted data on any <a data-link-type="dfn" href="#education-provider" id="ref-for-education-provider③">education provider</a> and their <a data-link-type="dfn" href="#learning-opportunity" id="ref-for-learning-opportunity⑤">learning opportunities</a>.</p>
    <p>Currently, the following sources are considered authoritative:</p>
    <ul>
     <li data-md>
@@ -2230,21 +2229,21 @@ dfn > a.self-link::before      { content: "#"; }
    <p>In general, official national authorities, e.g. a database operated by the ministry of education, can be considered authoritative in addition.</p>
    <p>Additional sources can be approved by the QualityLink consortium as authoritative, based on an ad-hoc assessment.</p>
    <h3 class="heading settled" data-level="4.2" id="source-provider"><span class="secno">4.2. </span><span class="content">Education providers</span><a class="self-link" href="#source-provider"></a></h3>
-   <p><a data-link-type="dfn" href="#higher-education-institution" id="ref-for-higher-education-institution⑤">higher education institutions</a> and <a data-link-type="dfn" href="#other-provider" id="ref-for-other-provider②">other providers</a> may provide trusted data on their own <a data-link-type="dfn" href="#learning-opportunity" id="ref-for-learning-opportunity⑤">learning opportunities</a>. In principle, any <em>bona fide</em> organisation can provide data.</p>
-   <p>All organisations listed in <a data-link-type="biblio" href="#biblio-deqar" title="DEQAR Documentation">[DEQAR]</a>, the Register of Pulic Sector Organisations <a data-link-type="biblio" href="#biblio-orgreg" title="Register of Public Sector Organisations">[ORGREG]</a> or holding an Erasmus Charter <a data-link-type="biblio" href="#biblio-eche" title="Erasmus Charter for Higher Education">[ECHE]</a> are considered officially recognised <a data-link-type="dfn" href="#higher-education-institution" id="ref-for-higher-education-institution⑥">higher education institutions</a>. The technical specification ensure that these can decide to publish data and have it harvested by the <a data-link-type="dfn" href="#qualitylink-aggregator" id="ref-for-qualitylink-aggregator②">QualityLink aggregator</a> without the need for manual intervention from the QualityLink consortium/admins or anyone else.</p>
+   <p><a data-link-type="dfn" href="#higher-education-institution" id="ref-for-higher-education-institution⑤">higher education institutions</a> and <a data-link-type="dfn" href="#other-provider" id="ref-for-other-provider②">other providers</a> may provide trusted data on their own <a data-link-type="dfn" href="#learning-opportunity" id="ref-for-learning-opportunity⑥">learning opportunities</a>. In principle, any <em>bona fide</em> organisation can provide data.</p>
+   <p>All organisations listed in <a data-link-type="biblio" href="#biblio-deqar" title="DEQAR Documentation">[DEQAR]</a>, the Register of Pulic Sector Organisations <a data-link-type="biblio" href="#biblio-orgreg" title="Register of Public Sector Organisations">[ORGREG]</a> or holding an Erasmus Charter <a data-link-type="biblio" href="#biblio-eche" title="Erasmus Charter for Higher Education">[ECHE]</a> are considered officially recognised <a data-link-type="dfn" href="#higher-education-institution" id="ref-for-higher-education-institution⑥">higher education institutions</a>. The technical specification ensure that these can decide to publish data and have it harvested by the <a data-link-type="dfn" href="#qualitylink-aggregator" id="ref-for-qualitylink-aggregator①">QualityLink aggregator</a> without the need for manual intervention from the QualityLink consortium/admins or anyone else.</p>
    <p>For <a data-link-type="dfn" href="#other-provider" id="ref-for-other-provider③">other providers</a>, automatic management/discovery is not feasible at the moment. These will be considered by the QualityLink consortium on an ad-hoc basis.</p>
    <h3 class="heading settled" data-level="4.3" id="source-other"><span class="secno">4.3. </span><span class="content">Third party</span><a class="self-link" href="#source-other"></a></h3>
-   <p>Other third parties may provide data on existing <a data-link-type="dfn" href="#learning-opportunity" id="ref-for-learning-opportunity⑥">learning opportunities</a> of any <a data-link-type="dfn" href="#education-provider" id="ref-for-education-provider③">education provider</a>, but limited to specific domains.</p>
-   <p>Any organisation can propose that its data be harvested by the <a data-link-type="dfn" href="#qualitylink-aggregator" id="ref-for-qualitylink-aggregator③">QualityLink aggregator</a>. The QualityLink consortium will only consider eligible data providers that:</p>
+   <p>Other third parties may provide data on existing <a data-link-type="dfn" href="#learning-opportunity" id="ref-for-learning-opportunity⑦">learning opportunities</a> of any <a data-link-type="dfn" href="#education-provider" id="ref-for-education-provider④">education provider</a>, but limited to specific domains.</p>
+   <p>Any organisation can propose that its data be harvested by the <a data-link-type="dfn" href="#qualitylink-aggregator" id="ref-for-qualitylink-aggregator②">QualityLink aggregator</a>. The QualityLink consortium will only consider eligible data providers that:</p>
    <ul>
     <li data-md>
-     <p>provide data on <a data-link-type="dfn" href="#learning-opportunity" id="ref-for-learning-opportunity⑦">learning opportunities</a> in several countries/education systems, or data on a large number of <a data-link-type="dfn" href="#learning-opportunity" id="ref-for-learning-opportunity⑧">learning opportunities</a> in one system,</p>
+     <p>provide data on <a data-link-type="dfn" href="#learning-opportunity" id="ref-for-learning-opportunity⑧">learning opportunities</a> in several countries/education systems, or data on a large number of <a data-link-type="dfn" href="#learning-opportunity" id="ref-for-learning-opportunity⑨">learning opportunities</a> in one system,</p>
     <li data-md>
      <p>provide data that is relevant to the QualityLink <a href="https://quality-link.eu/quality-domains-and-indicators/">Quality Domains and Indicators</a>,</p>
     <li data-md>
      <p>ensure transparency of their methodology and how their data/indicators are collected, and</p>
     <li data-md>
-     <p>do not present data in a biased way to favour specific <a data-link-type="dfn" href="#education-provider" id="ref-for-education-provider④">education providers</a> and their <a data-link-type="dfn" href="#learning-opportunity" id="ref-for-learning-opportunity⑨">learning opportunities</a>.</p>
+     <p>do not present data in a biased way to favour specific <a data-link-type="dfn" href="#education-provider" id="ref-for-education-provider⑤">education providers</a> and their <a data-link-type="dfn" href="#learning-opportunity" id="ref-for-learning-opportunity①⓪">learning opportunities</a>.</p>
    </ul>
    <p>Currently, the <a data-link-type="dfn" href="#qualitylink-dataset" id="ref-for-qualitylink-dataset⑤">QualityLink dataset</a> includes data from the following third-party sources:</p>
    <ul>
@@ -2411,6 +2410,7 @@ dfn > a.self-link::before      { content: "#"; }
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
   <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
   <ul class="index">
+   <li><a href="#aggregator">aggregator</a><span>, in § 2</span>
    <li><a href="#course">course</a><span>, in § 2</span>
    <li><a href="#data-provider">data provider</a><span>, in § 2</span>
    <li><a href="#education-provider">education provider</a><span>, in § 2</span>
@@ -2424,7 +2424,6 @@ dfn > a.self-link::before      { content: "#"; }
    <li><a href="#qualitylink-aggregator">QualityLink aggregator</a><span>, in § 2</span>
    <li><a href="#qualitylink-dataset">QualityLink dataset</a><span>, in § 2</span>
    <li><a href="#user">user</a><span>, in § 2</span>
-   <li><a href="#xyz">XYZ</a><span>, in § 2</span>
   </ul>
   <h2 class="no-num no-ref heading settled" id="references"><span class="content">References</span><a class="self-link" href="#references"></a></h2>
   <h3 class="no-num no-ref heading settled" id="normative"><span class="content">Normative References</span><a class="self-link" href="#normative"></a></h3>
@@ -2449,10 +2448,6 @@ dfn > a.self-link::before      { content: "#"; }
    <dt id="biblio-elm">[ELM]
    <dd>European Commission. <a href="https://europa.eu/europass/elm-browser/index.html"><cite>European Learning Model (ELM)</cite></a>. v3. URL: <a href="https://europa.eu/europass/elm-browser/index.html">https://europa.eu/europass/elm-browser/index.html</a>
   </dl>
-  <h2 class="no-num no-ref heading settled" id="issues-index"><span class="content">Issues Index</span><a class="self-link" href="#issues-index"></a></h2>
-  <div style="counter-reset:issue">
-   <div class="issue"> check whether list of shared terms can be included from file <a class="issue-return" href="#issue-11052efe" title="Jump to section">↵</a></div>
-  </div>
 <script>/* Boilerplate: script-dom-helper */
 "use strict";
 function query(sel) { return document.querySelector(sel); }
@@ -2653,20 +2648,20 @@ function parseHTML(markup) {
 "use strict";
 {
 let dfnPanelData = {
+"aggregator": {"dfnID":"aggregator","dfnText":"aggregator","external":false,"refSections":[{"refs":[{"id":"ref-for-aggregator"}],"title":"2. Key Concepts"}],"url":"#aggregator"},
 "course": {"dfnID":"course","dfnText":"course","external":false,"refSections":[{"refs":[{"id":"ref-for-course"},{"id":"ref-for-course\u2460"}],"title":"2. Key Concepts"}],"url":"#course"},
-"data-provider": {"dfnID":"data-provider","dfnText":"data provider","external":false,"refSections":[{"refs":[{"id":"ref-for-data-provider"},{"id":"ref-for-data-provider\u2460"}],"title":"3. Objectives"},{"refs":[{"id":"ref-for-data-provider\u2461"}],"title":"4. Data sources"}],"url":"#data-provider"},
-"education-provider": {"dfnID":"education-provider","dfnText":"education provider","external":false,"refSections":[{"refs":[{"id":"ref-for-education-provider"}],"title":"2. Key Concepts"},{"refs":[{"id":"ref-for-education-provider\u2460"}],"title":"4. Data sources"},{"refs":[{"id":"ref-for-education-provider\u2461"}],"title":"4.1. Authoritative sources"},{"refs":[{"id":"ref-for-education-provider\u2462"},{"id":"ref-for-education-provider\u2463"}],"title":"4.3. Third party"}],"url":"#education-provider"},
+"data-provider": {"dfnID":"data-provider","dfnText":"data provider","external":false,"refSections":[{"refs":[{"id":"ref-for-data-provider"},{"id":"ref-for-data-provider\u2460"}],"title":"2. Key Concepts"},{"refs":[{"id":"ref-for-data-provider\u2461"},{"id":"ref-for-data-provider\u2462"}],"title":"3. Objectives"},{"refs":[{"id":"ref-for-data-provider\u2463"}],"title":"4. Data sources"}],"url":"#data-provider"},
+"education-provider": {"dfnID":"education-provider","dfnText":"education provider","external":false,"refSections":[{"refs":[{"id":"ref-for-education-provider"},{"id":"ref-for-education-provider\u2460"}],"title":"2. Key Concepts"},{"refs":[{"id":"ref-for-education-provider\u2461"}],"title":"4. Data sources"},{"refs":[{"id":"ref-for-education-provider\u2462"}],"title":"4.1. Authoritative sources"},{"refs":[{"id":"ref-for-education-provider\u2463"},{"id":"ref-for-education-provider\u2464"}],"title":"4.3. Third party"}],"url":"#education-provider"},
 "higher-education-institution": {"dfnID":"higher-education-institution","dfnText":"higher education institution","external":false,"refSections":[{"refs":[{"id":"ref-for-higher-education-institution"}],"title":"1.3. Audience"},{"refs":[{"id":"ref-for-higher-education-institution\u2460"},{"id":"ref-for-higher-education-institution\u2461"},{"id":"ref-for-higher-education-institution\u2462"}],"title":"2. Key Concepts"},{"refs":[{"id":"ref-for-higher-education-institution\u2463"}],"title":"3. Objectives"},{"refs":[{"id":"ref-for-higher-education-institution\u2464"},{"id":"ref-for-higher-education-institution\u2465"}],"title":"4.2. Education providers"}],"url":"#higher-education-institution"},
 "joint-programme": {"dfnID":"joint-programme","dfnText":"joint programme","external":false,"refSections":[],"url":"#joint-programme"},
-"learning-opportunity": {"dfnID":"learning-opportunity","dfnText":"learning opportunity","external":false,"refSections":[{"refs":[{"id":"ref-for-learning-opportunity"},{"id":"ref-for-learning-opportunity\u2460"},{"id":"ref-for-learning-opportunity\u2461"},{"id":"ref-for-learning-opportunity\u2462"}],"title":"2. Key Concepts"},{"refs":[{"id":"ref-for-learning-opportunity\u2463"}],"title":"4.1. Authoritative sources"},{"refs":[{"id":"ref-for-learning-opportunity\u2464"}],"title":"4.2. Education providers"},{"refs":[{"id":"ref-for-learning-opportunity\u2465"},{"id":"ref-for-learning-opportunity\u2466"},{"id":"ref-for-learning-opportunity\u2467"},{"id":"ref-for-learning-opportunity\u2468"}],"title":"4.3. Third party"}],"url":"#learning-opportunity"},
+"learning-opportunity": {"dfnID":"learning-opportunity","dfnText":"learning opportunity","external":false,"refSections":[{"refs":[{"id":"ref-for-learning-opportunity"},{"id":"ref-for-learning-opportunity\u2460"},{"id":"ref-for-learning-opportunity\u2461"},{"id":"ref-for-learning-opportunity\u2462"},{"id":"ref-for-learning-opportunity\u2463"}],"title":"2. Key Concepts"},{"refs":[{"id":"ref-for-learning-opportunity\u2464"}],"title":"4.1. Authoritative sources"},{"refs":[{"id":"ref-for-learning-opportunity\u2465"}],"title":"4.2. Education providers"},{"refs":[{"id":"ref-for-learning-opportunity\u2466"},{"id":"ref-for-learning-opportunity\u2467"},{"id":"ref-for-learning-opportunity\u2468"},{"id":"ref-for-learning-opportunity\u2460\u24ea"}],"title":"4.3. Third party"}],"url":"#learning-opportunity"},
 "micro-credential": {"dfnID":"micro-credential","dfnText":"micro-credential","external":false,"refSections":[{"refs":[{"id":"ref-for-micro-credential"}],"title":"2. Key Concepts"}],"url":"#micro-credential"},
 "module": {"dfnID":"module","dfnText":"module","external":false,"refSections":[{"refs":[{"id":"ref-for-module"},{"id":"ref-for-module\u2460"}],"title":"2. Key Concepts"}],"url":"#module"},
 "other-provider": {"dfnID":"other-provider","dfnText":"other provider","external":false,"refSections":[{"refs":[{"id":"ref-for-other-provider"},{"id":"ref-for-other-provider\u2460"}],"title":"2. Key Concepts"},{"refs":[{"id":"ref-for-other-provider\u2461"},{"id":"ref-for-other-provider\u2462"}],"title":"4.2. Education providers"}],"url":"#other-provider"},
 "programme": {"dfnID":"programme","dfnText":"programme","external":false,"refSections":[{"refs":[{"id":"ref-for-programme"},{"id":"ref-for-programme\u2460"},{"id":"ref-for-programme\u2461"}],"title":"2. Key Concepts"}],"url":"#programme"},
-"qualitylink-aggregator": {"dfnID":"qualitylink-aggregator","dfnText":"QualityLink aggregator","external":false,"refSections":[{"refs":[{"id":"ref-for-qualitylink-aggregator"}],"title":"2. Key Concepts"},{"refs":[{"id":"ref-for-qualitylink-aggregator\u2460"}],"title":"3. Objectives"},{"refs":[{"id":"ref-for-qualitylink-aggregator\u2461"}],"title":"4.2. Education providers"},{"refs":[{"id":"ref-for-qualitylink-aggregator\u2462"}],"title":"4.3. Third party"}],"url":"#qualitylink-aggregator"},
+"qualitylink-aggregator": {"dfnID":"qualitylink-aggregator","dfnText":"QualityLink aggregator","external":false,"refSections":[{"refs":[{"id":"ref-for-qualitylink-aggregator"}],"title":"3. Objectives"},{"refs":[{"id":"ref-for-qualitylink-aggregator\u2460"}],"title":"4.2. Education providers"},{"refs":[{"id":"ref-for-qualitylink-aggregator\u2461"}],"title":"4.3. Third party"}],"url":"#qualitylink-aggregator"},
 "qualitylink-dataset": {"dfnID":"qualitylink-dataset","dfnText":"QualityLink dataset","external":false,"refSections":[{"refs":[{"id":"ref-for-qualitylink-dataset"},{"id":"ref-for-qualitylink-dataset\u2460"}],"title":"2. Key Concepts"},{"refs":[{"id":"ref-for-qualitylink-dataset\u2461"},{"id":"ref-for-qualitylink-dataset\u2462"},{"id":"ref-for-qualitylink-dataset\u2463"}],"title":"3. Objectives"},{"refs":[{"id":"ref-for-qualitylink-dataset\u2464"}],"title":"4.3. Third party"},{"refs":[{"id":"ref-for-qualitylink-dataset\u2465"}],"title":"5.1. License"}],"url":"#qualitylink-dataset"},
 "user": {"dfnID":"user","dfnText":"user","external":false,"refSections":[{"refs":[{"id":"ref-for-user"},{"id":"ref-for-user\u2460"},{"id":"ref-for-user\u2461"}],"title":"3. Objectives"},{"refs":[{"id":"ref-for-user\u2462"},{"id":"ref-for-user\u2463"}],"title":"5.1. License"}],"url":"#user"},
-"xyz": {"dfnID":"xyz","dfnText":"XYZ","external":false,"refSections":[{"refs":[{"id":"ref-for-xyz"}],"title":"2. Key Concepts"}],"url":"#xyz"},
 };
 
 document.addEventListener("DOMContentLoaded", ()=>{
@@ -3055,6 +3050,7 @@ function genLinkingSyntaxes(dfn) {
 "use strict";
 {
 let refsData = {
+"#aggregator": {"displayText":"aggregator","export":true,"for_":[],"level":"0","normative":true,"shortname":"quality-link-policy","spec":"quality-link-policy-0","status":"local","text":"aggregator","type":"dfn","url":"#aggregator"},
 "#course": {"displayText":"course","export":true,"for_":[],"level":"0","normative":true,"shortname":"quality-link-policy","spec":"quality-link-policy-0","status":"local","text":"course","type":"dfn","url":"#course"},
 "#data-provider": {"displayText":"data provider","export":true,"for_":[],"level":"0","normative":true,"shortname":"quality-link-policy","spec":"quality-link-policy-0","status":"local","text":"data provider","type":"dfn","url":"#data-provider"},
 "#education-provider": {"displayText":"education provider","export":true,"for_":[],"level":"0","normative":true,"shortname":"quality-link-policy","spec":"quality-link-policy-0","status":"local","text":"education provider","type":"dfn","url":"#education-provider"},
@@ -3067,7 +3063,6 @@ let refsData = {
 "#qualitylink-aggregator": {"displayText":"qualitylink aggregator","export":true,"for_":[],"level":"0","normative":true,"shortname":"quality-link-policy","spec":"quality-link-policy-0","status":"local","text":"qualitylink aggregator","type":"dfn","url":"#qualitylink-aggregator"},
 "#qualitylink-dataset": {"displayText":"qualitylink dataset","export":true,"for_":[],"level":"0","normative":true,"shortname":"quality-link-policy","spec":"quality-link-policy-0","status":"local","text":"qualitylink dataset","type":"dfn","url":"#qualitylink-dataset"},
 "#user": {"displayText":"user","export":true,"for_":[],"level":"0","normative":true,"shortname":"quality-link-policy","spec":"quality-link-policy-0","status":"local","text":"user","type":"dfn","url":"#user"},
-"#xyz": {"displayText":"xyz","export":true,"for_":[],"level":"0","normative":true,"shortname":"quality-link-policy","spec":"quality-link-policy-0","status":"local","text":"xyz","type":"dfn","url":"#xyz"},
 };
 
 function mkRefHint(link, ref) {
