@@ -31,12 +31,12 @@
     dcterms:abstract "The QualityLink ontology builds on and extends the European Learning Model (ELM) to cover additional classes and properties required for the project."@en ;
     dcterms:created "2025-02-13"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
-    dcterms:modified "2025-02-13"^^xsd:date ;
+    dcterms:modified "2025-03-12"^^xsd:date ;
     dcterms:publisher <http://quality-link.eu/> ;
     dcterms:title "QualityLink Ontology"@en ;
     rdfs:comment "The QualityLink ontology builds on the European Learning Model (ELM). It defines additional classes and properties to describe things not currently covered in ELM. It further includes SHACL constraints for the QualityLink pilot aggregator, derived from the ELM Learning Opportunities and Qualifications application profile."@en ;
     rdfs:label "QualityLink Ontology"@en ;
-    owl:versionInfo "0.1.0" .
+    owl:versionInfo "0.2.0" .
 
 
 #################################################################
@@ -73,7 +73,7 @@ ql:GroupOfHEIs
 	sh:property [
 		sh:name "has member"@en ;
         sh:class ql:HigherEducationInstitution ;
-        sh:minCount 1;
+        sh:minCount 2 ;
         sh:path foaf:member ;
 	] .
 
@@ -166,11 +166,27 @@ ql:TargetGroup
 	] .
 
 
-ql:LearningOpportunity
+###  http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecification
+ql:LearningOpportunitySpecification
+    a owl:Class, sh:NodeShape ;
+	rdfs:subClassOf elm:LearningAchievementSpecification , <http://data.europa.eu/snb/model/ap/loq-constraints/LearningAchievementSpecificationShape> ;
+	rdfs:label "Learning Opportunity (specification)"@en ;
+	rdfs:comment "An asbtract opportunity to acquire a given set of learning outcomes, e.g. the general specification of a course, programme or module offered by an education provider."@en ;
+	sh:property [
+        sh:class ql:LearningOpportunitySpecificationReference ;
+		sh:path ql:superseded ;
+    ], [
+		sh:nodeKind sh:Literal ;
+		sh:path ql:version ;
+	] .
+
+
+###  http://data.quality-link.eu/ontology/v1#LearningOpportunityInstance
+ql:LearningOpportunityInstance
     a owl:Class, sh:NodeShape ;
 	rdfs:subClassOf elm:LearningOpportunity , <http://data.europa.eu/snb/model/ap/loq-constraints/LearningOpportunityShape> ;
-	rdfs:label "Learning Opportunity"@en ;
-	rdfs:comment "An opportunity to realise a given set of learning outcomes via a learning activity and/or assessment."@en ;
+	rdfs:label "Learning Opportunity (instance)"@en ;
+	rdfs:comment "A concrete opportunity to realise a given set of learning outcomes via a learning activity and/or assessment, e.g. a course, programme or module as offered in a specific academic year or semester."@en ;
 	sh:property [
 		sh:class ql:TargetGroup ;
 		sh:path ql:availableTo ;
@@ -178,33 +194,46 @@ ql:LearningOpportunity
 		sh:maxCount 1 ;
 		sh:datatype xsd:anyURI ;
 		sh:path ql:registrationPortal ;
-	], [
-        sh:class ql:LearningOpportunityReference ;
-		sh:path ql:spunOffFrom ;
-	], [
-        sh:class ql:LearningOpportunityReference ;
-		sh:path ql:absorbed ;
-	], [
-        sh:class ql:LearningOpportunityReference ;
-		sh:path ql:succeeded ;
 	] .
 
 
-ql:LearningOpportunityReference
+ql:LearningOpportunitySpecificationReference
     a owl:Class, sh:NodeShape ;
-	rdfs:label "Learning Opportunity Reference"@en ;
-	rdfs:comment "A reference to another Learning Opportunity, identified by a provider and a (local) identifier, without further details."@en ;
+	rdfs:label "Learning Opportunity (specification) Reference"@en ;
+	rdfs:comment "A reference to another Learning Opportunity specification, identified by a provider and a (local) identifier, without further details."@en ;
 	sh:property [
 		sh:name "provided by"@en ;
         sh:description "Higher Education Institution that offers the LO."@en ;
         sh:class ql:HigherEducationInstitution ;
         sh:minCount 1;
+        sh:maxCount 1;
         sh:path elm:providedBy ;
     ], [
         sh:name "(local) identifier"@en ;
-        sh:description "Identifier of the Learning Opportunity. Must be unique within the scope of the institution identified with providedBy."@en ;
+        sh:description "Identifier of the Learning Opportunity specification. Must be unique within the scope of the institution identified with providedBy."@en ;
         sh:class elm:Identifier ;
         sh:minCount 1;
+        sh:maxCount 1;
+        sh:path adms:identifier ;
+	] .
+
+ql:LearningOpportunityInstanceReference
+    a owl:Class, sh:NodeShape ;
+	rdfs:label "Learning Opportunity (instance) Reference"@en ;
+	rdfs:comment "A reference to another Learning Opportunity instance, identified by a provider and a (local) identifier, without further details."@en ;
+	sh:property [
+		sh:name "provided by"@en ;
+        sh:description "Higher Education Institution that offers the LO."@en ;
+        sh:class ql:HigherEducationInstitution ;
+        sh:minCount 1;
+        sh:maxCount 1;
+        sh:path elm:providedBy ;
+    ], [
+        sh:name "(local) identifier"@en ;
+        sh:description "Identifier of the Learning Opportunity instance. Must be unique within the scope of the institution identified with providedBy."@en ;
+        sh:class elm:Identifier ;
+        sh:minCount 1;
+        sh:maxCount 1;
         sh:path adms:identifier ;
 	] .
 
@@ -222,27 +251,42 @@ ql:relatedTo rdf:type owl:ObjectProperty ,
 ###  http://data.quality-link.eu/ontology/v1#spunOffFrom
 ql:spunOffFrom rdf:type owl:ObjectProperty ;
                rdfs:subPropertyOf ql:relatedTo ;
-               rdfs:comment "LO or organisation spun off from another one (i.e. subject newly created by the event, object existed before and after)"@en ;
+               rdfs:domain elm:Organisation ;
+               rdfs:range elm:Organisation ;
+               rdfs:comment "Organisation spun off from another one (i.e. subject newly created by the event, object existed before and after)"@en ;
                rdfs:label "spun off from"@en .
 
 
 ###  http://data.quality-link.eu/ontology/v1#absorbed
 ql:absorbed rdf:type owl:ObjectProperty ;
             rdfs:subPropertyOf ql:relatedTo ;
-            rdfs:comment "LO or organisation absorbed another one (i.e. subject existed before and after the event, object ceased to exist)"@en ;
+            rdfs:domain elm:Organisation ;
+            rdfs:range elm:Organisation ;
+            rdfs:comment "Organisation absorbed another one (i.e. subject existed before and after the event, object ceased to exist)"@en ;
             rdfs:label "absorbed"@en .
 
 
 ###  http://data.quality-link.eu/ontology/v1#succeeded
 ql:succeeded rdf:type owl:ObjectProperty ;
              rdfs:subPropertyOf ql:relatedTo ;
-             rdfs:comment "LO or organisation succeeded/replaced another one (i.e. subject was newly created by the event, object ceased to exist)"@en ;
+             rdfs:domain elm:Organisation ;
+             rdfs:range elm:Organisation ;
+             rdfs:comment "Organisation succeeded/replaced another one (i.e. subject was newly created by the event, object ceased to exist)"@en ;
              rdfs:label "succeeded"@en .
+
+
+###  http://data.quality-link.eu/ontology/v1#superseded
+ql:superseded rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf ql:relatedTo ;
+    rdfs:domain ql:LearningOpportunitySpecification ;
+    rdfs:range ql:LearningOpportunitySpecification ;
+    rdfs:comment "Learning Opportunity specification superseded another one, which is no longer or temporarily not offered."@en ;
+    rdfs:label "succeeded"@en .
 
 
 ###  http://data.quality-link.eu/ontology/v1#availableTo
 ql:availableTo rdf:type owl:ObjectProperty ;
-               rdfs:domain elm:LearningOpportunity ;
+               rdfs:domain ql:LearningOpportunityInstance ;
                rdfs:range ql:TargetGroup ;
                rdfs:comment "Indicates the target group to which this learning opportunity is available" ;
                rdfs:label "available to"@en .
@@ -264,6 +308,12 @@ ql:registrationPortal rdf:type owl:DatatypeProperty ;
                       rdfs:range xsd:anyURI ;
                       rdfs:comment "A web page at which one can register or enrol for a Learning Opportunity." ;
                       rdfs:label "registration portal"@en .
+
+###  http://data.quality-link.eu/ontology/v1#version
+ql:version rdf:type owl:DatatypeProperty ;
+    rdfs:range xsd:string ;
+    rdfs:comment "A number or other identifier that indicates the version of the Learning Opportunity specifcation." ;
+    rdfs:label "version"@en .
 
 #################################################################
 #    Individuals
@@ -290,6 +340,13 @@ elm:LearningOpportunity a rdfs:Class, owl:Class ;
 	rdfs:isDefinedBy <http://data.europa.eu/snb/model/elm> ;
 	rdfs:comment "The conditions, e.g. time and location, under which a person may acquire a set of knowledge and/or skills used with responsibility and autonomy."@en ;
 	dcterms:identifier "elm:LearningOpportunity" .
+
+elm:LearningAchievementSpecification a rdfs:Class, owl:Class ;
+	rdfs:label "Learning Achievement Specification"@en ;
+	rdfs:isDefinedBy <http://data.europa.eu/snb/model/elm> ;
+	rdfs:comment "Description of a set of knowledge and/or skills used with responsibility and autonomy, which may be acquired."@en ;
+    dcterms:identifier "elm:LearningAchievementSpecification" ;
+	rdfs:subClassOf <http://data.europa.eu/snb/model/elm/Specification> .
 
 <http://data.europa.eu/snb/model/ap/loq-constraints/LearningOpportunityShape> a sh:NodeShape ;
 	sh:property [
@@ -504,4 +561,271 @@ elm:LearningOpportunity a rdfs:Class, owl:Class ;
 		rdf:type
 	) ;
 	sh:targetClass <http://data.europa.eu/snb/model/elm/LearningOpportunity> .
+
+
+<http://data.europa.eu/snb/model/ap/loq-constraints/LearningAchievementSpecificationShape> a sh:NodeShape ;
+	sh:property [
+		sh:severity sh:Violation ;
+		sh:name "learning outcome"@en ;
+		sh:description "An individual (expected) learning outcome of the learning specification."@en ;
+		sh:minCount 1 ;
+		sh:class <http://data.europa.eu/snb/model/elm/LearningOutcome> ;
+		sh:path <http://data.europa.eu/snb/model/elm/learningOutcome> ;
+	], [
+		sh:severity sh:Violation ;
+		sh:name "publisher"@en ;
+		sh:description "The publisher of the Learning Achievement Specification."@en ;
+		sh:maxCount 1 ;
+		sh:or (
+			[
+				sh:class <http://data.europa.eu/snb/model/elm/Agent> ;
+			]
+			[
+				sh:class <http://data.europa.eu/snb/model/elm/Organisation> ;
+			]
+		) ;
+		sh:path dcterms:publisher ;
+	], [
+		sh:node <http://data.europa.eu/snb/model/ap/loq-constraints/URLRegexRestriction> ;
+		sh:severity sh:Violation ;
+		sh:name "other documents"@en ;
+		sh:description "A public web resource containing additional documentation about the learning achievement specification."@en ;
+		sh:class <http://data.europa.eu/snb/model/elm/WebResource> ;
+		sh:path <http://data.europa.eu/snb/model/elm/supplementaryDocument> ;
+	], [
+		sh:severity sh:Violation ;
+		sh:name "type"@en ;
+		sh:description "The type of the learning achievement specification. It should be provided using a controlled vocabulary."@en ;
+		sh:class skos:Concept ;
+		sh:path dcterms:type ;
+	], [
+		sh:severity sh:Violation ;
+		sh:uniqueLang true ;
+		sh:name "description"@en ;
+		sh:description " A free text description of the learning achievement specification. One value per language is permitted."@en ;
+		sh:datatype rdf:langString ;
+		sh:path dcterms:description ;
+	], [
+		sh:severity sh:Violation ;
+		sh:name "credit points"@en ;
+		sh:description "The credit points assigned to the learning achievement specification, following an educational credit system."@en ;
+		sh:class <http://data.europa.eu/snb/model/elm/CreditPoint> ;
+		sh:path <http://data.europa.eu/snb/model/elm/creditPoint> ;
+	], [
+		sh:severity sh:Violation ;
+		sh:name "alternative name"@en ;
+		sh:description "The alternative name of the learning achievement specification."@en ;
+		sh:datatype rdf:langString ;
+		sh:path skos:altLabel ;
+	], [
+		sh:severity sh:Violation ;
+		sh:uniqueLang true ;
+		sh:name "title"@en ;
+		sh:description " The title of the learning achievement specification. One value per language is permitted."@en ;
+		sh:minCount 1 ;
+		sh:datatype rdf:langString ;
+		sh:path dcterms:title ;
+	], [
+		sh:severity sh:Violation ;
+		sh:name "entry requirement"@en ;
+		sh:description "Specific entry requirement or prerequisite of individuals for which this specification is designed to start this learning opportunity."@en ;
+		sh:maxCount 1 ;
+		sh:class <http://data.europa.eu/snb/model/elm/Note> ;
+		sh:path <http://data.europa.eu/snb/model/elm/entryRequirement> ;
+	], [
+		sh:severity sh:Violation ;
+		sh:name "identifier"@en ;
+		sh:description "An alternative identifier of the learning achievement specification."@en ;
+		sh:or (
+			[
+				sh:class <http://data.europa.eu/snb/model/elm/Identifier> ;
+			]
+			[
+				sh:class <http://data.europa.eu/snb/model/elm/LegalIdentifier> ;
+			]
+		) ;
+		sh:path <http://www.w3.org/ns/adms#identifier> ;
+	], [
+		sh:severity sh:Violation ;
+		sh:name "category"@en ;
+		sh:description "The category of the learning achievement specification provided as a string."@en ;
+		sh:datatype rdf:langString ;
+		sh:path <http://data.europa.eu/snb/model/elm/category> ;
+	], [
+		sh:severity sh:Violation ;
+		sh:name "target group"@en ;
+		sh:description "A specific target group or category for which this specification is designed. It should be provided using the EDC Controlled List of Target Groups."@en ;
+		sh:class skos:Concept ;
+		sh:path <http://data.europa.eu/snb/model/elm/targetGroup> ;
+	], [
+		sh:severity sh:Violation ;
+		sh:name "influenced by"@en ;
+		sh:description "Activities that a person can perform to acquire the expected learning outcomes."@en ;
+		sh:class <http://data.europa.eu/snb/model/elm/LearningActivitySpecification> ;
+		sh:path <http://data.europa.eu/snb/model/elm/influencedBy> ;
+	], [
+		sh:severity sh:Violation ;
+		sh:name "maximum duration"@en ;
+		sh:description "The maximum duration (in months) that a person may use to complete the learning opportunity for which this learning achievement specification is designed."@en ;
+		sh:maxCount 1 ;
+		sh:datatype xsd:duration ;
+		sh:path <http://data.europa.eu/snb/model/elm/maximumDuration> ;
+	], [
+		sh:severity sh:Violation ;
+		sh:name "is part of "@en ;
+		sh:description "A learning achievement specification, which this learning achievement specification is part of."@en ;
+		sh:or (
+			[
+				sh:class <http://data.europa.eu/snb/model/elm/LearningAchievementSpecification> ;
+			]
+			[
+				sh:class <http://data.europa.eu/snb/model/elm/Qualification> ;
+			]
+		) ;
+		sh:path <http://data.europa.eu/snb/model/elm/isPartOf> ;
+	], [
+		sh:severity sh:Violation ;
+		sh:name "volume of learning"@en ;
+		sh:description "The estimated number of hours the learner is expected to spend engaged in learning to earn the award. This would include the notional number of hours in class, in group work, in practicals, as well as hours engaged in self-motivated study."@en ;
+		sh:maxCount 1 ;
+		sh:datatype xsd:duration ;
+		sh:path <http://data.europa.eu/snb/model/elm/volumeOfLearning> ;
+	], [
+		sh:severity sh:Violation ;
+		sh:name "language"@en ;
+		sh:description "The language of the learning achievement specification. It should be provided using the Language Named Authority List."@en ;
+		sh:minCount 1 ;
+		sh:class skos:Concept ;
+		sh:path dcterms:language ;
+	], [
+		sh:severity sh:Violation ;
+		sh:name "education subject"@en ;
+		sh:description "An associated field of education from another semantic framework than the ISCED classification."@en ;
+		sh:class skos:Concept ;
+		sh:path <http://data.europa.eu/snb/model/elm/educationSubject> ;
+	], [
+		sh:severity sh:Violation ;
+		sh:name "generalisation of"@en ;
+		sh:description "A learning achievement specification (e.g., a standard) of which this specification is a generalisation."@en ;
+		sh:or (
+			[
+				sh:class <http://data.europa.eu/snb/model/elm/LearningAchievementSpecification> ;
+			]
+			[
+				sh:class <http://data.europa.eu/snb/model/elm/Qualification> ;
+			]
+		) ;
+		sh:path <http://data.europa.eu/snb/model/elm/generalisationOf> ;
+	], [
+		sh:severity sh:Violation ;
+		sh:name "mode"@en ;
+		sh:description "The mode of learning, and or assessment. It should be provided using the EDC Controlled List of Modes Of Learning and Assessment."@en ;
+		sh:class skos:Concept ;
+		sh:path <http://data.europa.eu/snb/model/elm/mode> ;
+	], [
+		sh:severity sh:Violation ;
+		sh:name "education level"@en ;
+		sh:description "An associated level of education within a semantic framework describing education levels."@en ;
+		sh:class skos:Concept ;
+		sh:path <http://data.europa.eu/snb/model/elm/educationLevel> ;
+	], [
+		sh:severity sh:Violation ;
+		sh:name "homepage"@en ;
+		sh:description "The homepage of the learning achievement specification."@en ;
+		sh:class <http://data.europa.eu/snb/model/elm/WebResource> ;
+		sh:path foaf:homepage ;
+	], [
+		sh:severity sh:Violation ;
+		sh:name "proven by"@en ;
+		sh:description "Assessments a person can undergo to prove the acquisition of the learning outcomes."@en ;
+		sh:class <http://data.europa.eu/snb/model/elm/LearningAssessmentSpecification> ;
+		sh:path <http://data.europa.eu/snb/model/elm/provenBy> ;
+	], [
+		sh:severity sh:Violation ;
+		sh:name "entitles to"@en ;
+		sh:description "Rights (such as which the person may acquire as a result of acquiring the learning outcomes)."@en ;
+		sh:class <http://data.europa.eu/snb/model/elm/LearningEntitlementSpecification> ;
+		sh:path <http://data.europa.eu/snb/model/elm/entitlesTo> ;
+	], [
+		sh:severity sh:Violation ;
+		sh:name "learning setting"@en ;
+		sh:description "The type of learning setting (formal, non-formal). It should be provided using the EDC Controlled List of Learning Setting Types."@en ;
+		sh:maxCount 1 ;
+		sh:class skos:Concept ;
+		sh:path <http://data.europa.eu/snb/model/elm/learningSetting> ;
+	], [
+		sh:severity sh:Violation ;
+		sh:name "learning outcome summary"@en ;
+		sh:description "The full learning outcome summary of the learning achievement specification."@en ;
+		sh:maxCount 1 ;
+		sh:class <http://data.europa.eu/snb/model/elm/Note> ;
+		sh:path <http://data.europa.eu/snb/model/elm/learningOutcomeSummary> ;
+	], [
+		sh:severity sh:Violation ;
+		sh:name "thematic area"@en ;
+		sh:description "The thematic area according to the ISCED-F 2013 Classification. It should be provided using the ISCEDF controlled vocabulary."@en ;
+		sh:minCount 1 ;
+		sh:class skos:Concept ;
+		sh:path <http://data.europa.eu/snb/model/elm/ISCEDFCode> ;
+	], [
+		sh:severity sh:Violation ;
+		sh:name "status"@en ;
+		sh:description "The publication status of the learning achievement specification."@en ;
+		sh:maxCount 1 ;
+		sh:datatype xsd:string ;
+		sh:path <http://data.europa.eu/snb/model/elm/status> ;
+	], [
+		sh:severity sh:Violation ;
+		sh:name "last modification date"@en ;
+		sh:description "The date when the learning achievement specification was last modified."@en ;
+		sh:maxCount 1 ;
+		sh:datatype xsd:dateTime ;
+		sh:path dcterms:modified ;
+	], [
+		sh:severity sh:Violation ;
+		sh:name "specialisation of"@en ;
+		sh:description "A learning  achievement specification (e.g., a standard) of which this specification is a specialisation."@en ;
+		sh:or (
+			[
+				sh:class <http://data.europa.eu/snb/model/elm/LearningAchievementSpecification> ;
+			]
+			[
+				sh:class <http://data.europa.eu/snb/model/elm/Qualification> ;
+			]
+		) ;
+		sh:path <http://data.europa.eu/snb/model/elm/specialisationOf> ;
+	], [
+		sh:severity sh:Violation ;
+		sh:name "awarding information"@en ;
+		sh:description "Refers to an activity related to the awarding of the learning specification, such as the country or region where the qualification is awarded, the awarding body and optionally the awarding period now or in the past."@en ;
+		sh:class <http://data.europa.eu/snb/model/elm/AwardingOpportunity> ;
+		sh:path <http://data.europa.eu/snb/model/elm/awardingOpportunity> ;
+	], [
+		sh:severity sh:Violation ;
+		sh:name "more information"@en ;
+		sh:description " An additional free text note about the learning achievement specification."@en ;
+		sh:class <http://data.europa.eu/snb/model/elm/Note> ;
+		sh:path <http://data.europa.eu/snb/model/elm/additionalNote> ;
+	], [
+		sh:severity sh:Violation ;
+		sh:name "has part"@en ;
+		sh:description "A learning achievement specification can be composed of other partial learning specifications which when combined make up this learning specification."@en ;
+		sh:or (
+			[
+				sh:class <http://data.europa.eu/snb/model/elm/LearningAchievementSpecification> ;
+			]
+			[
+				sh:class <http://data.europa.eu/snb/model/elm/Qualification> ;
+			]
+		) ;
+		sh:path <http://data.europa.eu/snb/model/elm/hasPart> ;
+	] ;
+	sh:deactivated true ;
+	sh:ignoredProperties (
+		rdf:type
+	) ;
+	rdfs:label "Learning Achievement Specification Shape"@en ;
+	sh:closed true ;
+	rdfs:comment "A description of what a person may learn using the opportunity, expressed as learning outcomes. A specification of learning achievement. Learning Achievement Specification is a subclass of Specification."@en ;
+	sh:targetClass <http://data.europa.eu/snb/model/elm/LearningAchievementSpecification> .
 
