@@ -42,7 +42,12 @@ jobs:
         with:
           ref: gh-pages
           path: gh-pages-branch
-      
+
+      - name: Generate HTML from SHACL
+        run: |
+          curl -L -o shacl-play.jar "https://github.com/sparna-git/shacl-play/releases/download/0.9.0/shacl-play-app-0.9.0-onejar.jar"
+          java -jar shacl-play.jar doc -ds -i main-branch/resources/ontology-shacl.ttl -l en -o main-branch/resources/ontology-shacl.html
+
       - name: Copy resources directory
         run: |
           cp -r main-branch/resources gh-pages-branch/
