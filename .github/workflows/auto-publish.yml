@@ -6,7 +6,7 @@ on:
     branches: [main]
 jobs:
   main:
-    name: Build, Validate and Deploy
+    name: Build, validate and deploy specs drafted in Bikeshed
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -26,7 +26,7 @@ jobs:
           GH_PAGES_BRANCH: gh-pages
 
   copy-resources:
-    name: Copy Resources to GH Pages
+    name: Convert RDF files, generate documentation and copy to gh-pages
     needs: main
     runs-on: ubuntu-latest
     permissions:
@@ -43,10 +43,18 @@ jobs:
           ref: gh-pages
           path: gh-pages-branch
 
+      - name: Convert Turtle to JSON-LD and RDF+XML
+        run: |
+          python -m pip install rdflib && \
+          for infile in main-branch/resources/*.ttl ; do
+            python -m rdflib.tools.rdfpipe -i turtle -o json-ld $infile > main-branch/resources/`basename -s .ttl $infile`.json
+            python -m rdflib.tools.rdfpipe -i turtle -o xml $infile > main-branch/resources/`basename -s .ttl $infile`.rdf
+          done
+
       - name: Generate HTML from SHACL
         run: |
-          curl -L -o shacl-play.jar "https://github.com/sparna-git/shacl-play/releases/download/0.9.0/shacl-play-app-0.9.0-onejar.jar"
-          java -jar shacl-play.jar doc -ds -i main-branch/resources/ontology-shacl.ttl -l en -o main-branch/resources/ontology-shacl.html
+          curl -L -o shacl-play.jar "https://github.com/sparna-git/shacl-play/releases/download/0.9.0/shacl-play-app-0.9.0-onejar.jar" && \
+          for infile in main-branch/resources/*.ttl ; do java -jar shacl-play.jar doc -d -i $infile -l en -o main-branch/resources/`basename -s .ttl $infile`.html ; done
 
       - name: Copy resources directory
         run: |
