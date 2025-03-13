@@ -6,7 +6,6 @@ import re
 def create_resource_map(base_name):
     """
     Create a map of content types to resource paths for a given base name.
-    HTML files are placed at the root, other formats in resources/ directory.
     
     Args:
         base_name (str): The base name for the resource files
@@ -20,9 +19,9 @@ def create_resource_map(base_name):
         'text/xml':             f'resources/{base_name}.rdf',
         'application/ld+json':  f'resources/{base_name}.json',
         'application/json':     f'resources/{base_name}.json',
-        'text/html':            f'{base_name}.html',  # HTML at root
+        'text/html':            f'resources/{base_name}.html',
         'text/plain':           f'resources/{base_name}.ttl',
-        '*/*':                  f'{base_name}.html',  # Default is HTML at root
+        '*/*':                  f'resources/{base_name}.html',  # Default is HTML
     }
 
 # Path to resource mappings
@@ -32,9 +31,8 @@ def create_resource_map(base_name):
 # For example, to map 'new/path' to files named 'new-resource':
 #   'new/path': create_resource_map('new-resource')
 #
-# This will automatically create mappings for all supported content types:
-# - HTML file at root: new-resource.html
-# - Other formats in resources/: resources/new-resource.ttl, resources/new-resource.json, etc.
+# This will automatically create mappings for all supported content types.
+#
 path_map = {
     # This maps the URL path 'ontology/v1' to files with base name 'ontology-shacl'
     'ontology/v1': create_resource_map('ontology-shacl'),
@@ -126,12 +124,12 @@ def lambda_handler(event, context):
         
         # For unknown paths, we can either:
         # 1. Simply append .html to the path
-        headers['Location'] = f"{specs_base_url}/{path}.html"
+        headers['Location'] = f"{specs_base_url}/resources/{path}.html"
         
         # 2. Or we could dynamically choose based on Accept header (optional)
         # This would allow content negotiation for unknown paths too
         if 'text/html' in accept_header or '*/*' in accept_header:
-            headers['Location'] = f"{specs_base_url}/{path}.html"
+            headers['Location'] = f"{specs_base_url}/resources/{path}.html"
         elif 'text/turtle' in accept_header:
             headers['Location'] = f"{specs_base_url}/resources/{path}.ttl"
         elif 'application/json' in accept_header or 'application/ld+json' in accept_header:
