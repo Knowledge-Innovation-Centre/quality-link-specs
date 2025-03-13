@@ -27,11 +27,6 @@ def lambda_handler(event, context):
     request_headers = event.get('headers', {})
     accept_header = request_headers.get('Accept', '') or request_headers.get('accept', '')
     
-    # Define our content types and preferences
-    html_types = ['text/html', '*/*']
-    semantic_web_types = ['text/turtle', 'application/rdf+xml', 'application/n-triples', 
-                         'application/ld+json', 'application/rdf+json']
-    
     # Get the requested path from the event
     path = ""
     
@@ -87,8 +82,7 @@ def lambda_handler(event, context):
     # Log request details for debugging (will appear in CloudWatch)
     print(f"Path: {path}")
     print(f"Accept header: {accept_header}")
-    print(f"User agent: {user_agent}")
-    print(f"Redirecting to: {headers.get('Location')}")
+    print(f"Redirecting to: {headers.get('Location', '-- n/a --')}")
     
     # Return the redirect response
     return {
