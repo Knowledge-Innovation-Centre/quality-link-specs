@@ -131,36 +131,77 @@ ql:SchacIdentifier
 	] .
 
 
-###  http://data.quality-link.eu/ontology/v1#TargetGroup
-ql:TargetGroup
+###  http://data.quality-link.eu/ontology/v1#LearnerGroup
+ql:LearnerGroup
     a owl:Class, sh:NodeShape ;
-    rdfs:label "Target Group"@en ;
+    rdfs:label "Learner Group"@en ;
     rdfs:comment "Defines a target group of learners to whom a Learning Opportunity is offered, e.g. students of a specific alliance or HEI"@en ;
-	sh:property [
-		sh:name "home institutions"@en ;
-		sh:description "students from these higher education institution(s) make up the target group"@en ;
-		sh:minCount 1 ;
-		sh:or (
-			[
-				sh:class ql:HigherEducationInstitution ;
-			]
-			[
-				sh:class ql:GroupOfHEIs ;
-			]
-		) ;
-		sh:path ql:studentsOf ;
-	], [
-		sh:description "Link to a portal where students can register for the learning opportunity (specific for this target group)."@en ;
+    sh:property [
+        sh:name "home institutions"@en ;
+        sh:description "Offered to students from these higher education institution(s)."@en ;
+        sh:or (
+            [
+                sh:class ql:HigherEducationInstitution ;
+            ]
+            [
+                sh:class ql:GroupOfHEIs ;
+            ]
+        ) ;
+        sh:path ql:studentsOf ;
+    ], [
+        sh:description "Indicates that the Learning Opportunity is also offered to learners who are not enrolled as students."@en ;
+        sh:maxCount 1 ;
+        sh:path ql:isOpenToNonEnrolled ;
+        sh:datatype xsd:boolean ;
+    ], [
+		sh:description "Link to a portal where students can register for the learning opportunity (specific for this group of learners)."@en ;
 		sh:maxCount 1 ;
 		sh:path ql:registrationPortal ;
 		sh:datatype xsd:anyURI ;
 	], [
+		sh:description "Offered to students following a specific other learning opportunity."@en ;
+        sh:path ql:limitLearningOpportunity ;
+        sh:or (
+            [
+                sh:class ql:LearningOpportunitySpecificationReference ;
+            ]
+            [
+                sh:class ql:LearningOpportunityInstanceReference ;
+            ]
+        ) ;
+	], [
 		sh:name "specific field"@en ;
-		sh:description "targets students from (a) specific field(s) of study."@en ;
+		sh:description "Offered to students from (a) specific field(s) of study."@en ;
 		sh:path elm:limitField ;
 		sh:class skos:Concept ;
 	], [
+        sh:description "Offered to students enrolled in another learning opportunity at a specified EQF level or higher. If provided, the value must come from the EU controlled vocabulary http://publications.europa.eu/resource/dataset/european-qualification-framework"@en ;
+        sh:path ql:minimumEQFLevel ;
+		sh:class skos:Concept ;
+	], [
+		sh:name "fees"@en ;
+		sh:description "Information about the pricing of the course, applicable for this specific target group."@en ;
+        sh:path elm:priceDetail ;
+        sh:class elm:PriceDetail ;
+	], [
+        sh:description "Number of learners from the specific group that can be enrolled."@en ;
+        sh:path ql:enrolmentCapacity ;
+        sh:datatype xsd:nonNegativeInteger ;
+	], [
+		sh:name "admissions procedure"@en ;
+		sh:description "Information on how to apply for this specific group of learners."@en ;
+		sh:maxCount 1 ;
+        sh:path elm:admissionProcedure ;
+        sh:class elm:Note ;
+	], [
+		sh:name "entry requirement"@en ;
+		sh:description "Entry requirement or prerequisites that apply to this specific group of learners."@en ;
+		sh:maxCount 1 ;
+        sh:path elm:entryRequirement ;
+        sh:class elm:Note ;
+	], [
 		sh:name "information note"@en ;
+		sh:description "Additional information about the group of learners to which the LO is offered."@en ;
 		sh:class <http://data.europa.eu/snb/model/elm/Note> ;
 		sh:path <http://data.europa.eu/snb/model/elm/additionalNote> ;
 	] .
@@ -170,25 +211,30 @@ ql:TargetGroup
 ql:LearningOpportunitySpecification
     a owl:Class, sh:NodeShape ;
 	rdfs:subClassOf elm:LearningAchievementSpecification , <http://data.europa.eu/snb/model/ap/loq-constraints/LearningAchievementSpecificationShape> ;
-	rdfs:label "Learning Opportunity (specification)"@en ;
+	rdfs:label "Learning Opportunity Specification"@en ;
 	rdfs:comment "An asbtract opportunity to acquire a given set of learning outcomes, e.g. the general specification of a course, programme or module offered by an education provider."@en ;
 	sh:property [
+        sh:path ql:isActive ;
+        sh:datatype xsd:boolean ;
+    ], [
         sh:class ql:LearningOpportunitySpecificationReference ;
 		sh:path ql:superseded ;
     ], [
 		sh:nodeKind sh:Literal ;
 		sh:path ql:version ;
+    ], [
+        sh:path ql:equivalentTo ;
+        sh:class ql:LearningOpportunitySpecificationReference ;
 	] .
-
 
 ###  http://data.quality-link.eu/ontology/v1#LearningOpportunityInstance
 ql:LearningOpportunityInstance
     a owl:Class, sh:NodeShape ;
 	rdfs:subClassOf elm:LearningOpportunity , <http://data.europa.eu/snb/model/ap/loq-constraints/LearningOpportunityShape> ;
-	rdfs:label "Learning Opportunity (instance)"@en ;
+	rdfs:label "Learning Opportunity Instance"@en ;
 	rdfs:comment "A concrete opportunity to realise a given set of learning outcomes via a learning activity and/or assessment, e.g. a course, programme or module as offered in a specific academic year or semester."@en ;
 	sh:property [
-		sh:class ql:TargetGroup ;
+		sh:class ql:LearnerGroup ;
 		sh:path ql:availableTo ;
 	], [
 		sh:maxCount 1 ;
@@ -199,7 +245,7 @@ ql:LearningOpportunityInstance
 
 ql:LearningOpportunitySpecificationReference
     a owl:Class, sh:NodeShape ;
-	rdfs:label "Learning Opportunity (specification) Reference"@en ;
+	rdfs:label "Learning Opportunity Specification Reference"@en ;
 	rdfs:comment "A reference to another Learning Opportunity specification, identified by a provider and a (local) identifier, without further details."@en ;
 	sh:property [
 		sh:name "provided by"@en ;
@@ -210,7 +256,7 @@ ql:LearningOpportunitySpecificationReference
         sh:path elm:providedBy ;
     ], [
         sh:name "(local) identifier"@en ;
-        sh:description "Identifier of the Learning Opportunity specification. Must be unique within the scope of the institution identified with providedBy."@en ;
+        sh:description "Identifier of the Learning Opportunity Specification. Must be unique within the scope of the institution identified with providedBy."@en ;
         sh:class elm:Identifier ;
         sh:minCount 1;
         sh:maxCount 1;
@@ -219,8 +265,8 @@ ql:LearningOpportunitySpecificationReference
 
 ql:LearningOpportunityInstanceReference
     a owl:Class, sh:NodeShape ;
-	rdfs:label "Learning Opportunity (instance) Reference"@en ;
-	rdfs:comment "A reference to another Learning Opportunity instance, identified by a provider and a (local) identifier, without further details."@en ;
+	rdfs:label "Learning Opportunity Instance Reference"@en ;
+	rdfs:comment "A reference to another Learning Opportunity Instance, identified by a provider and a (local) identifier, without further details."@en ;
 	sh:property [
 		sh:name "provided by"@en ;
         sh:description "Higher Education Institution that offers the LO."@en ;
@@ -252,7 +298,6 @@ ql:relatedTo rdf:type owl:ObjectProperty ,
 ql:spunOffFrom rdf:type owl:ObjectProperty ;
                rdfs:subPropertyOf ql:relatedTo ;
                rdfs:domain elm:Organisation ;
-               rdfs:range elm:Organisation ;
                rdfs:comment "Organisation spun off from another one (i.e. subject newly created by the event, object existed before and after)"@en ;
                rdfs:label "spun off from"@en .
 
@@ -261,7 +306,6 @@ ql:spunOffFrom rdf:type owl:ObjectProperty ;
 ql:absorbed rdf:type owl:ObjectProperty ;
             rdfs:subPropertyOf ql:relatedTo ;
             rdfs:domain elm:Organisation ;
-            rdfs:range elm:Organisation ;
             rdfs:comment "Organisation absorbed another one (i.e. subject existed before and after the event, object ceased to exist)"@en ;
             rdfs:label "absorbed"@en .
 
@@ -270,7 +314,6 @@ ql:absorbed rdf:type owl:ObjectProperty ;
 ql:succeeded rdf:type owl:ObjectProperty ;
              rdfs:subPropertyOf ql:relatedTo ;
              rdfs:domain elm:Organisation ;
-             rdfs:range elm:Organisation ;
              rdfs:comment "Organisation succeeded/replaced another one (i.e. subject was newly created by the event, object ceased to exist)"@en ;
              rdfs:label "succeeded"@en .
 
@@ -279,24 +322,44 @@ ql:succeeded rdf:type owl:ObjectProperty ;
 ql:superseded rdf:type owl:ObjectProperty ;
     rdfs:subPropertyOf ql:relatedTo ;
     rdfs:domain ql:LearningOpportunitySpecification ;
-    rdfs:range ql:LearningOpportunitySpecification ;
-    rdfs:comment "Learning Opportunity specification superseded another one, which is no longer or temporarily not offered."@en ;
-    rdfs:label "succeeded"@en .
+    rdfs:comment "Learning Opportunity specification superseded another one, which is no longer (or temporarily not) offered."@en ;
+    rdfs:label "superseded"@en .
+
+
+###  http://data.quality-link.eu/ontology/v1#equivalentTo
+ql:equivalentTo rdf:type owl:ObjectProperty ;
+    rdfs:domain ql:LearningOpportunitySpecification ;
+    rdfs:comment "Specifies another Learning Opportunity Specification which the publisher considers equivalent to the subject, e.g. based on a recognition agreement or previous recognition decisions."@en ;
+    rdfs:label "equivalent to"@en .
 
 
 ###  http://data.quality-link.eu/ontology/v1#availableTo
 ql:availableTo rdf:type owl:ObjectProperty ;
                rdfs:domain ql:LearningOpportunityInstance ;
-               rdfs:range ql:TargetGroup ;
+               rdfs:range ql:LearnerGroup ;
                rdfs:comment "Indicates the target group to which this learning opportunity is available" ;
                rdfs:label "available to"@en .
 
 
 ###  http://data.quality-link.eu/ontology/v1#studentsOf
 ql:studentsOf rdf:type owl:ObjectProperty ;
-              rdfs:domain ql:TargetGroup ;
-              rdfs:comment "Defines that the Target Group of a Learning Opportunity includes the students of an education institution, or an alliance thereof"@en ;
+              rdfs:domain ql:LearnerGroup ;
+              rdfs:comment "Defines that the target group of learners includes the students of an education institution, or an alliance thereof"@en ;
               rdfs:label "includes students of"@en .
+
+
+###  http://data.quality-link.eu/ontology/v1#limitLearningOpportunity
+ql:limitLearningOpportunity rdf:type owl:ObjectProperty ;
+    rdfs:domain ql:LearnerGroup ;
+    rdfs:comment "Defines that the learning opportunity is offered to students enrolled in a specified other learning opportunity."@en ;
+    rdfs:label "specific learning opportunity"@en .
+
+
+###  http://data.quality-link.eu/ontology/v1#minimumEQFLevel
+ql:minimumEQFLevel rdf:type owl:ObjectProperty ;
+    rdfs:domain ql:LearnerGroup ;
+    rdfs:comment "Defines that the learning opportunity is offered to students enrolled in another learning opportunity at a specified EQF level or higher. If provided, the value must come from the EU controlled vocabulary http://publications.europa.eu/resource/dataset/european-qualification-framework"@en ;
+    rdfs:label "minimum EQF Level"@en .
 
 
 #################################################################
@@ -309,11 +372,34 @@ ql:registrationPortal rdf:type owl:DatatypeProperty ;
                       rdfs:comment "A web page at which one can register or enrol for a Learning Opportunity." ;
                       rdfs:label "registration portal"@en .
 
+
 ###  http://data.quality-link.eu/ontology/v1#version
 ql:version rdf:type owl:DatatypeProperty ;
     rdfs:range xsd:string ;
     rdfs:comment "A number or other identifier that indicates the version of the Learning Opportunity specifcation." ;
     rdfs:label "version"@en .
+
+
+###  http://data.quality-link.eu/ontology/v1#isActive
+ql:isActive a owl:DatatypeProperty ;
+    rdfs:range xsd:boolean ;
+    rdfs:comment "Learning Opportunity Specification is active, i.e. instances are currently offered or the education provider expects that instances will still be offered in the future." ;
+    rdfs:label "is active"@en .
+
+
+###  http://data.quality-link.eu/ontology/v1#isOpenToNonEnrolled
+ql:isOpenToNonEnrolled a owl:DatatypeProperty ;
+    rdfs:range xsd:boolean ;
+    rdfs:comment "Indicates that a learning opportunity is alos open to learners not currently enrolled as regular students." ;
+    rdfs:label "open to non-enrolled learners"@en .
+
+
+###  http://data.quality-link.eu/ontology/v1#enrolmentCapacity
+ql:enrolmentCapacity a owl:DatatypeProperty ;
+    rdfs:range xsd:nonNegativeInteger ;
+    rdfs:comment "Specified the number of learners that can register for a Learning Opportunity Instance." ;
+    rdfs:label "enrolment capacity"@en .
+
 
 #################################################################
 #    Individuals
@@ -336,13 +422,13 @@ ql:Schac rdf:type skos:ConceptScheme ;
 #################################################################
 
 elm:LearningOpportunity a rdfs:Class, owl:Class ;
-	rdfs:label "Learning Opportunity"@en ;
+	rdfs:label "Learning Opportunity (ELM)"@en ;
 	rdfs:isDefinedBy <http://data.europa.eu/snb/model/elm> ;
 	rdfs:comment "The conditions, e.g. time and location, under which a person may acquire a set of knowledge and/or skills used with responsibility and autonomy."@en ;
 	dcterms:identifier "elm:LearningOpportunity" .
 
 elm:LearningAchievementSpecification a rdfs:Class, owl:Class ;
-	rdfs:label "Learning Achievement Specification"@en ;
+	rdfs:label "Learning Achievement Specification (ELM)"@en ;
 	rdfs:isDefinedBy <http://data.europa.eu/snb/model/elm> ;
 	rdfs:comment "Description of a set of knowledge and/or skills used with responsibility and autonomy, which may be acquired."@en ;
     dcterms:identifier "elm:LearningAchievementSpecification" ;
@@ -824,7 +910,7 @@ elm:LearningAchievementSpecification a rdfs:Class, owl:Class ;
 	sh:ignoredProperties (
 		rdf:type
 	) ;
-	rdfs:label "Learning Achievement Specification Shape"@en ;
+	rdfs:label "Learning Achievement Specification (ELM)"@en ;
 	sh:closed true ;
 	rdfs:comment "A description of what a person may learn using the opportunity, expressed as learning outcomes. A specification of learning achievement. Learning Achievement Specification is a subclass of Specification."@en ;
 	sh:targetClass <http://data.europa.eu/snb/model/elm/LearningAchievementSpecification> .
