@@ -53,8 +53,10 @@ jobs:
 
       - name: Generate HTML from SHACL
         run: |
+          sudo apt-get -y update && \
+          sudo apt-get -y install graphviz && \
           curl -L -o shacl-play.jar "https://github.com/sparna-git/shacl-play/releases/download/0.9.0/shacl-play-app-0.9.0-onejar.jar" && \
-          for infile in main-branch/resources/*.ttl ; do java -jar shacl-play.jar doc -d -i $infile -l en -o main-branch/resources/`basename -s .ttl $infile`.html ; done
+          for infile in main-branch/resources/*.ttl ; do GRAPHVIZ_DOT=/usr/bin/dot java -jar shacl-play.jar doc -d -i $infile -l en -o main-branch/resources/`basename -s .ttl $infile`.html ; done
 
       - name: Copy resources directory
         run: |
