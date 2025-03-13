@@ -2,18 +2,16 @@ import json
 import os
 import re
 
-from content_negotiation import decide_content_type, NoAgreeableContentTypeError
-
 path_map = {
     'ontology/v1': {
-        '*/*':                  'resources/ontology-shacl.html',
-        'text/html':            'resources/ontology-shacl.html',
         'text/turtle':          'resources/ontology-shacl.ttl',
-        'text/plain':           'resources/ontology-shacl.ttl',
         'application/rdf+xml':  'resources/ontology-shacl.rdf',
         'text/xml':             'resources/ontology-shacl.rdf',
         'application/ld+json':  'resources/ontology-shacl.json',
         'application/json':     'resources/ontology-shacl.json',
+        'text/html':            'resources/ontology-shacl.html',
+        'text/plain':           'resources/ontology-shacl.ttl',
+        '*/*':                  'resources/ontology-shacl.html',
     }
 }
 
@@ -62,18 +60,20 @@ def lambda_handler(event, context):
         }
 
     if path in path_map:
-        # negotiate content type to deliver
-        try:
-            content_type = decide_content_type( [accept_header], path_map[path].keys() )
+        # default target if available
+        if '*/*' in path_map[path]:
             status_code = 303
-            headers['Location'] = f"{specs_base_url}/{path_map[path][content_type]}"
-        except NoAgreeableContentTypeError:
-            if '*/*' in path_map[path]:
+            headers['Location'] = f"{specs_base_url}/{path_map[path]['*/*']}"
+        else:
+            status_code = 406
+            body = 'No agreeable content type found.'
+        # negotiate content type to deliver
+        for content_type in path_map[path]:
+            if content_type in accept_header:
                 status_code = 303
-                headers['Location'] = f"{specs_base_url}/{path_map[path]['*/*']}"
-            else:
-                status_code = 406
-                body = 'No agreeable content type found.'
+                headers['Location'] = f"{specs_base_url}/{path_map[path][content_type]}"
+                body = ''
+                break
     else:
         # pass through unknown paths
         status_code = 303
