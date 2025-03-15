@@ -10,7 +10,7 @@ Note: initial list based on QualityLink glossary. Add specific terms needed for 
 :: a proof of the learning outcomes that a learner has acquired following a short learning experience. These learning outcomes have been assessed against transparent standards. [[CR-MC]]
 : <dfn>programme</dfn>
 :: collection of [=learning opportunities=]. Finalising a study programme usually leads to a degree (e.g. Bachelor degree, Master degree, etc.) or to another type of certificate, e.g. a [=micro-credential=], for a shorter programme. A programme is a "top-level" [=learning opportunity=] and has no parent.
-: <dfn>joint programme</dfn>
+: <dfn data-export>joint programme</dfn>
 :: an integrated curriculum coordinated and offered jointly by different [=higher education institutions=], and leading to double/multiple degrees or a joint degree. [[DEQAR]]
 : <dfn>education provider</dfn>
 :: any actor that provides degree programmes, micro-credentials or other [=learning opportunities=]. This may include [=higher education institutions=] as well as [=other providers=], including employers, companies, social partners, NGOs, public authorities and others. [[DEQAR]]
@@ -20,5 +20,5 @@ Note: initial list based on QualityLink glossary. Add specific terms needed for 
 :: an entity that provides learning opportunities, but that does not have officially-recognised authority to award degrees or other formally recognised qualifications.
 : <dfn>data provider</dfn>
 :: an entity providing data on [=learning opportunities=]. This can be an [=education provider=] providing data on its own learning opportunities or another organisation providing data on various [=education providers=].
-: <dfn>aggregator</dfn>
+: <dfn data-export>aggregator</dfn>
 :: any service that harvests data from different [=data providers=], matches and compiles the data into one single dataset. For example, the aggregator service developed within the QualityLink project.
