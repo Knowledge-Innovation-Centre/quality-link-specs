@@ -1,42 +1,59 @@
 name: Deploy to AWS Lambda
-
 on:
   push:
     paths:
       - 'content_negotiation/**'  # This workflow triggers on any changes to files in the content_negotiation folder
-
 jobs:
   deploy-lambda:
     runs-on: ubuntu-latest
+    env:
+      # Environment variables - these are not sensitive
+      SPECS_BASE_URL: https://specs.quality-link.eu
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-
+      
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.9'  # Choose your Python version
-
+      
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v2
         with:
+          # These are sensitive and should be secrets
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ secrets.AWS_REGION }}
-
+          aws-region: ${{ vars.AWS_REGION }}
+      
       - name: Install dependencies
         working-directory: ./content_negotiation
         run: |
           python -m pip install --upgrade pip
           if [ -f requirements.txt ]; then pip install -r requirements.txt -t .; fi
-
+      
       - name: Create deployment package
         run: |
           cd content_negotiation
           zip -r ../lambda_deployment_package.zip .
-
+      
       - name: Deploy to AWS Lambda
         run: |
           aws lambda update-function-code \
-            --function-name ${{ secrets.LAMBDA_FUNCTION_NAME }} \
+            --function-name ${{ vars.LAMBDA_FUNCTION_NAME }} \
             --zip-file fileb://lambda_deployment_package.zip
+      
+      - name: Update Lambda environment variables
+        run: |
+          aws lambda update-function-configuration \
+            --function-name ${{ vars.LAMBDA_FUNCTION_NAME }} \
+            --environment "Variables={FRONTEND_BASE_URL=${{ env.FRONTEND_BASE_URL }},API_BASE_URL=${{ env.API_BASE_URL }}}"
+      
+      # Optionally, invalidate CloudFront cache to propagate changes quickly
+      - name: Invalidate CloudFront cache
+        if: ${{ vars.CLOUDFRONT_DISTRIBUTION_ID != '' }}
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id ${{ vars.CLOUDFRONT_DISTRIBUTION_ID }} \
+            --paths "/*"
