@@ -4,10 +4,14 @@ on:
   pull_request: {}
   push:
     branches: [main]
+    paths:
+      - '*.bs'
+      - 'resources/*.ttl'
+
 jobs:
   main:
     name: Build, validate and deploy specs drafted in Bikeshed
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     permissions:
       contents: write
     strategy:
@@ -28,7 +32,7 @@ jobs:
   copy-resources:
     name: Convert RDF files, generate documentation and copy to gh-pages
     needs: main
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     permissions:
       contents: write
     steps:
@@ -43,20 +47,39 @@ jobs:
           ref: gh-pages
           path: gh-pages-branch
 
+      - name: Initialise Python evironment
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: python3.12-rdflib
+
+      - name: Install RDFlib
+        run: python -m pip install rdflib
+
       - name: Convert Turtle to JSON-LD and RDF+XML
         run: |
-          python -m pip install rdflib && \
           for infile in main-branch/resources/*.ttl ; do
             python -m rdflib.tools.rdfpipe -i turtle -o json-ld $infile > main-branch/resources/`basename -s .ttl $infile`.json
             python -m rdflib.tools.rdfpipe -i turtle -o xml $infile > main-branch/resources/`basename -s .ttl $infile`.rdf
           done
 
-      - name: Generate HTML from SHACL
+      - name: Cache SHACL Play app
+        uses: actions/cache@v4
+        with:
+          path: ~/opt
+          key: cache-shacl-play-0.9.0
+
+      - name: Install SHACL Play app
         run: |
           sudo apt-get -y update && \
           sudo apt-get -y install graphviz && \
-          curl -L -o shacl-play.jar "https://github.com/sparna-git/shacl-play/releases/download/0.9.0/shacl-play-app-0.9.0-onejar.jar" && \
-          for infile in main-branch/resources/*.ttl ; do GRAPHVIZ_DOT=/usr/bin/dot java -jar shacl-play.jar doc -d -i $infile -l en -o main-branch/resources/`basename -s .ttl $infile`.html ; done
+          test -f ~/opt/shacl-play.jar || curl -L -o ~/opt/shacl-play.jar "https://github.com/sparna-git/shacl-play/releases/download/0.9.0/shacl-play-app-0.9.0-onejar.jar"
+
+      - name: Generate HTML from SHACL
+        run: |
+          for infile in main-branch/resources/*.ttl ; do
+            GRAPHVIZ_DOT=/usr/bin/dot java -jar ~/opt/shacl-play.jar doc -d -i $infile -l en -o main-branch/resources/`basename -s .ttl $infile`.html
+          done
 
       - name: Copy resources directory
         run: |
