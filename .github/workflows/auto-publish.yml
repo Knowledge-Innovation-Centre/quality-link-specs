@@ -60,15 +60,14 @@ jobs:
       - name: Cache SHACL Play app
         uses: actions/cache@v4
         with:
-          path: ~/opt
-          key: cache-shacl-play-0.9.0
+          path: ~/shacl-play.jar
+          key: shacl-play-0.9.0
 
       - name: Install SHACL Play app
         run: |
           sudo apt-get -y update && \
           sudo apt-get -y install graphviz && \
-          mkdir -p ~/opt && \
-          test -f ~/opt/shacl-play.jar || curl -L -o ~/opt/shacl-play.jar "https://github.com/sparna-git/shacl-play/releases/download/0.9.0/shacl-play-app-0.9.0-onejar.jar"
+          test -f shacl-play.jar || curl -L -o shacl-play.jar "https://github.com/sparna-git/shacl-play/releases/download/0.9.0/shacl-play-app-0.9.0-onejar.jar"
 
       - name: Generate HTML from SHACL
         run: |
