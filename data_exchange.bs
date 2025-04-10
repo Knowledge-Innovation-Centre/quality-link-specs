@@ -59,6 +59,8 @@ The following key concepts and terminology are used throughout the document, as 
 <pre class=include>
 path: concepts.include
 </pre>
+: <dfn>manifest file</dfn>
+:: a file listing a [=data provider's=] data sources available for aggregation, as described in [[!QL-DISCO]]
 
 User Stories {#user-stories}
 ============
@@ -102,7 +104,7 @@ A [=data provider=] may choose one or several options in which to provide their 
 
 An [=aggregator=] should support all formats described.
 
-None of the formats mandate the use of encrypted connections, i.e. HTTPS, necessarily. [=Data providers=] should, however, use HTTPS wherever possible; the use of HTTPS is ensured by providing `https://` URIs in the manifest file.
+None of the formats mandate the use of encrypted connections, i.e. HTTPS, necessarily. [=Data providers=] should, however, use HTTPS wherever possible; the use of HTTPS is ensured by providing `https://` URIs in the [=manifest file=].
 
 Static ELM File {#elm}
 ---------------
@@ -131,11 +133,9 @@ ELM data must comply with the requirements specified by the shape `http://data.q
 
 [=Aggregators=] should harvest data sources less frequently if neither of the two options are implemented.
 
-Note: consider whether to indicate frequency of QualityLink aggregator runs here or elsewhere
-
 ### Metadata ### {#elm-metadata}
 
-[=Data providers=] must provide the following metadata in their manifest file for this method:
+[=Data providers=] must provide the following metadata in their [=manifest file=] for this method:
 
 <pre class=simpledef>
 type: `elm`
@@ -187,7 +187,7 @@ Standard HTTP headers are, however, compatible with OOAPI and [=data providers=]
 
 ### Metadata ### {#ooapi-metadata}
 
-[=Data providers=] must provide the following metadata in their manifest file for this method:
+[=Data providers=] must provide the following metadata in their [=manifest file=] for this method:
 
 <pre class=simpledef>
 type: `ooapi`
@@ -235,7 +235,7 @@ The QualityLink [=aggregator=] may use the `dateLastModified` value from previou
 
 ### Metadata ### {#edu-api-metadata}
 
-[=Data providers=] must provide the following metadata in their manifest file for this method:
+[=Data providers=] must provide the following metadata in their [=manifest file=] for this method:
 
 <pre class=simpledef>
 type: `edu-api`
@@ -273,7 +273,7 @@ Based on IP address {#access-control-ip}
 
 A [=data provider=] can limit access to certain ranges of IP addresses. To that end, [=aggregators=] should publish the IP address ranges from which their services may contact the exposed methods.
 
-[=Data providers=] can provide the following metadata in their manifest file for this method:
+[=Data providers=] can provide the following metadata in their [=manifest file=] for this method:
 
 <pre class=simpledef>
 auth: `none` (or missing)
@@ -288,7 +288,7 @@ HTTP Request Header {#access-control-header}
 
 The [=data provider=] may request that the [=aggregator=] include a specific HTTP header in all requests, e.g. a secret token.
 
-[=Data providers=] must provide the following metadata in their manifest file for this method:
+[=Data providers=] must provide the following metadata in their [=manifest file=] for this method:
 
 <pre class=simpledef>
 auth: `httpheader`
@@ -319,7 +319,7 @@ An [=aggregator=] must support the following:
 - **Access Token**: The [=aggregator=] must request and include a valid OAuth 2.0 Bearer token in the `Authorization` header of each request (i.e. `Authorization: Bearer <token>` per [[!RFC6750]]).
 - Handle token expiration and renewal gracefully.
 
-[=Data providers=] must provide the following metadata in their manifest file for this method:
+[=Data providers=] must provide the following metadata in their [=manifest file=] for this method:
 
 <pre class=simpledef>
 auth: `oauth2.0`
@@ -346,11 +346,11 @@ The [=aggregator=] must publish the following information in order to allow [=da
 - A (list of) supported signature algorithm(s) (`alg`), including only algorithms based on asymmetric cryptography
 - One public key per supported signature algorithm, together with a `keyid` that will be used
 
-A [=data provider=] must support one of signature algorithm(s) supported by the [=aggregator=]. Unless it supports all algorithms, it needs to select the desired algorithm in the manifest file.
+A [=data provider=] must support one of signature algorithm(s) supported by the [=aggregator=]. Unless it supports all algorithms, it needs to select the desired algorithm in the [=manifest file=].
 
 The [=data provider=] should handle requests that are authenticated by a verified HTTP Message Signature, i.e. verify against the [=aggregator's=] public key, are applicable to the [=data provider=] based on the `@authority` component and are valid based on the `expires` parameter. If the [=data provider=] receives a request without a HTTP Message Signature, it should return a 401 (Unauthorized) response unless the request could be authenticated through another mechanism. If the request cannot be authenticated, the [=data provider=] should return a 403 (Forbidden) response. If the request contains corrupted or invalid `Signature` or `Signature-Input` headers, the [=data provider=] should return a 400 (Bad Request) response.
 
-[=Data providers=] must provide the following metadata in their manifest file for this method:
+[=Data providers=] must provide the following metadata in their [=manifest file=] for this method:
 
 <pre class=simpledef>
 auth: `httpsig`
