@@ -102,7 +102,7 @@ A [=data provider=] may choose one or several options in which to provide their 
 
 An [=aggregator=] should support all formats described.
 
-Note: To be discussed which formats QualityLink aggregator can support initially.
+None of the formats mandate the use of encrypted connections, i.e. HTTPS, necessarily. [=Data providers=] should, however, use HTTPS wherever possible; the use of HTTPS is ensured by providing `https://` URIs in the manifest file.
 
 Static ELM File {#elm}
 ---------------
@@ -210,8 +210,8 @@ the Edu-API *Learning Resource Core* bindings for full details.
 ### Incremental Updates ### {#edu-api-incremental}
 
 The [[!Edu-API]] specification includes a `dateLastModified` property in resource responses (e.g., for courses and programs), indicating the last modification date in ISO 8601 format. 
-This property enables tracking changes to individual resources and can be combined with the `filter` parameter on collections like `GET /courses` or `GET /programs` to support efficient 
-aggregation, providing patterns for both initial bulk loads and delta updates, [=data providers=] and [=aggregators=] should follow this choreography where possible:
+
+This property enables tracking changes to individual resources and can be combined with the `filter` parameter on collections like `GET /courses` or `GET /programs` to support efficient aggregation, providing patterns for both initial bulk loads and delta updates, [=data providers=] and [=aggregators=] should follow this choreography where possible:
 
 - **Initial or Bulk Load**: The [=aggregator=] makes a series of "get all" requests (e.g., `GET /courses`, `GET /programs`) to retrieve all resources needed, establishing a baseline dataset. The `dateLastModified` value for each resource should be recorded for subsequent delta updates.
 
@@ -231,25 +231,7 @@ version: The Edu-API version implemented (e.g., `1.0`)
 
 ### Authentication with OAuth 2.0 ### {#edu-api-oauth}
 
-Edu-API mandates the use of OAuth 2.0 for securing API endpoints, ensuring that only authorized [=aggregators=] (e.g., the QualityLink aggregator) can access protected data. [=Data providers=] must implement OAuth 2.0 as follows:
-
-- **Grant Type**: Support the *Client Credentials Grant* (per [[!RFC6749]], Section 4.4) for machine-to-machine authentication, suitable for aggregator access without user interaction. 
-- **Token Endpoint**: Provide a dedicated OAuth 2.0 token endpoint (e.g., `https://provider.example.edu/oauth/token`) where the [=aggregator=] can obtain an access token.
-- **Scopes**: Define scopes to limit access (e.g., `http://purl.1edtech.org/spec/eduapi/v1p0/scope/core.readonly` for read-only access to [=learning opportunity=] data).
-- **Access Token**: The [=aggregator=] must include a valid OAuth 2.0 Bearer token in the `Authorization` header of each request (e.g., `Authorization: Bearer <token>`).
-
-[=Data providers=] should:
-
-- Issue access tokens with a reasonable expiration time (e.g., 1 hour) and support refresh tokens if long-term access is needed.
-- Validate tokens server-side per [[!RFC6750]] (Bearer Token Usage).
-- Optionally align with the additional access control mechanisms in [[#access-control]] (e.g., IP restrictions, TLS client certificates, or HTTP headers) to further secure the data exchange process.
-
-The QualityLink [=aggregator=] must:
-
-- Support OAuth 2.0 Client Credentials Grant as a minimum.
-- Register with the [=data provider=] to obtain client credentials (`client_id` and `client_secret`).
-- Handle token expiration and renewal gracefully.
-
+Edu-API mandates the use of OAuth 2.0 for securing API endpoints, ensuring that only authorized [=aggregators=] (e.g., the QualityLink aggregator) can access protected data. [=Data providers=] must implement OAuth 2.0 as specified below.
 
 OCCAPI {#occapi}
 ------
@@ -270,43 +252,105 @@ A [=data provider=] may choose one of the strategies if they wish to control acc
 
 An [=aggregator=] should support all formats described.
 
-Note:  The exchange of access credentials for each of these options (certificates, trusted IPs, or client/secrets) is an out-of-band activity to be agreed between the [=aggregator=] and [=data providers=] during an onboarding/ discovery process.
+The exchange of access credentials or additional data that some of these options might require (e.g. certificates, trusted IPs, or client/secrets) is an out-of-band activity. The details of this are to be agreed between the [=aggregator=] and [=data providers=] during an onboarding/discovery process; the following sections describe in general terms what out-of-band communication is required.
 
 Based on IP address {#access-control-ip}
 -------------------
 
 A [=data provider=] can limit access to certain ranges of IP addresses. To that end, [=aggregators=] should publish the IP address ranges from which their services may contact the exposed methods.
 
-Note: The QualityLink aggregator operates from the IP address range 1.2.3.4
+[=Data providers=] can provide the following metadata in their manifest file for this method:
 
-TLS Client Certificates {#access-control-tls-client}
------------------------
+<pre class=simpledef>
+auth: `none` (or missing)
+</pre>
 
-The [=aggregator=] should authenticate itself with a specified client certificate.
+This mechanism does not require **out-of-band communication** beyond the [=aggregator=] publishing its IP address range.
 
-Note: more details needed, plus info on QualityLink client certificate.
+Note: The QualityLink aggregator will publish the IP address range from which it operates.
 
 HTTP Request Header {#access-control-header}
 -------------------
 
 The [=data provider=] may request that the [=aggregator=] include a specific HTTP header in all requests, e.g. a secret token.
 
-Note: this option requires the data provider to have an account in the QualityLink aggregator/data source registry to manage this. To be described further.
+[=Data providers=] must provide the following metadata in their manifest file for this method:
+
+<pre class=simpledef>
+auth: `httpheader`
+</pre>
+
+This mechanism requires **out-of-band communication** in which the [=data provider=] communicates a HTTP header field and the value to include to the [=aggregator=]. The modalities need to be specified by the [=aggregator=] separately from this specification.
 
 OAuth 2.0 {#access-control-oauth}
 ------------------
 
-A [=data provider=] may secure their endpoints using OAuth 2.0, requiring the [=aggregator=] to authenticate via an access token. This method is mandatory for [[!Edu-API]] (see [[#edu-api-oauth]]) and recommended for other methods.
+A [=data provider=] may secure their endpoints using OAuth 2.0, requiring the [=aggregator=] to authenticate via an access token. This method is the standard authentication mechanism of [[!Edu-API]] (see [[#edu-api-oauth]]).
 
-- The [=data provider=] must provide a token endpoint and support the *Client Credentials Grant* [[!RFC6749]] as a minimum.
-- The [=aggregator=] must include a Bearer token in the `Authorization` header (per [[!RFC6750]]).
-- Scopes should be defined to restrict access (e.g., `read:learning-opportunities`).
+[=Data providers=] must implement OAuth 2.0 as follows:
 
-**Note**: See [[#edu-api-oauth]] for detailed implementation requirements.
+- **Grant Type**: Support the *Client Credentials Grant* (per [[!RFC6749]], Section 4.4) for machine-to-machine authentication, suitable for aggregator access without user interaction.
+- **Token Endpoint**: Provide a dedicated OAuth 2.0 token endpoint (e.g., `https://provider.example.edu/oauth/token`) where the [=aggregator=] can obtain an access token.
+- **Scopes**: Define scopes to limit access (e.g. `http://purl.1edtech.org/spec/eduapi/v1p0/scope/core.readonly` for read-only access to [=learning opportunity=] data).
+
+[=Data providers=] further should:
+
+- Issue access tokens with a reasonable expiration time (e.g., 1 hour) and support refresh tokens.
+- Validate tokens server-side per [[!RFC6750]] (Bearer Token Usage).
+
+An [=aggregator=] must support the following:
+
+- **Grant Type**: Support OAuth 2.0 Client Credentials Grant as a minimum.
+- **Credentials**: Obtain and securely store client credentials (`client_id` and `client_secret`) provided by the [=data provider=].
+- **Access Token**: The [=aggregator=] must request and include a valid OAuth 2.0 Bearer token in the `Authorization` header of each request (i.e. `Authorization: Bearer <token>` per [[!RFC6750]]).
+- Handle token expiration and renewal gracefully.
+
+[=Data providers=] must provide the following metadata in their manifest file for this method:
+
+<pre class=simpledef>
+auth: `oauth2.0`
+token_endpoint: URI of the OAuth 2.0 token endpoint to use
+</pre>
+
+This method requires **out-of-band communication** in which the [=data provider=] supplied the [=aggregator=] with secret credentials, namely `client_id` and `client_secret` to be used when using the mechanism descibred in Section 2.3 of [[!RFC6749]].
+
+HTTP Signature {#access-control-http-sig}
+--------------
+
+A [=data provider=] may request that the [=aggregator=] authenticates itself by signing all HTTP requests using HTTP Message Signatures according to [[!RFC9421]].
+
+The [=aggregator=] must provide a signature that covers the `@authority` component as well as the following signature parameters (see Section 2.3 of [[!RFC9421]])):
+
+- `created`: signature creation time (UNIX timestamp)
+- `expires`: expiration time (UNIX timestamp), at most 1 hour after creation time
+- `alg`: the signature algorithm
+- `keyid`: the identifier for the key used (from the list published by the aggregator)
+- `tag`: `qualitylink-v1` to identity the purpose
+
+The [=aggregator=] must publish the following information in order to allow [=data providers=] to verify its signatures:
+
+- A (list of) supported signature algorithm(s) (`alg`), including only algorithms based on asymmetric cryptography
+- One public key per supported signature algorithm, together with a `keyid` that will be used
+
+A [=data provider=] must support one of signature algorithm(s) supported by the [=aggregator=]. Unless it supports all algorithms, it needs to select the desired algorithm in the manifest file.
+
+The [=data provider=] should handle requests that are authenticated by a verified HTTP Message Signature, i.e. verify against the [=aggregator's=] public key, are applicable to the [=data provider=] based on the `@authority` component and are valid based on the `expires` parameter. If the [=data provider=] receives a request without a HTTP Message Signature, it should return a 401 (Unauthorized) response unless the request could be authenticated through another mechanism. If the request cannot be authenticated, the [=data provider=] should return a 403 (Forbidden) response. If the request contains corrupted or invalid `Signature` or `Signature-Input` headers, the [=data provider=] should return a 400 (Bad Request) response.
+
+[=Data providers=] must provide the following metadata in their manifest file for this method:
+
+<pre class=simpledef>
+auth: `httpsig`
+alg: one of the algorithms the aggregator supports (optional)
+</pre>
+
+This mechanism does not require **out-of-band communication** beyond the [=aggregator=] publishing the information mentioned above.
 
 Security Considerations {#security}
 =======================
 
-The previous chapter describes how [=data providers=] can implement access control to their exposed data.
+The previous chapter describes how [=data providers=] can implement access control to their exposed data. The authors are aware that these mechanisms do not provide perfect security, e.g. IP addresses could be spoofed and HTTP Message Signatures could be replayed for a short amount of time if compromised.
 
-This specification is about exchange of data on [=learning opportunities=], which is generally meant to be public. [=Data providers=] should not expose any data through the methods described herein that is not meant to be public, especially no personal data.
+This specification is, however, about exchange of data on [=learning opportunities=], which is generally meant to be public. The authors consider the described options reasonably secure for the purposes of limiting unauthorised harvesting of data.
+
+[=Data providers=] should not expose any data through the methods described herein that is not meant to be public, especially no personal data.
+
