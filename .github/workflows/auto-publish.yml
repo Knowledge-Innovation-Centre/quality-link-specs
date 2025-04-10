@@ -47,12 +47,6 @@ jobs:
           ref: gh-pages
           path: gh-pages-branch
 
-      - name: Initialise Python evironment
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-          cache: python3.12-rdflib
-
       - name: Install RDFlib
         run: python -m pip install rdflib
 
