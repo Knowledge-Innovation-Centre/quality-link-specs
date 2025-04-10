@@ -1,10 +1,37 @@
 {
     "QL-ONT": {
-        "href": "https://knowledge-innovation-centre.github.io/quality-link-specs/ontology-shacl.html",
+        "href": "https://specs.quality-link.eu/resources/ontology-shacl.html",
         "authors": [
             "QualityLink Consortium"
         ],
         "title": "SHACL constraints for learning opportunities",
+        "status": "draft",
+        "date": "2025"
+    },
+    "QL-EXCH": {
+        "href": "https://specs.quality-link.eu/data_exchange.html",
+        "authors": [
+            "QualityLink Consortium"
+        ],
+        "title": "Data Exchange Specification",
+        "status": "draft",
+        "date": "2025"
+    },
+    "QL-DISCO": {
+        "href": "https://specs.quality-link.eu/discovery.html",
+        "authors": [
+            "QualityLink Consortium"
+        ],
+        "title": "Data Source Discovery Specification",
+        "status": "draft",
+        "date": "2025"
+    },
+    "QL-POLICY": {
+        "href": "https://specs.quality-link.eu/policy.html",
+        "authors": [
+            "QualityLink Consortium"
+        ],
+        "title": "Data Sources and Access Policy",
         "status": "draft",
         "date": "2025"
     },
