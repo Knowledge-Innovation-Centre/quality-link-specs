@@ -159,7 +159,21 @@ The [=aggregator=] may use the following endpoints to acquire data:
 
 ### Required Fields ### {#ooapi-required}
 
-Note: check if requirements beyond vanilla OOAPI would be needed
+Per the OOAPI specification, the following fields are required:
+
+- `primaryCode`
+- `abbreviation`
+- `name`
+- `description`
+- `teachingLanguage`
+- `level` (for courses)
+- `programType` (for programmes)
+
+In addition, the following fields need to be present for the purposes of the QualityLink [=aggregator=] in order to align with ELM requirements:
+
+- `fieldsOfStudy`
+- `learningOutcomes`
+- `levelOfQualification` (programme only)
 
 ### Incremental Transport ### {#ooapi-incremental}
 
