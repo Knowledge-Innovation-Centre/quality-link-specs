@@ -73,7 +73,7 @@ jobs:
       - name: Generate HTML from SHACL
         run: |
           for infile in main-branch/resources/*.ttl ; do
-            GRAPHVIZ_DOT=/usr/bin/dot java -jar ~/opt/shacl-play.jar doc -d -i $infile -l en -o main-branch/resources/`basename -s .ttl $infile`.html
+            GRAPHVIZ_DOT=/usr/bin/dot java -jar shacl-play.jar doc -d -i $infile -l en -o main-branch/resources/`basename -s .ttl $infile`.html
           done
 
       - name: Copy resources directory
