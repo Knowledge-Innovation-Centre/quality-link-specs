@@ -7,6 +7,7 @@ on:
     paths:
       - '*.bs'
       - 'resources/*.ttl'
+      - '.github/workflows/auto-publish.yml'
   workflow_dispatch: {}
 
 jobs:
@@ -24,6 +25,8 @@ jobs:
           - source: discovery.bs
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - id: getdate
         name: Get date of last commit
         run: echo "date=$(git log -n 1 --format=%as -- ${{ matrix.source }})" >> $GITHUB_OUTPUT
