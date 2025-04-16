@@ -1,218 +1,9 @@
 [
   {
-    "@id": "http://data.quality-link.eu/ontology/v1#OrgRegIdentifier",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "http://www.w3.org/ns/shacl#NodeShape"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "The identifier assigned to a higher education institution or other organisation in the Register of Public Sector Organisations (OrgReg)"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "OrgReg ID"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/Identifier"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#property": [
-      {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b8"
-      },
-      {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b7"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b8",
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@language": "en",
-        "@value": "The OrgReg identifier of the format XX1111."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#integer",
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#minCount": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#integer",
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@language": "en",
-        "@value": "identifier"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#nodeKind": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#Literal"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://www.w3.org/2004/02/skos/core#notation"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#pattern": [
-      {
-        "@value": "^(INT|[A-Z]{2})[0-9]{4}$"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#severity": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#Violation"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b7",
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@language": "en",
-        "@value": "Identification of the scheme."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#hasValue": [
-      {
-        "@id": "http://data.quality-link.eu/ontology/v1#OrgReg"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#integer",
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#minCount": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#integer",
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@language": "en",
-        "@value": "scheme ID "
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/schemeId"
-      }
-    ]
-  },
-  {
-    "@id": "http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecification",
-    "@type": [
-      "http://www.w3.org/ns/shacl#NodeShape",
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "An asbtract opportunity to acquire a given set of learning outcomes, e.g. the general specification of a course, programme or module offered by an education provider."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Learning Opportunity Specification"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/LearningAchievementSpecification"
-      },
-      {
-        "@id": "http://data.europa.eu/snb/model/ap/loq-constraints/LearningAchievementSpecificationShape"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#property": [
-      {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b33"
-      },
-      {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b30"
-      },
-      {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b31"
-      },
-      {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b32"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b33",
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecificationReference"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://data.quality-link.eu/ontology/v1#equivalentTo"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b30",
-    "http://www.w3.org/ns/shacl#datatype": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#boolean"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://data.quality-link.eu/ontology/v1#isActive"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b31",
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecificationReference"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://data.quality-link.eu/ontology/v1#superseded"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b32",
-    "http://www.w3.org/ns/shacl#nodeKind": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#Literal"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://data.quality-link.eu/ontology/v1#version"
-      }
-    ]
-  },
-  {
     "@id": "http://data.quality-link.eu/ontology/v1#HigherEducationInstitution",
     "@type": [
-      "http://www.w3.org/ns/shacl#NodeShape",
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#Class",
+      "http://www.w3.org/ns/shacl#NodeShape"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
@@ -233,12 +24,12 @@
     ],
     "http://www.w3.org/ns/shacl#property": [
       {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b1"
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b1"
       }
     ]
   },
   {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b1",
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b1",
     "http://www.w3.org/ns/shacl#description": [
       {
         "@language": "en",
@@ -261,10 +52,10 @@
       {
         "@list": [
           {
-            "@id": "_:n014a42a0911e4835b39ab4f1ea352007b2"
+            "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b2"
           },
           {
-            "@id": "_:n014a42a0911e4835b39ab4f1ea352007b3"
+            "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b3"
           }
         ]
       }
@@ -276,7 +67,7 @@
     ]
   },
   {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b2",
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b2",
     "http://www.w3.org/ns/shacl#class": [
       {
         "@id": "http://data.quality-link.eu/ontology/v1#SchacIdentifier"
@@ -284,7 +75,7 @@
     ]
   },
   {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b3",
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b3",
     "http://www.w3.org/ns/shacl#class": [
       {
         "@id": "http://data.quality-link.eu/ontology/v1#OrgRegIdentifier"
@@ -292,25 +83,313 @@
     ]
   },
   {
-    "@id": "http://data.quality-link.eu/ontology/v1#minimumEQFLevel",
+    "@id": "http://data.quality-link.eu/ontology/v1#isOpenToNonEnrolled",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Indicates that a learning opportunity is alos open to learners not currently enrolled as regular students."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "open to non-enrolled learners"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#boolean"
+      }
+    ]
+  },
+  {
+    "@id": "http://data.quality-link.eu/ontology/v1#LearningOpportunityInstanceReference",
+    "@type": [
+      "http://www.w3.org/ns/shacl#NodeShape",
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A reference to another Learning Opportunity Instance, identified by a provider and a (local) identifier, without further details."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Learning Opportunity Instance Reference"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#property": [
+      {
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b39"
+      },
+      {
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b38"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b39",
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/Identifier"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@language": "en",
+        "@value": "Identifier of the Learning Opportunity instance. Must be unique within the scope of the institution identified with providedBy."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#minCount": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@language": "en",
+        "@value": "(local) identifier"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://www.w3.org/ns/adms#identifier"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b38",
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "http://data.quality-link.eu/ontology/v1#HigherEducationInstitution"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@language": "en",
+        "@value": "Higher Education Institution that offers the LO."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#minCount": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@language": "en",
+        "@value": "provided by"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/providedBy"
+      }
+    ]
+  },
+  {
+    "@id": "http://data.quality-link.eu/ontology/v1#equivalentTo",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Defines that the learning opportunity is offered to students enrolled in another learning opportunity at a specified EQF level or higher. If provided, the value must come from the EU controlled vocabulary http://publications.europa.eu/resource/dataset/european-qualification-framework"
+        "@value": "Specifies another Learning Opportunity Specification which the publisher considers equivalent to the subject, e.g. based on a recognition agreement or previous recognition decisions."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "http://data.quality-link.eu/ontology/v1#LearnerGroup"
+        "@id": "http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecification"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "minimum EQF Level"
+        "@value": "equivalent to"
+      }
+    ]
+  },
+  {
+    "@id": "http://data.quality-link.eu/ontology/v1#version",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "A number or other identifier that indicates the version of the Learning Opportunity specifcation."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "version"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "http://data.quality-link.eu/ontology/v1#GroupOfHEIs",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class",
+      "http://www.w3.org/ns/shacl#NodeShape"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A group or alliance of higher education institutions"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Group of Higher Education Institutions"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/Group"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#property": [
+      {
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b6"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b6",
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "http://data.quality-link.eu/ontology/v1#HigherEducationInstitution"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#minCount": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 2
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@language": "en",
+        "@value": "has member"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://xmlns.com/foaf/0.1/member"
+      }
+    ]
+  },
+  {
+    "@id": "http://data.quality-link.eu/ontology/v1#enrolmentCapacity",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Specified the number of learners that can register for a Learning Opportunity Instance."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "enrolment capacity"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+      }
+    ]
+  },
+  {
+    "@id": "http://data.quality-link.eu/ontology/v1#LearningOpportunityInstance",
+    "@type": [
+      "http://www.w3.org/ns/shacl#NodeShape",
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A concrete opportunity to realise a given set of learning outcomes via a learning activity and/or assessment, e.g. a course, programme or module as offered in a specific academic year or semester."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Learning Opportunity Instance"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://data.europa.eu/snb/model/ap/loq-constraints/LearningOpportunityShape"
+      },
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/LearningOpportunity"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#property": [
+      {
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b34"
+      },
+      {
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b35"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b34",
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "http://data.quality-link.eu/ontology/v1#LearnerGroup"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://data.quality-link.eu/ontology/v1#availableTo"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b35",
+    "http://www.w3.org/ns/shacl#datatype": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#anyURI"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://data.quality-link.eu/ontology/v1#registrationPortal"
       }
     ]
   },
@@ -354,103 +433,103 @@
     ],
     "http://www.w3.org/ns/shacl#property": [
       {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b91"
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b102"
       },
       {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b118"
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b127"
       },
       {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b109"
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b83"
       },
       {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b101"
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b134"
       },
       {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b126"
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b89"
       },
       {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b83"
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b100"
       },
       {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b95"
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b82"
       },
       {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b123"
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b104"
       },
       {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b92"
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b92"
       },
       {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b102"
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b110"
       },
       {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b121"
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b132"
       },
       {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b82"
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b101"
       },
       {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b100"
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b121"
       },
       {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b94"
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b125"
       },
       {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b104"
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b111"
       },
       {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b90"
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b122"
       },
       {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b93"
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b118"
       },
       {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b103"
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b124"
       },
       {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b112"
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b94"
       },
       {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b117"
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b95"
       },
       {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b127"
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b88"
       },
       {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b124"
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b117"
       },
       {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b88"
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b109"
       },
       {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b120"
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b126"
       },
       {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b110"
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b119"
       },
       {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b133"
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b120"
       },
       {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b111"
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b123"
       },
       {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b134"
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b112"
       },
       {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b125"
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b133"
       },
       {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b119"
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b91"
       },
       {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b132"
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b90"
       },
       {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b122"
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b103"
       },
       {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b89"
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b93"
       }
     ],
     "http://www.w3.org/ns/shacl#targetClass": [
@@ -460,347 +539,7 @@
     ]
   },
   {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b91",
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/CreditPoint"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@language": "en",
-        "@value": "The credit points assigned to the learning achievement specification, following an educational credit system."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@language": "en",
-        "@value": "credit points"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/creditPoint"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#severity": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#Violation"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b118",
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "http://www.w3.org/2004/02/skos/core#Concept"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@language": "en",
-        "@value": "An associated level of education within a semantic framework describing education levels."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@language": "en",
-        "@value": "education level"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/educationLevel"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#severity": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#Violation"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b109",
-    "http://www.w3.org/ns/shacl#datatype": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#duration"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@language": "en",
-        "@value": "The estimated number of hours the learner is expected to spend engaged in learning to earn the award. This would include the notional number of hours in class, in group work, in practicals, as well as hours engaged in self-motivated study."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#integer",
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@language": "en",
-        "@value": "volume of learning"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/volumeOfLearning"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#severity": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#Violation"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b101",
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "http://www.w3.org/2004/02/skos/core#Concept"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@language": "en",
-        "@value": "A specific target group or category for which this specification is designed. It should be provided using the EDC Controlled List of Target Groups."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@language": "en",
-        "@value": "target group"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/targetGroup"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#severity": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#Violation"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b126",
-    "http://www.w3.org/ns/shacl#datatype": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#dateTime"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@language": "en",
-        "@value": "The date when the learning achievement specification was last modified."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#integer",
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@language": "en",
-        "@value": "last modification date"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://purl.org/dc/terms/modified"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#severity": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#Violation"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b83",
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@language": "en",
-        "@value": "The publisher of the Learning Achievement Specification."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#integer",
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@language": "en",
-        "@value": "publisher"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#or": [
-      {
-        "@list": [
-          {
-            "@id": "_:n014a42a0911e4835b39ab4f1ea352007b84"
-          },
-          {
-            "@id": "_:n014a42a0911e4835b39ab4f1ea352007b85"
-          }
-        ]
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://purl.org/dc/terms/publisher"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#severity": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#Violation"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b84",
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/Agent"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b85",
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/Organisation"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b95",
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@language": "en",
-        "@value": "An alternative identifier of the learning achievement specification."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@language": "en",
-        "@value": "identifier"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#or": [
-      {
-        "@list": [
-          {
-            "@id": "_:n014a42a0911e4835b39ab4f1ea352007b96"
-          },
-          {
-            "@id": "_:n014a42a0911e4835b39ab4f1ea352007b97"
-          }
-        ]
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://www.w3.org/ns/adms#identifier"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#severity": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#Violation"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b96",
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/Identifier"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b97",
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/LegalIdentifier"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b123",
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/Note"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@language": "en",
-        "@value": "The full learning outcome summary of the learning achievement specification."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#integer",
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@language": "en",
-        "@value": "learning outcome summary"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/learningOutcomeSummary"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#severity": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#Violation"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b92",
-    "http://www.w3.org/ns/shacl#datatype": [
-      {
-        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@language": "en",
-        "@value": "The alternative name of the learning achievement specification."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@language": "en",
-        "@value": "alternative name"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://www.w3.org/2004/02/skos/core#altLabel"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#severity": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#Violation"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b102",
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b102",
     "http://www.w3.org/ns/shacl#class": [
       {
         "@id": "http://data.europa.eu/snb/model/elm/LearningActivitySpecification"
@@ -830,27 +569,34 @@
     ]
   },
   {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b121",
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/LearningEntitlementSpecification"
-      }
-    ],
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b127",
     "http://www.w3.org/ns/shacl#description": [
       {
         "@language": "en",
-        "@value": "Rights (such as which the person may acquire as a result of acquiring the learning outcomes)."
+        "@value": "A learning  achievement specification (e.g., a standard) of which this specification is a specialisation."
       }
     ],
     "http://www.w3.org/ns/shacl#name": [
       {
         "@language": "en",
-        "@value": "entitles to"
+        "@value": "specialisation of"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#or": [
+      {
+        "@list": [
+          {
+            "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b128"
+          },
+          {
+            "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b129"
+          }
+        ]
       }
     ],
     "http://www.w3.org/ns/shacl#path": [
       {
-        "@id": "http://data.europa.eu/snb/model/elm/entitlesTo"
+        "@id": "http://data.europa.eu/snb/model/elm/specialisationOf"
       }
     ],
     "http://www.w3.org/ns/shacl#severity": [
@@ -860,7 +606,195 @@
     ]
   },
   {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b82",
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b128",
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/LearningAchievementSpecification"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b129",
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/Qualification"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b83",
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@language": "en",
+        "@value": "The publisher of the Learning Achievement Specification."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@language": "en",
+        "@value": "publisher"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#or": [
+      {
+        "@list": [
+          {
+            "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b84"
+          },
+          {
+            "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b85"
+          }
+        ]
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://purl.org/dc/terms/publisher"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#severity": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#Violation"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b84",
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/Agent"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b85",
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/Organisation"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b134",
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@language": "en",
+        "@value": "A learning achievement specification can be composed of other partial learning specifications which when combined make up this learning specification."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@language": "en",
+        "@value": "has part"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#or": [
+      {
+        "@list": [
+          {
+            "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b135"
+          },
+          {
+            "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b136"
+          }
+        ]
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/hasPart"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#severity": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#Violation"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b135",
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/LearningAchievementSpecification"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b136",
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/Qualification"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b89",
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "http://www.w3.org/2004/02/skos/core#Concept"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@language": "en",
+        "@value": "The type of the learning achievement specification. It should be provided using a controlled vocabulary."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@language": "en",
+        "@value": "type"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://purl.org/dc/terms/type"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#severity": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#Violation"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b100",
+    "http://www.w3.org/ns/shacl#datatype": [
+      {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@language": "en",
+        "@value": "The category of the learning achievement specification provided as a string."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@language": "en",
+        "@value": "category"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/category"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#severity": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#Violation"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b82",
     "http://www.w3.org/ns/shacl#class": [
       {
         "@id": "http://data.europa.eu/snb/model/elm/LearningOutcome"
@@ -896,27 +830,34 @@
     ]
   },
   {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b100",
-    "http://www.w3.org/ns/shacl#datatype": [
-      {
-        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-      }
-    ],
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b104",
     "http://www.w3.org/ns/shacl#description": [
       {
         "@language": "en",
-        "@value": "The category of the learning achievement specification provided as a string."
+        "@value": "A learning achievement specification, which this learning achievement specification is part of."
       }
     ],
     "http://www.w3.org/ns/shacl#name": [
       {
         "@language": "en",
-        "@value": "category"
+        "@value": "is part of "
+      }
+    ],
+    "http://www.w3.org/ns/shacl#or": [
+      {
+        "@list": [
+          {
+            "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b105"
+          },
+          {
+            "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b106"
+          }
+        ]
       }
     ],
     "http://www.w3.org/ns/shacl#path": [
       {
-        "@id": "http://data.europa.eu/snb/model/elm/category"
+        "@id": "http://data.europa.eu/snb/model/elm/isPartOf"
       }
     ],
     "http://www.w3.org/ns/shacl#severity": [
@@ -926,7 +867,347 @@
     ]
   },
   {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b94",
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b105",
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/LearningAchievementSpecification"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b106",
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/Qualification"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b92",
+    "http://www.w3.org/ns/shacl#datatype": [
+      {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@language": "en",
+        "@value": "The alternative name of the learning achievement specification."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@language": "en",
+        "@value": "alternative name"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://www.w3.org/2004/02/skos/core#altLabel"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#severity": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#Violation"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b110",
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "http://www.w3.org/2004/02/skos/core#Concept"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@language": "en",
+        "@value": "The language of the learning achievement specification. It should be provided using the Language Named Authority List."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#minCount": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@language": "en",
+        "@value": "language"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://purl.org/dc/terms/language"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#severity": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#Violation"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b132",
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/AwardingOpportunity"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@language": "en",
+        "@value": "Refers to an activity related to the awarding of the learning specification, such as the country or region where the qualification is awarded, the awarding body and optionally the awarding period now or in the past."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@language": "en",
+        "@value": "awarding information"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/awardingOpportunity"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#severity": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#Violation"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b101",
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "http://www.w3.org/2004/02/skos/core#Concept"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@language": "en",
+        "@value": "A specific target group or category for which this specification is designed. It should be provided using the EDC Controlled List of Target Groups."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@language": "en",
+        "@value": "target group"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/targetGroup"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#severity": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#Violation"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b121",
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/LearningEntitlementSpecification"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@language": "en",
+        "@value": "Rights (such as which the person may acquire as a result of acquiring the learning outcomes)."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@language": "en",
+        "@value": "entitles to"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/entitlesTo"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#severity": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#Violation"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b125",
+    "http://www.w3.org/ns/shacl#datatype": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@language": "en",
+        "@value": "The publication status of the learning achievement specification."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@language": "en",
+        "@value": "status"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/status"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#severity": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#Violation"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b111",
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "http://www.w3.org/2004/02/skos/core#Concept"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@language": "en",
+        "@value": "An associated field of education from another semantic framework than the ISCED classification."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@language": "en",
+        "@value": "education subject"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/educationSubject"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#severity": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#Violation"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b122",
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "http://www.w3.org/2004/02/skos/core#Concept"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@language": "en",
+        "@value": "The type of learning setting (formal, non-formal). It should be provided using the EDC Controlled List of Learning Setting Types."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@language": "en",
+        "@value": "learning setting"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/learningSetting"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#severity": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#Violation"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b118",
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "http://www.w3.org/2004/02/skos/core#Concept"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@language": "en",
+        "@value": "An associated level of education within a semantic framework describing education levels."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@language": "en",
+        "@value": "education level"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/educationLevel"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#severity": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#Violation"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b124",
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "http://www.w3.org/2004/02/skos/core#Concept"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@language": "en",
+        "@value": "The thematic area according to the ISCED-F 2013 Classification. It should be provided using the ISCEDF controlled vocabulary."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#minCount": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@language": "en",
+        "@value": "thematic area"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/ISCEDFCode"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#severity": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#Violation"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b94",
     "http://www.w3.org/ns/shacl#class": [
       {
         "@id": "http://data.europa.eu/snb/model/elm/Note"
@@ -962,34 +1243,34 @@
     ]
   },
   {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b104",
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b95",
     "http://www.w3.org/ns/shacl#description": [
       {
         "@language": "en",
-        "@value": "A learning achievement specification, which this learning achievement specification is part of."
+        "@value": "An alternative identifier of the learning achievement specification."
       }
     ],
     "http://www.w3.org/ns/shacl#name": [
       {
         "@language": "en",
-        "@value": "is part of "
+        "@value": "identifier"
       }
     ],
     "http://www.w3.org/ns/shacl#or": [
       {
         "@list": [
           {
-            "@id": "_:n014a42a0911e4835b39ab4f1ea352007b105"
+            "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b96"
           },
           {
-            "@id": "_:n014a42a0911e4835b39ab4f1ea352007b106"
+            "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b97"
           }
         ]
       }
     ],
     "http://www.w3.org/ns/shacl#path": [
       {
-        "@id": "http://data.europa.eu/snb/model/elm/isPartOf"
+        "@id": "http://www.w3.org/ns/adms#identifier"
       }
     ],
     "http://www.w3.org/ns/shacl#severity": [
@@ -999,7 +1280,293 @@
     ]
   },
   {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b105",
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b96",
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/Identifier"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b97",
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/LegalIdentifier"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b88",
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/WebResource"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@language": "en",
+        "@value": "A public web resource containing additional documentation about the learning achievement specification."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@language": "en",
+        "@value": "other documents"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#node": [
+      {
+        "@id": "http://data.europa.eu/snb/model/ap/loq-constraints/URLRegexRestriction"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/supplementaryDocument"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#severity": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#Violation"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b117",
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "http://www.w3.org/2004/02/skos/core#Concept"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@language": "en",
+        "@value": "The mode of learning, and or assessment. It should be provided using the EDC Controlled List of Modes Of Learning and Assessment."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@language": "en",
+        "@value": "mode"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/mode"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#severity": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#Violation"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b109",
+    "http://www.w3.org/ns/shacl#datatype": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#duration"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@language": "en",
+        "@value": "The estimated number of hours the learner is expected to spend engaged in learning to earn the award. This would include the notional number of hours in class, in group work, in practicals, as well as hours engaged in self-motivated study."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@language": "en",
+        "@value": "volume of learning"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/volumeOfLearning"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#severity": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#Violation"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b126",
+    "http://www.w3.org/ns/shacl#datatype": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#dateTime"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@language": "en",
+        "@value": "The date when the learning achievement specification was last modified."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@language": "en",
+        "@value": "last modification date"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://purl.org/dc/terms/modified"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#severity": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#Violation"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b119",
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/WebResource"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@language": "en",
+        "@value": "The homepage of the learning achievement specification."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@language": "en",
+        "@value": "homepage"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://xmlns.com/foaf/0.1/homepage"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#severity": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#Violation"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b120",
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/LearningAssessmentSpecification"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@language": "en",
+        "@value": "Assessments a person can undergo to prove the acquisition of the learning outcomes."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@language": "en",
+        "@value": "proven by"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/provenBy"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#severity": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#Violation"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b123",
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/Note"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@language": "en",
+        "@value": "The full learning outcome summary of the learning achievement specification."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@language": "en",
+        "@value": "learning outcome summary"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/learningOutcomeSummary"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#severity": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#Violation"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b112",
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@language": "en",
+        "@value": "A learning achievement specification (e.g., a standard) of which this specification is a generalisation."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@language": "en",
+        "@value": "generalisation of"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#or": [
+      {
+        "@list": [
+          {
+            "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b113"
+          },
+          {
+            "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b114"
+          }
+        ]
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/generalisationOf"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#severity": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#Violation"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b113",
     "http://www.w3.org/ns/shacl#class": [
       {
         "@id": "http://data.europa.eu/snb/model/elm/LearningAchievementSpecification"
@@ -1007,7 +1574,7 @@
     ]
   },
   {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b106",
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b114",
     "http://www.w3.org/ns/shacl#class": [
       {
         "@id": "http://data.europa.eu/snb/model/elm/Qualification"
@@ -1015,7 +1582,67 @@
     ]
   },
   {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b90",
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b133",
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/Note"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@language": "en",
+        "@value": " An additional free text note about the learning achievement specification."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@language": "en",
+        "@value": "more information"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/additionalNote"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#severity": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#Violation"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b91",
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/CreditPoint"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@language": "en",
+        "@value": "The credit points assigned to the learning achievement specification, following an educational credit system."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@language": "en",
+        "@value": "credit points"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/creditPoint"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#severity": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#Violation"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b90",
     "http://www.w3.org/ns/shacl#datatype": [
       {
         "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
@@ -1051,7 +1678,43 @@
     ]
   },
   {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b93",
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b103",
+    "http://www.w3.org/ns/shacl#datatype": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#duration"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@language": "en",
+        "@value": "The maximum duration (in months) that a person may use to complete the learning opportunity for which this learning achievement specification is designed."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@language": "en",
+        "@value": "maximum duration"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/maximumDuration"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#severity": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#Violation"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b93",
     "http://www.w3.org/ns/shacl#datatype": [
       {
         "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
@@ -1093,618 +1756,6 @@
     ]
   },
   {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b103",
-    "http://www.w3.org/ns/shacl#datatype": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#duration"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@language": "en",
-        "@value": "The maximum duration (in months) that a person may use to complete the learning opportunity for which this learning achievement specification is designed."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#integer",
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@language": "en",
-        "@value": "maximum duration"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/maximumDuration"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#severity": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#Violation"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b112",
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@language": "en",
-        "@value": "A learning achievement specification (e.g., a standard) of which this specification is a generalisation."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@language": "en",
-        "@value": "generalisation of"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#or": [
-      {
-        "@list": [
-          {
-            "@id": "_:n014a42a0911e4835b39ab4f1ea352007b113"
-          },
-          {
-            "@id": "_:n014a42a0911e4835b39ab4f1ea352007b114"
-          }
-        ]
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/generalisationOf"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#severity": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#Violation"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b113",
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/LearningAchievementSpecification"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b114",
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/Qualification"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b117",
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "http://www.w3.org/2004/02/skos/core#Concept"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@language": "en",
-        "@value": "The mode of learning, and or assessment. It should be provided using the EDC Controlled List of Modes Of Learning and Assessment."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@language": "en",
-        "@value": "mode"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/mode"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#severity": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#Violation"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b127",
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@language": "en",
-        "@value": "A learning  achievement specification (e.g., a standard) of which this specification is a specialisation."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@language": "en",
-        "@value": "specialisation of"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#or": [
-      {
-        "@list": [
-          {
-            "@id": "_:n014a42a0911e4835b39ab4f1ea352007b128"
-          },
-          {
-            "@id": "_:n014a42a0911e4835b39ab4f1ea352007b129"
-          }
-        ]
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/specialisationOf"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#severity": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#Violation"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b128",
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/LearningAchievementSpecification"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b129",
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/Qualification"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b124",
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "http://www.w3.org/2004/02/skos/core#Concept"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@language": "en",
-        "@value": "The thematic area according to the ISCED-F 2013 Classification. It should be provided using the ISCEDF controlled vocabulary."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#minCount": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#integer",
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@language": "en",
-        "@value": "thematic area"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/ISCEDFCode"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#severity": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#Violation"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b88",
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/WebResource"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@language": "en",
-        "@value": "A public web resource containing additional documentation about the learning achievement specification."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@language": "en",
-        "@value": "other documents"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#node": [
-      {
-        "@id": "http://data.europa.eu/snb/model/ap/loq-constraints/URLRegexRestriction"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/supplementaryDocument"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#severity": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#Violation"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b120",
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/LearningAssessmentSpecification"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@language": "en",
-        "@value": "Assessments a person can undergo to prove the acquisition of the learning outcomes."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@language": "en",
-        "@value": "proven by"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/provenBy"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#severity": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#Violation"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b110",
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "http://www.w3.org/2004/02/skos/core#Concept"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@language": "en",
-        "@value": "The language of the learning achievement specification. It should be provided using the Language Named Authority List."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#minCount": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#integer",
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@language": "en",
-        "@value": "language"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://purl.org/dc/terms/language"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#severity": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#Violation"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b133",
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/Note"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@language": "en",
-        "@value": " An additional free text note about the learning achievement specification."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@language": "en",
-        "@value": "more information"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/additionalNote"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#severity": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#Violation"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b111",
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "http://www.w3.org/2004/02/skos/core#Concept"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@language": "en",
-        "@value": "An associated field of education from another semantic framework than the ISCED classification."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@language": "en",
-        "@value": "education subject"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/educationSubject"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#severity": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#Violation"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b134",
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@language": "en",
-        "@value": "A learning achievement specification can be composed of other partial learning specifications which when combined make up this learning specification."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@language": "en",
-        "@value": "has part"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#or": [
-      {
-        "@list": [
-          {
-            "@id": "_:n014a42a0911e4835b39ab4f1ea352007b135"
-          },
-          {
-            "@id": "_:n014a42a0911e4835b39ab4f1ea352007b136"
-          }
-        ]
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/hasPart"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#severity": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#Violation"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b135",
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/LearningAchievementSpecification"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b136",
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/Qualification"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b125",
-    "http://www.w3.org/ns/shacl#datatype": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#string"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@language": "en",
-        "@value": "The publication status of the learning achievement specification."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#integer",
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@language": "en",
-        "@value": "status"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/status"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#severity": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#Violation"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b119",
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/WebResource"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@language": "en",
-        "@value": "The homepage of the learning achievement specification."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@language": "en",
-        "@value": "homepage"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://xmlns.com/foaf/0.1/homepage"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#severity": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#Violation"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b132",
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/AwardingOpportunity"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@language": "en",
-        "@value": "Refers to an activity related to the awarding of the learning specification, such as the country or region where the qualification is awarded, the awarding body and optionally the awarding period now or in the past."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@language": "en",
-        "@value": "awarding information"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/awardingOpportunity"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#severity": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#Violation"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b122",
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "http://www.w3.org/2004/02/skos/core#Concept"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@language": "en",
-        "@value": "The type of learning setting (formal, non-formal). It should be provided using the EDC Controlled List of Learning Setting Types."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#integer",
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@language": "en",
-        "@value": "learning setting"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/learningSetting"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#severity": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#Violation"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b89",
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "http://www.w3.org/2004/02/skos/core#Concept"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@language": "en",
-        "@value": "The type of the learning achievement specification. It should be provided using a controlled vocabulary."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@language": "en",
-        "@value": "type"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://purl.org/dc/terms/type"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#severity": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#Violation"
-      }
-    ]
-  },
-  {
-    "@id": "http://data.quality-link.eu/ontology/v1#succeeded",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Organisation succeeded/replaced another one (i.e. subject was newly created by the event, object ceased to exist)"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/Organisation"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "succeeded"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://data.quality-link.eu/ontology/v1#relatedTo"
-      }
-    ]
-  },
-  {
     "@id": "http://data.quality-link.eu/ontology/v1#availableTo",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
@@ -1732,581 +1783,25 @@
     ]
   },
   {
-    "@id": "http://data.quality-link.eu/ontology/v1#version",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@value": "A number or other identifier that indicates the version of the Learning Opportunity specifcation."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "version"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#string"
-      }
-    ]
-  },
-  {
-    "@id": "http://data.quality-link.eu/ontology/v1#equivalentTo",
+    "@id": "http://data.quality-link.eu/ontology/v1#absorbed",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Specifies another Learning Opportunity Specification which the publisher considers equivalent to the subject, e.g. based on a recognition agreement or previous recognition decisions."
+        "@value": "Organisation absorbed another one (i.e. subject existed before and after the event, object ceased to exist)"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecification"
+        "@id": "http://data.europa.eu/snb/model/elm/Organisation"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "equivalent to"
-      }
-    ]
-  },
-  {
-    "@id": "http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecificationReference",
-    "@type": [
-      "http://www.w3.org/ns/shacl#NodeShape",
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "A reference to another Learning Opportunity specification, identified by a provider and a (local) identifier, without further details."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Learning Opportunity Specification Reference"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#property": [
-      {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b37"
-      },
-      {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b36"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b37",
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/Identifier"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@language": "en",
-        "@value": "Identifier of the Learning Opportunity Specification. Must be unique within the scope of the institution identified with providedBy."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#integer",
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#minCount": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#integer",
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@language": "en",
-        "@value": "(local) identifier"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://www.w3.org/ns/adms#identifier"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b36",
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "http://data.quality-link.eu/ontology/v1#HigherEducationInstitution"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@language": "en",
-        "@value": "Higher Education Institution that offers the LO."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#integer",
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#minCount": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#integer",
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@language": "en",
-        "@value": "provided by"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/providedBy"
-      }
-    ]
-  },
-  {
-    "@id": "http://data.europa.eu/snb/model/elm/LearningOpportunity",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://purl.org/dc/terms/identifier": [
-      {
-        "@value": "elm:LearningOpportunity"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "The conditions, e.g. time and location, under which a person may acquire a set of knowledge and/or skills used with responsibility and autonomy."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Learning Opportunity (ELM)"
-      }
-    ]
-  },
-  {
-    "@id": "http://data.quality-link.eu/ontology/v1#GroupOfHEIs",
-    "@type": [
-      "http://www.w3.org/ns/shacl#NodeShape",
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "A group or alliance of higher education institutions"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Group of Higher Education Institutions"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/Group"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#property": [
-      {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b6"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b6",
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "http://data.quality-link.eu/ontology/v1#HigherEducationInstitution"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#minCount": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#integer",
-        "@value": 2
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@language": "en",
-        "@value": "has member"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://xmlns.com/foaf/0.1/member"
-      }
-    ]
-  },
-  {
-    "@id": "http://data.quality-link.eu/ontology/v1#relatedTo",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AsymmetricProperty",
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "A relationship between Learning Opportunities or Organisations (abstract)"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "related to"
-      }
-    ]
-  },
-  {
-    "@id": "http://data.quality-link.eu/ontology/v1#isOpenToNonEnrolled",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@value": "Indicates that a learning opportunity is alos open to learners not currently enrolled as regular students."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "open to non-enrolled learners"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#boolean"
-      }
-    ]
-  },
-  {
-    "@id": "http://data.quality-link.eu/ontology/v1#enrolmentCapacity",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@value": "Specified the number of learners that can register for a Learning Opportunity Instance."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "enrolment capacity"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-      }
-    ]
-  },
-  {
-    "@id": "http://data.quality-link.eu/ontology/v1#isActive",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@value": "Learning Opportunity Specification is active, i.e. instances are currently offered or the education provider expects that instances will still be offered in the future."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "is active"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#boolean"
-      }
-    ]
-  },
-  {
-    "@id": "http://data.quality-link.eu/ontology/v1#LearningOpportunityInstance",
-    "@type": [
-      "http://www.w3.org/ns/shacl#NodeShape",
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "A concrete opportunity to realise a given set of learning outcomes via a learning activity and/or assessment, e.g. a course, programme or module as offered in a specific academic year or semester."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Learning Opportunity Instance"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://data.europa.eu/snb/model/ap/loq-constraints/LearningOpportunityShape"
-      },
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/LearningOpportunity"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#property": [
-      {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b35"
-      },
-      {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b34"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b35",
-    "http://www.w3.org/ns/shacl#datatype": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#anyURI"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#integer",
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://data.quality-link.eu/ontology/v1#registrationPortal"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b34",
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "http://data.quality-link.eu/ontology/v1#LearnerGroup"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://data.quality-link.eu/ontology/v1#availableTo"
-      }
-    ]
-  },
-  {
-    "@id": "http://data.quality-link.eu/ontology/v1#registrationPortal",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@value": "A web page at which one can register or enrol for a Learning Opportunity."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "registration portal"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#anyURI"
-      }
-    ]
-  },
-  {
-    "@id": "http://data.europa.eu/snb/model/elm/LearningAchievementSpecification",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://purl.org/dc/terms/identifier": [
-      {
-        "@value": "elm:LearningAchievementSpecification"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Description of a set of knowledge and/or skills used with responsibility and autonomy, which may be acquired."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Learning Achievement Specification (ELM)"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/Specification"
-      }
-    ]
-  },
-  {
-    "@id": "http://data.quality-link.eu/ontology/v1#LearningOpportunityInstanceReference",
-    "@type": [
-      "http://www.w3.org/ns/shacl#NodeShape",
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "A reference to another Learning Opportunity Instance, identified by a provider and a (local) identifier, without further details."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Learning Opportunity Instance Reference"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#property": [
-      {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b39"
-      },
-      {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b38"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b39",
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/Identifier"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@language": "en",
-        "@value": "Identifier of the Learning Opportunity instance. Must be unique within the scope of the institution identified with providedBy."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#integer",
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#minCount": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#integer",
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@language": "en",
-        "@value": "(local) identifier"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://www.w3.org/ns/adms#identifier"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b38",
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "http://data.quality-link.eu/ontology/v1#HigherEducationInstitution"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@language": "en",
-        "@value": "Higher Education Institution that offers the LO."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#integer",
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#minCount": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#integer",
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@language": "en",
-        "@value": "provided by"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/providedBy"
-      }
-    ]
-  },
-  {
-    "@id": "http://data.quality-link.eu/ontology/v1#Schac",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "The identifier scheme for higher education institutions defined by the Schema for Academia (SCHAC)."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "SCHAC (identifier scheme)"
-      }
-    ]
-  },
-  {
-    "@id": "http://data.quality-link.eu/ontology/v1#superseded",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Learning Opportunity specification superseded another one, which is no longer (or temporarily not) offered."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecification"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "superseded"
+        "@value": "absorbed"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
@@ -2335,42 +1830,42 @@
     ],
     "http://www.w3.org/ns/shacl#property": [
       {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b27"
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b27"
       },
       {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b23"
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b24"
       },
       {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b17"
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b28"
       },
       {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b28"
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b26"
       },
       {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b16"
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b29"
       },
       {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b18"
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b18"
       },
       {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b26"
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b16"
       },
       {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b29"
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b25"
       },
       {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b11"
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b11"
       },
       {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b24"
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b17"
       },
       {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b25"
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b23"
       }
     ]
   },
   {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b27",
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b27",
     "http://www.w3.org/ns/shacl#class": [
       {
         "@id": "http://data.europa.eu/snb/model/elm/Note"
@@ -2401,7 +1896,7 @@
     ]
   },
   {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b23",
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b24",
     "http://www.w3.org/ns/shacl#class": [
       {
         "@id": "http://www.w3.org/2004/02/skos/core#Concept"
@@ -2410,48 +1905,17 @@
     "http://www.w3.org/ns/shacl#description": [
       {
         "@language": "en",
-        "@value": "Offered to students from (a) specific field(s) of study."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@language": "en",
-        "@value": "specific field"
+        "@value": "Offered to students enrolled in another learning opportunity at a specified EQF level or higher. If provided, the value must come from the EU controlled vocabulary http://publications.europa.eu/resource/dataset/european-qualification-framework"
       }
     ],
     "http://www.w3.org/ns/shacl#path": [
       {
-        "@id": "http://data.europa.eu/snb/model/elm/limitField"
+        "@id": "http://data.quality-link.eu/ontology/v1#minimumEQFLevel"
       }
     ]
   },
   {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b17",
-    "http://www.w3.org/ns/shacl#datatype": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#anyURI"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@language": "en",
-        "@value": "Link to a portal where students can register for the learning opportunity (specific for this group of learners)."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#integer",
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://data.quality-link.eu/ontology/v1#registrationPortal"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b28",
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b28",
     "http://www.w3.org/ns/shacl#class": [
       {
         "@id": "http://data.europa.eu/snb/model/elm/Note"
@@ -2482,74 +1946,7 @@
     ]
   },
   {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b16",
-    "http://www.w3.org/ns/shacl#datatype": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#boolean"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@language": "en",
-        "@value": "Indicates that the Learning Opportunity is also offered to learners who are not enrolled as students."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#integer",
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://data.quality-link.eu/ontology/v1#isOpenToNonEnrolled"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b18",
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@language": "en",
-        "@value": "Offered to students following a specific other learning opportunity."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#or": [
-      {
-        "@list": [
-          {
-            "@id": "_:n014a42a0911e4835b39ab4f1ea352007b19"
-          },
-          {
-            "@id": "_:n014a42a0911e4835b39ab4f1ea352007b20"
-          }
-        ]
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://data.quality-link.eu/ontology/v1#limitLearningOpportunity"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b19",
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecificationReference"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b20",
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "http://data.quality-link.eu/ontology/v1#LearningOpportunityInstanceReference"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b26",
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b26",
     "http://www.w3.org/ns/shacl#datatype": [
       {
         "@id": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -2568,7 +1965,7 @@
     ]
   },
   {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b29",
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b29",
     "http://www.w3.org/ns/shacl#class": [
       {
         "@id": "http://data.europa.eu/snb/model/elm/Note"
@@ -2593,74 +1990,74 @@
     ]
   },
   {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b11",
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b18",
     "http://www.w3.org/ns/shacl#description": [
       {
         "@language": "en",
-        "@value": "Offered to students from these higher education institution(s)."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@language": "en",
-        "@value": "home institutions"
+        "@value": "Offered to students following a specific other learning opportunity."
       }
     ],
     "http://www.w3.org/ns/shacl#or": [
       {
         "@list": [
           {
-            "@id": "_:n014a42a0911e4835b39ab4f1ea352007b12"
+            "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b19"
           },
           {
-            "@id": "_:n014a42a0911e4835b39ab4f1ea352007b13"
+            "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b20"
           }
         ]
       }
     ],
     "http://www.w3.org/ns/shacl#path": [
       {
-        "@id": "http://data.quality-link.eu/ontology/v1#studentsOf"
+        "@id": "http://data.quality-link.eu/ontology/v1#limitLearningOpportunity"
       }
     ]
   },
   {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b12",
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b19",
     "http://www.w3.org/ns/shacl#class": [
       {
-        "@id": "http://data.quality-link.eu/ontology/v1#HigherEducationInstitution"
+        "@id": "http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecificationReference"
       }
     ]
   },
   {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b13",
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b20",
     "http://www.w3.org/ns/shacl#class": [
       {
-        "@id": "http://data.quality-link.eu/ontology/v1#GroupOfHEIs"
+        "@id": "http://data.quality-link.eu/ontology/v1#LearningOpportunityInstanceReference"
       }
     ]
   },
   {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b24",
-    "http://www.w3.org/ns/shacl#class": [
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b16",
+    "http://www.w3.org/ns/shacl#datatype": [
       {
-        "@id": "http://www.w3.org/2004/02/skos/core#Concept"
+        "@id": "http://www.w3.org/2001/XMLSchema#boolean"
       }
     ],
     "http://www.w3.org/ns/shacl#description": [
       {
         "@language": "en",
-        "@value": "Offered to students enrolled in another learning opportunity at a specified EQF level or higher. If provided, the value must come from the EU controlled vocabulary http://publications.europa.eu/resource/dataset/european-qualification-framework"
+        "@value": "Indicates that the Learning Opportunity is also offered to learners who are not enrolled as students."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 1
       }
     ],
     "http://www.w3.org/ns/shacl#path": [
       {
-        "@id": "http://data.quality-link.eu/ontology/v1#minimumEQFLevel"
+        "@id": "http://data.quality-link.eu/ontology/v1#isOpenToNonEnrolled"
       }
     ]
   },
   {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b25",
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b25",
     "http://www.w3.org/ns/shacl#class": [
       {
         "@id": "http://data.europa.eu/snb/model/elm/PriceDetail"
@@ -2685,268 +2082,64 @@
     ]
   },
   {
-    "@id": "http://data.quality-link.eu/ontology/v1#studentsOf",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b11",
+    "http://www.w3.org/ns/shacl#description": [
       {
         "@language": "en",
-        "@value": "Defines that the target group of learners includes the students of an education institution, or an alliance thereof"
+        "@value": "Offered to students from these higher education institution(s)."
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://data.quality-link.eu/ontology/v1#LearnerGroup"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
+    "http://www.w3.org/ns/shacl#name": [
       {
         "@language": "en",
-        "@value": "includes students of"
+        "@value": "home institutions"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#or": [
+      {
+        "@list": [
+          {
+            "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b12"
+          },
+          {
+            "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b13"
+          }
+        ]
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://data.quality-link.eu/ontology/v1#studentsOf"
       }
     ]
   },
   {
-    "@id": "http://data.quality-link.eu/ontology/v1#OrgReg",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b12",
+    "http://www.w3.org/ns/shacl#class": [
       {
-        "@language": "en",
-        "@value": "The identifier scheme defined by the Register of Public Sector Organisations (OrgReg)"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "OrgReg (identifier scheme)"
+        "@id": "http://data.quality-link.eu/ontology/v1#HigherEducationInstitution"
       }
     ]
   },
   {
-    "@id": "http://data.quality-link.eu/ontology/v1#EuropeanUniversityAlliance",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class",
-      "http://www.w3.org/ns/shacl#NodeShape"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "An alliance of higher education institutions that is part of the EU's European Universities programme"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "European University Alliance"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b13",
+    "http://www.w3.org/ns/shacl#class": [
       {
         "@id": "http://data.quality-link.eu/ontology/v1#GroupOfHEIs"
       }
     ]
   },
   {
-    "@id": "http://data.europa.eu/snb/model/ap/loq-constraints/LearningOpportunityShape",
-    "@type": [
-      "http://www.w3.org/ns/shacl#NodeShape"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "An opportunity to realise a given set of learning outcomes via a learning activity and/or assessment."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Learning Opportunity (ELM)"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#closed": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
-        "@value": true
-      }
-    ],
-    "http://www.w3.org/ns/shacl#ignoredProperties": [
-      {
-        "@list": [
-          {
-            "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
-          }
-        ]
-      }
-    ],
-    "http://www.w3.org/ns/shacl#property": [
-      {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b78"
-      },
-      {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b53"
-      },
-      {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b54"
-      },
-      {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b76"
-      },
-      {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b57"
-      },
-      {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b68"
-      },
-      {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b50"
-      },
-      {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b66"
-      },
-      {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b79"
-      },
-      {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b73"
-      },
-      {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b59"
-      },
-      {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b80"
-      },
-      {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b65"
-      },
-      {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b60"
-      },
-      {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b49"
-      },
-      {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b55"
-      },
-      {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b74"
-      },
-      {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b48"
-      },
-      {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b40"
-      },
-      {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b56"
-      },
-      {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b47"
-      },
-      {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b75"
-      },
-      {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b77"
-      },
-      {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b58"
-      },
-      {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b67"
-      },
-      {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b51"
-      },
-      {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b52"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#targetClass": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/LearningOpportunity"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b78",
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/WebResource"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@language": "en",
-        "@value": "The homepage."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#minCount": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#integer",
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@language": "en",
-        "@value": "homepage"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#node": [
-      {
-        "@id": "http://data.europa.eu/snb/model/ap/loq-constraints/URLRegexRestriction"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://xmlns.com/foaf/0.1/homepage"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#severity": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#Violation"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b53",
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "http://purl.org/dc/terms/Location"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@language": "en",
-        "@value": "The location where the learning opportunity was provided at."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@language": "en",
-        "@value": "location"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/location"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b54",
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b17",
     "http://www.w3.org/ns/shacl#datatype": [
       {
-        "@id": "http://www.w3.org/2001/XMLSchema#dateTime"
+        "@id": "http://www.w3.org/2001/XMLSchema#anyURI"
       }
     ],
     "http://www.w3.org/ns/shacl#description": [
       {
         "@language": "en",
-        "@value": "The date when the learning opportunity was last modified."
+        "@value": "Link to a portal where students can register for the learning opportunity (specific for this group of learners)."
       }
     ],
     "http://www.w3.org/ns/shacl#maxCount": [
@@ -2955,192 +2148,14 @@
         "@value": 1
       }
     ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@language": "en",
-        "@value": "last modification date"
-      }
-    ],
     "http://www.w3.org/ns/shacl#path": [
       {
-        "@id": "http://purl.org/dc/terms/modified"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#severity": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#Violation"
+        "@id": "http://data.quality-link.eu/ontology/v1#registrationPortal"
       }
     ]
   },
   {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b76",
-    "http://www.w3.org/ns/shacl#datatype": [
-      {
-        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@language": "en",
-        "@value": " The title of Learning Opportunity. One value per language is permitted."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#minCount": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#integer",
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@language": "en",
-        "@value": "title"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://purl.org/dc/terms/title"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#severity": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#Violation"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#uniqueLang": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
-        "@value": true
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b57",
-    "http://www.w3.org/ns/shacl#datatype": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#duration"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@language": "en",
-        "@value": "The nominal duration for which the learning opportunity will continue to run. Note, this may be after the end-date, since admissions may be closed but the learning opportunity may still be ongoing."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#integer",
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@language": "en",
-        "@value": "duration"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/duration"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#severity": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#Violation"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b68",
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@language": "en",
-        "@value": "An alternative Identifier of the Learning Opportunity."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@language": "en",
-        "@value": "identifier"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#or": [
-      {
-        "@list": [
-          {
-            "@id": "_:n014a42a0911e4835b39ab4f1ea352007b69"
-          },
-          {
-            "@id": "_:n014a42a0911e4835b39ab4f1ea352007b70"
-          }
-        ]
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://www.w3.org/ns/adms#identifier"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#severity": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#Violation"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b69",
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/Identifier"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b70",
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/LegalIdentifier"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b50",
-    "http://www.w3.org/ns/shacl#datatype": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#string"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@language": "en",
-        "@value": "The publication status of the learning opportunity."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#integer",
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@language": "en",
-        "@value": "status"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/status"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#severity": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#Violation"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b66",
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b23",
     "http://www.w3.org/ns/shacl#class": [
       {
         "@id": "http://www.w3.org/2004/02/skos/core#Concept"
@@ -3149,774 +2164,18 @@
     "http://www.w3.org/ns/shacl#description": [
       {
         "@language": "en",
-        "@value": "The learning schedule. It should be provided using the EDC Controlled List of Learning Schedule Types."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#integer",
-        "@value": 1
+        "@value": "Offered to students from (a) specific field(s) of study."
       }
     ],
     "http://www.w3.org/ns/shacl#name": [
       {
         "@language": "en",
-        "@value": "learning schedule"
+        "@value": "specific field"
       }
     ],
     "http://www.w3.org/ns/shacl#path": [
       {
-        "@id": "http://data.europa.eu/snb/model/elm/learningSchedule"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#severity": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#Violation"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b79",
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/WebResource"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@language": "en",
-        "@value": "A public web document containing additional documentation about the Learning Opportunity."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@language": "en",
-        "@value": "other documents"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#node": [
-      {
-        "@id": "http://data.europa.eu/snb/model/ap/loq-constraints/URLRegexRestriction"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/supplementaryDocument"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#severity": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#Violation"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b73",
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/LearningOpportunity"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@language": "en",
-        "@value": "A learning opportunity can be part of other learning opportunity."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@language": "en",
-        "@value": "is part of"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/isPartOf"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#severity": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#Violation"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b59",
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "http://purl.org/dc/terms/PeriodOfTime"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@language": "en",
-        "@value": "The associated period of time shape."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#integer",
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@language": "en",
-        "@value": "temporal"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://purl.org/dc/terms/temporal"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#severity": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#Violation"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b80",
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/Grant"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@language": "en",
-        "@value": "The grant related to the learning opportunity."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@language": "en",
-        "@value": "grant"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/grant"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#severity": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#Violation"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b65",
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "http://www.w3.org/2004/02/skos/core#Concept"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@language": "en",
-        "@value": "The base language of the learning opportunity, to be considered authoritative."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#integer",
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#minCount": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#integer",
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@language": "en",
-        "@value": "default language"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/defaultLanguage"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#severity": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#Violation"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b60",
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@language": "en",
-        "@value": "The publisher of the Learning Opportunity."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#integer",
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@language": "en",
-        "@value": "publisher"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#or": [
-      {
-        "@list": [
-          {
-            "@id": "_:n014a42a0911e4835b39ab4f1ea352007b61"
-          },
-          {
-            "@id": "_:n014a42a0911e4835b39ab4f1ea352007b62"
-          }
-        ]
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://purl.org/dc/terms/publisher"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#severity": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#Violation"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b61",
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/Agent"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b62",
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/Organisation"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b49",
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "http://www.w3.org/2004/02/skos/core#Concept"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@language": "en",
-        "@value": " The type of the learning opportunity. It should be provided using the EDC Controlled List of Learning Opportunity Types."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@language": "en",
-        "@value": "type"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://purl.org/dc/terms/type"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#severity": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#Violation"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b55",
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/Note"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@language": "en",
-        "@value": "An additional free text note about the Learning Opportunity."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@language": "en",
-        "@value": "more information"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/additionalNote"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#severity": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#Violation"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b74",
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "http://www.w3.org/2004/02/skos/core#Concept"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@language": "en",
-        "@value": "The mode of learning Opportunity. It should be provided using the EDC Controlled List of Modes Of Learning and Assessment. "
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@language": "en",
-        "@value": "mode"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/mode"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#severity": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#Violation"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b48",
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/Note"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@language": "en",
-        "@value": "Specific information on how to apply for the course."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#integer",
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@language": "en",
-        "@value": "admissions procedure"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/admissionProcedure"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#severity": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#Violation"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b40",
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@language": "en",
-        "@value": " The learning achievement specification, including the curricula, of this learning opportunity."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#integer",
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#minCount": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#integer",
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@language": "en",
-        "@value": "learning achievement specification"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#or": [
-      {
-        "@list": [
-          {
-            "@id": "_:n014a42a0911e4835b39ab4f1ea352007b41"
-          },
-          {
-            "@id": "_:n014a42a0911e4835b39ab4f1ea352007b42"
-          },
-          {
-            "@id": "_:n014a42a0911e4835b39ab4f1ea352007b43"
-          }
-        ]
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/learningAchievementSpecification"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b41",
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/LearningAchievementSpecification"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b42",
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/QualificationReference"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b43",
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/Qualification"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b56",
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/LearningActivitySpecification"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@language": "en",
-        "@value": " The learning activity specification, including the curricula, of this learning opportunity."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#integer",
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@language": "en",
-        "@value": "learning activity specification"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/learningActivitySpecification"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b47",
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/LearningOpportunity"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@language": "en",
-        "@value": "A learning opportunity can be composed of other learning opportunities, which when combined make up this larger learning opportunity."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@language": "en",
-        "@value": "has part"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/hasPart"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#severity": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#Violation"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b75",
-    "http://www.w3.org/ns/shacl#datatype": [
-      {
-        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@language": "en",
-        "@value": " A free text description of the learning opportunity. One value per language is permitted."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@language": "en",
-        "@value": "description"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://purl.org/dc/terms/description"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#severity": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#Violation"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#uniqueLang": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
-        "@value": true
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b77",
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/Note"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@language": "en",
-        "@value": "Detailed information about the timetable or schedule. This may include weekly schedules (e.g., 'Every Monday, 4pm', but may also include the overall schedule for the course, (e.g., October: lectures, November: group-work, December: break, January: assessment)."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#integer",
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@language": "en",
-        "@value": "schedule information"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/scheduleInformation"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#severity": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#Violation"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b58",
-    "http://www.w3.org/ns/shacl#datatype": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#dateTime"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@language": "en",
-        "@value": "The deadline for applying to the course."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@language": "en",
-        "@value": "application deadline"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/applicationDeadline"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#severity": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#Violation"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b67",
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/MediaObject"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@language": "en",
-        "@value": "An image which is displayed alongside the learning opportunity."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#integer",
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@language": "en",
-        "@value": "banner image"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/bannerImage"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#severity": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#Violation"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b51",
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/Organisation"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@language": "en",
-        "@value": "The organisation providing or directing the learning opportunity. In the case of, e.g., joint qualifications, there may be several organisations directing the learning opportunity."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#minCount": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#integer",
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@language": "en",
-        "@value": "provided by"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/providedBy"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#severity": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#Violation"
-      }
-    ]
-  },
-  {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b52",
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/PriceDetail"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@language": "en",
-        "@value": "Information about the pricing of the course, including fees and scholarships/subsidies available."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@language": "en",
-        "@value": "fees"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/priceDetail"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#severity": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#Violation"
-      }
-    ]
-  },
-  {
-    "@id": "http://data.quality-link.eu/ontology/v1#spunOffFrom",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Organisation spun off from another one (i.e. subject newly created by the event, object existed before and after)"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://data.europa.eu/snb/model/elm/Organisation"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "spun off from"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://data.quality-link.eu/ontology/v1#relatedTo"
-      }
-    ]
-  },
-  {
-    "@id": "http://data.quality-link.eu/ontology/v1#limitLearningOpportunity",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Defines that the learning opportunity is offered to students enrolled in a specified other learning opportunity."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://data.quality-link.eu/ontology/v1#LearnerGroup"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "specific learning opportunity"
+        "@id": "http://data.europa.eu/snb/model/elm/limitField"
       }
     ]
   },
@@ -3994,30 +2253,59 @@
     ]
   },
   {
-    "@id": "http://data.quality-link.eu/ontology/v1#absorbed",
+    "@id": "http://data.quality-link.eu/ontology/v1#studentsOf",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Organisation absorbed another one (i.e. subject existed before and after the event, object ceased to exist)"
+        "@value": "Defines that the target group of learners includes the students of an education institution, or an alliance thereof"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "http://data.europa.eu/snb/model/elm/Organisation"
+        "@id": "http://data.quality-link.eu/ontology/v1#LearnerGroup"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "absorbed"
+        "@value": "includes students of"
+      }
+    ]
+  },
+  {
+    "@id": "http://data.europa.eu/snb/model/elm/LearningAchievementSpecification",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class",
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://purl.org/dc/terms/identifier": [
+      {
+        "@value": "elm:LearningAchievementSpecification"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
-        "@id": "http://data.quality-link.eu/ontology/v1#relatedTo"
+        "@language": "en",
+        "@value": "Description of a set of knowledge and/or skills used with responsibility and autonomy, which may be acquired."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Learning Achievement Specification (ELM)"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/Specification"
       }
     ]
   },
@@ -4046,15 +2334,15 @@
     ],
     "http://www.w3.org/ns/shacl#property": [
       {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b9"
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b9"
       },
       {
-        "@id": "_:n014a42a0911e4835b39ab4f1ea352007b10"
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b10"
       }
     ]
   },
   {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b9",
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b9",
     "http://www.w3.org/ns/shacl#description": [
       {
         "@language": "en",
@@ -4091,7 +2379,7 @@
     ]
   },
   {
-    "@id": "_:n014a42a0911e4835b39ab4f1ea352007b10",
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b10",
     "http://www.w3.org/ns/shacl#description": [
       {
         "@language": "en",
@@ -4124,6 +2412,1718 @@
     "http://www.w3.org/ns/shacl#path": [
       {
         "@id": "http://www.w3.org/2004/02/skos/core#notation"
+      }
+    ]
+  },
+  {
+    "@id": "http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecification",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class",
+      "http://www.w3.org/ns/shacl#NodeShape"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "An asbtract opportunity to acquire a given set of learning outcomes, e.g. the general specification of a course, programme or module offered by an education provider."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Learning Opportunity Specification"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://data.europa.eu/snb/model/ap/loq-constraints/LearningAchievementSpecificationShape"
+      },
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/LearningAchievementSpecification"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#property": [
+      {
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b33"
+      },
+      {
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b32"
+      },
+      {
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b30"
+      },
+      {
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b31"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b33",
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecificationReference"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://data.quality-link.eu/ontology/v1#equivalentTo"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b32",
+    "http://www.w3.org/ns/shacl#nodeKind": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#Literal"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://data.quality-link.eu/ontology/v1#version"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b30",
+    "http://www.w3.org/ns/shacl#datatype": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#boolean"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://data.quality-link.eu/ontology/v1#isActive"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b31",
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecificationReference"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://data.quality-link.eu/ontology/v1#superseded"
+      }
+    ]
+  },
+  {
+    "@id": "http://data.europa.eu/snb/model/ap/loq-constraints/LearningOpportunityShape",
+    "@type": [
+      "http://www.w3.org/ns/shacl#NodeShape"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "An opportunity to realise a given set of learning outcomes via a learning activity and/or assessment."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Learning Opportunity (ELM)"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#closed": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": true
+      }
+    ],
+    "http://www.w3.org/ns/shacl#ignoredProperties": [
+      {
+        "@list": [
+          {
+            "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+          }
+        ]
+      }
+    ],
+    "http://www.w3.org/ns/shacl#property": [
+      {
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b67"
+      },
+      {
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b53"
+      },
+      {
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b79"
+      },
+      {
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b68"
+      },
+      {
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b58"
+      },
+      {
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b54"
+      },
+      {
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b48"
+      },
+      {
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b50"
+      },
+      {
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b55"
+      },
+      {
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b40"
+      },
+      {
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b60"
+      },
+      {
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b47"
+      },
+      {
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b76"
+      },
+      {
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b51"
+      },
+      {
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b49"
+      },
+      {
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b52"
+      },
+      {
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b65"
+      },
+      {
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b59"
+      },
+      {
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b78"
+      },
+      {
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b66"
+      },
+      {
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b74"
+      },
+      {
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b75"
+      },
+      {
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b77"
+      },
+      {
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b80"
+      },
+      {
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b56"
+      },
+      {
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b73"
+      },
+      {
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b57"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#targetClass": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/LearningOpportunity"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b67",
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/MediaObject"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@language": "en",
+        "@value": "An image which is displayed alongside the learning opportunity."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@language": "en",
+        "@value": "banner image"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/bannerImage"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#severity": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#Violation"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b53",
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "http://purl.org/dc/terms/Location"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@language": "en",
+        "@value": "The location where the learning opportunity was provided at."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@language": "en",
+        "@value": "location"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/location"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b79",
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/WebResource"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@language": "en",
+        "@value": "A public web document containing additional documentation about the Learning Opportunity."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@language": "en",
+        "@value": "other documents"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#node": [
+      {
+        "@id": "http://data.europa.eu/snb/model/ap/loq-constraints/URLRegexRestriction"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/supplementaryDocument"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#severity": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#Violation"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b68",
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@language": "en",
+        "@value": "An alternative Identifier of the Learning Opportunity."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@language": "en",
+        "@value": "identifier"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#or": [
+      {
+        "@list": [
+          {
+            "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b69"
+          },
+          {
+            "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b70"
+          }
+        ]
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://www.w3.org/ns/adms#identifier"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#severity": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#Violation"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b69",
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/Identifier"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b70",
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/LegalIdentifier"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b58",
+    "http://www.w3.org/ns/shacl#datatype": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#dateTime"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@language": "en",
+        "@value": "The deadline for applying to the course."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@language": "en",
+        "@value": "application deadline"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/applicationDeadline"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#severity": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#Violation"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b54",
+    "http://www.w3.org/ns/shacl#datatype": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#dateTime"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@language": "en",
+        "@value": "The date when the learning opportunity was last modified."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@language": "en",
+        "@value": "last modification date"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://purl.org/dc/terms/modified"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#severity": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#Violation"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b48",
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/Note"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@language": "en",
+        "@value": "Specific information on how to apply for the course."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@language": "en",
+        "@value": "admissions procedure"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/admissionProcedure"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#severity": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#Violation"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b50",
+    "http://www.w3.org/ns/shacl#datatype": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@language": "en",
+        "@value": "The publication status of the learning opportunity."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@language": "en",
+        "@value": "status"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/status"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#severity": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#Violation"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b55",
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/Note"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@language": "en",
+        "@value": "An additional free text note about the Learning Opportunity."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@language": "en",
+        "@value": "more information"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/additionalNote"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#severity": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#Violation"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b40",
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@language": "en",
+        "@value": " The learning achievement specification, including the curricula, of this learning opportunity."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#minCount": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@language": "en",
+        "@value": "learning achievement specification"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#or": [
+      {
+        "@list": [
+          {
+            "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b41"
+          },
+          {
+            "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b42"
+          },
+          {
+            "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b43"
+          }
+        ]
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/learningAchievementSpecification"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b41",
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/LearningAchievementSpecification"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b42",
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/QualificationReference"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b43",
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/Qualification"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b60",
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@language": "en",
+        "@value": "The publisher of the Learning Opportunity."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@language": "en",
+        "@value": "publisher"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#or": [
+      {
+        "@list": [
+          {
+            "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b61"
+          },
+          {
+            "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b62"
+          }
+        ]
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://purl.org/dc/terms/publisher"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#severity": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#Violation"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b61",
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/Agent"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b62",
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/Organisation"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b47",
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/LearningOpportunity"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@language": "en",
+        "@value": "A learning opportunity can be composed of other learning opportunities, which when combined make up this larger learning opportunity."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@language": "en",
+        "@value": "has part"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/hasPart"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#severity": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#Violation"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b76",
+    "http://www.w3.org/ns/shacl#datatype": [
+      {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@language": "en",
+        "@value": " The title of Learning Opportunity. One value per language is permitted."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#minCount": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@language": "en",
+        "@value": "title"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://purl.org/dc/terms/title"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#severity": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#Violation"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#uniqueLang": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": true
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b51",
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/Organisation"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@language": "en",
+        "@value": "The organisation providing or directing the learning opportunity. In the case of, e.g., joint qualifications, there may be several organisations directing the learning opportunity."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#minCount": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@language": "en",
+        "@value": "provided by"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/providedBy"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#severity": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#Violation"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b49",
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "http://www.w3.org/2004/02/skos/core#Concept"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@language": "en",
+        "@value": " The type of the learning opportunity. It should be provided using the EDC Controlled List of Learning Opportunity Types."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@language": "en",
+        "@value": "type"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://purl.org/dc/terms/type"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#severity": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#Violation"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b52",
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/PriceDetail"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@language": "en",
+        "@value": "Information about the pricing of the course, including fees and scholarships/subsidies available."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@language": "en",
+        "@value": "fees"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/priceDetail"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#severity": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#Violation"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b65",
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "http://www.w3.org/2004/02/skos/core#Concept"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@language": "en",
+        "@value": "The base language of the learning opportunity, to be considered authoritative."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#minCount": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@language": "en",
+        "@value": "default language"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/defaultLanguage"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#severity": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#Violation"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b59",
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "http://purl.org/dc/terms/PeriodOfTime"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@language": "en",
+        "@value": "The associated period of time shape."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@language": "en",
+        "@value": "temporal"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://purl.org/dc/terms/temporal"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#severity": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#Violation"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b78",
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/WebResource"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@language": "en",
+        "@value": "The homepage."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#minCount": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@language": "en",
+        "@value": "homepage"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#node": [
+      {
+        "@id": "http://data.europa.eu/snb/model/ap/loq-constraints/URLRegexRestriction"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://xmlns.com/foaf/0.1/homepage"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#severity": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#Violation"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b66",
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "http://www.w3.org/2004/02/skos/core#Concept"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@language": "en",
+        "@value": "The learning schedule. It should be provided using the EDC Controlled List of Learning Schedule Types."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@language": "en",
+        "@value": "learning schedule"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/learningSchedule"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#severity": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#Violation"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b74",
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "http://www.w3.org/2004/02/skos/core#Concept"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@language": "en",
+        "@value": "The mode of learning Opportunity. It should be provided using the EDC Controlled List of Modes Of Learning and Assessment. "
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@language": "en",
+        "@value": "mode"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/mode"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#severity": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#Violation"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b75",
+    "http://www.w3.org/ns/shacl#datatype": [
+      {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@language": "en",
+        "@value": " A free text description of the learning opportunity. One value per language is permitted."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@language": "en",
+        "@value": "description"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://purl.org/dc/terms/description"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#severity": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#Violation"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#uniqueLang": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": true
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b77",
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/Note"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@language": "en",
+        "@value": "Detailed information about the timetable or schedule. This may include weekly schedules (e.g., 'Every Monday, 4pm', but may also include the overall schedule for the course, (e.g., October: lectures, November: group-work, December: break, January: assessment)."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@language": "en",
+        "@value": "schedule information"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/scheduleInformation"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#severity": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#Violation"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b80",
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/Grant"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@language": "en",
+        "@value": "The grant related to the learning opportunity."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@language": "en",
+        "@value": "grant"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/grant"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#severity": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#Violation"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b56",
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/LearningActivitySpecification"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@language": "en",
+        "@value": " The learning activity specification, including the curricula, of this learning opportunity."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@language": "en",
+        "@value": "learning activity specification"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/learningActivitySpecification"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b73",
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/LearningOpportunity"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@language": "en",
+        "@value": "A learning opportunity can be part of other learning opportunity."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@language": "en",
+        "@value": "is part of"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/isPartOf"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#severity": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#Violation"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b57",
+    "http://www.w3.org/ns/shacl#datatype": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#duration"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@language": "en",
+        "@value": "The nominal duration for which the learning opportunity will continue to run. Note, this may be after the end-date, since admissions may be closed but the learning opportunity may still be ongoing."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@language": "en",
+        "@value": "duration"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/duration"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#severity": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#Violation"
+      }
+    ]
+  },
+  {
+    "@id": "http://data.quality-link.eu/ontology/v1#registrationPortal",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "A web page at which one can register or enrol for a Learning Opportunity."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "registration portal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#anyURI"
+      }
+    ]
+  },
+  {
+    "@id": "http://data.quality-link.eu/ontology/v1#spunOffFrom",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Organisation spun off from another one (i.e. subject newly created by the event, object existed before and after)"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/Organisation"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "spun off from"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://data.quality-link.eu/ontology/v1#relatedTo"
+      }
+    ]
+  },
+  {
+    "@id": "http://data.quality-link.eu/ontology/v1#minimumEQFLevel",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Defines that the learning opportunity is offered to students enrolled in another learning opportunity at a specified EQF level or higher. If provided, the value must come from the EU controlled vocabulary http://publications.europa.eu/resource/dataset/european-qualification-framework"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://data.quality-link.eu/ontology/v1#LearnerGroup"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "minimum EQF Level"
+      }
+    ]
+  },
+  {
+    "@id": "http://data.europa.eu/snb/model/elm/LearningOpportunity",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class",
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://purl.org/dc/terms/identifier": [
+      {
+        "@value": "elm:LearningOpportunity"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "The conditions, e.g. time and location, under which a person may acquire a set of knowledge and/or skills used with responsibility and autonomy."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Learning Opportunity (ELM)"
+      }
+    ]
+  },
+  {
+    "@id": "http://data.quality-link.eu/ontology/v1#OrgReg",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "The identifier scheme defined by the Register of Public Sector Organisations (OrgReg)"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "OrgReg (identifier scheme)"
+      }
+    ]
+  },
+  {
+    "@id": "http://data.quality-link.eu/ontology/v1#OrgRegIdentifier",
+    "@type": [
+      "http://www.w3.org/ns/shacl#NodeShape",
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "The identifier assigned to a higher education institution or other organisation in the Register of Public Sector Organisations (OrgReg)"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "OrgReg ID"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/Identifier"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#property": [
+      {
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b7"
+      },
+      {
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b8"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b7",
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@language": "en",
+        "@value": "Identification of the scheme."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#hasValue": [
+      {
+        "@id": "http://data.quality-link.eu/ontology/v1#OrgReg"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#minCount": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@language": "en",
+        "@value": "scheme ID "
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/schemeId"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b8",
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@language": "en",
+        "@value": "The OrgReg identifier of the format XX1111."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#minCount": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@language": "en",
+        "@value": "identifier"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#nodeKind": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#Literal"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://www.w3.org/2004/02/skos/core#notation"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#pattern": [
+      {
+        "@value": "^(INT|[A-Z]{2})[0-9]{4}$"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#severity": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#Violation"
+      }
+    ]
+  },
+  {
+    "@id": "http://data.quality-link.eu/ontology/v1#relatedTo",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AsymmetricProperty",
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A relationship between Learning Opportunities or Organisations (abstract)"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "related to"
+      }
+    ]
+  },
+  {
+    "@id": "http://data.quality-link.eu/ontology/v1#superseded",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Learning Opportunity specification superseded another one, which is no longer (or temporarily not) offered."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecification"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "superseded"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://data.quality-link.eu/ontology/v1#relatedTo"
+      }
+    ]
+  },
+  {
+    "@id": "http://data.quality-link.eu/ontology/v1#isActive",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Learning Opportunity Specification is active, i.e. instances are currently offered or the education provider expects that instances will still be offered in the future."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "is active"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#boolean"
+      }
+    ]
+  },
+  {
+    "@id": "http://data.quality-link.eu/ontology/v1#Schac",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "The identifier scheme for higher education institutions defined by the Schema for Academia (SCHAC)."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "SCHAC (identifier scheme)"
+      }
+    ]
+  },
+  {
+    "@id": "http://data.quality-link.eu/ontology/v1#succeeded",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Organisation succeeded/replaced another one (i.e. subject was newly created by the event, object ceased to exist)"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/Organisation"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "succeeded"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://data.quality-link.eu/ontology/v1#relatedTo"
+      }
+    ]
+  },
+  {
+    "@id": "http://data.quality-link.eu/ontology/v1#EuropeanUniversityAlliance",
+    "@type": [
+      "http://www.w3.org/ns/shacl#NodeShape",
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "An alliance of higher education institutions that is part of the EU's European Universities programme"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "European University Alliance"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://data.quality-link.eu/ontology/v1#GroupOfHEIs"
+      }
+    ]
+  },
+  {
+    "@id": "http://data.quality-link.eu/ontology/v1#limitLearningOpportunity",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Defines that the learning opportunity is offered to students enrolled in a specified other learning opportunity."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://data.quality-link.eu/ontology/v1#LearnerGroup"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "specific learning opportunity"
+      }
+    ]
+  },
+  {
+    "@id": "http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecificationReference",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class",
+      "http://www.w3.org/ns/shacl#NodeShape"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A reference to another Learning Opportunity specification, identified by a provider and a (local) identifier, without further details."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Learning Opportunity Specification Reference"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#property": [
+      {
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b37"
+      },
+      {
+        "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b36"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b37",
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/Identifier"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@language": "en",
+        "@value": "Identifier of the Learning Opportunity Specification. Must be unique within the scope of the institution identified with providedBy."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#minCount": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@language": "en",
+        "@value": "(local) identifier"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://www.w3.org/ns/adms#identifier"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc6502fdcaaad49d09c88c7f4af6ac387b36",
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "http://data.quality-link.eu/ontology/v1#HigherEducationInstitution"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@language": "en",
+        "@value": "Higher Education Institution that offers the LO."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#minCount": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@language": "en",
+        "@value": "provided by"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://data.europa.eu/snb/model/elm/providedBy"
       }
     ]
   }
