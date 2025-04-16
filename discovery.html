@@ -1490,7 +1490,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version b25686b9f, updated Fri Mar 14 14:15:20 2025 -0700" name="generator">
   <link href="https://quality-link.eu/wp-content/uploads/sites/90/2024/03/Quality-Link_Website-Favicon.png" rel="icon">
-  <meta content="657d4381819d8eced520ea4e99d3e9236977f765" name="revision">
+  <meta content="f1ae061def18398e58a0aa0c1d25e4cf4c1287fa" name="revision">
   <meta content="dark light" name="color-scheme">
 <style>/* Boilerplate: style-autolinks */
 .css.css, .property.property, .descriptor.descriptor {
@@ -2047,11 +2047,132 @@ a.self-link::before            { content: "¶"; }
 .heading > a.self-link::before { content: "§"; }
 dfn > a.self-link::before      { content: "#"; }
 </style>
+<style>/* Boilerplate: style-syntax-highlighting */
+code.highlight { padding: .1em; border-radius: .3em; }
+pre.highlight, pre > code.highlight { display: block; padding: 1em; margin: .5em 0; overflow: auto; border-radius: 0; }
+
+.highlight:not(.idl) { background: rgba(0, 0, 0, .03); }
+c-[a] { color: #990055 } /* Keyword.Declaration */
+c-[b] { color: #990055 } /* Keyword.Type */
+c-[c] { color: #708090 } /* Comment */
+c-[d] { color: #708090 } /* Comment.Multiline */
+c-[e] { color: #0077aa } /* Name.Attribute */
+c-[f] { color: #669900 } /* Name.Tag */
+c-[g] { color: #222222 } /* Name.Variable */
+c-[k] { color: #990055 } /* Keyword */
+c-[l] { color: #000000 } /* Literal */
+c-[m] { color: #000000 } /* Literal.Number */
+c-[n] { color: #0077aa } /* Name */
+c-[o] { color: #999999 } /* Operator */
+c-[p] { color: #999999 } /* Punctuation */
+c-[s] { color: #a67f59 } /* Literal.String */
+c-[t] { color: #a67f59 } /* Literal.String.Single */
+c-[u] { color: #a67f59 } /* Literal.String.Double */
+c-[cp] { color: #708090 } /* Comment.Preproc */
+c-[c1] { color: #708090 } /* Comment.Single */
+c-[cs] { color: #708090 } /* Comment.Special */
+c-[kc] { color: #990055 } /* Keyword.Constant */
+c-[kn] { color: #990055 } /* Keyword.Namespace */
+c-[kp] { color: #990055 } /* Keyword.Pseudo */
+c-[kr] { color: #990055 } /* Keyword.Reserved */
+c-[ld] { color: #000000 } /* Literal.Date */
+c-[nc] { color: #0077aa } /* Name.Class */
+c-[no] { color: #0077aa } /* Name.Constant */
+c-[nd] { color: #0077aa } /* Name.Decorator */
+c-[ni] { color: #0077aa } /* Name.Entity */
+c-[ne] { color: #0077aa } /* Name.Exception */
+c-[nf] { color: #0077aa } /* Name.Function */
+c-[nl] { color: #0077aa } /* Name.Label */
+c-[nn] { color: #0077aa } /* Name.Namespace */
+c-[py] { color: #0077aa } /* Name.Property */
+c-[ow] { color: #999999 } /* Operator.Word */
+c-[mb] { color: #000000 } /* Literal.Number.Bin */
+c-[mf] { color: #000000 } /* Literal.Number.Float */
+c-[mh] { color: #000000 } /* Literal.Number.Hex */
+c-[mi] { color: #000000 } /* Literal.Number.Integer */
+c-[mo] { color: #000000 } /* Literal.Number.Oct */
+c-[sb] { color: #a67f59 } /* Literal.String.Backtick */
+c-[sc] { color: #a67f59 } /* Literal.String.Char */
+c-[sd] { color: #a67f59 } /* Literal.String.Doc */
+c-[se] { color: #a67f59 } /* Literal.String.Escape */
+c-[sh] { color: #a67f59 } /* Literal.String.Heredoc */
+c-[si] { color: #a67f59 } /* Literal.String.Interpol */
+c-[sx] { color: #a67f59 } /* Literal.String.Other */
+c-[sr] { color: #a67f59 } /* Literal.String.Regex */
+c-[ss] { color: #a67f59 } /* Literal.String.Symbol */
+c-[vc] { color: #0077aa } /* Name.Variable.Class */
+c-[vg] { color: #0077aa } /* Name.Variable.Global */
+c-[vi] { color: #0077aa } /* Name.Variable.Instance */
+c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
+
+@media (prefers-color-scheme: dark) {
+    .highlight:not(.idl) { background: rgba(255, 255, 255, .05); }
+
+    c-[a] { color: #d33682 } /* Keyword.Declaration */
+    c-[b] { color: #d33682 } /* Keyword.Type */
+    c-[c] { color: #2aa198 } /* Comment */
+    c-[d] { color: #2aa198 } /* Comment.Multiline */
+    c-[e] { color: #268bd2 } /* Name.Attribute */
+    c-[f] { color: #b58900 } /* Name.Tag */
+    c-[g] { color: #cb4b16 } /* Name.Variable */
+    c-[k] { color: #d33682 } /* Keyword */
+    c-[l] { color: #657b83 } /* Literal */
+    c-[m] { color: #657b83 } /* Literal.Number */
+    c-[n] { color: #268bd2 } /* Name */
+    c-[o] { color: #657b83 } /* Operator */
+    c-[p] { color: #657b83 } /* Punctuation */
+    c-[s] { color: #6c71c4 } /* Literal.String */
+    c-[t] { color: #6c71c4 } /* Literal.String.Single */
+    c-[u] { color: #6c71c4 } /* Literal.String.Double */
+    c-[ch] { color: #2aa198 } /* Comment.Hashbang */
+    c-[cp] { color: #2aa198 } /* Comment.Preproc */
+    c-[cpf] { color: #2aa198 } /* Comment.PreprocFile */
+    c-[c1] { color: #2aa198 } /* Comment.Single */
+    c-[cs] { color: #2aa198 } /* Comment.Special */
+    c-[kc] { color: #d33682 } /* Keyword.Constant */
+    c-[kn] { color: #d33682 } /* Keyword.Namespace */
+    c-[kp] { color: #d33682 } /* Keyword.Pseudo */
+    c-[kr] { color: #d33682 } /* Keyword.Reserved */
+    c-[ld] { color: #657b83 } /* Literal.Date */
+    c-[nc] { color: #268bd2 } /* Name.Class */
+    c-[no] { color: #268bd2 } /* Name.Constant */
+    c-[nd] { color: #268bd2 } /* Name.Decorator */
+    c-[ni] { color: #268bd2 } /* Name.Entity */
+    c-[ne] { color: #268bd2 } /* Name.Exception */
+    c-[nf] { color: #268bd2 } /* Name.Function */
+    c-[nl] { color: #268bd2 } /* Name.Label */
+    c-[nn] { color: #268bd2 } /* Name.Namespace */
+    c-[py] { color: #268bd2 } /* Name.Property */
+    c-[ow] { color: #657b83 } /* Operator.Word */
+    c-[mb] { color: #657b83 } /* Literal.Number.Bin */
+    c-[mf] { color: #657b83 } /* Literal.Number.Float */
+    c-[mh] { color: #657b83 } /* Literal.Number.Hex */
+    c-[mi] { color: #657b83 } /* Literal.Number.Integer */
+    c-[mo] { color: #657b83 } /* Literal.Number.Oct */
+    c-[sa] { color: #6c71c4 } /* Literal.String.Affix */
+    c-[sb] { color: #6c71c4 } /* Literal.String.Backtick */
+    c-[sc] { color: #6c71c4 } /* Literal.String.Char */
+    c-[dl] { color: #6c71c4 } /* Literal.String.Delimiter */
+    c-[sd] { color: #6c71c4 } /* Literal.String.Doc */
+    c-[se] { color: #6c71c4 } /* Literal.String.Escape */
+    c-[sh] { color: #6c71c4 } /* Literal.String.Heredoc */
+    c-[si] { color: #6c71c4 } /* Literal.String.Interpol */
+    c-[sx] { color: #6c71c4 } /* Literal.String.Other */
+    c-[sr] { color: #6c71c4 } /* Literal.String.Regex */
+    c-[ss] { color: #6c71c4 } /* Literal.String.Symbol */
+    c-[fm] { color: #268bd2 } /* Name.Function.Magic */
+    c-[vc] { color: #cb4b16 } /* Name.Variable.Class */
+    c-[vg] { color: #cb4b16 } /* Name.Variable.Global */
+    c-[vi] { color: #cb4b16 } /* Name.Variable.Instance */
+    c-[vm] { color: #cb4b16 } /* Name.Variable.Magic */
+    c-[il] { color: #657b83 } /* Literal.Number.Integer.Long */
+}
+</style>
  <body class="h-entry">
   <div class="head">
    <p data-fill-with="logo"></p>
    <h1 class="p-name no-ref" id="title">QualityLink Data Source Discovery Specification</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Living Standard, <time class="dt-updated" datetime="2025-04-10">10 April 2025</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Living Standard, <time class="dt-updated" datetime="2025-04-16">16 April 2025</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>Issue Tracking:
@@ -2101,7 +2222,13 @@ dfn > a.self-link::before      { content: "#"; }
       <li><a href="#uc-3"><span class="secno">3.3</span> <span class="content">Access statistics</span></a>
      </ol>
     <li><a href="#requirements"><span class="secno">4</span> <span class="content">Requirements</span></a>
-    <li><a href="#manifest"><span class="secno">5</span> <span class="content">Manifest Files</span></a>
+    <li>
+     <a href="#manifest"><span class="secno">5</span> <span class="content">Manifest File</span></a>
+     <ol class="toc">
+      <li><a href="#manifest-sources"><span class="secno">5.1</span> <span class="content">Data sources</span></a>
+      <li><a href="#manifest-meta"><span class="secno">5.2</span> <span class="content">Additional metadata</span></a>
+      <li><a href="#manifest-schema"><span class="secno">5.3</span> <span class="content">JSON Schema</span></a>
+     </ol>
     <li>
      <a href="#discovery"><span class="secno">6</span> <span class="content">Discovery Mechanism</span></a>
      <ol class="toc">
@@ -2110,7 +2237,11 @@ dfn > a.self-link::before      { content: "#"; }
       <li><a href="#discovery-domains"><span class="secno">6.3</span> <span class="content">Domain Search Order</span></a>
      </ol>
     <li><a href="#security"><span class="secno">7</span> <span class="content">Security Considerations</span></a>
-    <li><a href="#examples"><span class="secno">8</span> <span class="content">Examples</span></a>
+    <li>
+     <a href="#examples"><span class="secno">8</span> <span class="content">Examples</span></a>
+     <ol class="toc">
+      <li><a href="#examples-manifest"><span class="secno">8.1</span> <span class="content">Manifest file</span></a>
+     </ol>
     <li><a href="#conformance"><span class="secno"></span> <span class="content"> Conformance</span></a>
     <li>
      <a href="#index"><span class="secno"></span> <span class="content">Index</span></a>
@@ -2140,7 +2271,6 @@ dfn > a.self-link::before      { content: "#"; }
    </div>
    <h2 class="heading settled" data-level="2" id="concepts"><span class="secno">2. </span><span class="content">Key Concepts</span><a class="self-link" href="#concepts"></a></h2>
    <p>The following key concepts and terminology are used throughout the document, as well as other QualityLink specifications:</p>
-   <p class="note" role="note"><span class="marker">Note:</span> initial list based on QualityLink glossary. Add specific terms needed for this spec as needed.</p>
    <dl>
     <dt data-md><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="learning-opportunity">learning opportunity</dfn>
     <dd data-md>
@@ -2193,24 +2323,168 @@ dfn > a.self-link::before      { content: "#"; }
     <li data-md>
      <p>Discovery of data from education providers/HEIs should be based on data from the EWP Registry, the EUF HEI API and DEQAR (which includes all HEIs listed in ETER and OrgReg).</p>
    </ul>
-   <h2 class="heading settled" data-level="5" id="manifest"><span class="secno">5. </span><span class="content">Manifest Files</span><a class="self-link" href="#manifest"></a></h2>
+   <h2 class="heading settled" data-level="5" id="manifest"><span class="secno">5. </span><span class="content">Manifest File</span><a class="self-link" href="#manifest"></a></h2>
    <p>The location of one or several data files or API endpoints (see <a href="data_exchange.html">Data Exchange</a> spec) is indicated in a simple, standardised “manifest” file published by the <a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider③">data provider</a>.</p>
-   <p class="note" role="note"><span class="marker">Note:</span> format of manifest files to be described</p>
    <p>For authoritative sources and other data sources, the location of the manifest file is managed manually. For <a data-link-type="dfn" href="#higher-education-institution" id="ref-for-higher-education-institution④">higher education institutions</a> the location of the manifest file is auto-discovered as described in the following chapter.</p>
+   <p>The manifest file can be expressed as <a data-link-type="biblio" href="#biblio-json" title="The JavaScript Object Notation (JSON) Data Interchange Format">[JSON]</a> or <a data-link-type="biblio" href="#biblio-yaml" title="YAML Ain’t Markup Language (YAML™) Version 1.2">[YAML]</a> file. The file must be a single object/mapping with at least a top-level key named <code>sources</code>. An additional <code>meta</code> key can be provided.</p>
+   <h3 class="heading settled" data-level="5.1" id="manifest-sources"><span class="secno">5.1. </span><span class="content">Data sources</span><a class="self-link" href="#manifest-sources"></a></h3>
+   <p><code>sources</code> must be an array/sequence of objects/mapping, each representing a data source of the provider. At least one data source must be specified. The following keys are supported for each source:</p>
+   <table class="def">
+    <tbody>
+     <tr>
+      <th>type
+      <td>Type of the data source: string, using the identifier specified in <a data-link-type="biblio" href="#biblio-ql-exch" title="Data Exchange Specification">[QL-EXCH]</a>
+     <tr>
+      <th>path
+      <td>File or API root: URL
+     <tr>
+      <th>version
+      <td>Version identifier: string (see data source tyope-specific information)
+     <tr>
+      <th>id
+      <td>Identifier of the data source: string
+     <tr>
+      <th>name
+      <td>Human-readable name or description: string
+     <tr>
+      <th>auth
+      <td>Authorisation: object/mapping including <code>type</code> and additional, access control strategy-specific parameters
+   </table>
+   <p>Keys marked with an asterisk are required. Additional, data source type-specific keys are specified in <a data-link-type="biblio" href="#biblio-ql-exch" title="Data Exchange Specification">[QL-EXCH]</a>.</p>
+   <h3 class="heading settled" data-level="5.2" id="manifest-meta"><span class="secno">5.2. </span><span class="content">Additional metadata</span><a class="self-link" href="#manifest-meta"></a></h3>
+   <p>The <code>meta</code> key is optional and may be used to specify institutional identifiers. <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator②">Aggregators</a> may use this for diagnostic purposes or identify changed identifiers.</p>
+   <table class="def">
+    <tbody>
+     <tr>
+      <th>schac
+      <td>SCHAC code of the institution covered by the data source(s)
+     <tr>
+      <th>eterid
+      <td>ETER identifier, as used in the EHESO and OrgReg
+     <tr>
+      <th>deqarid
+      <td>DEQAR institutional identifier
+     <tr>
+      <th>did
+      <td>Decentralised Identifier (DID) used by the institution
+   </table>
+   <h3 class="heading settled" data-level="5.3" id="manifest-schema"><span class="secno">5.3. </span><span class="content">JSON Schema</span><a class="self-link" href="#manifest-schema"></a></h3>
+<pre class="language-json highlight"><c- p>{</c->
+  <c- f>"$schema"</c-><c- p>:</c-> <c- u>"https://json-schema.org/draft/2020-12/schema"</c-><c- p>,</c->
+  <c- f>"$id"</c-><c- p>:</c-> <c- u>"https://data.quality-link.eu/schema/manifest-v1.json"</c-><c- p>,</c->
+  <c- f>"title"</c-><c- p>:</c-> <c- u>"QualityLink manifest file"</c-><c- p>,</c->
+  <c- f>"description"</c-><c- p>:</c-> <c- u>"A manifest file listing data sources on learning opportunities."</c-><c- p>,</c->
+  <c- f>"type"</c-><c- p>:</c-> <c- u>"object"</c-><c- p>,</c->
+  <c- f>"properties"</c-><c- p>:</c-> <c- p>{</c->
+    <c- f>"sources"</c-><c- p>:</c-> <c- p>{</c->
+      <c- f>"description"</c-><c- p>:</c-> <c- u>"Defines one or more data sources"</c-><c- p>,</c->
+      <c- f>"type"</c-><c- p>:</c-> <c- u>"array"</c-><c- p>,</c->
+      <c- f>"minItems"</c-><c- p>:</c-> <c- mi>1</c-><c- p>,</c->
+      <c- f>"items"</c-><c- p>:</c-> <c- p>{</c->
+        <c- f>"type"</c-><c- p>:</c-> <c- u>"object"</c-><c- p>,</c->
+        <c- f>"properties"</c-><c- p>:</c-> <c- p>{</c->
+          <c- f>"type"</c-><c- p>:</c-> <c- p>{</c->
+            <c- f>"description"</c-><c- p>:</c-> <c- u>"Type of the data source: string, using the identifier specified in QualityLink Data Exchange Specification"</c-><c- p>,</c->
+            <c- f>"type"</c-><c- p>:</c-> <c- u>"string"</c-><c- p>,</c->
+            <c- f>"enum"</c-><c- p>:</c-> <c- p>[</c->
+              <c- u>"elm"</c-><c- p>,</c->
+              <c- u>"ooapi"</c-><c- p>,</c->
+              <c- u>"edu-api"</c->
+            <c- p>]</c->
+          <c- p>},</c->
+          <c- f>"path"</c-><c- p>:</c-> <c- p>{</c->
+            <c- f>"description"</c-><c- p>:</c-> <c- u>"File or API root"</c-><c- p>,</c->
+            <c- f>"type"</c-><c- p>:</c-> <c- u>"string"</c-><c- p>,</c->
+            <c- f>"format"</c-><c- p>:</c-> <c- u>"uri"</c-><c- p>,</c->
+            <c- f>"pattern"</c-><c- p>:</c-> <c- u>"^https?://"</c->
+          <c- p>},</c->
+          <c- f>"version"</c-><c- p>:</c-> <c- p>{</c->
+            <c- f>"description"</c-><c- p>:</c-> <c- u>"Version identifier (see data source tyope-specific information)"</c-><c- p>,</c->
+            <c- f>"type"</c-><c- p>:</c-> <c- u>"string"</c->
+          <c- p>},</c->
+          <c- f>"id"</c-><c- p>:</c-> <c- p>{</c->
+            <c- f>"description"</c-><c- p>:</c-> <c- u>"Identifier of the data source"</c-><c- p>,</c->
+            <c- f>"type"</c-><c- p>:</c-> <c- u>"string"</c->
+          <c- p>},</c->
+          <c- f>"name"</c-><c- p>:</c-> <c- p>{</c->
+            <c- f>"description"</c-><c- p>:</c-> <c- u>"Human-readable name or description"</c-><c- p>,</c->
+            <c- f>"type"</c-><c- p>:</c-> <c- u>"string"</c->
+          <c- p>},</c->
+          <c- f>"auth"</c-><c- p>:</c-> <c- p>{</c->
+            <c- f>"description"</c-><c- p>:</c-> <c- u>"Authorisation parameters"</c-><c- p>,</c->
+            <c- f>"type"</c-><c- p>:</c-> <c- u>"object"</c-><c- p>,</c->
+            <c- f>"properties"</c-><c- p>:</c-> <c- p>{</c->
+              <c- f>"type"</c-><c- p>:</c-> <c- p>{</c->
+                <c- f>"description"</c-><c- p>:</c-> <c- u>"Access control strategy required for this data source"</c-><c- p>,</c->
+                <c- f>"type"</c-><c- p>:</c-> <c- u>"string"</c-><c- p>,</c->
+                <c- f>"enum"</c-><c- p>:</c-> <c- p>[</c->
+                  <c- u>"none"</c-><c- p>,</c->
+                  <c- u>"httpsig"</c-><c- p>,</c->
+                  <c- u>"httpheader"</c-><c- p>,</c->
+                  <c- u>"oauth2.0"</c->
+                <c- p>]</c->
+              <c- p>}</c->
+            <c- p>},</c->
+            <c- f>"required"</c-><c- p>:</c-> <c- p>[</c->
+              <c- u>"type"</c->
+            <c- p>]</c->
+          <c- p>}</c->
+        <c- p>},</c->
+        <c- f>"required"</c-><c- p>:</c-> <c- p>[</c->
+          <c- u>"type"</c-><c- p>,</c->
+          <c- u>"path"</c->
+        <c- p>]</c->
+      <c- p>}</c->
+    <c- p>},</c->
+    <c- f>"meta"</c-><c- p>:</c-> <c- p>{</c->
+      <c- f>"description"</c-><c- p>:</c-> <c- u>"Defines metadata about the institution providing the manifest file."</c-><c- p>,</c->
+      <c- f>"type"</c-><c- p>:</c-> <c- u>"object"</c-><c- p>,</c->
+      <c- f>"properties"</c-><c- p>:</c-> <c- p>{</c->
+        <c- f>"schac"</c-><c- p>:</c-> <c- p>{</c->
+          <c- f>"description"</c-><c- p>:</c-> <c- u>"SCHAC code of the institution covered by the data source(s)"</c-><c- p>,</c->
+          <c- f>"type"</c-><c- p>:</c-> <c- u>"string"</c->
+        <c- p>},</c->
+        <c- f>"eterid"</c-><c- p>:</c-> <c- p>{</c->
+          <c- f>"description"</c-><c- p>:</c-> <c- u>"ETER identifier, as used in the EHESO and OrgReg"</c-><c- p>,</c->
+          <c- f>"type"</c-><c- p>:</c-> <c- u>"string"</c->
+        <c- p>},</c->
+        <c- f>"deqarid"</c-><c- p>:</c-> <c- p>{</c->
+          <c- f>"description"</c-><c- p>:</c-> <c- u>"DEQAR institutional identifier"</c-><c- p>,</c->
+          <c- f>"type"</c-><c- p>:</c-> <c- u>"string"</c->
+        <c- p>},</c->
+        <c- f>"did"</c-><c- p>:</c-> <c- p>{</c->
+          <c- f>"description"</c-><c- p>:</c-> <c- u>"Decentralised Identifier (DID) used by the institution"</c-><c- p>,</c->
+          <c- f>"type"</c-><c- p>:</c-> <c- u>"string"</c->
+        <c- p>}</c->
+      <c- p>}</c->
+    <c- p>}</c->
+  <c- p>},</c->
+  <c- f>"required"</c-><c- p>:</c-> <c- p>[</c->
+    <c- u>"sources"</c->
+  <c- p>]</c->
+<c- p>}</c->
+</pre>
    <h2 class="heading settled" data-level="6" id="discovery"><span class="secno">6. </span><span class="content">Discovery Mechanism</span><a class="self-link" href="#discovery"></a></h2>
    <p>The specification offers two options how to auto-discover a manifest file.</p>
-   <p><a data-link-type="dfn" href="#higher-education-institution" id="ref-for-higher-education-institution⑤">higher education institutions</a> may use either option. <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator②">Aggregators</a> must support both options.</p>
+   <p><a data-link-type="dfn" href="#higher-education-institution" id="ref-for-higher-education-institution⑤">higher education institutions</a> may use either option. <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator③">Aggregators</a> must support both options.</p>
    <h3 class="heading settled" data-level="6.1" id="discovery-dns"><span class="secno">6.1. </span><span class="content">DNS TXT Record</span><a class="self-link" href="#discovery-dns"></a></h3>
    <p>The <a data-link-type="dfn" href="#higher-education-institution" id="ref-for-higher-education-institution⑥">higher education institution</a> can create a DNS TXT record of the following format:</p>
-<pre>v=qldiscover1; m=URL
+<pre>v=qldiscover1; m=[URL]
 </pre>
    <p>The URL must point to a manifest file.</p>
    <h3 class="heading settled" data-level="6.2" id="discovery-well-known"><span class="secno">6.2. </span><span class="content">Well-known URL</span><a class="self-link" href="#discovery-well-known"></a></h3>
    <p>The <a data-link-type="dfn" href="#higher-education-institution" id="ref-for-higher-education-institution⑦">higher education institution</a> can place a manifest file at a URL of the form:</p>
-<pre>[DOMAIN]/.well-known/quality-link-manifest
-</pre>
+   <ul>
+    <li data-md>
+     <p><code>[DOMAIN]/.well-known/quality-link-manifest</code></p>
+    <li data-md>
+     <p><code>[DOMAIN]/.well-known/quality-link-manifest.json</code></p>
+    <li data-md>
+     <p><code>[DOMAIN]/.well-known/quality-link-manifest.yaml</code></p>
+   </ul>
+   <p>These locations are tried in this order and the first file found is used.</p>
    <h3 class="heading settled" data-level="6.3" id="discovery-domains"><span class="secno">6.3. </span><span class="content">Domain Search Order</span><a class="self-link" href="#discovery-domains"></a></h3>
-   <p>An <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator③">aggregator</a> should consider a combined list of <a data-link-type="dfn" href="#higher-education-institution" id="ref-for-higher-education-institution⑧">higher education institutions</a> appearing in one or more of the following datasets:</p>
+   <p>An <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator④">aggregator</a> should consider a combined list of <a data-link-type="dfn" href="#higher-education-institution" id="ref-for-higher-education-institution⑧">higher education institutions</a> appearing in one or more of the following datasets:</p>
    <ul>
     <li data-md>
      <p>EUF HEI API</p>
@@ -2221,7 +2495,7 @@ dfn > a.self-link::before      { content: "#"; }
     <li data-md>
      <p>DEQAR (including institutions from OrgReg and ETER)</p>
    </ul>
-   <p>For each <a data-link-type="dfn" href="#higher-education-institution" id="ref-for-higher-education-institution⑨">higher education institution</a>, the <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator④">aggregator</a> attempts to fetch a manifest file from a known domain in this order:</p>
+   <p>For each <a data-link-type="dfn" href="#higher-education-institution" id="ref-for-higher-education-institution⑨">higher education institution</a>, the <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator⑤">aggregator</a> attempts to fetch a manifest file from a known domain in this order:</p>
    <ol>
     <li data-md>
      <p>domain/host name that is the <a data-link-type="dfn" href="#higher-education-institution" id="ref-for-higher-education-institution①⓪">higher education institution</a>’s SCHAC code (if available)</p>
@@ -2235,12 +2509,73 @@ dfn > a.self-link::before      { content: "#"; }
    <p>For each domain, both of the above mechanisms are tried.</p>
    <p>Once a manifest file has successfully been obtained, no further domains or mechanisms are tried.</p>
    <h2 class="heading settled" data-level="7" id="security"><span class="secno">7. </span><span class="content">Security Considerations</span><a class="self-link" href="#security"></a></h2>
-   <p>Provide security considerations for the implementation and authoring of this technology here.</p>
+   <p>The location and content of manifest files are not sensitive information. Access to data sources themselves can be protected as described in <a data-link-type="biblio" href="#biblio-ql-exch" title="Data Exchange Specification">[QL-EXCH]</a>.</p>
    <h2 class="heading settled" data-level="8" id="examples"><span class="secno">8. </span><span class="content">Examples</span><a class="self-link" href="#examples"></a></h2>
    <div class="informative">
-    <p>Provide examples of the usage of the technology here. Alternately, examples may be provided inline in the section on features, in which case, this section should be removed.</p>
-    <p>You can quote normative reference <a data-link-type="biblio" href="#biblio-elm" title="European Learning Model (ELM)">[ELM]</a> or informative references <a data-link-type="biblio" href="#biblio-ects" title="ECTS Users&apos; Guide">[ECTS]</a> from the bibliography.</p>
-    <p>Terms defined in the key concepts, such as <a data-link-type="dfn" href="#programme" id="ref-for-programme③">programmes</a> or <a data-link-type="dfn" href="#micro-credential" id="ref-for-micro-credential①">micro-credentials</a>, should be referenced.</p>
+    <h3 class="heading settled" data-level="8.1" id="examples-manifest"><span class="secno">8.1. </span><span class="content">Manifest file</span><a class="self-link" href="#examples-manifest"></a></h3>
+<pre class="language-json highlight"><c- p>{</c->
+    <c- f>"meta"</c-><c- p>:</c-> <c- p>{</c->
+        <c- f>"schac"</c-><c- p>:</c-> <c- u>"example.ac.at"</c-><c- p>,</c->
+        <c- f>"eterid"</c-><c- p>:</c-> <c- u>"AT4711"</c-><c- p>,</c->
+        <c- f>"deqarid"</c-><c- p>:</c-> <c- u>"DEQARINST0815"</c->
+    <c- p>},</c->
+    <c- f>"sources"</c-><c- p>:</c-> <c- p>[</c->
+        <c- p>{</c->
+            <c- f>"type"</c-><c- p>:</c-> <c- u>"elm"</c-><c- p>,</c->
+            <c- f>"path"</c-><c- p>:</c-> <c- u>"https://data.example.org/feed/elm.ttl"</c-><c- p>,</c->
+            <c- f>"version"</c-><c- p>:</c-> <c- u>"3.2"</c-><c- p>,</c->
+            <c- f>"auth"</c-><c- p>:</c-> <c- p>{</c->
+                <c- f>"type"</c-><c- p>:</c-> <c- u>"none"</c->
+            <c- p>}</c->
+        <c- p>},</c->
+        <c- p>{</c->
+            <c- f>"type"</c-><c- p>:</c-> <c- u>"ooapi"</c-><c- p>,</c->
+            <c- f>"path"</c-><c- p>:</c-> <c- u>"https://data.example.org/ooapi/v5/"</c-><c- p>,</c->
+            <c- f>"version"</c-><c- p>:</c-> <c- u>"5"</c-><c- p>,</c->
+            <c- f>"auth"</c-><c- p>:</c-> <c- p>{</c->
+                <c- f>"type"</c-><c- p>:</c-> <c- u>"httpheader"</c->
+            <c- p>},</c->
+            <c- f>"id"</c-><c- p>:</c-> <c- u>"eua-courses-virt"</c-><c- p>,</c->
+            <c- f>"name"</c-><c- p>:</c-> <c- u>"Courses offered on the Alliance's virtual campus"</c->
+        <c- p>},</c->
+        <c- p>{</c->
+            <c- f>"type"</c-><c- p>:</c-> <c- u>"edu-api"</c-><c- p>,</c->
+            <c- f>"path"</c-><c- p>:</c-> <c- u>"https://edu-api.example.org/"</c-><c- p>,</c->
+            <c- f>"version"</c-><c- p>:</c-> <c- u>"1.0"</c-><c- p>,</c->
+            <c- f>"auth"</c-><c- p>:</c-> <c- p>{</c->
+                <c- f>"type"</c-><c- p>:</c-> <c- u>"oauth2.0"</c-><c- p>,</c->
+                <c- f>"token_endpoint"</c-><c- p>:</c-> <c- u>"https://auth.example.org/oauth2/get_token"</c->
+            <c- p>},</c->
+            <c- f>"name"</c-><c- p>:</c-> <c- u>"Experimental data source using Edu-API"</c->
+        <c- p>}</c->
+    <c- p>]</c->
+<c- p>}</c->
+</pre>
+<pre class="language-yaml highlight"><c- f>meta</c-><c- p>:</c->
+  <c- f>schac</c-><c- p>:</c-> example.ac.at
+  <c- f>eterid</c-><c- p>:</c-> AT4711
+  <c- f>deqarid</c-><c- p>:</c-> DEQARINST0815
+<c- f>sources</c-><c- p>:</c->
+  - <c- f>type</c-><c- p>:</c-> elm
+    <c- f>path</c-><c- p>:</c-> https://data.example.org/feed/elm.ttl
+    <c- f>version</c-><c- p>:</c-> <c- s>"3.2"</c->
+    <c- f>auth</c-><c- p>:</c->
+      <c- f>type</c-><c- p>:</c-> none
+  - <c- f>type</c-><c- p>:</c-> ooapi
+    <c- f>path</c-><c- p>:</c-> https://data.example.org/ooapi/v5/
+    <c- f>version</c-><c- p>:</c-> <c- s>"5"</c->
+    <c- f>auth</c-><c- p>:</c->
+      <c- f>type</c-><c- p>:</c-> httpheader
+    <c- f>id</c-><c- p>:</c-> eua-courses-virt
+    <c- f>name</c-><c- p>:</c-> <c- s>"Courses</c-><c- g> </c-><c- s>offered</c-><c- g> </c-><c- s>on</c-><c- g> </c-><c- s>the</c-><c- g> </c-><c- s>Alliance's</c-><c- g> </c-><c- s>virtual</c-><c- g> </c-><c- s>campus"</c->
+  - <c- f>type</c-><c- p>:</c-> edu-api
+    <c- f>path</c-><c- p>:</c-> https://edu-api.example.org/
+    <c- f>version</c-><c- p>:</c-> <c- s>"1.0"</c->
+    <c- f>auth</c-><c- p>:</c->
+      <c- f>type</c-><c- p>:</c-> oauth2.0
+      <c- f>token_endpoint</c-><c- p>:</c-> https://auth.example.org/oauth2/get_token
+    <c- f>name</c-><c- p>:</c-> <c- s>"Experimental</c-><c- g> </c-><c- s>data</c-><c- g> </c-><c- s>source</c-><c- g> </c-><c- s>using</c-><c- g> </c-><c- s>Edu-API"</c->
+</pre>
    </div>
   </main>
   <div data-fill-with="conformance">
@@ -2407,10 +2742,14 @@ dfn > a.self-link::before      { content: "#"; }
   <h2 class="no-num no-ref heading settled" id="references"><span class="content">References</span><a class="self-link" href="#references"></a></h2>
   <h3 class="no-num no-ref heading settled" id="normative"><span class="content">Normative References</span><a class="self-link" href="#normative"></a></h3>
   <dl>
-   <dt id="biblio-elm">[ELM]
-   <dd>European Commission. <a href="https://europa.eu/europass/elm-browser/index.html"><cite>European Learning Model (ELM)</cite></a>. v3. URL: <a href="https://europa.eu/europass/elm-browser/index.html">https://europa.eu/europass/elm-browser/index.html</a>
+   <dt id="biblio-json">[JSON]
+   <dd>T. Bray, Ed.. <a href="https://www.rfc-editor.org/rfc/rfc8259"><cite>The JavaScript Object Notation (JSON) Data Interchange Format</cite></a>. December 2017. Internet Standard. URL: <a href="https://www.rfc-editor.org/rfc/rfc8259">https://www.rfc-editor.org/rfc/rfc8259</a>
+   <dt id="biblio-ql-exch">[QL-EXCH]
+   <dd>QualityLink Consortium. <a href="https://specs.quality-link.eu/data_exchange.html"><cite>Data Exchange Specification</cite></a>. 2025. draft. URL: <a href="https://specs.quality-link.eu/data_exchange.html">https://specs.quality-link.eu/data_exchange.html</a>
    <dt id="biblio-rfc2119">[RFC2119]
    <dd>S. Bradner. <a href="https://datatracker.ietf.org/doc/html/rfc2119"><cite>Key words for use in RFCs to Indicate Requirement Levels</cite></a>. March 1997. Best Current Practice. URL: <a href="https://datatracker.ietf.org/doc/html/rfc2119">https://datatracker.ietf.org/doc/html/rfc2119</a>
+   <dt id="biblio-yaml">[YAML]
+   <dd>Oren Ben-Kiki; Clark Evans; Ingy döt Net. <a href="http://yaml.org/spec/1.2/spec.html"><cite>YAML Ain’t Markup Language (YAML™) Version 1.2</cite></a>. 1 October 2009. URL: <a href="http://yaml.org/spec/1.2/spec.html">http://yaml.org/spec/1.2/spec.html</a>
   </dl>
   <h3 class="no-num no-ref heading settled" id="informative"><span class="content">Informative References</span><a class="self-link" href="#informative"></a></h3>
   <dl>
@@ -2418,8 +2757,8 @@ dfn > a.self-link::before      { content: "#"; }
    <dd>European Union. <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022H0627(02)"><cite>Council Recommendation on a European approach to micro-credentials for lifelong learning and employability</cite></a>. 16 June 2022. 2022/C 243/02. URL: <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022H0627(02)">https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022H0627(02)</a>
    <dt id="biblio-deqar">[DEQAR]
    <dd>European Quality Assurance Register (EQAR). <a href="https://docs.deqar.eu/stable/"><cite>DEQAR Documentation</cite></a>. v1.2. URL: <a href="https://docs.deqar.eu/stable/">https://docs.deqar.eu/stable/</a>
-   <dt id="biblio-ects">[ECTS]
-   <dd>European Commission. <a href="https://op.europa.eu/publication-detail/-/publication/da7467e6-8450-11e5-b8b7-01aa75ed71a1"><cite>ECTS Users' Guide</cite></a>. 2015. URL: <a href="https://op.europa.eu/publication-detail/-/publication/da7467e6-8450-11e5-b8b7-01aa75ed71a1">https://op.europa.eu/publication-detail/-/publication/da7467e6-8450-11e5-b8b7-01aa75ed71a1</a>
+   <dt id="biblio-elm">[ELM]
+   <dd>European Commission. <a href="https://europa.eu/europass/elm-browser/index.html"><cite>European Learning Model (ELM)</cite></a>. v3. URL: <a href="https://europa.eu/europass/elm-browser/index.html">https://europa.eu/europass/elm-browser/index.html</a>
   </dl>
 <script>/* Boilerplate: script-dom-helper */
 "use strict";
@@ -2621,17 +2960,17 @@ function parseHTML(markup) {
 "use strict";
 {
 let dfnPanelData = {
-"aggregator": {"dfnID":"aggregator","dfnText":"aggregator","external":false,"refSections":[{"refs":[{"id":"ref-for-aggregator"}],"title":"3.1. Expose data"},{"refs":[{"id":"ref-for-aggregator\u2460"}],"title":"3.2. Manage data sources"},{"refs":[{"id":"ref-for-aggregator\u2461"}],"title":"6. Discovery Mechanism"},{"refs":[{"id":"ref-for-aggregator\u2462"},{"id":"ref-for-aggregator\u2463"}],"title":"6.3. Domain Search Order"}],"url":"#aggregator"},
+"aggregator": {"dfnID":"aggregator","dfnText":"aggregator","external":false,"refSections":[{"refs":[{"id":"ref-for-aggregator"}],"title":"3.1. Expose data"},{"refs":[{"id":"ref-for-aggregator\u2460"}],"title":"3.2. Manage data sources"},{"refs":[{"id":"ref-for-aggregator\u2461"}],"title":"5.2. Additional metadata"},{"refs":[{"id":"ref-for-aggregator\u2462"}],"title":"6. Discovery Mechanism"},{"refs":[{"id":"ref-for-aggregator\u2463"},{"id":"ref-for-aggregator\u2464"}],"title":"6.3. Domain Search Order"}],"url":"#aggregator"},
 "course": {"dfnID":"course","dfnText":"course","external":false,"refSections":[{"refs":[{"id":"ref-for-course"},{"id":"ref-for-course\u2460"}],"title":"2. Key Concepts"}],"url":"#course"},
-"data-provider": {"dfnID":"data-provider","dfnText":"data provider","external":false,"refSections":[{"refs":[{"id":"ref-for-data-provider"}],"title":"2. Key Concepts"},{"refs":[{"id":"ref-for-data-provider\u2460"}],"title":"3.2. Manage data sources"},{"refs":[{"id":"ref-for-data-provider\u2461"}],"title":"3.3. Access statistics"},{"refs":[{"id":"ref-for-data-provider\u2462"}],"title":"5. Manifest Files"}],"url":"#data-provider"},
+"data-provider": {"dfnID":"data-provider","dfnText":"data provider","external":false,"refSections":[{"refs":[{"id":"ref-for-data-provider"}],"title":"2. Key Concepts"},{"refs":[{"id":"ref-for-data-provider\u2460"}],"title":"3.2. Manage data sources"},{"refs":[{"id":"ref-for-data-provider\u2461"}],"title":"3.3. Access statistics"},{"refs":[{"id":"ref-for-data-provider\u2462"}],"title":"5. Manifest File"}],"url":"#data-provider"},
 "education-provider": {"dfnID":"education-provider","dfnText":"education provider","external":false,"refSections":[{"refs":[{"id":"ref-for-education-provider"},{"id":"ref-for-education-provider\u2460"}],"title":"2. Key Concepts"},{"refs":[{"id":"ref-for-education-provider\u2461"}],"title":"3.1. Expose data"}],"url":"#education-provider"},
-"higher-education-institution": {"dfnID":"higher-education-institution","dfnText":"higher education institution","external":false,"refSections":[{"refs":[{"id":"ref-for-higher-education-institution"},{"id":"ref-for-higher-education-institution\u2460"},{"id":"ref-for-higher-education-institution\u2461"}],"title":"2. Key Concepts"},{"refs":[{"id":"ref-for-higher-education-institution\u2462"}],"title":"3.1. Expose data"},{"refs":[{"id":"ref-for-higher-education-institution\u2463"}],"title":"5. Manifest Files"},{"refs":[{"id":"ref-for-higher-education-institution\u2464"}],"title":"6. Discovery Mechanism"},{"refs":[{"id":"ref-for-higher-education-institution\u2465"}],"title":"6.1. DNS TXT Record"},{"refs":[{"id":"ref-for-higher-education-institution\u2466"}],"title":"6.2. Well-known URL"},{"refs":[{"id":"ref-for-higher-education-institution\u2467"},{"id":"ref-for-higher-education-institution\u2468"},{"id":"ref-for-higher-education-institution\u2460\u24ea"},{"id":"ref-for-higher-education-institution\u2460\u2460"}],"title":"6.3. Domain Search Order"}],"url":"#higher-education-institution"},
+"higher-education-institution": {"dfnID":"higher-education-institution","dfnText":"higher education institution","external":false,"refSections":[{"refs":[{"id":"ref-for-higher-education-institution"},{"id":"ref-for-higher-education-institution\u2460"},{"id":"ref-for-higher-education-institution\u2461"}],"title":"2. Key Concepts"},{"refs":[{"id":"ref-for-higher-education-institution\u2462"}],"title":"3.1. Expose data"},{"refs":[{"id":"ref-for-higher-education-institution\u2463"}],"title":"5. Manifest File"},{"refs":[{"id":"ref-for-higher-education-institution\u2464"}],"title":"6. Discovery Mechanism"},{"refs":[{"id":"ref-for-higher-education-institution\u2465"}],"title":"6.1. DNS TXT Record"},{"refs":[{"id":"ref-for-higher-education-institution\u2466"}],"title":"6.2. Well-known URL"},{"refs":[{"id":"ref-for-higher-education-institution\u2467"},{"id":"ref-for-higher-education-institution\u2468"},{"id":"ref-for-higher-education-institution\u2460\u24ea"},{"id":"ref-for-higher-education-institution\u2460\u2460"}],"title":"6.3. Domain Search Order"}],"url":"#higher-education-institution"},
 "joint-programme": {"dfnID":"joint-programme","dfnText":"joint programme","external":false,"refSections":[],"url":"#joint-programme"},
 "learning-opportunity": {"dfnID":"learning-opportunity","dfnText":"learning opportunity","external":false,"refSections":[{"refs":[{"id":"ref-for-learning-opportunity"},{"id":"ref-for-learning-opportunity\u2460"},{"id":"ref-for-learning-opportunity\u2461"},{"id":"ref-for-learning-opportunity\u2462"},{"id":"ref-for-learning-opportunity\u2463"}],"title":"2. Key Concepts"}],"url":"#learning-opportunity"},
-"micro-credential": {"dfnID":"micro-credential","dfnText":"micro-credential","external":false,"refSections":[{"refs":[{"id":"ref-for-micro-credential"}],"title":"2. Key Concepts"},{"refs":[{"id":"ref-for-micro-credential\u2460"}],"title":"8. Examples"}],"url":"#micro-credential"},
+"micro-credential": {"dfnID":"micro-credential","dfnText":"micro-credential","external":false,"refSections":[{"refs":[{"id":"ref-for-micro-credential"}],"title":"2. Key Concepts"}],"url":"#micro-credential"},
 "module": {"dfnID":"module","dfnText":"module","external":false,"refSections":[{"refs":[{"id":"ref-for-module"},{"id":"ref-for-module\u2460"}],"title":"2. Key Concepts"}],"url":"#module"},
 "other-provider": {"dfnID":"other-provider","dfnText":"other provider","external":false,"refSections":[{"refs":[{"id":"ref-for-other-provider"},{"id":"ref-for-other-provider\u2460"}],"title":"2. Key Concepts"}],"url":"#other-provider"},
-"programme": {"dfnID":"programme","dfnText":"programme","external":false,"refSections":[{"refs":[{"id":"ref-for-programme"},{"id":"ref-for-programme\u2460"},{"id":"ref-for-programme\u2461"}],"title":"2. Key Concepts"},{"refs":[{"id":"ref-for-programme\u2462"}],"title":"8. Examples"}],"url":"#programme"},
+"programme": {"dfnID":"programme","dfnText":"programme","external":false,"refSections":[{"refs":[{"id":"ref-for-programme"},{"id":"ref-for-programme\u2460"},{"id":"ref-for-programme\u2461"}],"title":"2. Key Concepts"}],"url":"#programme"},
 };
 
 document.addEventListener("DOMContentLoaded", ()=>{
