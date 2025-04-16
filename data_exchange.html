@@ -1490,7 +1490,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version b25686b9f, updated Fri Mar 14 14:15:20 2025 -0700" name="generator">
   <link href="https://quality-link.eu/wp-content/uploads/sites/90/2024/03/Quality-Link_Website-Favicon.png" rel="icon">
-  <meta content="657d4381819d8eced520ea4e99d3e9236977f765" name="revision">
+  <meta content="f1ae061def18398e58a0aa0c1d25e4cf4c1287fa" name="revision">
   <meta content="dark light" name="color-scheme">
 <style>/* Boilerplate: style-autolinks */
 .css.css, .property.property, .descriptor.descriptor {
@@ -2051,7 +2051,7 @@ dfn > a.self-link::before      { content: "#"; }
   <div class="head">
    <p data-fill-with="logo"></p>
    <h1 class="p-name no-ref" id="title">QualityLink Data Exchange Specification</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Living Standard, <time class="dt-updated" datetime="2025-04-10">10 April 2025</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Living Standard, <time class="dt-updated" datetime="2025-04-16">16 April 2025</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>Issue Tracking:
@@ -2180,7 +2180,6 @@ dfn > a.self-link::before      { content: "#"; }
    </div>
    <h2 class="heading settled" data-level="2" id="concepts"><span class="secno">2. </span><span class="content">Key Concepts</span><a class="self-link" href="#concepts"></a></h2>
    <p>The following key concepts and terminology are used throughout the document, as well as other QualityLink specifications:</p>
-   <p class="note" role="note"><span class="marker">Note:</span> initial list based on QualityLink glossary. Add specific terms needed for this spec as needed.</p>
    <dl>
     <dt data-md><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="learning-opportunity">learning opportunity</dfn>
     <dd data-md>
@@ -2264,9 +2263,9 @@ dfn > a.self-link::before      { content: "#"; }
    <p><a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider⑨">Data providers</a> should implement at least one of two options:</p>
    <ul>
     <li data-md>
-     <p>Provide an accurate <code>Last-Modified</code> <a data-link-type="biblio" href="#biblio-rfc9110" title="HTTP Semantics">[RFC9110]</a> header in response to a HTTP <code>HEAD</code> request, indicate when the data was last changed/updated.</p>
+     <p>Provide an accurate <code>Last-Modified</code> <a data-link-type="biblio" href="#biblio-rfc9110" title="HTTP Semantics">[RFC9110]</a> header in response to a HTTP <code>HEAD</code> request, indicating when the data was last changed/updated.</p>
     <li data-md>
-     <p>Process the <code>If-Modified-Since</code> <a data-link-type="biblio" href="#biblio-rfc9110" title="HTTP Semantics">[RFC9110]</a> header if provided in a HTTP request and only return data if modifications occured.</p>
+     <p>Process the <code>If-Modified-Since</code> header if provided in a HTTP <code>HEAD</code> or <code>GET</code> request, return a <code>200</code> (OK) status code (and data in case of <code>GET</code>) only if modifications occured, and a <code>304</code> (Not Modified) status code otherwise. <a data-link-type="biblio" href="#biblio-rfc9110" title="HTTP Semantics">[RFC9110]</a></p>
    </ul>
    <p><a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator③">Aggregators</a> should harvest data sources less frequently if neither of the two options are implemented.</p>
    <h4 class="heading settled" data-level="5.1.3" id="elm-metadata"><span class="secno">5.1.3. </span><span class="content">Metadata</span><a class="self-link" href="#elm-metadata"></a></h4>
@@ -2279,6 +2278,9 @@ dfn > a.self-link::before      { content: "#"; }
      <tr>
       <th>path
       <td>a URL where the static file is hosted at
+     <tr>
+      <th>version
+      <td>the ELM version used
    </table>
    <h3 class="heading settled" data-level="5.2" id="ooapi"><span class="secno">5.2. </span><span class="content">OOAPI</span><a class="self-link" href="#ooapi"></a></h3>
    <p><a data-link-type="dfn" href="#education-provider" id="ref-for-education-provider②">Education providers</a> can expose data on their learning opportunities according to the Open Edcuation API specification <a data-link-type="biblio" href="#biblio-ooapi" title="Open Education API">[OOAPI]</a>.</p>
@@ -2345,6 +2347,9 @@ dfn > a.self-link::before      { content: "#"; }
      <tr>
       <th>path
       <td>the URL of the OOAPI root
+     <tr>
+      <th>version
+      <td>the OOAPI version implemented
    </table>
    <h3 class="heading settled" data-level="5.3" id="edu-api"><span class="secno">5.3. </span><span class="content">Edu-API</span><a class="self-link" href="#edu-api"></a></h3>
    <p><a data-link-type="dfn" href="#education-provider" id="ref-for-education-provider③">Education providers</a> can expose data on their learning opportunities using the Edu-API specification <a data-link-type="biblio" href="#biblio-edu-api" title="Edu-API Specification">[Edu-API]</a>, a RESTful API standard maintained by 1EdTech.
@@ -2412,22 +2417,22 @@ the Edu-API <em>Learning Resource Core</em> bindings for full details.</p>
    <p>The exchange of access credentials or additional data that some of these options might require (e.g. certificates, trusted IPs, or client/secrets) is an out-of-band activity. The details of this are to be agreed between the <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator①④">aggregator</a> and <a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider①⑧">data providers</a> during an onboarding/discovery process; the following sections describe in general terms what out-of-band communication is required.</p>
    <h3 class="heading settled" data-level="6.1" id="access-control-ip"><span class="secno">6.1. </span><span class="content">Based on IP address</span><a class="self-link" href="#access-control-ip"></a></h3>
    <p>A <a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider①⑨">data provider</a> can limit access to certain ranges of IP addresses. To that end, <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator①⑤">aggregators</a> should publish the IP address ranges from which their services may contact the exposed methods.</p>
-   <p><a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider②⓪">Data providers</a> can provide the following metadata in their <a data-link-type="dfn" href="#manifest-file" id="ref-for-manifest-file④">manifest file</a> for this method:</p>
+   <p><a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider②⓪">Data providers</a> can omit the <code>auth</code> key from their <a data-link-type="dfn" href="#manifest-file" id="ref-for-manifest-file④">manifest file</a> or provide the following metadata for this method:</p>
    <table class="def">
     <tbody>
      <tr>
-      <th>auth
-      <td><code>none</code> (or missing)
+      <th>type
+      <td><code>none</code>
    </table>
    <p>This mechanism does not require <strong>out-of-band communication</strong> beyond the <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator①⑥">aggregator</a> publishing its IP address range.</p>
    <p class="note" role="note"><span class="marker">Note:</span> The QualityLink aggregator will publish the IP address range from which it operates.</p>
    <h3 class="heading settled" data-level="6.2" id="access-control-header"><span class="secno">6.2. </span><span class="content">HTTP Request Header</span><a class="self-link" href="#access-control-header"></a></h3>
    <p>The <a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider②①">data provider</a> may request that the <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator①⑦">aggregator</a> include a specific HTTP header in all requests, e.g. a secret token.</p>
-   <p><a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider②②">Data providers</a> must provide the following metadata in their <a data-link-type="dfn" href="#manifest-file" id="ref-for-manifest-file⑤">manifest file</a> for this method:</p>
+   <p><a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider②②">Data providers</a> must provide the following metadata under <code>auth</code> in their <a data-link-type="dfn" href="#manifest-file" id="ref-for-manifest-file⑤">manifest file</a> for this method:</p>
    <table class="def">
     <tbody>
      <tr>
-      <th>auth
+      <th>type
       <td><code>httpheader</code>
    </table>
    <p>This mechanism requires <strong>out-of-band communication</strong> in which the <a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider②③">data provider</a> communicates a HTTP header field and the value to include to the <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator①⑧">aggregator</a>. The modalities need to be specified by the <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator①⑨">aggregator</a> separately from this specification.</p>
@@ -2460,11 +2465,11 @@ the Edu-API <em>Learning Resource Core</em> bindings for full details.</p>
     <li data-md>
      <p>Handle token expiration and renewal gracefully.</p>
    </ul>
-   <p><a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider②⑧">Data providers</a> must provide the following metadata in their <a data-link-type="dfn" href="#manifest-file" id="ref-for-manifest-file⑥">manifest file</a> for this method:</p>
+   <p><a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider②⑧">Data providers</a> must provide the following metadata under <code>auth</code> in their <a data-link-type="dfn" href="#manifest-file" id="ref-for-manifest-file⑥">manifest file</a> for this method:</p>
    <table class="def">
     <tbody>
      <tr>
-      <th>auth
+      <th>type
       <td><code>oauth2.0</code>
      <tr>
       <th>token_endpoint
@@ -2495,11 +2500,11 @@ the Edu-API <em>Learning Resource Core</em> bindings for full details.</p>
    </ul>
    <p>A <a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider③②">data provider</a> must support one of signature algorithm(s) supported by the <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator②⑧">aggregator</a>. Unless it supports all algorithms, it needs to select the desired algorithm in the <a data-link-type="dfn" href="#manifest-file" id="ref-for-manifest-file⑦">manifest file</a>.</p>
    <p>The <a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider③③">data provider</a> should handle requests that are authenticated by a verified HTTP Message Signature, i.e. verify against the <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator②⑨">aggregator’s</a> public key, are applicable to the <a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider③④">data provider</a> based on the <code>@authority</code> component and are valid based on the <code>expires</code> parameter. If the <a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider③⑤">data provider</a> receives a request without a HTTP Message Signature, it should return a 401 (Unauthorized) response unless the request could be authenticated through another mechanism. If the request cannot be authenticated, the <a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider③⑥">data provider</a> should return a 403 (Forbidden) response. If the request contains corrupted or invalid <code>Signature</code> or <code>Signature-Input</code> headers, the <a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider③⑦">data provider</a> should return a 400 (Bad Request) response.</p>
-   <p><a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider③⑧">Data providers</a> must provide the following metadata in their <a data-link-type="dfn" href="#manifest-file" id="ref-for-manifest-file⑧">manifest file</a> for this method:</p>
+   <p><a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider③⑧">Data providers</a> must provide the following metadata under <code>auth</code> in their <a data-link-type="dfn" href="#manifest-file" id="ref-for-manifest-file⑧">manifest file</a> for this method:</p>
    <table class="def">
     <tbody>
      <tr>
-      <th>auth
+      <th>type
       <td><code>httpsig</code>
      <tr>
       <th>alg
