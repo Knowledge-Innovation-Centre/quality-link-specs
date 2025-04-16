@@ -24,11 +24,15 @@ jobs:
           - source: discovery.bs
     steps:
       - uses: actions/checkout@v4
+      - id: getdate
+        name: Get date of last commit
+        run: echo "date=$(git log -n 1 --format=%as -- ${{ matrix.source }})" >> $GITHUB_OUTPUT
       - uses: w3c/spec-prod@v2
         with:
           SOURCE: ${{ matrix.source }}
           TOOLCHAIN: bikeshed
           GH_PAGES_BRANCH: gh-pages
+          GH_PAGES_BUILD_OVERRIDE: "date: ${{ steps.getdate.outputs.date }}"
 
   copy-resources:
     name: Convert RDF files, generate documentation and copy to gh-pages
