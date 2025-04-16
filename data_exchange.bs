@@ -127,9 +127,9 @@ ELM data must comply with the requirements specified by the shape `http://data.q
 
 [=Data providers=] should implement at least one of two options:
 
-- Provide an accurate `Last-Modified` [[!RFC9110]] header in response to a HTTP `HEAD` request, indicate when the data was last changed/updated.
+- Provide an accurate `Last-Modified` [[!RFC9110]] header in response to a HTTP `HEAD` request, indicating when the data was last changed/updated.
 
-- Process the `If-Modified-Since` [[!RFC9110]] header if provided in a HTTP request and only return data if modifications occured.
+- Process the `If-Modified-Since` header if provided in a HTTP `HEAD` or `GET` request, return a `200` (OK) status code (and data in case of `GET`) only if modifications occured, and a `304` (Not Modified) status code otherwise. [[!RFC9110]]
 
 [=Aggregators=] should harvest data sources less frequently if neither of the two options are implemented.
 
@@ -140,6 +140,7 @@ ELM data must comply with the requirements specified by the shape `http://data.q
 <pre class=simpledef>
 type: `elm`
 path: a URL where the static file is hosted at
+version: the ELM version used
 </pre>
 
 OOAPI {#ooapi}
@@ -192,6 +193,7 @@ Standard HTTP headers are, however, compatible with OOAPI and [=data providers=]
 <pre class=simpledef>
 type: `ooapi`
 path: the URL of the OOAPI root
+version: the OOAPI version implemented
 </pre>
 
 Edu-API {#edu-api}
@@ -273,10 +275,10 @@ Based on IP address {#access-control-ip}
 
 A [=data provider=] can limit access to certain ranges of IP addresses. To that end, [=aggregators=] should publish the IP address ranges from which their services may contact the exposed methods.
 
-[=Data providers=] can provide the following metadata in their [=manifest file=] for this method:
+[=Data providers=] can omit the `auth` key from their [=manifest file=] or provide the following metadata for this method:
 
 <pre class=simpledef>
-auth: `none` (or missing)
+type: `none`
 </pre>
 
 This mechanism does not require **out-of-band communication** beyond the [=aggregator=] publishing its IP address range.
@@ -288,10 +290,10 @@ HTTP Request Header {#access-control-header}
 
 The [=data provider=] may request that the [=aggregator=] include a specific HTTP header in all requests, e.g. a secret token.
 
-[=Data providers=] must provide the following metadata in their [=manifest file=] for this method:
+[=Data providers=] must provide the following metadata under `auth` in their [=manifest file=] for this method:
 
 <pre class=simpledef>
-auth: `httpheader`
+type: `httpheader`
 </pre>
 
 This mechanism requires **out-of-band communication** in which the [=data provider=] communicates a HTTP header field and the value to include to the [=aggregator=]. The modalities need to be specified by the [=aggregator=] separately from this specification.
@@ -319,10 +321,10 @@ An [=aggregator=] must support the following:
 - **Access Token**: The [=aggregator=] must request and include a valid OAuth 2.0 Bearer token in the `Authorization` header of each request (i.e. `Authorization: Bearer <token>` per [[!RFC6750]]).
 - Handle token expiration and renewal gracefully.
 
-[=Data providers=] must provide the following metadata in their [=manifest file=] for this method:
+[=Data providers=] must provide the following metadata under `auth` in their [=manifest file=] for this method:
 
 <pre class=simpledef>
-auth: `oauth2.0`
+type: `oauth2.0`
 token_endpoint: URI of the OAuth 2.0 token endpoint to use
 </pre>
 
@@ -350,10 +352,10 @@ A [=data provider=] must support one of signature algorithm(s) supported by the 
 
 The [=data provider=] should handle requests that are authenticated by a verified HTTP Message Signature, i.e. verify against the [=aggregator's=] public key, are applicable to the [=data provider=] based on the `@authority` component and are valid based on the `expires` parameter. If the [=data provider=] receives a request without a HTTP Message Signature, it should return a 401 (Unauthorized) response unless the request could be authenticated through another mechanism. If the request cannot be authenticated, the [=data provider=] should return a 403 (Forbidden) response. If the request contains corrupted or invalid `Signature` or `Signature-Input` headers, the [=data provider=] should return a 400 (Bad Request) response.
 
-[=Data providers=] must provide the following metadata in their [=manifest file=] for this method:
+[=Data providers=] must provide the following metadata under `auth` in their [=manifest file=] for this method:
 
 <pre class=simpledef>
-auth: `httpsig`
+type: `httpsig`
 alg: one of the algorithms the aggregator supports (optional)
 </pre>
 
