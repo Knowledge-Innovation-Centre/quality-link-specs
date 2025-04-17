@@ -31,12 +31,12 @@
     dcterms:abstract "The QualityLink ontology builds on and extends the European Learning Model (ELM) to cover additional classes and properties required for the project."@en ;
     dcterms:created "2025-02-13"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
-    dcterms:modified "2025-03-12"^^xsd:date ;
+    dcterms:modified "2025-04-11"^^xsd:date ;
     dcterms:publisher <http://quality-link.eu/> ;
     dcterms:title "QualityLink Ontology"@en ;
     rdfs:comment "The QualityLink ontology builds on the European Learning Model (ELM). It defines additional classes and properties to describe things not currently covered in ELM. It further includes SHACL constraints for the QualityLink pilot aggregator, derived from the ELM Learning Opportunities and Qualifications application profile."@en ;
     rdfs:label "QualityLink Ontology"@en ;
-    owl:versionInfo "0.2.0" .
+    owl:versionInfo "0.3.0" .
 
 
 #################################################################
@@ -137,6 +137,23 @@ ql:LearnerGroup
     rdfs:label "Learner Group"@en ;
     rdfs:comment "Defines a target group of learners to whom a Learning Opportunity is offered, e.g. students of a specific alliance or HEI"@en ;
     sh:property [
+		sh:uniqueLang true ;
+		sh:name "title"@en ;
+		sh:description "The title of the target group of learners."@en ;
+		sh:datatype rdf:langString ;
+		sh:path dcterms:title ;
+	], [
+		sh:uniqueLang true ;
+		sh:name "description"@en ;
+		sh:description "A free text description of the target group of learners."@en ;
+		sh:datatype rdf:langString ;
+		sh:path dcterms:description ;
+	], [
+		sh:name "identifier"@en ;
+		sh:description "An identifier for this specific target group of learners."@en ;
+        sh:class <http://data.europa.eu/snb/model/elm/Identifier> ;
+		sh:path <http://www.w3.org/ns/adms#identifier> ;
+	], [
         sh:name "home institutions"@en ;
         sh:description "Offered to students from these higher education institution(s)."@en ;
         sh:or (
@@ -188,6 +205,14 @@ ql:LearnerGroup
         sh:path ql:enrolmentCapacity ;
         sh:datatype xsd:nonNegativeInteger ;
 	], [
+        sh:description "Number of learners from the specific group that are currently enrolled."@en ;
+        sh:path ql:enrolledLearnerCount ;
+        sh:datatype xsd:nonNegativeInteger ;
+	], [
+        sh:description "Number of learners from the specific group that need to at least enrol for the instance to take place."@en ;
+        sh:path ql:enrolmentMinimum ;
+        sh:datatype xsd:nonNegativeInteger ;
+	], [
 		sh:name "admissions procedure"@en ;
 		sh:description "Information on how to apply for this specific group of learners."@en ;
 		sh:maxCount 1 ;
@@ -223,8 +248,11 @@ ql:LearningOpportunitySpecification
 		sh:nodeKind sh:Literal ;
 		sh:path ql:version ;
     ], [
-        sh:path ql:equivalentTo ;
+        sh:path ql:entryRequirementLearningOpportunity ;
         sh:class ql:LearningOpportunitySpecificationReference ;
+    ], [
+        sh:path ql:entryRequirementLearningOutcome ;
+        sh:class elm:LearningOutcome ;
 	] .
 
 ###  http://data.quality-link.eu/ontology/v1#LearningOpportunityInstance
@@ -240,6 +268,15 @@ ql:LearningOpportunityInstance
 		sh:maxCount 1 ;
 		sh:datatype xsd:anyURI ;
 		sh:path ql:registrationPortal ;
+	], [
+        sh:path ql:enrolmentCapacity ;
+        sh:datatype xsd:nonNegativeInteger ;
+	], [
+        sh:path ql:enrolledLearnerCount ;
+        sh:datatype xsd:nonNegativeInteger ;
+	], [
+        sh:path ql:enrolmentMinimum ;
+        sh:datatype xsd:nonNegativeInteger ;
 	] .
 
 
@@ -326,13 +363,6 @@ ql:superseded rdf:type owl:ObjectProperty ;
     rdfs:label "superseded"@en .
 
 
-###  http://data.quality-link.eu/ontology/v1#equivalentTo
-ql:equivalentTo rdf:type owl:ObjectProperty ;
-    rdfs:domain ql:LearningOpportunitySpecification ;
-    rdfs:comment "Specifies another Learning Opportunity Specification which the publisher considers equivalent to the subject, e.g. based on a recognition agreement or previous recognition decisions."@en ;
-    rdfs:label "equivalent to"@en .
-
-
 ###  http://data.quality-link.eu/ontology/v1#availableTo
 ql:availableTo rdf:type owl:ObjectProperty ;
                rdfs:domain ql:LearningOpportunityInstance ;
@@ -360,6 +390,20 @@ ql:minimumEQFLevel rdf:type owl:ObjectProperty ;
     rdfs:domain ql:LearnerGroup ;
     rdfs:comment "Defines that the learning opportunity is offered to students enrolled in another learning opportunity at a specified EQF level or higher. If provided, the value must come from the EU controlled vocabulary http://publications.europa.eu/resource/dataset/european-qualification-framework"@en ;
     rdfs:label "minimum EQF Level"@en .
+
+
+###  http://data.quality-link.eu/ontology/v1#entryRequirementLearningOpportunity
+ql:entryRequirementLearningOpportunity rdf:type owl:ObjectProperty ;
+    rdfs:domain ql:LearningOpportunitySpecificationReference ;
+    rdfs:comment "Specific entry requirement or prerequisite to have completed another learning opportunity."@en ;
+    rdfs:label "required learning opportunity for entry"@en .
+
+
+###  http://data.quality-link.eu/ontology/v1#entryRequirementLearningOutcome
+ql:entryRequirementLearningOutcome rdf:type owl:ObjectProperty ;
+rdfs:domain elm:LearningOutcome ;
+    rdfs:comment "Specific entry requirement or prerequisite to have achieved a particular learning outcome."@en ;
+    rdfs:label "required learning outcome for entry"@en .
 
 
 #################################################################
@@ -397,8 +441,22 @@ ql:isOpenToNonEnrolled a owl:DatatypeProperty ;
 ###  http://data.quality-link.eu/ontology/v1#enrolmentCapacity
 ql:enrolmentCapacity a owl:DatatypeProperty ;
     rdfs:range xsd:nonNegativeInteger ;
-    rdfs:comment "Specified the number of learners that can register for a Learning Opportunity Instance." ;
+    rdfs:comment "The number of learners that can register for a Learning Opportunity Instance." ;
     rdfs:label "enrolment capacity"@en .
+
+
+###  http://data.quality-link.eu/ontology/v1#enrolledLearnerCount
+ql:enrolledLearnerCount a owl:DatatypeProperty ;
+    rdfs:range xsd:nonNegativeInteger ;
+    rdfs:comment "The number of learners that are currently enrolled for the Learning Opportunity Instance." ;
+    rdfs:label "enrolled learner count"@en .
+
+
+###  http://data.quality-link.eu/ontology/v1#enrolmentMinimum
+ql:enrolmentMinimum a owl:DatatypeProperty ;
+    rdfs:range xsd:nonNegativeInteger ;
+    rdfs:comment "The number of learners that at least need to enrole for a Learning Opportunity Instance to take place." ;
+    rdfs:label "minimum enrolment"@en .
 
 
 #################################################################
