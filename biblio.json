@@ -114,11 +114,18 @@
         "title": "Register of Public Sector Organisations"
     },
     "ECHE": {
-        "href": "https://eche-list.erasmuswithoutpaper.eu/",
+        "href": "https://erasmus-plus.ec.europa.eu/document/higher-education-institutions-holding-an-eche-2021-2027",
         "authors": [
             "European Commission"
         ],
         "title": "Erasmus Charter for Higher Education"
+    },
+    "ECHE API": {
+        "href": "https://eche-list.erasmuswithoutpaper.eu/",
+        "authors": [
+            "Erasmus Without Paper consortium"
+        ],
+        "title": "ECHE List API"
     },
     "CC-BY-NC": {
         "href": "https://creativecommons.org/licenses/by-nc/4.0/",
