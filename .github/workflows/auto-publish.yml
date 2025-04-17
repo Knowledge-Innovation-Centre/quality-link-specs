@@ -85,10 +85,13 @@ jobs:
 
       - name: Copy resources directory
         run: |
-          cp -r main-branch/resources gh-pages-branch/
+          cd main-branch
+          git config user.name "$(git show -s --format='%an' $GITHUB_SHA)"
+          git config user.email "$(git show -s --format='%ae' $GITHUB_SHA)"
+          git show -s --format=%s $GITHUB_SHA > /tmp/COMMIT_MSG
+          cd ..
+          rsync -auv main-branch/resources/ gh-pages-branch/resources/
           cd gh-pages-branch
-          git config user.name "GitHub Actions"
-          git config user.email "actions@github.com"
           git add resources/
-          git commit -m "Update resources directory" || echo "No changes to commit"
+          git commit -F /tmp/COMMIT_MSG || echo "No changes to commit"
           git push
