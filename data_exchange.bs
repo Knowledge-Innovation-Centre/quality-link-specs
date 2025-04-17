@@ -197,7 +197,7 @@ path: the URL of the OOAPI root
 Edu-API {#edu-api}
 -------
 
-[=Education providers=] can expose data on their learning opportunities using the Edu-API specification [[!Edu-API]], a RESTful API standard maintained by 1EdTech. 
+[=Education providers=] can expose data on their learning opportunities using the Edu-API specification [[!Edu-API]], a RESTful API standard maintained by 1EdTech.
 This method delivers JSON-formatted responses and supports real-time querying of educational data, such as courses and programs, making it suitable for dynamic aggregation scenarios.
 
 The [=aggregator=] may use the following endpoints to acquire data (non-exhaustive list, based on Edu-API Core):
@@ -218,12 +218,12 @@ The Edu-API specification defines a core set of fields for [=learning opportunit
 - `description`: Brief description of the learning opportunity.
 - `type`: Type of learning opportunity (e.g., "Course", "Program").
 
-Additional fields (e.g., `credits`, `learningOutcomes`) are recommended where applicable to align with the European Learning Model [[!ELM]] and QualityLink goals. Providers should refer to 
+Additional fields (e.g., `credits`, `learningOutcomes`) are recommended where applicable to align with the European Learning Model [[!ELM]] and QualityLink goals. Providers should refer to
 the Edu-API *Learning Resource Core* bindings for full details.
 
 ### Incremental Updates ### {#edu-api-incremental}
 
-The [[!Edu-API]] specification includes a `dateLastModified` property in resource responses (e.g., for courses and programs), indicating the last modification date in ISO 8601 format. 
+The [[!Edu-API]] specification includes a `dateLastModified` property in resource responses (e.g., for courses and programs), indicating the last modification date in ISO 8601 format.
 
 This property enables tracking changes to individual resources and can be combined with the `filter` parameter on collections like `GET /courses` or `GET /programs` to support efficient aggregation, providing patterns for both initial bulk loads and delta updates, [=data providers=] and [=aggregators=] should follow this choreography where possible:
 
@@ -250,7 +250,61 @@ Edu-API mandates the use of OAuth 2.0 for securing API endpoints, ensuring that 
 OCCAPI {#occapi}
 ------
 
-Note: similar structure as for OOAPI
+The [=aggregator=] may use the following endpoints to acquire data:
+
+- `GET /hei/{heiId}`
+- `GET /hei/{heiId}/course`
+- `GET /hei/{heiId}/course/{courseId}`
+- `GET /hei/{heiId}/ounit`
+- `GET /hei/{heiId}/ounit/{ounitId}`
+- `GET /hei/{heiId}/ounit/{ounitId}/course`
+- `GET /hei/{heiId}/ounit/{ounitId}/programme`
+- `GET /hei/{heiId}/programme`
+- `GET /hei/{heiId}/programme/{programmeId}`
+- `GET /hei/{heiId}/programme/{programmeId}/course`
+
+OCCAPI makes use of hypermedia links to indicate which collection endpoints are available, scoped to [HEI] and optionally to organisational units and [=programme=] resources.
+
+### Required fields ### {#occapi-required}
+
+Data required in any resource type:
+
+- `type`
+- `id`
+
+Data attributes required for [HEIS] and organisational units:
+
+- `title`
+- `heiId` or `ounitId` (for [HEIS] and organisational units respectively)
+
+Data attributes required for both [=programme=] and [=course=] resources:
+
+- `title`
+- `code`
+- `description`
+- `ects`
+- `iscedCode`
+- `languageOfInstruction`
+
+Data attributes required for [=programme=] resources only:
+
+- `eqfLevelProvided`
+- `length`
+
+Data attributes required for [=course=] resources only:
+
+- `description`
+- `learningOutcomes`
+- `academicTerm`
+
+### Metadata ### {#occapi-metadata}
+
+[=Data providers=] must provide the following metadata in their [=manifest file=] for this method:
+
+<pre class=simpledef>
+type: `occapi`
+path: The URL of the OCCAPI path for a given HEI<br>(e.g., `https://domain.tld/occapi/v1/hei/{heiId}`)
+</pre>
 
 EWP Courses API {#ewp}
 ---------------
@@ -367,4 +421,3 @@ The previous chapter describes how [=data providers=] can implement access contr
 This specification is, however, about exchange of data on [=learning opportunities=], which is generally meant to be public. The authors consider the described options reasonably secure for the purposes of limiting unauthorised harvesting of data.
 
 [=Data providers=] should not expose any data through the methods described herein that is not meant to be public, especially no personal data.
-
