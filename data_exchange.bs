@@ -219,8 +219,12 @@ The Edu-API specification defines a core set of fields for [=learning opportunit
 - `title`: Name or title of the course or program.
 - `description`: Brief description of the learning opportunity.
 - `type`: Type of learning opportunity (e.g., "Course", "Program").
+- `primaryCode`:
+- `level`:
+- `gradingScheme`:
+- `teachingLanguage` / `recordLanguage`: 
 
-Additional fields (e.g., `credits`, `learningOutcomes`) are recommended where applicable to align with the European Learning Model [[!ELM]] and QualityLink goals. Providers should refer to
+In addition, the fields `credits` and `learningOutcomes` are recommended to align with the European Learning Model [[!ELM]] and QualityLink goals. Providers should refer to
 the Edu-API *Learning Resource Core* bindings for full details.
 
 ### Incremental Updates ### {#edu-api-incremental}
