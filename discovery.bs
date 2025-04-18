@@ -7,6 +7,7 @@ Level: 0
 Warning: Not Ready
 Editor: Colin Tück, Knowledge Innovation Centre; KIC, colin@knowledgeinnovation.eu, https://knowledgeinnovation.eu
 Local Boilerplate: defaults yes
+Local Boilerplate: header yes
 Abstract: This specification describes how the QualityLink aggregator discovers data sources exposed by higher education institutions and other data providers.
 </pre>
 

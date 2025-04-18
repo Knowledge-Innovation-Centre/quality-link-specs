@@ -8,6 +8,7 @@ Warning: Not Ready
 Editor: Colin Tück, Knowledge Innovation Centre; KIC, colin@knowledgeinnovation.eu, https://knowledgeinnovation.eu
 Editor: Tiago Simões, European University Foundation; EUF, tiago.simoes@uni-foundation.eu, https://uni-foundation.eu/
 Local Boilerplate: defaults yes
+Local Boilerplate: header yes
 Abstract: This specification standardises how HEIs and other data providers can make data available for aggregation.
 </pre>
 

@@ -8,6 +8,7 @@ Warning: Not Ready
 Editor: Colin Tück, Knowledge Innovation Centre; KIC, colin@knowledgeinnovation.eu, https://knowledgeinnovation.eu
 Editor: Tiago Simões, European University Foundation; EUF, tiago.simoes@uni-foundation.eu, https://uni-foundation.eu/
 Local Boilerplate: defaults yes
+Local Boilerplate: header yes
 Abstract: The QualityLink ABC specification describes how higher education institutions design micro-credentials and publish interoperable data on their learning opportunities - to let students make well-informed choices.
 </pre>
 

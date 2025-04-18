@@ -9,6 +9,7 @@ Custom Warning Title: Draft Document
 Custom Warning Text: This policy is a work-in-progress draft. All content is subject to change without notice.
 Editor: Colin Tück, Knowledge Innovation Centre; KIC, colin@knowledgeinnovation.eu, https://knowledgeinnovation.eu
 Local Boilerplate: defaults yes
+Local Boilerplate: header yes
 Abstract: This policy underpins the QualityLink technical specifications and describes on which data sources the QualityLink aggregator draws. It further sets out how the aggregated dataset may be accessed and used.
 </pre>
 
