@@ -23,6 +23,7 @@ jobs:
           - source: policy.bs
           - source: data_exchange.bs
           - source: discovery.bs
+          - source: course_identifier.bs
     steps:
       - uses: actions/checkout@v4
         with:

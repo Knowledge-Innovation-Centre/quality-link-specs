@@ -1,0 +1,140 @@
+<pre class="metadata">
+Title: QualityLink Course Identifier Specification
+!Project Reference: Task 3.3 (Development of a Technical Standard for Unique Course Identification)
+Shortname: quality-link-course-id
+Status: LS
+Level: 0
+Warning: Not Ready
+Editor: Tiago Simões, European University Foundation; EUF, tiago.simoes@uni-foundation.eu, https://uni-foundation.eu/
+Editor: Colin Tück, Knowledge Innovation Centre; KIC, colin@knowledgeinnovation.eu, https://knowledgeinnovation.eu
+Local Boilerplate: defaults yes
+Abstract: This specification standardises how individual courses can be consistently identified across different systems.
+</pre>
+
+Introduction {#intro}
+============
+
+<div class="informative">
+
+Status of This Document {#status}
+-----------------------
+
+This document is a draft of this specification, drafted by KIC and EUF within the [QualityLink](https://quality-link.eu/) project. It has been discussed with the QualityLink Standards Consultation Board.
+
+Goals and Rationale {#rationale}
+-------------------
+
+The unique course identifier should facilitate the identification and comparison of courses and allow for higher education courses to be tracked across multiple different systems and databases.
+
+Audience {#audience}
+--------
+
+This specification is intended for use by higher education institutions and other data providers that would like their data to be available for aggregation.
+
+Secondly, it targets data aggregators. The QualityLink project will implement a data aggregator to test and demonstrate this specification in practice.
+
+Changes Since the Previous Draft {#changes}
+--------------------------------
+
+n/a
+
+</div>
+
+Key Concepts {#concepts}
+============
+
+The following key concepts and terminology are used throughout the document, as well as other QualityLink specifications:
+
+<pre class=include>
+path: concepts.include
+</pre>
+
+User Stories {#user-stories}
+============
+
+The following usage scenarios illustrate ways in which this specification might be used or desired features it should enable:
+
+Issue course identifiers {#uc-1}
+-----------------
+
+As an education provider I want to publish and control authoritative identifiers for my courses.
+
+Dereference course identifiers {#uc-2}
+-----------------
+
+As a user I want to dereference a course identifier to a standardised description of the course, incl. other identifiers assigned to the same course.
+
+Retrieve historical data on courses {#uc-3}
+-----------------
+
+As a user I want to retrieve historical information (e.g. previous names and identifiers) or demographic information (e.g. course has been replaced by another course, course was discontinued, …).
+
+Requirements {#requirements}
+============
+
+The requirements for a Unique Course Identifier are two-fold:
+
+- It is necessary to uniquely identify the [HEI] or [=other provider=] offering the [=course=];
+- It is necessary to uniquely identify the [=course=] within the internal systems of the provider.
+
+Identifying a provider {#id-provider}
+==================
+
+Identifying a [HEI] or [=other provider=] globally is challenging due to a lack of a single central authority issuing immutable identifiers for [=education providers=].
+
+Several identifiers and registries exist covering [HEIS], such as ETER or OrgReg IDs used by [[EHESO]], DEQARINST identifiers used by [[DEQAR]], PIC and Erasmus Codes used in relation to [[ECHE]] and SCHAC codes used by [EWP](https://registry.erasmuswithoutpaper.eu/) and [eduGAIN](https://edugain.org/). [=Other providers=] are, however, not fully covered by these facilities.
+
+In order to ensure broad coverage of all types of ET providers, each [=education provider=] must be identified by their SCHAC code, i.e. `schacHomeOrganization` [[!SCHAC]]. This is typically an entity's domain name, therefore controlled by the entity and registered with ICANN.
+
+In line with the discovery mechanism specified in [[QL-DISCO]], an institution can additionally be identified by an ETER/OrgReg ID [[!EHESO]] or a DEQARINST ID [[!DEQAR]].
+
+Issue: need to address changes of SCHAC codes?
+
+Identifying a course {#id-course}
+==================
+
+The present specification aims to uniqely identify [=learning opportunity specifications=], as this represents the more permanent set of attributes that should also commonly be used when comparing [=courses=] or [=programmes=] for the purpose of recognition or similar.
+
+Note: information on [=learning opportunity instances=] can nevertheless also be exposed in a standardised format and aggregated, e.g. for the purpose of informing potential learners.
+
+The present standard does not suggest any particular format for a [=course=] identifier, so long as it is unique within the internal systems of the [=education provider=].
+
+For an identifier to be unique, it is not sufficient that it occurs only once within a given database. It must also not be reused for a different [=course=] once it has been issued.
+
+Defining a different course {#id-course-version}
+------------------
+
+Since certain information about a [=course=] specification may change over time, it is necessary to define when such changes have an impact so significant that an updated course specification should be considered to describe a fundamentally different course.
+
+As long as a course retains the same learning outcomes and workload / ECTS credits, it should be considered the same course and retain its unique identifier.
+
+Once a course's learning outcomes change significantly (which is left at the discretion of the provider) or its ECTS credit count changes at all, it should be considered a different course, therefore listed separately from its previous version and assigned a new unique internal identifier.
+
+Providers may use the property [ql:version](http://data.quality-link.eu/ontology/v1#version) to signal other changes (i.e. such that do not lead to assigning a new unique identifier) in their data.
+
+Issue: address mergers of institutions etc.
+
+Format {#format}
+================
+
+Main: URN format {#format-urn}
+----------------
+
+Unique Course Identifiers should be expressed in URN format [[!rfc8141]], under the SCHAC namespace:
+
+`urn:schac:uniqueCourseId:domain.tld:ABCD1234`
+
+Where `domain.tld` is the SCHAC code of the [=education provider=] and `ABCD1234` is the unique internal identifier of the course.
+
+Note: proposal to be made to REFEDS for [SCHAC URN Registry](https://wiki.refeds.org/display/STAN/SCHAC+URN+Registry)
+
+Complementary approach: DID {#format-did}
+----------------------
+
+Some providers may want to use Decentralized Identifiers (DIDs) [[did-core]] as an approach to identify [=learning opportunities=].
+
+For convenience, this specification recommends that [=education providers=] use the `did:web` method [[!did-extensions-methods]] in this case and construct their DIDs as follows:
+
+`did:web:domain.tld:courseId:ABCD1234`
+
+Whereas `domain.tld` is the SCHAC code and `ABCD1234` the unique internal identifier as above. This has the convenience that the URN and DID notations can easily be converted to each other.
