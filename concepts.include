@@ -2,6 +2,10 @@ Note: initial list based on QualityLink glossary. Add specific terms needed for 
 
 : <dfn>learning opportunity</dfn>
 :: an opportunity to realise a given set of learning outcomes through a learning activity or assessment [[ELM]]. Offered by a [=higher education institution=] or [=other provider=]. A learning opportunity can be part of a larger one and contain smaller ones. Specific learning opportunities are [=courses=], [=modules=] and [=programmes=].
+: <dfn>learning opportunity specification</dfn>
+:: the general specification of a [=learning opportunity=], i.e. including the learning outcomes and credits. It is usually permanent and does not change from year to year or semester to semester.
+: <dfn>learning opportunity instance</dfn>
+:: the specific offering of a [=learning opportunity=] in a specific academic term (e.g. year or semester) and specific setting (e.g. online vs face-to-face, different locations, ...). A single [=learning opportunity specification=] will usually be offered in many instances over time.
 : <dfn>course</dfn>
 :: smallest learning opportunity that awards credits (i.e. ECTS) to the learner, either in the context of a study programme or as a self-standing offer. A course can be part of a [=module=] or [=programme=].
 : <dfn>module</dfn>
