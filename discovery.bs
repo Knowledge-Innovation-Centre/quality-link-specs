@@ -77,14 +77,142 @@ Requirements {#requirements}
 
 - Discovery of data from education providers/HEIs should be based on data from the EWP Registry, the EUF HEI API and DEQAR (which includes all HEIs listed in ETER and OrgReg).
 
-Manifest Files {#manifest}
-==============
+Manifest File {#manifest}
+=============
 
 The location of one or several data files or API endpoints (see [Data Exchange](data_exchange.html) spec) is indicated in a simple, standardised “manifest” file published by the [=data provider=].
 
-Note: format of manifest files to be described
-
 For authoritative sources and other data sources, the location of the manifest file is managed manually. For [HEIS] the location of the manifest file is auto-discovered as described in the following chapter.
+
+The manifest file can be expressed as [[!JSON]] or [[!YAML]] file. The file must be a single object/mapping with at least a top-level key named `sources`. An additional `meta` key can be provided.
+
+Data sources {#manifest-sources}
+------------
+
+`sources` must be an array/sequence of objects/mapping, each representing a data source of the provider. At least one data source must be specified. The following keys are supported for each source:
+
+<pre class=simpledef>
+type: Type of the data source: string, using the identifier specified in [[!QL-EXCH]]
+path: File or API root: URL
+version: Version identifier: string (see data source tyope-specific information)
+id: Identifier of the data source: string
+name: Human-readable name or description: string
+auth: Authorisation: object/mapping including `type` and additional, access control strategy-specific parameters
+</pre>
+
+Keys marked with an asterisk are required. Additional, data source type-specific keys are specified in [[!QL-EXCH]].
+
+Additional metadata {#manifest-meta}
+-------------------
+
+The `meta` key is optional and may be used to specify institutional identifiers. [=Aggregators=] may use this for diagnostic purposes or identify changed identifiers.
+
+<pre class=simpledef>
+schac: SCHAC code of the institution covered by the data source(s)
+eterid: ETER identifier, as used in the EHESO and OrgReg
+deqarid: DEQAR institutional identifier
+did: Decentralised Identifier (DID) used by the institution
+</pre>
+
+JSON Schema {#manifest-schema}
+-----------
+
+```json
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://data.quality-link.eu/schema/manifest-v1.json",
+  "title": "QualityLink manifest file",
+  "description": "A manifest file listing data sources on learning opportunities.",
+  "type": "object",
+  "properties": {
+    "sources": {
+      "description": "Defines one or more data sources",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "description": "Type of the data source: string, using the identifier specified in QualityLink Data Exchange Specification",
+            "type": "string",
+            "enum": [
+              "elm",
+              "ooapi",
+              "edu-api"
+            ]
+          },
+          "path": {
+            "description": "File or API root",
+            "type": "string",
+            "format": "uri",
+            "pattern": "^https?://"
+          },
+          "version": {
+            "description": "Version identifier (see data source tyope-specific information)",
+            "type": "string"
+          },
+          "id": {
+            "description": "Identifier of the data source",
+            "type": "string"
+          },
+          "name": {
+            "description": "Human-readable name or description",
+            "type": "string"
+          },
+          "auth": {
+            "description": "Authorisation parameters",
+            "type": "object",
+            "properties": {
+              "type": {
+                "description": "Access control strategy required for this data source",
+                "type": "string",
+                "enum": [
+                  "none",
+                  "httpsig",
+                  "httpheader",
+                  "oauth2.0"
+                ]
+              }
+            },
+            "required": [
+              "type"
+            ]
+          }
+        },
+        "required": [
+          "type",
+          "path"
+        ]
+      }
+    },
+    "meta": {
+      "description": "Defines metadata about the institution providing the manifest file.",
+      "type": "object",
+      "properties": {
+        "schac": {
+          "description": "SCHAC code of the institution covered by the data source(s)",
+          "type": "string"
+        },
+        "eterid": {
+          "description": "ETER identifier, as used in the EHESO and OrgReg",
+          "type": "string"
+        },
+        "deqarid": {
+          "description": "DEQAR institutional identifier",
+          "type": "string"
+        },
+        "did": {
+          "description": "Decentralised Identifier (DID) used by the institution",
+          "type": "string"
+        }
+      }
+    }
+  },
+  "required": [
+    "sources"
+  ]
+}
+```
 
 Discovery Mechanism {#discovery}
 ===================
@@ -99,7 +227,7 @@ DNS TXT Record {#discovery-dns}
 The [HEI] can create a DNS TXT record of the following format:
 
 ```
-v=qldiscover1; m=URL
+v=qldiscover1; m=[URL]
 ```
 
 The URL must point to a manifest file.
@@ -109,9 +237,11 @@ Well-known URL {#discovery-well-known}
 
 The [HEI] can place a manifest file at a URL of the form:
 
-```
-[DOMAIN]/.well-known/quality-link-manifest
-```
+- `[DOMAIN]/.well-known/quality-link-manifest`
+- `[DOMAIN]/.well-known/quality-link-manifest.json`
+- `[DOMAIN]/.well-known/quality-link-manifest.yaml`
+
+These locations are tried in this order and the first file found is used.
 
 Domain Search Order {#discovery-domains}
 -------------------
@@ -137,18 +267,82 @@ Once a manifest file has successfully been obtained, no further domains or mecha
 Security Considerations {#security}
 =======================
 
-Provide security considerations for the implementation and authoring of this technology here.
+The location and content of manifest files are not sensitive information. Access to data sources themselves can be protected as described in [[!QL-EXCH]].
 
 Examples {#examples}
 ========
 
 <div class="informative">
 
-Provide examples of the usage of the technology here. Alternately, examples may be provided inline in the section on features, in which case, this section should be removed.
+Manifest file {#examples-manifest}
+-------------
 
-You can quote normative reference [[!ELM]] or informative references [[ECTS]] from the bibliography.
+```json
+{
+    "meta": {
+        "schac": "example.ac.at",
+        "eterid": "AT4711",
+        "deqarid": "DEQARINST0815"
+    },
+    "sources": [
+        {
+            "type": "elm",
+            "path": "https://data.example.org/feed/elm.ttl",
+            "version": "3.2",
+            "auth": {
+                "type": "none"
+            }
+        },
+        {
+            "type": "ooapi",
+            "path": "https://data.example.org/ooapi/v5/",
+            "version": "5",
+            "auth": {
+                "type": "httpheader"
+            },
+            "id": "eua-courses-virt",
+            "name": "Courses offered on the Alliance's virtual campus"
+        },
+        {
+            "type": "edu-api",
+            "path": "https://edu-api.example.org/",
+            "version": "1.0",
+            "auth": {
+                "type": "oauth2.0",
+                "token_endpoint": "https://auth.example.org/oauth2/get_token"
+            },
+            "name": "Experimental data source using Edu-API"
+        }
+    ]
+}
+```
 
-Terms defined in the key concepts, such as [=programmes=] or [=micro-credentials=], should be referenced.
+```yaml
+meta:
+  schac: example.ac.at
+  eterid: AT4711
+  deqarid: DEQARINST0815
+sources:
+  - type: elm
+    path: https://data.example.org/feed/elm.ttl
+    version: "3.2"
+    auth:
+      type: none
+  - type: ooapi
+    path: https://data.example.org/ooapi/v5/
+    version: "5"
+    auth:
+      type: httpheader
+    id: eua-courses-virt
+    name: "Courses offered on the Alliance's virtual campus"
+  - type: edu-api
+    path: https://edu-api.example.org/
+    version: "1.0"
+    auth:
+      type: oauth2.0
+      token_endpoint: https://auth.example.org/oauth2/get_token
+    name: "Experimental data source using Edu-API"
+```
 
 </div>
 

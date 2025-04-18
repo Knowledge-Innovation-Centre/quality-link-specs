@@ -7,6 +7,7 @@ on:
     paths:
       - '*.bs'
       - 'resources/*.ttl'
+      - '.github/workflows/auto-publish.yml'
   workflow_dispatch: {}
 
 jobs:
@@ -24,11 +25,17 @@ jobs:
           - source: discovery.bs
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - id: getdate
+        name: Get date of last commit
+        run: echo "date=$(git log -n 1 --format=%as -- ${{ matrix.source }})" >> $GITHUB_OUTPUT
       - uses: w3c/spec-prod@v2
         with:
           SOURCE: ${{ matrix.source }}
           TOOLCHAIN: bikeshed
           GH_PAGES_BRANCH: gh-pages
+          GH_PAGES_BUILD_OVERRIDE: "date: ${{ steps.getdate.outputs.date }}"
 
   copy-resources:
     name: Convert RDF files, generate documentation and copy to gh-pages
@@ -78,10 +85,13 @@ jobs:
 
       - name: Copy resources directory
         run: |
-          cp -r main-branch/resources gh-pages-branch/
+          cd main-branch
+          git config user.name "$(git show -s --format='%an' $GITHUB_SHA)"
+          git config user.email "$(git show -s --format='%ae' $GITHUB_SHA)"
+          git show -s --format=%s $GITHUB_SHA > /tmp/COMMIT_MSG
+          cd ..
+          rsync -auv main-branch/resources/ gh-pages-branch/resources/
           cd gh-pages-branch
-          git config user.name "GitHub Actions"
-          git config user.email "actions@github.com"
           git add resources/
-          git commit -m "Update resources directory" || echo "No changes to commit"
+          git commit -F /tmp/COMMIT_MSG || echo "No changes to commit"
           git push
