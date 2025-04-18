@@ -1488,9 +1488,25 @@ Possible extra rowspan handling
 		}
 	}
 </style>
+<script>
+    var _paq = window._paq = window._paq || [];
+    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+    _paq.push(["setDocumentTitle", "[specs] " + document.title]);
+    _paq.push(["setCookieDomain", "*.quality-link.eu"]);
+    _paq.push(["setDomains", ["*.quality-link.eu"]]);
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//analytics.knowledgeinnovation.eu/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '90']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
   <meta content="Bikeshed version b25686b9f, updated Fri Mar 14 14:15:20 2025 -0700" name="generator">
   <link href="https://quality-link.eu/wp-content/uploads/sites/90/2024/03/Quality-Link_Website-Favicon.png" rel="icon">
-  <meta content="a531341c109a1b37fa3a70ca081169207cfb62cb" name="revision">
+  <meta content="eca6974919c4643defe47b29ae6ad2a3c0b4a1ef" name="revision">
   <meta content="dark light" name="color-scheme">
 <style>/* Boilerplate: style-autolinks */
 .css.css, .property.property, .descriptor.descriptor {
@@ -2051,7 +2067,7 @@ dfn > a.self-link::before      { content: "#"; }
   <div class="head">
    <p data-fill-with="logo"></p>
    <h1 class="p-name no-ref" id="title">QualityLink Data Sources and Access Policy</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Living Document, <time class="dt-updated" datetime="2025-03-10">10 March 2025</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Living Document, <time class="dt-updated" datetime="2025-04-18">18 April 2025</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>Issue Tracking:
