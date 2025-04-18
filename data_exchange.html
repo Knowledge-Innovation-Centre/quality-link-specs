@@ -1490,7 +1490,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version b25686b9f, updated Fri Mar 14 14:15:20 2025 -0700" name="generator">
   <link href="https://quality-link.eu/wp-content/uploads/sites/90/2024/03/Quality-Link_Website-Favicon.png" rel="icon">
-  <meta content="4f7594460273e3d720f7a28de3f1a89b9b6858a2" name="revision">
+  <meta content="99730cb518e78986aca5c2be80bdea9745b3c89e" name="revision">
   <meta content="dark light" name="color-scheme">
 <style>/* Boilerplate: style-autolinks */
 .css.css, .property.property, .descriptor.descriptor {
@@ -2051,7 +2051,7 @@ dfn > a.self-link::before      { content: "#"; }
   <div class="head">
    <p data-fill-with="logo"></p>
    <h1 class="p-name no-ref" id="title">QualityLink Data Exchange Specification</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Living Standard, <time class="dt-updated" datetime="2025-04-17">17 April 2025</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Living Standard, <time class="dt-updated" datetime="2025-04-18">18 April 2025</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>Issue Tracking:
@@ -2382,8 +2382,16 @@ This method delivers JSON-formatted responses and supports real-time querying of
      <p><code>description</code>: Brief description of the learning opportunity.</p>
     <li data-md>
      <p><code>type</code>: Type of learning opportunity (e.g., "Course", "Program").</p>
+    <li data-md>
+     <p><code>primaryCode</code>:</p>
+    <li data-md>
+     <p><code>level</code>:</p>
+    <li data-md>
+     <p><code>gradingScheme</code>:</p>
+    <li data-md>
+     <p><code>teachingLanguage</code> / <code>recordLanguage</code>:</p>
    </ul>
-   <p>Additional fields (e.g., <code>credits</code>, <code>learningOutcomes</code>) are recommended where applicable to align with the European Learning Model <a data-link-type="biblio" href="#biblio-elm" title="European Learning Model (ELM)">[ELM]</a> and QualityLink goals. Providers should refer to
+   <p>In addition, the fields <code>credits</code> and <code>learningOutcomes</code> are recommended to align with the European Learning Model <a data-link-type="biblio" href="#biblio-elm" title="European Learning Model (ELM)">[ELM]</a> and QualityLink goals. Providers should refer to
 the Edu-API <em>Learning Resource Core</em> bindings for full details.</p>
    <h4 class="heading settled" data-level="5.3.2" id="edu-api-incremental"><span class="secno">5.3.2. </span><span class="content">Incremental Updates</span><a class="self-link" href="#edu-api-incremental"></a></h4>
    <p>The <a data-link-type="biblio" href="#biblio-edu-api" title="Edu-API Specification">[Edu-API]</a> specification includes a <code>dateLastModified</code> property in resource responses (e.g., for courses and programs), indicating the last modification date in ISO 8601 format.</p>
