@@ -320,6 +320,14 @@ ql:LearningOpportunityInstanceReference
         sh:path adms:identifier ;
 	] .
 
+###  http://data.quality-link.eu/ontology/v1#Kajmak
+ql:Kajmak
+    a owl:Class ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/FOODON_00001256> ;
+    rdfs:comment "Kaymak is a creamy dairy food similar to clotted cream, made from the milk of water buffalo, cows, sheep, or goats in Central Asia, some Balkan countries, some Caucasus countries, the Levant, Turkic regions, Iran and Iraq."@en ;
+    dcterms:source <https://en.wikipedia.org/wiki/Kaymak> ;
+    rdfs:label "kajmak"@hbs-Latn, "кајмак"@hbs-Cyrl, "кајмак"@mk, "kajmak"@sl, "kaymak"@en .
+
 #################################################################
 #    Object Properties
 #################################################################
