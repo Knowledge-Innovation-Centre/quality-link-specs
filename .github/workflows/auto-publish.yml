@@ -66,10 +66,6 @@ jobs:
             python -m rdflib.tools.rdfpipe -i turtle -o xml $infile > main-branch/resources/`basename -s .ttl $infile`.rdf
           done
 
-      - uses: awalsh128/cache-apt-pkgs-action@latest
-        with:
-          packages: graphviz
-
       - name: Cache SHACL Play app
         uses: actions/cache@v4
         with:
@@ -78,6 +74,8 @@ jobs:
 
       - name: Install SHACL Play app
         run: |
+          sudo apt-get -y update && \
+          sudo apt-get -y install graphviz && \
           test -f ~/shacl-play.jar || curl -L -o ~/shacl-play.jar "https://github.com/sparna-git/shacl-play/releases/download/0.10.1/shacl-play-app-0.10.1-onejar.jar"
 
       - name: Generate HTML from SHACL
