@@ -98,9 +98,9 @@ jobs:
       - name: Generate ontology documentation
         run: |
           java -jar ~/widoco.jar -ontFile main-branch/resources/ontology-shacl.ttl -uniteSections -outFolder widoco-out -excludeProvenance && \
-          mkdir -p gh-pages-branch/resources && \
+          mkdir -p gh-pages-branch/resources/resources && \
           mv -v widoco-out/index-en.html gh-pages-branch/resources/ontology.html && \
-          mv -v widoco-out/resources/ gh-pages-branch/resources/
+          rsync -auv widoco-out/resources/ gh-pages-branch/resources/resources/
 
       - name: Deploy to gh-pages
         run: |
