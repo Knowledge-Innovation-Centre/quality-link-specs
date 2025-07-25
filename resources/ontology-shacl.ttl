@@ -27,14 +27,14 @@
     owl:imports elm: ;
     cc:attributionName "QualityLink project"@en ;
     cc:attributionURL <https://quality-link.eu/> ;
-    dcterms:abstract "The QualityLink ontology builds on and extends the European Learning Model (ELM) to cover additional classes and properties required for the project."@en ;
+    dcterms:abstract "The QualityLink ontology and application profile build on the European Learning Model (ELM). They defines additional classes and properties to describe things not currently covered in ELM."@en ;
     dcterms:created "2025-02-13"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     dcterms:modified "2025-07-25"^^xsd:date ;
     dcterms:publisher <https://quality-link.eu/> ;
     dcterms:title "QualityLink Ontology and Application Profile"@en ;
-    rdfs:comment "The QualityLink ontology builds on the European Learning Model (ELM). It defines additional classes and properties to describe things not currently covered in ELM. QualityLink further provides an application profile defined as SHACL constraints for the QualityLink pilot aggregator. These are derived from the ELM Learning Opportunities and Qualifications application profile. The QualityLink profile only adds optional properties to the ELM profile, no required ones."@en ;
-    rdfs:label "QualityLink Ontology"@en ;
+    rdfs:label "QualityLink"@en ;
+    rdfs:comment "The QualityLink ontology extends the European Learning Model (ELM) ontology by additional classes and properties required in the context of the QualityLink project. These describe things not currently covered in ELM. QualityLink further defines an application profile defined as SHACL constraints, which are based on the ELM Learning Opportunities and Qualifications (LOQ) application profile. The application profile is used by the QualityLink pilot aggregator. The QualityLink profile only adds optional properties to the ELM profile, no required ones."@en ;
     owl:versionInfo "0.3.1" .
 
 
