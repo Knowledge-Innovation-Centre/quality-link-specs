@@ -59,11 +59,12 @@ jobs:
       - name: Install RDFlib
         run: python -m pip install rdflib
 
-      - name: Convert Turtle to JSON-LD and RDF+XML
+      - name: Convert Turtle to JSON-LD, RDF+XML and N-Triples
         run: |
           for infile in main-branch/resources/*.ttl ; do
             python -m rdflib.tools.rdfpipe -i turtle -o json-ld $infile > main-branch/resources/`basename -s .ttl $infile`.json
             python -m rdflib.tools.rdfpipe -i turtle -o xml $infile > main-branch/resources/`basename -s .ttl $infile`.rdf
+            python -m rdflib.tools.rdfpipe -i turtle -o nt11 $infile > main-branch/resources/`basename -s .ttl $infile`.nt
           done
 
       - name: Cache SHACL Play app
@@ -83,6 +84,23 @@ jobs:
           for infile in main-branch/resources/*.ttl ; do
             GRAPHVIZ_DOT=/usr/bin/dot java -jar ~/shacl-play.jar doc -i $infile -l en -o main-branch/resources/`basename -s .ttl $infile`.html
           done
+
+      - name: Cache WIDOCO app
+        uses: actions/cache@v4
+        with:
+          path: ~/widoco.jar
+          key: widoco-1.4.25
+
+      - name: Install WIDOCO app
+        run: |
+          test -f ~/widoco.jar || curl -L -o ~/widoco.jar "https://github.com/dgarijo/Widoco/releases/download/v1.4.25/widoco-1.4.25-jar-with-dependencies_JDK-17.jar"
+
+      - name: Generate ontology documentation
+        run: |
+          java -jar ~/widoco.jar -ontFile main-branch/resources/ontology-shacl.ttl -uniteSections -outFolder widoco-out -excludeProvenance && \
+          mkdir -p gh-pages-branch/resources && \
+          mv -v widoco-out/index-en.html gh-pages-branch/resources/ontology.html && \
+          mv -v widoco-out/resources/ gh-pages-branch/resources/
 
       - name: Deploy to gh-pages
         run: |
