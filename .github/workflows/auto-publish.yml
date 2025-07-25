@@ -111,6 +111,10 @@ jobs:
           cd ..
           rsync -auv main-branch/resources/ gh-pages-branch/resources/
           cd gh-pages-branch
+          cp -v resources/ontology-shacl.ttl resources/ontology.ttl
+          cp -v resources/ontology-shacl.json resources/ontology.jsonld
+          cp -v resources/ontology-shacl.rdf resources/ontology.rdf
+          cp -v resources/ontology-shacl.nt resources/ontology.nt
           git add resources/
           git commit -F /tmp/COMMIT_MSG || echo "No changes to commit"
           git push
