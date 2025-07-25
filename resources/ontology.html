@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="resources/primer.css" media="screen"/>
+<link rel="stylesheet" href="resources/rec.css" media="screen"/>
+<link rel="stylesheet" href="resources/extra.css" media="screen"/>
+<link rel="stylesheet" href="resources/owl.css" media="screen"/>
+<link rel="stylesheet" href="resources/dark.css" media="(prefers-color-scheme: dark)"/>
+<link rel="stylesheet" href="resources/light.css" media="(prefers-color-scheme: light)"/>
+<link rel="stylesheet" href="resources/slider.css" media="screen"/>
+<meta name="color-scheme" content="dark light">
+<script type="module" src="resources/dark-mode-toggle.mjs"></script><div class="darkmode">
+	<dark-mode-toggle class="slider"></dark-mode-toggle>
+</div>
+ <title>QualityLink Ontology</title>
+
+
+<!-- SCHEMA.ORG METADATA -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"http://data.quality-link.eu/ontology/v1#","image":"http://vowl.visualdataweb.org/webvowl/#iri=http://data.quality-link.eu/ontology/v1#","name":"QualityLink Ontology", "headline":"The QualityLink ontology builds on and extends the European Learning Model (ELM) to cover additional classes and properties required for the project.", "dateReleased":"2025-02-13", "dateModified":"2025-04-11", "version":"0.3.0", "license":"https://creativecommons.org/licenses/by/4.0/"}</script>
+
+<script src="resources/jquery.js"></script> 
+<script src="resources/marked.min.js"></script> 
+    <script> 
+function loadHash() {
+  jQuery(".markdown").each(function(el){jQuery(this).after(marked.parse(jQuery(this).text())).remove()});
+	var hash = location.hash;
+	if($(hash).offset()!=null){
+	  $('html, body').animate({scrollTop: $(hash).offset().top}, 0);
+}
+	loadTOC();
+}
+function loadTOC(){
+	//process toc dynamically
+	  var t='<h2>Table of contents</h2><ul>';i = 1;j=0;
+	  jQuery(".list").each(function(){
+		if(jQuery(this).is('h2')){
+			if(j>0){
+				t+='</ul>';
+				j=0;
+			}
+			t+= '<li>'+i+'. <a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+			i++;
+		}
+		if(jQuery(this).is('h3')){
+			if(j==0){
+				t+='<ul>';
+			}
+			j++;
+			t+= '<li>'+(i-1)+'.'+j+'. '+'<a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+		}
+	  });
+	  t+='</ul>';
+	  $("#toc").html(t); 
+}
+$(function(){
+    loadHash();
+}); $.fn.ignore = function(sel){
+        return this.clone().find(sel||">*").remove().end();
+ }; 
+   </script> 
+  </head> 
+
+<body>
+<div class="container">
+<div class="head">
+<div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
+<h1>QualityLink Ontology</h1>
+<h2>Release: 2025-02-13</h2>
+
+
+<dl>
+<dt>Modified on: 2025-04-11</dt>
+<dt>Revision:</dt>
+<dd>0.3.0</dd>
+<dt>Publisher:</dt>
+<dd><a href="http://quality-link.eu/">http://quality-link.eu/</a></dd>
+<dt>Download serialization:</dt><dd><span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.owl" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License:</dt><dd><a href="https://creativecommons.org/licenses/by/4.0/" target="_blank"><img src="https://img.shields.io/badge/License-https://creativecommons.org/licenses/by/4.0/-blue.svg" alt="https://creativecommons.org/licenses/by/4.0/" /></a>
+</dd><!-- <dt>Evaluation:</dt><dd><a href="OOPSevaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Cite as:</dt>
+<dd> QualityLink Ontology. Revision: 0.3.0.</dd>
+</dl>
+
+<hr/>
+</div>
+<div class="status">
+<div>
+<span>Ontology Specification Draft</span>
+</div>
+</div>     <div id="abstract"><h2>Abstract</h2><span class="markdown">
+The QualityLink ontology builds on and extends the European Learning Model (ELM) to cover additional classes and properties required for the project.</span>
+</div>
+<div id="toc"></div> 
+
+<!--INTRODUCTION SECTION-->
+    <div id="introduction"><h2 id="intro" class="list">Introduction <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This is a place holder text for the introduction. The introduction should briefly describe the ontology, its motivation, state of the art and goals.</span>
+</div>
+  
+
+<!--OVERVIEW SECTION-->
+    <div id="overview"><h2 id="overv" class="list">QualityLink Ontology: Overview <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This ontology has the following classes and properties.</span>
+<h4>Classes</h4>
+<ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#EuropeanUniversityAlliance"
+         title="http://data.quality-link.eu/ontology/v1#EuropeanUniversityAlliance">
+         <span>European University Alliance</span>
+      </a>
+   </li>
+   <li>
+      <a href="#GroupOfHEIs"
+         title="http://data.quality-link.eu/ontology/v1#GroupOfHEIs">
+         <span>Group of Higher Education Institutions</span>
+      </a>
+   </li>
+   <li>
+      <a href="#HigherEducationInstitution"
+         title="http://data.quality-link.eu/ontology/v1#HigherEducationInstitution">
+         <span>Higher Education Institution</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Kajmak" title="http://data.quality-link.eu/ontology/v1#Kajmak">kaymak</a>
+   </li>
+   <li>
+      <a href="#http://data.europa.eu/snb/model/elm/LearningAchievementSpecification"
+         title="http://data.europa.eu/snb/model/elm/LearningAchievementSpecification">Learning Achievement Specification (ELM)</a>
+   </li>
+   <li>
+      <a href="#http://data.europa.eu/snb/model/elm/LearningOpportunity"
+         title="http://data.europa.eu/snb/model/elm/LearningOpportunity">Learning Opportunity (ELM)</a>
+   </li>
+   <li>
+      <a href="#LearningOpportunityInstance"
+         title="http://data.quality-link.eu/ontology/v1#LearningOpportunityInstance">
+         <span>Learning Opportunity Instance</span>
+      </a>
+   </li>
+   <li>
+      <a href="#LearningOpportunitySpecification"
+         title="http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecification">
+         <span>Learning Opportunity Specification</span>
+      </a>
+   </li>
+   <li>
+      <a href="#OrgRegIdentifier"
+         title="http://data.quality-link.eu/ontology/v1#OrgRegIdentifier">
+         <span>OrgReg ID</span>
+      </a>
+   </li>
+   <li>
+      <a href="#SchacIdentifier"
+         title="http://data.quality-link.eu/ontology/v1#SchacIdentifier">
+         <span>SCHAC Code</span>
+      </a>
+   </li>
+</ul><h4>Object Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#absorbed" title="http://data.quality-link.eu/ontology/v1#absorbed">absorbed</a>
+   </li>
+   <li>
+      <a href="#availableTo"
+         title="http://data.quality-link.eu/ontology/v1#availableTo">available to</a>
+   </li>
+   <li>
+      <a href="#studentsOf"
+         title="http://data.quality-link.eu/ontology/v1#studentsOf">includes students of</a>
+   </li>
+   <li>
+      <a href="#minimumEQFLevel"
+         title="http://data.quality-link.eu/ontology/v1#minimumEQFLevel">minimum EQF Level</a>
+   </li>
+   <li>
+      <a href="#relatedTo"
+         title="http://data.quality-link.eu/ontology/v1#relatedTo">related to</a>
+   </li>
+   <li>
+      <a href="#entryRequirementLearningOpportunity"
+         title="http://data.quality-link.eu/ontology/v1#entryRequirementLearningOpportunity">required learning opportunity for entry</a>
+   </li>
+   <li>
+      <a href="#entryRequirementLearningOutcome"
+         title="http://data.quality-link.eu/ontology/v1#entryRequirementLearningOutcome">required learning outcome for entry</a>
+   </li>
+   <li>
+      <a href="#limitLearningOpportunity"
+         title="http://data.quality-link.eu/ontology/v1#limitLearningOpportunity">specific learning opportunity</a>
+   </li>
+   <li>
+      <a href="#spunOffFrom"
+         title="http://data.quality-link.eu/ontology/v1#spunOffFrom">spun off from</a>
+   </li>
+   <li>
+      <a href="#succeeded"
+         title="http://data.quality-link.eu/ontology/v1#succeeded">succeeded</a>
+   </li>
+   <li>
+      <a href="#superseded"
+         title="http://data.quality-link.eu/ontology/v1#superseded">superseded</a>
+   </li>
+</ul><h4>Data Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#enrolledLearnerCount"
+         title="http://data.quality-link.eu/ontology/v1#enrolledLearnerCount">enrolled learner count</a>
+   </li>
+   <li>
+      <a href="#enrolmentCapacity"
+         title="http://data.quality-link.eu/ontology/v1#enrolmentCapacity">enrolment capacity</a>
+   </li>
+   <li>
+      <a href="#isActive" title="http://data.quality-link.eu/ontology/v1#isActive">is active</a>
+   </li>
+   <li>
+      <a href="#enrolmentMinimum"
+         title="http://data.quality-link.eu/ontology/v1#enrolmentMinimum">minimum enrolment</a>
+   </li>
+   <li>
+      <a href="#isOpenToNonEnrolled"
+         title="http://data.quality-link.eu/ontology/v1#isOpenToNonEnrolled">open to non-enrolled learners</a>
+   </li>
+   <li>
+      <a href="#registrationPortal"
+         title="http://data.quality-link.eu/ontology/v1#registrationPortal">registration portal</a>
+   </li>
+   <li>
+      <a href="#version" title="http://data.quality-link.eu/ontology/v1#version">version</a>
+   </li>
+</ul><h4>Named Individuals</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#EuropeanUniversityAlliance"
+         title="http://data.quality-link.eu/ontology/v1#EuropeanUniversityAlliance">
+         <span>European University Alliance</span>
+      </a>
+   </li>
+   <li>
+      <a href="#GroupOfHEIs"
+         title="http://data.quality-link.eu/ontology/v1#GroupOfHEIs">
+         <span>Group of Higher Education Institutions</span>
+      </a>
+   </li>
+   <li>
+      <a href="#HigherEducationInstitution"
+         title="http://data.quality-link.eu/ontology/v1#HigherEducationInstitution">
+         <span>Higher Education Institution</span>
+      </a>
+   </li>
+   <li>
+      <a href="#LearnerGroup"
+         title="http://data.quality-link.eu/ontology/v1#LearnerGroup">
+         <span>Learner Group</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://data.europa.eu/snb/model/ap/loq-constraints/LearningAchievementSpecificationShape"
+         title="http://data.europa.eu/snb/model/ap/loq-constraints/LearningAchievementSpecificationShape">
+         <span>Learning Achievement Specification (ELM)</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://data.europa.eu/snb/model/ap/loq-constraints/LearningOpportunityShape"
+         title="http://data.europa.eu/snb/model/ap/loq-constraints/LearningOpportunityShape">
+         <span>Learning Opportunity (ELM)</span>
+      </a>
+   </li>
+   <li>
+      <a href="#LearningOpportunityInstance"
+         title="http://data.quality-link.eu/ontology/v1#LearningOpportunityInstance">
+         <span>Learning Opportunity Instance</span>
+      </a>
+   </li>
+   <li>
+      <a href="#LearningOpportunityInstanceReference"
+         title="http://data.quality-link.eu/ontology/v1#LearningOpportunityInstanceReference">
+         <span>Learning Opportunity Instance Reference</span>
+      </a>
+   </li>
+   <li>
+      <a href="#LearningOpportunitySpecification"
+         title="http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecification">
+         <span>Learning Opportunity Specification</span>
+      </a>
+   </li>
+   <li>
+      <a href="#LearningOpportunitySpecificationReference"
+         title="http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecificationReference">
+         <span>Learning Opportunity Specification Reference</span>
+      </a>
+   </li>
+   <li>
+      <a href="#OrgReg" title="http://data.quality-link.eu/ontology/v1#OrgReg">OrgReg (identifier scheme)</a>
+   </li>
+   <li>
+      <a href="#OrgRegIdentifier"
+         title="http://data.quality-link.eu/ontology/v1#OrgRegIdentifier">
+         <span>OrgReg ID</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Schac" title="http://data.quality-link.eu/ontology/v1#Schac">SCHAC (identifier scheme)</a>
+   </li>
+   <li>
+      <a href="#SchacIdentifier"
+         title="http://data.quality-link.eu/ontology/v1#SchacIdentifier">
+         <span>SCHAC Code</span>
+      </a>
+   </li>
+</ul>
+</div>
+  
+
+<!--DESCRIPTION SECTION-->
+    <div id="description"><h2 id="desc" class="list">QualityLink Ontology: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+
+<span class="markdown">The QualityLink ontology builds on the European Learning Model (ELM). It defines additional classes and properties to describe things not currently covered in ELM. It further includes SHACL constraints for the QualityLink pilot aggregator, derived from the ELM Learning Opportunities and Qualifications application profile.</span></div>
+   
+
+<!--CROSSREF SECTION-->
+   <div id="crossref"><h2 id="crossreference" class="list">Cross-reference for QualityLink Ontology classes, object properties and data properties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+This section provides details for each class and property defined by QualityLink Ontology.
+<div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="classes">
+ <h3 id="classes-headline" class="list">Classes</h3>
+ <ul class="hlist">
+  <li><a href="#EuropeanUniversityAlliance" title="http://data.quality-link.eu/ontology/v1#EuropeanUniversityAlliance"> <span>European University Alliance</span> </a></li>
+  <li><a href="#GroupOfHEIs" title="http://data.quality-link.eu/ontology/v1#GroupOfHEIs"> <span>Group of Higher Education Institutions</span> </a></li>
+  <li><a href="#HigherEducationInstitution" title="http://data.quality-link.eu/ontology/v1#HigherEducationInstitution"> <span>Higher Education Institution</span> </a></li>
+  <li><a href="#Kajmak" title="http://data.quality-link.eu/ontology/v1#Kajmak">kaymak</a></li>
+  <li><a href="#http://data.europa.eu/snb/model/elm/LearningAchievementSpecification" title="http://data.europa.eu/snb/model/elm/LearningAchievementSpecification">Learning Achievement Specification (ELM)</a></li>
+  <li><a href="#http://data.europa.eu/snb/model/elm/LearningOpportunity" title="http://data.europa.eu/snb/model/elm/LearningOpportunity">Learning Opportunity (ELM)</a></li>
+  <li><a href="#LearningOpportunityInstance" title="http://data.quality-link.eu/ontology/v1#LearningOpportunityInstance"> <span>Learning Opportunity Instance</span> </a></li>
+  <li><a href="#LearningOpportunitySpecification" title="http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecification"> <span>Learning Opportunity Specification</span> </a></li>
+  <li><a href="#OrgRegIdentifier" title="http://data.quality-link.eu/ontology/v1#OrgRegIdentifier"> <span>OrgReg ID</span> </a></li>
+  <li><a href="#SchacIdentifier" title="http://data.quality-link.eu/ontology/v1#SchacIdentifier"> <span>SCHAC Code</span> </a></li>
+ </ul>
+ <div class="entity" id="EuropeanUniversityAlliance">
+  <h3>European University Alliance<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://data.quality-link.eu/ontology/v1#EuropeanUniversityAlliance</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#GroupOfHEIs" title="http://data.quality-link.eu/ontology/v1#GroupOfHEIs">Group of Higher Education Institutions</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is also defined as
+   </dt>
+   <dd>
+    <a href="#EuropeanUniversityAlliance">named individual</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="GroupOfHEIs">
+  <h3>Group of Higher Education Institutions<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://data.quality-link.eu/ontology/v1#GroupOfHEIs</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="http://data.europa.eu/snb/model/elm/Group" target="_blank" title="http://data.europa.eu/snb/model/elm/Group">Group</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#EuropeanUniversityAlliance" title="http://data.quality-link.eu/ontology/v1#EuropeanUniversityAlliance">European University Alliance</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is also defined as
+   </dt>
+   <dd>
+    <a href="#GroupOfHEIs">named individual</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="HigherEducationInstitution">
+  <h3>Higher Education Institution<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://data.quality-link.eu/ontology/v1#HigherEducationInstitution</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="http://data.europa.eu/snb/model/elm/Organisation" target="_blank" title="http://data.europa.eu/snb/model/elm/Organisation">Organisation</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is also defined as
+   </dt>
+   <dd>
+    <a href="#HigherEducationInstitution">named individual</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Kajmak">
+  <h3>kaymak<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://data.quality-link.eu/ontology/v1#Kajmak</p>
+  <div class="comment">
+   <span class="markdown">Kaymak is a creamy dairy food similar to clotted cream, made from the milk of water buffalo, cows, sheep, or goats in Central Asia, some Balkan countries, some Caucasus countries, the Levant, Turkic regions, Iran and Iraq.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Source
+   </dt>
+   <dd>
+    <a href="https://en.wikipedia.org/wiki/Kaymak">https://en.wikipedia.org/wiki/Kaymak</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="http://purl.obolibrary.org/obo/FOODON_00001256" target="_blank" title="http://purl.obolibrary.org/obo/FOODON_00001256">F O O D O N 00001256</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://data.europa.eu/snb/model/elm/LearningAchievementSpecification">
+  <h3>Learning Achievement Specification (ELM)<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://data.europa.eu/snb/model/elm/LearningAchievementSpecification</p>
+  <div class="comment">
+   <span class="markdown">Description of a set of knowledge and/or skills used with responsibility and autonomy, which may be acquired.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://data.europa.eu/snb/model/elm">http://data.europa.eu/snb/model/elm</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="http://data.europa.eu/snb/model/elm/Specification" target="_blank" title="http://data.europa.eu/snb/model/elm/Specification">Specification</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#LearningOpportunitySpecification" title="http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecification">Learning Opportunity Specification</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://data.europa.eu/snb/model/elm/LearningOpportunity">
+  <h3>Learning Opportunity (ELM)<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://data.europa.eu/snb/model/elm/LearningOpportunity</p>
+  <div class="comment">
+   <span class="markdown">The conditions, e.g. time and location, under which a person may acquire a set of knowledge and/or skills used with responsibility and autonomy.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://data.europa.eu/snb/model/elm">http://data.europa.eu/snb/model/elm</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#LearningOpportunityInstance" title="http://data.quality-link.eu/ontology/v1#LearningOpportunityInstance">Learning Opportunity Instance</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="LearningOpportunityInstance">
+  <h3>Learning Opportunity Instance<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://data.quality-link.eu/ontology/v1#LearningOpportunityInstance</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="http://data.europa.eu/snb/model/ap/loq-constraints/LearningOpportunityShape" target="_blank" title="http://data.europa.eu/snb/model/ap/loq-constraints/LearningOpportunityShape">Learning Opportunity (ELM)</a> <sup class="type-c" title="class">c</sup>, <a href="#http://data.europa.eu/snb/model/elm/LearningOpportunity" title="http://data.europa.eu/snb/model/elm/LearningOpportunity">Learning Opportunity (ELM)</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#availableTo" title="http://data.quality-link.eu/ontology/v1#availableTo">available to</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is also defined as
+   </dt>
+   <dd>
+    <a href="#LearningOpportunityInstance">named individual</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="LearningOpportunitySpecification">
+  <h3>Learning Opportunity Specification<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecification</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="http://data.europa.eu/snb/model/ap/loq-constraints/LearningAchievementSpecificationShape" target="_blank" title="http://data.europa.eu/snb/model/ap/loq-constraints/LearningAchievementSpecificationShape">Learning Achievement Specification (ELM)</a> <sup class="type-c" title="class">c</sup>, <a href="#http://data.europa.eu/snb/model/elm/LearningAchievementSpecification" title="http://data.europa.eu/snb/model/elm/LearningAchievementSpecification">Learning Achievement Specification (ELM)</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#superseded" title="http://data.quality-link.eu/ontology/v1#superseded">superseded</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is also defined as
+   </dt>
+   <dd>
+    <a href="#LearningOpportunitySpecification">named individual</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="OrgRegIdentifier">
+  <h3>OrgReg ID<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://data.quality-link.eu/ontology/v1#OrgRegIdentifier</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="http://data.europa.eu/snb/model/elm/Identifier" target="_blank" title="http://data.europa.eu/snb/model/elm/Identifier">Identifier</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is also defined as
+   </dt>
+   <dd>
+    <a href="#OrgRegIdentifier">named individual</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="SchacIdentifier">
+  <h3>SCHAC Code<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://data.quality-link.eu/ontology/v1#SchacIdentifier</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="http://data.europa.eu/snb/model/elm/Identifier" target="_blank" title="http://data.europa.eu/snb/model/elm/Identifier">Identifier</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is also defined as
+   </dt>
+   <dd>
+    <a href="#SchacIdentifier">named individual</a>
+   </dd>
+  </dl>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="objectproperties">
+ <h3 id="properties" class="list">Object Properties</h3>
+ <ul class="hlist">
+  <li><a href="#absorbed" title="http://data.quality-link.eu/ontology/v1#absorbed">absorbed</a></li>
+  <li><a href="#availableTo" title="http://data.quality-link.eu/ontology/v1#availableTo">available to</a></li>
+  <li><a href="#studentsOf" title="http://data.quality-link.eu/ontology/v1#studentsOf">includes students of</a></li>
+  <li><a href="#minimumEQFLevel" title="http://data.quality-link.eu/ontology/v1#minimumEQFLevel">minimum EQF Level</a></li>
+  <li><a href="#relatedTo" title="http://data.quality-link.eu/ontology/v1#relatedTo">related to</a></li>
+  <li><a href="#entryRequirementLearningOpportunity" title="http://data.quality-link.eu/ontology/v1#entryRequirementLearningOpportunity">required learning opportunity for entry</a></li>
+  <li><a href="#entryRequirementLearningOutcome" title="http://data.quality-link.eu/ontology/v1#entryRequirementLearningOutcome">required learning outcome for entry</a></li>
+  <li><a href="#limitLearningOpportunity" title="http://data.quality-link.eu/ontology/v1#limitLearningOpportunity">specific learning opportunity</a></li>
+  <li><a href="#spunOffFrom" title="http://data.quality-link.eu/ontology/v1#spunOffFrom">spun off from</a></li>
+  <li><a href="#succeeded" title="http://data.quality-link.eu/ontology/v1#succeeded">succeeded</a></li>
+  <li><a href="#superseded" title="http://data.quality-link.eu/ontology/v1#superseded">superseded</a></li>
+ </ul>
+ <div class="entity" id="absorbed">
+  <h3>absorbed<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://data.quality-link.eu/ontology/v1#absorbed</p>
+  <div class="comment">
+   <span class="markdown">Organisation absorbed another one (i.e. subject existed before and after the event, object ceased to exist)</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#relatedTo" title="http://data.quality-link.eu/ontology/v1#relatedTo">related to</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="http://data.europa.eu/snb/model/elm/Organisation" target="_blank" title="http://data.europa.eu/snb/model/elm/Organisation">Organisation</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="availableTo">
+  <h3>available to<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://data.quality-link.eu/ontology/v1#availableTo</p>
+  <div class="comment">
+   <span class="markdown">Indicates the target group to which this learning opportunity is available</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#LearningOpportunityInstance" title="http://data.quality-link.eu/ontology/v1#LearningOpportunityInstance">Learning Opportunity Instance</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://data.quality-link.eu/ontology/v1#LearnerGroup" target="_blank" title="http://data.quality-link.eu/ontology/v1#LearnerGroup">Learner Group</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="studentsOf">
+  <h3>includes students of<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://data.quality-link.eu/ontology/v1#studentsOf</p>
+  <div class="comment">
+   <span class="markdown">Defines that the target group of learners includes the students of an education institution, or an alliance thereof</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="http://data.quality-link.eu/ontology/v1#LearnerGroup" target="_blank" title="http://data.quality-link.eu/ontology/v1#LearnerGroup">Learner Group</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="minimumEQFLevel">
+  <h3>minimum EQF Level<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://data.quality-link.eu/ontology/v1#minimumEQFLevel</p>
+  <div class="comment">
+   <span class="markdown">Defines that the learning opportunity is offered to students enrolled in another learning opportunity at a specified EQF level or higher. If provided, the value must come from the EU controlled vocabulary http://publications.europa.eu/resource/dataset/european-qualification-framework</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="http://data.quality-link.eu/ontology/v1#LearnerGroup" target="_blank" title="http://data.quality-link.eu/ontology/v1#LearnerGroup">Learner Group</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="relatedTo">
+  <h3>related to<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://data.quality-link.eu/ontology/v1#relatedTo</p>
+  <div class="comment">
+   <span class="markdown">A relationship between Learning Opportunities or Organisations (abstract)</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> asymmetric</p>
+   <dl>
+    <dt>
+     has sub-properties
+    </dt>
+    <dd>
+     <a href="#absorbed" title="http://data.quality-link.eu/ontology/v1#absorbed">absorbed</a> <sup class="type-op" title="object property">op</sup>, <a href="#spunOffFrom" title="http://data.quality-link.eu/ontology/v1#spunOffFrom">spun off from</a> <sup class="type-op" title="object property">op</sup>, <a href="#succeeded" title="http://data.quality-link.eu/ontology/v1#succeeded">succeeded</a> <sup class="type-op" title="object property">op</sup>, <a href="#superseded" title="http://data.quality-link.eu/ontology/v1#superseded">superseded</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="entryRequirementLearningOpportunity">
+  <h3>required learning opportunity for entry<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://data.quality-link.eu/ontology/v1#entryRequirementLearningOpportunity</p>
+  <div class="comment">
+   <span class="markdown">Specific entry requirement or prerequisite to have completed another learning opportunity.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecificationReference" target="_blank" title="http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecificationReference">Learning Opportunity Specification Reference</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="entryRequirementLearningOutcome">
+  <h3>required learning outcome for entry<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://data.quality-link.eu/ontology/v1#entryRequirementLearningOutcome</p>
+  <div class="comment">
+   <span class="markdown">Specific entry requirement or prerequisite to have achieved a particular learning outcome.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="http://data.europa.eu/snb/model/elm/LearningOutcome" target="_blank" title="http://data.europa.eu/snb/model/elm/LearningOutcome">Learning Outcome</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="limitLearningOpportunity">
+  <h3>specific learning opportunity<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://data.quality-link.eu/ontology/v1#limitLearningOpportunity</p>
+  <div class="comment">
+   <span class="markdown">Defines that the learning opportunity is offered to students enrolled in a specified other learning opportunity.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="http://data.quality-link.eu/ontology/v1#LearnerGroup" target="_blank" title="http://data.quality-link.eu/ontology/v1#LearnerGroup">Learner Group</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="spunOffFrom">
+  <h3>spun off from<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://data.quality-link.eu/ontology/v1#spunOffFrom</p>
+  <div class="comment">
+   <span class="markdown">Organisation spun off from another one (i.e. subject newly created by the event, object existed before and after)</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#relatedTo" title="http://data.quality-link.eu/ontology/v1#relatedTo">related to</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="http://data.europa.eu/snb/model/elm/Organisation" target="_blank" title="http://data.europa.eu/snb/model/elm/Organisation">Organisation</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="succeeded">
+  <h3>succeeded<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://data.quality-link.eu/ontology/v1#succeeded</p>
+  <div class="comment">
+   <span class="markdown">Organisation succeeded/replaced another one (i.e. subject was newly created by the event, object ceased to exist)</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#relatedTo" title="http://data.quality-link.eu/ontology/v1#relatedTo">related to</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="http://data.europa.eu/snb/model/elm/Organisation" target="_blank" title="http://data.europa.eu/snb/model/elm/Organisation">Organisation</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="superseded">
+  <h3>superseded<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://data.quality-link.eu/ontology/v1#superseded</p>
+  <div class="comment">
+   <span class="markdown">Learning Opportunity specification superseded another one, which is no longer (or temporarily not) offered.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#relatedTo" title="http://data.quality-link.eu/ontology/v1#relatedTo">related to</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#LearningOpportunitySpecification" title="http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecification">Learning Opportunity Specification</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dataproperties">
+ <h3 id="dataproperties-headline" class="list">Data Properties</h3>
+ <ul class="hlist">
+  <li><a href="#enrolledLearnerCount" title="http://data.quality-link.eu/ontology/v1#enrolledLearnerCount">enrolled learner count</a></li>
+  <li><a href="#enrolmentCapacity" title="http://data.quality-link.eu/ontology/v1#enrolmentCapacity">enrolment capacity</a></li>
+  <li><a href="#isActive" title="http://data.quality-link.eu/ontology/v1#isActive">is active</a></li>
+  <li><a href="#enrolmentMinimum" title="http://data.quality-link.eu/ontology/v1#enrolmentMinimum">minimum enrolment</a></li>
+  <li><a href="#isOpenToNonEnrolled" title="http://data.quality-link.eu/ontology/v1#isOpenToNonEnrolled">open to non-enrolled learners</a></li>
+  <li><a href="#registrationPortal" title="http://data.quality-link.eu/ontology/v1#registrationPortal">registration portal</a></li>
+  <li><a href="#version" title="http://data.quality-link.eu/ontology/v1#version">version</a></li>
+ </ul>
+ <div class="entity" id="enrolledLearnerCount">
+  <h3>enrolled learner count<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://data.quality-link.eu/ontology/v1#enrolledLearnerCount</p>
+  <div class="comment">
+   <span class="markdown">The number of learners that are currently enrolled for the Learning Opportunity Instance.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#nonNegativeInteger" target="_blank" title="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">non Negative Integer</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="enrolmentCapacity">
+  <h3>enrolment capacity<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://data.quality-link.eu/ontology/v1#enrolmentCapacity</p>
+  <div class="comment">
+   <span class="markdown">The number of learners that can register for a Learning Opportunity Instance.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#nonNegativeInteger" target="_blank" title="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">non Negative Integer</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="isActive">
+  <h3>is active<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://data.quality-link.eu/ontology/v1#isActive</p>
+  <div class="comment">
+   <span class="markdown">Learning Opportunity Specification is active, i.e. instances are currently offered or the education provider expects that instances will still be offered in the future.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#boolean" target="_blank" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="enrolmentMinimum">
+  <h3>minimum enrolment<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://data.quality-link.eu/ontology/v1#enrolmentMinimum</p>
+  <div class="comment">
+   <span class="markdown">The number of learners that at least need to enrole for a Learning Opportunity Instance to take place.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#nonNegativeInteger" target="_blank" title="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">non Negative Integer</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="isOpenToNonEnrolled">
+  <h3>open to non-enrolled learners<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://data.quality-link.eu/ontology/v1#isOpenToNonEnrolled</p>
+  <div class="comment">
+   <span class="markdown">Indicates that a learning opportunity is alos open to learners not currently enrolled as regular students.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#boolean" target="_blank" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="registrationPortal">
+  <h3>registration portal<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://data.quality-link.eu/ontology/v1#registrationPortal</p>
+  <div class="comment">
+   <span class="markdown">A web page at which one can register or enrol for a Learning Opportunity.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#anyURI" target="_blank" title="http://www.w3.org/2001/XMLSchema#anyURI">any U R I</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="version">
+  <h3>version<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://data.quality-link.eu/ontology/v1#version</p>
+  <div class="comment">
+   <span class="markdown">A number or other identifier that indicates the version of the Learning Opportunity specifcation.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="namedindividuals">
+ <h3 id="namedindividuals" class="list">Named Individuals</h3>
+ <ul class="hlist">
+  <li><a href="#EuropeanUniversityAlliance" title="http://data.quality-link.eu/ontology/v1#EuropeanUniversityAlliance"> <span>European University Alliance</span> </a></li>
+  <li><a href="#GroupOfHEIs" title="http://data.quality-link.eu/ontology/v1#GroupOfHEIs"> <span>Group of Higher Education Institutions</span> </a></li>
+  <li><a href="#HigherEducationInstitution" title="http://data.quality-link.eu/ontology/v1#HigherEducationInstitution"> <span>Higher Education Institution</span> </a></li>
+  <li><a href="#LearnerGroup" title="http://data.quality-link.eu/ontology/v1#LearnerGroup"> <span>Learner Group</span> </a></li>
+  <li><a href="#http://data.europa.eu/snb/model/ap/loq-constraints/LearningAchievementSpecificationShape" title="http://data.europa.eu/snb/model/ap/loq-constraints/LearningAchievementSpecificationShape"> <span>Learning Achievement Specification (ELM)</span> </a></li>
+  <li><a href="#http://data.europa.eu/snb/model/ap/loq-constraints/LearningOpportunityShape" title="http://data.europa.eu/snb/model/ap/loq-constraints/LearningOpportunityShape"> <span>Learning Opportunity (ELM)</span> </a></li>
+  <li><a href="#LearningOpportunityInstance" title="http://data.quality-link.eu/ontology/v1#LearningOpportunityInstance"> <span>Learning Opportunity Instance</span> </a></li>
+  <li><a href="#LearningOpportunityInstanceReference" title="http://data.quality-link.eu/ontology/v1#LearningOpportunityInstanceReference"> <span>Learning Opportunity Instance Reference</span> </a></li>
+  <li><a href="#LearningOpportunitySpecification" title="http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecification"> <span>Learning Opportunity Specification</span> </a></li>
+  <li><a href="#LearningOpportunitySpecificationReference" title="http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecificationReference"> <span>Learning Opportunity Specification Reference</span> </a></li>
+  <li><a href="#OrgReg" title="http://data.quality-link.eu/ontology/v1#OrgReg">OrgReg (identifier scheme)</a></li>
+  <li><a href="#OrgRegIdentifier" title="http://data.quality-link.eu/ontology/v1#OrgRegIdentifier"> <span>OrgReg ID</span> </a></li>
+  <li><a href="#Schac" title="http://data.quality-link.eu/ontology/v1#Schac">SCHAC (identifier scheme)</a></li>
+  <li><a href="#SchacIdentifier" title="http://data.quality-link.eu/ontology/v1#SchacIdentifier"> <span>SCHAC Code</span> </a></li>
+ </ul>
+ <div class="entity" id="EuropeanUniversityAlliance">
+  <h3>European University Alliance<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://data.quality-link.eu/ontology/v1#EuropeanUniversityAlliance</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#NodeShape" target="_blank" title="http://www.w3.org/ns/shacl#NodeShape">Node Shape</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is also defined as
+   </dt>
+   <dd>
+    <a href="#EuropeanUniversityAlliance">class</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="GroupOfHEIs">
+  <h3>Group of Higher Education Institutions<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://data.quality-link.eu/ontology/v1#GroupOfHEIs</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#NodeShape" target="_blank" title="http://www.w3.org/ns/shacl#NodeShape">Node Shape</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is also defined as
+   </dt>
+   <dd>
+    <a href="#GroupOfHEIs">class</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="HigherEducationInstitution">
+  <h3>Higher Education Institution<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://data.quality-link.eu/ontology/v1#HigherEducationInstitution</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#NodeShape" target="_blank" title="http://www.w3.org/ns/shacl#NodeShape">Node Shape</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is also defined as
+   </dt>
+   <dd>
+    <a href="#HigherEducationInstitution">class</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="LearnerGroup">
+  <h3>Learner Group<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://data.quality-link.eu/ontology/v1#LearnerGroup</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#NodeShape" target="_blank" title="http://www.w3.org/ns/shacl#NodeShape">Node Shape</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is also defined as
+   </dt>
+   <dd>
+    class
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://data.europa.eu/snb/model/ap/loq-constraints/LearningAchievementSpecificationShape">
+  <h3>Learning Achievement Specification (ELM)<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://data.europa.eu/snb/model/ap/loq-constraints/LearningAchievementSpecificationShape</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#NodeShape" target="_blank" title="http://www.w3.org/ns/shacl#NodeShape">Node Shape</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is also defined as
+   </dt>
+   <dd>
+    class
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://data.europa.eu/snb/model/ap/loq-constraints/LearningOpportunityShape">
+  <h3>Learning Opportunity (ELM)<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://data.europa.eu/snb/model/ap/loq-constraints/LearningOpportunityShape</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#NodeShape" target="_blank" title="http://www.w3.org/ns/shacl#NodeShape">Node Shape</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is also defined as
+   </dt>
+   <dd>
+    class
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="LearningOpportunityInstance">
+  <h3>Learning Opportunity Instance<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://data.quality-link.eu/ontology/v1#LearningOpportunityInstance</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#NodeShape" target="_blank" title="http://www.w3.org/ns/shacl#NodeShape">Node Shape</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is also defined as
+   </dt>
+   <dd>
+    <a href="#LearningOpportunityInstance">class</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="LearningOpportunityInstanceReference">
+  <h3>Learning Opportunity Instance Reference<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://data.quality-link.eu/ontology/v1#LearningOpportunityInstanceReference</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#NodeShape" target="_blank" title="http://www.w3.org/ns/shacl#NodeShape">Node Shape</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is also defined as
+   </dt>
+   <dd>
+    class
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="LearningOpportunitySpecification">
+  <h3>Learning Opportunity Specification<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecification</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#NodeShape" target="_blank" title="http://www.w3.org/ns/shacl#NodeShape">Node Shape</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is also defined as
+   </dt>
+   <dd>
+    <a href="#LearningOpportunitySpecification">class</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="LearningOpportunitySpecificationReference">
+  <h3>Learning Opportunity Specification Reference<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecificationReference</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#NodeShape" target="_blank" title="http://www.w3.org/ns/shacl#NodeShape">Node Shape</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is also defined as
+   </dt>
+   <dd>
+    class
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="OrgReg">
+  <h3>OrgReg (identifier scheme)<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://data.quality-link.eu/ontology/v1#OrgReg</p>
+  <div class="comment">
+   <span class="markdown">The identifier scheme defined by the Register of Public Sector Organisations (OrgReg)</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core#ConceptScheme" target="_blank" title="http://www.w3.org/2004/02/skos/core#ConceptScheme">Concept Scheme</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="OrgRegIdentifier">
+  <h3>OrgReg ID<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://data.quality-link.eu/ontology/v1#OrgRegIdentifier</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#NodeShape" target="_blank" title="http://www.w3.org/ns/shacl#NodeShape">Node Shape</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is also defined as
+   </dt>
+   <dd>
+    <a href="#OrgRegIdentifier">class</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Schac">
+  <h3>SCHAC (identifier scheme)<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://data.quality-link.eu/ontology/v1#Schac</p>
+  <div class="comment">
+   <span class="markdown">The identifier scheme for higher education institutions defined by the Schema for Academia (SCHAC).</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core#ConceptScheme" target="_blank" title="http://www.w3.org/2004/02/skos/core#ConceptScheme">Concept Scheme</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="SchacIdentifier">
+  <h3>SCHAC Code<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://data.quality-link.eu/ontology/v1#SchacIdentifier</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#NodeShape" target="_blank" title="http://www.w3.org/ns/shacl#NodeShape">Node Shape</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is also defined as
+   </dt>
+   <dd>
+    <a href="#SchacIdentifier">class</a>
+   </dd>
+  </dl>
+ </div>
+</div><div id="legend">
+<h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<div   class="entity">
+<sup class="type-c" title="Classes">c</sup>: Classes <br/>
+<sup class="type-op" title="Object Properties">op</sup>: Object Properties <br/>
+<sup class="type-dp" title="Data Properties">dp</sup>: Data Properties <br/>
+<sup class="type-ni" title="Named Individuals">ni</sup>: Named Individuals <br/>
+</div>
+</div>
+</div>
+    
+
+<!--REFERENCES SECTION-->
+  <div id="references">
+<h2 id="ref" class="list">References <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+Add your references here. It is recommended to have them as a list.</span>
+
+</div>
+<div id="acknowledgments">
+<h2 id="ack" class="list">Acknowledgments <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<p>
+The authors would like to thank <a href="http://www.essepuntato.it/">Silvio Peroni</a> for developing <a href="http://www.essepuntato.it/lode">LODE</a>, a Live OWL Documentation Environment, which is used for representing the Cross Referencing Section of this document and <a href="https://w3id.org/people/dgarijo">Daniel Garijo</a> for developing <a href="https://github.com/dgarijo/Widoco">Widoco</a>, the program used to create the template used in this documentation.</p>
+</div>
+
+
+</div>
+</body>
+</html>

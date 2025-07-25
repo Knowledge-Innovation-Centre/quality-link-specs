@@ -1,0 +1,831 @@
+_:n70d5ea40bf054303a5a9a3d1bbe61990b99 <http://www.w3.org/ns/shacl#path> <http://purl.org/dc/terms/description> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b112 <http://www.w3.org/ns/shacl#path> <http://data.europa.eu/snb/model/elm/maximumDuration> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b45 <http://www.w3.org/ns/shacl#path> <http://data.europa.eu/snb/model/elm/providedBy> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b7 <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<http://data.quality-link.eu/ontology/v1#OrgRegIdentifier> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b7 .
+<http://data.quality-link.eu/ontology/v1#LearnerGroup> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b31 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b91 <http://www.w3.org/ns/shacl#path> <http://data.europa.eu/snb/model/elm/learningOutcome> .
+<http://data.europa.eu/snb/model/ap/loq-constraints/LearningAchievementSpecificationShape> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b109 .
+<http://data.quality-link.eu/ontology/v1#LearningOpportunityInstance> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b42 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b100 <http://www.w3.org/ns/shacl#class> <http://data.europa.eu/snb/model/elm/CreditPoint> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b76 <http://www.w3.org/ns/shacl#path> <http://data.europa.eu/snb/model/elm/bannerImage> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b100 <http://www.w3.org/ns/shacl#severity> <http://www.w3.org/ns/shacl#Violation> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b112 <http://www.w3.org/ns/shacl#severity> <http://www.w3.org/ns/shacl#Violation> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b118 <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#duration> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b142 <http://www.w3.org/ns/shacl#class> <http://data.europa.eu/snb/model/elm/Note> .
+<http://data.quality-link.eu/ontology/v1#OrgReg> <http://www.w3.org/2000/01/rdf-schema#comment> "The identifier scheme defined by the Register of Public Sector Organisations (OrgReg)"@en .
+<http://data.quality-link.eu/ontology/v1#LearnerGroup> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#NodeShape> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b102 <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b113 <http://www.w3.org/ns/shacl#or> _:n70d5ea40bf054303a5a9a3d1bbe61990b116 .
+<http://data.quality-link.eu/ontology/v1#isOpenToNonEnrolled> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b135 <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#dateTime> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b33 <http://www.w3.org/ns/shacl#name> "entry requirement"@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b39 <http://www.w3.org/ns/shacl#path> <http://data.quality-link.eu/ontology/v1#entryRequirementLearningOutcome> .
+<http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecification> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b35 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b116 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:n70d5ea40bf054303a5a9a3d1bbe61990b114 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b128 <http://www.w3.org/ns/shacl#name> "homepage"@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b8 <http://www.w3.org/ns/shacl#pattern> "^(INT|[A-Z]{2})[0-9]{4}$" .
+<http://data.quality-link.eu/ontology/v1#GroupOfHEIs> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://data.quality-link.eu/ontology/v1#enrolledLearnerCount> <http://www.w3.org/2000/01/rdf-schema#label> "enrolled learner count"@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b141 <http://www.w3.org/ns/shacl#severity> <http://www.w3.org/ns/shacl#Violation> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b68 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b48 <http://www.w3.org/ns/shacl#name> "(local) identifier"@en .
+<http://data.quality-link.eu/ontology/v1#entryRequirementLearningOutcome> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b97 <http://www.w3.org/ns/shacl#node> <http://data.europa.eu/snb/model/ap/loq-constraints/URLRegexRestriction> .
+<http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecification> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b37 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b110 <http://www.w3.org/ns/shacl#name> "target group"@en .
+<http://data.quality-link.eu/ontology/v1#enrolmentMinimum> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://data.europa.eu/snb/model/ap/loq-constraints/LearningAchievementSpecificationShape> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b103 .
+<http://data.quality-link.eu/ontology/v1#LearnerGroup> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b32 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b96 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:n70d5ea40bf054303a5a9a3d1bbe61990b94 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b42 <http://www.w3.org/ns/shacl#path> <http://data.quality-link.eu/ontology/v1#enrolmentCapacity> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b32 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b65 <http://www.w3.org/ns/shacl#path> <http://data.europa.eu/snb/model/elm/learningActivitySpecification> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b7 <http://www.w3.org/ns/shacl#name> "scheme ID "@en .
+<http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecification> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b38 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b131 <http://www.w3.org/ns/shacl#class> <http://www.w3.org/2004/02/skos/core#Concept> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b82 <http://www.w3.org/ns/shacl#class> <http://data.europa.eu/snb/model/elm/LearningOpportunity> .
+<http://data.europa.eu/snb/model/ap/loq-constraints/LearningAchievementSpecificationShape> <http://www.w3.org/2000/01/rdf-schema#label> "Learning Achievement Specification (ELM)"@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b102 <http://www.w3.org/ns/shacl#path> <http://purl.org/dc/terms/title> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b117 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b62 <http://www.w3.org/ns/shacl#description> "The location where the learning opportunity was provided at."@en .
+<http://data.quality-link.eu/ontology/v1#enrolmentCapacity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b48 <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b74 <http://www.w3.org/ns/shacl#description> "The base language of the learning opportunity, to be considered authoritative."@en .
+<http://data.quality-link.eu/ontology/v1#EuropeanUniversityAlliance> <http://www.w3.org/2000/01/rdf-schema#label> "European University Alliance"@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b64 <http://www.w3.org/ns/shacl#name> "more information"@en .
+<http://data.quality-link.eu/ontology/v1#LearningOpportunityInstance> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b43 .
+<http://data.quality-link.eu/ontology/v1#limitLearningOpportunity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b83 <http://www.w3.org/ns/shacl#path> <http://data.europa.eu/snb/model/elm/mode> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b134 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b132 <http://www.w3.org/ns/shacl#severity> <http://www.w3.org/ns/shacl#Violation> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b7 <http://www.w3.org/ns/shacl#description> "Identification of the scheme."@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b102 <http://www.w3.org/ns/shacl#uniqueLang> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b124 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:n70d5ea40bf054303a5a9a3d1bbe61990b122 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b66 <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#duration> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b10 <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b143 <http://www.w3.org/ns/shacl#name> "has part"@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b109 <http://www.w3.org/ns/shacl#name> "category"@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b56 <http://www.w3.org/ns/shacl#severity> <http://www.w3.org/ns/shacl#Violation> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b76 <http://www.w3.org/ns/shacl#class> <http://data.europa.eu/snb/model/elm/MediaObject> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b108 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b14 <http://www.w3.org/ns/shacl#or> _:n70d5ea40bf054303a5a9a3d1bbe61990b17 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b128 <http://www.w3.org/ns/shacl#path> <http://xmlns.com/foaf/0.1/homepage> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b59 <http://www.w3.org/ns/shacl#path> <http://data.europa.eu/snb/model/elm/status> .
+<http://data.europa.eu/snb/model/ap/loq-constraints/LearningOpportunityShape> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b67 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b131 <http://www.w3.org/ns/shacl#description> "The type of learning setting (formal, non-formal). It should be provided using the EDC Controlled List of Learning Setting Types."@en .
+<http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecification> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://data.europa.eu/snb/model/elm/LearningAchievementSpecification> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b57 <http://www.w3.org/ns/shacl#name> "admissions procedure"@en .
+<http://data.quality-link.eu/ontology/v1#relatedTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b88 <http://www.w3.org/ns/shacl#severity> <http://www.w3.org/ns/shacl#Violation> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b101 <http://www.w3.org/ns/shacl#severity> <http://www.w3.org/ns/shacl#Violation> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b11 <http://www.w3.org/ns/shacl#path> <http://purl.org/dc/terms/title> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b65 <http://www.w3.org/ns/shacl#name> "learning activity specification"@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b81 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:n70d5ea40bf054303a5a9a3d1bbe61990b79 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b87 <http://www.w3.org/ns/shacl#description> "The homepage."@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b133 <http://www.w3.org/ns/shacl#severity> <http://www.w3.org/ns/shacl#Violation> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b53 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n70d5ea40bf054303a5a9a3d1bbe61990b54 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b66 <http://www.w3.org/ns/shacl#name> "duration"@en .
+<http://data.quality-link.eu/ontology/v1#OrgRegIdentifier> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b8 .
+<http://data.quality-link.eu/ontology/v1#studentsOf> <http://www.w3.org/2000/01/rdf-schema#label> "includes students of"@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b10 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#Literal> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b76 <http://www.w3.org/ns/shacl#name> "banner image"@en .
+<http://data.europa.eu/snb/model/ap/loq-constraints/LearningAchievementSpecificationShape> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b102 .
+<http://data.quality-link.eu/ontology/v1#superseded> <http://www.w3.org/2000/01/rdf-schema#comment> "Learning Opportunity specification superseded another one, which is no longer (or temporarily not) offered."@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b126 <http://www.w3.org/ns/shacl#name> "mode"@en .
+<http://data.europa.eu/snb/model/ap/loq-constraints/LearningOpportunityShape> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#NodeShape> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b120 <http://www.w3.org/ns/shacl#class> <http://www.w3.org/2004/02/skos/core#Concept> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b20 <http://www.w3.org/ns/shacl#path> <http://data.quality-link.eu/ontology/v1#registrationPortal> .
+<http://data.quality-link.eu/ontology/v1#OrgRegIdentifier> <http://www.w3.org/2000/01/rdf-schema#label> "OrgReg ID"@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b11 <http://www.w3.org/ns/shacl#uniqueLang> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b31 <http://www.w3.org/ns/shacl#path> <http://data.quality-link.eu/ontology/v1#enrolmentMinimum> .
+<http://data.quality-link.eu/ontology/v1#LearnerGroup> <http://www.w3.org/2000/01/rdf-schema#comment> "Defines a target group of learners to whom a Learning Opportunity is offered, e.g. students of a specific alliance or HEI"@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b34 <http://www.w3.org/ns/shacl#class> <http://data.europa.eu/snb/model/elm/Note> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b12 <http://www.w3.org/ns/shacl#uniqueLang> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b90 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b144 <http://www.w3.org/ns/shacl#class> <http://data.europa.eu/snb/model/elm/LearningAchievementSpecification> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b111 <http://www.w3.org/ns/shacl#path> <http://data.europa.eu/snb/model/elm/influencedBy> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b57 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<http://data.europa.eu/snb/model/ap/loq-constraints/LearningOpportunityShape> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b86 .
+<http://data.quality-link.eu/ontology/v1#enrolmentMinimum> <http://www.w3.org/2000/01/rdf-schema#comment> "The number of learners that at least need to enrole for a Learning Opportunity Instance to take place." .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b27 <http://www.w3.org/ns/shacl#description> "Offered to students enrolled in another learning opportunity at a specified EQF level or higher. If provided, the value must come from the EU controlled vocabulary http://publications.europa.eu/resource/dataset/european-qualification-framework"@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b89 <http://www.w3.org/ns/shacl#severity> <http://www.w3.org/ns/shacl#Violation> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b112 <http://www.w3.org/ns/shacl#description> "The maximum duration (in months) that a person may use to complete the learning opportunity for which this learning achievement specification is designed."@en .
+<http://data.quality-link.eu/ontology/v1#spunOffFrom> <http://www.w3.org/2000/01/rdf-schema#comment> "Organisation spun off from another one (i.e. subject newly created by the event, object existed before and after)"@en .
+<http://data.quality-link.eu/ontology/v1#isActive> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b103 <http://www.w3.org/ns/shacl#description> "Specific entry requirement or prerequisite of individuals for which this specification is designed to start this learning opportunity."@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b63 <http://www.w3.org/ns/shacl#name> "last modification date"@en .
+<http://data.europa.eu/snb/model/ap/loq-constraints/LearningAchievementSpecificationShape> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b136 .
+<http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecificationReference> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b64 <http://www.w3.org/ns/shacl#path> <http://data.europa.eu/snb/model/elm/additionalNote> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b75 <http://www.w3.org/ns/shacl#severity> <http://www.w3.org/ns/shacl#Violation> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b54 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:n70d5ea40bf054303a5a9a3d1bbe61990b51 .
+<http://data.quality-link.eu/ontology/v1#succeeded> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b1 <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b98 <http://www.w3.org/ns/shacl#severity> <http://www.w3.org/ns/shacl#Violation> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b57 <http://www.w3.org/ns/shacl#description> "Specific information on how to apply for the course."@en .
+<http://data.quality-link.eu/ontology/v1#isOpenToNonEnrolled> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that a learning opportunity is alos open to learners not currently enrolled as regular students." .
+<http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecificationReference> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b45 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b60 <http://www.w3.org/ns/shacl#path> <http://data.europa.eu/snb/model/elm/providedBy> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b108 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:n70d5ea40bf054303a5a9a3d1bbe61990b106 .
+<http://data.quality-link.eu/ontology/v1#LearnerGroup> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b20 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b142 <http://www.w3.org/ns/shacl#name> "more information"@en .
+<http://data.quality-link.eu/ontology/v1#OrgReg> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#ConceptScheme> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b113 <http://www.w3.org/ns/shacl#description> "A learning achievement specification, which this learning achievement specification is part of."@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b86 <http://www.w3.org/ns/shacl#severity> <http://www.w3.org/ns/shacl#Violation> .
+<http://data.quality-link.eu/ontology/v1#entryRequirementLearningOpportunity> <http://www.w3.org/2000/01/rdf-schema#label> "required learning opportunity for entry"@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b133 <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b20 <http://www.w3.org/ns/shacl#description> "Link to a portal where students can register for the learning opportunity (specific for this group of learners)."@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b48 <http://www.w3.org/ns/shacl#path> <http://www.w3.org/ns/adms#identifier> .
+<http://data.quality-link.eu/ontology/v1#enrolledLearnerCount> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b50 <http://www.w3.org/ns/shacl#class> <http://data.europa.eu/snb/model/elm/LearningAchievementSpecification> .
+<http://data.quality-link.eu/ontology/v1#isActive> <http://www.w3.org/2000/01/rdf-schema#comment> "Learning Opportunity Specification is active, i.e. instances are currently offered or the education provider expects that instances will still be offered in the future." .
+<http://data.europa.eu/snb/model/ap/loq-constraints/LearningAchievementSpecificationShape> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b111 .
+<http://data.europa.eu/snb/model/elm/LearningAchievementSpecification> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://data.europa.eu/snb/model/elm> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b87 <http://www.w3.org/ns/shacl#node> <http://data.europa.eu/snb/model/ap/loq-constraints/URLRegexRestriction> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b136 <http://www.w3.org/ns/shacl#severity> <http://www.w3.org/ns/shacl#Violation> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b39 <http://www.w3.org/ns/shacl#class> <http://data.europa.eu/snb/model/elm/LearningOutcome> .
+<http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecification> <http://www.w3.org/2000/01/rdf-schema#comment> "An asbtract opportunity to acquire a given set of learning outcomes, e.g. the general specification of a course, programme or module offered by an education provider."@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b45 <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b20 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b74 <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b84 <http://www.w3.org/ns/shacl#path> <http://purl.org/dc/terms/description> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b67 <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#dateTime> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b66 <http://www.w3.org/ns/shacl#path> <http://data.europa.eu/snb/model/elm/duration> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b129 <http://www.w3.org/ns/shacl#name> "proven by"@en .
+<http://data.quality-link.eu/ontology/v1#Kajmak> <http://www.w3.org/2000/01/rdf-schema#label> "кајмак"@mk .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b92 <http://www.w3.org/ns/shacl#severity> <http://www.w3.org/ns/shacl#Violation> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b26 <http://www.w3.org/ns/shacl#name> "specific field"@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b34 <http://www.w3.org/ns/shacl#path> <http://data.europa.eu/snb/model/elm/additionalNote> .
+<http://data.europa.eu/snb/model/elm/LearningOpportunity> <http://www.w3.org/2000/01/rdf-schema#comment> "The conditions, e.g. time and location, under which a person may acquire a set of knowledge and/or skills used with responsibility and autonomy."@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b13 <http://www.w3.org/ns/shacl#name> "identifier"@en .
+<http://data.europa.eu/snb/model/ap/loq-constraints/LearningAchievementSpecificationShape> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b118 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b61 <http://www.w3.org/ns/shacl#severity> <http://www.w3.org/ns/shacl#Violation> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b99 <http://www.w3.org/ns/shacl#severity> <http://www.w3.org/ns/shacl#Violation> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b6 <http://www.w3.org/ns/shacl#class> <http://data.quality-link.eu/ontology/v1#HigherEducationInstitution> .
+<http://data.quality-link.eu/ontology/v1#LearnerGroup> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b28 .
+<http://data.quality-link.eu/ontology/v1#registrationPortal> <http://www.w3.org/2000/01/rdf-schema#label> "registration portal"@en .
+<http://data.quality-link.eu/ontology/v1#relatedTo> <http://www.w3.org/2000/01/rdf-schema#comment> "A relationship between Learning Opportunities or Organisations (abstract)"@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b85 <http://www.w3.org/ns/shacl#description> " The title of Learning Opportunity. One value per language is permitted."@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b91 <http://www.w3.org/ns/shacl#description> "An individual (expected) learning outcome of the learning specification."@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b102 <http://www.w3.org/ns/shacl#description> " The title of the learning achievement specification. One value per language is permitted."@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b87 <http://www.w3.org/ns/shacl#class> <http://data.europa.eu/snb/model/elm/WebResource> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b94 <http://www.w3.org/ns/shacl#class> <http://data.europa.eu/snb/model/elm/Organisation> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b128 <http://www.w3.org/ns/shacl#description> "The homepage of the learning achievement specification."@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b126 <http://www.w3.org/ns/shacl#severity> <http://www.w3.org/ns/shacl#Violation> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b92 <http://www.w3.org/ns/shacl#name> "publisher"@en .
+<http://data.quality-link.eu/ontology/v1#entryRequirementLearningOpportunity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b27 <http://www.w3.org/ns/shacl#class> <http://www.w3.org/2004/02/skos/core#Concept> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b98 <http://www.w3.org/ns/shacl#path> <http://purl.org/dc/terms/type> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b83 <http://www.w3.org/ns/shacl#name> "mode"@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b84 <http://www.w3.org/ns/shacl#name> "description"@en .
+<http://data.quality-link.eu/ontology/v1#absorbed> <http://www.w3.org/2000/01/rdf-schema#domain> <http://data.europa.eu/snb/model/elm/Organisation> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b142 <http://www.w3.org/ns/shacl#path> <http://data.europa.eu/snb/model/elm/additionalNote> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b112 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<http://data.europa.eu/snb/model/ap/loq-constraints/LearningOpportunityShape> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b66 .
+<http://data.europa.eu/snb/model/ap/loq-constraints/LearningAchievementSpecificationShape> <http://www.w3.org/2000/01/rdf-schema#comment> "A description of what a person may learn using the opportunity, expressed as learning outcomes. A specification of learning achievement. Learning Achievement Specification is a subclass of Specification."@en .
+<http://data.europa.eu/snb/model/ap/loq-constraints/LearningAchievementSpecificationShape> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b104 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b6 <http://www.w3.org/ns/shacl#name> "has member"@en .
+<http://data.europa.eu/snb/model/ap/loq-constraints/LearningOpportunityShape> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b68 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b55 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:n70d5ea40bf054303a5a9a3d1bbe61990b52 .
+<http://data.quality-link.eu/ontology/v1#> <http://purl.org/dc/terms/abstract> "The QualityLink ontology builds on and extends the European Learning Model (ELM) to cover additional classes and properties required for the project."@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b111 <http://www.w3.org/ns/shacl#description> "Activities that a person can perform to acquire the expected learning outcomes."@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b84 <http://www.w3.org/ns/shacl#severity> <http://www.w3.org/ns/shacl#Violation> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b60 <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<http://data.quality-link.eu/ontology/v1#absorbed> <http://www.w3.org/2000/01/rdf-schema#label> "absorbed"@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b103 <http://www.w3.org/ns/shacl#class> <http://data.europa.eu/snb/model/elm/Note> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b19 <http://www.w3.org/ns/shacl#description> "Indicates that the Learning Opportunity is also offered to learners who are not enrolled as students."@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b84 <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> .
+<http://data.quality-link.eu/ontology/v1#OrgRegIdentifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b9 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<http://data.quality-link.eu/ontology/v1#> <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b104 <http://www.w3.org/ns/shacl#name> "identifier"@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b139 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:n70d5ea40bf054303a5a9a3d1bbe61990b137 .
+<http://data.quality-link.eu/ontology/v1#LearningOpportunityInstanceReference> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b47 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b29 <http://www.w3.org/ns/shacl#description> "Number of learners from the specific group that can be enrolled."@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b135 <http://www.w3.org/ns/shacl#description> "The date when the learning achievement specification was last modified."@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:n70d5ea40bf054303a5a9a3d1bbe61990b2 .
+<http://data.quality-link.eu/ontology/v1#EuropeanUniversityAlliance> <http://www.w3.org/2000/01/rdf-schema#comment> "An alliance of higher education institutions that is part of the EU's European Universities programme"@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b59 <http://www.w3.org/ns/shacl#name> "status"@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b58 <http://www.w3.org/ns/shacl#name> "type"@en .
+<http://data.europa.eu/snb/model/ap/loq-constraints/LearningAchievementSpecificationShape> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b99 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b73 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b10 <http://www.w3.org/ns/shacl#path> <http://www.w3.org/2004/02/skos/core#notation> .
+<http://data.quality-link.eu/ontology/v1#absorbed> <http://www.w3.org/2000/01/rdf-schema#comment> "Organisation absorbed another one (i.e. subject existed before and after the event, object ceased to exist)"@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b126 <http://www.w3.org/ns/shacl#path> <http://data.europa.eu/snb/model/elm/mode> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b136 <http://www.w3.org/ns/shacl#or> _:n70d5ea40bf054303a5a9a3d1bbe61990b139 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b119 <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b121 <http://www.w3.org/ns/shacl#name> "generalisation of"@en .
+<http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecificationReference> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b46 .
+<http://data.europa.eu/snb/model/ap/loq-constraints/LearningAchievementSpecificationShape> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b129 .
+<http://data.quality-link.eu/ontology/v1#limitLearningOpportunity> <http://www.w3.org/2000/01/rdf-schema#comment> "Defines that the learning opportunity is offered to students enrolled in a specified other learning opportunity."@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b40 <http://www.w3.org/ns/shacl#class> <http://data.quality-link.eu/ontology/v1#LearnerGroup> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b61 <http://www.w3.org/ns/shacl#path> <http://data.europa.eu/snb/model/elm/priceDetail> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n70d5ea40bf054303a5a9a3d1bbe61990b5 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b86 <http://www.w3.org/ns/shacl#path> <http://data.europa.eu/snb/model/elm/scheduleInformation> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b135 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b46 <http://www.w3.org/ns/shacl#description> "Identifier of the Learning Opportunity Specification. Must be unique within the scope of the institution identified with providedBy."@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<http://data.europa.eu/snb/model/ap/loq-constraints/LearningOpportunityShape> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b84 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b10 <http://www.w3.org/ns/shacl#name> "identifier"@en .
+<http://data.quality-link.eu/ontology/v1#> <http://purl.org/dc/terms/title> "QualityLink Ontology"@en .
+<http://data.quality-link.eu/ontology/v1#enrolmentMinimum> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b49 <http://www.w3.org/ns/shacl#or> _:n70d5ea40bf054303a5a9a3d1bbe61990b53 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b69 <http://www.w3.org/ns/shacl#severity> <http://www.w3.org/ns/shacl#Violation> .
+<http://data.quality-link.eu/ontology/v1#HigherEducationInstitution> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b1 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b95 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n70d5ea40bf054303a5a9a3d1bbe61990b96 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b109 <http://www.w3.org/ns/shacl#path> <http://data.europa.eu/snb/model/elm/category> .
+<http://data.quality-link.eu/ontology/v1#> <http://purl.org/dc/terms/modified> "2025-04-11"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://data.europa.eu/snb/model/ap/loq-constraints/LearningAchievementSpecificationShape> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b113 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b132 <http://www.w3.org/ns/shacl#name> "learning outcome summary"@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b62 <http://www.w3.org/ns/shacl#name> "location"@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b63 <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://data.quality-link.eu/ontology/v1#SchacIdentifier> <http://www.w3.org/2000/01/rdf-schema#label> "SCHAC Code"@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b56 <http://www.w3.org/ns/shacl#description> "A learning opportunity can be composed of other learning opportunities, which when combined make up this larger learning opportunity."@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b32 <http://www.w3.org/ns/shacl#class> <http://data.europa.eu/snb/model/elm/Note> .
+<http://data.quality-link.eu/ontology/v1#succeeded> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://data.quality-link.eu/ontology/v1#relatedTo> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b80 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n70d5ea40bf054303a5a9a3d1bbe61990b81 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b41 <http://www.w3.org/ns/shacl#path> <http://data.quality-link.eu/ontology/v1#registrationPortal> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b47 <http://www.w3.org/ns/shacl#class> <http://data.quality-link.eu/ontology/v1#HigherEducationInstitution> .
+<http://data.europa.eu/snb/model/ap/loq-constraints/LearningOpportunityShape> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b62 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b1 <http://www.w3.org/ns/shacl#path> <http://www.w3.org/ns/adms#identifier> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b57 <http://www.w3.org/ns/shacl#class> <http://data.europa.eu/snb/model/elm/Note> .
+<http://data.europa.eu/snb/model/ap/loq-constraints/LearningOpportunityShape> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b64 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b10 <http://www.w3.org/ns/shacl#description> "The SCHAC (schacHomeOrganisation) identifier. Must be a valid DNS domain name."@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b99 <http://www.w3.org/ns/shacl#uniqueLang> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b69 <http://www.w3.org/ns/shacl#name> "publisher"@en .
+<http://data.quality-link.eu/ontology/v1#LearningOpportunityInstance> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b40 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b70 <http://www.w3.org/ns/shacl#class> <http://data.europa.eu/snb/model/elm/Agent> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b71 <http://www.w3.org/ns/shacl#class> <http://data.europa.eu/snb/model/elm/Organisation> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b131 <http://www.w3.org/ns/shacl#path> <http://data.europa.eu/snb/model/elm/learningSetting> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b11 <http://www.w3.org/ns/shacl#description> "The title of the target group of learners."@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b141 <http://www.w3.org/ns/shacl#description> "Refers to an activity related to the awarding of the learning specification, such as the country or region where the qualification is awarded, the awarding body and optionally the awarding period now or in the past."@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b93 <http://www.w3.org/ns/shacl#class> <http://data.europa.eu/snb/model/elm/Agent> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b83 <http://www.w3.org/ns/shacl#severity> <http://www.w3.org/ns/shacl#Violation> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b130 <http://www.w3.org/ns/shacl#name> "entitles to"@en .
+<http://data.europa.eu/snb/model/ap/loq-constraints/LearningOpportunityShape> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b57 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b54 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n70d5ea40bf054303a5a9a3d1bbe61990b55 .
+<http://data.quality-link.eu/ontology/v1#> <http://www.w3.org/2002/07/owl#versionInfo> "0.3.0" .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b118 <http://www.w3.org/ns/shacl#name> "volume of learning"@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b122 <http://www.w3.org/ns/shacl#class> <http://data.europa.eu/snb/model/elm/LearningAchievementSpecification> .
+<http://data.quality-link.eu/ontology/v1#GroupOfHEIs> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b6 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b67 <http://www.w3.org/ns/shacl#name> "application deadline"@en .
+<http://data.europa.eu/snb/model/ap/loq-constraints/LearningAchievementSpecificationShape> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b92 .
+<http://data.quality-link.eu/ontology/v1#entryRequirementLearningOutcome> <http://www.w3.org/2000/01/rdf-schema#comment> "Specific entry requirement or prerequisite to have achieved a particular learning outcome."@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b62 <http://www.w3.org/ns/shacl#path> <http://data.europa.eu/snb/model/elm/location> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b69 <http://www.w3.org/ns/shacl#or> _:n70d5ea40bf054303a5a9a3d1bbe61990b72 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:n70d5ea40bf054303a5a9a3d1bbe61990b22 .
+<http://data.quality-link.eu/ontology/v1#> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b32 <http://www.w3.org/ns/shacl#name> "admissions procedure"@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b56 <http://www.w3.org/ns/shacl#path> <http://data.europa.eu/snb/model/elm/hasPart> .
+<http://data.quality-link.eu/ontology/v1#version> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b80 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:n70d5ea40bf054303a5a9a3d1bbe61990b78 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b77 <http://www.w3.org/ns/shacl#severity> <http://www.w3.org/ns/shacl#Violation> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b60 <http://www.w3.org/ns/shacl#class> <http://data.europa.eu/snb/model/elm/Organisation> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b132 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b44 <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b115 <http://www.w3.org/ns/shacl#class> <http://data.europa.eu/snb/model/elm/Qualification> .
+<http://data.europa.eu/snb/model/ap/loq-constraints/LearningOpportunityShape> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b61 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b32 <http://www.w3.org/ns/shacl#description> "Information on how to apply for this specific group of learners."@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b110 <http://www.w3.org/ns/shacl#path> <http://data.europa.eu/snb/model/elm/targetGroup> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b1 <http://www.w3.org/ns/shacl#name> "identifier"@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n70d5ea40bf054303a5a9a3d1bbe61990b25 .
+<http://data.europa.eu/snb/model/ap/loq-constraints/LearningOpportunityShape> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b88 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b97 <http://www.w3.org/ns/shacl#severity> <http://www.w3.org/ns/shacl#Violation> .
+<http://data.quality-link.eu/ontology/v1#superseded> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b99 <http://www.w3.org/ns/shacl#name> "description"@en .
+<http://data.europa.eu/snb/model/ap/loq-constraints/LearningOpportunityShape> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b75 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b62 <http://www.w3.org/ns/shacl#class> <http://purl.org/dc/terms/Location> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b74 <http://www.w3.org/ns/shacl#class> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecificationReference> <http://www.w3.org/2000/01/rdf-schema#comment> "A reference to another Learning Opportunity specification, identified by a provider and a (local) identifier, without further details."@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b131 <http://www.w3.org/ns/shacl#severity> <http://www.w3.org/ns/shacl#Violation> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b86 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b9 <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b141 <http://www.w3.org/ns/shacl#path> <http://data.europa.eu/snb/model/elm/awardingOpportunity> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b117 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:n70d5ea40bf054303a5a9a3d1bbe61990b115 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b89 <http://www.w3.org/ns/shacl#class> <http://data.europa.eu/snb/model/elm/Grant> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b129 <http://www.w3.org/ns/shacl#class> <http://data.europa.eu/snb/model/elm/LearningAssessmentSpecification> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b23 <http://www.w3.org/ns/shacl#class> <http://data.quality-link.eu/ontology/v1#LearningOpportunityInstanceReference> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b20 <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#anyURI> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b59 <http://www.w3.org/ns/shacl#severity> <http://www.w3.org/ns/shacl#Violation> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b21 <http://www.w3.org/ns/shacl#path> <http://data.quality-link.eu/ontology/v1#limitLearningOpportunity> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b82 <http://www.w3.org/ns/shacl#path> <http://data.europa.eu/snb/model/elm/isPartOf> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b135 <http://www.w3.org/ns/shacl#path> <http://purl.org/dc/terms/modified> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b41 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b86 <http://www.w3.org/ns/shacl#description> "Detailed information about the timetable or schedule. This may include weekly schedules (e.g., 'Every Monday, 4pm', but may also include the overall schedule for the course, (e.g., October: lectures, November: group-work, December: break, January: assessment)."@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b100 <http://www.w3.org/ns/shacl#path> <http://data.europa.eu/snb/model/elm/creditPoint> .
+<http://data.quality-link.eu/ontology/v1#LearningOpportunityInstanceReference> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b48 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b110 <http://www.w3.org/ns/shacl#severity> <http://www.w3.org/ns/shacl#Violation> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b101 <http://www.w3.org/ns/shacl#description> "The alternative name of the learning achievement specification."@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b136 <http://www.w3.org/ns/shacl#description> "A learning  achievement specification (e.g., a standard) of which this specification is a specialisation."@en .
+<http://data.europa.eu/snb/model/ap/loq-constraints/LearningOpportunityShape> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b60 .
+<http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecification> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#NodeShape> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b127 <http://www.w3.org/ns/shacl#path> <http://data.europa.eu/snb/model/elm/educationLevel> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b40 <http://www.w3.org/ns/shacl#path> <http://data.quality-link.eu/ontology/v1#availableTo> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b75 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b68 <http://www.w3.org/ns/shacl#name> "temporal"@en .
+<http://data.quality-link.eu/ontology/v1#SchacIdentifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://data.quality-link.eu/ontology/v1#spunOffFrom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b61 <http://www.w3.org/ns/shacl#name> "fees"@en .
+<http://data.quality-link.eu/ontology/v1#SchacIdentifier> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b9 .
+<http://data.europa.eu/snb/model/ap/loq-constraints/LearningAchievementSpecificationShape> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b133 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b139 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n70d5ea40bf054303a5a9a3d1bbe61990b140 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b91 <http://www.w3.org/ns/shacl#severity> <http://www.w3.org/ns/shacl#Violation> .
+<http://data.quality-link.eu/ontology/v1#> <http://www.w3.org/2000/01/rdf-schema#label> "QualityLink Ontology"@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b136 <http://www.w3.org/ns/shacl#path> <http://data.europa.eu/snb/model/elm/specialisationOf> .
+<http://data.quality-link.eu/ontology/v1#absorbed> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://data.quality-link.eu/ontology/v1#availableTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b128 <http://www.w3.org/ns/shacl#severity> <http://www.w3.org/ns/shacl#Violation> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b100 <http://www.w3.org/ns/shacl#name> "credit points"@en .
+<http://data.quality-link.eu/ontology/v1#enrolledLearnerCount> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b67 <http://www.w3.org/ns/shacl#severity> <http://www.w3.org/ns/shacl#Violation> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b26 <http://www.w3.org/ns/shacl#description> "Offered to students from (a) specific field(s) of study."@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b7 <http://www.w3.org/ns/shacl#hasValue> <http://data.quality-link.eu/ontology/v1#OrgReg> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b68 <http://www.w3.org/ns/shacl#path> <http://purl.org/dc/terms/temporal> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b143 <http://www.w3.org/ns/shacl#path> <http://data.europa.eu/snb/model/elm/hasPart> .
+<http://data.europa.eu/snb/model/ap/loq-constraints/LearningOpportunityShape> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b63 .
+<http://data.quality-link.eu/ontology/v1#LearningOpportunityInstance> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#NodeShape> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b109 <http://www.w3.org/ns/shacl#severity> <http://www.w3.org/ns/shacl#Violation> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:n70d5ea40bf054303a5a9a3d1bbe61990b16 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b47 <http://www.w3.org/ns/shacl#name> "provided by"@en .
+<http://data.quality-link.eu/ontology/v1#OrgRegIdentifier> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://data.europa.eu/snb/model/elm/Identifier> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<http://data.europa.eu/snb/model/ap/loq-constraints/LearningAchievementSpecificationShape> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b120 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b87 <http://www.w3.org/ns/shacl#name> "homepage"@en .
+<http://data.quality-link.eu/ontology/v1#LearnerGroup> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b26 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b9 <http://www.w3.org/ns/shacl#description> "Identification of the scheme."@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b79 <http://www.w3.org/ns/shacl#class> <http://data.europa.eu/snb/model/elm/LegalIdentifier> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b91 <http://www.w3.org/ns/shacl#class> <http://data.europa.eu/snb/model/elm/LearningOutcome> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b42 <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b129 <http://www.w3.org/ns/shacl#severity> <http://www.w3.org/ns/shacl#Violation> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b134 <http://www.w3.org/ns/shacl#description> "The publication status of the learning achievement specification."@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b21 <http://www.w3.org/ns/shacl#or> _:n70d5ea40bf054303a5a9a3d1bbe61990b24 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b119 <http://www.w3.org/ns/shacl#class> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://data.europa.eu/snb/model/ap/loq-constraints/LearningAchievementSpecificationShape> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b141 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b103 <http://www.w3.org/ns/shacl#name> "entry requirement"@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b99 <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b88 <http://www.w3.org/ns/shacl#path> <http://data.europa.eu/snb/model/elm/supplementaryDocument> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b112 <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#duration> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b92 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<http://data.quality-link.eu/ontology/v1#> <http://creativecommons.org/ns#attributionName> "QualityLink project"@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b118 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b76 <http://www.w3.org/ns/shacl#severity> <http://www.w3.org/ns/shacl#Violation> .
+<http://data.europa.eu/snb/model/ap/loq-constraints/LearningOpportunityShape> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b49 .
+<http://data.quality-link.eu/ontology/v1#registrationPortal> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b13 <http://www.w3.org/ns/shacl#path> <http://www.w3.org/ns/adms#identifier> .
+<http://data.quality-link.eu/ontology/v1#LearningOpportunityInstanceReference> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b120 <http://www.w3.org/ns/shacl#severity> <http://www.w3.org/ns/shacl#Violation> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b133 <http://www.w3.org/ns/shacl#class> <http://www.w3.org/2004/02/skos/core#Concept> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b91 <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b125 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<http://data.europa.eu/snb/model/ap/loq-constraints/LearningAchievementSpecificationShape> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b121 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b143 <http://www.w3.org/ns/shacl#severity> <http://www.w3.org/ns/shacl#Violation> .
+<http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecification> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b36 .
+<http://data.quality-link.eu/ontology/v1#GroupOfHEIs> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://data.europa.eu/snb/model/elm/Group> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b9 <http://www.w3.org/ns/shacl#name> "scheme ID "@en .
+<http://data.quality-link.eu/ontology/v1#entryRequirementLearningOpportunity> <http://www.w3.org/2000/01/rdf-schema#comment> "Specific entry requirement or prerequisite to have completed another learning opportunity."@en .
+<http://data.europa.eu/snb/model/ap/loq-constraints/LearningAchievementSpecificationShape> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b126 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b44 <http://www.w3.org/ns/shacl#path> <http://data.quality-link.eu/ontology/v1#enrolmentMinimum> .
+<http://data.europa.eu/snb/model/ap/loq-constraints/LearningAchievementSpecificationShape> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b112 .
+<http://data.quality-link.eu/ontology/v1#> <http://www.w3.org/2002/07/owl#imports> <http://data.europa.eu/snb/model/elm/> .
+<http://data.europa.eu/snb/model/ap/loq-constraints/LearningOpportunityShape> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b83 .
+<http://data.quality-link.eu/ontology/v1#availableTo> <http://www.w3.org/2000/01/rdf-schema#range> <http://data.quality-link.eu/ontology/v1#LearnerGroup> .
+<http://data.europa.eu/snb/model/elm/LearningAchievementSpecification> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b87 <http://www.w3.org/ns/shacl#path> <http://xmlns.com/foaf/0.1/homepage> .
+<http://data.europa.eu/snb/model/ap/loq-constraints/LearningAchievementSpecificationShape> <http://www.w3.org/ns/shacl#deactivated> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b84 <http://www.w3.org/ns/shacl#uniqueLang> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b48 <http://www.w3.org/ns/shacl#description> "Identifier of the Learning Opportunity instance. Must be unique within the scope of the institution identified with providedBy."@en .
+<http://data.quality-link.eu/ontology/v1#EuropeanUniversityAlliance> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#NodeShape> .
+<http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecification> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://data.europa.eu/snb/model/ap/loq-constraints/LearningAchievementSpecificationShape> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b2 <http://www.w3.org/ns/shacl#class> <http://data.quality-link.eu/ontology/v1#SchacIdentifier> .
+<http://data.europa.eu/snb/model/ap/loq-constraints/LearningAchievementSpecificationShape> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b127 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b64 <http://www.w3.org/ns/shacl#description> "An additional free text note about the Learning Opportunity."@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b88 <http://www.w3.org/ns/shacl#class> <http://data.europa.eu/snb/model/elm/WebResource> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b55 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b59 <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#string> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b75 <http://www.w3.org/ns/shacl#path> <http://data.europa.eu/snb/model/elm/learningSchedule> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b28 <http://www.w3.org/ns/shacl#description> "Information about the pricing of the course, applicable for this specific target group."@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b45 <http://www.w3.org/ns/shacl#class> <http://data.quality-link.eu/ontology/v1#HigherEducationInstitution> .
+<http://data.europa.eu/snb/model/ap/loq-constraints/LearningAchievementSpecificationShape> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b132 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b16 <http://www.w3.org/ns/shacl#class> <http://data.quality-link.eu/ontology/v1#GroupOfHEIs> .
+<http://data.quality-link.eu/ontology/v1#Kajmak> <http://www.w3.org/2000/01/rdf-schema#label> "кајмак"@hbs-Cyrl .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b127 <http://www.w3.org/ns/shacl#class> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://data.quality-link.eu/ontology/v1#studentsOf> <http://www.w3.org/2000/01/rdf-schema#comment> "Defines that the target group of learners includes the students of an education institution, or an alliance thereof"@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b19 <http://www.w3.org/ns/shacl#path> <http://data.quality-link.eu/ontology/v1#isOpenToNonEnrolled> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b28 <http://www.w3.org/ns/shacl#path> <http://data.europa.eu/snb/model/elm/priceDetail> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b111 <http://www.w3.org/ns/shacl#severity> <http://www.w3.org/ns/shacl#Violation> .
+<http://data.quality-link.eu/ontology/v1#SchacIdentifier> <http://www.w3.org/2000/01/rdf-schema#comment> "The SCHAC code (schacHomeOrganization) is a domain name used to identify a higher education institution."@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b142 <http://www.w3.org/ns/shacl#description> " An additional free text note about the learning achievement specification."@en .
+<http://data.quality-link.eu/ontology/v1#availableTo> <http://www.w3.org/2000/01/rdf-schema#domain> <http://data.quality-link.eu/ontology/v1#LearningOpportunityInstance> .
+<http://data.quality-link.eu/ontology/v1#OrgRegIdentifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#NodeShape> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b35 <http://www.w3.org/ns/shacl#path> <http://data.quality-link.eu/ontology/v1#isActive> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b124 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n70d5ea40bf054303a5a9a3d1bbe61990b125 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b8 <http://www.w3.org/ns/shacl#severity> <http://www.w3.org/ns/shacl#Violation> .
+<http://data.quality-link.eu/ontology/v1#superseded> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://data.quality-link.eu/ontology/v1#relatedTo> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b140 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:n70d5ea40bf054303a5a9a3d1bbe61990b138 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b119 <http://www.w3.org/ns/shacl#description> "The language of the learning achievement specification. It should be provided using the Language Named Authority List."@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b101 <http://www.w3.org/ns/shacl#name> "alternative name"@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b61 <http://www.w3.org/ns/shacl#description> "Information about the pricing of the course, including fees and scholarships/subsidies available."@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b97 <http://www.w3.org/ns/shacl#name> "other documents"@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b104 <http://www.w3.org/ns/shacl#path> <http://www.w3.org/ns/adms#identifier> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b64 <http://www.w3.org/ns/shacl#severity> <http://www.w3.org/ns/shacl#Violation> .
+<http://data.quality-link.eu/ontology/v1#EuropeanUniversityAlliance> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://data.quality-link.eu/ontology/v1#GroupOfHEIs> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b63 <http://www.w3.org/ns/shacl#severity> <http://www.w3.org/ns/shacl#Violation> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b52 <http://www.w3.org/ns/shacl#class> <http://data.europa.eu/snb/model/elm/Qualification> .
+<http://data.quality-link.eu/ontology/v1#relatedTo> <http://www.w3.org/2000/01/rdf-schema#label> "related to"@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b96 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b135 <http://www.w3.org/ns/shacl#name> "last modification date"@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b22 <http://www.w3.org/ns/shacl#class> <http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecificationReference> .
+<http://data.quality-link.eu/ontology/v1#entryRequirementLearningOutcome> <http://www.w3.org/2000/01/rdf-schema#domain> <http://data.europa.eu/snb/model/elm/LearningOutcome> .
+<http://data.quality-link.eu/ontology/v1#OrgReg> <http://www.w3.org/2000/01/rdf-schema#label> "OrgReg (identifier scheme)"@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:n70d5ea40bf054303a5a9a3d1bbe61990b23 .
+<http://data.europa.eu/snb/model/ap/loq-constraints/LearningAchievementSpecificationShape> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b100 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b82 <http://www.w3.org/ns/shacl#severity> <http://www.w3.org/ns/shacl#Violation> .
+<http://data.europa.eu/snb/model/ap/loq-constraints/LearningAchievementSpecificationShape> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b143 .
+<http://data.quality-link.eu/ontology/v1#LearnerGroup> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b21 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b66 <http://www.w3.org/ns/shacl#description> "The nominal duration for which the learning opportunity will continue to run. Note, this may be after the end-date, since admissions may be closed but the learning opportunity may still be ongoing."@en .
+<http://data.quality-link.eu/ontology/v1#SchacIdentifier> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b10 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b127 <http://www.w3.org/ns/shacl#severity> <http://www.w3.org/ns/shacl#Violation> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b29 <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b1 <http://www.w3.org/ns/shacl#or> _:n70d5ea40bf054303a5a9a3d1bbe61990b4 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b45 <http://www.w3.org/ns/shacl#name> "provided by"@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b68 <http://www.w3.org/ns/shacl#class> <http://purl.org/dc/terms/PeriodOfTime> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b38 <http://www.w3.org/ns/shacl#path> <http://data.quality-link.eu/ontology/v1#entryRequirementLearningOpportunity> .
+<http://data.quality-link.eu/ontology/v1#LearnerGroup> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b29 .
+<http://data.quality-link.eu/ontology/v1#> <http://www.w3.org/2000/01/rdf-schema#comment> "The QualityLink ontology builds on the European Learning Model (ELM). It defines additional classes and properties to describe things not currently covered in ELM. It further includes SHACL constraints for the QualityLink pilot aggregator, derived from the ELM Learning Opportunities and Qualifications application profile."@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b86 <http://www.w3.org/ns/shacl#class> <http://data.europa.eu/snb/model/elm/Note> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b66 <http://www.w3.org/ns/shacl#severity> <http://www.w3.org/ns/shacl#Violation> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b137 <http://www.w3.org/ns/shacl#class> <http://data.europa.eu/snb/model/elm/LearningAchievementSpecification> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b92 <http://www.w3.org/ns/shacl#path> <http://purl.org/dc/terms/publisher> .
+<http://data.europa.eu/snb/model/ap/loq-constraints/LearningAchievementSpecificationShape> <http://www.w3.org/ns/shacl#ignoredProperties> _:n70d5ea40bf054303a5a9a3d1bbe61990b148 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b123 <http://www.w3.org/ns/shacl#class> <http://data.europa.eu/snb/model/elm/Qualification> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b131 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b69 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<http://data.quality-link.eu/ontology/v1#LearnerGroup> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://data.quality-link.eu/ontology/v1#entryRequirementLearningOutcome> <http://www.w3.org/2000/01/rdf-schema#label> "required learning outcome for entry"@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b41 <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#anyURI> .
+<http://data.europa.eu/snb/model/ap/loq-constraints/LearningAchievementSpecificationShape> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b97 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b91 <http://www.w3.org/ns/shacl#name> "learning outcome"@en .
+<http://data.quality-link.eu/ontology/v1#absorbed> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://data.quality-link.eu/ontology/v1#relatedTo> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b83 <http://www.w3.org/ns/shacl#class> <http://www.w3.org/2004/02/skos/core#Concept> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b143 <http://www.w3.org/ns/shacl#or> _:n70d5ea40bf054303a5a9a3d1bbe61990b146 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b118 <http://www.w3.org/ns/shacl#severity> <http://www.w3.org/ns/shacl#Violation> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b134 <http://www.w3.org/ns/shacl#path> <http://data.europa.eu/snb/model/elm/status> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b6 <http://www.w3.org/ns/shacl#path> <http://xmlns.com/foaf/0.1/member> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b146 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n70d5ea40bf054303a5a9a3d1bbe61990b147 .
+<http://data.quality-link.eu/ontology/v1#succeeded> <http://www.w3.org/2000/01/rdf-schema#label> "succeeded"@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b147 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<http://data.quality-link.eu/ontology/v1#HigherEducationInstitution> <http://www.w3.org/2000/01/rdf-schema#label> "Higher Education Institution"@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b31 <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+<http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecificationReference> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#NodeShape> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b89 <http://www.w3.org/ns/shacl#name> "grant"@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b100 <http://www.w3.org/ns/shacl#description> "The credit points assigned to the learning achievement specification, following an educational credit system."@en .
+<http://data.quality-link.eu/ontology/v1#HigherEducationInstitution> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#NodeShape> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b47 <http://www.w3.org/ns/shacl#description> "Higher Education Institution that offers the LO."@en .
+<http://data.quality-link.eu/ontology/v1#availableTo> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates the target group to which this learning opportunity is available" .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b74 <http://www.w3.org/ns/shacl#name> "default language"@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b104 <http://www.w3.org/ns/shacl#or> _:n70d5ea40bf054303a5a9a3d1bbe61990b107 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b136 <http://www.w3.org/ns/shacl#name> "specialisation of"@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b73 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:n70d5ea40bf054303a5a9a3d1bbe61990b71 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b77 <http://www.w3.org/ns/shacl#description> "An alternative Identifier of the Learning Opportunity."@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b14 <http://www.w3.org/ns/shacl#path> <http://data.quality-link.eu/ontology/v1#studentsOf> .
+<http://data.quality-link.eu/ontology/v1#studentsOf> <http://www.w3.org/2000/01/rdf-schema#domain> <http://data.quality-link.eu/ontology/v1#LearnerGroup> .
+<http://data.europa.eu/snb/model/ap/loq-constraints/LearningOpportunityShape> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b77 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b132 <http://www.w3.org/ns/shacl#class> <http://data.europa.eu/snb/model/elm/Note> .
+<http://data.quality-link.eu/ontology/v1#LearningOpportunityInstanceReference> <http://www.w3.org/2000/01/rdf-schema#label> "Learning Opportunity Instance Reference"@en .
+<http://data.quality-link.eu/ontology/v1#LearningOpportunityInstance> <http://www.w3.org/2000/01/rdf-schema#label> "Learning Opportunity Instance"@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b82 <http://www.w3.org/ns/shacl#name> "is part of"@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b132 <http://www.w3.org/ns/shacl#description> "The full learning outcome summary of the learning achievement specification."@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b37 <http://www.w3.org/ns/shacl#path> <http://data.quality-link.eu/ontology/v1#version> .
+<http://data.europa.eu/snb/model/ap/loq-constraints/LearningAchievementSpecificationShape> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b142 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b106 <http://www.w3.org/ns/shacl#class> <http://data.europa.eu/snb/model/elm/LegalIdentifier> .
+<http://data.quality-link.eu/ontology/v1#version> <http://www.w3.org/2000/01/rdf-schema#comment> "A number or other identifier that indicates the version of the Learning Opportunity specifcation." .
+<http://data.europa.eu/snb/model/ap/loq-constraints/LearningOpportunityShape> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b56 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b65 <http://www.w3.org/ns/shacl#class> <http://data.europa.eu/snb/model/elm/LearningActivitySpecification> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b105 <http://www.w3.org/ns/shacl#class> <http://data.europa.eu/snb/model/elm/Identifier> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b46 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b33 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecification> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://data.quality-link.eu/ontology/v1#registrationPortal> <http://www.w3.org/2000/01/rdf-schema#comment> "A web page at which one can register or enrol for a Learning Opportunity." .
+<http://data.quality-link.eu/ontology/v1#minimumEQFLevel> <http://www.w3.org/2000/01/rdf-schema#label> "minimum EQF Level"@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b78 <http://www.w3.org/ns/shacl#class> <http://data.europa.eu/snb/model/elm/Identifier> .
+<http://data.quality-link.eu/ontology/v1#minimumEQFLevel> <http://www.w3.org/2000/01/rdf-schema#domain> <http://data.quality-link.eu/ontology/v1#LearnerGroup> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b37 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#Literal> .
+<http://data.quality-link.eu/ontology/v1#Kajmak> <http://www.w3.org/2000/01/rdf-schema#comment> "Kaymak is a creamy dairy food similar to clotted cream, made from the milk of water buffalo, cows, sheep, or goats in Central Asia, some Balkan countries, some Caucasus countries, the Levant, Turkic regions, Iran and Iraq."@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b48 <http://www.w3.org/ns/shacl#class> <http://data.europa.eu/snb/model/elm/Identifier> .
+<http://data.quality-link.eu/ontology/v1#LearningOpportunityInstance> <http://www.w3.org/2000/01/rdf-schema#comment> "A concrete opportunity to realise a given set of learning outcomes via a learning activity and/or assessment, e.g. a course, programme or module as offered in a specific academic year or semester."@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b28 <http://www.w3.org/ns/shacl#name> "fees"@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b61 <http://www.w3.org/ns/shacl#class> <http://data.europa.eu/snb/model/elm/PriceDetail> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b77 <http://www.w3.org/ns/shacl#name> "identifier"@en .
+<http://data.quality-link.eu/ontology/v1#version> <http://www.w3.org/2000/01/rdf-schema#label> "version"@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b67 <http://www.w3.org/ns/shacl#path> <http://data.europa.eu/snb/model/elm/applicationDeadline> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b131 <http://www.w3.org/ns/shacl#name> "learning setting"@en .
+<http://data.quality-link.eu/ontology/v1#spunOffFrom> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://data.quality-link.eu/ontology/v1#relatedTo> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b102 <http://www.w3.org/ns/shacl#severity> <http://www.w3.org/ns/shacl#Violation> .
+<http://data.quality-link.eu/ontology/v1#SchacIdentifier> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://data.europa.eu/snb/model/elm/Identifier> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b114 <http://www.w3.org/ns/shacl#class> <http://data.europa.eu/snb/model/elm/LearningAchievementSpecification> .
+<http://data.quality-link.eu/ontology/v1#Schac> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#ConceptScheme> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b85 <http://www.w3.org/ns/shacl#name> "title"@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b59 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b63 <http://www.w3.org/ns/shacl#path> <http://purl.org/dc/terms/modified> .
+<http://data.europa.eu/snb/model/elm/LearningOpportunity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b111 <http://www.w3.org/ns/shacl#class> <http://data.europa.eu/snb/model/elm/LearningActivitySpecification> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b113 <http://www.w3.org/ns/shacl#path> <http://data.europa.eu/snb/model/elm/isPartOf> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b88 <http://www.w3.org/ns/shacl#node> <http://data.europa.eu/snb/model/ap/loq-constraints/URLRegexRestriction> .
+<http://data.quality-link.eu/ontology/v1#isOpenToNonEnrolled> <http://www.w3.org/2000/01/rdf-schema#label> "open to non-enrolled learners"@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b140 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<http://data.quality-link.eu/ontology/v1#LearnerGroup> <http://www.w3.org/2000/01/rdf-schema#label> "Learner Group"@en .
+<http://data.quality-link.eu/ontology/v1#LearningOpportunityInstance> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b116 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n70d5ea40bf054303a5a9a3d1bbe61990b117 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b118 <http://www.w3.org/ns/shacl#description> "The estimated number of hours the learner is expected to spend engaged in learning to earn the award. This would include the notional number of hours in class, in group work, in practicals, as well as hours engaged in self-motivated study."@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b107 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:n70d5ea40bf054303a5a9a3d1bbe61990b105 .
+<http://data.europa.eu/snb/model/ap/loq-constraints/LearningAchievementSpecificationShape> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b135 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b9 <http://www.w3.org/ns/shacl#path> <http://data.europa.eu/snb/model/elm/schemeId> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b99 <http://www.w3.org/ns/shacl#description> " A free text description of the learning achievement specification. One value per language is permitted."@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b89 <http://www.w3.org/ns/shacl#path> <http://data.europa.eu/snb/model/elm/grant> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b130 <http://www.w3.org/ns/shacl#path> <http://data.europa.eu/snb/model/elm/entitlesTo> .
+<http://data.quality-link.eu/ontology/v1#LearnerGroup> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b30 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b133 <http://www.w3.org/ns/shacl#name> "thematic area"@en .
+<http://data.europa.eu/snb/model/elm/LearningAchievementSpecification> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://data.quality-link.eu/ontology/v1#LearnerGroup> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b14 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b81 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b75 <http://www.w3.org/ns/shacl#description> "The learning schedule. It should be provided using the EDC Controlled List of Learning Schedule Types."@en .
+<http://data.quality-link.eu/ontology/v1#LearnerGroup> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b11 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b113 <http://www.w3.org/ns/shacl#name> "is part of "@en .
+<http://data.quality-link.eu/ontology/v1#Schac> <http://www.w3.org/2000/01/rdf-schema#comment> "The identifier scheme for higher education institutions defined by the Schema for Academia (SCHAC)."@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b86 <http://www.w3.org/ns/shacl#name> "schedule information"@en .
+<http://data.quality-link.eu/ontology/v1#registrationPortal> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#anyURI> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b146 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:n70d5ea40bf054303a5a9a3d1bbe61990b144 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b110 <http://www.w3.org/ns/shacl#class> <http://www.w3.org/2004/02/skos/core#Concept> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b132 <http://www.w3.org/ns/shacl#path> <http://data.europa.eu/snb/model/elm/learningOutcomeSummary> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b43 <http://www.w3.org/ns/shacl#path> <http://data.quality-link.eu/ontology/v1#enrolledLearnerCount> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b109 <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b49 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b60 <http://www.w3.org/ns/shacl#name> "provided by"@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b88 <http://www.w3.org/ns/shacl#description> "A public web document containing additional documentation about the Learning Opportunity."@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b77 <http://www.w3.org/ns/shacl#or> _:n70d5ea40bf054303a5a9a3d1bbe61990b80 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b98 <http://www.w3.org/ns/shacl#name> "type"@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b32 <http://www.w3.org/ns/shacl#path> <http://data.europa.eu/snb/model/elm/admissionProcedure> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b58 <http://www.w3.org/ns/shacl#severity> <http://www.w3.org/ns/shacl#Violation> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b98 <http://www.w3.org/ns/shacl#class> <http://www.w3.org/2004/02/skos/core#Concept> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b121 <http://www.w3.org/ns/shacl#or> _:n70d5ea40bf054303a5a9a3d1bbe61990b124 .
+<http://data.quality-link.eu/ontology/v1#enrolmentCapacity> <http://www.w3.org/2000/01/rdf-schema#comment> "The number of learners that can register for a Learning Opportunity Instance." .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b85 <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> .
+<http://data.quality-link.eu/ontology/v1#LearningOpportunityInstance> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b44 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b111 <http://www.w3.org/ns/shacl#name> "influenced by"@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b101 <http://www.w3.org/ns/shacl#path> <http://www.w3.org/2004/02/skos/core#altLabel> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b130 <http://www.w3.org/ns/shacl#class> <http://data.europa.eu/snb/model/elm/LearningEntitlementSpecification> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b138 <http://www.w3.org/ns/shacl#class> <http://data.europa.eu/snb/model/elm/Qualification> .
+<http://data.europa.eu/snb/model/elm/LearningOpportunity> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://data.europa.eu/snb/model/elm> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:n70d5ea40bf054303a5a9a3d1bbe61990b3 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b30 <http://www.w3.org/ns/shacl#path> <http://data.quality-link.eu/ontology/v1#enrolledLearnerCount> .
+<http://data.quality-link.eu/ontology/v1#spunOffFrom> <http://www.w3.org/2000/01/rdf-schema#label> "spun off from"@en .
+<http://data.quality-link.eu/ontology/v1#EuropeanUniversityAlliance> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b97 <http://www.w3.org/ns/shacl#path> <http://data.europa.eu/snb/model/elm/supplementaryDocument> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b109 <http://www.w3.org/ns/shacl#description> "The category of the learning achievement specification provided as a string."@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b141 <http://www.w3.org/ns/shacl#name> "awarding information"@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b12 <http://www.w3.org/ns/shacl#path> <http://purl.org/dc/terms/description> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b148 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> .
+<http://data.quality-link.eu/ontology/v1#LearnerGroup> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b19 .
+<http://data.europa.eu/snb/model/ap/loq-constraints/LearningAchievementSpecificationShape> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b134 .
+<http://data.quality-link.eu/ontology/v1#superseded> <http://www.w3.org/2000/01/rdf-schema#label> "superseded"@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b104 <http://www.w3.org/ns/shacl#description> "An alternative identifier of the learning achievement specification."@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n70d5ea40bf054303a5a9a3d1bbe61990b18 .
+<http://data.quality-link.eu/ontology/v1#enrolmentCapacity> <http://www.w3.org/2000/01/rdf-schema#label> "enrolment capacity"@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b59 <http://www.w3.org/ns/shacl#description> "The publication status of the learning opportunity."@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b28 <http://www.w3.org/ns/shacl#class> <http://data.europa.eu/snb/model/elm/PriceDetail> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b46 <http://www.w3.org/ns/shacl#class> <http://data.europa.eu/snb/model/elm/Identifier> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b53 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:n70d5ea40bf054303a5a9a3d1bbe61990b50 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b26 <http://www.w3.org/ns/shacl#class> <http://www.w3.org/2004/02/skos/core#Concept> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b76 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b97 <http://www.w3.org/ns/shacl#description> "A public web resource containing additional documentation about the learning achievement specification."@en .
+<http://data.europa.eu/snb/model/elm/LearningOpportunity> <http://purl.org/dc/terms/identifier> "elm:LearningOpportunity" .
+<http://data.europa.eu/snb/model/ap/loq-constraints/LearningOpportunityShape> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b58 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b128 <http://www.w3.org/ns/shacl#class> <http://data.europa.eu/snb/model/elm/WebResource> .
+<http://data.quality-link.eu/ontology/v1#Kajmak> <http://purl.org/dc/terms/source> <https://en.wikipedia.org/wiki/Kaymak> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b84 <http://www.w3.org/ns/shacl#description> " A free text description of the learning opportunity. One value per language is permitted."@en .
+<http://data.europa.eu/snb/model/elm/LearningAchievementSpecification> <http://purl.org/dc/terms/identifier> "elm:LearningAchievementSpecification" .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b148 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b119 <http://www.w3.org/ns/shacl#name> "language"@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b65 <http://www.w3.org/ns/shacl#description> " The learning activity specification, including the curricula, of this learning opportunity."@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b75 <http://www.w3.org/ns/shacl#class> <http://www.w3.org/2004/02/skos/core#Concept> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b65 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b134 <http://www.w3.org/ns/shacl#name> "status"@en .
+<http://data.europa.eu/snb/model/ap/loq-constraints/LearningAchievementSpecificationShape> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b110 .
+<http://data.europa.eu/snb/model/ap/loq-constraints/LearningAchievementSpecificationShape> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b131 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b76 <http://www.w3.org/ns/shacl#description> "An image which is displayed alongside the learning opportunity."@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b14 <http://www.w3.org/ns/shacl#name> "home institutions"@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b120 <http://www.w3.org/ns/shacl#description> "An associated field of education from another semantic framework than the ISCED classification."@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b97 <http://www.w3.org/ns/shacl#class> <http://data.europa.eu/snb/model/elm/WebResource> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b68 <http://www.w3.org/ns/shacl#description> "The associated period of time shape."@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b13 <http://www.w3.org/ns/shacl#description> "An identifier for this specific target group of learners."@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b12 <http://www.w3.org/ns/shacl#name> "description"@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b57 <http://www.w3.org/ns/shacl#path> <http://data.europa.eu/snb/model/elm/admissionProcedure> .
+<http://data.europa.eu/snb/model/ap/loq-constraints/LearningOpportunityShape> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b69 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b102 <http://www.w3.org/ns/shacl#name> "title"@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b113 <http://www.w3.org/ns/shacl#severity> <http://www.w3.org/ns/shacl#Violation> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b92 <http://www.w3.org/ns/shacl#description> "The publisher of the Learning Achievement Specification."@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b85 <http://www.w3.org/ns/shacl#severity> <http://www.w3.org/ns/shacl#Violation> .
+<http://data.quality-link.eu/ontology/v1#isOpenToNonEnrolled> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<http://data.quality-link.eu/ontology/v1#Kajmak> <http://www.w3.org/2000/01/rdf-schema#label> "kajmak"@sl .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b46 <http://www.w3.org/ns/shacl#name> "(local) identifier"@en .
+<http://data.quality-link.eu/ontology/v1#version> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://data.quality-link.eu/ontology/v1#enrolledLearnerCount> <http://www.w3.org/2000/01/rdf-schema#comment> "The number of learners that are currently enrolled for the Learning Opportunity Instance." .
+<http://data.quality-link.eu/ontology/v1#limitLearningOpportunity> <http://www.w3.org/2000/01/rdf-schema#domain> <http://data.quality-link.eu/ontology/v1#LearnerGroup> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b58 <http://www.w3.org/ns/shacl#path> <http://purl.org/dc/terms/type> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b103 <http://www.w3.org/ns/shacl#severity> <http://www.w3.org/ns/shacl#Violation> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b35 <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#boolean> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b118 <http://www.w3.org/ns/shacl#path> <http://data.europa.eu/snb/model/elm/volumeOfLearning> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b95 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:n70d5ea40bf054303a5a9a3d1bbe61990b93 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b72 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n70d5ea40bf054303a5a9a3d1bbe61990b73 .
+<http://data.quality-link.eu/ontology/v1#Kajmak> <http://www.w3.org/2000/01/rdf-schema#label> "kajmak"@hbs-Latn .
+<http://data.europa.eu/snb/model/ap/loq-constraints/LearningOpportunityShape> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b89 .
+<http://data.quality-link.eu/ontology/v1#HigherEducationInstitution> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://data.europa.eu/snb/model/elm/Organisation> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b8 <http://www.w3.org/ns/shacl#path> <http://www.w3.org/2004/02/skos/core#notation> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b8 <http://www.w3.org/ns/shacl#description> "The OrgReg identifier of the format XX1111."@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b45 <http://www.w3.org/ns/shacl#description> "Higher Education Institution that offers the LO."@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b127 <http://www.w3.org/ns/shacl#name> "education level"@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b133 <http://www.w3.org/ns/shacl#path> <http://data.europa.eu/snb/model/elm/ISCEDFCode> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b74 <http://www.w3.org/ns/shacl#severity> <http://www.w3.org/ns/shacl#Violation> .
+<http://data.europa.eu/snb/model/ap/loq-constraints/LearningOpportunityShape> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b87 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b8 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b47 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b9 <http://www.w3.org/ns/shacl#hasValue> <http://data.quality-link.eu/ontology/v1#Schac> .
+<http://data.quality-link.eu/ontology/v1#GroupOfHEIs> <http://www.w3.org/2000/01/rdf-schema#label> "Group of Higher Education Institutions"@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b11 <http://www.w3.org/ns/shacl#name> "title"@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b46 <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<http://data.quality-link.eu/ontology/v1#> <http://purl.org/dc/terms/publisher> <http://quality-link.eu/> .
+<http://data.quality-link.eu/ontology/v1#GroupOfHEIs> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#NodeShape> .
+<http://data.quality-link.eu/ontology/v1#LearnerGroup> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b34 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b63 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<http://data.europa.eu/snb/model/ap/loq-constraints/LearningAchievementSpecificationShape> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b130 .
+<http://data.europa.eu/snb/model/ap/loq-constraints/LearningOpportunityShape> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b74 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b8 <http://www.w3.org/ns/shacl#name> "identifier"@en .
+<http://data.europa.eu/snb/model/ap/loq-constraints/LearningOpportunityShape> <http://www.w3.org/ns/shacl#targetClass> <http://data.europa.eu/snb/model/elm/LearningOpportunity> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b142 <http://www.w3.org/ns/shacl#severity> <http://www.w3.org/ns/shacl#Violation> .
+<http://data.quality-link.eu/ontology/v1#HigherEducationInstitution> <http://www.w3.org/2000/01/rdf-schema#comment> "An entity that has full degree awarding powers at higher education level (i.e. EQF levels 5 to 8; QF-EHEA cycle first to third) recognised by at least one national authority."@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b134 <http://www.w3.org/ns/shacl#severity> <http://www.w3.org/ns/shacl#Violation> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b33 <http://www.w3.org/ns/shacl#description> "Entry requirement or prerequisites that apply to this specific group of learners."@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b30 <http://www.w3.org/ns/shacl#description> "Number of learners from the specific group that are currently enrolled."@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b145 <http://www.w3.org/ns/shacl#class> <http://data.europa.eu/snb/model/elm/Qualification> .
+<http://data.europa.eu/snb/model/ap/loq-constraints/LearningOpportunityShape> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b59 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b33 <http://www.w3.org/ns/shacl#path> <http://data.europa.eu/snb/model/elm/entryRequirement> .
+<http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecificationReference> <http://www.w3.org/2000/01/rdf-schema#label> "Learning Opportunity Specification Reference"@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b119 <http://www.w3.org/ns/shacl#severity> <http://www.w3.org/ns/shacl#Violation> .
+<http://data.quality-link.eu/ontology/v1#> <http://purl.org/dc/terms/created> "2025-02-13"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://data.quality-link.eu/ontology/v1#HigherEducationInstitution> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b121 <http://www.w3.org/ns/shacl#path> <http://data.europa.eu/snb/model/elm/generalisationOf> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b19 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<http://data.europa.eu/snb/model/ap/loq-constraints/LearningAchievementSpecificationShape> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b119 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b63 <http://www.w3.org/ns/shacl#description> "The date when the learning opportunity was last modified."@en .
+<http://data.quality-link.eu/ontology/v1#LearningOpportunityInstance> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://data.europa.eu/snb/model/elm/LearningOpportunity> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b7 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<http://data.quality-link.eu/ontology/v1#minimumEQFLevel> <http://www.w3.org/2000/01/rdf-schema#comment> "Defines that the learning opportunity is offered to students enrolled in another learning opportunity at a specified EQF level or higher. If provided, the value must come from the EU controlled vocabulary http://publications.europa.eu/resource/dataset/european-qualification-framework"@en .
+<http://data.quality-link.eu/ontology/v1#enrolmentMinimum> <http://www.w3.org/2000/01/rdf-schema#label> "minimum enrolment"@en .
+<http://data.europa.eu/snb/model/ap/loq-constraints/LearningOpportunityShape> <http://www.w3.org/ns/shacl#ignoredProperties> _:n70d5ea40bf054303a5a9a3d1bbe61990b90 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b102 <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b12 <http://www.w3.org/ns/shacl#description> "A free text description of the target group of learners."@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b56 <http://www.w3.org/ns/shacl#class> <http://data.europa.eu/snb/model/elm/LearningOpportunity> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b68 <http://www.w3.org/ns/shacl#severity> <http://www.w3.org/ns/shacl#Violation> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b66 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<http://data.europa.eu/snb/model/elm/LearningOpportunity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b69 <http://www.w3.org/ns/shacl#description> "The publisher of the Learning Opportunity."@en .
+<http://data.quality-link.eu/ontology/v1#GroupOfHEIs> <http://www.w3.org/2000/01/rdf-schema#comment> "A group or alliance of higher education institutions"@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b57 <http://www.w3.org/ns/shacl#severity> <http://www.w3.org/ns/shacl#Violation> .
+<http://data.europa.eu/snb/model/ap/loq-constraints/LearningAchievementSpecificationShape> <http://www.w3.org/ns/shacl#closed> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b85 <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b29 <http://www.w3.org/ns/shacl#path> <http://data.quality-link.eu/ontology/v1#enrolmentCapacity> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b126 <http://www.w3.org/ns/shacl#class> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://data.quality-link.eu/ontology/v1#LearningOpportunityInstance> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://data.europa.eu/snb/model/ap/loq-constraints/LearningOpportunityShape> .
+<http://data.quality-link.eu/ontology/v1#superseded> <http://www.w3.org/2000/01/rdf-schema#domain> <http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecification> .
+<http://data.quality-link.eu/ontology/v1#SchacIdentifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#NodeShape> .
+<http://data.europa.eu/snb/model/elm/LearningAchievementSpecification> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://data.europa.eu/snb/model/elm/Specification> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b125 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:n70d5ea40bf054303a5a9a3d1bbe61990b123 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b83 <http://www.w3.org/ns/shacl#description> "The mode of learning Opportunity. It should be provided using the EDC Controlled List of Modes Of Learning and Assessment. "@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b14 <http://www.w3.org/ns/shacl#description> "Offered to students from these higher education institution(s)."@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b51 <http://www.w3.org/ns/shacl#class> <http://data.europa.eu/snb/model/elm/QualificationReference> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b31 <http://www.w3.org/ns/shacl#description> "Number of learners from the specific group that need to at least enrol for the instance to take place."@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b26 <http://www.w3.org/ns/shacl#path> <http://data.europa.eu/snb/model/elm/limitField> .
+<http://data.quality-link.eu/ontology/v1#OrgRegIdentifier> <http://www.w3.org/2000/01/rdf-schema#comment> "The identifier assigned to a higher education institution or other organisation in the Register of Public Sector Organisations (OrgReg)"@en .
+<http://data.quality-link.eu/ontology/v1#succeeded> <http://www.w3.org/2000/01/rdf-schema#comment> "Organisation succeeded/replaced another one (i.e. subject was newly created by the event, object ceased to exist)"@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b19 <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#boolean> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b60 <http://www.w3.org/ns/shacl#severity> <http://www.w3.org/ns/shacl#Violation> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b43 <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+<http://data.europa.eu/snb/model/ap/loq-constraints/LearningAchievementSpecificationShape> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b98 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b11 <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b33 <http://www.w3.org/ns/shacl#class> <http://data.europa.eu/snb/model/elm/Note> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b87 <http://www.w3.org/ns/shacl#severity> <http://www.w3.org/ns/shacl#Violation> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b12 <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> .
+<http://data.quality-link.eu/ontology/v1#isActive> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b8 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#Literal> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b48 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b49 <http://www.w3.org/ns/shacl#name> "learning achievement specification"@en .
+<http://data.europa.eu/snb/model/ap/loq-constraints/LearningOpportunityShape> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b85 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b49 <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b47 <http://www.w3.org/ns/shacl#path> <http://data.europa.eu/snb/model/elm/providedBy> .
+<http://data.europa.eu/snb/model/ap/loq-constraints/LearningAchievementSpecificationShape> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b91 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:n70d5ea40bf054303a5a9a3d1bbe61990b15 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b36 <http://www.w3.org/ns/shacl#path> <http://data.quality-link.eu/ontology/v1#superseded> .
+<http://data.quality-link.eu/ontology/v1#studentsOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b21 <http://www.w3.org/ns/shacl#description> "Offered to students following a specific other learning opportunity."@en .
+<http://data.quality-link.eu/ontology/v1#entryRequirementLearningOpportunity> <http://www.w3.org/2000/01/rdf-schema#domain> <http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecificationReference> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b133 <http://www.w3.org/ns/shacl#description> "The thematic area according to the ISCED-F 2013 Classification. It should be provided using the ISCEDF controlled vocabulary."@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b30 <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b10 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b141 <http://www.w3.org/ns/shacl#class> <http://data.europa.eu/snb/model/elm/AwardingOpportunity> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b38 <http://www.w3.org/ns/shacl#class> <http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecificationReference> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b72 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:n70d5ea40bf054303a5a9a3d1bbe61990b70 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b104 <http://www.w3.org/ns/shacl#severity> <http://www.w3.org/ns/shacl#Violation> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b15 <http://www.w3.org/ns/shacl#class> <http://data.quality-link.eu/ontology/v1#HigherEducationInstitution> .
+<http://data.quality-link.eu/ontology/v1#LearningOpportunityInstance> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b41 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b49 <http://www.w3.org/ns/shacl#description> " The learning achievement specification, including the curricula, of this learning opportunity."@en .
+<http://data.quality-link.eu/ontology/v1#isActive> <http://www.w3.org/2000/01/rdf-schema#label> "is active"@en .
+<http://data.europa.eu/snb/model/ap/loq-constraints/LearningOpportunityShape> <http://www.w3.org/2000/01/rdf-schema#comment> "An opportunity to realise a given set of learning outcomes via a learning activity and/or assessment."@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b46 <http://www.w3.org/ns/shacl#path> <http://www.w3.org/ns/adms#identifier> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b34 <http://www.w3.org/ns/shacl#description> "Additional information about the group of learners to which the LO is offered."@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b77 <http://www.w3.org/ns/shacl#path> <http://www.w3.org/ns/adms#identifier> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b8 <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<http://data.europa.eu/snb/model/ap/loq-constraints/LearningOpportunityShape> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b82 .
+<http://data.quality-link.eu/ontology/v1#minimumEQFLevel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b1 <http://www.w3.org/ns/shacl#description> "ORGREG or SCHAC identifier"@en .
+<http://data.quality-link.eu/ontology/v1#spunOffFrom> <http://www.w3.org/2000/01/rdf-schema#domain> <http://data.europa.eu/snb/model/elm/Organisation> .
+<http://data.europa.eu/snb/model/ap/loq-constraints/LearningOpportunityShape> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b65 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b121 <http://www.w3.org/ns/shacl#description> "A learning achievement specification (e.g., a standard) of which this specification is a generalisation."@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b143 <http://www.w3.org/ns/shacl#description> "A learning achievement specification can be composed of other partial learning specifications which when combined make up this learning specification."@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b82 <http://www.w3.org/ns/shacl#description> "A learning opportunity can be part of other learning opportunity."@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b129 <http://www.w3.org/ns/shacl#description> "Assessments a person can undergo to prove the acquisition of the learning outcomes."@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b7 <http://www.w3.org/ns/shacl#path> <http://data.europa.eu/snb/model/elm/schemeId> .
+<http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecification> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b39 .
+<http://data.quality-link.eu/ontology/v1#LearningOpportunityInstanceReference> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#NodeShape> .
+<http://data.europa.eu/snb/model/ap/loq-constraints/LearningOpportunityShape> <http://www.w3.org/2000/01/rdf-schema#label> "Learning Opportunity (ELM)"@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b47 <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b147 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:n70d5ea40bf054303a5a9a3d1bbe61990b145 .
+<http://data.quality-link.eu/ontology/v1#> <http://creativecommons.org/ns#attributionURL> <https://quality-link.eu/> .
+<http://data.quality-link.eu/ontology/v1#Kajmak> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b6 <http://www.w3.org/ns/shacl#minCount> "2"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<http://data.quality-link.eu/ontology/v1#availableTo> <http://www.w3.org/2000/01/rdf-schema#label> "available to"@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b120 <http://www.w3.org/ns/shacl#path> <http://data.europa.eu/snb/model/elm/educationSubject> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b85 <http://www.w3.org/ns/shacl#path> <http://purl.org/dc/terms/title> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b103 <http://www.w3.org/ns/shacl#path> <http://data.europa.eu/snb/model/elm/entryRequirement> .
+<http://data.europa.eu/snb/model/ap/loq-constraints/LearningAchievementSpecificationShape> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b101 .
+<http://data.quality-link.eu/ontology/v1#LearnerGroup> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b13 .
+<http://data.quality-link.eu/ontology/v1#Kajmak> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.obolibrary.org/obo/FOODON_00001256> .
+<http://data.quality-link.eu/ontology/v1#LearnerGroup> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b27 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b87 <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b107 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n70d5ea40bf054303a5a9a3d1bbe61990b108 .
+<http://data.europa.eu/snb/model/elm/LearningAchievementSpecification> <http://www.w3.org/2000/01/rdf-schema#label> "Learning Achievement Specification (ELM)"@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b112 <http://www.w3.org/ns/shacl#name> "maximum duration"@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b119 <http://www.w3.org/ns/shacl#path> <http://purl.org/dc/terms/language> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b85 <http://www.w3.org/ns/shacl#uniqueLang> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b88 <http://www.w3.org/ns/shacl#name> "other documents"@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b129 <http://www.w3.org/ns/shacl#path> <http://data.europa.eu/snb/model/elm/provenBy> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b89 <http://www.w3.org/ns/shacl#description> "The grant related to the learning opportunity."@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b58 <http://www.w3.org/ns/shacl#class> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://data.quality-link.eu/ontology/v1#succeeded> <http://www.w3.org/2000/01/rdf-schema#domain> <http://data.europa.eu/snb/model/elm/Organisation> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b60 <http://www.w3.org/ns/shacl#description> "The organisation providing or directing the learning opportunity. In the case of, e.g., joint qualifications, there may be several organisations directing the learning opportunity."@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b36 <http://www.w3.org/ns/shacl#class> <http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecificationReference> .
+<http://data.europa.eu/snb/model/ap/loq-constraints/LearningOpportunityShape> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b76 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b121 <http://www.w3.org/ns/shacl#severity> <http://www.w3.org/ns/shacl#Violation> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b126 <http://www.w3.org/ns/shacl#description> "The mode of learning, and or assessment. It should be provided using the EDC Controlled List of Modes Of Learning and Assessment."@en .
+<http://data.europa.eu/snb/model/ap/loq-constraints/LearningAchievementSpecificationShape> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b128 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b92 <http://www.w3.org/ns/shacl#or> _:n70d5ea40bf054303a5a9a3d1bbe61990b95 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b120 <http://www.w3.org/ns/shacl#name> "education subject"@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b135 <http://www.w3.org/ns/shacl#severity> <http://www.w3.org/ns/shacl#Violation> .
+<http://data.quality-link.eu/ontology/v1#relatedTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AsymmetricProperty> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b90 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b27 <http://www.w3.org/ns/shacl#path> <http://data.quality-link.eu/ontology/v1#minimumEQFLevel> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b110 <http://www.w3.org/ns/shacl#description> "A specific target group or category for which this specification is designed. It should be provided using the EDC Controlled List of Target Groups."@en .
+<http://data.europa.eu/snb/model/ap/loq-constraints/LearningOpportunityShape> <http://www.w3.org/ns/shacl#closed> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b101 <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> .
+<http://data.quality-link.eu/ontology/v1#LearningOpportunityInstanceReference> <http://www.w3.org/2000/01/rdf-schema#comment> "A reference to another Learning Opportunity Instance, identified by a provider and a (local) identifier, without further details."@en .
+<http://data.quality-link.eu/ontology/v1#Schac> <http://www.w3.org/2000/01/rdf-schema#label> "SCHAC (identifier scheme)"@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b74 <http://www.w3.org/ns/shacl#path> <http://data.europa.eu/snb/model/elm/defaultLanguage> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b75 <http://www.w3.org/ns/shacl#name> "learning schedule"@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b130 <http://www.w3.org/ns/shacl#description> "Rights (such as which the person may acquire as a result of acquiring the learning outcomes)."@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b130 <http://www.w3.org/ns/shacl#severity> <http://www.w3.org/ns/shacl#Violation> .
+<http://data.europa.eu/snb/model/ap/loq-constraints/LearningAchievementSpecificationShape> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#NodeShape> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b103 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b69 <http://www.w3.org/ns/shacl#path> <http://purl.org/dc/terms/publisher> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b58 <http://www.w3.org/ns/shacl#description> " The type of the learning opportunity. It should be provided using the EDC Controlled List of Learning Opportunity Types."@en .
+<http://data.europa.eu/snb/model/ap/loq-constraints/LearningAchievementSpecificationShape> <http://www.w3.org/ns/shacl#targetClass> <http://data.europa.eu/snb/model/elm/LearningAchievementSpecification> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b13 <http://www.w3.org/ns/shacl#class> <http://data.europa.eu/snb/model/elm/Identifier> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b98 <http://www.w3.org/ns/shacl#description> "The type of the learning achievement specification. It should be provided using a controlled vocabulary."@en .
+<http://data.quality-link.eu/ontology/v1#limitLearningOpportunity> <http://www.w3.org/2000/01/rdf-schema#label> "specific learning opportunity"@en .
+<http://data.quality-link.eu/ontology/v1#enrolmentCapacity> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+<http://data.quality-link.eu/ontology/v1#LearnerGroup> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b33 .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b3 <http://www.w3.org/ns/shacl#class> <http://data.quality-link.eu/ontology/v1#OrgRegIdentifier> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b127 <http://www.w3.org/ns/shacl#description> "An associated level of education within a semantic framework describing education levels."@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b45 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecification> <http://www.w3.org/2000/01/rdf-schema#label> "Learning Opportunity Specification"@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b49 <http://www.w3.org/ns/shacl#path> <http://data.europa.eu/snb/model/elm/learningAchievementSpecification> .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b56 <http://www.w3.org/ns/shacl#name> "has part"@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b134 <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#string> .
+<http://data.quality-link.eu/ontology/v1#LearnerGroup> <http://www.w3.org/ns/shacl#property> _:n70d5ea40bf054303a5a9a3d1bbe61990b12 .
+<http://data.europa.eu/snb/model/elm/LearningOpportunity> <http://www.w3.org/2000/01/rdf-schema#label> "Learning Opportunity (ELM)"@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b67 <http://www.w3.org/ns/shacl#description> "The deadline for applying to the course."@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b74 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<http://data.europa.eu/snb/model/elm/LearningAchievementSpecification> <http://www.w3.org/2000/01/rdf-schema#comment> "Description of a set of knowledge and/or skills used with responsibility and autonomy, which may be acquired."@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b34 <http://www.w3.org/ns/shacl#name> "information note"@en .
+_:n70d5ea40bf054303a5a9a3d1bbe61990b64 <http://www.w3.org/ns/shacl#class> <http://data.europa.eu/snb/model/elm/Note> .
+<http://data.quality-link.eu/ontology/v1#Kajmak> <http://www.w3.org/2000/01/rdf-schema#label> "kaymak"@en .
