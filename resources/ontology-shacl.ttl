@@ -3,7 +3,6 @@
 #################################################################
 
 # QualityLink prefix
-#@prefix : <http://data.quality-link.eu/ontology/v1#> .
 @prefix ql: <http://data.quality-link.eu/ontology/v1#> .
 # RDF basics
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -31,12 +30,12 @@
     dcterms:abstract "The QualityLink ontology builds on and extends the European Learning Model (ELM) to cover additional classes and properties required for the project."@en ;
     dcterms:created "2025-02-13"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
-    dcterms:modified "2025-04-11"^^xsd:date ;
-    dcterms:publisher <http://quality-link.eu/> ;
-    dcterms:title "QualityLink Ontology"@en ;
-    rdfs:comment "The QualityLink ontology builds on the European Learning Model (ELM). It defines additional classes and properties to describe things not currently covered in ELM. It further includes SHACL constraints for the QualityLink pilot aggregator, derived from the ELM Learning Opportunities and Qualifications application profile."@en ;
+    dcterms:modified "2025-07-25"^^xsd:date ;
+    dcterms:publisher <https://quality-link.eu/> ;
+    dcterms:title "QualityLink Ontology and Application Profile"@en ;
+    rdfs:comment "The QualityLink ontology builds on the European Learning Model (ELM). It defines additional classes and properties to describe things not currently covered in ELM. QualityLink further provides an application profile defined as SHACL constraints for the QualityLink pilot aggregator. These are derived from the ELM Learning Opportunities and Qualifications application profile. The QualityLink profile only adds optional properties to the ELM profile, no required ones."@en ;
     rdfs:label "QualityLink Ontology"@en ;
-    owl:versionInfo "0.3.0" .
+    owl:versionInfo "0.3.1" .
 
 
 #################################################################
