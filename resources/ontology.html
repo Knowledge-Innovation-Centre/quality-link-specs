@@ -17,7 +17,7 @@
 
 
 <!-- SCHEMA.ORG METADATA -->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"http://data.quality-link.eu/ontology/v1#","image":"http://vowl.visualdataweb.org/webvowl/#iri=http://data.quality-link.eu/ontology/v1#","name":"QualityLink Ontology and Application Profile", "headline":"The QualityLink ontology and application profile build on the European Learning Model (ELM). They defines additional classes and properties to describe things not currently covered in ELM.", "dateReleased":"2025-02-13", "dateModified":"2025-07-25", "version":"0.3.1", "license":"https://creativecommons.org/licenses/by/4.0/"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"http://data.quality-link.eu/ontology/v1#","image":"http://vowl.visualdataweb.org/webvowl/#iri=http://data.quality-link.eu/ontology/v1#","name":"QualityLink Ontology and Application Profile", "headline":"The QualityLink ontology and application profile build on the European Learning Model (ELM). They defines additional classes and properties to describe things not currently covered in ELM.", "dateReleased":"2025-02-13", "dateModified":"2025-07-25", "version":"0.4.0", "license":"https://creativecommons.org/licenses/by/4.0/"}</script>
 
 <script src="resources/jquery.js"></script> 
 <script src="resources/marked.min.js"></script> 
@@ -72,12 +72,12 @@ $(function(){
 <dl>
 <dt>Modified on: 2025-07-25</dt>
 <dt>Revision:</dt>
-<dd>0.3.1</dd>
+<dd>0.4.0</dd>
 <dt>Publisher:</dt>
 <dd><a href="https://quality-link.eu/">https://quality-link.eu/</a></dd>
 <dt>Download serialization:</dt><dd><span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.owl" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License:</dt><dd><a href="https://creativecommons.org/licenses/by/4.0/" target="_blank"><img src="https://img.shields.io/badge/License-https://creativecommons.org/licenses/by/4.0/-blue.svg" alt="https://creativecommons.org/licenses/by/4.0/" /></a>
 </dd><!-- <dt>Evaluation:</dt><dd><a href="OOPSevaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Cite as:</dt>
-<dd> QualityLink Ontology and Application Profile. Revision: 0.3.1.</dd>
+<dd> QualityLink Ontology and Application Profile. Revision: 0.4.0.</dd>
 </dl>
 
 <hr/>
@@ -174,8 +174,16 @@ This ontology has the following classes and properties.</span>
          title="http://data.quality-link.eu/ontology/v1#studentsOf">includes students of</a>
    </li>
    <li>
+      <a href="#isMemberOf"
+         title="http://data.quality-link.eu/ontology/v1#isMemberOf">is member of</a>
+   </li>
+   <li>
       <a href="#minimumEQFLevel"
          title="http://data.quality-link.eu/ontology/v1#minimumEQFLevel">minimum EQF Level</a>
+   </li>
+   <li>
+      <a href="#referenceGroup"
+         title="http://data.quality-link.eu/ontology/v1#referenceGroup">reference group</a>
    </li>
    <li>
       <a href="#relatedTo"
@@ -205,6 +213,10 @@ This ontology has the following classes and properties.</span>
       <a href="#superseded"
          title="http://data.quality-link.eu/ontology/v1#superseded">superseded</a>
    </li>
+   <li>
+      <a href="#virtualLearningEnvironment"
+         title="http://data.quality-link.eu/ontology/v1#virtualLearningEnvironment">virtual learning environment</a>
+   </li>
 </ul><h4>Data Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     class="hlist">
@@ -228,6 +240,18 @@ This ontology has the following classes and properties.</span>
          title="http://data.quality-link.eu/ontology/v1#isOpenToNonEnrolled">open to non-enrolled learners</a>
    </li>
    <li>
+      <a href="#gradeOrder"
+         title="http://data.quality-link.eu/ontology/v1#gradeOrder">order</a>
+   </li>
+   <li>
+      <a href="#passingRate"
+         title="http://data.quality-link.eu/ontology/v1#passingRate">passing rate</a>
+   </li>
+   <li>
+      <a href="#gradePercentage"
+         title="http://data.quality-link.eu/ontology/v1#gradePercentage">percentage</a>
+   </li>
+   <li>
       <a href="#registrationPortal"
          title="http://data.quality-link.eu/ontology/v1#registrationPortal">registration portal</a>
    </li>
@@ -242,6 +266,18 @@ This ontology has the following classes and properties.</span>
          title="http://data.quality-link.eu/ontology/v1#EuropeanUniversityAlliance">
          <span>European University Alliance</span>
       </a>
+   </li>
+   <li>
+      <a href="#GradeShape"
+         title="http://data.quality-link.eu/ontology/v1#GradeShape">Grade</a>
+   </li>
+   <li>
+      <a href="#GradeDistributionShape"
+         title="http://data.quality-link.eu/ontology/v1#GradeDistributionShape">Grade Distribution </a>
+   </li>
+   <li>
+      <a href="#GradingSchemeSchape"
+         title="http://data.quality-link.eu/ontology/v1#GradingSchemeSchape">Grading Scheme</a>
    </li>
    <li>
       <a href="#GroupOfHEIs"
@@ -263,15 +299,11 @@ This ontology has the following classes and properties.</span>
    </li>
    <li>
       <a href="#http://data.europa.eu/snb/model/ap/loq-constraints/LearningAchievementSpecificationShape"
-         title="http://data.europa.eu/snb/model/ap/loq-constraints/LearningAchievementSpecificationShape">
-         <span>Learning Achievement Specification (ELM)</span>
-      </a>
+         title="http://data.europa.eu/snb/model/ap/loq-constraints/LearningAchievementSpecificationShape">Learning Achievement Specification (ELM)</a>
    </li>
    <li>
       <a href="#http://data.europa.eu/snb/model/ap/loq-constraints/LearningOpportunityShape"
-         title="http://data.europa.eu/snb/model/ap/loq-constraints/LearningOpportunityShape">
-         <span>Learning Opportunity (ELM)</span>
-      </a>
+         title="http://data.europa.eu/snb/model/ap/loq-constraints/LearningOpportunityShape">Learning Opportunity (ELM)</a>
    </li>
    <li>
       <a href="#LearningOpportunityInstance"
@@ -485,13 +517,13 @@ This section provides details for each class and property defined by QualityLink
     has super-classes
    </dt>
    <dd>
-    <a href="http://data.europa.eu/snb/model/ap/loq-constraints/LearningOpportunityShape" target="_blank" title="http://data.europa.eu/snb/model/ap/loq-constraints/LearningOpportunityShape">Learning Opportunity (ELM)</a> <sup class="type-c" title="class">c</sup>, <a href="#http://data.europa.eu/snb/model/elm/LearningOpportunity" title="http://data.europa.eu/snb/model/elm/LearningOpportunity">Learning Opportunity (ELM)</a> <sup class="type-c" title="class">c</sup>
+    <a href="#http://data.europa.eu/snb/model/elm/LearningOpportunity" title="http://data.europa.eu/snb/model/elm/LearningOpportunity">Learning Opportunity (ELM)</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>
     is in domain of
    </dt>
    <dd>
-    <a href="#availableTo" title="http://data.quality-link.eu/ontology/v1#availableTo">available to</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#availableTo" title="http://data.quality-link.eu/ontology/v1#availableTo">available to</a> <sup class="type-op" title="object property">op</sup>, <a href="#virtualLearningEnvironment" title="http://data.quality-link.eu/ontology/v1#virtualLearningEnvironment">virtual learning environment</a> <sup class="type-op" title="object property">op</sup>
    </dd>
    <dt>
     is also defined as
@@ -509,7 +541,7 @@ This section provides details for each class and property defined by QualityLink
     has super-classes
    </dt>
    <dd>
-    <a href="http://data.europa.eu/snb/model/ap/loq-constraints/LearningAchievementSpecificationShape" target="_blank" title="http://data.europa.eu/snb/model/ap/loq-constraints/LearningAchievementSpecificationShape">Learning Achievement Specification (ELM)</a> <sup class="type-c" title="class">c</sup>, <a href="#http://data.europa.eu/snb/model/elm/LearningAchievementSpecification" title="http://data.europa.eu/snb/model/elm/LearningAchievementSpecification">Learning Achievement Specification (ELM)</a> <sup class="type-c" title="class">c</sup>
+    <a href="#http://data.europa.eu/snb/model/elm/LearningAchievementSpecification" title="http://data.europa.eu/snb/model/elm/LearningAchievementSpecification">Learning Achievement Specification (ELM)</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>
     is in domain of
@@ -567,7 +599,9 @@ This section provides details for each class and property defined by QualityLink
   <li><a href="#absorbed" title="http://data.quality-link.eu/ontology/v1#absorbed">absorbed</a></li>
   <li><a href="#availableTo" title="http://data.quality-link.eu/ontology/v1#availableTo">available to</a></li>
   <li><a href="#studentsOf" title="http://data.quality-link.eu/ontology/v1#studentsOf">includes students of</a></li>
+  <li><a href="#isMemberOf" title="http://data.quality-link.eu/ontology/v1#isMemberOf">is member of</a></li>
   <li><a href="#minimumEQFLevel" title="http://data.quality-link.eu/ontology/v1#minimumEQFLevel">minimum EQF Level</a></li>
+  <li><a href="#referenceGroup" title="http://data.quality-link.eu/ontology/v1#referenceGroup">reference group</a></li>
   <li><a href="#relatedTo" title="http://data.quality-link.eu/ontology/v1#relatedTo">related to</a></li>
   <li><a href="#entryRequirementLearningOpportunity" title="http://data.quality-link.eu/ontology/v1#entryRequirementLearningOpportunity">required learning opportunity for entry</a></li>
   <li><a href="#entryRequirementLearningOutcome" title="http://data.quality-link.eu/ontology/v1#entryRequirementLearningOutcome">required learning outcome for entry</a></li>
@@ -575,6 +609,7 @@ This section provides details for each class and property defined by QualityLink
   <li><a href="#spunOffFrom" title="http://data.quality-link.eu/ontology/v1#spunOffFrom">spun off from</a></li>
   <li><a href="#succeeded" title="http://data.quality-link.eu/ontology/v1#succeeded">succeeded</a></li>
   <li><a href="#superseded" title="http://data.quality-link.eu/ontology/v1#superseded">superseded</a></li>
+  <li><a href="#virtualLearningEnvironment" title="http://data.quality-link.eu/ontology/v1#virtualLearningEnvironment">virtual learning environment</a></li>
  </ul>
  <div class="entity" id="absorbed">
   <h3>absorbed<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
@@ -639,6 +674,13 @@ This section provides details for each class and property defined by QualityLink
    </dl>
   </div>
  </div>
+ <div class="entity" id="isMemberOf">
+  <h3>is member of<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://data.quality-link.eu/ontology/v1#isMemberOf</p>
+  <div class="comment">
+   <span class="markdown">Specifies that an organisation is member of an association, e.g. an institution member of EUA or EURASHE.</span>
+  </div>
+ </div>
  <div class="entity" id="minimumEQFLevel">
   <h3>minimum EQF Level<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> http://data.quality-link.eu/ontology/v1#minimumEQFLevel</p>
@@ -649,6 +691,29 @@ This section provides details for each class and property defined by QualityLink
    <dl>
     <dt>
      has domain
+    </dt>
+    <dd>
+     <a href="http://data.quality-link.eu/ontology/v1#LearnerGroup" target="_blank" title="http://data.quality-link.eu/ontology/v1#LearnerGroup">Learner Group</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="referenceGroup">
+  <h3>reference group<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://data.quality-link.eu/ontology/v1#referenceGroup</p>
+  <div class="comment">
+   <span class="markdown">The group of learners for which the histogram of results was established.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="http://data.europa.eu/snb/model/elm/ResultDistribution" target="_blank" title="http://data.europa.eu/snb/model/elm/ResultDistribution">Result Distribution</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
     </dt>
     <dd>
      <a href="http://data.quality-link.eu/ontology/v1#LearnerGroup" target="_blank" title="http://data.quality-link.eu/ontology/v1#LearnerGroup">Learner Group</a> <sup class="type-c" title="class">c</sup>
@@ -683,7 +748,7 @@ This section provides details for each class and property defined by QualityLink
   <div class="description">
    <dl>
     <dt>
-     has domain
+     has range
     </dt>
     <dd>
      <a href="http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecificationReference" target="_blank" title="http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecificationReference">Learning Opportunity Specification Reference</a> <sup class="type-c" title="class">c</sup>
@@ -700,7 +765,7 @@ This section provides details for each class and property defined by QualityLink
   <div class="description">
    <dl>
     <dt>
-     has domain
+     has range
     </dt>
     <dd>
      <a href="http://data.europa.eu/snb/model/elm/LearningOutcome" target="_blank" title="http://data.europa.eu/snb/model/elm/LearningOutcome">Learning Outcome</a> <sup class="type-c" title="class">c</sup>
@@ -794,6 +859,23 @@ This section provides details for each class and property defined by QualityLink
    </dl>
   </div>
  </div>
+ <div class="entity" id="virtualLearningEnvironment">
+  <h3>virtual learning environment<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://data.quality-link.eu/ontology/v1#virtualLearningEnvironment</p>
+  <div class="comment">
+   <span class="markdown">Specifies (a) virtual learning environment(s) used in the delivery of this learning opportunity.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#LearningOpportunityInstance" title="http://data.quality-link.eu/ontology/v1#LearningOpportunityInstance">Learning Opportunity Instance</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
 </div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dataproperties">
  <h3 id="dataproperties-headline" class="list">Data Properties</h3>
  <ul class="hlist">
@@ -802,6 +884,9 @@ This section provides details for each class and property defined by QualityLink
   <li><a href="#isActive" title="http://data.quality-link.eu/ontology/v1#isActive">is active</a></li>
   <li><a href="#enrolmentMinimum" title="http://data.quality-link.eu/ontology/v1#enrolmentMinimum">minimum enrolment</a></li>
   <li><a href="#isOpenToNonEnrolled" title="http://data.quality-link.eu/ontology/v1#isOpenToNonEnrolled">open to non-enrolled learners</a></li>
+  <li><a href="#gradeOrder" title="http://data.quality-link.eu/ontology/v1#gradeOrder">order</a></li>
+  <li><a href="#passingRate" title="http://data.quality-link.eu/ontology/v1#passingRate">passing rate</a></li>
+  <li><a href="#gradePercentage" title="http://data.quality-link.eu/ontology/v1#gradePercentage">percentage</a></li>
   <li><a href="#registrationPortal" title="http://data.quality-link.eu/ontology/v1#registrationPortal">registration portal</a></li>
   <li><a href="#version" title="http://data.quality-link.eu/ontology/v1#version">version</a></li>
  </ul>
@@ -890,6 +975,57 @@ This section provides details for each class and property defined by QualityLink
    </dl>
   </div>
  </div>
+ <div class="entity" id="gradeOrder">
+  <h3>order<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://data.quality-link.eu/ontology/v1#gradeOrder</p>
+  <div class="comment">
+   <span class="markdown">A number specifying the order of the grade within the grading scheme, the highest number indicating the best grade.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#positiveInteger" target="_blank" title="http://www.w3.org/2001/XMLSchema#positiveInteger">positive Integer</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="passingRate">
+  <h3>passing rate<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://data.quality-link.eu/ontology/v1#passingRate</p>
+  <div class="comment">
+   <span class="markdown">The percentage of learners who pass on average.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#positiveInteger" target="_blank" title="http://www.w3.org/2001/XMLSchema#positiveInteger">positive Integer</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="gradePercentage">
+  <h3>percentage<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://data.quality-link.eu/ontology/v1#gradePercentage</p>
+  <div class="comment">
+   <span class="markdown">The percentage of learners earning this grade.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#positiveInteger" target="_blank" title="http://www.w3.org/2001/XMLSchema#positiveInteger">positive Integer</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
  <div class="entity" id="registrationPortal">
   <h3>registration portal<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> http://data.quality-link.eu/ontology/v1#registrationPortal</p>
@@ -928,11 +1064,14 @@ This section provides details for each class and property defined by QualityLink
  <h3 id="namedindividuals" class="list">Named Individuals</h3>
  <ul class="hlist">
   <li><a href="#EuropeanUniversityAlliance" title="http://data.quality-link.eu/ontology/v1#EuropeanUniversityAlliance"> <span>European University Alliance</span> </a></li>
+  <li><a href="#GradeShape" title="http://data.quality-link.eu/ontology/v1#GradeShape">Grade</a></li>
+  <li><a href="#GradeDistributionShape" title="http://data.quality-link.eu/ontology/v1#GradeDistributionShape">Grade Distribution </a></li>
+  <li><a href="#GradingSchemeSchape" title="http://data.quality-link.eu/ontology/v1#GradingSchemeSchape">Grading Scheme</a></li>
   <li><a href="#GroupOfHEIs" title="http://data.quality-link.eu/ontology/v1#GroupOfHEIs"> <span>Group of Higher Education Institutions</span> </a></li>
   <li><a href="#HigherEducationInstitution" title="http://data.quality-link.eu/ontology/v1#HigherEducationInstitution"> <span>Higher Education Institution</span> </a></li>
   <li><a href="#LearnerGroup" title="http://data.quality-link.eu/ontology/v1#LearnerGroup"> <span>Learner Group</span> </a></li>
-  <li><a href="#http://data.europa.eu/snb/model/ap/loq-constraints/LearningAchievementSpecificationShape" title="http://data.europa.eu/snb/model/ap/loq-constraints/LearningAchievementSpecificationShape"> <span>Learning Achievement Specification (ELM)</span> </a></li>
-  <li><a href="#http://data.europa.eu/snb/model/ap/loq-constraints/LearningOpportunityShape" title="http://data.europa.eu/snb/model/ap/loq-constraints/LearningOpportunityShape"> <span>Learning Opportunity (ELM)</span> </a></li>
+  <li><a href="#http://data.europa.eu/snb/model/ap/loq-constraints/LearningAchievementSpecificationShape" title="http://data.europa.eu/snb/model/ap/loq-constraints/LearningAchievementSpecificationShape">Learning Achievement Specification (ELM)</a></li>
+  <li><a href="#http://data.europa.eu/snb/model/ap/loq-constraints/LearningOpportunityShape" title="http://data.europa.eu/snb/model/ap/loq-constraints/LearningOpportunityShape">Learning Opportunity (ELM)</a></li>
   <li><a href="#LearningOpportunityInstance" title="http://data.quality-link.eu/ontology/v1#LearningOpportunityInstance"> <span>Learning Opportunity Instance</span> </a></li>
   <li><a href="#LearningOpportunityInstanceReference" title="http://data.quality-link.eu/ontology/v1#LearningOpportunityInstanceReference"> <span>Learning Opportunity Instance Reference</span> </a></li>
   <li><a href="#LearningOpportunitySpecification" title="http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecification"> <span>Learning Opportunity Specification</span> </a></li>
@@ -957,6 +1096,99 @@ This section provides details for each class and property defined by QualityLink
    </dt>
    <dd>
     <a href="#EuropeanUniversityAlliance">class</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="GradeShape">
+  <h3>Grade<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://data.quality-link.eu/ontology/v1#GradeShape</p>
+  <div class="comment">
+   <span class="markdown">Description of a single grade within a histogram of results.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#NodeShape" target="_blank" title="http://www.w3.org/ns/shacl#NodeShape">Node Shape</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">""</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">""</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">""</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#targetClass" target="_blank" title="http://www.w3.org/ns/shacl#targetClass">target Class</a> <sup class="type-ap" title="annotation property">ap</sup> <a href="http://data.europa.eu/snb/model/elm/ResultCategory" target="_blank" title="http://data.europa.eu/snb/model/elm/ResultCategory">Result Category</a> <sup class="type-ep" title="external property">ep</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="GradeDistributionShape">
+  <h3>Grade Distribution <sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://data.quality-link.eu/ontology/v1#GradeDistributionShape</p>
+  <div class="comment">
+   <span class="markdown">It describes a histogram of grades achieved by learners within a specific reference group.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#NodeShape" target="_blank" title="http://www.w3.org/ns/shacl#NodeShape">Node Shape</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">""</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">""</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#targetClass" target="_blank" title="http://www.w3.org/ns/shacl#targetClass">target Class</a> <sup class="type-ap" title="annotation property">ap</sup> <a href="http://data.europa.eu/snb/model/elm/ResultDistribution" target="_blank" title="http://data.europa.eu/snb/model/elm/ResultDistribution">Result Distribution</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="GradingSchemeSchape">
+  <h3>Grading Scheme<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://data.quality-link.eu/ontology/v1#GradingSchemeSchape</p>
+  <div class="comment">
+   <span class="markdown">Information on the grading scheme used.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#NodeShape" target="_blank" title="http://www.w3.org/ns/shacl#NodeShape">Node Shape</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">""</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">""</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">""</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">""</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">""</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#targetClass" target="_blank" title="http://www.w3.org/ns/shacl#targetClass">target Class</a> <sup class="type-ap" title="annotation property">ap</sup> <a href="http://data.europa.eu/snb/model/elm/GradingScheme" target="_blank" title="http://data.europa.eu/snb/model/elm/GradingScheme">Grading Scheme</a> <sup class="type-ep" title="external property">ep</sup>
    </dd>
   </dl>
  </div>
@@ -1017,6 +1249,9 @@ This section provides details for each class and property defined by QualityLink
  <div class="entity" id="http://data.europa.eu/snb/model/ap/loq-constraints/LearningAchievementSpecificationShape">
   <h3>Learning Achievement Specification (ELM)<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
   <p><strong>IRI:</strong> http://data.europa.eu/snb/model/ap/loq-constraints/LearningAchievementSpecificationShape</p>
+  <div class="comment">
+   <span class="markdown">A description of what a person may learn using the opportunity, expressed as learning outcomes. A specification of learning achievement. Learning Achievement Specification is a subclass of Specification.</span>
+  </div>
   <dl class="description">
    <dt>
     belongs to
@@ -1025,16 +1260,127 @@ This section provides details for each class and property defined by QualityLink
     <a href="http://www.w3.org/ns/shacl#NodeShape" target="_blank" title="http://www.w3.org/ns/shacl#NodeShape">Node Shape</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>
-    is also defined as
+    has facts
    </dt>
    <dd>
-    class
+    <a href="http://www.w3.org/ns/shacl#closed" target="_blank" title="http://www.w3.org/ns/shacl#closed">closed</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">"true"^^<a href="http://www.w3.org/2001/XMLSchema#boolean" target="_blank" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</a> </span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#deactivated" target="_blank" title="http://www.w3.org/ns/shacl#deactivated">deactivated</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">"true"^^<a href="http://www.w3.org/2001/XMLSchema#boolean" target="_blank" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</a> </span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#ignoredProperties" target="_blank" title="http://www.w3.org/ns/shacl#ignoredProperties">ignored Properties</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">""</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">""</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">""</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">""</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">""</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">""</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">""</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">""</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">""</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">""</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">""</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">""</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">""</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">""</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">""</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">""</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">""</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">""</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">""</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">""</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">""</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">""</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">""</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">""</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">""</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">""</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">""</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">""</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">""</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">""</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">""</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">""</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">""</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">""</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#targetClass" target="_blank" title="http://www.w3.org/ns/shacl#targetClass">target Class</a> <sup class="type-ap" title="annotation property">ap</sup> <a href="#http://data.europa.eu/snb/model/elm/LearningAchievementSpecification" title="http://data.europa.eu/snb/model/elm/LearningAchievementSpecification">Learning Achievement Specification (ELM)</a> <sup class="type-c" title="class">c</sup>
    </dd>
   </dl>
  </div>
  <div class="entity" id="http://data.europa.eu/snb/model/ap/loq-constraints/LearningOpportunityShape">
   <h3>Learning Opportunity (ELM)<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
   <p><strong>IRI:</strong> http://data.europa.eu/snb/model/ap/loq-constraints/LearningOpportunityShape</p>
+  <div class="comment">
+   <span class="markdown">An opportunity to realise a given set of learning outcomes via a learning activity and/or assessment.</span>
+  </div>
   <dl class="description">
    <dt>
     belongs to
@@ -1043,10 +1389,97 @@ This section provides details for each class and property defined by QualityLink
     <a href="http://www.w3.org/ns/shacl#NodeShape" target="_blank" title="http://www.w3.org/ns/shacl#NodeShape">Node Shape</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>
-    is also defined as
+    has facts
    </dt>
    <dd>
-    class
+    <a href="http://www.w3.org/ns/shacl#closed" target="_blank" title="http://www.w3.org/ns/shacl#closed">closed</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">"true"^^<a href="http://www.w3.org/2001/XMLSchema#boolean" target="_blank" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</a> </span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#ignoredProperties" target="_blank" title="http://www.w3.org/ns/shacl#ignoredProperties">ignored Properties</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">""</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">""</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">""</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">""</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">""</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">""</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">""</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">""</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">""</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">""</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">""</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">""</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">""</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">""</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">""</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">""</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">""</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">""</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">""</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">""</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">""</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">""</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">""</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">""</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">""</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">""</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">""</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">""</span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#targetClass" target="_blank" title="http://www.w3.org/ns/shacl#targetClass">target Class</a> <sup class="type-ap" title="annotation property">ap</sup> <a href="#http://data.europa.eu/snb/model/elm/LearningOpportunity" title="http://data.europa.eu/snb/model/elm/LearningOpportunity">Learning Opportunity (ELM)</a> <sup class="type-c" title="class">c</sup>
    </dd>
   </dl>
  </div>
@@ -1195,6 +1628,7 @@ This section provides details for each class and property defined by QualityLink
 <sup class="type-op" title="Object Properties">op</sup>: Object Properties <br/>
 <sup class="type-dp" title="Data Properties">dp</sup>: Data Properties <br/>
 <sup class="type-ni" title="Named Individuals">ni</sup>: Named Individuals <br/>
+<sup class="type-ep" title="External Properties">ep</sup>: External Properties
 </div>
 </div>
 </div>
