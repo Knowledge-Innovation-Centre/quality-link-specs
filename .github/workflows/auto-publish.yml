@@ -61,10 +61,12 @@ jobs:
 
       - name: Convert Turtle to JSON-LD, RDF+XML and N-Triples
         run: |
+          mkdir -p gh-pages-branch/resources && \
           for infile in main-branch/resources/*.ttl ; do
-            python -m rdflib.tools.rdfpipe -i turtle -o json-ld $infile > main-branch/resources/`basename -s .ttl $infile`.json
-            python -m rdflib.tools.rdfpipe -i turtle -o xml $infile > main-branch/resources/`basename -s .ttl $infile`.rdf
-            python -m rdflib.tools.rdfpipe -i turtle -o nt11 $infile > main-branch/resources/`basename -s .ttl $infile`.nt
+            cp -v $infile gh-pages-branch/resources/`basename $infile`
+            python -m rdflib.tools.rdfpipe -i turtle -o json-ld $infile > gh-pages-branch/resources/`basename -s .ttl $infile`.json
+            python -m rdflib.tools.rdfpipe -i turtle -o xml $infile > gh-pages-branch/resources/`basename -s .ttl $infile`.rdf
+            python -m rdflib.tools.rdfpipe -i turtle -o nt11 $infile > gh-pages-branch/resources/`basename -s .ttl $infile`.nt
           done
 
       - name: Cache SHACL Play app
@@ -82,7 +84,7 @@ jobs:
       - name: Generate HTML from SHACL
         run: |
           for infile in main-branch/resources/*.ttl ; do
-            GRAPHVIZ_DOT=/usr/bin/dot java -jar ~/shacl-play.jar doc -i $infile -l en -o main-branch/resources/`basename -s .ttl $infile`.html
+            GRAPHVIZ_DOT=/usr/bin/dot java -jar ~/shacl-play.jar doc -i $infile -l en -o gh-pages-branch/resources/`basename -s .ttl $infile`.html
           done
 
       - name: Cache WIDOCO app
@@ -108,9 +110,7 @@ jobs:
           git config --global user.name "$(git show -s --format='%an' $GITHUB_SHA)"
           git config --global user.email "$(git show -s --format='%ae' $GITHUB_SHA)"
           git show -s --format=%s $GITHUB_SHA > /tmp/COMMIT_MSG
-          cd ..
-          rsync -auv main-branch/resources/ gh-pages-branch/resources/
-          cd gh-pages-branch
+          cd ../gh-pages-branch
           cp -v resources/ontology-shacl.ttl resources/ontology.ttl
           cp -v resources/ontology-shacl.json resources/ontology.jsonld
           cp -v resources/ontology-shacl.rdf resources/ontology.owl
