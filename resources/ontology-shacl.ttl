@@ -76,7 +76,10 @@ ql:HigherEducationInstitution
 		) ;
         sh:minCount 1;
         sh:path adms:identifier ;
-	] .
+	], [
+        sh:class elm:Organisation ;
+        sh:path ql:isMemberOf ;
+    ] .
 
 ###  http://data.quality-link.eu/ontology/v1#GroupOfHEIs
 ql:GroupOfHEIs
@@ -530,6 +533,13 @@ ql:referenceGroup
     rdfs:range ql:LearnerGroup ;
     rdfs:label "reference group"@en ;
     rdfs:comment "The group of learners for which the histogram of results was established."@en .
+
+
+###  http://data.quality-link.eu/ontology/v1#isMemberOf
+ql:isMemberOf
+    a owl:ObjectProperty ;
+    rdfs:label "is member of"@en ;
+    rdfs:comment "Specifies that an organisation is member of an association, e.g. an institution member of EUA or EURASHE."@en .
 
 
 #################################################################
