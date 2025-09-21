@@ -19,6 +19,7 @@
 @prefix adms: <http://www.w3.org/ns/adms#> .
 @prefix cc: <http://creativecommons.org/ns#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
 
 @base <http://data.quality-link.eu/ontology/v1#> .
 
@@ -35,7 +36,20 @@
     dcterms:title "QualityLink Ontology and Application Profile"@en ;
     rdfs:label "QualityLink"@en ;
     rdfs:comment "The QualityLink ontology extends the European Learning Model (ELM) ontology by additional classes and properties required in the context of the QualityLink project. These describe things not currently covered in ELM. QualityLink further defines an application profile defined as SHACL constraints, which are based on the ELM Learning Opportunities and Qualifications (LOQ) application profile. The application profile is used by the QualityLink pilot aggregator. The QualityLink profile only adds optional properties to the ELM profile, no required ones."@en ;
-    owl:versionInfo "0.3.1" .
+    dcat:distribution [
+        dcterms:format <https://www.iana.org/assignments/media-types/text/turtle> ;
+        dcat:downloadURL <https://specs.quality-link.eu/resources/ontology-shacl.ttl> ;
+    ], [
+        dcterms:format <https://www.iana.org/assignments/media-types/application/ld+json> ;
+        dcat:downloadURL <https://specs.quality-link.eu/resources/ontology-shacl.json> ;
+    ], [
+        dcterms:format <https://www.iana.org/assignments/media-types/application/rdf+xml> ;
+        dcat:downloadURL <https://specs.quality-link.eu/resources/ontology-shacl.rdf> ;
+    ], [
+        dcterms:format <https://www.iana.org/assignments/media-types/application/n-triples> ;
+        dcat:downloadURL <https://specs.quality-link.eu/resources/ontology-shacl.nt> ;
+    ] ;
+    owl:versionInfo "0.4.0" .
 
 
 #################################################################
