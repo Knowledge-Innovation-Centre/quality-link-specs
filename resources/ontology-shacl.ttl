@@ -1,5 +1,5 @@
 #################################################################
-#    QualityLink Ontology and Constraints - v0.1.0
+#    QualityLink Ontology and Constraints - v0.4.0
 #################################################################
 
 # QualityLink prefix
@@ -19,6 +19,7 @@
 @prefix adms: <http://www.w3.org/ns/adms#> .
 @prefix cc: <http://creativecommons.org/ns#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
 
 @base <http://data.quality-link.eu/ontology/v1#> .
 
@@ -35,7 +36,20 @@
     dcterms:title "QualityLink Ontology and Application Profile"@en ;
     rdfs:label "QualityLink"@en ;
     rdfs:comment "The QualityLink ontology extends the European Learning Model (ELM) ontology by additional classes and properties required in the context of the QualityLink project. These describe things not currently covered in ELM. QualityLink further defines an application profile defined as SHACL constraints, which are based on the ELM Learning Opportunities and Qualifications (LOQ) application profile. The application profile is used by the QualityLink pilot aggregator. The QualityLink profile only adds optional properties to the ELM profile, no required ones."@en ;
-    owl:versionInfo "0.3.1" .
+    dcat:distribution [
+        dcterms:format <https://www.iana.org/assignments/media-types/text/turtle> ;
+        dcat:downloadURL <https://specs.quality-link.eu/resources/ontology-shacl.ttl> ;
+    ], [
+        dcterms:format <https://www.iana.org/assignments/media-types/application/ld+json> ;
+        dcat:downloadURL <https://specs.quality-link.eu/resources/ontology-shacl.json> ;
+    ], [
+        dcterms:format <https://www.iana.org/assignments/media-types/application/rdf+xml> ;
+        dcat:downloadURL <https://specs.quality-link.eu/resources/ontology-shacl.rdf> ;
+    ], [
+        dcterms:format <https://www.iana.org/assignments/media-types/application/n-triples> ;
+        dcat:downloadURL <https://specs.quality-link.eu/resources/ontology-shacl.nt> ;
+    ] ;
+    owl:versionInfo "0.4.0" .
 
 
 #################################################################
@@ -45,7 +59,8 @@
 ###  http://data.quality-link.eu/ontology/v1#HigherEducationInstitution
 ql:HigherEducationInstitution
     a owl:Class, sh:NodeShape ;
-    rdfs:subClassOf elm:Organisation;
+    rdfs:subClassOf elm:Organisation ;
+    sh:node loq:OrganisationShape ;
     rdfs:label "Higher Education Institution"@en ;
     rdfs:comment "An entity that has full degree awarding powers at higher education level (i.e. EQF levels 5 to 8; QF-EHEA cycle first to third) recognised by at least one national authority."@en ;
 	sh:property [
@@ -61,12 +76,16 @@ ql:HigherEducationInstitution
 		) ;
         sh:minCount 1;
         sh:path adms:identifier ;
-	] .
+	], [
+        sh:class elm:Organisation ;
+        sh:path ql:isMemberOf ;
+    ] .
 
 ###  http://data.quality-link.eu/ontology/v1#GroupOfHEIs
 ql:GroupOfHEIs
     a owl:Class, sh:NodeShape ;
     rdfs:subClassOf elm:Group ;
+    sh:node loq:GroupShape ;
     rdfs:label "Group of Higher Education Institutions"@en ;
     rdfs:comment "A group or alliance of higher education institutions"@en ;
 	sh:property [
@@ -80,6 +99,7 @@ ql:GroupOfHEIs
 ql:EuropeanUniversityAlliance
     a owl:Class, sh:NodeShape ;
     rdfs:subClassOf ql:GroupOfHEIs ;
+    sh:node ql:GroupOfHEIs ;
     rdfs:label "European University Alliance"@en ;
     rdfs:comment "An alliance of higher education institutions that is part of the EU's European Universities programme"@en .
 
@@ -87,6 +107,7 @@ ql:EuropeanUniversityAlliance
 ql:OrgRegIdentifier
     a rdfs:Class, sh:NodeShape ;
     rdfs:subClassOf elm:Identifier ;
+    sh:node loq:IdentifierShape ;
     rdfs:label "OrgReg ID"@en ;
     rdfs:comment "The identifier assigned to a higher education institution or other organisation in the Register of Public Sector Organisations (OrgReg)"@en ;
 	sh:property [
@@ -111,6 +132,7 @@ ql:OrgRegIdentifier
 ql:SchacIdentifier
     a owl:Class, sh:NodeShape ;
     rdfs:subClassOf elm:Identifier ;
+    sh:node loq:IdentifierShape ;
     rdfs:label "SCHAC Code"@en ;
     rdfs:comment "The SCHAC code (schacHomeOrganization) is a domain name used to identify a higher education institution."@en ;
 	sh:property [
@@ -234,7 +256,8 @@ ql:LearnerGroup
 ###  http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecification
 ql:LearningOpportunitySpecification
     a owl:Class, sh:NodeShape ;
-	rdfs:subClassOf elm:LearningAchievementSpecification , <http://data.europa.eu/snb/model/ap/loq-constraints/LearningAchievementSpecificationShape> ;
+	rdfs:subClassOf elm:LearningAchievementSpecification ;
+    sh:node loq:LearningAchievementSpecificationShape ;
 	rdfs:label "Learning Opportunity Specification"@en ;
 	rdfs:comment "An asbtract opportunity to acquire a given set of learning outcomes, e.g. the general specification of a course, programme or module offered by an education provider."@en ;
 	sh:property [
@@ -252,12 +275,22 @@ ql:LearningOpportunitySpecification
     ], [
         sh:path ql:entryRequirementLearningOutcome ;
         sh:class elm:LearningOutcome ;
+	], [
+        sh:path elm:gradingScheme ;
+        sh:class elm:GradingScheme ;
+        sh:maxCount 1 ;
+        sh:name "grading scheme"@en ;
+        sh:description "Information on the grading scheme used, optionally incl. grade distribution information."@en ;
+    ], [
+        sh:path ql:passingRate ;
+        sh:datatype xsd:nonNegativeInteger ;
 	] .
 
 ###  http://data.quality-link.eu/ontology/v1#LearningOpportunityInstance
 ql:LearningOpportunityInstance
     a owl:Class, sh:NodeShape ;
-	rdfs:subClassOf elm:LearningOpportunity , <http://data.europa.eu/snb/model/ap/loq-constraints/LearningOpportunityShape> ;
+	rdfs:subClassOf elm:LearningOpportunity ;
+    sh:node loq:LearningOpportunityShape ;
 	rdfs:label "Learning Opportunity Instance"@en ;
 	rdfs:comment "A concrete opportunity to realise a given set of learning outcomes via a learning activity and/or assessment, e.g. a course, programme or module as offered in a specific academic year or semester."@en ;
 	sh:property [
@@ -276,9 +309,13 @@ ql:LearningOpportunityInstance
 	], [
         sh:path ql:enrolmentMinimum ;
         sh:datatype xsd:nonNegativeInteger ;
+    ], [
+        sh:path ql:virtualLearningEnvironment ;
+        sh:class skos:Concept ;
 	] .
 
 
+###  http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecificationReference
 ql:LearningOpportunitySpecificationReference
     a owl:Class, sh:NodeShape ;
 	rdfs:label "Learning Opportunity Specification Reference"@en ;
@@ -299,6 +336,7 @@ ql:LearningOpportunitySpecificationReference
         sh:path adms:identifier ;
 	] .
 
+###  http://data.quality-link.eu/ontology/v1#LearningOpportunityInstanceReference
 ql:LearningOpportunityInstanceReference
     a owl:Class, sh:NodeShape ;
 	rdfs:label "Learning Opportunity Instance Reference"@en ;
@@ -318,6 +356,84 @@ ql:LearningOpportunityInstanceReference
         sh:maxCount 1;
         sh:path adms:identifier ;
 	] .
+
+###  http://data.quality-link.eu/ontology/v1#GradingSchemeSchape
+ql:GradingSchemeSchape
+    a sh:NodeShape ;
+    sh:targetClass elm:GradingScheme ;
+	rdfs:label "Grading Scheme"@en ;
+	rdfs:comment "Information on the grading scheme used."@en ;
+	sh:property [
+		sh:name "title"@en ;
+		sh:description "The title of the grading scheme. One value per language is permitted."@en ;
+		sh:uniqueLang true ;
+		sh:datatype rdf:langString ;
+		sh:path dcterms:title ;
+	], [
+		sh:name "identifier"@en ;
+		sh:description "An identifier of the grading scheme."@en ;
+        sh:class elm:Identifier ;
+        sh:path adms:identifier ;
+	], [
+		sh:name "description"@en ;
+		sh:description "A free text description of the grading scheme."@en ;
+		sh:uniqueLang true ;
+		sh:datatype rdf:langString ;
+		sh:path dcterms:description ;
+	], [
+        sh:name "grade distribution"@en ;
+        sh:description "Information on the statistical distribution of grades in the scheme."@en ;
+        sh:class elm:ResultDistribution ;
+        sh:path elm:resultDistribution ;
+    ], [
+		sh:name "other documents"@en ;
+		sh:description "A public web document containing additional documentation about the grading scheme."@en ;
+        sh:class elm:WebResource ;
+        sh:path elm:supplementaryDocument ;
+	] .
+
+###  http://data.quality-link.eu/ontology/v1#GradeDistributionShape
+ql:GradeDistributionShape
+    a sh:NodeShape ;
+    sh:targetClass elm:ResultDistribution ;
+    rdfs:label "Grade Distribution "@en ;
+    rdfs:comment "It describes a histogram of grades achieved by learners within a specific reference group."@en ;
+    sh:property [
+        sh:class ql:LearnerGroup ;
+        sh:path ql:referenceGroup ;
+        sh:maxCount 1 ;
+    ], [
+        sh:name "grade"@en ;
+        sh:description "One specific grade in the grading scheme with the distribution information."@en ;
+        sh:class elm:ResultCategory ;
+        sh:path elm:resultCategory ;
+        sh:minCount 1 ;
+    ] .
+
+###  http://data.quality-link.eu/ontology/v1#GradeShape
+ql:GradeShape
+    a sh:NodeShape ;
+    sh:targetClass elm:ResultCategory ;
+    rdfs:label "Grade"@en ;
+    rdfs:comment "Description of a single grade within a histogram of results."@en ;
+    sh:property [
+        sh:name "label"@en ;
+        sh:description "The label of the grade according to the grading scheme it is part of, e.g. 'C', '2+' or '10'."@en ;
+        sh:datatype xsd:string ;
+        sh:path elm:label ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+    ], [
+        sh:datatype xsd:positiveInteger ;
+        sh:path ql:gradeOrder ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+    ], [
+        sh:datatype xsd:positiveInteger ;
+        sh:path ql:gradePercentage ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+    ] .
 
 ###  http://data.quality-link.eu/ontology/v1#Kajmak
 ql:Kajmak
@@ -401,16 +517,40 @@ ql:minimumEQFLevel rdf:type owl:ObjectProperty ;
 
 ###  http://data.quality-link.eu/ontology/v1#entryRequirementLearningOpportunity
 ql:entryRequirementLearningOpportunity rdf:type owl:ObjectProperty ;
-    rdfs:domain ql:LearningOpportunitySpecificationReference ;
+    rdfs:range ql:LearningOpportunitySpecificationReference ;
     rdfs:comment "Specific entry requirement or prerequisite to have completed another learning opportunity."@en ;
     rdfs:label "required learning opportunity for entry"@en .
 
 
 ###  http://data.quality-link.eu/ontology/v1#entryRequirementLearningOutcome
 ql:entryRequirementLearningOutcome rdf:type owl:ObjectProperty ;
-rdfs:domain elm:LearningOutcome ;
+    rdfs:range elm:LearningOutcome ;
     rdfs:comment "Specific entry requirement or prerequisite to have achieved a particular learning outcome."@en ;
     rdfs:label "required learning outcome for entry"@en .
+
+
+###  http://data.quality-link.eu/ontology/v1#referenceGroup
+ql:referenceGroup
+    a owl:ObjectProperty ;
+    rdfs:domain elm:ResultDistribution ;
+    rdfs:range ql:LearnerGroup ;
+    rdfs:label "reference group"@en ;
+    rdfs:comment "The group of learners for which the histogram of results was established."@en .
+
+
+###  http://data.quality-link.eu/ontology/v1#virtualLearningEnvironment
+ql:virtualLearningEnvironment
+    a owl:ObjectProperty ;
+    rdfs:domain ql:LearningOpportunityInstance ;
+    rdfs:label "virtual learning environment"@en ;
+    rdfs:comment "Specifies (a) virtual learning environment(s) used in the delivery of this learning opportunity."@en .
+
+
+###  http://data.quality-link.eu/ontology/v1#isMemberOf
+ql:isMemberOf
+    a owl:ObjectProperty ;
+    rdfs:label "is member of"@en ;
+    rdfs:comment "Specifies that an organisation is member of an association, e.g. an institution member of EUA or EURASHE."@en .
 
 
 #################################################################
@@ -464,6 +604,25 @@ ql:enrolmentMinimum a owl:DatatypeProperty ;
     rdfs:range xsd:nonNegativeInteger ;
     rdfs:comment "The number of learners that at least need to enrole for a Learning Opportunity Instance to take place." ;
     rdfs:label "minimum enrolment"@en .
+
+
+###  http://data.quality-link.eu/ontology/v1#passingRate
+ql:passingRate a owl:DatatypeProperty ;
+    rdfs:range xsd:positiveInteger ;
+    rdfs:label "passing rate"@en ;
+    rdfs:comment "The percentage of learners who pass on average."@en .
+
+###  http://data.quality-link.eu/ontology/v1#gradeOrder
+ql:gradeOrder a owl:DatatypeProperty ;
+    rdfs:range xsd:positiveInteger ;
+    rdfs:label "order"@en ;
+    rdfs:comment "A number specifying the order of the grade within the grading scheme, the highest number indicating the best grade."@en .
+
+###  http://data.quality-link.eu/ontology/v1#gradePercentage
+ql:gradePercentage a owl:DatatypeProperty ;
+    rdfs:range xsd:positiveInteger ;
+    rdfs:label "percentage"@en ;
+    rdfs:comment "The percentage of learners earning this grade."@en .
 
 
 #################################################################
