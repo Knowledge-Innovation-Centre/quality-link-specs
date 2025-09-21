@@ -59,7 +59,8 @@
 ###  http://data.quality-link.eu/ontology/v1#HigherEducationInstitution
 ql:HigherEducationInstitution
     a owl:Class, sh:NodeShape ;
-    rdfs:subClassOf elm:Organisation;
+    rdfs:subClassOf elm:Organisation ;
+    sh:node loq:OrganisationShape ;
     rdfs:label "Higher Education Institution"@en ;
     rdfs:comment "An entity that has full degree awarding powers at higher education level (i.e. EQF levels 5 to 8; QF-EHEA cycle first to third) recognised by at least one national authority."@en ;
 	sh:property [
@@ -81,6 +82,7 @@ ql:HigherEducationInstitution
 ql:GroupOfHEIs
     a owl:Class, sh:NodeShape ;
     rdfs:subClassOf elm:Group ;
+    sh:node loq:GroupShape ;
     rdfs:label "Group of Higher Education Institutions"@en ;
     rdfs:comment "A group or alliance of higher education institutions"@en ;
 	sh:property [
@@ -94,6 +96,7 @@ ql:GroupOfHEIs
 ql:EuropeanUniversityAlliance
     a owl:Class, sh:NodeShape ;
     rdfs:subClassOf ql:GroupOfHEIs ;
+    sh:node ql:GroupOfHEIs ;
     rdfs:label "European University Alliance"@en ;
     rdfs:comment "An alliance of higher education institutions that is part of the EU's European Universities programme"@en .
 
@@ -101,6 +104,7 @@ ql:EuropeanUniversityAlliance
 ql:OrgRegIdentifier
     a rdfs:Class, sh:NodeShape ;
     rdfs:subClassOf elm:Identifier ;
+    sh:node loq:IdentifierShape ;
     rdfs:label "OrgReg ID"@en ;
     rdfs:comment "The identifier assigned to a higher education institution or other organisation in the Register of Public Sector Organisations (OrgReg)"@en ;
 	sh:property [
@@ -125,6 +129,7 @@ ql:OrgRegIdentifier
 ql:SchacIdentifier
     a owl:Class, sh:NodeShape ;
     rdfs:subClassOf elm:Identifier ;
+    sh:node loq:IdentifierShape ;
     rdfs:label "SCHAC Code"@en ;
     rdfs:comment "The SCHAC code (schacHomeOrganization) is a domain name used to identify a higher education institution."@en ;
 	sh:property [
@@ -248,7 +253,8 @@ ql:LearnerGroup
 ###  http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecification
 ql:LearningOpportunitySpecification
     a owl:Class, sh:NodeShape ;
-	rdfs:subClassOf elm:LearningAchievementSpecification , <http://data.europa.eu/snb/model/ap/loq-constraints/LearningAchievementSpecificationShape> ;
+	rdfs:subClassOf elm:LearningAchievementSpecification ;
+    sh:node loq:LearningAchievementSpecificationShape ;
 	rdfs:label "Learning Opportunity Specification"@en ;
 	rdfs:comment "An asbtract opportunity to acquire a given set of learning outcomes, e.g. the general specification of a course, programme or module offered by an education provider."@en ;
 	sh:property [
@@ -271,7 +277,8 @@ ql:LearningOpportunitySpecification
 ###  http://data.quality-link.eu/ontology/v1#LearningOpportunityInstance
 ql:LearningOpportunityInstance
     a owl:Class, sh:NodeShape ;
-	rdfs:subClassOf elm:LearningOpportunity , <http://data.europa.eu/snb/model/ap/loq-constraints/LearningOpportunityShape> ;
+	rdfs:subClassOf elm:LearningOpportunity ;
+    sh:node loq:LearningOpportunityShape ;
 	rdfs:label "Learning Opportunity Instance"@en ;
 	rdfs:comment "A concrete opportunity to realise a given set of learning outcomes via a learning activity and/or assessment, e.g. a course, programme or module as offered in a specific academic year or semester."@en ;
 	sh:property [
@@ -293,6 +300,7 @@ ql:LearningOpportunityInstance
 	] .
 
 
+###  http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecificationReference
 ql:LearningOpportunitySpecificationReference
     a owl:Class, sh:NodeShape ;
 	rdfs:label "Learning Opportunity Specification Reference"@en ;
@@ -313,6 +321,7 @@ ql:LearningOpportunitySpecificationReference
         sh:path adms:identifier ;
 	] .
 
+###  http://data.quality-link.eu/ontology/v1#LearningOpportunityInstanceReference
 ql:LearningOpportunityInstanceReference
     a owl:Class, sh:NodeShape ;
 	rdfs:label "Learning Opportunity Instance Reference"@en ;
@@ -415,14 +424,14 @@ ql:minimumEQFLevel rdf:type owl:ObjectProperty ;
 
 ###  http://data.quality-link.eu/ontology/v1#entryRequirementLearningOpportunity
 ql:entryRequirementLearningOpportunity rdf:type owl:ObjectProperty ;
-    rdfs:domain ql:LearningOpportunitySpecificationReference ;
+    rdfs:range ql:LearningOpportunitySpecificationReference ;
     rdfs:comment "Specific entry requirement or prerequisite to have completed another learning opportunity."@en ;
     rdfs:label "required learning opportunity for entry"@en .
 
 
 ###  http://data.quality-link.eu/ontology/v1#entryRequirementLearningOutcome
 ql:entryRequirementLearningOutcome rdf:type owl:ObjectProperty ;
-rdfs:domain elm:LearningOutcome ;
+    rdfs:range elm:LearningOutcome ;
     rdfs:comment "Specific entry requirement or prerequisite to have achieved a particular learning outcome."@en ;
     rdfs:label "required learning outcome for entry"@en .
 
