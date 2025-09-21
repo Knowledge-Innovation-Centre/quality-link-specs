@@ -278,6 +278,9 @@ ql:LearningOpportunitySpecification
         sh:maxCount 1 ;
         sh:name "grading scheme"@en ;
         sh:description "Information on the grading scheme used, optionally incl. grade distribution information."@en ;
+    ], [
+        sh:path ql:passingRate ;
+        sh:datatype xsd:nonNegativeInteger ;
 	] .
 
 ###  http://data.quality-link.eu/ontology/v1#LearningOpportunityInstance
@@ -581,6 +584,12 @@ ql:enrolmentMinimum a owl:DatatypeProperty ;
     rdfs:comment "The number of learners that at least need to enrole for a Learning Opportunity Instance to take place." ;
     rdfs:label "minimum enrolment"@en .
 
+
+###  http://data.quality-link.eu/ontology/v1#passingRate
+ql:passingRate a owl:DatatypeProperty ;
+    rdfs:range xsd:positiveInteger ;
+    rdfs:label "passing rate"@en ;
+    rdfs:comment "The percentage of learners who pass on average."@en .
 
 ###  http://data.quality-link.eu/ontology/v1#gradeOrder
 ql:gradeOrder a owl:DatatypeProperty ;
