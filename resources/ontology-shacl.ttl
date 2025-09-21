@@ -272,6 +272,12 @@ ql:LearningOpportunitySpecification
     ], [
         sh:path ql:entryRequirementLearningOutcome ;
         sh:class elm:LearningOutcome ;
+	], [
+        sh:path elm:gradingScheme ;
+        sh:class elm:GradingScheme ;
+        sh:maxCount 1 ;
+        sh:name "grading scheme"@en ;
+        sh:description "Information on the grading scheme used, optionally incl. grade distribution information."@en ;
 	] .
 
 ###  http://data.quality-link.eu/ontology/v1#LearningOpportunityInstance
@@ -341,6 +347,84 @@ ql:LearningOpportunityInstanceReference
         sh:maxCount 1;
         sh:path adms:identifier ;
 	] .
+
+###  http://data.quality-link.eu/ontology/v1#GradingSchemeSchape
+ql:GradingSchemeSchape
+    a sh:NodeShape ;
+    sh:targetClass elm:GradingScheme ;
+	rdfs:label "Grading Scheme"@en ;
+	rdfs:comment "Information on the grading scheme used."@en ;
+	sh:property [
+		sh:name "title"@en ;
+		sh:description "The title of the grading scheme. One value per language is permitted."@en ;
+		sh:uniqueLang true ;
+		sh:datatype rdf:langString ;
+		sh:path dcterms:title ;
+	], [
+		sh:name "identifier"@en ;
+		sh:description "An identifier of the grading scheme."@en ;
+        sh:class elm:Identifier ;
+        sh:path adms:identifier ;
+	], [
+		sh:name "description"@en ;
+		sh:description "A free text description of the grading scheme."@en ;
+		sh:uniqueLang true ;
+		sh:datatype rdf:langString ;
+		sh:path dcterms:description ;
+	], [
+        sh:name "grade distribution"@en ;
+        sh:description "Information on the statistical distribution of grades in the scheme."@en ;
+        sh:class elm:ResultDistribution ;
+        sh:path elm:resultDistribution ;
+    ], [
+		sh:name "other documents"@en ;
+		sh:description "A public web document containing additional documentation about the grading scheme."@en ;
+        sh:class elm:WebResource ;
+        sh:path elm:supplementaryDocument ;
+	] .
+
+###  http://data.quality-link.eu/ontology/v1#GradeDistributionShape
+ql:GradeDistributionShape
+    a sh:NodeShape ;
+    sh:targetClass elm:ResultDistribution ;
+    rdfs:label "Grade Distribution "@en ;
+    rdfs:comment "It describes a histogram of grades achieved by learners within a specific reference group."@en ;
+    sh:property [
+        sh:class ql:LearnerGroup ;
+        sh:path ql:referenceGroup ;
+        sh:maxCount 1 ;
+    ], [
+        sh:name "grade"@en ;
+        sh:description "One specific grade in the grading scheme with the distribution information."@en ;
+        sh:class elm:ResultCategory ;
+        sh:path elm:resultCategory ;
+        sh:minCount 1 ;
+    ] .
+
+###  http://data.quality-link.eu/ontology/v1#GradeShape
+ql:GradeShape
+    a sh:NodeShape ;
+    sh:targetClass elm:ResultCategory ;
+    rdfs:label "Grade"@en ;
+    rdfs:comment "Description of a single grade within a histogram of results."@en ;
+    sh:property [
+        sh:name "label"@en ;
+        sh:description "The label of the grade according to the grading scheme it is part of, e.g. 'C', '2+' or '10'."@en ;
+        sh:datatype xsd:string ;
+        sh:path elm:label ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+    ], [
+        sh:datatype xsd:positiveInteger ;
+        sh:path ql:gradeOrder ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+    ], [
+        sh:datatype xsd:positiveInteger ;
+        sh:path ql:gradePercentage ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+    ] .
 
 ###  http://data.quality-link.eu/ontology/v1#Kajmak
 ql:Kajmak
@@ -436,6 +520,15 @@ ql:entryRequirementLearningOutcome rdf:type owl:ObjectProperty ;
     rdfs:label "required learning outcome for entry"@en .
 
 
+###  http://data.quality-link.eu/ontology/v1#referenceGroup
+ql:referenceGroup
+    a owl:ObjectProperty ;
+    rdfs:domain elm:ResultDistribution ;
+    rdfs:range ql:LearnerGroup ;
+    rdfs:label "reference group"@en ;
+    rdfs:comment "The group of learners for which the histogram of results was established."@en .
+
+
 #################################################################
 #    Data properties
 #################################################################
@@ -487,6 +580,19 @@ ql:enrolmentMinimum a owl:DatatypeProperty ;
     rdfs:range xsd:nonNegativeInteger ;
     rdfs:comment "The number of learners that at least need to enrole for a Learning Opportunity Instance to take place." ;
     rdfs:label "minimum enrolment"@en .
+
+
+###  http://data.quality-link.eu/ontology/v1#gradeOrder
+ql:gradeOrder a owl:DatatypeProperty ;
+    rdfs:range xsd:positiveInteger ;
+    rdfs:label "order"@en ;
+    rdfs:comment "A number specifying the order of the grade within the grading scheme, the highest number indicating the best grade."@en .
+
+###  http://data.quality-link.eu/ontology/v1#gradePercentage
+ql:gradePercentage a owl:DatatypeProperty ;
+    rdfs:range xsd:positiveInteger ;
+    rdfs:label "percentage"@en ;
+    rdfs:comment "The percentage of learners earning this grade."@en .
 
 
 #################################################################
