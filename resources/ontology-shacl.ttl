@@ -309,6 +309,9 @@ ql:LearningOpportunityInstance
 	], [
         sh:path ql:enrolmentMinimum ;
         sh:datatype xsd:nonNegativeInteger ;
+    ], [
+        sh:path ql:virtualLearningEnvironment ;
+        sh:class skos:Concept ;
 	] .
 
 
@@ -533,6 +536,14 @@ ql:referenceGroup
     rdfs:range ql:LearnerGroup ;
     rdfs:label "reference group"@en ;
     rdfs:comment "The group of learners for which the histogram of results was established."@en .
+
+
+###  http://data.quality-link.eu/ontology/v1#virtualLearningEnvironment
+ql:virtualLearningEnvironment
+    a owl:ObjectProperty ;
+    rdfs:domain ql:LearningOpportunityInstance ;
+    rdfs:label "virtual learning environment"@en ;
+    rdfs:comment "Specifies (a) virtual learning environment(s) used in the delivery of this learning opportunity."@en .
 
 
 ###  http://data.quality-link.eu/ontology/v1#isMemberOf
