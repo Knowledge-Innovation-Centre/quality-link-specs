@@ -23,6 +23,12 @@
       g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
     })();
   </script>
+  <style>
+    :root {
+      --warning-border: #FDC113 !important;
+      --warning-bg: #09223E !important;
+    }
+  </style>
 </head>
 <body class="h-entry">
 <div class="head">

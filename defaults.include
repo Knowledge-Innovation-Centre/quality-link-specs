@@ -6,8 +6,8 @@
   "Inline Github Issues": "title",
   "Markup Shorthands": "markdown yes",
   "Local Boilerplate": "copyright yes, logo yes",
-  "Custom Warning Title": "Draft Specification",
-  "Custom Warning Text": "This spec is a draft version produced by the QualityLink project. It is implemented by the QualityLink data aggregator and prototype platform. The spec can be used by higher education institutions for testing, but remains subject to changes resulting from the testing phase.",
+  "Custom Warning Title": "Alpha version (1.0.0-alpha)",
+  "Custom Warning Text": "This spec is an alpha version released by the QualityLink project. It is implemented by the QualityLink data aggregator and prototype platform, and can be used by higher education institutions for testing. Changes might be made resulting from the testing phase, but will be reflected in a version number following Semantic Versioning 2.0.0 conventions.",
   "Text Macro": [
     "HEI [=higher education institution=]",
     "HEIS [=higher education institutions=]",
