@@ -8,90 +8,110 @@
    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
    xmlns:sh="http://www.w3.org/ns/shacl#"
 >
-  <rdf:Description rdf:about="http://data.quality-link.eu/ontology/v1#isMemberOf">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:label xml:lang="en">is member of</rdfs:label>
-    <rdfs:comment xml:lang="en">Specifies that an organisation is member of an association, e.g. an institution member of EUA or EURASHE.</rdfs:comment>
+  <rdf:Description rdf:about="http://data.quality-link.eu/ontology/v1#GradeDistributionShape">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+    <sh:targetClass rdf:resource="http://data.europa.eu/snb/model/elm/ResultDistribution"/>
+    <rdfs:label xml:lang="en">Grade Distribution </rdfs:label>
+    <rdfs:comment xml:lang="en">It describes a histogram of grades achieved by learners within a specific reference group.</rdfs:comment>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb62"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb63"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b106">
-    <sh:node rdf:resource="http://data.europa.eu/snb/model/ap/loq-constraints/URLRegexRestriction"/>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb102">
     <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
+    <sh:uniqueLang rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</sh:uniqueLang>
+    <sh:name xml:lang="en">description</sh:name>
+    <sh:description xml:lang="en"> A free text description of the learning opportunity. One value per language is permitted.</sh:description>
+    <sh:datatype rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
+    <sh:path rdf:resource="http://purl.org/dc/terms/description"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.quality-link.eu/ontology/v1#enrolledLearnerCount">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    <rdfs:comment>The number of learners that are currently enrolled for the Learning Opportunity Instance.</rdfs:comment>
+    <rdfs:label xml:lang="en">enrolled learner count</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb74">
+    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
+    <sh:name xml:lang="en">has part</sh:name>
+    <sh:description xml:lang="en">A learning opportunity can be composed of other learning opportunities, which when combined make up this larger learning opportunity.</sh:description>
+    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/LearningOpportunity"/>
+    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/hasPart"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb61">
     <sh:name xml:lang="en">other documents</sh:name>
-    <sh:description xml:lang="en">A public web document containing additional documentation about the Learning Opportunity.</sh:description>
+    <sh:description xml:lang="en">A public web document containing additional documentation about the grading scheme.</sh:description>
     <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/WebResource"/>
     <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/supplementaryDocument"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b90">
-    <rdf:first rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b88"/>
-    <rdf:rest rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b91"/>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb76">
+    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
+    <sh:name xml:lang="en">type</sh:name>
+    <sh:description xml:lang="en"> The type of the learning opportunity. It should be provided using the EDC Controlled List of Learning Opportunity Types.</sh:description>
+    <sh:class rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <sh:path rdf:resource="http://purl.org/dc/terms/type"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://data.europa.eu/snb/model/ap/loq-constraints/LearningAchievementSpecificationShape">
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb100">
+    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
+    <sh:name xml:lang="en">is part of</sh:name>
+    <sh:description xml:lang="en">A learning opportunity can be part of other learning opportunity.</sh:description>
+    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/LearningOpportunity"/>
+    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/isPartOf"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb77">
+    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
+    <sh:name xml:lang="en">status</sh:name>
+    <sh:description xml:lang="en">The publication status of the learning opportunity.</sh:description>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/status"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb50">
+    <sh:path rdf:resource="http://data.quality-link.eu/ontology/v1#enrolledLearnerCount"/>
+    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.quality-link.eu/ontology/v1#Kajmak">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001256"/>
+    <rdfs:comment xml:lang="en">Kaymak is a creamy dairy food similar to clotted cream, made from the milk of water buffalo, cows, sheep, or goats in Central Asia, some Balkan countries, some Caucasus countries, the Levant, Turkic regions, Iran and Iraq.</rdfs:comment>
+    <dcterms:source rdf:resource="https://en.wikipedia.org/wiki/Kaymak"/>
+    <rdfs:label xml:lang="hbs-Latn">kajmak</rdfs:label>
+    <rdfs:label xml:lang="hbs-Cyrl">кајмак</rdfs:label>
+    <rdfs:label xml:lang="mk">кајмак</rdfs:label>
+    <rdfs:label xml:lang="sl">kajmak</rdfs:label>
+    <rdfs:label xml:lang="en">kaymak</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb39">
+    <sh:name xml:lang="en">information note</sh:name>
+    <sh:description xml:lang="en">Additional information about the group of learners to which the LO is offered.</sh:description>
+    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/Note"/>
+    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/additionalNote"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.quality-link.eu/ontology/v1#EuropeanUniversityAlliance">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b109"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b110"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b115"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b116"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b117"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b118"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b119"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b120"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b121"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b122"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b127"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b128"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b129"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b130"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b131"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b136"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b137"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b138"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b139"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b144"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b145"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b146"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b147"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b148"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b149"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b150"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b151"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b152"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b153"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b154"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b159"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b160"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b161"/>
-    <sh:deactivated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</sh:deactivated>
-    <sh:ignoredProperties rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b166"/>
-    <rdfs:label xml:lang="en">Learning Achievement Specification (ELM)</rdfs:label>
-    <sh:closed rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</sh:closed>
-    <rdfs:comment xml:lang="en">A description of what a person may learn using the opportunity, expressed as learning outcomes. A specification of learning achievement. Learning Achievement Specification is a subclass of Specification.</rdfs:comment>
-    <sh:targetClass rdf:resource="http://data.europa.eu/snb/model/elm/LearningAchievementSpecification"/>
+    <rdfs:subClassOf rdf:resource="http://data.quality-link.eu/ontology/v1#GroupOfHEIs"/>
+    <sh:node rdf:resource="http://data.quality-link.eu/ontology/v1#GroupOfHEIs"/>
+    <rdfs:label xml:lang="en">European University Alliance</rdfs:label>
+    <rdfs:comment xml:lang="en">An alliance of higher education institutions that is part of the EU's European Universities programme</rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b166">
-    <rdf:first rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  <rdf:Description rdf:about="http://data.quality-link.eu/ontology/v1#minimumEQFLevel">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://data.quality-link.eu/ontology/v1#LearnerGroup"/>
+    <rdfs:comment xml:lang="en">Defines that the learning opportunity is offered to students enrolled in another learning opportunity at a specified EQF level or higher. If provided, the value must come from the EU controlled vocabulary http://publications.europa.eu/resource/dataset/european-qualification-framework</rdfs:comment>
+    <rdfs:label xml:lang="en">minimum EQF Level</rdfs:label>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b147">
+  <rdf:Description rdf:about="http://data.quality-link.eu/ontology/v1#version">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment>A number or other identifier that indicates the version of the Learning Opportunity specifcation.</rdfs:comment>
+    <rdfs:label xml:lang="en">version</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb127">
     <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
-    <sh:name xml:lang="en">proven by</sh:name>
-    <sh:description xml:lang="en">Assessments a person can undergo to prove the acquisition of the learning outcomes.</sh:description>
-    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/LearningAssessmentSpecification"/>
-    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/provenBy"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b109">
-    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
-    <sh:name xml:lang="en">learning outcome</sh:name>
-    <sh:description xml:lang="en">An individual (expected) learning outcome of the learning specification.</sh:description>
-    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
-    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/LearningOutcome"/>
-    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/learningOutcome"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b159">
-    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
-    <sh:name xml:lang="en">awarding information</sh:name>
-    <sh:description xml:lang="en">Refers to an activity related to the awarding of the learning specification, such as the country or region where the qualification is awarded, the awarding body and optionally the awarding period now or in the past.</sh:description>
-    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/AwardingOpportunity"/>
-    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/awardingOpportunity"/>
+    <sh:name xml:lang="en">category</sh:name>
+    <sh:description xml:lang="en">The category of the learning achievement specification provided as a string.</sh:description>
+    <sh:datatype rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
+    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/category"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://data.quality-link.eu/ontology/v1#SchacIdentifier">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
@@ -100,134 +120,72 @@
     <sh:node rdf:resource="http://data.europa.eu/snb/model/ap/loq-constraints/IdentifierShape"/>
     <rdfs:label xml:lang="en">SCHAC Code</rdfs:label>
     <rdfs:comment xml:lang="en">The SCHAC code (schacHomeOrganization) is a domain name used to identify a higher education institution.</rdfs:comment>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b14"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b15"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb14"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb15"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://data.quality-link.eu/ontology/v1#entryRequirementLearningOpportunity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:range rdf:resource="http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecificationReference"/>
-    <rdfs:comment xml:lang="en">Specific entry requirement or prerequisite to have completed another learning opportunity.</rdfs:comment>
-    <rdfs:label xml:lang="en">required learning opportunity for entry</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b13">
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb129">
     <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
-    <sh:name xml:lang="en">identifier</sh:name>
-    <sh:description xml:lang="en">The OrgReg identifier of the format XX1111.</sh:description>
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
-    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#Literal"/>
-    <sh:pattern>^(INT|[A-Z]{2})[0-9]{4}$</sh:pattern>
-    <sh:path rdf:resource="http://www.w3.org/2004/02/skos/core#notation"/>
+    <sh:name xml:lang="en">influenced by</sh:name>
+    <sh:description xml:lang="en">Activities that a person can perform to acquire the expected learning outcomes.</sh:description>
+    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/LearningActivitySpecification"/>
+    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/influencedBy"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b55">
-    <sh:name xml:lang="en">provided by</sh:name>
-    <sh:description xml:lang="en">Higher Education Institution that offers the LO.</sh:description>
-    <sh:class rdf:resource="http://data.quality-link.eu/ontology/v1#HigherEducationInstitution"/>
-    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/providedBy"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b117">
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb93">
     <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
-    <sh:uniqueLang rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</sh:uniqueLang>
-    <sh:name xml:lang="en">description</sh:name>
-    <sh:description xml:lang="en"> A free text description of the learning achievement specification. One value per language is permitted.</sh:description>
-    <sh:datatype rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
-    <sh:path rdf:resource="http://purl.org/dc/terms/description"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b107">
-    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
-    <sh:name xml:lang="en">grant</sh:name>
-    <sh:description xml:lang="en">The grant related to the learning opportunity.</sh:description>
-    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/Grant"/>
-    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/grant"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://data.quality-link.eu/ontology/v1#OrgRegIdentifier">
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
-    <rdfs:subClassOf rdf:resource="http://data.europa.eu/snb/model/elm/Identifier"/>
-    <sh:node rdf:resource="http://data.europa.eu/snb/model/ap/loq-constraints/IdentifierShape"/>
-    <rdfs:label xml:lang="en">OrgReg ID</rdfs:label>
-    <rdfs:comment xml:lang="en">The identifier assigned to a higher education institution or other organisation in the Register of Public Sector Organisations (OrgReg)</rdfs:comment>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b12"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b13"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://data.quality-link.eu/ontology/v1#LearnerGroup">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
-    <rdfs:label xml:lang="en">Learner Group</rdfs:label>
-    <rdfs:comment xml:lang="en">Defines a target group of learners to whom a Learning Opportunity is offered, e.g. students of a specific alliance or HEI</rdfs:comment>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b16"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b17"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b18"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b19"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b24"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b25"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b26"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b31"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b32"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b33"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b34"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b35"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b36"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b37"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b38"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b39"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b24">
-    <sh:description xml:lang="en">Indicates that the Learning Opportunity is also offered to learners who are not enrolled as students.</sh:description>
+    <sh:name xml:lang="en">learning schedule</sh:name>
+    <sh:description xml:lang="en">The learning schedule. It should be provided using the EDC Controlled List of Learning Schedule Types.</sh:description>
     <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:path rdf:resource="http://data.quality-link.eu/ontology/v1#isOpenToNonEnrolled"/>
-    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b92">
-    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
-    <sh:name xml:lang="en">default language</sh:name>
-    <sh:description xml:lang="en">The base language of the learning opportunity, to be considered authoritative.</sh:description>
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
     <sh:class rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/defaultLanguage"/>
+    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/learningSchedule"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://data.quality-link.eu/ontology/v1#absorbed">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://data.quality-link.eu/ontology/v1#relatedTo"/>
-    <rdfs:domain rdf:resource="http://data.europa.eu/snb/model/elm/Organisation"/>
-    <rdfs:comment xml:lang="en">Organisation absorbed another one (i.e. subject existed before and after the event, object ceased to exist)</rdfs:comment>
-    <rdfs:label xml:lang="en">absorbed</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://data.europa.eu/snb/model/elm/LearningAchievementSpecification">
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Learning Achievement Specification (ELM)</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/snb/model/elm"/>
-    <rdfs:comment xml:lang="en">Description of a set of knowledge and/or skills used with responsibility and autonomy, which may be acquired.</rdfs:comment>
-    <dcterms:identifier>elm:LearningAchievementSpecification</dcterms:identifier>
-    <rdfs:subClassOf rdf:resource="http://data.europa.eu/snb/model/elm/Specification"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b100">
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb84">
     <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
-    <sh:name xml:lang="en">is part of</sh:name>
-    <sh:description xml:lang="en">A learning opportunity can be part of other learning opportunity.</sh:description>
-    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/LearningOpportunity"/>
-    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/isPartOf"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://data.quality-link.eu/ontology/v1#isOpenToNonEnrolled">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-    <rdfs:comment>Indicates that a learning opportunity is alos open to learners not currently enrolled as regular students.</rdfs:comment>
-    <rdfs:label xml:lang="en">open to non-enrolled learners</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b45">
-    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/gradingScheme"/>
-    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/GradingScheme"/>
+    <sh:name xml:lang="en">duration</sh:name>
+    <sh:description xml:lang="en">The nominal duration for which the learning opportunity will continue to run. Note, this may be after the end-date, since admissions may be closed but the learning opportunity may still be ongoing.</sh:description>
     <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:name xml:lang="en">grading scheme</sh:name>
-    <sh:description xml:lang="en">Information on the grading scheme used, optionally incl. grade distribution information.</sh:description>
+    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#duration"/>
+    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/duration"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b126">
-    <rdf:first rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b124"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb42">
+    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#Literal"/>
+    <sh:path rdf:resource="http://data.quality-link.eu/ontology/v1#version"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb57">
+    <sh:name xml:lang="en">title</sh:name>
+    <sh:description xml:lang="en">The title of the grading scheme. One value per language is permitted.</sh:description>
+    <sh:uniqueLang rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</sh:uniqueLang>
+    <sh:datatype rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
+    <sh:path rdf:resource="http://purl.org/dc/terms/title"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb97">
+    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/LegalIdentifier"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb26">
+    <sh:description xml:lang="en">Offered to students following a specific other learning opportunity.</sh:description>
+    <sh:path rdf:resource="http://data.quality-link.eu/ontology/v1#limitLearningOpportunity"/>
+    <sh:or rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb29"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb152">
+    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
+    <sh:name xml:lang="en">status</sh:name>
+    <sh:description xml:lang="en">The publication status of the learning achievement specification.</sh:description>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/status"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb66">
+    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+    <sh:path rdf:resource="http://data.quality-link.eu/ontology/v1#gradePercentage"/>
+    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb67">
+    <sh:name xml:lang="en">learning achievement specification</sh:name>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
+    <sh:description xml:lang="en"> The learning achievement specification, including the curricula, of this learning opportunity.</sh:description>
+    <sh:or rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb71"/>
+    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/learningAchievementSpecification"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecification">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
@@ -236,80 +194,113 @@
     <sh:node rdf:resource="http://data.europa.eu/snb/model/ap/loq-constraints/LearningAchievementSpecificationShape"/>
     <rdfs:label xml:lang="en">Learning Opportunity Specification</rdfs:label>
     <rdfs:comment xml:lang="en">An asbtract opportunity to acquire a given set of learning outcomes, e.g. the general specification of a course, programme or module offered by an education provider.</rdfs:comment>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b40"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b41"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b42"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b43"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b44"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b45"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b46"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb40"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb41"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb42"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb43"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb44"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb45"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb46"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b76">
+  <rdf:Description rdf:about="http://data.quality-link.eu/ontology/v1#virtualLearningEnvironment">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://data.quality-link.eu/ontology/v1#LearningOpportunityInstance"/>
+    <rdfs:label xml:lang="en">virtual learning environment</rdfs:label>
+    <rdfs:comment xml:lang="en">Specifies (a) virtual learning environment(s) used in the delivery of this learning opportunity.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.quality-link.eu/ontology/v1#OrgRegIdentifier">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+    <rdfs:subClassOf rdf:resource="http://data.europa.eu/snb/model/elm/Identifier"/>
+    <sh:node rdf:resource="http://data.europa.eu/snb/model/ap/loq-constraints/IdentifierShape"/>
+    <rdfs:label xml:lang="en">OrgReg ID</rdfs:label>
+    <rdfs:comment xml:lang="en">The identifier assigned to a higher education institution or other organisation in the Register of Public Sector Organisations (OrgReg)</rdfs:comment>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb12"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb13"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.quality-link.eu/ontology/v1#isActive">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:comment>Learning Opportunity Specification is active, i.e. instances are currently offered or the education provider expects that instances will still be offered in the future.</rdfs:comment>
+    <rdfs:label xml:lang="en">is active</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb119">
     <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
-    <sh:name xml:lang="en">type</sh:name>
-    <sh:description xml:lang="en"> The type of the learning opportunity. It should be provided using the EDC Controlled List of Learning Opportunity Types.</sh:description>
-    <sh:class rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <sh:path rdf:resource="http://purl.org/dc/terms/type"/>
+    <sh:name xml:lang="en">alternative name</sh:name>
+    <sh:description xml:lang="en">The alternative name of the learning achievement specification.</sh:description>
+    <sh:datatype rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
+    <sh:path rdf:resource="http://www.w3.org/2004/02/skos/core#altLabel"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b128">
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb121">
     <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
-    <sh:name xml:lang="en">target group</sh:name>
-    <sh:description xml:lang="en">A specific target group or category for which this specification is designed. It should be provided using the EDC Controlled List of Target Groups.</sh:description>
-    <sh:class rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/targetGroup"/>
+    <sh:name xml:lang="en">entry requirement</sh:name>
+    <sh:description xml:lang="en">Specific entry requirement or prerequisite of individuals for which this specification is designed to start this learning opportunity.</sh:description>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/Note"/>
+    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/entryRequirement"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b151">
-    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
-    <sh:name xml:lang="en">thematic area</sh:name>
-    <sh:description xml:lang="en">The thematic area according to the ISCED-F 2013 Classification. It should be provided using the ISCEDF controlled vocabulary.</sh:description>
-    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
-    <sh:class rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/ISCEDFCode"/>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb33">
+    <sh:name xml:lang="en">fees</sh:name>
+    <sh:description xml:lang="en">Information about the pricing of the course, applicable for this specific target group.</sh:description>
+    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/priceDetail"/>
+    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/PriceDetail"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b137">
-    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
-    <sh:name xml:lang="en">language</sh:name>
-    <sh:description xml:lang="en">The language of the learning achievement specification. It should be provided using the Language Named Authority List.</sh:description>
-    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
-    <sh:class rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <sh:path rdf:resource="http://purl.org/dc/terms/language"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://data.quality-link.eu/ontology/v1#LearningOpportunityInstance">
+  <rdf:Description rdf:about="http://data.quality-link.eu/ontology/v1#LearnerGroup">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
-    <rdfs:subClassOf rdf:resource="http://data.europa.eu/snb/model/elm/LearningOpportunity"/>
-    <sh:node rdf:resource="http://data.europa.eu/snb/model/ap/loq-constraints/LearningOpportunityShape"/>
-    <rdfs:label xml:lang="en">Learning Opportunity Instance</rdfs:label>
-    <rdfs:comment xml:lang="en">A concrete opportunity to realise a given set of learning outcomes via a learning activity and/or assessment, e.g. a course, programme or module as offered in a specific academic year or semester.</rdfs:comment>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b47"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b48"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b49"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b50"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b51"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b52"/>
+    <rdfs:label xml:lang="en">Learner Group</rdfs:label>
+    <rdfs:comment xml:lang="en">Defines a target group of learners to whom a Learning Opportunity is offered, e.g. students of a specific alliance or HEI</rdfs:comment>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb16"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb17"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb18"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb19"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb24"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb25"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb26"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb31"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb32"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb33"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb34"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb35"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb36"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb37"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb38"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb39"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b145">
-    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
-    <sh:name xml:lang="en">education level</sh:name>
-    <sh:description xml:lang="en">An associated level of education within a semantic framework describing education levels.</sh:description>
-    <sh:class rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/educationLevel"/>
+  <rdf:Description rdf:about="http://data.quality-link.eu/ontology/v1#isOpenToNonEnrolled">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:comment>Indicates that a learning opportunity is alos open to learners not currently enrolled as regular students.</rdfs:comment>
+    <rdfs:label xml:lang="en">open to non-enrolled learners</rdfs:label>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b152">
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb104">
     <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
-    <sh:name xml:lang="en">status</sh:name>
-    <sh:description xml:lang="en">The publication status of the learning achievement specification.</sh:description>
+    <sh:name xml:lang="en">schedule information</sh:name>
+    <sh:description xml:lang="en">Detailed information about the timetable or schedule. This may include weekly schedules (e.g., 'Every Monday, 4pm', but may also include the overall schedule for the course, (e.g., October: lectures, November: group-work, December: break, January: assessment).</sh:description>
     <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/status"/>
+    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/Note"/>
+    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/scheduleInformation"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b14">
-    <sh:name xml:lang="en">scheme ID </sh:name>
-    <sh:description xml:lang="en">Identification of the scheme.</sh:description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb105">
+    <sh:node rdf:resource="http://data.europa.eu/snb/model/ap/loq-constraints/URLRegexRestriction"/>
+    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
+    <sh:name xml:lang="en">homepage</sh:name>
+    <sh:description xml:lang="en">The homepage.</sh:description>
     <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/schemeId"/>
-    <sh:hasValue rdf:resource="http://data.quality-link.eu/ontology/v1#Schac"/>
+    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/WebResource"/>
+    <sh:path rdf:resource="http://xmlns.com/foaf/0.1/homepage"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb159">
+    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
+    <sh:name xml:lang="en">awarding information</sh:name>
+    <sh:description xml:lang="en">Refers to an activity related to the awarding of the learning specification, such as the country or region where the qualification is awarded, the awarding body and optionally the awarding period now or in the past.</sh:description>
+    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/AwardingOpportunity"/>
+    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/awardingOpportunity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.quality-link.eu/ontology/v1#Schac">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+    <rdfs:comment xml:lang="en">The identifier scheme for higher education institutions defined by the Schema for Academia (SCHAC).</rdfs:comment>
+    <rdfs:label xml:lang="en">SCHAC (identifier scheme)</rdfs:label>
   </rdf:Description>
   <rdf:Description rdf:about="http://data.quality-link.eu/ontology/v1#HigherEducationInstitution">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
@@ -318,161 +309,226 @@
     <sh:node rdf:resource="http://data.europa.eu/snb/model/ap/loq-constraints/OrganisationShape"/>
     <rdfs:label xml:lang="en">Higher Education Institution</rdfs:label>
     <rdfs:comment xml:lang="en">An entity that has full degree awarding powers at higher education level (i.e. EQF levels 5 to 8; QF-EHEA cycle first to third) recognised by at least one national authority.</rdfs:comment>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b5"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b10"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb5"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb10"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://data.europa.eu/snb/model/elm/LearningOpportunity">
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb49">
+    <sh:path rdf:resource="http://data.quality-link.eu/ontology/v1#enrolmentCapacity"/>
+    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.quality-link.eu/ontology/v1#spunOffFrom">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://data.quality-link.eu/ontology/v1#relatedTo"/>
+    <rdfs:domain rdf:resource="http://data.europa.eu/snb/model/elm/Organisation"/>
+    <rdfs:comment xml:lang="en">Organisation spun off from another one (i.e. subject newly created by the event, object existed before and after)</rdfs:comment>
+    <rdfs:label xml:lang="en">spun off from</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.quality-link.eu/ontology/v1#GroupOfHEIs">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Learning Opportunity (ELM)</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/snb/model/elm"/>
-    <rdfs:comment xml:lang="en">The conditions, e.g. time and location, under which a person may acquire a set of knowledge and/or skills used with responsibility and autonomy.</rdfs:comment>
-    <dcterms:identifier>elm:LearningOpportunity</dcterms:identifier>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://data.europa.eu/snb/model/ap/loq-constraints/LearningOpportunityShape">
     <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b67"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b74"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b75"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b76"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b77"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b78"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b79"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b80"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b81"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b82"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b83"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b84"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b85"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b86"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b87"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b92"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b93"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b94"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b95"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b100"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b101"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b102"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b103"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b104"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b105"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b106"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b107"/>
-    <sh:closed rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</sh:closed>
-    <rdfs:comment xml:lang="en">An opportunity to realise a given set of learning outcomes via a learning activity and/or assessment.</rdfs:comment>
-    <rdfs:label xml:lang="en">Learning Opportunity (ELM)</rdfs:label>
-    <sh:ignoredProperties rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b108"/>
-    <sh:targetClass rdf:resource="http://data.europa.eu/snb/model/elm/LearningOpportunity"/>
+    <rdfs:subClassOf rdf:resource="http://data.europa.eu/snb/model/elm/Group"/>
+    <sh:node rdf:resource="http://data.europa.eu/snb/model/ap/loq-constraints/GroupShape"/>
+    <rdfs:label xml:lang="en">Group of Higher Education Institutions</rdfs:label>
+    <rdfs:comment xml:lang="en">A group or alliance of higher education institutions</rdfs:comment>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb11"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b153">
-    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
-    <sh:name xml:lang="en">last modification date</sh:name>
-    <sh:description xml:lang="en">The date when the learning achievement specification was last modified.</sh:description>
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    <sh:path rdf:resource="http://purl.org/dc/terms/modified"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b93">
-    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
-    <sh:name xml:lang="en">learning schedule</sh:name>
-    <sh:description xml:lang="en">The learning schedule. It should be provided using the EDC Controlled List of Learning Schedule Types.</sh:description>
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:class rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/learningSchedule"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b18">
-    <sh:name xml:lang="en">identifier</sh:name>
-    <sh:description xml:lang="en">An identifier for this specific target group of learners.</sh:description>
-    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/Identifier"/>
-    <sh:path rdf:resource="http://www.w3.org/ns/adms#identifier"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b160">
-    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
-    <sh:name xml:lang="en">more information</sh:name>
-    <sh:description xml:lang="en"> An additional free text note about the learning achievement specification.</sh:description>
-    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/Note"/>
-    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/additionalNote"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b53">
-    <sh:name xml:lang="en">provided by</sh:name>
-    <sh:description xml:lang="en">Higher Education Institution that offers the LO.</sh:description>
-    <sh:class rdf:resource="http://data.quality-link.eu/ontology/v1#HigherEducationInstitution"/>
-    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/providedBy"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b94">
-    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
-    <sh:name xml:lang="en">banner image</sh:name>
-    <sh:description xml:lang="en">An image which is displayed alongside the learning opportunity.</sh:description>
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/MediaObject"/>
-    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/bannerImage"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b110">
-    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
-    <sh:name xml:lang="en">publisher</sh:name>
-    <sh:description xml:lang="en">The publisher of the Learning Achievement Specification.</sh:description>
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:or rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b113"/>
-    <sh:path rdf:resource="http://purl.org/dc/terms/publisher"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b103">
-    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
-    <sh:uniqueLang rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</sh:uniqueLang>
-    <sh:name xml:lang="en">title</sh:name>
-    <sh:description xml:lang="en"> The title of Learning Opportunity. One value per language is permitted.</sh:description>
-    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
-    <sh:datatype rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
-    <sh:path rdf:resource="http://purl.org/dc/terms/title"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b1">
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb1">
     <dcterms:format rdf:resource="https://www.iana.org/assignments/media-types/text/turtle"/>
     <dcat:downloadURL rdf:resource="https://specs.quality-link.eu/resources/ontology-shacl.ttl"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b123">
-    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/Identifier"/>
+  <rdf:Description rdf:about="http://data.europa.eu/snb/model/ap/loq-constraints/LearningAchievementSpecificationShape">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb109"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb110"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb115"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb116"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb117"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb118"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb119"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb120"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb121"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb122"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb127"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb128"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb129"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb130"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb131"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb136"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb137"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb138"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb139"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb144"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb145"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb146"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb147"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb148"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb149"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb150"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb151"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb152"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb153"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb154"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb159"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb160"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb161"/>
+    <sh:deactivated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</sh:deactivated>
+    <sh:ignoredProperties rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb166"/>
+    <rdfs:label xml:lang="en">Learning Achievement Specification (ELM)</rdfs:label>
+    <sh:closed rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</sh:closed>
+    <rdfs:comment xml:lang="en">A description of what a person may learn using the opportunity, expressed as learning outcomes. A specification of learning achievement. Learning Achievement Specification is a subclass of Specification.</rdfs:comment>
+    <sh:targetClass rdf:resource="http://data.europa.eu/snb/model/elm/LearningAchievementSpecification"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b34">
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb85">
+    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
+    <sh:name xml:lang="en">application deadline</sh:name>
+    <sh:description xml:lang="en">The deadline for applying to the course.</sh:description>
+    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/applicationDeadline"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb138">
+    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
+    <sh:name xml:lang="en">education subject</sh:name>
+    <sh:description xml:lang="en">An associated field of education from another semantic framework than the ISCED classification.</sh:description>
+    <sh:class rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/educationSubject"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb22">
+    <rdf:first rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb20"/>
+    <rdf:rest rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb23"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb35">
+    <sh:description xml:lang="en">Number of learners from the specific group that are currently enrolled.</sh:description>
+    <sh:path rdf:resource="http://data.quality-link.eu/ontology/v1#enrolledLearnerCount"/>
+    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb34">
     <sh:description xml:lang="en">Number of learners from the specific group that can be enrolled.</sh:description>
     <sh:path rdf:resource="http://data.quality-link.eu/ontology/v1#enrolmentCapacity"/>
     <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b84">
-    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
-    <sh:name xml:lang="en">duration</sh:name>
-    <sh:description xml:lang="en">The nominal duration for which the learning opportunity will continue to run. Note, this may be after the end-date, since admissions may be closed but the learning opportunity may still be ongoing.</sh:description>
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#duration"/>
-    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/duration"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b135">
-    <rdf:first rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b133"/>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb30">
+    <rdf:first rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb28"/>
     <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b156">
-    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/Qualification"/>
+  <rdf:Description rdf:about="http://data.quality-link.eu/ontology/v1#superseded">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://data.quality-link.eu/ontology/v1#relatedTo"/>
+    <rdfs:domain rdf:resource="http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecification"/>
+    <rdfs:comment xml:lang="en">Learning Opportunity specification superseded another one, which is no longer (or temporarily not) offered.</rdfs:comment>
+    <rdfs:label xml:lang="en">superseded</rdfs:label>
   </rdf:Description>
-  <rdf:Description rdf:about="http://data.quality-link.eu/ontology/v1#Schac">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
-    <rdfs:comment xml:lang="en">The identifier scheme for higher education institutions defined by the Schema for Academia (SCHAC).</rdfs:comment>
-    <rdfs:label xml:lang="en">SCHAC (identifier scheme)</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b54">
-    <sh:name xml:lang="en">(local) identifier</sh:name>
-    <sh:description xml:lang="en">Identifier of the Learning Opportunity Specification. Must be unique within the scope of the institution identified with providedBy.</sh:description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb123">
     <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/Identifier"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.europa.eu/snb/model/ap/loq-constraints/LearningOpportunityShape">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb67"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb74"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb75"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb76"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb77"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb78"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb79"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb80"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb81"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb82"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb83"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb84"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb85"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb86"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb87"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb92"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb93"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb94"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb95"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb100"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb101"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb102"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb103"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb104"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb105"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb106"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb107"/>
+    <sh:closed rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</sh:closed>
+    <rdfs:comment xml:lang="en">An opportunity to realise a given set of learning outcomes via a learning activity and/or assessment.</rdfs:comment>
+    <rdfs:label xml:lang="en">Learning Opportunity (ELM)</rdfs:label>
+    <sh:ignoredProperties rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb108"/>
+    <sh:targetClass rdf:resource="http://data.europa.eu/snb/model/elm/LearningOpportunity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.quality-link.eu/ontology/v1#entryRequirementLearningOutcome">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://data.europa.eu/snb/model/elm/LearningOutcome"/>
+    <rdfs:comment xml:lang="en">Specific entry requirement or prerequisite to have achieved a particular learning outcome.</rdfs:comment>
+    <rdfs:label xml:lang="en">required learning outcome for entry</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb4">
+    <dcterms:format rdf:resource="https://www.iana.org/assignments/media-types/application/n-triples"/>
+    <dcat:downloadURL rdf:resource="https://specs.quality-link.eu/resources/ontology-shacl.nt"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb75">
+    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
+    <sh:name xml:lang="en">admissions procedure</sh:name>
+    <sh:description xml:lang="en">Specific information on how to apply for the course.</sh:description>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/Note"/>
+    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/admissionProcedure"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb46">
+    <sh:path rdf:resource="http://data.quality-link.eu/ontology/v1#passingRate"/>
+    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb109">
+    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
+    <sh:name xml:lang="en">learning outcome</sh:name>
+    <sh:description xml:lang="en">An individual (expected) learning outcome of the learning specification.</sh:description>
+    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
+    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/LearningOutcome"/>
+    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/learningOutcome"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb137">
+    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
+    <sh:name xml:lang="en">language</sh:name>
+    <sh:description xml:lang="en">The language of the learning achievement specification. It should be provided using the Language Named Authority List.</sh:description>
+    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
+    <sh:class rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <sh:path rdf:resource="http://purl.org/dc/terms/language"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb64">
+    <sh:name xml:lang="en">label</sh:name>
+    <sh:description xml:lang="en">The label of the grade according to the grading scheme it is part of, e.g. 'C', '2+' or '10'.</sh:description>
+    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/label"/>
     <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
     <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:path rdf:resource="http://www.w3.org/ns/adms#identifier"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b56">
-    <sh:name xml:lang="en">(local) identifier</sh:name>
-    <sh:description xml:lang="en">Identifier of the Learning Opportunity instance. Must be unique within the scope of the institution identified with providedBy.</sh:description>
-    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/Identifier"/>
-    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb114">
+    <rdf:first rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb112"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb116">
+    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
+    <sh:name xml:lang="en">type</sh:name>
+    <sh:description xml:lang="en">The type of the learning achievement specification. It should be provided using a controlled vocabulary.</sh:description>
+    <sh:class rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <sh:path rdf:resource="http://purl.org/dc/terms/type"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb136">
+    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
+    <sh:name xml:lang="en">volume of learning</sh:name>
+    <sh:description xml:lang="en">The estimated number of hours the learner is expected to spend engaged in learning to earn the award. This would include the notional number of hours in class, in group work, in practicals, as well as hours engaged in self-motivated study.</sh:description>
     <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:path rdf:resource="http://www.w3.org/ns/adms#identifier"/>
+    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#duration"/>
+    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/volumeOfLearning"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb143">
+    <rdf:first rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb141"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.quality-link.eu/ontology/v1#passingRate">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+    <rdfs:label xml:lang="en">passing rate</rdfs:label>
+    <rdfs:comment xml:lang="en">The percentage of learners who pass on average.</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://data.quality-link.eu/ontology/v1#">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
@@ -487,144 +543,76 @@
     <dcterms:title xml:lang="en">QualityLink Ontology and Application Profile</dcterms:title>
     <rdfs:label xml:lang="en">QualityLink</rdfs:label>
     <rdfs:comment xml:lang="en">The QualityLink ontology extends the European Learning Model (ELM) ontology by additional classes and properties required in the context of the QualityLink project. These describe things not currently covered in ELM. QualityLink further defines an application profile defined as SHACL constraints, which are based on the ELM Learning Opportunities and Qualifications (LOQ) application profile. The application profile is used by the QualityLink pilot aggregator. The QualityLink profile only adds optional properties to the ELM profile, no required ones.</rdfs:comment>
-    <dcat:distribution rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b1"/>
-    <dcat:distribution rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b2"/>
-    <dcat:distribution rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b3"/>
-    <dcat:distribution rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b4"/>
+    <dcat:distribution rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb1"/>
+    <dcat:distribution rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb2"/>
+    <dcat:distribution rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb3"/>
+    <dcat:distribution rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb4"/>
     <owl:versionInfo>0.4.0</owl:versionInfo>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b122">
-    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
-    <sh:name xml:lang="en">identifier</sh:name>
-    <sh:description xml:lang="en">An alternative identifier of the learning achievement specification.</sh:description>
-    <sh:or rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b125"/>
-    <sh:path rdf:resource="http://www.w3.org/ns/adms#identifier"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b146">
-    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
-    <sh:name xml:lang="en">homepage</sh:name>
-    <sh:description xml:lang="en">The homepage of the learning achievement specification.</sh:description>
-    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/WebResource"/>
-    <sh:path rdf:resource="http://xmlns.com/foaf/0.1/homepage"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b39">
-    <sh:name xml:lang="en">information note</sh:name>
-    <sh:description xml:lang="en">Additional information about the group of learners to which the LO is offered.</sh:description>
-    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/Note"/>
-    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/additionalNote"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b95">
-    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
-    <sh:name xml:lang="en">identifier</sh:name>
-    <sh:description xml:lang="en">An alternative Identifier of the Learning Opportunity.</sh:description>
-    <sh:or rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b98"/>
-    <sh:path rdf:resource="http://www.w3.org/ns/adms#identifier"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b4">
-    <dcterms:format rdf:resource="https://www.iana.org/assignments/media-types/application/n-triples"/>
-    <dcat:downloadURL rdf:resource="https://specs.quality-link.eu/resources/ontology-shacl.nt"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b101">
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb144">
     <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
     <sh:name xml:lang="en">mode</sh:name>
-    <sh:description xml:lang="en">The mode of learning Opportunity. It should be provided using the EDC Controlled List of Modes Of Learning and Assessment. </sh:description>
+    <sh:description xml:lang="en">The mode of learning, and or assessment. It should be provided using the EDC Controlled List of Modes Of Learning and Assessment.</sh:description>
     <sh:class rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/mode"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b131">
-    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
-    <sh:name xml:lang="en">is part of </sh:name>
-    <sh:description xml:lang="en">A learning achievement specification, which this learning achievement specification is part of.</sh:description>
-    <sh:or rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b134"/>
-    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/isPartOf"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://data.quality-link.eu/ontology/v1#minimumEQFLevel">
+  <rdf:Description rdf:about="http://data.quality-link.eu/ontology/v1#entryRequirementLearningOpportunity">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="http://data.quality-link.eu/ontology/v1#LearnerGroup"/>
-    <rdfs:comment xml:lang="en">Defines that the learning opportunity is offered to students enrolled in another learning opportunity at a specified EQF level or higher. If provided, the value must come from the EU controlled vocabulary http://publications.europa.eu/resource/dataset/european-qualification-framework</rdfs:comment>
-    <rdfs:label xml:lang="en">minimum EQF Level</rdfs:label>
+    <rdfs:range rdf:resource="http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecificationReference"/>
+    <rdfs:comment xml:lang="en">Specific entry requirement or prerequisite to have completed another learning opportunity.</rdfs:comment>
+    <rdfs:label xml:lang="en">required learning opportunity for entry</rdfs:label>
   </rdf:Description>
-  <rdf:Description rdf:about="http://data.quality-link.eu/ontology/v1#enrolmentMinimum">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
-    <rdfs:comment>The number of learners that at least need to enrole for a Learning Opportunity Instance to take place.</rdfs:comment>
-    <rdfs:label xml:lang="en">minimum enrolment</rdfs:label>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb90">
+    <rdf:first rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb88"/>
+    <rdf:rest rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb91"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b138">
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb99">
+    <rdf:first rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb97"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb92">
     <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
-    <sh:name xml:lang="en">education subject</sh:name>
-    <sh:description xml:lang="en">An associated field of education from another semantic framework than the ISCED classification.</sh:description>
+    <sh:name xml:lang="en">default language</sh:name>
+    <sh:description xml:lang="en">The base language of the learning opportunity, to be considered authoritative.</sh:description>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
     <sh:class rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/educationSubject"/>
+    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/defaultLanguage"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://data.quality-link.eu/ontology/v1#entryRequirementLearningOutcome">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:range rdf:resource="http://data.europa.eu/snb/model/elm/LearningOutcome"/>
-    <rdfs:comment xml:lang="en">Specific entry requirement or prerequisite to have achieved a particular learning outcome.</rdfs:comment>
-    <rdfs:label xml:lang="en">required learning outcome for entry</rdfs:label>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb37">
+    <sh:name xml:lang="en">admissions procedure</sh:name>
+    <sh:description xml:lang="en">Information on how to apply for this specific group of learners.</sh:description>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/admissionProcedure"/>
+    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/Note"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://data.quality-link.eu/ontology/v1#Kajmak">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001256"/>
-    <rdfs:comment xml:lang="en">Kaymak is a creamy dairy food similar to clotted cream, made from the milk of water buffalo, cows, sheep, or goats in Central Asia, some Balkan countries, some Caucasus countries, the Levant, Turkic regions, Iran and Iraq.</rdfs:comment>
-    <dcterms:source rdf:resource="https://en.wikipedia.org/wiki/Kaymak"/>
-    <rdfs:label xml:lang="hbs-Latn">kajmak</rdfs:label>
-    <rdfs:label xml:lang="hbs-Cyrl">кајмак</rdfs:label>
-    <rdfs:label xml:lang="mk">кајмак</rdfs:label>
-    <rdfs:label xml:lang="sl">kajmak</rdfs:label>
-    <rdfs:label xml:lang="en">kaymak</rdfs:label>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb134">
+    <rdf:first rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb132"/>
+    <rdf:rest rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb135"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b129">
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb13">
     <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
-    <sh:name xml:lang="en">influenced by</sh:name>
-    <sh:description xml:lang="en">Activities that a person can perform to acquire the expected learning outcomes.</sh:description>
-    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/LearningActivitySpecification"/>
-    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/influencedBy"/>
+    <sh:name xml:lang="en">identifier</sh:name>
+    <sh:description xml:lang="en">The OrgReg identifier of the format XX1111.</sh:description>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
+    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#Literal"/>
+    <sh:pattern>^(INT|[A-Z]{2})[0-9]{4}$</sh:pattern>
+    <sh:path rdf:resource="http://www.w3.org/2004/02/skos/core#notation"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://data.quality-link.eu/ontology/v1#availableTo">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="http://data.quality-link.eu/ontology/v1#LearningOpportunityInstance"/>
-    <rdfs:range rdf:resource="http://data.quality-link.eu/ontology/v1#LearnerGroup"/>
-    <rdfs:comment>Indicates the target group to which this learning opportunity is available</rdfs:comment>
-    <rdfs:label xml:lang="en">available to</rdfs:label>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb12">
+    <sh:name xml:lang="en">scheme ID </sh:name>
+    <sh:description xml:lang="en">Identification of the scheme.</sh:description>
+    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/schemeId"/>
+    <sh:hasValue rdf:resource="http://data.quality-link.eu/ontology/v1#OrgReg"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://data.quality-link.eu/ontology/v1#GradeShape">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
-    <sh:targetClass rdf:resource="http://data.europa.eu/snb/model/elm/ResultCategory"/>
-    <rdfs:label xml:lang="en">Grade</rdfs:label>
-    <rdfs:comment xml:lang="en">Description of a single grade within a histogram of results.</rdfs:comment>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b64"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b65"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b66"/>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb72">
+    <rdf:first rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb69"/>
+    <rdf:rest rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb73"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecificationReference">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
-    <rdfs:label xml:lang="en">Learning Opportunity Specification Reference</rdfs:label>
-    <rdfs:comment xml:lang="en">A reference to another Learning Opportunity specification, identified by a provider and a (local) identifier, without further details.</rdfs:comment>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b53"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b54"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b98">
-    <rdf:first rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b96"/>
-    <rdf:rest rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b99"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://data.quality-link.eu/ontology/v1#OrgReg">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
-    <rdfs:comment xml:lang="en">The identifier scheme defined by the Register of Public Sector Organisations (OrgReg)</rdfs:comment>
-    <rdfs:label xml:lang="en">OrgReg (identifier scheme)</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b80">
-    <sh:name xml:lang="en">location</sh:name>
-    <sh:description xml:lang="en">The location where the learning opportunity was provided at.</sh:description>
-    <sh:class rdf:resource="http://purl.org/dc/terms/Location"/>
-    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/location"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b134">
-    <rdf:first rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b132"/>
-    <rdf:rest rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b135"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b120">
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb120">
     <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
     <sh:uniqueLang rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</sh:uniqueLang>
     <sh:name xml:lang="en">title</sh:name>
@@ -633,13 +621,363 @@
     <sh:datatype rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
     <sh:path rdf:resource="http://purl.org/dc/terms/title"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b86">
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb79">
+    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
+    <sh:name xml:lang="en">fees</sh:name>
+    <sh:description xml:lang="en">Information about the pricing of the course, including fees and scholarships/subsidies available.</sh:description>
+    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/PriceDetail"/>
+    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/priceDetail"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb160">
+    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
+    <sh:name xml:lang="en">more information</sh:name>
+    <sh:description xml:lang="en"> An additional free text note about the learning achievement specification.</sh:description>
+    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/Note"/>
+    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/additionalNote"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb86">
     <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
     <sh:name xml:lang="en">temporal</sh:name>
     <sh:description xml:lang="en">The associated period of time shape.</sh:description>
     <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
     <sh:class rdf:resource="http://purl.org/dc/terms/PeriodOfTime"/>
     <sh:path rdf:resource="http://purl.org/dc/terms/temporal"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb151">
+    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
+    <sh:name xml:lang="en">thematic area</sh:name>
+    <sh:description xml:lang="en">The thematic area according to the ISCED-F 2013 Classification. It should be provided using the ISCEDF controlled vocabulary.</sh:description>
+    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
+    <sh:class rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/ISCEDFCode"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb68">
+    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/LearningAchievementSpecification"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb106">
+    <sh:node rdf:resource="http://data.europa.eu/snb/model/ap/loq-constraints/URLRegexRestriction"/>
+    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
+    <sh:name xml:lang="en">other documents</sh:name>
+    <sh:description xml:lang="en">A public web document containing additional documentation about the Learning Opportunity.</sh:description>
+    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/WebResource"/>
+    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/supplementaryDocument"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb82">
+    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
+    <sh:name xml:lang="en">more information</sh:name>
+    <sh:description xml:lang="en">An additional free text note about the Learning Opportunity.</sh:description>
+    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/Note"/>
+    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/additionalNote"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.europa.eu/snb/model/elm/LearningOpportunity">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Learning Opportunity (ELM)</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/snb/model/elm"/>
+    <rdfs:comment xml:lang="en">The conditions, e.g. time and location, under which a person may acquire a set of knowledge and/or skills used with responsibility and autonomy.</rdfs:comment>
+    <dcterms:identifier>elm:LearningOpportunity</dcterms:identifier>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.europa.eu/snb/model/elm/LearningAchievementSpecification">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Learning Achievement Specification (ELM)</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/snb/model/elm"/>
+    <rdfs:comment xml:lang="en">Description of a set of knowledge and/or skills used with responsibility and autonomy, which may be acquired.</rdfs:comment>
+    <dcterms:identifier>elm:LearningAchievementSpecification</dcterms:identifier>
+    <rdfs:subClassOf rdf:resource="http://data.europa.eu/snb/model/elm/Specification"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb158">
+    <rdf:first rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb156"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb150">
+    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
+    <sh:name xml:lang="en">learning outcome summary</sh:name>
+    <sh:description xml:lang="en">The full learning outcome summary of the learning achievement specification.</sh:description>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/Note"/>
+    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/learningOutcomeSummary"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.quality-link.eu/ontology/v1#absorbed">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://data.quality-link.eu/ontology/v1#relatedTo"/>
+    <rdfs:domain rdf:resource="http://data.europa.eu/snb/model/elm/Organisation"/>
+    <rdfs:comment xml:lang="en">Organisation absorbed another one (i.e. subject existed before and after the event, object ceased to exist)</rdfs:comment>
+    <rdfs:label xml:lang="en">absorbed</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb40">
+    <sh:path rdf:resource="http://data.quality-link.eu/ontology/v1#isActive"/>
+    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb113">
+    <rdf:first rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb111"/>
+    <rdf:rest rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb114"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb78">
+    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
+    <sh:name xml:lang="en">provided by</sh:name>
+    <sh:description xml:lang="en">The organisation providing or directing the learning opportunity. In the case of, e.g., joint qualifications, there may be several organisations directing the learning opportunity.</sh:description>
+    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
+    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/Organisation"/>
+    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/providedBy"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb56">
+    <sh:name xml:lang="en">(local) identifier</sh:name>
+    <sh:description xml:lang="en">Identifier of the Learning Opportunity instance. Must be unique within the scope of the institution identified with providedBy.</sh:description>
+    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/Identifier"/>
+    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+    <sh:path rdf:resource="http://www.w3.org/ns/adms#identifier"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb21">
+    <sh:class rdf:resource="http://data.quality-link.eu/ontology/v1#GroupOfHEIs"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb115">
+    <sh:node rdf:resource="http://data.europa.eu/snb/model/ap/loq-constraints/URLRegexRestriction"/>
+    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
+    <sh:name xml:lang="en">other documents</sh:name>
+    <sh:description xml:lang="en">A public web resource containing additional documentation about the learning achievement specification.</sh:description>
+    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/WebResource"/>
+    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/supplementaryDocument"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb47">
+    <sh:class rdf:resource="http://data.quality-link.eu/ontology/v1#LearnerGroup"/>
+    <sh:path rdf:resource="http://data.quality-link.eu/ontology/v1#availableTo"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb98">
+    <rdf:first rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb96"/>
+    <rdf:rest rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb99"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb146">
+    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
+    <sh:name xml:lang="en">homepage</sh:name>
+    <sh:description xml:lang="en">The homepage of the learning achievement specification.</sh:description>
+    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/WebResource"/>
+    <sh:path rdf:resource="http://xmlns.com/foaf/0.1/homepage"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.quality-link.eu/ontology/v1#GradingSchemeSchape">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+    <sh:targetClass rdf:resource="http://data.europa.eu/snb/model/elm/GradingScheme"/>
+    <rdfs:label xml:lang="en">Grading Scheme</rdfs:label>
+    <rdfs:comment xml:lang="en">Information on the grading scheme used.</rdfs:comment>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb57"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb58"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb59"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb60"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb61"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb133">
+    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/Qualification"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb24">
+    <sh:description xml:lang="en">Indicates that the Learning Opportunity is also offered to learners who are not enrolled as students.</sh:description>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+    <sh:path rdf:resource="http://data.quality-link.eu/ontology/v1#isOpenToNonEnrolled"/>
+    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb95">
+    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
+    <sh:name xml:lang="en">identifier</sh:name>
+    <sh:description xml:lang="en">An alternative Identifier of the Learning Opportunity.</sh:description>
+    <sh:or rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb98"/>
+    <sh:path rdf:resource="http://www.w3.org/ns/adms#identifier"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb131">
+    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
+    <sh:name xml:lang="en">is part of </sh:name>
+    <sh:description xml:lang="en">A learning achievement specification, which this learning achievement specification is part of.</sh:description>
+    <sh:or rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb134"/>
+    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/isPartOf"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb118">
+    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
+    <sh:name xml:lang="en">credit points</sh:name>
+    <sh:description xml:lang="en">The credit points assigned to the learning achievement specification, following an educational credit system.</sh:description>
+    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/CreditPoint"/>
+    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/creditPoint"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.quality-link.eu/ontology/v1#OrgReg">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+    <rdfs:comment xml:lang="en">The identifier scheme defined by the Register of Public Sector Organisations (OrgReg)</rdfs:comment>
+    <rdfs:label xml:lang="en">OrgReg (identifier scheme)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb14">
+    <sh:name xml:lang="en">scheme ID </sh:name>
+    <sh:description xml:lang="en">Identification of the scheme.</sh:description>
+    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/schemeId"/>
+    <sh:hasValue rdf:resource="http://data.quality-link.eu/ontology/v1#Schac"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb153">
+    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
+    <sh:name xml:lang="en">last modification date</sh:name>
+    <sh:description xml:lang="en">The date when the learning achievement specification was last modified.</sh:description>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <sh:path rdf:resource="http://purl.org/dc/terms/modified"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb103">
+    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
+    <sh:uniqueLang rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</sh:uniqueLang>
+    <sh:name xml:lang="en">title</sh:name>
+    <sh:description xml:lang="en"> The title of Learning Opportunity. One value per language is permitted.</sh:description>
+    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
+    <sh:datatype rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
+    <sh:path rdf:resource="http://purl.org/dc/terms/title"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb5">
+    <sh:name xml:lang="en">identifier</sh:name>
+    <sh:description xml:lang="en">ORGREG or SCHAC identifier</sh:description>
+    <sh:or rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb8"/>
+    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
+    <sh:path rdf:resource="http://www.w3.org/ns/adms#identifier"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb110">
+    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
+    <sh:name xml:lang="en">publisher</sh:name>
+    <sh:description xml:lang="en">The publisher of the Learning Achievement Specification.</sh:description>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+    <sh:or rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb113"/>
+    <sh:path rdf:resource="http://purl.org/dc/terms/publisher"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.quality-link.eu/ontology/v1#GradeShape">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+    <sh:targetClass rdf:resource="http://data.europa.eu/snb/model/elm/ResultCategory"/>
+    <rdfs:label xml:lang="en">Grade</rdfs:label>
+    <rdfs:comment xml:lang="en">Description of a single grade within a histogram of results.</rdfs:comment>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb64"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb65"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb66"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.quality-link.eu/ontology/v1#relatedTo">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+    <rdfs:comment xml:lang="en">A relationship between Learning Opportunities or Organisations (abstract)</rdfs:comment>
+    <rdfs:label xml:lang="en">related to</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb132">
+    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/LearningAchievementSpecification"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb25">
+    <sh:description xml:lang="en">Link to a portal where students can register for the learning opportunity (specific for this group of learners).</sh:description>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+    <sh:path rdf:resource="http://data.quality-link.eu/ontology/v1#registrationPortal"/>
+    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb54">
+    <sh:name xml:lang="en">(local) identifier</sh:name>
+    <sh:description xml:lang="en">Identifier of the Learning Opportunity Specification. Must be unique within the scope of the institution identified with providedBy.</sh:description>
+    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/Identifier"/>
+    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+    <sh:path rdf:resource="http://www.w3.org/ns/adms#identifier"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb128">
+    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
+    <sh:name xml:lang="en">target group</sh:name>
+    <sh:description xml:lang="en">A specific target group or category for which this specification is designed. It should be provided using the EDC Controlled List of Target Groups.</sh:description>
+    <sh:class rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/targetGroup"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb10">
+    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/Organisation"/>
+    <sh:path rdf:resource="http://data.quality-link.eu/ontology/v1#isMemberOf"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb83">
+    <sh:name xml:lang="en">learning activity specification</sh:name>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+    <sh:description xml:lang="en"> The learning activity specification, including the curricula, of this learning opportunity.</sh:description>
+    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/LearningActivitySpecification"/>
+    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/learningActivitySpecification"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.quality-link.eu/ontology/v1#enrolmentCapacity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    <rdfs:comment>The number of learners that can register for a Learning Opportunity Instance.</rdfs:comment>
+    <rdfs:label xml:lang="en">enrolment capacity</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb154">
+    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
+    <sh:name xml:lang="en">specialisation of</sh:name>
+    <sh:description xml:lang="en">A learning  achievement specification (e.g., a standard) of which this specification is a specialisation.</sh:description>
+    <sh:or rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb157"/>
+    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/specialisationOf"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb125">
+    <rdf:first rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb123"/>
+    <rdf:rest rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb126"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb19">
+    <sh:name xml:lang="en">home institutions</sh:name>
+    <sh:description xml:lang="en">Offered to students from these higher education institution(s).</sh:description>
+    <sh:or rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb22"/>
+    <sh:path rdf:resource="http://data.quality-link.eu/ontology/v1#studentsOf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.quality-link.eu/ontology/v1#registrationPortal">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    <rdfs:comment>A web page at which one can register or enrol for a Learning Opportunity.</rdfs:comment>
+    <rdfs:label xml:lang="en">registration portal</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb161">
+    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
+    <sh:name xml:lang="en">has part</sh:name>
+    <sh:description xml:lang="en">A learning achievement specification can be composed of other partial learning specifications which when combined make up this learning specification.</sh:description>
+    <sh:or rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb164"/>
+    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/hasPart"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb41">
+    <sh:class rdf:resource="http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecificationReference"/>
+    <sh:path rdf:resource="http://data.quality-link.eu/ontology/v1#superseded"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb148">
+    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
+    <sh:name xml:lang="en">entitles to</sh:name>
+    <sh:description xml:lang="en">Rights (such as which the person may acquire as a result of acquiring the learning outcomes).</sh:description>
+    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/LearningEntitlementSpecification"/>
+    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/entitlesTo"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.quality-link.eu/ontology/v1#gradeOrder">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+    <rdfs:label xml:lang="en">order</rdfs:label>
+    <rdfs:comment xml:lang="en">A number specifying the order of the grade within the grading scheme, the highest number indicating the best grade.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb117">
+    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
+    <sh:uniqueLang rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</sh:uniqueLang>
+    <sh:name xml:lang="en">description</sh:name>
+    <sh:description xml:lang="en"> A free text description of the learning achievement specification. One value per language is permitted.</sh:description>
+    <sh:datatype rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
+    <sh:path rdf:resource="http://purl.org/dc/terms/description"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb31">
+    <sh:name xml:lang="en">specific field</sh:name>
+    <sh:description xml:lang="en">Offered to students from (a) specific field(s) of study.</sh:description>
+    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/limitField"/>
+    <sh:class rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb45">
+    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/gradingScheme"/>
+    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/GradingScheme"/>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+    <sh:name xml:lang="en">grading scheme</sh:name>
+    <sh:description xml:lang="en">Information on the grading scheme used, optionally incl. grade distribution information.</sh:description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.quality-link.eu/ontology/v1#LearningOpportunityInstance">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+    <rdfs:subClassOf rdf:resource="http://data.europa.eu/snb/model/elm/LearningOpportunity"/>
+    <sh:node rdf:resource="http://data.europa.eu/snb/model/ap/loq-constraints/LearningOpportunityShape"/>
+    <rdfs:label xml:lang="en">Learning Opportunity Instance</rdfs:label>
+    <rdfs:comment xml:lang="en">A concrete opportunity to realise a given set of learning outcomes via a learning activity and/or assessment, e.g. a course, programme or module as offered in a specific academic year or semester.</rdfs:comment>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb47"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb48"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb49"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb50"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb51"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb52"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://data.quality-link.eu/ontology/v1#succeeded">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
@@ -648,416 +986,51 @@
     <rdfs:comment xml:lang="en">Organisation succeeded/replaced another one (i.e. subject was newly created by the event, object ceased to exist)</rdfs:comment>
     <rdfs:label xml:lang="en">succeeded</rdfs:label>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b118">
-    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
-    <sh:name xml:lang="en">credit points</sh:name>
-    <sh:description xml:lang="en">The credit points assigned to the learning achievement specification, following an educational credit system.</sh:description>
-    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/CreditPoint"/>
-    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/creditPoint"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b155">
-    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/LearningAchievementSpecification"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b73">
-    <rdf:first rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b70"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b102">
-    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
-    <sh:uniqueLang rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</sh:uniqueLang>
-    <sh:name xml:lang="en">description</sh:name>
-    <sh:description xml:lang="en"> A free text description of the learning opportunity. One value per language is permitted.</sh:description>
-    <sh:datatype rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
-    <sh:path rdf:resource="http://purl.org/dc/terms/description"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b91">
-    <rdf:first rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b89"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b77">
-    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
-    <sh:name xml:lang="en">status</sh:name>
-    <sh:description xml:lang="en">The publication status of the learning opportunity.</sh:description>
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/status"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://data.quality-link.eu/ontology/v1#enrolmentCapacity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
-    <rdfs:comment>The number of learners that can register for a Learning Opportunity Instance.</rdfs:comment>
-    <rdfs:label xml:lang="en">enrolment capacity</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b35">
-    <sh:description xml:lang="en">Number of learners from the specific group that are currently enrolled.</sh:description>
-    <sh:path rdf:resource="http://data.quality-link.eu/ontology/v1#enrolledLearnerCount"/>
-    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://data.quality-link.eu/ontology/v1#relatedTo">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-    <rdfs:comment xml:lang="en">A relationship between Learning Opportunities or Organisations (abstract)</rdfs:comment>
-    <rdfs:label xml:lang="en">related to</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b67">
-    <sh:name xml:lang="en">learning achievement specification</sh:name>
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
-    <sh:description xml:lang="en"> The learning achievement specification, including the curricula, of this learning opportunity.</sh:description>
-    <sh:or rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b71"/>
-    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/learningAchievementSpecification"/>
-  </rdf:Description>
   <rdf:Description rdf:about="http://data.quality-link.eu/ontology/v1#LearningOpportunityInstanceReference">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
     <rdfs:label xml:lang="en">Learning Opportunity Instance Reference</rdfs:label>
     <rdfs:comment xml:lang="en">A reference to another Learning Opportunity Instance, identified by a provider and a (local) identifier, without further details.</rdfs:comment>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b55"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b56"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb55"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb56"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b157">
-    <rdf:first rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b155"/>
-    <rdf:rest rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b158"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://data.quality-link.eu/ontology/v1#GradingSchemeSchape">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
-    <sh:targetClass rdf:resource="http://data.europa.eu/snb/model/elm/GradingScheme"/>
-    <rdfs:label xml:lang="en">Grading Scheme</rdfs:label>
-    <rdfs:comment xml:lang="en">Information on the grading scheme used.</rdfs:comment>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b57"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b58"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b59"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b60"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b61"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b116">
-    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
-    <sh:name xml:lang="en">type</sh:name>
-    <sh:description xml:lang="en">The type of the learning achievement specification. It should be provided using a controlled vocabulary.</sh:description>
-    <sh:class rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <sh:path rdf:resource="http://purl.org/dc/terms/type"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b48">
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
-    <sh:path rdf:resource="http://data.quality-link.eu/ontology/v1#registrationPortal"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://data.quality-link.eu/ontology/v1#gradeOrder">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
-    <rdfs:label xml:lang="en">order</rdfs:label>
-    <rdfs:comment xml:lang="en">A number specifying the order of the grade within the grading scheme, the highest number indicating the best grade.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b82">
-    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
-    <sh:name xml:lang="en">more information</sh:name>
-    <sh:description xml:lang="en">An additional free text note about the Learning Opportunity.</sh:description>
-    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/Note"/>
-    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/additionalNote"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b150">
-    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
-    <sh:name xml:lang="en">learning outcome summary</sh:name>
-    <sh:description xml:lang="en">The full learning outcome summary of the learning achievement specification.</sh:description>
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/Note"/>
-    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/learningOutcomeSummary"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b32">
-    <sh:description xml:lang="en">Offered to students enrolled in another learning opportunity at a specified EQF level or higher. If provided, the value must come from the EU controlled vocabulary http://publications.europa.eu/resource/dataset/european-qualification-framework</sh:description>
-    <sh:path rdf:resource="http://data.quality-link.eu/ontology/v1#minimumEQFLevel"/>
-    <sh:class rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b44">
-    <sh:path rdf:resource="http://data.quality-link.eu/ontology/v1#entryRequirementLearningOutcome"/>
-    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/LearningOutcome"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b148">
-    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
-    <sh:name xml:lang="en">entitles to</sh:name>
-    <sh:description xml:lang="en">Rights (such as which the person may acquire as a result of acquiring the learning outcomes).</sh:description>
-    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/LearningEntitlementSpecification"/>
-    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/entitlesTo"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b88">
-    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/Agent"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b144">
-    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
-    <sh:name xml:lang="en">mode</sh:name>
-    <sh:description xml:lang="en">The mode of learning, and or assessment. It should be provided using the EDC Controlled List of Modes Of Learning and Assessment.</sh:description>
-    <sh:class rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/mode"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b140">
-    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/LearningAchievementSpecification"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b108">
-    <rdf:first rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b85">
-    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
-    <sh:name xml:lang="en">application deadline</sh:name>
-    <sh:description xml:lang="en">The deadline for applying to the course.</sh:description>
-    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/applicationDeadline"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b115">
-    <sh:node rdf:resource="http://data.europa.eu/snb/model/ap/loq-constraints/URLRegexRestriction"/>
-    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
-    <sh:name xml:lang="en">other documents</sh:name>
-    <sh:description xml:lang="en">A public web resource containing additional documentation about the learning achievement specification.</sh:description>
-    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/WebResource"/>
-    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/supplementaryDocument"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b27">
-    <sh:class rdf:resource="http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecificationReference"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b125">
-    <rdf:first rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b123"/>
-    <rdf:rest rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b126"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b65">
-    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
-    <sh:path rdf:resource="http://data.quality-link.eu/ontology/v1#gradeOrder"/>
-    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b87">
-    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
-    <sh:name xml:lang="en">publisher</sh:name>
-    <sh:description xml:lang="en">The publisher of the Learning Opportunity.</sh:description>
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:or rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b90"/>
-    <sh:path rdf:resource="http://purl.org/dc/terms/publisher"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b161">
-    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
-    <sh:name xml:lang="en">has part</sh:name>
-    <sh:description xml:lang="en">A learning achievement specification can be composed of other partial learning specifications which when combined make up this learning specification.</sh:description>
-    <sh:or rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b164"/>
-    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/hasPart"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b29">
-    <rdf:first rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b27"/>
-    <rdf:rest rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b30"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b58">
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb58">
     <sh:name xml:lang="en">identifier</sh:name>
     <sh:description xml:lang="en">An identifier of the grading scheme.</sh:description>
     <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/Identifier"/>
     <sh:path rdf:resource="http://www.w3.org/ns/adms#identifier"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b119">
-    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
-    <sh:name xml:lang="en">alternative name</sh:name>
-    <sh:description xml:lang="en">The alternative name of the learning achievement specification.</sh:description>
-    <sh:datatype rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
-    <sh:path rdf:resource="http://www.w3.org/2004/02/skos/core#altLabel"/>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb140">
+    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/LearningAchievementSpecification"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b154">
-    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
-    <sh:name xml:lang="en">specialisation of</sh:name>
-    <sh:description xml:lang="en">A learning  achievement specification (e.g., a standard) of which this specification is a specialisation.</sh:description>
-    <sh:or rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b157"/>
-    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/specialisationOf"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b136">
-    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
-    <sh:name xml:lang="en">volume of learning</sh:name>
-    <sh:description xml:lang="en">The estimated number of hours the learner is expected to spend engaged in learning to earn the award. This would include the notional number of hours in class, in group work, in practicals, as well as hours engaged in self-motivated study.</sh:description>
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#duration"/>
-    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/volumeOfLearning"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b105">
-    <sh:node rdf:resource="http://data.europa.eu/snb/model/ap/loq-constraints/URLRegexRestriction"/>
-    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
-    <sh:name xml:lang="en">homepage</sh:name>
-    <sh:description xml:lang="en">The homepage.</sh:description>
-    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
-    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/WebResource"/>
-    <sh:path rdf:resource="http://xmlns.com/foaf/0.1/homepage"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b149">
-    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
-    <sh:name xml:lang="en">learning setting</sh:name>
-    <sh:description xml:lang="en">The type of learning setting (formal, non-formal). It should be provided using the EDC Controlled List of Learning Setting Types.</sh:description>
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:class rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/learningSetting"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://data.quality-link.eu/ontology/v1#passingRate">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
-    <rdfs:label xml:lang="en">passing rate</rdfs:label>
-    <rdfs:comment xml:lang="en">The percentage of learners who pass on average.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://data.quality-link.eu/ontology/v1#version">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:comment>A number or other identifier that indicates the version of the Learning Opportunity specifcation.</rdfs:comment>
-    <rdfs:label xml:lang="en">version</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://data.quality-link.eu/ontology/v1#studentsOf">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="http://data.quality-link.eu/ontology/v1#LearnerGroup"/>
-    <rdfs:comment xml:lang="en">Defines that the target group of learners includes the students of an education institution, or an alliance thereof</rdfs:comment>
-    <rdfs:label xml:lang="en">includes students of</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b127">
-    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
-    <sh:name xml:lang="en">category</sh:name>
-    <sh:description xml:lang="en">The category of the learning achievement specification provided as a string.</sh:description>
-    <sh:datatype rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
-    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/category"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b52">
-    <sh:path rdf:resource="http://data.quality-link.eu/ontology/v1#virtualLearningEnvironment"/>
-    <sh:class rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b59">
-    <sh:name xml:lang="en">description</sh:name>
-    <sh:description xml:lang="en">A free text description of the grading scheme.</sh:description>
-    <sh:uniqueLang rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</sh:uniqueLang>
-    <sh:datatype rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
-    <sh:path rdf:resource="http://purl.org/dc/terms/description"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b66">
-    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
-    <sh:path rdf:resource="http://data.quality-link.eu/ontology/v1#gradePercentage"/>
-    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b114">
-    <rdf:first rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b112"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://data.quality-link.eu/ontology/v1#enrolledLearnerCount">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
-    <rdfs:comment>The number of learners that are currently enrolled for the Learning Opportunity Instance.</rdfs:comment>
-    <rdfs:label xml:lang="en">enrolled learner count</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b63">
-    <sh:name xml:lang="en">grade</sh:name>
-    <sh:description xml:lang="en">One specific grade in the grading scheme with the distribution information.</sh:description>
-    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/ResultCategory"/>
-    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/resultCategory"/>
-    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b121">
-    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
-    <sh:name xml:lang="en">entry requirement</sh:name>
-    <sh:description xml:lang="en">Specific entry requirement or prerequisite of individuals for which this specification is designed to start this learning opportunity.</sh:description>
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/Note"/>
-    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/entryRequirement"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b19">
-    <sh:name xml:lang="en">home institutions</sh:name>
-    <sh:description xml:lang="en">Offered to students from these higher education institution(s).</sh:description>
-    <sh:or rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b22"/>
-    <sh:path rdf:resource="http://data.quality-link.eu/ontology/v1#studentsOf"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b12">
-    <sh:name xml:lang="en">scheme ID </sh:name>
-    <sh:description xml:lang="en">Identification of the scheme.</sh:description>
-    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/schemeId"/>
-    <sh:hasValue rdf:resource="http://data.quality-link.eu/ontology/v1#OrgReg"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b28">
-    <sh:class rdf:resource="http://data.quality-link.eu/ontology/v1#LearningOpportunityInstanceReference"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b3">
-    <dcterms:format rdf:resource="https://www.iana.org/assignments/media-types/application/rdf+xml"/>
-    <dcat:downloadURL rdf:resource="https://specs.quality-link.eu/resources/ontology-shacl.rdf"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://data.quality-link.eu/ontology/v1#registrationPortal">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
-    <rdfs:comment>A web page at which one can register or enrol for a Learning Opportunity.</rdfs:comment>
-    <rdfs:label xml:lang="en">registration portal</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b78">
-    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb53">
     <sh:name xml:lang="en">provided by</sh:name>
-    <sh:description xml:lang="en">The organisation providing or directing the learning opportunity. In the case of, e.g., joint qualifications, there may be several organisations directing the learning opportunity.</sh:description>
+    <sh:description xml:lang="en">Higher Education Institution that offers the LO.</sh:description>
+    <sh:class rdf:resource="http://data.quality-link.eu/ontology/v1#HigherEducationInstitution"/>
     <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
-    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/Organisation"/>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
     <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/providedBy"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b5">
-    <sh:name xml:lang="en">identifier</sh:name>
-    <sh:description xml:lang="en">ORGREG or SCHAC identifier</sh:description>
-    <sh:or rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b8"/>
-    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
-    <sh:path rdf:resource="http://www.w3.org/ns/adms#identifier"/>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb156">
+    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/Qualification"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b83">
-    <sh:name xml:lang="en">learning activity specification</sh:name>
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:description xml:lang="en"> The learning activity specification, including the curricula, of this learning opportunity.</sh:description>
-    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/LearningActivitySpecification"/>
-    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/learningActivitySpecification"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b74">
-    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
-    <sh:name xml:lang="en">has part</sh:name>
-    <sh:description xml:lang="en">A learning opportunity can be composed of other learning opportunities, which when combined make up this larger learning opportunity.</sh:description>
-    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/LearningOpportunity"/>
-    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/hasPart"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b33">
-    <sh:name xml:lang="en">fees</sh:name>
-    <sh:description xml:lang="en">Information about the pricing of the course, applicable for this specific target group.</sh:description>
-    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/priceDetail"/>
-    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/PriceDetail"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b38">
-    <sh:name xml:lang="en">entry requirement</sh:name>
-    <sh:description xml:lang="en">Entry requirement or prerequisites that apply to this specific group of learners.</sh:description>
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/entryRequirement"/>
-    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/Note"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b79">
-    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
-    <sh:name xml:lang="en">fees</sh:name>
-    <sh:description xml:lang="en">Information about the pricing of the course, including fees and scholarships/subsidies available.</sh:description>
-    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/PriceDetail"/>
-    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/priceDetail"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b104">
-    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
-    <sh:name xml:lang="en">schedule information</sh:name>
-    <sh:description xml:lang="en">Detailed information about the timetable or schedule. This may include weekly schedules (e.g., 'Every Monday, 4pm', but may also include the overall schedule for the course, (e.g., October: lectures, November: group-work, December: break, January: assessment).</sh:description>
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/Note"/>
-    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/scheduleInformation"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://data.quality-link.eu/ontology/v1#virtualLearningEnvironment">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="http://data.quality-link.eu/ontology/v1#LearningOpportunityInstance"/>
-    <rdfs:label xml:lang="en">virtual learning environment</rdfs:label>
-    <rdfs:comment xml:lang="en">Specifies (a) virtual learning environment(s) used in the delivery of this learning opportunity.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://data.quality-link.eu/ontology/v1#EuropeanUniversityAlliance">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
-    <rdfs:subClassOf rdf:resource="http://data.quality-link.eu/ontology/v1#GroupOfHEIs"/>
-    <sh:node rdf:resource="http://data.quality-link.eu/ontology/v1#GroupOfHEIs"/>
-    <rdfs:label xml:lang="en">European University Alliance</rdfs:label>
-    <rdfs:comment xml:lang="en">An alliance of higher education institutions that is part of the EU's European Universities programme</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b158">
-    <rdf:first rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b156"/>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb73">
+    <rdf:first rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb70"/>
     <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b130">
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb2">
+    <dcterms:format rdf:resource="https://www.iana.org/assignments/media-types/application/ld+json"/>
+    <dcat:downloadURL rdf:resource="https://specs.quality-link.eu/resources/ontology-shacl.json"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb87">
+    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
+    <sh:name xml:lang="en">publisher</sh:name>
+    <sh:description xml:lang="en">The publisher of the Learning Opportunity.</sh:description>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+    <sh:or rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb90"/>
+    <sh:path rdf:resource="http://purl.org/dc/terms/publisher"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb130">
     <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
     <sh:name xml:lang="en">maximum duration</sh:name>
     <sh:description xml:lang="en">The maximum duration (in months) that a person may use to complete the learning opportunity for which this learning achievement specification is designed.</sh:description>
@@ -1065,37 +1038,18 @@
     <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#duration"/>
     <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/maximumDuration"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b64">
-    <sh:name xml:lang="en">label</sh:name>
-    <sh:description xml:lang="en">The label of the grade according to the grading scheme it is part of, e.g. 'C', '2+' or '10'.</sh:description>
-    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/label"/>
-    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb139">
+    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
+    <sh:name xml:lang="en">generalisation of</sh:name>
+    <sh:description xml:lang="en">A learning achievement specification (e.g., a standard) of which this specification is a generalisation.</sh:description>
+    <sh:or rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb142"/>
+    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/generalisationOf"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b60">
-    <sh:name xml:lang="en">grade distribution</sh:name>
-    <sh:description xml:lang="en">Information on the statistical distribution of grades in the scheme.</sh:description>
-    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/ResultDistribution"/>
-    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/resultDistribution"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b37">
-    <sh:name xml:lang="en">admissions procedure</sh:name>
-    <sh:description xml:lang="en">Information on how to apply for this specific group of learners.</sh:description>
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/admissionProcedure"/>
-    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/Note"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b41">
-    <sh:class rdf:resource="http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecificationReference"/>
-    <sh:path rdf:resource="http://data.quality-link.eu/ontology/v1#superseded"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b6">
-    <sh:class rdf:resource="http://data.quality-link.eu/ontology/v1#SchacIdentifier"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b43">
-    <sh:path rdf:resource="http://data.quality-link.eu/ontology/v1#entryRequirementLearningOpportunity"/>
-    <sh:class rdf:resource="http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecificationReference"/>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb80">
+    <sh:name xml:lang="en">location</sh:name>
+    <sh:description xml:lang="en">The location where the learning opportunity was provided at.</sh:description>
+    <sh:class rdf:resource="http://purl.org/dc/terms/Location"/>
+    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/location"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://data.quality-link.eu/ontology/v1#gradePercentage">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
@@ -1103,55 +1057,103 @@
     <rdfs:label xml:lang="en">percentage</rdfs:label>
     <rdfs:comment xml:lang="en">The percentage of learners earning this grade.</rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b42">
-    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#Literal"/>
-    <sh:path rdf:resource="http://data.quality-link.eu/ontology/v1#version"/>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb36">
+    <sh:description xml:lang="en">Number of learners from the specific group that need to at least enrol for the instance to take place.</sh:description>
+    <sh:path rdf:resource="http://data.quality-link.eu/ontology/v1#enrolmentMinimum"/>
+    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b96">
-    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/Identifier"/>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb17">
+    <sh:uniqueLang rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</sh:uniqueLang>
+    <sh:name xml:lang="en">description</sh:name>
+    <sh:description xml:lang="en">A free text description of the target group of learners.</sh:description>
+    <sh:datatype rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
+    <sh:path rdf:resource="http://purl.org/dc/terms/description"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b22">
-    <rdf:first rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b20"/>
-    <rdf:rest rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b23"/>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb94">
+    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
+    <sh:name xml:lang="en">banner image</sh:name>
+    <sh:description xml:lang="en">An image which is displayed alongside the learning opportunity.</sh:description>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/MediaObject"/>
+    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/bannerImage"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b11">
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb65">
+    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+    <sh:path rdf:resource="http://data.quality-link.eu/ontology/v1#gradeOrder"/>
+    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb60">
+    <sh:name xml:lang="en">grade distribution</sh:name>
+    <sh:description xml:lang="en">Information on the statistical distribution of grades in the scheme.</sh:description>
+    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/ResultDistribution"/>
+    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/resultDistribution"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb107">
+    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
+    <sh:name xml:lang="en">grant</sh:name>
+    <sh:description xml:lang="en">The grant related to the learning opportunity.</sh:description>
+    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/Grant"/>
+    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/grant"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb11">
     <sh:name xml:lang="en">has member</sh:name>
     <sh:class rdf:resource="http://data.quality-link.eu/ontology/v1#HigherEducationInstitution"/>
     <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</sh:minCount>
     <sh:path rdf:resource="http://xmlns.com/foaf/0.1/member"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b61">
-    <sh:name xml:lang="en">other documents</sh:name>
-    <sh:description xml:lang="en">A public web document containing additional documentation about the grading scheme.</sh:description>
-    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/WebResource"/>
-    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/supplementaryDocument"/>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb63">
+    <sh:name xml:lang="en">grade</sh:name>
+    <sh:description xml:lang="en">One specific grade in the grading scheme with the distribution information.</sh:description>
+    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/ResultCategory"/>
+    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/resultCategory"/>
+    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b16">
-    <sh:uniqueLang rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</sh:uniqueLang>
-    <sh:name xml:lang="en">title</sh:name>
-    <sh:description xml:lang="en">The title of the target group of learners.</sh:description>
-    <sh:datatype rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
-    <sh:path rdf:resource="http://purl.org/dc/terms/title"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b81">
-    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
-    <sh:name xml:lang="en">last modification date</sh:name>
-    <sh:description xml:lang="en">The date when the learning opportunity was last modified.</sh:description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb38">
+    <sh:name xml:lang="en">entry requirement</sh:name>
+    <sh:description xml:lang="en">Entry requirement or prerequisites that apply to this specific group of learners.</sh:description>
     <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    <sh:path rdf:resource="http://purl.org/dc/terms/modified"/>
+    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/entryRequirement"/>
+    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/Note"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b31">
-    <sh:name xml:lang="en">specific field</sh:name>
-    <sh:description xml:lang="en">Offered to students from (a) specific field(s) of study.</sh:description>
-    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/limitField"/>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb122">
+    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
+    <sh:name xml:lang="en">identifier</sh:name>
+    <sh:description xml:lang="en">An alternative identifier of the learning achievement specification.</sh:description>
+    <sh:or rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb125"/>
+    <sh:path rdf:resource="http://www.w3.org/ns/adms#identifier"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.quality-link.eu/ontology/v1#availableTo">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://data.quality-link.eu/ontology/v1#LearningOpportunityInstance"/>
+    <rdfs:range rdf:resource="http://data.quality-link.eu/ontology/v1#LearnerGroup"/>
+    <rdfs:comment>Indicates the target group to which this learning opportunity is available</rdfs:comment>
+    <rdfs:label xml:lang="en">available to</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb145">
+    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
+    <sh:name xml:lang="en">education level</sh:name>
+    <sh:description xml:lang="en">An associated level of education within a semantic framework describing education levels.</sh:description>
+    <sh:class rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/educationLevel"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb32">
+    <sh:description xml:lang="en">Offered to students enrolled in another learning opportunity at a specified EQF level or higher. If provided, the value must come from the EU controlled vocabulary http://publications.europa.eu/resource/dataset/european-qualification-framework</sh:description>
+    <sh:path rdf:resource="http://data.quality-link.eu/ontology/v1#minimumEQFLevel"/>
     <sh:class rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b8">
-    <rdf:first rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b6"/>
-    <rdf:rest rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b9"/>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb59">
+    <sh:name xml:lang="en">description</sh:name>
+    <sh:description xml:lang="en">A free text description of the grading scheme.</sh:description>
+    <sh:uniqueLang rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</sh:uniqueLang>
+    <sh:datatype rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
+    <sh:path rdf:resource="http://purl.org/dc/terms/description"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b15">
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb165">
+    <rdf:first rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb163"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb15">
     <sh:name xml:lang="en">identifier</sh:name>
     <sh:description xml:lang="en">The SCHAC (schacHomeOrganisation) identifier. Must be a valid DNS domain name.</sh:description>
     <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
@@ -1159,110 +1161,60 @@
     <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#Literal"/>
     <sh:path rdf:resource="http://www.w3.org/2004/02/skos/core#notation"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b139">
-    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
-    <sh:name xml:lang="en">generalisation of</sh:name>
-    <sh:description xml:lang="en">A learning achievement specification (e.g., a standard) of which this specification is a generalisation.</sh:description>
-    <sh:or rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b142"/>
-    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/generalisationOf"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://data.quality-link.eu/ontology/v1#limitLearningOpportunity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="http://data.quality-link.eu/ontology/v1#LearnerGroup"/>
-    <rdfs:comment xml:lang="en">Defines that the learning opportunity is offered to students enrolled in a specified other learning opportunity.</rdfs:comment>
-    <rdfs:label xml:lang="en">specific learning opportunity</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b25">
-    <sh:description xml:lang="en">Link to a portal where students can register for the learning opportunity (specific for this group of learners).</sh:description>
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:path rdf:resource="http://data.quality-link.eu/ontology/v1#registrationPortal"/>
-    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b75">
-    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
-    <sh:name xml:lang="en">admissions procedure</sh:name>
-    <sh:description xml:lang="en">Specific information on how to apply for the course.</sh:description>
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/Note"/>
-    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/admissionProcedure"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b143">
-    <rdf:first rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b141"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b2">
-    <dcterms:format rdf:resource="https://www.iana.org/assignments/media-types/application/ld+json"/>
-    <dcat:downloadURL rdf:resource="https://specs.quality-link.eu/resources/ontology-shacl.json"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b57">
-    <sh:name xml:lang="en">title</sh:name>
-    <sh:description xml:lang="en">The title of the grading scheme. One value per language is permitted.</sh:description>
-    <sh:uniqueLang rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</sh:uniqueLang>
-    <sh:datatype rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
-    <sh:path rdf:resource="http://purl.org/dc/terms/title"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b163">
-    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/Qualification"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b17">
-    <sh:uniqueLang rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</sh:uniqueLang>
-    <sh:name xml:lang="en">description</sh:name>
-    <sh:description xml:lang="en">A free text description of the target group of learners.</sh:description>
-    <sh:datatype rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
-    <sh:path rdf:resource="http://purl.org/dc/terms/description"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b62">
-    <sh:class rdf:resource="http://data.quality-link.eu/ontology/v1#LearnerGroup"/>
-    <sh:path rdf:resource="http://data.quality-link.eu/ontology/v1#referenceGroup"/>
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://data.quality-link.eu/ontology/v1#isActive">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-    <rdfs:comment>Learning Opportunity Specification is active, i.e. instances are currently offered or the education provider expects that instances will still be offered in the future.</rdfs:comment>
-    <rdfs:label xml:lang="en">is active</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b132">
-    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/LearningAchievementSpecification"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b111">
-    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/Agent"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b26">
-    <sh:description xml:lang="en">Offered to students following a specific other learning opportunity.</sh:description>
-    <sh:path rdf:resource="http://data.quality-link.eu/ontology/v1#limitLearningOpportunity"/>
-    <sh:or rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b29"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b164">
-    <rdf:first rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b162"/>
-    <rdf:rest rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b165"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b71">
-    <rdf:first rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b68"/>
-    <rdf:rest rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b72"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b51">
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb51">
     <sh:path rdf:resource="http://data.quality-link.eu/ontology/v1#enrolmentMinimum"/>
     <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b9">
-    <rdf:first rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b7"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb162">
+    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/LearningAchievementSpecification"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b10">
-    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/Organisation"/>
-    <sh:path rdf:resource="http://data.quality-link.eu/ontology/v1#isMemberOf"/>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb147">
+    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
+    <sh:name xml:lang="en">proven by</sh:name>
+    <sh:description xml:lang="en">Assessments a person can undergo to prove the acquisition of the learning outcomes.</sh:description>
+    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/LearningAssessmentSpecification"/>
+    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/provenBy"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b97">
-    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/LegalIdentifier"/>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb44">
+    <sh:path rdf:resource="http://data.quality-link.eu/ontology/v1#entryRequirementLearningOutcome"/>
+    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/LearningOutcome"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://data.quality-link.eu/ontology/v1#GradeDistributionShape">
+  <rdf:Description rdf:about="http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecificationReference">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
-    <sh:targetClass rdf:resource="http://data.europa.eu/snb/model/elm/ResultDistribution"/>
-    <rdfs:label xml:lang="en">Grade Distribution </rdfs:label>
-    <rdfs:comment xml:lang="en">It describes a histogram of grades achieved by learners within a specific reference group.</rdfs:comment>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b62"/>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b63"/>
+    <rdfs:label xml:lang="en">Learning Opportunity Specification Reference</rdfs:label>
+    <rdfs:comment xml:lang="en">A reference to another Learning Opportunity specification, identified by a provider and a (local) identifier, without further details.</rdfs:comment>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb53"/>
+    <sh:property rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb54"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.quality-link.eu/ontology/v1#isMemberOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">is member of</rdfs:label>
+    <rdfs:comment xml:lang="en">Specifies that an organisation is member of an association, e.g. an institution member of EUA or EURASHE.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.quality-link.eu/ontology/v1#studentsOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://data.quality-link.eu/ontology/v1#LearnerGroup"/>
+    <rdfs:comment xml:lang="en">Defines that the target group of learners includes the students of an education institution, or an alliance thereof</rdfs:comment>
+    <rdfs:label xml:lang="en">includes students of</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb55">
+    <sh:name xml:lang="en">provided by</sh:name>
+    <sh:description xml:lang="en">Higher Education Institution that offers the LO.</sh:description>
+    <sh:class rdf:resource="http://data.quality-link.eu/ontology/v1#HigherEducationInstitution"/>
+    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/providedBy"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.quality-link.eu/ontology/v1#enrolmentMinimum">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    <rdfs:comment>The number of learners that at least need to enrole for a Learning Opportunity Instance to take place.</rdfs:comment>
+    <rdfs:label xml:lang="en">minimum enrolment</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb9">
+    <rdf:first rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb7"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://data.quality-link.eu/ontology/v1#referenceGroup">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
@@ -1271,116 +1223,164 @@
     <rdfs:label xml:lang="en">reference group</rdfs:label>
     <rdfs:comment xml:lang="en">The group of learners for which the histogram of results was established.</rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b36">
-    <sh:description xml:lang="en">Number of learners from the specific group that need to at least enrol for the instance to take place.</sh:description>
-    <sh:path rdf:resource="http://data.quality-link.eu/ontology/v1#enrolmentMinimum"/>
-    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb18">
+    <sh:name xml:lang="en">identifier</sh:name>
+    <sh:description xml:lang="en">An identifier for this specific target group of learners.</sh:description>
+    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/Identifier"/>
+    <sh:path rdf:resource="http://www.w3.org/ns/adms#identifier"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b49">
-    <sh:path rdf:resource="http://data.quality-link.eu/ontology/v1#enrolmentCapacity"/>
-    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb71">
+    <rdf:first rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb68"/>
+    <rdf:rest rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb72"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://data.quality-link.eu/ontology/v1#superseded">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://data.quality-link.eu/ontology/v1#relatedTo"/>
-    <rdfs:domain rdf:resource="http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecification"/>
-    <rdfs:comment xml:lang="en">Learning Opportunity specification superseded another one, which is no longer (or temporarily not) offered.</rdfs:comment>
-    <rdfs:label xml:lang="en">superseded</rdfs:label>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb142">
+    <rdf:first rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb140"/>
+    <rdf:rest rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb143"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b46">
-    <sh:path rdf:resource="http://data.quality-link.eu/ontology/v1#passingRate"/>
-    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb48">
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    <sh:path rdf:resource="http://data.quality-link.eu/ontology/v1#registrationPortal"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b72">
-    <rdf:first rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b69"/>
-    <rdf:rest rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b73"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b162">
-    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/LearningAchievementSpecification"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://data.quality-link.eu/ontology/v1#GroupOfHEIs">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
-    <rdfs:subClassOf rdf:resource="http://data.europa.eu/snb/model/elm/Group"/>
-    <sh:node rdf:resource="http://data.europa.eu/snb/model/ap/loq-constraints/GroupShape"/>
-    <rdfs:label xml:lang="en">Group of Higher Education Institutions</rdfs:label>
-    <rdfs:comment xml:lang="en">A group or alliance of higher education institutions</rdfs:comment>
-    <sh:property rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b11"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b142">
-    <rdf:first rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b140"/>
-    <rdf:rest rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b143"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b30">
-    <rdf:first rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b28"/>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb108">
+    <rdf:first rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
     <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b99">
-    <rdf:first rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b97"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb52">
+    <sh:path rdf:resource="http://data.quality-link.eu/ontology/v1#virtualLearningEnvironment"/>
+    <sh:class rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b124">
-    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/LegalIdentifier"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://data.quality-link.eu/ontology/v1#spunOffFrom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://data.quality-link.eu/ontology/v1#relatedTo"/>
-    <rdfs:domain rdf:resource="http://data.europa.eu/snb/model/elm/Organisation"/>
-    <rdfs:comment xml:lang="en">Organisation spun off from another one (i.e. subject newly created by the event, object existed before and after)</rdfs:comment>
-    <rdfs:label xml:lang="en">spun off from</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b23">
-    <rdf:first rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b21"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b40">
-    <sh:path rdf:resource="http://data.quality-link.eu/ontology/v1#isActive"/>
-    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b141">
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb163">
     <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/Qualification"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b69">
-    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/QualificationReference"/>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb149">
+    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
+    <sh:name xml:lang="en">learning setting</sh:name>
+    <sh:description xml:lang="en">The type of learning setting (formal, non-formal). It should be provided using the EDC Controlled List of Learning Setting Types.</sh:description>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+    <sh:class rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/learningSetting"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b7">
-    <sh:class rdf:resource="http://data.quality-link.eu/ontology/v1#OrgRegIdentifier"/>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb62">
+    <sh:class rdf:resource="http://data.quality-link.eu/ontology/v1#LearnerGroup"/>
+    <sh:path rdf:resource="http://data.quality-link.eu/ontology/v1#referenceGroup"/>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b50">
-    <sh:path rdf:resource="http://data.quality-link.eu/ontology/v1#enrolledLearnerCount"/>
-    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb16">
+    <sh:uniqueLang rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</sh:uniqueLang>
+    <sh:name xml:lang="en">title</sh:name>
+    <sh:description xml:lang="en">The title of the target group of learners.</sh:description>
+    <sh:datatype rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
+    <sh:path rdf:resource="http://purl.org/dc/terms/title"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b165">
-    <rdf:first rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b163"/>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb89">
+    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/Organisation"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb81">
+    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
+    <sh:name xml:lang="en">last modification date</sh:name>
+    <sh:description xml:lang="en">The date when the learning opportunity was last modified.</sh:description>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <sh:path rdf:resource="http://purl.org/dc/terms/modified"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb23">
+    <rdf:first rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb21"/>
     <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b20">
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb101">
+    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
+    <sh:name xml:lang="en">mode</sh:name>
+    <sh:description xml:lang="en">The mode of learning Opportunity. It should be provided using the EDC Controlled List of Modes Of Learning and Assessment. </sh:description>
+    <sh:class rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <sh:path rdf:resource="http://data.europa.eu/snb/model/elm/mode"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb155">
+    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/LearningAchievementSpecification"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb126">
+    <rdf:first rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb124"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb43">
+    <sh:path rdf:resource="http://data.quality-link.eu/ontology/v1#entryRequirementLearningOpportunity"/>
+    <sh:class rdf:resource="http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecificationReference"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb157">
+    <rdf:first rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb155"/>
+    <rdf:rest rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb158"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb91">
+    <rdf:first rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb89"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.quality-link.eu/ontology/v1#limitLearningOpportunity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://data.quality-link.eu/ontology/v1#LearnerGroup"/>
+    <rdfs:comment xml:lang="en">Defines that the learning opportunity is offered to students enrolled in a specified other learning opportunity.</rdfs:comment>
+    <rdfs:label xml:lang="en">specific learning opportunity</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb27">
+    <sh:class rdf:resource="http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecificationReference"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb8">
+    <rdf:first rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb6"/>
+    <rdf:rest rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb9"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb70">
+    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/Qualification"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb166">
+    <rdf:first rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb3">
+    <dcterms:format rdf:resource="https://www.iana.org/assignments/media-types/application/rdf+xml"/>
+    <dcat:downloadURL rdf:resource="https://specs.quality-link.eu/resources/ontology-shacl.rdf"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb20">
     <sh:class rdf:resource="http://data.quality-link.eu/ontology/v1#HigherEducationInstitution"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b89">
-    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/Organisation"/>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb88">
+    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/Agent"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b113">
-    <rdf:first rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b111"/>
-    <rdf:rest rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b114"/>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb69">
+    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/QualificationReference"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b133">
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb29">
+    <rdf:first rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb27"/>
+    <rdf:rest rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb30"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb164">
+    <rdf:first rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb162"/>
+    <rdf:rest rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb165"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb141">
     <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/Qualification"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b70">
-    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/Qualification"/>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb111">
+    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/Agent"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b112">
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb112">
     <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/Organisation"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b47">
-    <sh:class rdf:resource="http://data.quality-link.eu/ontology/v1#LearnerGroup"/>
-    <sh:path rdf:resource="http://data.quality-link.eu/ontology/v1#availableTo"/>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb96">
+    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/Identifier"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b21">
-    <sh:class rdf:resource="http://data.quality-link.eu/ontology/v1#GroupOfHEIs"/>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb135">
+    <rdf:first rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb133"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n6814a19ef2bb4f2ba3f3f2a1e2f84bf7b68">
-    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/LearningAchievementSpecification"/>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb124">
+    <sh:class rdf:resource="http://data.europa.eu/snb/model/elm/LegalIdentifier"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb7">
+    <sh:class rdf:resource="http://data.quality-link.eu/ontology/v1#OrgRegIdentifier"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb28">
+    <sh:class rdf:resource="http://data.quality-link.eu/ontology/v1#LearningOpportunityInstanceReference"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n8a4b49a263114fc2b500bcd04dbe9ebcb6">
+    <sh:class rdf:resource="http://data.quality-link.eu/ontology/v1#SchacIdentifier"/>
   </rdf:Description>
 </rdf:RDF>
