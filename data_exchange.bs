@@ -319,11 +319,6 @@ type: `occapi`
 path: The URL of the OCCAPI path for a given HEI<br>(e.g., `https://domain.tld/occapi/v1/hei/{heiId}`)
 </pre>
 
-EWP Courses API {#ewp}
----------------
-
-Note: similar structure as for OOAPI
-
 Access Control {#access-control}
 ==============
 
