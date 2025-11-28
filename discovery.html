@@ -1504,9 +1504,9 @@ Possible extra rowspan handling
       g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
     })();
   </script>
-  <meta content="Bikeshed version 3f621ba99, updated Mon Jul 28 15:38:36 2025 -0700" name="generator">
+  <meta content="Bikeshed version 3c53a5b02, updated Thu Nov 27 17:03:30 2025 +0000" name="generator">
   <link href="https://quality-link.eu/wp-content/uploads/sites/90/2024/03/Quality-Link_Website-Favicon.png" rel="icon">
-  <meta content="f1db743b58bbba430c6b32db5e654b1f93b81c64" name="revision">
+  <meta content="13cf481ac4fcbecb8cd30234133acbe64f2b949f" name="revision">
   <meta content="dark light" name="color-scheme">
 <style>/* Boilerplate: style-autolinks */
 .css.css, .property.property, .descriptor.descriptor {
@@ -1818,7 +1818,7 @@ body {
 }
 .invalid.example:not(.no-marker)::before,
 .illegal.example:not(.no-marker)::before {
-    content: "Invalid Example" counter(example);
+    content: "Invalid Example " counter(example);
 }
 
 figcaption {
@@ -2187,15 +2187,15 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
  <body class="h-entry">
   <div class="head">
    <p data-fill-with="logo"></p>
-   <h1 class="p-name no-ref" id="title">QualityLink Data Source Discovery Specification</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Living Standard,
-    <time class="dt-updated" datetime="2025-04-18">18 April 2025</time></span></h2>
+   <h1 class="no-ref p-name" id="title">QualityLink Data Source Discovery Specification</h1>
+   <h2 class="heading no-num no-ref no-toc settled" id="profile-and-date"><span class="content">Living Standard,
+    <time class="dt-updated" datetime="2025-11-28">28 November 2025</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>Issue Tracking:
      <dd><a href="https://github.com/Knowledge-Innovation-Centre/quality-link-specs/issues/">GitHub</a>
      <dt class="editor">Editor:
-     <dd class="editor p-author h-card vcard"><a class="p-name fn u-url url" href="https://knowledgeinnovation.eu">Colin Tück</a> (<span class="p-org org">Knowledge Innovation Centre; KIC</span>) <a class="u-email email" href="mailto:colin@knowledgeinnovation.eu">colin@knowledgeinnovation.eu</a>
+     <dd class="editor h-card p-author vcard"><a class="fn p-name u-url url" href="https://knowledgeinnovation.eu">Colin Tück</a> (<span class="org p-org">Knowledge Innovation Centre; KIC</span>) <a class="email u-email" href="mailto:colin@knowledgeinnovation.eu">colin@knowledgeinnovation.eu</a>
      <dt>Project Website:
      <dd><a href="https://quality-link.eu/">https://quality-link.eu/</a>
      <dt>Project Reference:
@@ -2227,13 +2227,13 @@ This project has been funded with support from the European Commission. This web
    <hr title="Separator for header">
   </div>
   <div class="p-summary" data-fill-with="abstract">
-   <h2 class="no-num no-toc no-ref heading settled" id="abstract"><span class="content">Abstract</span></h2>
+   <h2 class="heading no-num no-ref no-toc settled" id="abstract"><span class="content">Abstract</span></h2>
    <p>This specification describes how the QualityLink aggregator discovers data sources exposed by higher education institutions and other data providers.</p>
   </div>
   <div data-fill-with="at-risk"></div>
   <nav data-fill-with="table-of-contents" id="toc">
-   <h2 class="no-num no-toc no-ref" id="contents">Table of Contents</h2>
-   <ol class="toc" role="directory">
+   <h2 class="no-num no-ref no-toc" id="contents">Table of Contents</h2>
+   <ol class="toc">
     <li>
      <a href="#intro"><span class="secno">1</span> <span class="content">Introduction</span></a>
      <ol class="toc">
@@ -2368,10 +2368,10 @@ This project has been funded with support from the European Commission. This web
    <table class="def">
     <tbody>
      <tr>
-      <th>type
+      <th><b>type</b>*
       <td>Type of the data source: string, using the identifier specified in <a data-link-type="biblio" href="#biblio-ql-exch" title="Data Exchange Specification">[QL-EXCH]</a>
      <tr>
-      <th>path
+      <th><b>path</b>*
       <td>File or API root: URL
      <tr>
       <th>version
@@ -2385,10 +2385,20 @@ This project has been funded with support from the European Commission. This web
      <tr>
       <th>auth
       <td>Authorisation: object/mapping including <code>type</code> and additional, access control strategy-specific parameters
+     <tr>
+      <th>refresh
+      <td>Minimum number of hours to wait between scheduled refreshs of the data source: integer
+     <tr>
+      <th>headers
+      <td>Additional HTTP header fields <a data-link-type="biblio" href="#biblio-http-hdr" title="Hypertext Transfer Protocol (HTTP) Field Name Registry">[HTTP-HDR]</a> to include in every request to the data source: object with header field names as key and values as value
+     <tr>
+      <th>queryParameters
+      <td>Additional query parameters <a data-link-type="biblio" href="#biblio-rfc3986" title="Uniform Resource Identifier (URI): Generic Syntax">[RFC3986]</a> to be added to the URL Query component in every request: object with parameter names as key and values as value
    </table>
    <p>Keys marked with an asterisk are required. Additional, data source type-specific keys are specified in <a data-link-type="biblio" href="#biblio-ql-exch" title="Data Exchange Specification">[QL-EXCH]</a>.</p>
+   <p class="note" role="note"><span class="marker">Note:</span> There is no default for the <code>refresh</code> parameter and the interval is at the <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator②">aggregator’s</a> discretion if not specified. The QualityLink aggregator will use a 24-hour interval by default.</p>
    <h3 class="heading settled" data-level="5.2" id="manifest-meta"><span class="secno">5.2. </span><span class="content">Additional metadata</span><a class="self-link" href="#manifest-meta"></a></h3>
-   <p>The <code>meta</code> key is optional and may be used to specify institutional identifiers. <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator②">Aggregators</a> may use this for diagnostic purposes or identify changed identifiers.</p>
+   <p>The <code>meta</code> key is optional and may be used to specify institutional identifiers. <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator③">Aggregators</a> may use this for diagnostic purposes or identify changed identifiers.</p>
    <table class="def">
     <tbody>
      <tr>
@@ -2405,7 +2415,7 @@ This project has been funded with support from the European Commission. This web
       <td>Decentralised Identifier (DID) used by the institution
    </table>
    <h3 class="heading settled" data-level="5.3" id="manifest-schema"><span class="secno">5.3. </span><span class="content">JSON Schema</span><a class="self-link" href="#manifest-schema"></a></h3>
-<pre class="language-json highlight"><c- p>{</c->
+<pre class="highlight language-json"><c- p>{</c->
   <c- f>"$schema"</c-><c- p>:</c-> <c- u>"https://json-schema.org/draft/2020-12/schema"</c-><c- p>,</c->
   <c- f>"$id"</c-><c- p>:</c-> <c- u>"https://data.quality-link.eu/schema/manifest-v1.json"</c-><c- p>,</c->
   <c- f>"title"</c-><c- p>:</c-> <c- u>"QualityLink manifest file"</c-><c- p>,</c->
@@ -2464,6 +2474,18 @@ This project has been funded with support from the European Commission. This web
             <c- f>"required"</c-><c- p>:</c-> <c- p>[</c->
               <c- u>"type"</c->
             <c- p>]</c->
+          <c- p>},</c->
+          <c- f>"refresh"</c-><c- p>:</c-> <c- p>{</c->
+            <c- f>"description"</c-><c- p>:</c-> <c- u>"Minimum number of hours to wait between scheduled refreshs of the data source"</c-><c- p>,</c->
+            <c- f>"type"</c-><c- p>:</c-> <c- u>"number"</c->
+          <c- p>},</c->
+          <c- f>"headers"</c-><c- p>:</c-> <c- p>{</c->
+            <c- f>"description"</c-><c- p>:</c-> <c- u>"Additional HTTP header fields to include in every request to the data source"</c-><c- p>,</c->
+            <c- f>"type"</c-><c- p>:</c-> <c- u>"object"</c->
+          <c- p>},</c->
+          <c- f>"queryParameters"</c-><c- p>:</c-> <c- p>{</c->
+            <c- f>"description"</c-><c- p>:</c-> <c- u>"Additional query parameters to be added to the URL Query component in every request"</c-><c- p>,</c->
+            <c- f>"type"</c-><c- p>:</c-> <c- u>"object"</c->
           <c- p>}</c->
         <c- p>},</c->
         <c- f>"required"</c-><c- p>:</c-> <c- p>[</c->
@@ -2502,7 +2524,7 @@ This project has been funded with support from the European Commission. This web
 </pre>
    <h2 class="heading settled" data-level="6" id="discovery"><span class="secno">6. </span><span class="content">Discovery Mechanism</span><a class="self-link" href="#discovery"></a></h2>
    <p>The specification offers two options how to auto-discover a manifest file.</p>
-   <p><a data-link-type="dfn" href="#higher-education-institution" id="ref-for-higher-education-institution⑤">higher education institutions</a> may use either option. <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator③">Aggregators</a> must support both options.</p>
+   <p><a data-link-type="dfn" href="#higher-education-institution" id="ref-for-higher-education-institution⑤">higher education institutions</a> may use either option. <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator④">Aggregators</a> must support both options.</p>
    <h3 class="heading settled" data-level="6.1" id="discovery-dns"><span class="secno">6.1. </span><span class="content">DNS TXT Record</span><a class="self-link" href="#discovery-dns"></a></h3>
    <p>The <a data-link-type="dfn" href="#higher-education-institution" id="ref-for-higher-education-institution⑥">higher education institution</a> can create a DNS TXT record of the following format:</p>
 <pre>v=qldiscover1; m=[URL]
@@ -2520,7 +2542,7 @@ This project has been funded with support from the European Commission. This web
    </ul>
    <p>These locations are tried in this order and the first file found is used.</p>
    <h3 class="heading settled" data-level="6.3" id="discovery-domains"><span class="secno">6.3. </span><span class="content">Domain Search Order</span><a class="self-link" href="#discovery-domains"></a></h3>
-   <p>An <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator④">aggregator</a> should consider a combined list of <a data-link-type="dfn" href="#higher-education-institution" id="ref-for-higher-education-institution⑧">higher education institutions</a> appearing in one or more of the following datasets:</p>
+   <p>An <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator⑤">aggregator</a> should consider a combined list of <a data-link-type="dfn" href="#higher-education-institution" id="ref-for-higher-education-institution⑧">higher education institutions</a> appearing in one or more of the following datasets:</p>
    <ul>
     <li data-md>
      <p>EUF HEI API</p>
@@ -2531,7 +2553,7 @@ This project has been funded with support from the European Commission. This web
     <li data-md>
      <p>DEQAR (including institutions from OrgReg and ETER)</p>
    </ul>
-   <p>For each <a data-link-type="dfn" href="#higher-education-institution" id="ref-for-higher-education-institution⑨">higher education institution</a>, the <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator⑤">aggregator</a> attempts to fetch a manifest file from a known domain in this order:</p>
+   <p>For each <a data-link-type="dfn" href="#higher-education-institution" id="ref-for-higher-education-institution⑨">higher education institution</a>, the <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator⑥">aggregator</a> attempts to fetch a manifest file from a known domain in this order:</p>
    <ol>
     <li data-md>
      <p>domain/host name that is the <a data-link-type="dfn" href="#higher-education-institution" id="ref-for-higher-education-institution①⓪">higher education institution</a>’s SCHAC code (if available)</p>
@@ -2549,7 +2571,7 @@ This project has been funded with support from the European Commission. This web
    <h2 class="heading settled" data-level="8" id="examples"><span class="secno">8. </span><span class="content">Examples</span><a class="self-link" href="#examples"></a></h2>
    <div class="informative">
     <h3 class="heading settled" data-level="8.1" id="examples-manifest"><span class="secno">8.1. </span><span class="content">Manifest file</span><a class="self-link" href="#examples-manifest"></a></h3>
-<pre class="language-json highlight"><c- p>{</c->
+<pre class="highlight language-json"><c- p>{</c->
     <c- f>"meta"</c-><c- p>:</c-> <c- p>{</c->
         <c- f>"schac"</c-><c- p>:</c-> <c- u>"example.ac.at"</c-><c- p>,</c->
         <c- f>"eterid"</c-><c- p>:</c-> <c- u>"AT4711"</c-><c- p>,</c->
@@ -2587,7 +2609,7 @@ This project has been funded with support from the European Commission. This web
     <c- p>]</c->
 <c- p>}</c->
 </pre>
-<pre class="language-yaml highlight"><c- f>meta</c-><c- p>:</c->
+<pre class="highlight language-yaml"><c- f>meta</c-><c- p>:</c->
   <c- f>schac</c-><c- p>:</c-> example.ac.at
   <c- f>eterid</c-><c- p>:</c-> AT4711
   <c- f>deqarid</c-><c- p>:</c-> DEQARINST0815
@@ -2615,7 +2637,7 @@ This project has been funded with support from the European Commission. This web
    </div>
   </main>
   <div data-fill-with="conformance">
-   <h2 class="no-ref no-num heading settled" id="conformance"><span class="content">
+   <h2 class="heading no-num no-ref settled" id="conformance"><span class="content">
     Conformance</span><a class="self-link" href="#conformance"></a></h2>
    <p>
             Conformance requirements are expressed with a combination of descriptive assertions and RFC 2119 terminology.
@@ -2776,8 +2798,8 @@ This project has been funded with support from the European Commission. This web
 
 })();
 </script>
-  <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
-  <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
+  <h2 class="heading no-num no-ref settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
+  <h3 class="heading no-num no-ref settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
   <ul class="index">
    <li><a href="#aggregator">aggregator</a><span>, in § 2</span>
    <li><a href="#course">course</a><span>, in § 2</span>
@@ -2793,19 +2815,23 @@ This project has been funded with support from the European Commission. This web
    <li><a href="#other-provider">other provider</a><span>, in § 2</span>
    <li><a href="#programme">programme</a><span>, in § 2</span>
   </ul>
-  <h2 class="no-num no-ref heading settled" id="references"><span class="content">References</span><a class="self-link" href="#references"></a></h2>
-  <h3 class="no-num no-ref heading settled" id="normative"><span class="content">Normative References</span><a class="self-link" href="#normative"></a></h3>
+  <h2 class="heading no-num no-ref settled" id="references"><span class="content">References</span><a class="self-link" href="#references"></a></h2>
+  <h3 class="heading no-num no-ref settled" id="normative"><span class="content">Normative References</span><a class="self-link" href="#normative"></a></h3>
   <dl>
+   <dt id="biblio-http-hdr">[HTTP-HDR]
+   <dd>IANA. <a href="https://www.iana.org/assignments/http-fields/http-fields.xhtml"><cite>Hypertext Transfer Protocol (HTTP) Field Name Registry</cite></a>. URL: <a href="https://www.iana.org/assignments/http-fields/http-fields.xhtml">https://www.iana.org/assignments/http-fields/http-fields.xhtml</a>
    <dt id="biblio-json">[JSON]
    <dd>T. Bray, Ed.. <a href="https://www.rfc-editor.org/rfc/rfc8259"><cite>The JavaScript Object Notation (JSON) Data Interchange Format</cite></a>. December 2017. Internet Standard. URL: <a href="https://www.rfc-editor.org/rfc/rfc8259">https://www.rfc-editor.org/rfc/rfc8259</a>
    <dt id="biblio-ql-exch">[QL-EXCH]
    <dd>QualityLink Consortium. <a href="https://specs.quality-link.eu/data_exchange.html"><cite>Data Exchange Specification</cite></a>. 2025. draft. URL: <a href="https://specs.quality-link.eu/data_exchange.html">https://specs.quality-link.eu/data_exchange.html</a>
    <dt id="biblio-rfc2119">[RFC2119]
    <dd>S. Bradner. <a href="https://datatracker.ietf.org/doc/html/rfc2119"><cite>Key words for use in RFCs to Indicate Requirement Levels</cite></a>. March 1997. Best Current Practice. URL: <a href="https://datatracker.ietf.org/doc/html/rfc2119">https://datatracker.ietf.org/doc/html/rfc2119</a>
+   <dt id="biblio-rfc3986">[RFC3986]
+   <dd>T. Berners-Lee; R. Fielding; L. Masinter. <a href="https://www.rfc-editor.org/rfc/rfc3986"><cite>Uniform Resource Identifier (URI): Generic Syntax</cite></a>. January 2005. Internet Standard. URL: <a href="https://www.rfc-editor.org/rfc/rfc3986">https://www.rfc-editor.org/rfc/rfc3986</a>
    <dt id="biblio-yaml">[YAML]
    <dd>Oren Ben-Kiki; Clark Evans; Ingy döt Net. <a href="http://yaml.org/spec/1.2/spec.html"><cite>YAML Ain’t Markup Language (YAML™) Version 1.2</cite></a>. 1 October 2009. URL: <a href="http://yaml.org/spec/1.2/spec.html">http://yaml.org/spec/1.2/spec.html</a>
   </dl>
-  <h3 class="no-num no-ref heading settled" id="informative"><span class="content">Informative References</span><a class="self-link" href="#informative"></a></h3>
+  <h3 class="heading no-num no-ref settled" id="informative"><span class="content">Informative References</span><a class="self-link" href="#informative"></a></h3>
   <dl>
    <dt id="biblio-cr-mc">[CR-MC]
    <dd>European Union. <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022H0627(02)"><cite>Council Recommendation on a European approach to micro-credentials for lifelong learning and employability</cite></a>. 16 June 2022. 2022/C 243/02. URL: <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022H0627(02)">https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022H0627(02)</a>
@@ -3014,7 +3040,7 @@ function parseHTML(markup) {
 "use strict";
 {
 let dfnPanelData = {
-"aggregator": {"dfnID":"aggregator","dfnText":"aggregator","external":false,"refSections":[{"refs":[{"id":"ref-for-aggregator"}],"title":"3.1. Expose data"},{"refs":[{"id":"ref-for-aggregator\u2460"}],"title":"3.2. Manage data sources"},{"refs":[{"id":"ref-for-aggregator\u2461"}],"title":"5.2. Additional metadata"},{"refs":[{"id":"ref-for-aggregator\u2462"}],"title":"6. Discovery Mechanism"},{"refs":[{"id":"ref-for-aggregator\u2463"},{"id":"ref-for-aggregator\u2464"}],"title":"6.3. Domain Search Order"}],"url":"#aggregator"},
+"aggregator": {"dfnID":"aggregator","dfnText":"aggregator","external":false,"refSections":[{"refs":[{"id":"ref-for-aggregator"}],"title":"3.1. Expose data"},{"refs":[{"id":"ref-for-aggregator\u2460"}],"title":"3.2. Manage data sources"},{"refs":[{"id":"ref-for-aggregator\u2461"}],"title":"5.1. Data sources"},{"refs":[{"id":"ref-for-aggregator\u2462"}],"title":"5.2. Additional metadata"},{"refs":[{"id":"ref-for-aggregator\u2463"}],"title":"6. Discovery Mechanism"},{"refs":[{"id":"ref-for-aggregator\u2464"},{"id":"ref-for-aggregator\u2465"}],"title":"6.3. Domain Search Order"}],"url":"#aggregator"},
 "course": {"dfnID":"course","dfnText":"course","external":false,"refSections":[{"refs":[{"id":"ref-for-course"},{"id":"ref-for-course\u2460"}],"title":"2. Key Concepts"}],"url":"#course"},
 "data-provider": {"dfnID":"data-provider","dfnText":"data provider","external":false,"refSections":[{"refs":[{"id":"ref-for-data-provider"}],"title":"2. Key Concepts"},{"refs":[{"id":"ref-for-data-provider\u2460"}],"title":"3.2. Manage data sources"},{"refs":[{"id":"ref-for-data-provider\u2461"}],"title":"3.3. Access statistics"},{"refs":[{"id":"ref-for-data-provider\u2462"}],"title":"5. Manifest File"}],"url":"#data-provider"},
 "education-provider": {"dfnID":"education-provider","dfnText":"education provider","external":false,"refSections":[{"refs":[{"id":"ref-for-education-provider"},{"id":"ref-for-education-provider\u2460"}],"title":"2. Key Concepts"},{"refs":[{"id":"ref-for-education-provider\u2461"}],"title":"3.1. Expose data"}],"url":"#education-provider"},
