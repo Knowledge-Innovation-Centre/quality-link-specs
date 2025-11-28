@@ -1504,9 +1504,9 @@ Possible extra rowspan handling
       g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
     })();
   </script>
-  <meta content="Bikeshed version 3f621ba99, updated Mon Jul 28 15:38:36 2025 -0700" name="generator">
+  <meta content="Bikeshed version 3c53a5b02, updated Thu Nov 27 17:03:30 2025 +0000" name="generator">
   <link href="https://quality-link.eu/wp-content/uploads/sites/90/2024/03/Quality-Link_Website-Favicon.png" rel="icon">
-  <meta content="f1db743b58bbba430c6b32db5e654b1f93b81c64" name="revision">
+  <meta content="13cf481ac4fcbecb8cd30234133acbe64f2b949f" name="revision">
   <meta content="dark light" name="color-scheme">
 <style>/* Boilerplate: style-autolinks */
 .css.css, .property.property, .descriptor.descriptor {
@@ -1818,7 +1818,7 @@ body {
 }
 .invalid.example:not(.no-marker)::before,
 .illegal.example:not(.no-marker)::before {
-    content: "Invalid Example" counter(example);
+    content: "Invalid Example " counter(example);
 }
 
 figcaption {
@@ -2066,16 +2066,16 @@ dfn > a.self-link::before      { content: "#"; }
  <body class="h-entry">
   <div class="head">
    <p data-fill-with="logo"></p>
-   <h1 class="p-name no-ref" id="title">QualityLink Data Exchange Specification</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Living Standard,
-    <time class="dt-updated" datetime="2025-04-18">18 April 2025</time></span></h2>
+   <h1 class="no-ref p-name" id="title">QualityLink Data Exchange Specification</h1>
+   <h2 class="heading no-num no-ref no-toc settled" id="profile-and-date"><span class="content">Living Standard,
+    <time class="dt-updated" datetime="2025-11-28">28 November 2025</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>Issue Tracking:
      <dd><a href="https://github.com/Knowledge-Innovation-Centre/quality-link-specs/issues/">GitHub</a>
      <dt class="editor">Editors:
-     <dd class="editor p-author h-card vcard"><a class="p-name fn u-url url" href="https://knowledgeinnovation.eu">Colin Tück</a> (<span class="p-org org">Knowledge Innovation Centre; KIC</span>) <a class="u-email email" href="mailto:colin@knowledgeinnovation.eu">colin@knowledgeinnovation.eu</a>
-     <dd class="editor p-author h-card vcard"><a class="p-name fn u-url url" href="https://uni-foundation.eu/">Tiago Simões</a> (<span class="p-org org">European University Foundation; EUF</span>) <a class="u-email email" href="mailto:tiago.simoes@uni-foundation.eu">tiago.simoes@uni-foundation.eu</a>
+     <dd class="editor h-card p-author vcard"><a class="fn p-name u-url url" href="https://knowledgeinnovation.eu">Colin Tück</a> (<span class="org p-org">Knowledge Innovation Centre; KIC</span>) <a class="email u-email" href="mailto:colin@knowledgeinnovation.eu">colin@knowledgeinnovation.eu</a>
+     <dd class="editor h-card p-author vcard"><a class="fn p-name u-url url" href="https://uni-foundation.eu/">Tiago Simões</a> (<span class="org p-org">European University Foundation; EUF</span>) <a class="email u-email" href="mailto:tiago.simoes@uni-foundation.eu">tiago.simoes@uni-foundation.eu</a>
      <dt>Project Website:
      <dd><a href="https://quality-link.eu/">https://quality-link.eu/</a>
      <dt>Project Reference:
@@ -2107,13 +2107,13 @@ This project has been funded with support from the European Commission. This web
    <hr title="Separator for header">
   </div>
   <div class="p-summary" data-fill-with="abstract">
-   <h2 class="no-num no-toc no-ref heading settled" id="abstract"><span class="content">Abstract</span></h2>
+   <h2 class="heading no-num no-ref no-toc settled" id="abstract"><span class="content">Abstract</span></h2>
    <p>This specification standardises how HEIs and other data providers can make data available for aggregation.</p>
   </div>
   <div data-fill-with="at-risk"></div>
   <nav data-fill-with="table-of-contents" id="toc">
-   <h2 class="no-num no-toc no-ref" id="contents">Table of Contents</h2>
-   <ol class="toc" role="directory">
+   <h2 class="no-num no-ref no-toc" id="contents">Table of Contents</h2>
+   <ol class="toc">
     <li>
      <a href="#intro"><span class="secno">1</span> <span class="content">Introduction</span></a>
      <ol class="toc">
@@ -2163,7 +2163,6 @@ This project has been funded with support from the European Commission. This web
         <li><a href="#occapi-required"><span class="secno">5.4.1</span> <span class="content">Required fields</span></a>
         <li><a href="#occapi-metadata"><span class="secno">5.4.2</span> <span class="content">Metadata</span></a>
        </ol>
-      <li><a href="#ewp"><span class="secno">5.5</span> <span class="content">EWP Courses API</span></a>
      </ol>
     <li>
      <a href="#access-control"><span class="secno">6</span> <span class="content">Access Control</span></a>
@@ -2296,7 +2295,7 @@ This project has been funded with support from the European Commission. This web
     <li data-md>
      <p>JSON-LD (<code>application/ld+json</code>)</p>
    </ul>
-   <p>The data source must return the correct content type for the serialisation used.</p>
+   <p>The data source should return the correct content type for the serialisation used. If an incorrect content type is returned, the option to override the HTTP content-type header (see below) must be used.</p>
    <h4 class="heading settled" data-level="5.1.1" id="elm-required"><span class="secno">5.1.1. </span><span class="content">Required Fields</span><a class="self-link" href="#elm-required"></a></h4>
    <p>The minimum required fields are defined by a set of <a data-link-type="biblio" href="#biblio-shacl" title="Shapes Constraint Language (SHACL)">[SHACL]</a> constraints, which are based on the <a data-link-type="biblio" href="#biblio-elm" title="European Learning Model (ELM)">[ELM]</a> Application Profile "Learning Opportunities and Qualifcations".</p>
    <p>ELM data must comply with the requirements specified by the shape <code>http://data.quality-link.eu/ontology/v1#LearningOpportunity</code> <a data-link-type="biblio" href="#biblio-ql-ont" title="SHACL constraints for learning opportunities">[QL-ONT]</a>.</p>
@@ -2322,6 +2321,13 @@ This project has been funded with support from the European Commission. This web
      <tr>
       <th>version
       <td>the ELM version used
+   </table>
+   <p><a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider①①">Data providers</a> can specify the following optional metadata:</p>
+   <table class="def">
+    <tbody>
+     <tr>
+      <th>contentType
+      <td>override the HTTP content-type header and interpret data as the specified format (valid values are those listed above)
    </table>
    <h3 class="heading settled" data-level="5.2" id="ooapi"><span class="secno">5.2. </span><span class="content">OOAPI</span><a class="self-link" href="#ooapi"></a></h3>
    <p><a data-link-type="dfn" href="#education-provider" id="ref-for-education-provider②">Education providers</a> can expose data on their learning opportunities according to the Open Edcuation API specification <a data-link-type="biblio" href="#biblio-ooapi" title="Open Education API">[OOAPI]</a>.</p>
@@ -2371,7 +2377,7 @@ This project has been funded with support from the European Commission. This web
    </ul>
    <h4 class="heading settled" data-level="5.2.2" id="ooapi-incremental"><span class="secno">5.2.2. </span><span class="content">Incremental Transport</span><a class="self-link" href="#ooapi-incremental"></a></h4>
    <p>While OOAPI does include the ability to query learning opportunities based on the year/semester in which they are offered, the standard does not include query parameters based on modification dates or similar.</p>
-   <p>Standard HTTP headers are, however, compatible with OOAPI and <a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider①①">data providers</a> should thus implement at least one of two options, at least for the <code>GET /education-specifications</code> endpoint:</p>
+   <p>Standard HTTP headers are, however, compatible with OOAPI and <a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider①②">data providers</a> should thus implement at least one of two options, at least for the <code>GET /education-specifications</code> endpoint:</p>
    <ul>
     <li data-md>
      <p>Provide an accurate <code>Last-Modified</code> <a data-link-type="biblio" href="#biblio-rfc9110" title="HTTP Semantics">[RFC9110]</a> header in response to a HTTP <code>HEAD</code> request, indicate when the data was last changed/updated.</p>
@@ -2379,7 +2385,7 @@ This project has been funded with support from the European Commission. This web
      <p>Process the <code>If-Modified-Since</code> <a data-link-type="biblio" href="#biblio-rfc9110" title="HTTP Semantics">[RFC9110]</a> header if provided in a HTTP request and only return data if modifications occured.</p>
    </ul>
    <h4 class="heading settled" data-level="5.2.3" id="ooapi-metadata"><span class="secno">5.2.3. </span><span class="content">Metadata</span><a class="self-link" href="#ooapi-metadata"></a></h4>
-   <p><a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider①②">Data providers</a> must provide the following metadata in their <a data-link-type="dfn" href="#manifest-file" id="ref-for-manifest-file②">manifest file</a> for this method:</p>
+   <p><a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider①③">Data providers</a> must provide the following metadata in their <a data-link-type="dfn" href="#manifest-file" id="ref-for-manifest-file②">manifest file</a> for this method:</p>
    <table class="def">
     <tbody>
      <tr>
@@ -2392,10 +2398,17 @@ This project has been funded with support from the European Commission. This web
       <th>version
       <td>the OOAPI version implemented
    </table>
+   <p><a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider①④">Data providers</a> can specify the following optional metadata:</p>
+   <table class="def">
+    <tbody>
+     <tr>
+      <th>pageSize
+      <td>the page size the <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator⑥">aggregator</a> should use when making requests to list endpoints (default: <code>250</code> - options: <code>10</code>, <code>20</code>, <code>50</code>, <code>100</code>, <code>250</code>)
+   </table>
    <h3 class="heading settled" data-level="5.3" id="edu-api"><span class="secno">5.3. </span><span class="content">Edu-API</span><a class="self-link" href="#edu-api"></a></h3>
    <p><a data-link-type="dfn" href="#education-provider" id="ref-for-education-provider③">Education providers</a> can expose data on their learning opportunities using the Edu-API specification <a data-link-type="biblio" href="#biblio-edu-api" title="Edu-API Specification">[Edu-API]</a>, a RESTful API standard maintained by 1EdTech.
 This method delivers JSON-formatted responses and supports real-time querying of educational data, such as courses and programs, making it suitable for dynamic aggregation scenarios.</p>
-   <p>The <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator⑥">aggregator</a> may use the following endpoints to acquire data (non-exhaustive list, based on Edu-API Core):</p>
+   <p>The <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator⑦">aggregator</a> may use the following endpoints to acquire data (non-exhaustive list, based on Edu-API Core):</p>
    <ul>
     <li data-md>
      <p><code>GET /courses</code> - Retrieve a list of courses.</p>
@@ -2408,7 +2421,7 @@ This method delivers JSON-formatted responses and supports real-time querying of
    </ul>
    <p>Additional endpoints (e.g., for offerings or components) may be supported depending on the provider’s implementation.</p>
    <h4 class="heading settled" data-level="5.3.1" id="edu-api-required"><span class="secno">5.3.1. </span><span class="content">Required Fields</span><a class="self-link" href="#edu-api-required"></a></h4>
-   <p>The Edu-API specification defines a core set of fields for <a data-link-type="dfn" href="#learning-opportunity" id="ref-for-learning-opportunity⑦">learning opportunities</a>, aligned with its <em>Learning Resource Core</em> profile. At a minimum, <a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider①③">data providers</a> must include:</p>
+   <p>The Edu-API specification defines a core set of fields for <a data-link-type="dfn" href="#learning-opportunity" id="ref-for-learning-opportunity⑦">learning opportunities</a>, aligned with its <em>Learning Resource Core</em> profile. At a minimum, <a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider①⑤">data providers</a> must include:</p>
    <ul>
     <li data-md>
      <p><code>id</code>: Unique identifier for the learning opportunity.</p>
@@ -2431,16 +2444,16 @@ This method delivers JSON-formatted responses and supports real-time querying of
 the Edu-API <em>Learning Resource Core</em> bindings for full details.</p>
    <h4 class="heading settled" data-level="5.3.2" id="edu-api-incremental"><span class="secno">5.3.2. </span><span class="content">Incremental Updates</span><a class="self-link" href="#edu-api-incremental"></a></h4>
    <p>The <a data-link-type="biblio" href="#biblio-edu-api" title="Edu-API Specification">[Edu-API]</a> specification includes a <code>dateLastModified</code> property in resource responses (e.g., for courses and programs), indicating the last modification date in ISO 8601 format.</p>
-   <p>This property enables tracking changes to individual resources and can be combined with the <code>filter</code> parameter on collections like <code>GET /courses</code> or <code>GET /programs</code> to support efficient aggregation, providing patterns for both initial bulk loads and delta updates, <a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider①④">data providers</a> and <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator⑦">aggregators</a> should follow this choreography where possible:</p>
+   <p>This property enables tracking changes to individual resources and can be combined with the <code>filter</code> parameter on collections like <code>GET /courses</code> or <code>GET /programs</code> to support efficient aggregation, providing patterns for both initial bulk loads and delta updates, <a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider①⑥">data providers</a> and <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator⑧">aggregators</a> should follow this choreography where possible:</p>
    <ul>
     <li data-md>
-     <p><strong>Initial or Bulk Load</strong>: The <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator⑧">aggregator</a> makes a series of "get all" requests (e.g., <code>GET /courses</code>, <code>GET /programs</code>) to retrieve all resources needed, establishing a baseline dataset. The <code>dateLastModified</code> value for each resource should be recorded for subsequent delta updates.</p>
+     <p><strong>Initial or Bulk Load</strong>: The <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator⑨">aggregator</a> makes a series of "get all" requests (e.g., <code>GET /courses</code>, <code>GET /programs</code>) to retrieve all resources needed, establishing a baseline dataset. The <code>dateLastModified</code> value for each resource should be recorded for subsequent delta updates.</p>
     <li data-md>
-     <p><strong>Delta or True-Up</strong>: The <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator⑨">aggregator</a> repeats the "get all" requests, ideally using a filter on <code>dateLastModified</code> (e.g., <code>GET /courses?modifiedAfter=2025-03-01T00:00:00Z</code>) to retrieve only resources modified since the last sync. If this filter is not supported, the <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator①⓪">aggregator</a> must fetch the full collection and compare <code>dateLastModified</code> values locally against the last sync timestamp.</p>
+     <p><strong>Delta or True-Up</strong>: The <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator①⓪">aggregator</a> repeats the "get all" requests, ideally using a filter on <code>dateLastModified</code> (e.g., <code>GET /courses?modifiedAfter=2025-03-01T00:00:00Z</code>) to retrieve only resources modified since the last sync. If this filter is not supported, the <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator①①">aggregator</a> must fetch the full collection and compare <code>dateLastModified</code> values locally against the last sync timestamp.</p>
    </ul>
-   <p>The QualityLink <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator①①">aggregator</a> may use the <code>dateLastModified</code> value from previous responses to determine which resources have changed since the last harvest.</p>
+   <p>The QualityLink <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator①②">aggregator</a> may use the <code>dateLastModified</code> value from previous responses to determine which resources have changed since the last harvest.</p>
    <h4 class="heading settled" data-level="5.3.3" id="edu-api-metadata"><span class="secno">5.3.3. </span><span class="content">Metadata</span><a class="self-link" href="#edu-api-metadata"></a></h4>
-   <p><a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider①⑤">Data providers</a> must provide the following metadata in their <a data-link-type="dfn" href="#manifest-file" id="ref-for-manifest-file③">manifest file</a> for this method:</p>
+   <p><a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider①⑦">Data providers</a> must provide the following metadata in their <a data-link-type="dfn" href="#manifest-file" id="ref-for-manifest-file③">manifest file</a> for this method:</p>
    <table class="def">
     <tbody>
      <tr>
@@ -2453,10 +2466,17 @@ the Edu-API <em>Learning Resource Core</em> bindings for full details.</p>
       <th>version
       <td>The Edu-API version implemented (e.g., <code>1.0</code>)
    </table>
+   <p><a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider①⑧">Data providers</a> can specify the following optional metadata:</p>
+   <table class="def">
+    <tbody>
+     <tr>
+      <th>pageSize
+      <td>the maximum page size the <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator①③">aggregator</a> should use when making requests to list endpoints (default: <code>500</code>)
+   </table>
    <h4 class="heading settled" data-level="5.3.4" id="edu-api-oauth"><span class="secno">5.3.4. </span><span class="content">Authentication with OAuth 2.0</span><a class="self-link" href="#edu-api-oauth"></a></h4>
-   <p>Edu-API mandates the use of OAuth 2.0 for securing API endpoints, ensuring that only authorized <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator①②">aggregators</a> (e.g., the QualityLink aggregator) can access protected data. <a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider①⑥">Data providers</a> must implement OAuth 2.0 as specified below.</p>
+   <p>Edu-API mandates the use of OAuth 2.0 for securing API endpoints, ensuring that only authorized <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator①④">aggregators</a> (e.g., the QualityLink aggregator) can access protected data. <a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider①⑨">Data providers</a> must implement OAuth 2.0 as specified below.</p>
    <h3 class="heading settled" data-level="5.4" id="occapi"><span class="secno">5.4. </span><span class="content">OCCAPI</span><a class="self-link" href="#occapi"></a></h3>
-   <p>The <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator①③">aggregator</a> may use the following endpoints to acquire data:</p>
+   <p>The <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator①⑤">aggregator</a> may use the following endpoints to acquire data:</p>
    <ul>
     <li data-md>
      <p><code>GET /hei/{heiId}</code></p>
@@ -2527,7 +2547,7 @@ the Edu-API <em>Learning Resource Core</em> bindings for full details.</p>
      <p><code>academicTerm</code></p>
    </ul>
    <h4 class="heading settled" data-level="5.4.2" id="occapi-metadata"><span class="secno">5.4.2. </span><span class="content">Metadata</span><a class="self-link" href="#occapi-metadata"></a></h4>
-   <p><a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider①⑦">Data providers</a> must provide the following metadata in their <a data-link-type="dfn" href="#manifest-file" id="ref-for-manifest-file④">manifest file</a> for this method:</p>
+   <p><a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider②⓪">Data providers</a> must provide the following metadata in their <a data-link-type="dfn" href="#manifest-file" id="ref-for-manifest-file④">manifest file</a> for this method:</p>
    <table class="def">
     <tbody>
      <tr>
@@ -2537,64 +2557,78 @@ the Edu-API <em>Learning Resource Core</em> bindings for full details.</p>
       <th>path
       <td>The URL of the OCCAPI path for a given HEI<br>(e.g., <code>https://domain.tld/occapi/v1/hei/{heiId}</code>)
    </table>
-   <h3 class="heading settled" data-level="5.5" id="ewp"><span class="secno">5.5. </span><span class="content">EWP Courses API</span><a class="self-link" href="#ewp"></a></h3>
-   <p class="note" role="note"><span class="marker">Note:</span> similar structure as for OOAPI</p>
    <h2 class="heading settled" data-level="6" id="access-control"><span class="secno">6. </span><span class="content">Access Control</span><a class="self-link" href="#access-control"></a></h2>
    <p>Currently all transport methods operate over HTTP. Hence the following access control strategies can all be used for either method.</p>
-   <p>A <a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider①⑧">data provider</a> may choose one of the strategies if they wish to control access to their data, but no access control is required.</p>
-   <p>An <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator①④">aggregator</a> should support all formats described.</p>
-   <p>The exchange of access credentials or additional data that some of these options might require (e.g. certificates, trusted IPs, or client/secrets) is an out-of-band activity. The details of this are to be agreed between the <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator①⑤">aggregator</a> and <a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider①⑨">data providers</a> during an onboarding/discovery process; the following sections describe in general terms what out-of-band communication is required.</p>
+   <p>A <a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider②①">data provider</a> may choose one of the strategies if they wish to control access to their data, but no access control is required.</p>
+   <p>An <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator①⑥">aggregator</a> should support all formats described.</p>
+   <p>The exchange of access credentials or additional data that some of these options might require (e.g. certificates, trusted IPs, or client/secrets) is an out-of-band activity. The details of this are to be agreed between the <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator①⑦">aggregator</a> and <a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider②②">data providers</a> during an onboarding/discovery process; the following sections describe in general terms what out-of-band communication is required.</p>
    <h3 class="heading settled" data-level="6.1" id="access-control-ip"><span class="secno">6.1. </span><span class="content">Based on IP address</span><a class="self-link" href="#access-control-ip"></a></h3>
-   <p>A <a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider②⓪">data provider</a> can limit access to certain ranges of IP addresses. To that end, <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator①⑥">aggregators</a> should publish the IP address ranges from which their services may contact the exposed methods.</p>
-   <p><a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider②①">Data providers</a> can omit the <code>auth</code> key from their <a data-link-type="dfn" href="#manifest-file" id="ref-for-manifest-file⑤">manifest file</a> or provide the following metadata for this method:</p>
+   <p>A <a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider②③">data provider</a> can limit access to certain ranges of IP addresses. To that end, <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator①⑧">aggregators</a> should publish the IP address ranges from which their services may contact the exposed methods.</p>
+   <p><a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider②④">Data providers</a> can omit the <code>auth</code> key from their <a data-link-type="dfn" href="#manifest-file" id="ref-for-manifest-file⑤">manifest file</a> or provide the following metadata for this method:</p>
    <table class="def">
     <tbody>
      <tr>
       <th>type
       <td><code>none</code>
    </table>
-   <p>This mechanism does not require <strong>out-of-band communication</strong> beyond the <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator①⑦">aggregator</a> publishing its IP address range.</p>
-   <p class="note" role="note"><span class="marker">Note:</span> The QualityLink aggregator will publish the IP address range from which it operates.</p>
+   <p>This mechanism does not require <strong>out-of-band communication</strong> beyond the <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator①⑨">aggregator</a> publishing its IP address range.</p>
+   <p class="note" role="note"><span class="marker">Note:</span> The QualityLink aggregator will publish the IP address range from which it operates at <a href="https://quality-link.eu/step-by-step/technical/">https://quality-link.eu/step-by-step/technical/</a>.</p>
    <h3 class="heading settled" data-level="6.2" id="access-control-header"><span class="secno">6.2. </span><span class="content">HTTP Request Header</span><a class="self-link" href="#access-control-header"></a></h3>
-   <p>The <a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider②②">data provider</a> may request that the <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator①⑧">aggregator</a> include a specific HTTP header in all requests, e.g. a secret token.</p>
-   <p><a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider②③">Data providers</a> must provide the following metadata under <code>auth</code> in their <a data-link-type="dfn" href="#manifest-file" id="ref-for-manifest-file⑥">manifest file</a> for this method:</p>
+   <p>The <a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider②⑤">data provider</a> may request that the <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator②⓪">aggregator</a> include a specific HTTP header in all requests, e.g. a secret token.</p>
+   <p>To avoid the need for out-of-band communication, the <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator②①">aggregator</a> should publish an RSA public key <a data-link-type="biblio" href="#biblio-rfc8017" title="PKCS #1: RSA Cryptography Specifications Version 2.2">[rfc8017]</a> for <a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider②⑥">data providers</a> to encrypt their secret with. The encrypted secret can be placed in the manifest file, will be decrypted by the <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator②②">aggregator</a> and returned in clear text with every request.</p>
+   <p><a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider②⑦">Data providers</a> must provide the following metadata under <code>auth</code> in their <a data-link-type="dfn" href="#manifest-file" id="ref-for-manifest-file⑥">manifest file</a> for this method:</p>
    <table class="def">
     <tbody>
      <tr>
       <th>type
       <td><code>httpheader</code>
+     <tr>
+      <th>field
+      <td>a valid HTTP request header field name <a data-link-type="biblio" href="#biblio-http-hdr" title="Hypertext Transfer Protocol (HTTP) Field Name Registry">[HTTP-HDR]</a>
+     <tr>
+      <th>value
+      <td>value for the given field, encrypted using the <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator②③">aggregator’s</a> RSA public key <a data-link-type="biblio" href="#biblio-rfc8017" title="PKCS #1: RSA Cryptography Specifications Version 2.2">[rfc8017]</a> and Base64-encoded
    </table>
-   <p>This mechanism requires <strong>out-of-band communication</strong> in which the <a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider②④">data provider</a> communicates a HTTP header field and the value to include to the <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator①⑨">aggregator</a>. The modalities need to be specified by the <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator②⓪">aggregator</a> separately from this specification.</p>
+   <div class="example" id="example-8e64a344">
+    <a class="self-link" href="#example-8e64a344"></a>
+<a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider②⑧">Data providers</a> can encrypt their secret using the OpenSSL command-line utility.
+
+
+    <p>Assuming that the <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator②④">aggregator’s</a> public key is saved as <code>aggregator_pub.pem</code>, the following command will return a secret suitable for inclusion in the manifest file:</p>
+<pre>echo "my secret" | openssl pkeyutl -encrypt -pubin -inkey aggregator_pub.pem | base64
+</pre>
+   </div>
+   <p class="note" role="note"><span class="marker">Note:</span> The QualityLink aggregator will publish its RSA public key at <a href="https://quality-link.eu/step-by-step/technical/">https://quality-link.eu/step-by-step/technical/</a>.</p>
    <h3 class="heading settled" data-level="6.3" id="access-control-oauth"><span class="secno">6.3. </span><span class="content">OAuth 2.0</span><a class="self-link" href="#access-control-oauth"></a></h3>
-   <p>A <a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider②⑤">data provider</a> may secure their endpoints using OAuth 2.0, requiring the <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator②①">aggregator</a> to authenticate via an access token. This method is the standard authentication mechanism of <a data-link-type="biblio" href="#biblio-edu-api" title="Edu-API Specification">[Edu-API]</a> (see <a href="#edu-api-oauth">§ 5.3.4 Authentication with OAuth 2.0</a>).</p>
-   <p><a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider②⑥">Data providers</a> must implement OAuth 2.0 as follows:</p>
+   <p>A <a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider②⑨">data provider</a> may secure their endpoints using OAuth 2.0, requiring the <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator②⑤">aggregator</a> to authenticate via an access token. This method is the standard authentication mechanism of <a data-link-type="biblio" href="#biblio-edu-api" title="Edu-API Specification">[Edu-API]</a> (see <a href="#edu-api-oauth">§ 5.3.4 Authentication with OAuth 2.0</a>).</p>
+   <p><a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider③⓪">Data providers</a> must implement OAuth 2.0 as follows:</p>
    <ul>
     <li data-md>
      <p><strong>Grant Type</strong>: Support the <em>Client Credentials Grant</em> (per <a data-link-type="biblio" href="#biblio-rfc6749" title="The OAuth 2.0 Authorization Framework">[RFC6749]</a>, Section 4.4) for machine-to-machine authentication, suitable for aggregator access without user interaction.</p>
     <li data-md>
-     <p><strong>Token Endpoint</strong>: Provide a dedicated OAuth 2.0 token endpoint (e.g., <code>https://provider.example.edu/oauth/token</code>) where the <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator②②">aggregator</a> can obtain an access token.</p>
+     <p><strong>Token Endpoint</strong>: Provide a dedicated OAuth 2.0 token endpoint (e.g., <code>https://provider.example.edu/oauth/token</code>) where the <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator②⑥">aggregator</a> can obtain an access token.</p>
     <li data-md>
      <p><strong>Scopes</strong>: Define scopes to limit access (e.g. <code>http://purl.1edtech.org/spec/eduapi/v1p0/scope/core.readonly</code> for read-only access to <a data-link-type="dfn" href="#learning-opportunity" id="ref-for-learning-opportunity⑧">learning opportunity</a> data).</p>
    </ul>
-   <p><a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider②⑦">Data providers</a> further should:</p>
+   <p><a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider③①">Data providers</a> further should:</p>
    <ul>
     <li data-md>
      <p>Issue access tokens with a reasonable expiration time (e.g., 1 hour) and support refresh tokens.</p>
     <li data-md>
      <p>Validate tokens server-side per <a data-link-type="biblio" href="#biblio-rfc6750" title="The OAuth 2.0 Authorization Framework: Bearer Token Usage">[RFC6750]</a> (Bearer Token Usage).</p>
    </ul>
-   <p>An <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator②③">aggregator</a> must support the following:</p>
+   <p>An <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator②⑦">aggregator</a> must support the following:</p>
    <ul>
     <li data-md>
      <p><strong>Grant Type</strong>: Support OAuth 2.0 Client Credentials Grant as a minimum.</p>
     <li data-md>
-     <p><strong>Credentials</strong>: Obtain and securely store client credentials (<code>client_id</code> and <code>client_secret</code>) provided by the <a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider②⑧">data provider</a>.</p>
+     <p><strong>Credentials</strong>: Obtain and securely store client credentials (<code>client_id</code> and <code>client_secret</code>) provided by the <a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider③②">data provider</a>.</p>
     <li data-md>
-     <p><strong>Access Token</strong>: The <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator②④">aggregator</a> must request and include a valid OAuth 2.0 Bearer token in the <code>Authorization</code> header of each request (i.e. <code>Authorization: Bearer &lt;token></code> per <a data-link-type="biblio" href="#biblio-rfc6750" title="The OAuth 2.0 Authorization Framework: Bearer Token Usage">[RFC6750]</a>).</p>
+     <p><strong>Access Token</strong>: The <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator②⑧">aggregator</a> must request and include a valid OAuth 2.0 Bearer token in the <code>Authorization</code> header of each request (i.e. <code>Authorization: Bearer &lt;token></code> per <a data-link-type="biblio" href="#biblio-rfc6750" title="The OAuth 2.0 Authorization Framework: Bearer Token Usage">[RFC6750]</a>).</p>
     <li data-md>
      <p>Handle token expiration and renewal gracefully.</p>
    </ul>
-   <p><a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider②⑨">Data providers</a> must provide the following metadata under <code>auth</code> in their <a data-link-type="dfn" href="#manifest-file" id="ref-for-manifest-file⑦">manifest file</a> for this method:</p>
+   <p><a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider③③">Data providers</a> must provide the following metadata under <code>auth</code> in their <a data-link-type="dfn" href="#manifest-file" id="ref-for-manifest-file⑦">manifest file</a> for this method:</p>
    <table class="def">
     <tbody>
      <tr>
@@ -2604,10 +2638,10 @@ the Edu-API <em>Learning Resource Core</em> bindings for full details.</p>
       <th>token_endpoint
       <td>URI of the OAuth 2.0 token endpoint to use
    </table>
-   <p>This method requires <strong>out-of-band communication</strong> in which the <a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider③⓪">data provider</a> supplied the <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator②⑤">aggregator</a> with secret credentials, namely <code>client_id</code> and <code>client_secret</code> to be used when using the mechanism descibred in Section 2.3 of <a data-link-type="biblio" href="#biblio-rfc6749" title="The OAuth 2.0 Authorization Framework">[RFC6749]</a>.</p>
+   <p>This method requires <strong>out-of-band communication</strong> in which the <a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider③④">data provider</a> supplied the <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator②⑨">aggregator</a> with secret credentials, namely <code>client_id</code> and <code>client_secret</code> to be used when using the mechanism descibred in Section 2.3 of <a data-link-type="biblio" href="#biblio-rfc6749" title="The OAuth 2.0 Authorization Framework">[RFC6749]</a>.</p>
    <h3 class="heading settled" data-level="6.4" id="access-control-http-sig"><span class="secno">6.4. </span><span class="content">HTTP Signature</span><a class="self-link" href="#access-control-http-sig"></a></h3>
-   <p>A <a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider③①">data provider</a> may request that the <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator②⑥">aggregator</a> authenticates itself by signing all HTTP requests using HTTP Message Signatures according to <a data-link-type="biblio" href="#biblio-rfc9421" title="HTTP Message Signatures">[RFC9421]</a>.</p>
-   <p>The <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator②⑦">aggregator</a> must provide a signature that covers the <code>@authority</code> component as well as the following signature parameters (see Section 2.3 of <a data-link-type="biblio" href="#biblio-rfc9421" title="HTTP Message Signatures">[RFC9421]</a>)):</p>
+   <p>A <a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider③⑤">data provider</a> may request that the <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator③⓪">aggregator</a> authenticates itself by signing all HTTP requests using HTTP Message Signatures according to <a data-link-type="biblio" href="#biblio-rfc9421" title="HTTP Message Signatures">[RFC9421]</a>.</p>
+   <p>The <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator③①">aggregator</a> must provide a signature that covers the <code>@authority</code> component as well as the following signature parameters (see Section 2.3 of <a data-link-type="biblio" href="#biblio-rfc9421" title="HTTP Message Signatures">[RFC9421]</a>)):</p>
    <ul>
     <li data-md>
      <p><code>created</code>: signature creation time (UNIX timestamp)</p>
@@ -2620,16 +2654,16 @@ the Edu-API <em>Learning Resource Core</em> bindings for full details.</p>
     <li data-md>
      <p><code>tag</code>: <code>qualitylink-v1</code> to identity the purpose</p>
    </ul>
-   <p>The <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator②⑧">aggregator</a> must publish the following information in order to allow <a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider③②">data providers</a> to verify its signatures:</p>
+   <p>The <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator③②">aggregator</a> must publish the following information in order to allow <a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider③⑥">data providers</a> to verify its signatures:</p>
    <ul>
     <li data-md>
      <p>A (list of) supported signature algorithm(s) (<code>alg</code>), including only algorithms based on asymmetric cryptography</p>
     <li data-md>
      <p>One public key per supported signature algorithm, together with a <code>keyid</code> that will be used</p>
    </ul>
-   <p>A <a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider③③">data provider</a> must support one of signature algorithm(s) supported by the <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator②⑨">aggregator</a>. Unless it supports all algorithms, it needs to select the desired algorithm in the <a data-link-type="dfn" href="#manifest-file" id="ref-for-manifest-file⑧">manifest file</a>.</p>
-   <p>The <a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider③④">data provider</a> should handle requests that are authenticated by a verified HTTP Message Signature, i.e. verify against the <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator③⓪">aggregator’s</a> public key, are applicable to the <a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider③⑤">data provider</a> based on the <code>@authority</code> component and are valid based on the <code>expires</code> parameter. If the <a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider③⑥">data provider</a> receives a request without a HTTP Message Signature, it should return a 401 (Unauthorized) response unless the request could be authenticated through another mechanism. If the request cannot be authenticated, the <a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider③⑦">data provider</a> should return a 403 (Forbidden) response. If the request contains corrupted or invalid <code>Signature</code> or <code>Signature-Input</code> headers, the <a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider③⑧">data provider</a> should return a 400 (Bad Request) response.</p>
-   <p><a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider③⑨">Data providers</a> must provide the following metadata under <code>auth</code> in their <a data-link-type="dfn" href="#manifest-file" id="ref-for-manifest-file⑨">manifest file</a> for this method:</p>
+   <p>A <a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider③⑦">data provider</a> must support one of signature algorithm(s) supported by the <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator③③">aggregator</a>. Unless it supports all algorithms, it needs to select the desired algorithm in the <a data-link-type="dfn" href="#manifest-file" id="ref-for-manifest-file⑧">manifest file</a>.</p>
+   <p>The <a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider③⑧">data provider</a> should handle requests that are authenticated by a verified HTTP Message Signature, i.e. verify against the <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator③④">aggregator’s</a> public key, are applicable to the <a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider③⑨">data provider</a> based on the <code>@authority</code> component and are valid based on the <code>expires</code> parameter. If the <a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider④⓪">data provider</a> receives a request without a HTTP Message Signature, it should return a 401 (Unauthorized) response unless the request could be authenticated through another mechanism. If the request cannot be authenticated, the <a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider④①">data provider</a> should return a 403 (Forbidden) response. If the request contains corrupted or invalid <code>Signature</code> or <code>Signature-Input</code> headers, the <a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider④②">data provider</a> should return a 400 (Bad Request) response.</p>
+   <p><a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider④③">Data providers</a> must provide the following metadata under <code>auth</code> in their <a data-link-type="dfn" href="#manifest-file" id="ref-for-manifest-file⑨">manifest file</a> for this method:</p>
    <table class="def">
     <tbody>
      <tr>
@@ -2639,14 +2673,14 @@ the Edu-API <em>Learning Resource Core</em> bindings for full details.</p>
       <th>alg
       <td>one of the algorithms the aggregator supports (optional)
    </table>
-   <p>This mechanism does not require <strong>out-of-band communication</strong> beyond the <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator③①">aggregator</a> publishing the information mentioned above.</p>
+   <p>This mechanism does not require <strong>out-of-band communication</strong> beyond the <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator③⑤">aggregator</a> publishing the information mentioned above.</p>
    <h2 class="heading settled" data-level="7" id="security"><span class="secno">7. </span><span class="content">Security Considerations</span><a class="self-link" href="#security"></a></h2>
-   <p>The previous chapter describes how <a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider④⓪">data providers</a> can implement access control to their exposed data. The authors are aware that these mechanisms do not provide perfect security, e.g. IP addresses could be spoofed and HTTP Message Signatures could be replayed for a short amount of time if compromised.</p>
+   <p>The previous chapter describes how <a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider④④">data providers</a> can implement access control to their exposed data. The authors are aware that these mechanisms do not provide perfect security, e.g. IP addresses could be spoofed and HTTP Message Signatures could be replayed for a short amount of time if compromised. The approach to encrypting HTTP header values might be imperfect for highly sensitive data due to the static public-private key pair used by the <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator③⑥">aggregator</a>.</p>
    <p>This specification is, however, about exchange of data on <a data-link-type="dfn" href="#learning-opportunity" id="ref-for-learning-opportunity⑨">learning opportunities</a>, which is generally meant to be public. The authors consider the described options reasonably secure for the purposes of limiting unauthorised harvesting of data.</p>
-   <p><a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider④①">Data providers</a> should not expose any data through the methods described herein that is not meant to be public, especially no personal data.</p>
+   <p><a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider④⑤">Data providers</a> should not expose any data through the methods described herein that is not meant to be public, especially no personal data.</p>
   </main>
   <div data-fill-with="conformance">
-   <h2 class="no-ref no-num heading settled" id="conformance"><span class="content">
+   <h2 class="heading no-num no-ref settled" id="conformance"><span class="content">
     Conformance</span><a class="self-link" href="#conformance"></a></h2>
    <p>
             Conformance requirements are expressed with a combination of descriptive assertions and RFC 2119 terminology.
@@ -2807,8 +2841,8 @@ the Edu-API <em>Learning Resource Core</em> bindings for full details.</p>
 
 })();
 </script>
-  <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
-  <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
+  <h2 class="heading no-num no-ref settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
+  <h3 class="heading no-num no-ref settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
   <ul class="index">
    <li><a href="#aggregator">aggregator</a><span>, in § 2</span>
    <li><a href="#course">course</a><span>, in § 2</span>
@@ -2825,13 +2859,15 @@ the Edu-API <em>Learning Resource Core</em> bindings for full details.</p>
    <li><a href="#other-provider">other provider</a><span>, in § 2</span>
    <li><a href="#programme">programme</a><span>, in § 2</span>
   </ul>
-  <h2 class="no-num no-ref heading settled" id="references"><span class="content">References</span><a class="self-link" href="#references"></a></h2>
-  <h3 class="no-num no-ref heading settled" id="normative"><span class="content">Normative References</span><a class="self-link" href="#normative"></a></h3>
+  <h2 class="heading no-num no-ref settled" id="references"><span class="content">References</span><a class="self-link" href="#references"></a></h2>
+  <h3 class="heading no-num no-ref settled" id="normative"><span class="content">Normative References</span><a class="self-link" href="#normative"></a></h3>
   <dl>
    <dt id="biblio-edu-api">[Edu-API]
    <dd>1EdTech. <a href="https://www.imsglobal.org/spec/eduapi/v1p0#uc1"><cite>Edu-API Specification</cite></a>. Candidate Final. URL: <a href="https://www.imsglobal.org/spec/eduapi/v1p0#uc1">https://www.imsglobal.org/spec/eduapi/v1p0#uc1</a>
    <dt id="biblio-elm">[ELM]
    <dd>European Commission. <a href="https://europa.eu/europass/elm-browser/index.html"><cite>European Learning Model (ELM)</cite></a>. v3. URL: <a href="https://europa.eu/europass/elm-browser/index.html">https://europa.eu/europass/elm-browser/index.html</a>
+   <dt id="biblio-http-hdr">[HTTP-HDR]
+   <dd>IANA. <a href="https://www.iana.org/assignments/http-fields/http-fields.xhtml"><cite>Hypertext Transfer Protocol (HTTP) Field Name Registry</cite></a>. URL: <a href="https://www.iana.org/assignments/http-fields/http-fields.xhtml">https://www.iana.org/assignments/http-fields/http-fields.xhtml</a>
    <dt id="biblio-ooapi">[OOAPI]
    <dd>Bureau Edustandaard. <a href="https://openonderwijsapi.nl/specification/v5/docs.html"><cite>Open Education API</cite></a>. v5. URL: <a href="https://openonderwijsapi.nl/specification/v5/docs.html">https://openonderwijsapi.nl/specification/v5/docs.html</a>
    <dt id="biblio-ql-disco">[QL-DISCO]
@@ -2844,6 +2880,8 @@ the Edu-API <em>Learning Resource Core</em> bindings for full details.</p>
    <dd>D. Hardt, Ed.. <a href="https://www.rfc-editor.org/rfc/rfc6749"><cite>The OAuth 2.0 Authorization Framework</cite></a>. October 2012. Proposed Standard. URL: <a href="https://www.rfc-editor.org/rfc/rfc6749">https://www.rfc-editor.org/rfc/rfc6749</a>
    <dt id="biblio-rfc6750">[RFC6750]
    <dd>M. Jones; D. Hardt. <a href="https://www.rfc-editor.org/rfc/rfc6750"><cite>The OAuth 2.0 Authorization Framework: Bearer Token Usage</cite></a>. October 2012. Proposed Standard. URL: <a href="https://www.rfc-editor.org/rfc/rfc6750">https://www.rfc-editor.org/rfc/rfc6750</a>
+   <dt id="biblio-rfc8017">[RFC8017]
+   <dd>K. Moriarty, Ed.; et al. <a href="https://www.rfc-editor.org/rfc/rfc8017"><cite>PKCS #1: RSA Cryptography Specifications Version 2.2</cite></a>. November 2016. Informational. URL: <a href="https://www.rfc-editor.org/rfc/rfc8017">https://www.rfc-editor.org/rfc/rfc8017</a>
    <dt id="biblio-rfc9110">[RFC9110]
    <dd>R. Fielding, Ed.; M. Nottingham, Ed.; J. Reschke, Ed.. <a href="https://httpwg.org/specs/rfc9110.html"><cite>HTTP Semantics</cite></a>. June 2022. Internet Standard. URL: <a href="https://httpwg.org/specs/rfc9110.html">https://httpwg.org/specs/rfc9110.html</a>
    <dt id="biblio-rfc9421">[RFC9421]
@@ -2851,7 +2889,7 @@ the Edu-API <em>Learning Resource Core</em> bindings for full details.</p>
    <dt id="biblio-shacl">[SHACL]
    <dd>Holger Knublauch; Dimitris Kontokostas. <a href="https://w3c.github.io/data-shapes/shacl/"><cite>Shapes Constraint Language (SHACL)</cite></a>. URL: <a href="https://w3c.github.io/data-shapes/shacl/">https://w3c.github.io/data-shapes/shacl/</a>
   </dl>
-  <h3 class="no-num no-ref heading settled" id="informative"><span class="content">Informative References</span><a class="self-link" href="#informative"></a></h3>
+  <h3 class="heading no-num no-ref settled" id="informative"><span class="content">Informative References</span><a class="self-link" href="#informative"></a></h3>
   <dl>
    <dt id="biblio-cr-mc">[CR-MC]
    <dd>European Union. <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022H0627(02)"><cite>Council Recommendation on a European approach to micro-credentials for lifelong learning and employability</cite></a>. 16 June 2022. 2022/C 243/02. URL: <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022H0627(02)">https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022H0627(02)</a>
@@ -3062,9 +3100,9 @@ function parseHTML(markup) {
 "use strict";
 {
 let dfnPanelData = {
-"aggregator": {"dfnID":"aggregator","dfnText":"aggregator","external":false,"refSections":[{"refs":[{"id":"ref-for-aggregator"}],"title":"3.3. Access control"},{"refs":[{"id":"ref-for-aggregator\u2460"}],"title":"4. Requirements"},{"refs":[{"id":"ref-for-aggregator\u2461"}],"title":"5. Methods"},{"refs":[{"id":"ref-for-aggregator\u2462"}],"title":"5.1.2. Incremental Transport"},{"refs":[{"id":"ref-for-aggregator\u2463"}],"title":"5.2. OOAPI"},{"refs":[{"id":"ref-for-aggregator\u2464"}],"title":"5.2.1. Required Fields"},{"refs":[{"id":"ref-for-aggregator\u2465"}],"title":"5.3. Edu-API"},{"refs":[{"id":"ref-for-aggregator\u2466"},{"id":"ref-for-aggregator\u2467"},{"id":"ref-for-aggregator\u2468"},{"id":"ref-for-aggregator\u2460\u24ea"},{"id":"ref-for-aggregator\u2460\u2460"}],"title":"5.3.2. Incremental Updates"},{"refs":[{"id":"ref-for-aggregator\u2460\u2461"}],"title":"5.3.4. Authentication with OAuth 2.0"},{"refs":[{"id":"ref-for-aggregator\u2460\u2462"}],"title":"5.4. OCCAPI"},{"refs":[{"id":"ref-for-aggregator\u2460\u2463"},{"id":"ref-for-aggregator\u2460\u2464"}],"title":"6. Access Control"},{"refs":[{"id":"ref-for-aggregator\u2460\u2465"},{"id":"ref-for-aggregator\u2460\u2466"}],"title":"6.1. Based on IP address"},{"refs":[{"id":"ref-for-aggregator\u2460\u2467"},{"id":"ref-for-aggregator\u2460\u2468"},{"id":"ref-for-aggregator\u2461\u24ea"}],"title":"6.2. HTTP Request Header"},{"refs":[{"id":"ref-for-aggregator\u2461\u2460"},{"id":"ref-for-aggregator\u2461\u2461"},{"id":"ref-for-aggregator\u2461\u2462"},{"id":"ref-for-aggregator\u2461\u2463"},{"id":"ref-for-aggregator\u2461\u2464"}],"title":"6.3. OAuth 2.0"},{"refs":[{"id":"ref-for-aggregator\u2461\u2465"},{"id":"ref-for-aggregator\u2461\u2466"},{"id":"ref-for-aggregator\u2461\u2467"},{"id":"ref-for-aggregator\u2461\u2468"},{"id":"ref-for-aggregator\u2462\u24ea"},{"id":"ref-for-aggregator\u2462\u2460"}],"title":"6.4. HTTP Signature"}],"url":"#aggregator"},
+"aggregator": {"dfnID":"aggregator","dfnText":"aggregator","external":false,"refSections":[{"refs":[{"id":"ref-for-aggregator"}],"title":"3.3. Access control"},{"refs":[{"id":"ref-for-aggregator\u2460"}],"title":"4. Requirements"},{"refs":[{"id":"ref-for-aggregator\u2461"}],"title":"5. Methods"},{"refs":[{"id":"ref-for-aggregator\u2462"}],"title":"5.1.2. Incremental Transport"},{"refs":[{"id":"ref-for-aggregator\u2463"}],"title":"5.2. OOAPI"},{"refs":[{"id":"ref-for-aggregator\u2464"}],"title":"5.2.1. Required Fields"},{"refs":[{"id":"ref-for-aggregator\u2465"}],"title":"5.2.3. Metadata"},{"refs":[{"id":"ref-for-aggregator\u2466"}],"title":"5.3. Edu-API"},{"refs":[{"id":"ref-for-aggregator\u2467"},{"id":"ref-for-aggregator\u2468"},{"id":"ref-for-aggregator\u2460\u24ea"},{"id":"ref-for-aggregator\u2460\u2460"},{"id":"ref-for-aggregator\u2460\u2461"}],"title":"5.3.2. Incremental Updates"},{"refs":[{"id":"ref-for-aggregator\u2460\u2462"}],"title":"5.3.3. Metadata"},{"refs":[{"id":"ref-for-aggregator\u2460\u2463"}],"title":"5.3.4. Authentication with OAuth 2.0"},{"refs":[{"id":"ref-for-aggregator\u2460\u2464"}],"title":"5.4. OCCAPI"},{"refs":[{"id":"ref-for-aggregator\u2460\u2465"},{"id":"ref-for-aggregator\u2460\u2466"}],"title":"6. Access Control"},{"refs":[{"id":"ref-for-aggregator\u2460\u2467"},{"id":"ref-for-aggregator\u2460\u2468"}],"title":"6.1. Based on IP address"},{"refs":[{"id":"ref-for-aggregator\u2461\u24ea"},{"id":"ref-for-aggregator\u2461\u2460"},{"id":"ref-for-aggregator\u2461\u2461"},{"id":"ref-for-aggregator\u2461\u2462"},{"id":"ref-for-aggregator\u2461\u2463"}],"title":"6.2. HTTP Request Header"},{"refs":[{"id":"ref-for-aggregator\u2461\u2464"},{"id":"ref-for-aggregator\u2461\u2465"},{"id":"ref-for-aggregator\u2461\u2466"},{"id":"ref-for-aggregator\u2461\u2467"},{"id":"ref-for-aggregator\u2461\u2468"}],"title":"6.3. OAuth 2.0"},{"refs":[{"id":"ref-for-aggregator\u2462\u24ea"},{"id":"ref-for-aggregator\u2462\u2460"},{"id":"ref-for-aggregator\u2462\u2461"},{"id":"ref-for-aggregator\u2462\u2462"},{"id":"ref-for-aggregator\u2462\u2463"},{"id":"ref-for-aggregator\u2462\u2464"}],"title":"6.4. HTTP Signature"},{"refs":[{"id":"ref-for-aggregator\u2462\u2465"}],"title":"7. Security Considerations"}],"url":"#aggregator"},
 "course": {"dfnID":"course","dfnText":"course","external":false,"refSections":[{"refs":[{"id":"ref-for-course"},{"id":"ref-for-course\u2460"}],"title":"2. Key Concepts"},{"refs":[{"id":"ref-for-course\u2461"},{"id":"ref-for-course\u2462"}],"title":"5.4.1. Required fields"}],"url":"#course"},
-"data-provider": {"dfnID":"data-provider","dfnText":"data provider","external":false,"refSections":[{"refs":[{"id":"ref-for-data-provider"},{"id":"ref-for-data-provider\u2460"}],"title":"2. Key Concepts"},{"refs":[{"id":"ref-for-data-provider\u2461"}],"title":"3.2. Efficient aggregation"},{"refs":[{"id":"ref-for-data-provider\u2462"}],"title":"3.3. Access control"},{"refs":[{"id":"ref-for-data-provider\u2463"},{"id":"ref-for-data-provider\u2464"},{"id":"ref-for-data-provider\u2465"}],"title":"4. Requirements"},{"refs":[{"id":"ref-for-data-provider\u2466"},{"id":"ref-for-data-provider\u2467"}],"title":"5. Methods"},{"refs":[{"id":"ref-for-data-provider\u2468"}],"title":"5.1.2. Incremental Transport"},{"refs":[{"id":"ref-for-data-provider\u2460\u24ea"}],"title":"5.1.3. Metadata"},{"refs":[{"id":"ref-for-data-provider\u2460\u2460"}],"title":"5.2.2. Incremental Transport"},{"refs":[{"id":"ref-for-data-provider\u2460\u2461"}],"title":"5.2.3. Metadata"},{"refs":[{"id":"ref-for-data-provider\u2460\u2462"}],"title":"5.3.1. Required Fields"},{"refs":[{"id":"ref-for-data-provider\u2460\u2463"}],"title":"5.3.2. Incremental Updates"},{"refs":[{"id":"ref-for-data-provider\u2460\u2464"}],"title":"5.3.3. Metadata"},{"refs":[{"id":"ref-for-data-provider\u2460\u2465"}],"title":"5.3.4. Authentication with OAuth 2.0"},{"refs":[{"id":"ref-for-data-provider\u2460\u2466"}],"title":"5.4.2. Metadata"},{"refs":[{"id":"ref-for-data-provider\u2460\u2467"},{"id":"ref-for-data-provider\u2460\u2468"}],"title":"6. Access Control"},{"refs":[{"id":"ref-for-data-provider\u2461\u24ea"},{"id":"ref-for-data-provider\u2461\u2460"}],"title":"6.1. Based on IP address"},{"refs":[{"id":"ref-for-data-provider\u2461\u2461"},{"id":"ref-for-data-provider\u2461\u2462"},{"id":"ref-for-data-provider\u2461\u2463"}],"title":"6.2. HTTP Request Header"},{"refs":[{"id":"ref-for-data-provider\u2461\u2464"},{"id":"ref-for-data-provider\u2461\u2465"},{"id":"ref-for-data-provider\u2461\u2466"},{"id":"ref-for-data-provider\u2461\u2467"},{"id":"ref-for-data-provider\u2461\u2468"},{"id":"ref-for-data-provider\u2462\u24ea"}],"title":"6.3. OAuth 2.0"},{"refs":[{"id":"ref-for-data-provider\u2462\u2460"},{"id":"ref-for-data-provider\u2462\u2461"},{"id":"ref-for-data-provider\u2462\u2462"},{"id":"ref-for-data-provider\u2462\u2463"},{"id":"ref-for-data-provider\u2462\u2464"},{"id":"ref-for-data-provider\u2462\u2465"},{"id":"ref-for-data-provider\u2462\u2466"},{"id":"ref-for-data-provider\u2462\u2467"},{"id":"ref-for-data-provider\u2462\u2468"}],"title":"6.4. HTTP Signature"},{"refs":[{"id":"ref-for-data-provider\u2463\u24ea"},{"id":"ref-for-data-provider\u2463\u2460"}],"title":"7. Security Considerations"}],"url":"#data-provider"},
+"data-provider": {"dfnID":"data-provider","dfnText":"data provider","external":false,"refSections":[{"refs":[{"id":"ref-for-data-provider"},{"id":"ref-for-data-provider\u2460"}],"title":"2. Key Concepts"},{"refs":[{"id":"ref-for-data-provider\u2461"}],"title":"3.2. Efficient aggregation"},{"refs":[{"id":"ref-for-data-provider\u2462"}],"title":"3.3. Access control"},{"refs":[{"id":"ref-for-data-provider\u2463"},{"id":"ref-for-data-provider\u2464"},{"id":"ref-for-data-provider\u2465"}],"title":"4. Requirements"},{"refs":[{"id":"ref-for-data-provider\u2466"},{"id":"ref-for-data-provider\u2467"}],"title":"5. Methods"},{"refs":[{"id":"ref-for-data-provider\u2468"}],"title":"5.1.2. Incremental Transport"},{"refs":[{"id":"ref-for-data-provider\u2460\u24ea"},{"id":"ref-for-data-provider\u2460\u2460"}],"title":"5.1.3. Metadata"},{"refs":[{"id":"ref-for-data-provider\u2460\u2461"}],"title":"5.2.2. Incremental Transport"},{"refs":[{"id":"ref-for-data-provider\u2460\u2462"},{"id":"ref-for-data-provider\u2460\u2463"}],"title":"5.2.3. Metadata"},{"refs":[{"id":"ref-for-data-provider\u2460\u2464"}],"title":"5.3.1. Required Fields"},{"refs":[{"id":"ref-for-data-provider\u2460\u2465"}],"title":"5.3.2. Incremental Updates"},{"refs":[{"id":"ref-for-data-provider\u2460\u2466"},{"id":"ref-for-data-provider\u2460\u2467"}],"title":"5.3.3. Metadata"},{"refs":[{"id":"ref-for-data-provider\u2460\u2468"}],"title":"5.3.4. Authentication with OAuth 2.0"},{"refs":[{"id":"ref-for-data-provider\u2461\u24ea"}],"title":"5.4.2. Metadata"},{"refs":[{"id":"ref-for-data-provider\u2461\u2460"},{"id":"ref-for-data-provider\u2461\u2461"}],"title":"6. Access Control"},{"refs":[{"id":"ref-for-data-provider\u2461\u2462"},{"id":"ref-for-data-provider\u2461\u2463"}],"title":"6.1. Based on IP address"},{"refs":[{"id":"ref-for-data-provider\u2461\u2464"},{"id":"ref-for-data-provider\u2461\u2465"},{"id":"ref-for-data-provider\u2461\u2466"},{"id":"ref-for-data-provider\u2461\u2467"}],"title":"6.2. HTTP Request Header"},{"refs":[{"id":"ref-for-data-provider\u2461\u2468"},{"id":"ref-for-data-provider\u2462\u24ea"},{"id":"ref-for-data-provider\u2462\u2460"},{"id":"ref-for-data-provider\u2462\u2461"},{"id":"ref-for-data-provider\u2462\u2462"},{"id":"ref-for-data-provider\u2462\u2463"}],"title":"6.3. OAuth 2.0"},{"refs":[{"id":"ref-for-data-provider\u2462\u2464"},{"id":"ref-for-data-provider\u2462\u2465"},{"id":"ref-for-data-provider\u2462\u2466"},{"id":"ref-for-data-provider\u2462\u2467"},{"id":"ref-for-data-provider\u2462\u2468"},{"id":"ref-for-data-provider\u2463\u24ea"},{"id":"ref-for-data-provider\u2463\u2460"},{"id":"ref-for-data-provider\u2463\u2461"},{"id":"ref-for-data-provider\u2463\u2462"}],"title":"6.4. HTTP Signature"},{"refs":[{"id":"ref-for-data-provider\u2463\u2463"},{"id":"ref-for-data-provider\u2463\u2464"}],"title":"7. Security Considerations"}],"url":"#data-provider"},
 "education-provider": {"dfnID":"education-provider","dfnText":"education provider","external":false,"refSections":[{"refs":[{"id":"ref-for-education-provider"},{"id":"ref-for-education-provider\u2460"}],"title":"2. Key Concepts"},{"refs":[{"id":"ref-for-education-provider\u2461"}],"title":"5.2. OOAPI"},{"refs":[{"id":"ref-for-education-provider\u2462"}],"title":"5.3. Edu-API"}],"url":"#education-provider"},
 "higher-education-institution": {"dfnID":"higher-education-institution","dfnText":"higher education institution","external":false,"refSections":[{"refs":[{"id":"ref-for-higher-education-institution"},{"id":"ref-for-higher-education-institution\u2460"},{"id":"ref-for-higher-education-institution\u2461"}],"title":"2. Key Concepts"},{"refs":[{"id":"ref-for-higher-education-institution\u2462"}],"title":"3.1. Feed data"},{"refs":[{"id":"ref-for-higher-education-institution\u2463"}],"title":"3.2. Efficient aggregation"},{"refs":[{"id":"ref-for-higher-education-institution\u2464"}],"title":"4. Requirements"},{"refs":[{"id":"ref-for-higher-education-institution\u2465"}],"title":"5.4. OCCAPI"},{"refs":[{"id":"ref-for-higher-education-institution\u2466"},{"id":"ref-for-higher-education-institution\u2467"}],"title":"5.4.1. Required fields"}],"url":"#higher-education-institution"},
 "joint-programme": {"dfnID":"joint-programme","dfnText":"joint programme","external":false,"refSections":[],"url":"#joint-programme"},
