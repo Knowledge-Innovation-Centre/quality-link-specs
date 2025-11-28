@@ -1504,9 +1504,9 @@ Possible extra rowspan handling
       g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
     })();
   </script>
-  <meta content="Bikeshed version 3f621ba99, updated Mon Jul 28 15:38:36 2025 -0700" name="generator">
+  <meta content="Bikeshed version 3c53a5b02, updated Thu Nov 27 17:03:30 2025 +0000" name="generator">
   <link href="https://quality-link.eu/wp-content/uploads/sites/90/2024/03/Quality-Link_Website-Favicon.png" rel="icon">
-  <meta content="f1db743b58bbba430c6b32db5e654b1f93b81c64" name="revision">
+  <meta content="13cf481ac4fcbecb8cd30234133acbe64f2b949f" name="revision">
   <meta content="dark light" name="color-scheme">
 <style>/* Boilerplate: style-autolinks */
 .css.css, .property.property, .descriptor.descriptor {
@@ -1818,7 +1818,7 @@ body {
 }
 .invalid.example:not(.no-marker)::before,
 .illegal.example:not(.no-marker)::before {
-    content: "Invalid Example" counter(example);
+    content: "Invalid Example " counter(example);
 }
 
 figcaption {
@@ -2066,8 +2066,8 @@ dfn > a.self-link::before      { content: "#"; }
  <body class="h-entry">
   <div class="head">
    <p data-fill-with="logo"></p>
-   <h1 class="p-name no-ref" id="title">QualityLink Course Identifier Specification</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Living Standard,
+   <h1 class="no-ref p-name" id="title">QualityLink Course Identifier Specification</h1>
+   <h2 class="heading no-num no-ref no-toc settled" id="profile-and-date"><span class="content">Living Standard,
     <time class="dt-updated" datetime="2025-04-18">18 April 2025</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
@@ -2075,8 +2075,8 @@ dfn > a.self-link::before      { content: "#"; }
      <dd><a href="https://github.com/Knowledge-Innovation-Centre/quality-link-specs/issues/">GitHub</a>
      <dd><a href="#issues-index">Inline In Spec</a>
      <dt class="editor">Editors:
-     <dd class="editor p-author h-card vcard"><a class="p-name fn u-url url" href="https://uni-foundation.eu/">Tiago Simões</a> (<span class="p-org org">European University Foundation; EUF</span>) <a class="u-email email" href="mailto:tiago.simoes@uni-foundation.eu">tiago.simoes@uni-foundation.eu</a>
-     <dd class="editor p-author h-card vcard"><a class="p-name fn u-url url" href="https://knowledgeinnovation.eu">Colin Tück</a> (<span class="p-org org">Knowledge Innovation Centre; KIC</span>) <a class="u-email email" href="mailto:colin@knowledgeinnovation.eu">colin@knowledgeinnovation.eu</a>
+     <dd class="editor h-card p-author vcard"><a class="fn p-name u-url url" href="https://uni-foundation.eu/">Tiago Simões</a> (<span class="org p-org">European University Foundation; EUF</span>) <a class="email u-email" href="mailto:tiago.simoes@uni-foundation.eu">tiago.simoes@uni-foundation.eu</a>
+     <dd class="editor h-card p-author vcard"><a class="fn p-name u-url url" href="https://knowledgeinnovation.eu">Colin Tück</a> (<span class="org p-org">Knowledge Innovation Centre; KIC</span>) <a class="email u-email" href="mailto:colin@knowledgeinnovation.eu">colin@knowledgeinnovation.eu</a>
      <dt>Project Website:
      <dd><a href="https://quality-link.eu/">https://quality-link.eu/</a>
      <dt>Project Reference:
@@ -2108,13 +2108,13 @@ This project has been funded with support from the European Commission. This web
    <hr title="Separator for header">
   </div>
   <div class="p-summary" data-fill-with="abstract">
-   <h2 class="no-num no-toc no-ref heading settled" id="abstract"><span class="content">Abstract</span></h2>
+   <h2 class="heading no-num no-ref no-toc settled" id="abstract"><span class="content">Abstract</span></h2>
    <p>This specification standardises how individual courses can be consistently identified across different systems.</p>
   </div>
   <div data-fill-with="at-risk"></div>
   <nav data-fill-with="table-of-contents" id="toc">
-   <h2 class="no-num no-toc no-ref" id="contents">Table of Contents</h2>
-   <ol class="toc" role="directory">
+   <h2 class="no-num no-ref no-toc" id="contents">Table of Contents</h2>
+   <ol class="toc">
     <li>
      <a href="#intro"><span class="secno">1</span> <span class="content">Introduction</span></a>
      <ol class="toc">
@@ -2262,7 +2262,7 @@ This project has been funded with support from the European Commission. This web
    <p>Whereas <code>domain.tld</code> is the SCHAC code and <code>ABCD1234</code> the unique internal identifier as above. This has the convenience that the URN and DID notations can easily be converted to each other.</p>
   </main>
   <div data-fill-with="conformance">
-   <h2 class="no-ref no-num heading settled" id="conformance"><span class="content">
+   <h2 class="heading no-num no-ref settled" id="conformance"><span class="content">
     Conformance</span><a class="self-link" href="#conformance"></a></h2>
    <p>
             Conformance requirements are expressed with a combination of descriptive assertions and RFC 2119 terminology.
@@ -2423,8 +2423,8 @@ This project has been funded with support from the European Commission. This web
 
 })();
 </script>
-  <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
-  <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
+  <h2 class="heading no-num no-ref settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
+  <h3 class="heading no-num no-ref settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
   <ul class="index">
    <li><a href="#aggregator">aggregator</a><span>, in § 2</span>
    <li><a href="#course">course</a><span>, in § 2</span>
@@ -2440,8 +2440,8 @@ This project has been funded with support from the European Commission. This web
    <li><a href="#other-provider">other provider</a><span>, in § 2</span>
    <li><a href="#programme">programme</a><span>, in § 2</span>
   </ul>
-  <h2 class="no-num no-ref heading settled" id="references"><span class="content">References</span><a class="self-link" href="#references"></a></h2>
-  <h3 class="no-num no-ref heading settled" id="normative"><span class="content">Normative References</span><a class="self-link" href="#normative"></a></h3>
+  <h2 class="heading no-num no-ref settled" id="references"><span class="content">References</span><a class="self-link" href="#references"></a></h2>
+  <h3 class="heading no-num no-ref settled" id="normative"><span class="content">Normative References</span><a class="self-link" href="#normative"></a></h3>
   <dl>
    <dt id="biblio-deqar">[DEQAR]
    <dd>European Quality Assurance Register (EQAR). <a href="https://docs.deqar.eu/stable/"><cite>DEQAR Documentation</cite></a>. v1.2. URL: <a href="https://docs.deqar.eu/stable/">https://docs.deqar.eu/stable/</a>
@@ -2456,7 +2456,7 @@ This project has been funded with support from the European Commission. This web
    <dt id="biblio-schac">[SCHAC]
    <dd>REFEDS. <a href="https://wiki.refeds.org/display/STAN/SCHAC+Releases"><cite>SCHema for ACademia</cite></a>. version 1.6.0. URL: <a href="https://wiki.refeds.org/display/STAN/SCHAC+Releases">https://wiki.refeds.org/display/STAN/SCHAC+Releases</a>
   </dl>
-  <h3 class="no-num no-ref heading settled" id="informative"><span class="content">Informative References</span><a class="self-link" href="#informative"></a></h3>
+  <h3 class="heading no-num no-ref settled" id="informative"><span class="content">Informative References</span><a class="self-link" href="#informative"></a></h3>
   <dl>
    <dt id="biblio-cr-mc">[CR-MC]
    <dd>European Union. <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022H0627(02)"><cite>Council Recommendation on a European approach to micro-credentials for lifelong learning and employability</cite></a>. 16 June 2022. 2022/C 243/02. URL: <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022H0627(02)">https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022H0627(02)</a>
@@ -2469,7 +2469,7 @@ This project has been funded with support from the European Commission. This web
    <dt id="biblio-ql-disco">[QL-DISCO]
    <dd>QualityLink Consortium. <a href="https://specs.quality-link.eu/discovery.html"><cite>Data Source Discovery Specification</cite></a>. 2025. draft. URL: <a href="https://specs.quality-link.eu/discovery.html">https://specs.quality-link.eu/discovery.html</a>
   </dl>
-  <h2 class="no-num no-ref heading settled" id="issues-index"><span class="content">Issues Index</span><a class="self-link" href="#issues-index"></a></h2>
+  <h2 class="heading no-num no-ref settled" id="issues-index"><span class="content">Issues Index</span><a class="self-link" href="#issues-index"></a></h2>
   <div style="counter-reset:issue">
    <div class="issue"> need to address changes of SCHAC codes? <a class="issue-return" href="#issue-fd7e99aa" title="Jump to section">↵</a></div>
    <div class="issue"> address mergers of institutions etc. <a class="issue-return" href="#issue-0b183428" title="Jump to section">↵</a></div>
