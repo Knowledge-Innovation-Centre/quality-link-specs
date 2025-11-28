@@ -203,6 +203,12 @@ path: the URL of the OOAPI root
 version: the OOAPI version implemented
 </pre>
 
+[=Data providers=] can specify the following optional metadata:
+
+<pre class=simpledef>
+pageSize: the page size the [=aggregator=] should use when making requests to list endpoints (default: `250` - options: `10`, `20`, `50`, `100`, `250`)
+</pre>
+
 Edu-API {#edu-api}
 -------
 
@@ -254,6 +260,12 @@ The QualityLink [=aggregator=] may use the `dateLastModified` value from previou
 type: `edu-api`
 path: The URL of the Edu-API root (e.g., `https://provider.example.edu/edu-api/v1/`)
 version: The Edu-API version implemented (e.g., `1.0`)
+</pre>
+
+[=Data providers=] can specify the following optional metadata:
+
+<pre class=simpledef>
+pageSize: the maximum page size the [=aggregator=] should use when making requests to list endpoints (default: `500`)
 </pre>
 
 ### Authentication with OAuth 2.0 ### {#edu-api-oauth}
