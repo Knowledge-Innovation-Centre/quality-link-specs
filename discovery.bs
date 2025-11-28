@@ -93,15 +93,18 @@ Data sources {#manifest-sources}
 `sources` must be an array/sequence of objects/mapping, each representing a data source of the provider. At least one data source must be specified. The following keys are supported for each source:
 
 <pre class=simpledef>
-type: Type of the data source: string, using the identifier specified in [[!QL-EXCH]]
-path: File or API root: URL
+<b>type</b>*: Type of the data source: string, using the identifier specified in [[!QL-EXCH]]
+<b>path</b>*: File or API root: URL
 version: Version identifier: string (see data source tyope-specific information)
 id: Identifier of the data source: string
 name: Human-readable name or description: string
 auth: Authorisation: object/mapping including `type` and additional, access control strategy-specific parameters
+refresh: Minimum number of hours to wait between scheduled refreshs of the data source: integer
 </pre>
 
 Keys marked with an asterisk are required. Additional, data source type-specific keys are specified in [[!QL-EXCH]].
+
+Note: There is no default for the `refresh` parameter and the interval is at the [=aggregator's=] discretion if not specified. The QualityLink aggregator will use a 24-hour interval by default.
 
 Additional metadata {#manifest-meta}
 -------------------
@@ -178,6 +181,10 @@ JSON Schema {#manifest-schema}
             "required": [
               "type"
             ]
+          },
+          "refresh": {
+            "description": "Minimum number of hours to wait between scheduled refreshs of the data source",
+            "type": "number"
           }
         },
         "required": [
