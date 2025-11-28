@@ -4,7 +4,7 @@ Title: QualityLink Course Identifier Specification
 Shortname: quality-link-course-id
 Status: LS
 Level: 0
-Warning: Not Ready
+Warning: Custom
 Editor: Tiago Simões, European University Foundation; EUF, tiago.simoes@uni-foundation.eu, https://uni-foundation.eu/
 Editor: Colin Tück, Knowledge Innovation Centre; KIC, colin@knowledgeinnovation.eu, https://knowledgeinnovation.eu
 Local Boilerplate: defaults yes

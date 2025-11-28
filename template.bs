@@ -4,7 +4,7 @@ Title: QualityLink Sample Specification
 Shortname: quality-link-abc-123
 Status: LS
 Level: 0
-Warning: Not Ready
+Warning: Custom
 Editor: Colin Tück, Knowledge Innovation Centre; KIC, colin@knowledgeinnovation.eu, https://knowledgeinnovation.eu
 Editor: Tiago Simões, European University Foundation; EUF, tiago.simoes@uni-foundation.eu, https://uni-foundation.eu/
 Local Boilerplate: defaults yes

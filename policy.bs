@@ -4,9 +4,6 @@ Title: QualityLink Data Sources and Access Policy
 Shortname: quality-link-policy
 Status: LD
 Level: 0
-Warning: Custom
-Custom Warning Title: Draft Document
-Custom Warning Text: This policy is a work-in-progress draft. All content is subject to change without notice.
 Editor: Colin Tück, Knowledge Innovation Centre; KIC, colin@knowledgeinnovation.eu, https://knowledgeinnovation.eu
 Local Boilerplate: defaults yes
 Local Boilerplate: header yes

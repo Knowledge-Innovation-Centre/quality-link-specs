@@ -4,7 +4,7 @@ Title: QualityLink Data Source Discovery Specification
 Shortname: quality-link-discovery
 Status: LS
 Level: 0
-Warning: Not Ready
+Warning: Custom
 Editor: Colin Tück, Knowledge Innovation Centre; KIC, colin@knowledgeinnovation.eu, https://knowledgeinnovation.eu
 Local Boilerplate: defaults yes
 Local Boilerplate: header yes
