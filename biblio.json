@@ -1,4 +1,11 @@
 {
+    "HTTP-HDR": {
+        "href": "https://www.iana.org/assignments/http-fields/http-fields.xhtml",
+        "authors": [
+            "IANA"
+        ],
+        "title": "Hypertext Transfer Protocol (HTTP) Field Name Registry"
+    },
     "QL-ONT": {
         "href": "https://specs.quality-link.eu/resources/ontology-shacl.html",
         "authors": [

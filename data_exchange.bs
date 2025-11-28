@@ -342,20 +342,34 @@ type: `none`
 
 This mechanism does not require **out-of-band communication** beyond the [=aggregator=] publishing its IP address range.
 
-Note: The QualityLink aggregator will publish the IP address range from which it operates.
+Note: The QualityLink aggregator will publish the IP address range from which it operates at [https://quality-link.eu/step-by-step/technical/](https://quality-link.eu/step-by-step/technical/).
 
 HTTP Request Header {#access-control-header}
 -------------------
 
 The [=data provider=] may request that the [=aggregator=] include a specific HTTP header in all requests, e.g. a secret token.
 
+To avoid the need for out-of-band communication, the [=aggregator=] should publish an RSA public key [[!rfc8017]] for [=data providers=] to encrypt their secret with. The encrypted secret can be placed in the manifest file, will be decrypted by the [=aggregator=] and returned in clear text with every request.
+
 [=Data providers=] must provide the following metadata under `auth` in their [=manifest file=] for this method:
 
 <pre class=simpledef>
 type: `httpheader`
+field: a valid HTTP request header field name [[!HTTP-HDR]]
+value: value for the given field, encrypted using the [=aggregator's=] RSA public key [[!rfc8017]] and Base64-encoded
 </pre>
 
-This mechanism requires **out-of-band communication** in which the [=data provider=] communicates a HTTP header field and the value to include to the [=aggregator=]. The modalities need to be specified by the [=aggregator=] separately from this specification.
+<div class="example">
+[=Data providers=] can encrypt their secret using the OpenSSL command-line utility.
+
+Assuming that the [=aggregator's=] public key is saved as `aggregator_pub.pem`, the following command will return a secret suitable for inclusion in the manifest file:
+
+```
+echo "my secret" | openssl pkeyutl -encrypt -pubin -inkey aggregator_pub.pem | base64
+```
+</div>
+
+Note: The QualityLink aggregator will publish its RSA public key at [https://quality-link.eu/step-by-step/technical/](https://quality-link.eu/step-by-step/technical/).
 
 OAuth 2.0 {#access-control-oauth}
 ------------------
@@ -423,8 +437,9 @@ This mechanism does not require **out-of-band communication** beyond the [=aggre
 Security Considerations {#security}
 =======================
 
-The previous chapter describes how [=data providers=] can implement access control to their exposed data. The authors are aware that these mechanisms do not provide perfect security, e.g. IP addresses could be spoofed and HTTP Message Signatures could be replayed for a short amount of time if compromised.
+The previous chapter describes how [=data providers=] can implement access control to their exposed data. The authors are aware that these mechanisms do not provide perfect security, e.g. IP addresses could be spoofed and HTTP Message Signatures could be replayed for a short amount of time if compromised. The approach to encrypting HTTP header values might be imperfect for highly sensitive data due to the static public-private key pair used by the [=aggregator=].
 
 This specification is, however, about exchange of data on [=learning opportunities=], which is generally meant to be public. The authors consider the described options reasonably secure for the purposes of limiting unauthorised harvesting of data.
 
 [=Data providers=] should not expose any data through the methods described herein that is not meant to be public, especially no personal data.
+
