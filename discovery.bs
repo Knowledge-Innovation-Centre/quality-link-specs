@@ -100,6 +100,8 @@ id: Identifier of the data source: string
 name: Human-readable name or description: string
 auth: Authorisation: object/mapping including `type` and additional, access control strategy-specific parameters
 refresh: Minimum number of hours to wait between scheduled refreshs of the data source: integer
+headers: Additional HTTP header fields [[!HTTP-HDR]] to include in every request to the data source: object with header field names as key and values as value
+queryParameters: Additional query parameters [[!RFC3986]] to be added to the URL Query component in every request: object with parameter names as key and values as value
 </pre>
 
 Keys marked with an asterisk are required. Additional, data source type-specific keys are specified in [[!QL-EXCH]].
@@ -185,6 +187,14 @@ JSON Schema {#manifest-schema}
           "refresh": {
             "description": "Minimum number of hours to wait between scheduled refreshs of the data source",
             "type": "number"
+          },
+          "headers": {
+            "description": "Additional HTTP header fields to include in every request to the data source",
+            "type": "object"
+          },
+          "queryParameters": {
+            "description": "Additional query parameters to be added to the URL Query component in every request",
+            "type": "object"
           }
         },
         "required": [
