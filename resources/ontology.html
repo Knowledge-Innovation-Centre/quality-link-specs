@@ -159,16 +159,16 @@ This ontology has the following classes and properties.</span>
       <a href="#absorbed" title="http://data.quality-link.eu/ontology/v1#absorbed">absorbed</a>
    </li>
    <li>
-      <a href="#availableTo"
-         title="http://data.quality-link.eu/ontology/v1#availableTo">available to</a>
-   </li>
-   <li>
       <a href="#studentsOf"
          title="http://data.quality-link.eu/ontology/v1#studentsOf">includes students of</a>
    </li>
    <li>
       <a href="#isMemberOf"
          title="http://data.quality-link.eu/ontology/v1#isMemberOf">is member of</a>
+   </li>
+   <li>
+      <a href="#learnerGroup"
+         title="http://data.quality-link.eu/ontology/v1#learnerGroup">learner group</a>
    </li>
    <li>
       <a href="#minimumEQFLevel"
@@ -189,6 +189,10 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#entryRequirementLearningOutcome"
          title="http://data.quality-link.eu/ontology/v1#entryRequirementLearningOutcome">required learning outcome for entry</a>
+   </li>
+   <li>
+      <a href="#learnerGroupConditions"
+         title="http://data.quality-link.eu/ontology/v1#learnerGroupConditions">specific conditions for learner group</a>
    </li>
    <li>
       <a href="#limitLearningOpportunity"
@@ -288,6 +292,12 @@ This ontology has the following classes and properties.</span>
       <a href="#LearnerGroup"
          title="http://data.quality-link.eu/ontology/v1#LearnerGroup">
          <span>Learner Group</span>
+      </a>
+   </li>
+   <li>
+      <a href="#LearnerGroupConditions"
+         title="http://data.quality-link.eu/ontology/v1#LearnerGroupConditions">
+         <span>Learner Group Conditions</span>
       </a>
    </li>
    <li>
@@ -460,7 +470,7 @@ This section provides details for each class and property defined by QualityLink
     is in domain of
    </dt>
    <dd>
-    <a href="#availableTo" title="http://data.quality-link.eu/ontology/v1#availableTo">available to</a> <sup class="type-op" title="object property">op</sup>, <a href="#virtualLearningEnvironment" title="http://data.quality-link.eu/ontology/v1#virtualLearningEnvironment">virtual learning environment</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#learnerGroup" title="http://data.quality-link.eu/ontology/v1#learnerGroup">learner group</a> <sup class="type-op" title="object property">op</sup>, <a href="#learnerGroupConditions" title="http://data.quality-link.eu/ontology/v1#learnerGroupConditions">specific conditions for learner group</a> <sup class="type-op" title="object property">op</sup>, <a href="#virtualLearningEnvironment" title="http://data.quality-link.eu/ontology/v1#virtualLearningEnvironment">virtual learning environment</a> <sup class="type-op" title="object property">op</sup>
    </dd>
    <dt>
     is also defined as
@@ -534,14 +544,15 @@ This section provides details for each class and property defined by QualityLink
  <h3 id="properties" class="list">Object Properties</h3>
  <ul class="hlist">
   <li><a href="#absorbed" title="http://data.quality-link.eu/ontology/v1#absorbed">absorbed</a></li>
-  <li><a href="#availableTo" title="http://data.quality-link.eu/ontology/v1#availableTo">available to</a></li>
   <li><a href="#studentsOf" title="http://data.quality-link.eu/ontology/v1#studentsOf">includes students of</a></li>
   <li><a href="#isMemberOf" title="http://data.quality-link.eu/ontology/v1#isMemberOf">is member of</a></li>
+  <li><a href="#learnerGroup" title="http://data.quality-link.eu/ontology/v1#learnerGroup">learner group</a></li>
   <li><a href="#minimumEQFLevel" title="http://data.quality-link.eu/ontology/v1#minimumEQFLevel">minimum EQF Level</a></li>
   <li><a href="#referenceGroup" title="http://data.quality-link.eu/ontology/v1#referenceGroup">reference group</a></li>
   <li><a href="#relatedTo" title="http://data.quality-link.eu/ontology/v1#relatedTo">related to</a></li>
   <li><a href="#entryRequirementLearningOpportunity" title="http://data.quality-link.eu/ontology/v1#entryRequirementLearningOpportunity">required learning opportunity for entry</a></li>
   <li><a href="#entryRequirementLearningOutcome" title="http://data.quality-link.eu/ontology/v1#entryRequirementLearningOutcome">required learning outcome for entry</a></li>
+  <li><a href="#learnerGroupConditions" title="http://data.quality-link.eu/ontology/v1#learnerGroupConditions">specific conditions for learner group</a></li>
   <li><a href="#limitLearningOpportunity" title="http://data.quality-link.eu/ontology/v1#limitLearningOpportunity">specific learning opportunity</a></li>
   <li><a href="#spunOffFrom" title="http://data.quality-link.eu/ontology/v1#spunOffFrom">spun off from</a></li>
   <li><a href="#succeeded" title="http://data.quality-link.eu/ontology/v1#succeeded">succeeded</a></li>
@@ -571,29 +582,6 @@ This section provides details for each class and property defined by QualityLink
    </dl>
   </div>
  </div>
- <div class="entity" id="availableTo">
-  <h3>available to<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> http://data.quality-link.eu/ontology/v1#availableTo</p>
-  <div class="comment">
-   <span class="markdown">Indicates the target group to which this learning opportunity is available</span>
-  </div>
-  <div class="description">
-   <dl>
-    <dt>
-     has domain
-    </dt>
-    <dd>
-     <a href="#LearningOpportunityInstance" title="http://data.quality-link.eu/ontology/v1#LearningOpportunityInstance">Learning Opportunity Instance</a> <sup class="type-c" title="class">c</sup>
-    </dd>
-    <dt>
-     has range
-    </dt>
-    <dd>
-     <a href="http://data.quality-link.eu/ontology/v1#LearnerGroup" target="_blank" title="http://data.quality-link.eu/ontology/v1#LearnerGroup">Learner Group</a> <sup class="type-c" title="class">c</sup>
-    </dd>
-   </dl>
-  </div>
- </div>
  <div class="entity" id="studentsOf">
   <h3>includes students of<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> http://data.quality-link.eu/ontology/v1#studentsOf</p>
@@ -616,6 +604,29 @@ This section provides details for each class and property defined by QualityLink
   <p><strong>IRI:</strong> http://data.quality-link.eu/ontology/v1#isMemberOf</p>
   <div class="comment">
    <span class="markdown">Specifies that an organisation is member of an association, e.g. an institution member of EUA or EURASHE.</span>
+  </div>
+ </div>
+ <div class="entity" id="learnerGroup">
+  <h3>learner group<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://data.quality-link.eu/ontology/v1#learnerGroup</p>
+  <div class="comment">
+   <span class="markdown">Definition of the specific group of learners to whom these conditions apply</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#LearningOpportunityInstance" title="http://data.quality-link.eu/ontology/v1#LearningOpportunityInstance">Learning Opportunity Instance</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://data.quality-link.eu/ontology/v1#LearnerGroup" target="_blank" title="http://data.quality-link.eu/ontology/v1#LearnerGroup">Learner Group</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
   </div>
  </div>
  <div class="entity" id="minimumEQFLevel">
@@ -706,6 +717,29 @@ This section provides details for each class and property defined by QualityLink
     </dt>
     <dd>
      <a href="http://data.europa.eu/snb/model/elm/LearningOutcome" target="_blank" title="http://data.europa.eu/snb/model/elm/LearningOutcome">Learning Outcome</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="learnerGroupConditions">
+  <h3>specific conditions for learner group<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://data.quality-link.eu/ontology/v1#learnerGroupConditions</p>
+  <div class="comment">
+   <span class="markdown">Indicates specific conditions that apply to a certain target group of learners</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#LearningOpportunityInstance" title="http://data.quality-link.eu/ontology/v1#LearningOpportunityInstance">Learning Opportunity Instance</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://data.quality-link.eu/ontology/v1#LearnerGroupConditions" target="_blank" title="http://data.quality-link.eu/ontology/v1#LearnerGroupConditions">Learner Group Conditions</a> <sup class="type-c" title="class">c</sup>
     </dd>
    </dl>
   </div>
@@ -1007,6 +1041,7 @@ This section provides details for each class and property defined by QualityLink
   <li><a href="#GroupOfHEIs" title="http://data.quality-link.eu/ontology/v1#GroupOfHEIs"> <span>Group of Higher Education Institutions</span> </a></li>
   <li><a href="#HigherEducationInstitution" title="http://data.quality-link.eu/ontology/v1#HigherEducationInstitution"> <span>Higher Education Institution</span> </a></li>
   <li><a href="#LearnerGroup" title="http://data.quality-link.eu/ontology/v1#LearnerGroup"> <span>Learner Group</span> </a></li>
+  <li><a href="#LearnerGroupConditions" title="http://data.quality-link.eu/ontology/v1#LearnerGroupConditions"> <span>Learner Group Conditions</span> </a></li>
   <li><a href="#LearningOpportunityInstance" title="http://data.quality-link.eu/ontology/v1#LearningOpportunityInstance"> <span>Learning Opportunity Instance</span> </a></li>
   <li><a href="#LearningOpportunityInstanceReference" title="http://data.quality-link.eu/ontology/v1#LearningOpportunityInstanceReference"> <span>Learning Opportunity Instance Reference</span> </a></li>
   <li><a href="#LearningOpportunitySpecification" title="http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecification"> <span>Learning Opportunity Specification</span> </a></li>
@@ -1175,6 +1210,24 @@ This section provides details for each class and property defined by QualityLink
  <div class="entity" id="LearnerGroup">
   <h3>Learner Group<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
   <p><strong>IRI:</strong> http://data.quality-link.eu/ontology/v1#LearnerGroup</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#NodeShape" target="_blank" title="http://www.w3.org/ns/shacl#NodeShape">Node Shape</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is also defined as
+   </dt>
+   <dd>
+    class
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="LearnerGroupConditions">
+  <h3>Learner Group Conditions<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://data.quality-link.eu/ontology/v1#LearnerGroupConditions</p>
   <dl class="description">
    <dt>
     belongs to
