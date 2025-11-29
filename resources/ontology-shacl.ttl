@@ -166,80 +166,23 @@ ql:SchacIdentifier
     ] .
 
 
-###  http://data.quality-link.eu/ontology/v1#LearnerGroup
-ql:LearnerGroup
+###  http://data.quality-link.eu/ontology/v1#LearnerGroupConditions
+ql:LearnerGroupConditions
     a owl:Class, sh:NodeShape ;
-    rdfs:label "Learner Group"@en ;
-    rdfs:comment "Defines a target group of learners to whom a Learning Opportunity is offered, e.g. students of a specific alliance or HEI"@en ;
+    rdfs:label "Learner Group Conditions"@en ;
+    rdfs:comment "Defines specific conditions for a defined target group of learners to whom a Learning Opportunity is offered, e.g. specific fees or registration portals"@en ;
     sh:order 20 ;
     sh:property [
-        sh:uniqueLang true ;
-        sh:name "title"@en ;
-        sh:description "The title of the target group of learners."@en ;
-        sh:datatype rdf:langString ;
-        sh:path dcterms:title ;
+        sh:minCount 1 ;
+        sh:path ql:learnerGroup ;
+        sh:class ql:LearnerGroup ;
         sh:order 1 ;
-    ], [
-        sh:uniqueLang true ;
-        sh:name "description"@en ;
-        sh:description "A free text description of the target group of learners."@en ;
-        sh:datatype rdf:langString ;
-        sh:path dcterms:description ;
-        sh:order 3 ;
-    ], [
-        sh:name "identifier"@en ;
-        sh:description "An identifier for this specific target group of learners."@en ;
-        sh:class <http://data.europa.eu/snb/model/elm/Identifier> ;
-        sh:path <http://www.w3.org/ns/adms#identifier> ;
-        sh:order 10 ;
-    ], [
-        sh:name "home institutions"@en ;
-        sh:description "Offered to students from these higher education institution(s)."@en ;
-        sh:or (
-            [
-                sh:class ql:HigherEducationInstitution ;
-            ]
-            [
-                sh:class ql:GroupOfHEIs ;
-            ]
-        ) ;
-        sh:path ql:studentsOf ;
-        sh:order 22 ;
-    ], [
-        sh:description "Indicates that the Learning Opportunity is also offered to learners who are not enrolled as students."@en ;
-        sh:maxCount 1 ;
-        sh:path ql:isOpenToNonEnrolled ;
-        sh:datatype xsd:boolean ;
-        sh:order 20 ;
     ], [
         sh:description "Link to a portal where students can register for the learning opportunity (specific for this group of learners)."@en ;
         sh:maxCount 1 ;
         sh:path ql:registrationPortal ;
         sh:datatype xsd:anyURI ;
         sh:order 30 ;
-    ], [
-        sh:description "Offered to students following a specific other learning opportunity."@en ;
-        sh:path ql:limitLearningOpportunity ;
-        sh:or (
-            [
-                sh:class ql:LearningOpportunitySpecificationReference ;
-            ]
-            [
-                sh:class ql:LearningOpportunityInstanceReference ;
-            ]
-        ) ;
-        sh:order 24 ;
-    ], [
-        sh:name "specific field"@en ;
-        sh:description "Offered to students from (a) specific field(s) of study."@en ;
-        sh:path elm:limitField ;
-        sh:class skos:Concept ;
-        sh:order 26 ;
-    ], [
-        sh:description "Offered to students enrolled in another learning opportunity at a specified EQF level or higher. If provided, the value must come from the EU controlled vocabulary http://publications.europa.eu/resource/dataset/european-qualification-framework"@en ;
-        sh:path ql:minimumEQFLevel ;
-        sh:class skos:Concept ;
-        sh:order 28 ;
     ], [
         sh:name "fees"@en ;
         sh:description "Information about the pricing of the course, applicable for this specific target group."@en ;
@@ -275,9 +218,80 @@ ql:LearnerGroup
         sh:path elm:entryRequirement ;
         sh:class elm:Note ;
         sh:order 42 ;
+    ] .
+
+
+###  http://data.quality-link.eu/ontology/v1#LearnerGroup
+ql:LearnerGroup
+    a owl:Class, sh:NodeShape ;
+    rdfs:label "Learner Group"@en ;
+    rdfs:comment "Defines a target group of learners to whom a Learning Opportunity is offered, e.g. students of a specific alliance or HEI"@en ;
+    sh:order 21 ;
+    sh:property [
+        sh:uniqueLang true ;
+        sh:name "title"@en ;
+        sh:description "The title of the target group of learners."@en ;
+        sh:datatype rdf:langString ;
+        sh:path dcterms:title ;
+        sh:order 1 ;
+    ], [
+        sh:uniqueLang true ;
+        sh:name "description"@en ;
+        sh:description "A free text description of the target group of learners."@en ;
+        sh:datatype rdf:langString ;
+        sh:path dcterms:description ;
+        sh:order 3 ;
+    ], [
+        sh:name "identifier"@en ;
+        sh:description "An identifier for this specific target group of learners."@en ;
+        sh:class <http://data.europa.eu/snb/model/elm/Identifier> ;
+        sh:path <http://www.w3.org/ns/adms#identifier> ;
+        sh:order 10 ;
+    ], [
+        sh:name "home institutions"@en ;
+        sh:description "Defines the group as students from these higher education institution(s)"@en ;
+        sh:or (
+            [
+                sh:class ql:HigherEducationInstitution ;
+            ]
+            [
+                sh:class ql:GroupOfHEIs ;
+            ]
+        ) ;
+        sh:path ql:studentsOf ;
+        sh:order 22 ;
+    ], [
+        sh:description "Defines the group as learners who are not enrolled as students"@en ;
+        sh:maxCount 1 ;
+        sh:path ql:isOpenToNonEnrolled ;
+        sh:datatype xsd:boolean ;
+        sh:order 20 ;
+    ], [
+        sh:description "Defines the group as students following a specific other learning opportunity"@en ;
+        sh:path ql:limitLearningOpportunity ;
+        sh:or (
+            [
+                sh:class ql:LearningOpportunitySpecificationReference ;
+            ]
+            [
+                sh:class ql:LearningOpportunityInstanceReference ;
+            ]
+        ) ;
+        sh:order 24 ;
+    ], [
+        sh:name "specific field"@en ;
+        sh:description "Defines the group asstudents from (a) specific field(s) of study; use ISCED-F controlled vocabulary"@en ;
+        sh:path elm:limitField ;
+        sh:class skos:Concept ;
+        sh:order 26 ;
+    ], [
+        sh:description "Defines the group as students enrolled in another learning opportunity at a specified EQF level or higher; use the EQF controlled vocabulary"@en ;
+        sh:path ql:minimumEQFLevel ;
+        sh:class skos:Concept ;
+        sh:order 28 ;
     ], [
         sh:name "information note"@en ;
-        sh:description "Additional information about the group of learners to which the LO is offered."@en ;
+        sh:description "Additional information about the defined group of learners"@en ;
         sh:class <http://data.europa.eu/snb/model/elm/Note> ;
         sh:path <http://data.europa.eu/snb/model/elm/additionalNote> ;
         sh:order 29 ;
@@ -585,8 +599,8 @@ ql:LearningOpportunityInstance
         sh:path <http://data.europa.eu/snb/model/elm/supplementaryDocument> ;
         sh:order 44 ;
     ], [
-        sh:class ql:LearnerGroup ;
-        sh:path ql:availableTo ;
+        sh:class ql:LearnerGroupConditions ;
+        sh:path ql:learnerGroupConditions ;
         sh:order 50 ;
     ], [
         sh:name "language"@en ;
@@ -891,12 +905,20 @@ ql:superseded rdf:type owl:ObjectProperty ;
     rdfs:label "superseded"@en .
 
 
-###  http://data.quality-link.eu/ontology/v1#availableTo
-ql:availableTo rdf:type owl:ObjectProperty ;
+###  http://data.quality-link.eu/ontology/v1#learnerGroupConditions
+ql:learnerGroupConditions rdf:type owl:ObjectProperty ;
+               rdfs:domain ql:LearningOpportunityInstance ;
+               rdfs:range ql:LearnerGroupConditions ;
+               rdfs:comment "Indicates specific conditions that apply to a certain target group of learners" ;
+               rdfs:label "specific conditions for learner group"@en .
+
+
+###  http://data.quality-link.eu/ontology/v1#learnerGroup
+ql:learnerGroup rdf:type owl:ObjectProperty ;
                rdfs:domain ql:LearningOpportunityInstance ;
                rdfs:range ql:LearnerGroup ;
-               rdfs:comment "Indicates the target group to which this learning opportunity is available" ;
-               rdfs:label "available to"@en .
+               rdfs:comment "Definition of the specific group of learners to whom these conditions apply" ;
+               rdfs:label "learner group"@en .
 
 
 ###  http://data.quality-link.eu/ontology/v1#studentsOf
