@@ -21,6 +21,7 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix widoco: <https://w3id.org/widoco/vocab#> .
 
 @base <http://data.quality-link.eu/ontology/v1#> .
 
@@ -30,6 +31,7 @@
     cc:attributionName "QualityLink project"@en ;
     cc:attributionURL <https://quality-link.eu/> ;
     dcterms:abstract "The QualityLink ontology and application profile build on the European Learning Model (ELM). They defines additional classes and properties to describe things not currently covered in ELM."@en ;
+    widoco:introduction "This ontology and application profile were developed as part of the QualityLink Erasmus+ project."@en ;
     dcterms:created "2025-02-13"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     dcterms:modified "2025-11-28"^^xsd:date ;
