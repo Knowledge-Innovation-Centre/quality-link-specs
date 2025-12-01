@@ -6,6 +6,8 @@ on:
     branches: [main]
     paths:
       - '*.bs'
+      - 'biblio.json'
+      - '*.include'
       - 'resources/*.ttl'
       - '.github/workflows/auto-publish.yml'
   workflow_dispatch: {}
