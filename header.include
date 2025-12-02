@@ -27,6 +27,7 @@
     :root {
       --warning-border: #FDC113 !important;
       --warning-bg: #09223E !important;
+      --warning-text: #ddd !important;
     }
   </style>
 </head>
