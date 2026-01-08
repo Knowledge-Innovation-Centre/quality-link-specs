@@ -2,7 +2,7 @@ name: Deploy to AWS Lambda
 on:
   push:
     paths:
-      - 'content_negotiation/**'  # This workflow triggers on any changes to files in the content_negotiation folder
+      - 'content_negotiation/lambda_function.py'
 jobs:
   deploy-lambda:
     runs-on: ubuntu-latest
@@ -36,7 +36,7 @@ jobs:
       - name: Create deployment package
         run: |
           cd content_negotiation
-          zip -r ../lambda_deployment_package.zip .
+          zip -r ../lambda_deployment_package.zip lambda_function.py
       
       - name: Deploy to AWS Lambda
         run: |

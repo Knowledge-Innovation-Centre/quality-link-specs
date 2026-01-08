@@ -1,0 +1,7 @@
+services:
+  content-negotiation:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - SPECS_BASE_URL=https://specs.quality-link.eu/resources
