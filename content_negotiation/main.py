@@ -19,6 +19,7 @@ RESOURCE_MAP = {
     "text/xml": "{}.rdf",
     "application/ld+json": "{}.json",
     "application/json": "{}.json",
+    "application/n-triples": "{}.nt",
     "text/html": "{}.html",
     "*/*": "{}.html",
 }

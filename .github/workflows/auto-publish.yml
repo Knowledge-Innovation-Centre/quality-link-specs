@@ -114,8 +114,10 @@ jobs:
           git show -s --format=%s $GITHUB_SHA > /tmp/COMMIT_MSG
           cd ../gh-pages-branch
           cp -v resources/ontology-shacl.ttl resources/ontology.ttl
+          cp -v resources/ontology-shacl.json resources/ontology.json
           cp -v resources/ontology-shacl.json resources/ontology.jsonld
           cp -v resources/ontology-shacl.rdf resources/ontology.owl
+          cp -v resources/ontology-shacl.rdf resources/ontology.xml
           cp -v resources/ontology-shacl.nt resources/ontology.nt
           git add resources/
           git commit -F /tmp/COMMIT_MSG || echo "No changes to commit"
