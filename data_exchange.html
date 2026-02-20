@@ -1513,7 +1513,7 @@ Possible extra rowspan handling
   </style>
   <meta content="Bikeshed version 3c53a5b02, updated Thu Nov 27 17:03:30 2025 +0000" name="generator">
   <link href="https://quality-link.eu/wp-content/uploads/sites/90/2024/03/Quality-Link_Website-Favicon.png" rel="icon">
-  <meta content="0b895f3360d197c944e1599e5695932394dd3103" name="revision">
+  <meta content="c4b9f3c937782a27353d3bda5da55ddd9903c126" name="revision">
   <meta content="dark light" name="color-scheme">
 <style>/* Boilerplate: style-autolinks */
 .css.css, .property.property, .descriptor.descriptor {
@@ -2075,7 +2075,7 @@ dfn > a.self-link::before      { content: "#"; }
    <p data-fill-with="logo"></p>
    <h1 class="no-ref p-name" id="title">QualityLink Data Exchange Specification</h1>
    <h2 class="heading no-num no-ref no-toc settled" id="profile-and-date"><span class="content">Living Standard,
-    <time class="dt-updated" datetime="2025-11-28">28 November 2025</time></span></h2>
+    <time class="dt-updated" datetime="2026-02-20">20 February 2026</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>Issue Tracking:
@@ -2588,13 +2588,13 @@ the Edu-API <em>Learning Resource Core</em> bindings for full details.</p>
       <th>value
       <td>value for the given field, encrypted using the <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator②③">aggregator’s</a> RSA public key <a data-link-type="biblio" href="#biblio-rfc8017" title="PKCS #1: RSA Cryptography Specifications Version 2.2">[rfc8017]</a> and Base64-encoded
    </table>
-   <div class="example" id="example-8e64a344">
-    <a class="self-link" href="#example-8e64a344"></a>
+   <div class="example" id="example-c87c05bb">
+    <a class="self-link" href="#example-c87c05bb"></a>
 <a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider②⑧">Data providers</a> can encrypt their secret using the OpenSSL command-line utility.
 
 
     <p>Assuming that the <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator②④">aggregator’s</a> public key is saved as <code>aggregator_pub.pem</code>, the following command will return a secret suitable for inclusion in the manifest file:</p>
-<pre>echo "my secret" | openssl pkeyutl -encrypt -pubin -inkey aggregator_pub.pem | base64
+<pre>echo -n "my secret" | openssl pkeyutl -encrypt -pkeyopt rsa_padding_mode:oaep -pubin -inkey aggregator_pub.pem | base64
 </pre>
    </div>
    <p class="note" role="note"><span class="marker">Note:</span> The QualityLink aggregator will publish its RSA public key at <a href="https://quality-link.eu/step-by-step/technical/">https://quality-link.eu/step-by-step/technical/</a>.</p>
