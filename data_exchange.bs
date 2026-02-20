@@ -378,7 +378,7 @@ value: value for the given field, encrypted using the [=aggregator's=] RSA publi
 Assuming that the [=aggregator's=] public key is saved as `aggregator_pub.pem`, the following command will return a secret suitable for inclusion in the manifest file:
 
 ```
-echo "my secret" | openssl pkeyutl -encrypt -pubin -inkey aggregator_pub.pem | base64
+echo -n "my secret" | openssl pkeyutl -encrypt -pkeyopt rsa_padding_mode:oaep -pubin -inkey aggregator_pub.pem | base64
 ```
 </div>
 
