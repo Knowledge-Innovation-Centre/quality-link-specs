@@ -990,8 +990,9 @@ ql:virtualLearningEnvironment
 ###  http://data.quality-link.eu/ontology/v1#isMemberOf
 ql:isMemberOf
     a owl:ObjectProperty ;
+    owl:inverseOf foaf:member ;
     rdfs:label "is member of"@en ;
-    rdfs:comment "Specifies that an organisation is member of an association, e.g. an institution member of EUA or EURASHE."@en .
+    rdfs:comment "Specifies that an organisation is member of an alliance, e.g. a European Universities alliance, a consortium, or an association, e.g. EUA or EURASHE."@en .
 
 
 #################################################################
