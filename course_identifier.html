@@ -1511,9 +1511,9 @@ Possible extra rowspan handling
       --warning-text: #ddd !important;
     }
   </style>
-  <meta content="Bikeshed version 3c53a5b02, updated Thu Nov 27 17:03:30 2025 +0000" name="generator">
+  <meta content="Bikeshed version 0a3d88311, updated Mon May 4 18:07:03 2026 +0000" name="generator">
   <link href="https://quality-link.eu/wp-content/uploads/sites/90/2024/03/Quality-Link_Website-Favicon.png" rel="icon">
-  <meta content="c4b9f3c937782a27353d3bda5da55ddd9903c126" name="revision">
+  <meta content="a418fe26d50fecd98b7d2006adeabd7896becd9f" name="revision">
   <meta content="dark light" name="color-scheme">
 <style>/* Boilerplate: style-autolinks */
 .css.css, .property.property, .descriptor.descriptor {
@@ -1808,7 +1808,7 @@ pre .property::before, pre .property::after {
 </style>
 <style>/* Boilerplate: style-counters */
 body {
-    counter-reset: example figure issue;
+    counter-reset: example figure issue table;
 }
 .issue {
     counter-increment: issue;
@@ -1833,6 +1833,13 @@ figcaption {
 }
 figcaption:not(.no-marker)::before {
     content: "Figure " counter(figure) " ";
+}
+
+figure.table figcaption {
+    counter-increment: table;
+}
+figure.table figcaption:not(.no-marker)::before {
+    content: "Table " counter(table) " ";
 }
 </style>
 <style>/* Boilerplate: style-dfn-panel */
@@ -2154,7 +2161,7 @@ This project has been funded with support from the European Commission. This web
      <a href="#references"><span class="secno"></span> <span class="content">References</span></a>
      <ol class="toc">
       <li><a href="#normative"><span class="secno"></span> <span class="content">Normative References</span></a>
-      <li><a href="#informative"><span class="secno"></span> <span class="content">Informative References</span></a>
+      <li><a href="#informative"><span class="secno"></span> <span class="content">Non-Normative References</span></a>
      </ol>
     <li><a href="#issues-index"><span class="secno"></span> <span class="content">Issues Index</span></a>
    </ol>
@@ -2455,7 +2462,7 @@ This project has been funded with support from the European Commission. This web
    <dt id="biblio-schac">[SCHAC]
    <dd>REFEDS. <a href="https://wiki.refeds.org/display/STAN/SCHAC+Releases"><cite>SCHema for ACademia</cite></a>. version 1.6.0. URL: <a href="https://wiki.refeds.org/display/STAN/SCHAC+Releases">https://wiki.refeds.org/display/STAN/SCHAC+Releases</a>
   </dl>
-  <h3 class="heading no-num no-ref settled" id="informative"><span class="content">Informative References</span><a class="self-link" href="#informative"></a></h3>
+  <h3 class="heading no-num no-ref settled" id="informative"><span class="content">Non-Normative References</span><a class="self-link" href="#informative"></a></h3>
   <dl>
    <dt id="biblio-cr-mc">[CR-MC]
    <dd>European Union. <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022H0627(02)"><cite>Council Recommendation on a European approach to micro-credentials for lifelong learning and employability</cite></a>. 16 June 2022. 2022/C 243/02. URL: <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022H0627(02)">https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022H0627(02)</a>
