@@ -300,6 +300,53 @@ ql:LearnerGroup
     ] .
 
 
+###
+ql:LearningOutcome a sh:NodeShape ;
+	sh:targetClass elm:LearningOutcome ;
+	sh:property [
+		sh:name "more information"@en ;
+		sh:description "An additional free text note about the learning outcome."@en ;
+		sh:class elm:Note ;
+		sh:path elm:additionalNote ;
+	], [
+		sh:name "type"@en ;
+		sh:description "The learning outcome type. It should be provided using ESCO Skill Pillar concept types."@en ;
+		sh:maxCount 1 ;
+		sh:class skos:Concept ;
+		sh:path dcterms:type ;
+	], [
+		sh:name "identifier"@en ;
+		sh:description "An alternative identifier of the learning outcome."@en ;
+        sh:class elm:Identifier ;
+		sh:path <http://www.w3.org/ns/adms#identifier> ;
+	], [
+		sh:name "reusability level"@en ;
+		sh:description "The reusability level. It should be provided using the ESCO Skill Pillar concept reusability levels."@en ;
+		sh:maxCount 1 ;
+		sh:class skos:Concept ;
+		sh:path elm:reusabilityLevel ;
+	], [
+		sh:uniqueLang true ;
+		sh:name "title"@en ;
+		sh:description "A legible, descriptive title for the learning outcome. One value per language is permitted."@en ;
+		sh:minCount 1 ;
+		sh:datatype rdf:langString ;
+		sh:path dcterms:title ;
+	], [
+		sh:name "related skill(s)"@en ;
+		sh:description "A link to a related skill or the level of a related skill on a skill framework (except ESCO). It should be provided using a controlled vocabulary."@en ;
+		sh:class skos:Concept ;
+		sh:path elm:relatedSkill ;
+	], [
+		sh:name "related ESCO skill(s)"@en ;
+		sh:description "A link to an ESCO  skill. It should be provided using the ESCO skills controlled vocabulary."@en ;
+		sh:class skos:Concept ;
+		sh:path elm:relatedESCOSkill ;
+	] ;
+	rdfs:comment "A statement regarding what a learner knows, understands and is able to do on completion of a learning process, which are defined in terms of knowledge, skills and responsibility and autonomy."@en ;
+	rdfs:label "Learning Outcome Shape"@en .
+
+
 ###  http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecification
 ql:LearningOpportunitySpecification
     a owl:Class, sh:NodeShape ;
