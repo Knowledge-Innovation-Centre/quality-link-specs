@@ -1082,3 +1082,35 @@ ql:Schac rdf:type skos:ConceptScheme ;
          rdfs:comment "The identifier scheme for higher education institutions defined by the Schema for Academia (SCHAC)."@en ;
          rdfs:label "SCHAC (identifier scheme)"@en .
 
+
+#################################################################
+#
+#    Metadata properties
+#    ===================
+#
+#    These are used by the QualityLink aggregator and course
+#    catalogue, mainly for internal or display purposes.
+#
+#    Do not use these properties in your data payloads.
+#
+#################################################################
+
+###  timestamp when data was last ingested
+ql:ingestedAt a owl:DatatypeProperty ;
+    rdfs:range xsd:dateTime ;
+    rdfs:label "ingested at"@en ;
+    rdfs:comment "The time data on this learning opportunity was last updated in the aggregator."@en .
+
+###  date when data was last ingested
+ql:ingestedDate a owl:DatatypeProperty ;
+    rdfs:range xsd:date ;
+    rdfs:label "ingested on"@en ;
+    rdfs:comment "The date when this learning opportunity was last updated in the aggregator."@en .
+
+###  number of instances for this learning opportunity specification
+###  (this is calculated when data sources are re-indexed and used for efficient display only)
+ql:instanceCount a owl:DatatypeProperty ;
+    rdfs:range xsd:nonNegativeInteger ;
+    rdfs:label "instance count"@en ;
+    rdfs:comment "Number of Learning Opportunity Instances recorded for this Learning Opportunity Specifcation."@en .
+
