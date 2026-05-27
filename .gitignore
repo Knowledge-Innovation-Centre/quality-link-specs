@@ -1,4 +1,6 @@
 venv/
 __pycache__/
+reference/
 *.html
 *.pdf
+.DS_Store
