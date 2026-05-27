@@ -904,9 +904,19 @@ ql:succeeded rdf:type owl:ObjectProperty ;
 ###  http://data.quality-link.eu/ontology/v1#superseded
 ql:superseded rdf:type owl:ObjectProperty ;
     rdfs:subPropertyOf ql:relatedTo ;
+    owl:inverseOf ql:supersededBy ;
     rdfs:domain ql:LearningOpportunitySpecification ;
     rdfs:comment "Learning Opportunity specification superseded another one, which is no longer (or temporarily not) offered."@en ;
     rdfs:label "superseded"@en .
+
+
+###  http://data.quality-link.eu/ontology/v1#supersededBy
+ql:supersededBy rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf ql:relatedTo ;
+    owl:inverseOf ql:superseded ;
+    rdfs:domain ql:LearningOpportunitySpecification ;
+    rdfs:comment "Learning Opportunity specification was superseded by another one. This normally means that the subject learning opportunity is no longer offered."@en ;
+    rdfs:label "superseded by"@en .
 
 
 ###  http://data.quality-link.eu/ontology/v1#learnerGroupConditions
