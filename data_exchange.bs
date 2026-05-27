@@ -384,6 +384,8 @@ echo -n "my secret" | openssl pkeyutl -encrypt -pkeyopt rsa_padding_mode:oaep -p
 
 Note: The QualityLink aggregator will publish its RSA public key at [https://quality-link.eu/step-by-step/technical/](https://quality-link.eu/step-by-step/technical/).
 
+Issue: The current approach limits plaintext secrets to a maximum length of ca. 214 bytes, see <#12>
+
 OAuth 2.0 {#access-control-oauth}
 ------------------
 
@@ -402,7 +404,7 @@ A [=data provider=] may secure their endpoints using OAuth 2.0, requiring the [=
 
 An [=aggregator=] must support the following:
 
-- **Grant Type**: Support OAuth 2.0 Client Credentials Grant as a minimum.
+- **Grant Type**: Support OAuth 2.0 Client Credentials Grant as a minimum and use the mechanism descibred in Section 2.3.1 of [[!RFC6749]].
 - **Credentials**: Obtain and securely store client credentials (`client_id` and `client_secret`) provided by the [=data provider=].
 - **Access Token**: The [=aggregator=] must request and include a valid OAuth 2.0 Bearer token in the `Authorization` header of each request (i.e. `Authorization: Bearer <token>` per [[!RFC6750]]).
 - Handle token expiration and renewal gracefully.
@@ -412,9 +414,12 @@ An [=aggregator=] must support the following:
 <pre class=simpledef>
 type: `oauth2.0`
 token_endpoint: URI of the OAuth 2.0 token endpoint to use
+scope: scope that the aggregator should specify when requesting a token (optional)
+client_id: client ID to provide in the token request (optional)
+client_secret: client secret, encrypted in the same way as specified in [[#access-control-header]] above (optional)
 </pre>
 
-This method requires **out-of-band communication** in which the [=data provider=] supplied the [=aggregator=] with secret credentials, namely `client_id` and `client_secret` to be used when using the mechanism descibred in Section 2.3 of [[!RFC6749]].
+This method requires that client credentials (`client_id` and `client_secret`) are either passed encrypted in the manifest file or through **out-of-band communication** in which the [=data provider=] supplied the [=aggregator=] with those credentials.
 
 HTTP Signature {#access-control-http-sig}
 --------------
