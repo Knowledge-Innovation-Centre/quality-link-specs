@@ -311,6 +311,7 @@ This class and its shape are based on the ELM *LearningAchievementSpecificationS
 
 Different from the ELM LOQ profile, the shapes are defined as open. Properties that are not used/interpreted by the QualityLink data aggregator have been omitted to simplify the shapes."""@en ;
     sh:order 1 ;
+    sh:targetClass elm:Qualification , elm:LearningAchievementSpecification , ql:LearningOpportunitySpecification ;
     sh:property [
         sh:name "publisher"@en ;
         sh:description "Publisher, typically the education provider that will offer instances of this learning opportunity; if not provided, the publisher will be inferred to be the institution providing the data source."@en ;
@@ -540,6 +541,7 @@ ql:LearningOpportunityInstance
     rdfs:label "Learning Opportunity Instance"@en ;
     rdfs:comment "A concrete instance or offering of a learning opportunity, e.g. a course, programme or module as offered in a specific academic year or semester."@en ;
     sh:order 10 ;
+    sh:targetClass elm:LearningOpportunity , ql:LearningOpportunityInstance ;
     sh:property [
         sh:name "learning opportunity specification"@en ;
         sh:maxCount 1 ;
