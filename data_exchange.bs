@@ -384,7 +384,7 @@ echo -n "my secret" | openssl pkeyutl -encrypt -pkeyopt rsa_padding_mode:oaep -p
 
 Note: The QualityLink aggregator will publish its RSA public key at [https://quality-link.eu/step-by-step/technical/](https://quality-link.eu/step-by-step/technical/).
 
-Issue: The current approach limits plaintext secrets to a maximum length of ca. 214 bytes, see <#12>
+Issue: The current approach limits plaintext secrets to a maximum length of ca. 214 bytes, see [issue #12](https://github.com/Knowledge-Innovation-Centre/quality-link-specs/issues/12).
 
 OAuth 2.0 {#access-control-oauth}
 ------------------
