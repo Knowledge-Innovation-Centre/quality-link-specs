@@ -12,11 +12,13 @@
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 # European Learning Model (ELM)
-@prefix elm: <http://data.europa.eu/snb/model/elm/> .
-@prefix loq: <http://data.europa.eu/snb/model/ap/loq-constraints/> .
+@prefix elm: <http://data.europa.eu/snb/model/ontology/> .
+@prefix loq: <http://data.europa.eu/snb/model/application-profile/loq-constraints/> .
 # Other used ontologies
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix rov: <http://www.w3.org/ns/regorg#> .
 @prefix cc: <http://creativecommons.org/ns#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
@@ -129,7 +131,7 @@ ql:OrgRegIdentifier
         sh:description "Identification of the scheme."@en ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
-        sh:path <http://data.europa.eu/snb/model/elm/schemeId> ;
+        sh:path elm:schemeId ;
         sh:hasValue ql:OrgReg ;
     ], [
         sh:name "identifier"@en ;
@@ -154,7 +156,7 @@ ql:SchacIdentifier
         sh:description "Identification of the scheme."@en ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
-        sh:path <http://data.europa.eu/snb/model/elm/schemeId> ;
+        sh:path elm:schemeId ;
         sh:hasValue ql:Schac ;
     ], [
         sh:name "identifier"@en ;
@@ -244,7 +246,7 @@ ql:LearnerGroup
     ], [
         sh:name "identifier"@en ;
         sh:description "An identifier for this specific target group of learners."@en ;
-        sh:class <http://data.europa.eu/snb/model/elm/Identifier> ;
+        sh:class elm:Identifier ;
         sh:path <http://www.w3.org/ns/adms#identifier> ;
         sh:order 10 ;
     ], [
@@ -292,8 +294,8 @@ ql:LearnerGroup
     ], [
         sh:name "information note"@en ;
         sh:description "Additional information about the defined group of learners"@en ;
-        sh:class <http://data.europa.eu/snb/model/elm/Note> ;
-        sh:path <http://data.europa.eu/snb/model/elm/additionalNote> ;
+        sh:class elm:Note ;
+        sh:path elm:additionalNote ;
         sh:order 29 ;
     ] .
 
@@ -319,14 +321,14 @@ Different from the ELM LOQ profile, the shapes are defined as open. Properties t
         sh:name "identifier"@en ;
         sh:description "Identifier or code, normally assigned by the publisher"@en ;
         sh:minCount 1 ;
-        sh:class <http://data.europa.eu/snb/model/elm/Identifier> ;
+        sh:class elm:Identifier ;
         sh:path <http://www.w3.org/ns/adms#identifier> ;
         sh:order 10 ;
     ], [
         sh:name "qualification code"@en ;
         sh:description "Identifying code from a qualification-based reference semantic asset, normally assigned by a different entity than the publisher, e.g. a national qualifications authority"@en ;
         sh:class skos:Concept ;
-        sh:path <http://data.europa.eu/snb/model/elm/qualificationCode> ;
+        sh:path elm:qualificationCode ;
         sh:order 12 ;
     ], [
         sh:uniqueLang true ;
@@ -352,28 +354,28 @@ Different from the ELM LOQ profile, the shapes are defined as open. Properties t
     ], [
         sh:name "more information"@en ;
         sh:description "Additional free text note(s)"@en ;
-        sh:class <http://data.europa.eu/snb/model/elm/Note> ;
-        sh:path <http://data.europa.eu/snb/model/elm/additionalNote> ;
+        sh:class elm:Note ;
+        sh:path elm:additionalNote ;
         sh:order 26 ;
     ], [
         sh:name "homepage"@en ;
         sh:description "Web page of the learning opportunity"@en ;
-        sh:class <http://data.europa.eu/snb/model/elm/WebResource> ;
+        sh:class elm:WebResource ;
         sh:path foaf:homepage ;
         sh:order 28 ;
     ], [
         sh:name "learning outcomes"@en ;
         sh:description "Intended learning outcomes (one by one)"@en ;
         sh:minCount 1 ;
-        sh:class <http://data.europa.eu/snb/model/elm/LearningOutcome> ;
-        sh:path <http://data.europa.eu/snb/model/elm/learningOutcome> ;
+        sh:class elm:LearningOutcome ;
+        sh:path elm:learningOutcome ;
         sh:order 30 ;
     ], [
         sh:name "learning outcome summary"@en ;
         sh:description "Summary of the intended learning outcomes"@en ;
         sh:maxCount 1 ;
-        sh:class <http://data.europa.eu/snb/model/elm/Note> ;
-        sh:path <http://data.europa.eu/snb/model/elm/learningOutcomeSummary> ;
+        sh:class elm:Note ;
+        sh:path elm:learningOutcomeSummary ;
         sh:order 32 ;
     ], [
         sh:name "language"@en ;
@@ -387,13 +389,13 @@ Different from the ELM LOQ profile, the shapes are defined as open. Properties t
         sh:description "Field according to the ISCED-F 2013 Classification; should be provided using the ISCED-F controlled vocabulary"@en ;
         sh:minCount 1 ;
         sh:class skos:Concept ;
-        sh:path <http://data.europa.eu/snb/model/elm/ISCEDFCode> ;
+        sh:path elm:ISCEDFCode ;
         sh:order 50 ;
     ], [
         sh:name "education subject"@en ;
         sh:description "Field of education from another semantic framework than ISCED-F"@en ;
         sh:class skos:Concept ;
-        sh:path <http://data.europa.eu/snb/model/elm/educationSubject> ;
+        sh:path elm:educationSubject ;
         sh:order 52 ;
     ], [
         sh:name "EQF level"@en ;
@@ -401,33 +403,33 @@ Different from the ELM LOQ profile, the shapes are defined as open. Properties t
         sh:maxCount 1 ;
         sh:minCount 1 ;
         sh:class skos:Concept ;
-        sh:path <http://data.europa.eu/snb/model/elm/EQFLevel> ;
+        sh:path elm:EQFLevel ;
         sh:order 60 ;
     ], [
         sh:name "partial qualification"@en ;
         sh:description "Indicates whether a qualification is a full qualification or part of another qualification"@en ;
         sh:maxCount 1 ;
         sh:datatype xsd:boolean ;
-        sh:path <http://data.europa.eu/snb/model/elm/isPartialQualification> ;
+        sh:path elm:isPartialQualification ;
         sh:order 62 ;
     ], [
         sh:name "NQF level"@en ;
         sh:description "Level as specified by the relevant national qualification framework(s); should be provided using the Qualifications Framework controlled vocabulary"@en ;
         sh:class skos:Concept ;
-        sh:path <http://data.europa.eu/snb/model/elm/NQFLevel> ;
+        sh:path elm:NQFLevel ;
         sh:order 64 ;
     ], [
         sh:name "credit points"@en ;
         sh:description "Credit points allocated; should be using ECTS"@en ;
-        sh:class <http://data.europa.eu/snb/model/elm/CreditPoint> ;
-        sh:path <http://data.europa.eu/snb/model/elm/creditPoint> ;
+        sh:class elm:CreditPoint ;
+        sh:path elm:creditPoint ;
         sh:order 70 ;
     ], [
         sh:name "workload"@en ;
         sh:description "Estimation of the time the learner would need to complete all learning activities (e.g. lectures, seminars, projects, practical work, traineeships and individual or self-directed study, including exam preparation) to achieve the learning outcomes"@en ;
         sh:maxCount 1 ;
         sh:datatype xsd:duration ;
-        sh:path <http://data.europa.eu/snb/model/elm/volumeOfLearning> ;
+        sh:path elm:volumeOfLearning ;
         sh:order 72 ;
     ], [
         sh:name "type"@en ;
@@ -439,20 +441,20 @@ Different from the ELM LOQ profile, the shapes are defined as open. Properties t
         sh:name "category"@en ;
         sh:description "Category, provided as free-text string"@en ;
         sh:datatype rdf:langString ;
-        sh:path <http://data.europa.eu/snb/model/elm/category> ;
+        sh:path elm:category ;
         sh:order 82 ;
     ], [
         sh:name "target group"@en ;
         sh:description "Specific target group or category of learners for which this learning opportunity is designed; should be provided using the Target group controlled vocabulary"@en ;
         sh:class skos:Concept ;
-        sh:path <http://data.europa.eu/snb/model/elm/targetGroup> ;
+        sh:path elm:targetGroup ;
         sh:order 100 ;
     ], [
         sh:name "entry requirement"@en ;
         sh:description "Entry requirement or prerequisites, described as free text"@en ;
         sh:maxCount 1 ;
-        sh:class <http://data.europa.eu/snb/model/elm/Note> ;
-        sh:path <http://data.europa.eu/snb/model/elm/entryRequirement> ;
+        sh:class elm:Note ;
+        sh:path elm:entryRequirement ;
         sh:order 110 ;
     ], [
         sh:path ql:entryRequirementLearningOpportunity ;
@@ -465,8 +467,8 @@ Different from the ELM LOQ profile, the shapes are defined as open. Properties t
     ], [
         sh:name "proven by"@en ;
         sh:description "Description of the assessment methods"@en ;
-        sh:class <http://data.europa.eu/snb/model/elm/LearningAssessmentSpecification> ;
-        sh:path <http://data.europa.eu/snb/model/elm/provenBy> ;
+        sh:class elm:LearningAssessmentSpecification ;
+        sh:path elm:provenBy ;
         sh:order 120 ;
     ], [
         sh:path elm:gradingScheme ;
@@ -495,19 +497,19 @@ Different from the ELM LOQ profile, the shapes are defined as open. Properties t
         sh:name "is part of"@en ;
         sh:description "Another learning opportunity of which this one is a part, e.g. a course can be part of a programme"@en ;
         sh:class ql:LearningOpportunitySpecificationReference ;
-        sh:path <http://data.europa.eu/snb/model/elm/isPartOf> ;
+        sh:path elm:isPartOf ;
         sh:order 330 ;
     ], [
         sh:name "has part"@en ;
         sh:description "Another learning opportunity that is part of this one, e.g. a programme can consist of several courses"@en ;
         sh:class ql:LearningOpportunitySpecificationReference ;
-        sh:path <http://data.europa.eu/snb/model/elm/hasPart> ;
+        sh:path elm:hasPart ;
         sh:order 340 ;
     ], [
         sh:name "specialisation of"@en ;
         sh:description "A specification (e.g. a qualification standard) that this learning opportunity implements"@en ;
         sh:class ql:LearningOpportunitySpecificationReference ;
-        sh:path <http://data.europa.eu/snb/model/elm/specialisationOf> ;
+        sh:path elm:specialisationOf ;
         sh:order 350 ;
     ], [
         sh:name "instance"@en ;
@@ -519,8 +521,8 @@ Different from the ELM LOQ profile, the shapes are defined as open. Properties t
         sh:name "banner image"@en ;
         sh:description "An image that can be used for display of this learning opportunity"@en ;
         sh:maxCount 1 ;
-        sh:class <http://data.europa.eu/snb/model/elm/MediaObject> ;
-        sh:path <http://data.europa.eu/snb/model/elm/bannerImage> ;
+        sh:class elm:MediaObject ;
+        sh:path elm:bannerImage ;
         sh:order 500 ;
     ], [
         sh:name "last modified"@en ;
@@ -544,19 +546,19 @@ ql:LearningOpportunityInstance
         sh:minCount 1 ;
         sh:description "Specification of which this is an instance"@en ;
         sh:class ql:LearningOpportunitySpecification ;
-        sh:path <http://data.europa.eu/snb/model/elm/learningAchievementSpecification> ;
+        sh:path elm:learningAchievementSpecification ;
         sh:order 1 ;
     ], [
         sh:name "provided by"@en ;
         sh:description "The institution(s) providing this instance of the learning opportunity"@en ;
         sh:minCount 1 ;
         sh:class ql:HigherEducationInstitution ;
-        sh:path <http://data.europa.eu/snb/model/elm/providedBy> ;
+        sh:path elm:providedBy ;
         sh:order 10 ;
     ], [
         sh:name "identifier"@en ;
         sh:description "An identifier of this instance or offering, assigned by the provider"@en ;
-        sh:class <http://data.europa.eu/snb/model/elm/Identifier> ;
+        sh:class elm:Identifier ;
         sh:path <http://www.w3.org/ns/adms#identifier> ;
         sh:order 20 ;
     ], [
@@ -576,14 +578,14 @@ ql:LearningOpportunityInstance
     ], [
         sh:name "more information"@en ;
         sh:description "Additional free text note(s)"@en ;
-        sh:class <http://data.europa.eu/snb/model/elm/Note> ;
-        sh:path <http://data.europa.eu/snb/model/elm/additionalNote> ;
+        sh:class elm:Note ;
+        sh:path elm:additionalNote ;
         sh:order 34 ;
     ], [
-        sh:node <http://data.europa.eu/snb/model/ap/loq-constraints/URLRegexRestriction> ;
+        sh:node loq:URLRegexRestriction ;
         sh:name "homepage"@en ;
         sh:description "Web page of this particular instance/offering"@en ;
-        sh:class <http://data.europa.eu/snb/model/elm/WebResource> ;
+        sh:class elm:WebResource ;
         sh:path foaf:homepage ;
         sh:order 40 ;
     ], [
@@ -592,11 +594,11 @@ ql:LearningOpportunityInstance
         sh:path ql:registrationPortal ;
         sh:order 42 ;
     ], [
-        sh:node <http://data.europa.eu/snb/model/ap/loq-constraints/URLRegexRestriction> ;
+        sh:node loq:URLRegexRestriction ;
         sh:name "other documents"@en ;
         sh:description "A public web document containing additional documentation about the Learning Opportunity."@en ;
-        sh:class <http://data.europa.eu/snb/model/elm/WebResource> ;
-        sh:path <http://data.europa.eu/snb/model/elm/supplementaryDocument> ;
+        sh:class elm:WebResource ;
+        sh:path elm:supplementaryDocument ;
         sh:order 44 ;
     ], [
         sh:class ql:LearnerGroupConditions ;
@@ -608,26 +610,26 @@ ql:LearningOpportunityInstance
         sh:maxCount 1 ;
         sh:minCount 1 ;
         sh:class skos:Concept ;
-        sh:path <http://data.europa.eu/snb/model/elm/defaultLanguage> ;
+        sh:path elm:defaultLanguage ;
         sh:order 60 ;
     ], [
         sh:name "mode"@en ;
         sh:description "Mode of learning and assessment, provided using the Modes of learning and assessment controlled vocabulary"@en ;
         sh:class skos:Concept ;
-        sh:path <http://data.europa.eu/snb/model/elm/mode> ;
+        sh:path elm:mode ;
         sh:order 70 ;
     ], [
         sh:name "location"@en ;
         sh:description "Location where this instance/offering is delivered"@en ;
         sh:class dcterms:Location ;
-        sh:path <http://data.europa.eu/snb/model/elm/location> ;
+        sh:path elm:location ;
         sh:order 80 ;
     ], [
         sh:name "learning schedule"@en ;
         sh:description "The type of schedule in which this instance is delivered; should be provided using the Learning schedule type controlled vocabulary."@en ;
         sh:maxCount 1 ;
         sh:class skos:Concept ;
-        sh:path <http://data.europa.eu/snb/model/elm/learningSchedule> ;
+        sh:path elm:learningSchedule ;
         sh:order 90 ;
     ], [
         sh:name "term"@en ;
@@ -640,28 +642,28 @@ ql:LearningOpportunityInstance
         sh:name "schedule information"@en ;
         sh:description "Detailed information about the timetable or schedule, may include weekly schedules (e.g. 'Every Monday, 4pm') or the overall schedule (e.g. October: lectures, November: group-work, December: break, January: assessment)"@en ;
         sh:maxCount 1 ;
-        sh:class <http://data.europa.eu/snb/model/elm/Note> ;
-        sh:path <http://data.europa.eu/snb/model/elm/scheduleInformation> ;
+        sh:class elm:Note ;
+        sh:path elm:scheduleInformation ;
         sh:order 94 ;
     ], [
         sh:name "duration"@en ;
         sh:description "The duration during which this instance will be offered"@en ;
         sh:maxCount 1 ;
         sh:datatype xsd:duration ;
-        sh:path <http://data.europa.eu/snb/model/elm/duration> ;
+        sh:path elm:duration ;
         sh:order 96 ;
     ], [
         sh:name "admissions procedure"@en ;
         sh:description "Information on how to apply for this instance/offering"@en ;
         sh:maxCount 1 ;
-        sh:class <http://data.europa.eu/snb/model/elm/Note> ;
-        sh:path <http://data.europa.eu/snb/model/elm/admissionProcedure> ;
+        sh:class elm:Note ;
+        sh:path elm:admissionProcedure ;
         sh:order 100 ;
     ], [
         sh:name "application deadline"@en ;
         sh:description "The deadline for applying for this instance/offering"@en ;
         sh:datatype xsd:dateTime ;
-        sh:path <http://data.europa.eu/snb/model/elm/applicationDeadline> ;
+        sh:path elm:applicationDeadline ;
         sh:order 102 ;
     ], [
         sh:path ql:enrolmentCapacity ;
@@ -678,21 +680,21 @@ ql:LearningOpportunityInstance
     ], [
         sh:name "fees"@en ;
         sh:description "Information about the pricing or tuition fees"@en ;
-        sh:class <http://data.europa.eu/snb/model/elm/PriceDetail> ;
-        sh:path <http://data.europa.eu/snb/model/elm/priceDetail> ;
+        sh:class elm:PriceDetail ;
+        sh:path elm:priceDetail ;
         sh:order 110 ;
     ], [
         sh:name "grant"@en ;
         sh:description "Information on grant possibilities"@en ;
-        sh:class <http://data.europa.eu/snb/model/elm/Grant> ;
-        sh:path <http://data.europa.eu/snb/model/elm/grant> ;
+        sh:class elm:Grant ;
+        sh:path elm:grant ;
         sh:order 112 ;
     ], [
         sh:name "learning activity specification"@en ;
         sh:maxCount 1 ;
         sh:description "Detailed information on the learning activities, including the curricula"@en ;
-        sh:class <http://data.europa.eu/snb/model/elm/LearningActivitySpecification> ;
-        sh:path <http://data.europa.eu/snb/model/elm/learningActivitySpecification> ;
+        sh:class elm:LearningActivitySpecification ;
+        sh:path elm:learningActivitySpecification ;
         sh:order 120 ;
     ], [
         sh:path ql:virtualLearningEnvironment ;
@@ -702,8 +704,8 @@ ql:LearningOpportunityInstance
         sh:name "banner image"@en ;
         sh:description "An image that can be used for display of this instance"@en ;
         sh:maxCount 1 ;
-        sh:class <http://data.europa.eu/snb/model/elm/MediaObject> ;
-        sh:path <http://data.europa.eu/snb/model/elm/bannerImage> ;
+        sh:class elm:MediaObject ;
+        sh:path elm:bannerImage ;
         sh:order 200 ;
     ], [
         sh:name "last modification date"@en ;
