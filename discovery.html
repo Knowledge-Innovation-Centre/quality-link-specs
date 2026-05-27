@@ -1511,9 +1511,9 @@ Possible extra rowspan handling
       --warning-text: #ddd !important;
     }
   </style>
-  <meta content="Bikeshed version 3c53a5b02, updated Thu Nov 27 17:03:30 2025 +0000" name="generator">
+  <meta content="Bikeshed version 0a3d88311, updated Mon May 4 18:07:03 2026 +0000" name="generator">
   <link href="https://quality-link.eu/wp-content/uploads/sites/90/2024/03/Quality-Link_Website-Favicon.png" rel="icon">
-  <meta content="c4b9f3c937782a27353d3bda5da55ddd9903c126" name="revision">
+  <meta content="a418fe26d50fecd98b7d2006adeabd7896becd9f" name="revision">
   <meta content="dark light" name="color-scheme">
 <style>/* Boilerplate: style-autolinks */
 .css.css, .property.property, .descriptor.descriptor {
@@ -1808,7 +1808,7 @@ pre .property::before, pre .property::after {
 </style>
 <style>/* Boilerplate: style-counters */
 body {
-    counter-reset: example figure issue;
+    counter-reset: example figure issue table;
 }
 .issue {
     counter-increment: issue;
@@ -1833,6 +1833,13 @@ figcaption {
 }
 figcaption:not(.no-marker)::before {
     content: "Figure " counter(figure) " ";
+}
+
+figure.table figcaption {
+    counter-increment: table;
+}
+figure.table figcaption:not(.no-marker)::before {
+    content: "Table " counter(table) " ";
 }
 </style>
 <style>/* Boilerplate: style-dfn-panel */
@@ -2190,6 +2197,30 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
     c-[vm] { color: #cb4b16 } /* Name.Variable.Magic */
     c-[il] { color: #657b83 } /* Literal.Number.Integer.Long */
 }
+
+@media print {
+    /* Darken colors for print that would otherwise print too faintly */
+    c-[c]  { color: #555555 } /* Comment */
+    c-[d]  { color: #555555 } /* Comment.Multiline */
+    c-[cp] { color: #555555 } /* Comment.Preproc */
+    c-[c1] { color: #555555 } /* Comment.Single */
+    c-[cs] { color: #555555 } /* Comment.Special */
+    c-[o]  { color: #222222 } /* Operator */
+    c-[p]  { color: #222222 } /* Punctuation */
+    c-[ow] { color: #222222 } /* Operator.Word */
+    c-[s]  { color: #664400 } /* Literal.String */
+    c-[t]  { color: #664400 } /* Literal.String.Single */
+    c-[u]  { color: #664400 } /* Literal.String.Double */
+    c-[sb] { color: #664400 } /* Literal.String.Backtick */
+    c-[sc] { color: #664400 } /* Literal.String.Char */
+    c-[sd] { color: #664400 } /* Literal.String.Doc */
+    c-[se] { color: #664400 } /* Literal.String.Escape */
+    c-[sh] { color: #664400 } /* Literal.String.Heredoc */
+    c-[si] { color: #664400 } /* Literal.String.Interpol */
+    c-[sx] { color: #664400 } /* Literal.String.Other */
+    c-[sr] { color: #664400 } /* Literal.String.Regex */
+    c-[ss] { color: #664400 } /* Literal.String.Symbol */
+}
 </style>
  <body class="h-entry">
   <div class="head">
@@ -2281,7 +2312,7 @@ This project has been funded with support from the European Commission. This web
      <a href="#references"><span class="secno"></span> <span class="content">References</span></a>
      <ol class="toc">
       <li><a href="#normative"><span class="secno"></span> <span class="content">Normative References</span></a>
-      <li><a href="#informative"><span class="secno"></span> <span class="content">Informative References</span></a>
+      <li><a href="#informative"><span class="secno"></span> <span class="content">Non-Normative References</span></a>
      </ol>
    </ol>
   </nav>
@@ -2364,53 +2395,53 @@ This project has been funded with support from the European Commission. This web
    <p>The manifest file can be expressed as <a data-link-type="biblio" href="#biblio-json" title="The JavaScript Object Notation (JSON) Data Interchange Format">[JSON]</a> or <a data-link-type="biblio" href="#biblio-yaml" title="YAML Ain’t Markup Language (YAML™) Version 1.2">[YAML]</a> file. The file must be a single object/mapping with at least a top-level key named <code>sources</code>. An additional <code>meta</code> key can be provided.</p>
    <h3 class="heading settled" data-level="5.1" id="manifest-sources"><span class="secno">5.1. </span><span class="content">Data sources</span><a class="self-link" href="#manifest-sources"></a></h3>
    <p><code>sources</code> must be an array/sequence of objects/mapping, each representing a data source of the provider. At least one data source must be specified. The following keys are supported for each source:</p>
-   <table class="def">
+   <table class="def simpledef">
     <tbody>
      <tr>
-      <th><b>type</b>*
+      <th><b>type</b>*:
       <td>Type of the data source: string, using the identifier specified in <a data-link-type="biblio" href="#biblio-ql-exch" title="Data Exchange Specification">[QL-EXCH]</a>
      <tr>
-      <th><b>path</b>*
+      <th><b>path</b>*:
       <td>File or API root: URL
      <tr>
-      <th>version
+      <th>version:
       <td>Version identifier: string (see data source tyope-specific information)
      <tr>
-      <th>id
+      <th>id:
       <td>Identifier of the data source: string
      <tr>
-      <th>name
+      <th>name:
       <td>Human-readable name or description: string
      <tr>
-      <th>auth
+      <th>auth:
       <td>Authorisation: object/mapping including <code>type</code> and additional, access control strategy-specific parameters
      <tr>
-      <th>refresh
+      <th>refresh:
       <td>Minimum number of hours to wait between scheduled refreshs of the data source: integer
      <tr>
-      <th>headers
+      <th>headers:
       <td>Additional HTTP header fields <a data-link-type="biblio" href="#biblio-http-hdr" title="Hypertext Transfer Protocol (HTTP) Field Name Registry">[HTTP-HDR]</a> to include in every request to the data source: object with header field names as key and values as value
      <tr>
-      <th>queryParameters
+      <th>queryParameters:
       <td>Additional query parameters <a data-link-type="biblio" href="#biblio-rfc3986" title="Uniform Resource Identifier (URI): Generic Syntax">[RFC3986]</a> to be added to the URL Query component in every request: object with parameter names as key and values as value
    </table>
    <p>Keys marked with an asterisk are required. Additional, data source type-specific keys are specified in <a data-link-type="biblio" href="#biblio-ql-exch" title="Data Exchange Specification">[QL-EXCH]</a>.</p>
    <p class="note" role="note"><span class="marker">Note:</span> There is no default for the <code>refresh</code> parameter and the interval is at the <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator②">aggregator’s</a> discretion if not specified. The QualityLink aggregator will use a 24-hour interval by default.</p>
    <h3 class="heading settled" data-level="5.2" id="manifest-meta"><span class="secno">5.2. </span><span class="content">Additional metadata</span><a class="self-link" href="#manifest-meta"></a></h3>
    <p>The <code>meta</code> key is optional and may be used to specify institutional identifiers. <a data-link-type="dfn" href="#aggregator" id="ref-for-aggregator③">Aggregators</a> may use this for diagnostic purposes or identify changed identifiers.</p>
-   <table class="def">
+   <table class="def simpledef">
     <tbody>
      <tr>
-      <th>schac
+      <th>schac:
       <td>SCHAC code of the institution covered by the data source(s)
      <tr>
-      <th>eterid
+      <th>eterid:
       <td>ETER identifier, as used in the EHESO and OrgReg
      <tr>
-      <th>deqarid
+      <th>deqarid:
       <td>DEQAR institutional identifier
      <tr>
-      <th>did
+      <th>did:
       <td>Decentralised Identifier (DID) used by the institution
    </table>
    <h3 class="heading settled" data-level="5.3" id="manifest-schema"><span class="secno">5.3. </span><span class="content">JSON Schema</span><a class="self-link" href="#manifest-schema"></a></h3>
@@ -2830,7 +2861,7 @@ This project has been funded with support from the European Commission. This web
    <dt id="biblio-yaml">[YAML]
    <dd>Oren Ben-Kiki; Clark Evans; Ingy döt Net. <a href="http://yaml.org/spec/1.2/spec.html"><cite>YAML Ain’t Markup Language (YAML™) Version 1.2</cite></a>. 1 October 2009. URL: <a href="http://yaml.org/spec/1.2/spec.html">http://yaml.org/spec/1.2/spec.html</a>
   </dl>
-  <h3 class="heading no-num no-ref settled" id="informative"><span class="content">Informative References</span><a class="self-link" href="#informative"></a></h3>
+  <h3 class="heading no-num no-ref settled" id="informative"><span class="content">Non-Normative References</span><a class="self-link" href="#informative"></a></h3>
   <dl>
    <dt id="biblio-cr-mc">[CR-MC]
    <dd>European Union. <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022H0627(02)"><cite>Council Recommendation on a European approach to micro-credentials for lifelong learning and employability</cite></a>. 16 June 2022. 2022/C 243/02. URL: <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022H0627(02)">https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022H0627(02)</a>
