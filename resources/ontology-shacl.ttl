@@ -61,7 +61,7 @@ The profile references the [ELM controlled vocabularies](https://op.europa.eu/en
         dcterms:format <https://www.iana.org/assignments/media-types/application/n-triples> ;
         dcat:downloadURL <https://specs.quality-link.eu/resources/ontology-shacl.nt> ;
     ] ;
-    owl:versionInfo "1.0.0-alpha" .
+    owl:versionInfo "1.1.0-alpha" .
 
 
 #################################################################
@@ -440,11 +440,23 @@ Different from the ELM LOQ profile, the shapes are defined as open. Properties t
         sh:path elm:ISCEDFCode ;
         sh:order 50 ;
     ], [
+        sh:name "thematic area (broad field)"@en ;
+        sh:description "ISCED-F 2013 field, truncated to 2-digit broad field"@en ;
+        sh:class skos:Concept ;
+        sh:path ql:ISCEDFBroadField ;
+        sh:order 51 ;
+    ], [
+        sh:name "thematic area (narrow field)"@en ;
+        sh:description "ISCED-F 2013 field, truncated to 3-digit narrow field"@en ;
+        sh:class skos:Concept ;
+        sh:path ql:ISCEDFNarrowField ;
+        sh:order 52 ;
+    ], [
         sh:name "education subject"@en ;
         sh:description "Field of education from another semantic framework than ISCED-F"@en ;
         sh:class skos:Concept ;
         sh:path elm:educationSubject ;
-        sh:order 52 ;
+        sh:order 55 ;
     ], [
         sh:name "EQF level"@en ;
         sh:description "Level as specified by the European Qualification Framework (EQF); should be provided using the EQF controlled vocabulary"@en ;
@@ -1041,6 +1053,18 @@ ql:isMemberOf
     rdfs:label "is member of"@en ;
     rdfs:comment "Specifies that an organisation is member of an alliance, e.g. a European Universities alliance, a consortium, or an association, e.g. EUA or EURASHE."@en .
 
+
+### ISCED-F truncated to broad field
+ql:ISCEDFBroadField
+    a owl:ObjectProperty ;
+    rdfs:label "thematic area (broad field)"@en ;
+    rdfs:comment "ISCED-F 2013 field, truncated to 2-digit broad field"@en .
+
+### ISCED-F truncated to narrow field
+ql:ISCEDFNarrowField
+    a owl:ObjectProperty ;
+    rdfs:label "thematic area (narrow field)"@en ;
+    rdfs:comment "ISCED-F 2013 field, truncated to 3-digit narrow field"@en .
 
 #################################################################
 #    Data properties
