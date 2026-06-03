@@ -917,6 +917,47 @@ ql:GradeShape
         sh:order 30 ;
     ] .
 
+###  class for student/staff ratios sourced from ETER
+ql:StudentStaffRatio
+    a owl:Class, sh:NodeShape ;
+    sh:targetClass ql:StudentStaffRatio ;
+    rdfs:label "Student-staff ratio"@en ;
+    rdfs:comment "Statistical information on the student-staff ration in a given reference year, either institution-wide or related to a specified ISCED-F broad field."@en ;
+    sh:order 50 ;
+    sh:property [
+        sh:name "institution"@en ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:path ql:aboutOrganisation ;
+        sh:class ql:HigherEducationInstitution ;
+        sh:order 10 ;
+    ], [
+        sh:description "ISCED-F 2013 broad field to which the student/staff ratio relates"@en ;
+        sh:maxCount 1 ;
+        sh:path ql:ISCEDFBroadField ;
+        sh:class skos:Concept ;
+        sh:order 20 ;
+    ], [
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:path ql:ratioValue ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:double ;
+        sh:order 30 ;
+    ], [
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:path ql:referenceYear ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:gYear ;
+        sh:order 40 ;
+    ], [
+        sh:name "data source"@en ;
+        sh:description "Database from which this indicator was fetched."@en ;
+        sh:path dcterms:source ;
+        sh:order 50 ;
+    ] .
+
 ###  http://data.quality-link.eu/ontology/v1#Kajmak
 ql:Kajmak
     a owl:Class ;
@@ -1066,6 +1107,14 @@ ql:ISCEDFNarrowField
     rdfs:label "thematic area (narrow field)"@en ;
     rdfs:comment "ISCED-F 2013 field, truncated to 3-digit narrow field"@en .
 
+
+### indicate about which HEI statistics are
+ql:aboutOrganisation
+    a owl:ObjectProperty ;
+    rdfs:range ql:HigherEducationInstitution ;
+    rdfs:label "organisation"@en ;
+    rdfs:comment "Education provider the indicator describes."@en .
+
 #################################################################
 #    Data properties
 #################################################################
@@ -1137,6 +1186,19 @@ ql:gradePercentage a owl:DatatypeProperty ;
     rdfs:label "percentage"@en ;
     rdfs:comment "The percentage of learners earning this grade."@en .
 
+###  student-staff or similar ratios
+ql:ratioValue
+    a owl:DatatypeProperty ;
+    rdfs:range xsd:double ;
+    rdfs:label "ratio"@en ;
+    rdfs:comment "The student-staff ratio for this institution/ISCED-F field/course."@en .
+
+###  reference year for statistical data
+ql:referenceYear
+    a owl:DatatypeProperty ;
+    rdfs:range xsd:gYear ;
+    rdfs:label "reference year"@en ;
+    rdfs:comment "The reference year to which this statistical indicator relates."@en .
 
 #################################################################
 #    Individuals
