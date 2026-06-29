@@ -296,31 +296,49 @@ Data required in any resource type:
 
 - `type`
 - `id`
+- `title`
+- `lastModified`
 
 Data attributes required for [HEIS] and organisational units:
 
-- `title`
 - `heiId` or `ounitId` (for [HEIS] and organisational units respectively)
 
 Data attributes required for both [=programme=] and [=course=] resources:
 
-- `title`
 - `code`
 - `description`
 - `ects`
-- `iscedCode`
 - `languageOfInstruction`
+- `learningOutcomes`
 
 Data attributes required for [=programme=] resources only:
 
 - `eqfLevelProvided`
+- `iscedCode`
 - `length`
 
 Data attributes required for [=course=] resources only:
 
-- `description`
-- `learningOutcomes`
 - `academicTerm`
+
+### Recommended fields ### {#occapi-recommended}
+
+OCCAPI v2 provides support for ELM controlled vocabularies depending on the resource type.
+
+In [=programme=] resources the following ELM controlled vocabularies are supported:
+
+- `elmLearningOpportunityType` (limited to certain terms)
+- `elmLearningScheduleType`
+- `elmModeOfLearning`
+
+In [=course=] resources the following ELM controlled vocabularies are supported:
+
+- `elmAssessmentType`
+- `elmLearningActivityType`
+- `elmLearningOpportunityType` (limited to certain terms)
+- `elmModeOfLearning`
+
+Additionally, [=course=] resources may include `iscedCode` as well.
 
 ### Metadata ### {#occapi-metadata}
 
@@ -328,7 +346,7 @@ Data attributes required for [=course=] resources only:
 
 <pre class=simpledef>
 type: `occapi`
-path: The URL of the OCCAPI path for a given HEI<br>(e.g., `https://domain.tld/occapi/v1/hei/{heiId}`)
+path: The URL of the OCCAPI path for a given HEI<br>(e.g., `https://domain.tld/occapi/v2/hei/{heiId}`)
 </pre>
 
 Access Control {#access-control}
