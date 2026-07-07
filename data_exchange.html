@@ -1513,7 +1513,7 @@ Possible extra rowspan handling
   </style>
   <meta content="Bikeshed version d113b2e81, updated Tue Jun 9 14:57:55 2026 -0700" name="generator">
   <link href="https://quality-link.eu/wp-content/uploads/sites/90/2024/03/Quality-Link_Website-Favicon.png" rel="icon">
-  <meta content="477e7f9294a2159cd43441ff24279e2a94d90535" name="revision">
+  <meta content="f16c3eb0e476ebea27540a295a86c4a09aaaaa99" name="revision">
   <meta content="dark light" name="color-scheme">
 <style>/* Boilerplate: style-autolinks */
 .css.css, .property.property, .descriptor.descriptor {
@@ -2082,7 +2082,7 @@ dfn > a.self-link::before      { content: "#"; }
    <p data-fill-with="logo"></p>
    <h1 class="no-ref p-name" id="title">QualityLink Data Exchange Specification</h1>
    <h2 class="heading no-num no-ref no-toc settled" id="profile-and-date"><span class="content">Living Standard,
-    <time class="dt-updated" datetime="2026-05-27">27 May 2026</time></span></h2>
+    <time class="dt-updated" datetime="2026-06-29">29 June 2026</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>Issue Tracking:
@@ -2168,7 +2168,8 @@ This project has been funded with support from the European Commission. This web
        <a href="#occapi"><span class="secno">5.4</span> <span class="content">OCCAPI</span></a>
        <ol class="toc">
         <li><a href="#occapi-required"><span class="secno">5.4.1</span> <span class="content">Required fields</span></a>
-        <li><a href="#occapi-metadata"><span class="secno">5.4.2</span> <span class="content">Metadata</span></a>
+        <li><a href="#occapi-recommended"><span class="secno">5.4.2</span> <span class="content">Recommended fields</span></a>
+        <li><a href="#occapi-metadata"><span class="secno">5.4.3</span> <span class="content">Metadata</span></a>
        </ol>
      </ol>
     <li>
@@ -2515,18 +2516,18 @@ the Edu-API <em>Learning Resource Core</em> bindings for full details.</p>
      <p><code>type</code></p>
     <li data-md>
      <p><code>id</code></p>
+    <li data-md>
+     <p><code>title</code></p>
+    <li data-md>
+     <p><code>lastModified</code></p>
    </ul>
    <p>Data attributes required for <a data-link-type="dfn" href="#higher-education-institution" id="ref-for-higher-education-institution⑦">higher education institutions</a> and organisational units:</p>
    <ul>
-    <li data-md>
-     <p><code>title</code></p>
     <li data-md>
      <p><code>heiId</code> or <code>ounitId</code> (for <a data-link-type="dfn" href="#higher-education-institution" id="ref-for-higher-education-institution⑧">higher education institutions</a> and organisational units respectively)</p>
    </ul>
    <p>Data attributes required for both <a data-link-type="dfn" href="#programme" id="ref-for-programme④">programme</a> and <a data-link-type="dfn" href="#course" id="ref-for-course②">course</a> resources:</p>
    <ul>
-    <li data-md>
-     <p><code>title</code></p>
     <li data-md>
      <p><code>code</code></p>
     <li data-md>
@@ -2534,27 +2535,48 @@ the Edu-API <em>Learning Resource Core</em> bindings for full details.</p>
     <li data-md>
      <p><code>ects</code></p>
     <li data-md>
-     <p><code>iscedCode</code></p>
-    <li data-md>
      <p><code>languageOfInstruction</code></p>
+    <li data-md>
+     <p><code>learningOutcomes</code></p>
    </ul>
    <p>Data attributes required for <a data-link-type="dfn" href="#programme" id="ref-for-programme⑤">programme</a> resources only:</p>
    <ul>
     <li data-md>
      <p><code>eqfLevelProvided</code></p>
     <li data-md>
+     <p><code>iscedCode</code></p>
+    <li data-md>
      <p><code>length</code></p>
    </ul>
    <p>Data attributes required for <a data-link-type="dfn" href="#course" id="ref-for-course③">course</a> resources only:</p>
    <ul>
     <li data-md>
-     <p><code>description</code></p>
-    <li data-md>
-     <p><code>learningOutcomes</code></p>
-    <li data-md>
      <p><code>academicTerm</code></p>
    </ul>
-   <h4 class="heading settled" data-level="5.4.2" id="occapi-metadata"><span class="secno">5.4.2. </span><span class="content">Metadata</span><a class="self-link" href="#occapi-metadata"></a></h4>
+   <h4 class="heading settled" data-level="5.4.2" id="occapi-recommended"><span class="secno">5.4.2. </span><span class="content">Recommended fields</span><a class="self-link" href="#occapi-recommended"></a></h4>
+   <p>OCCAPI v2 provides support for ELM controlled vocabularies depending on the resource type.</p>
+   <p>In <a data-link-type="dfn" href="#programme" id="ref-for-programme⑥">programme</a> resources the following ELM controlled vocabularies are supported:</p>
+   <ul>
+    <li data-md>
+     <p><code>elmLearningOpportunityType</code> (limited to certain terms)</p>
+    <li data-md>
+     <p><code>elmLearningScheduleType</code></p>
+    <li data-md>
+     <p><code>elmModeOfLearning</code></p>
+   </ul>
+   <p>In <a data-link-type="dfn" href="#course" id="ref-for-course④">course</a> resources the following ELM controlled vocabularies are supported:</p>
+   <ul>
+    <li data-md>
+     <p><code>elmAssessmentType</code></p>
+    <li data-md>
+     <p><code>elmLearningActivityType</code></p>
+    <li data-md>
+     <p><code>elmLearningOpportunityType</code> (limited to certain terms)</p>
+    <li data-md>
+     <p><code>elmModeOfLearning</code></p>
+   </ul>
+   <p>Additionally, <a data-link-type="dfn" href="#course" id="ref-for-course⑤">course</a> resources may include <code>iscedCode</code> as well.</p>
+   <h4 class="heading settled" data-level="5.4.3" id="occapi-metadata"><span class="secno">5.4.3. </span><span class="content">Metadata</span><a class="self-link" href="#occapi-metadata"></a></h4>
    <p><a data-link-type="dfn" href="#data-provider" id="ref-for-data-provider②⓪">Data providers</a> must provide the following metadata in their <a data-link-type="dfn" href="#manifest-file" id="ref-for-manifest-file④">manifest file</a> for this method:</p>
    <table class="def simpledef">
     <tbody>
@@ -2563,7 +2585,7 @@ the Edu-API <em>Learning Resource Core</em> bindings for full details.</p>
       <td><code>occapi</code>
      <tr>
       <th>path:
-      <td>The URL of the OCCAPI path for a given HEI<br>(e.g., <code>https://domain.tld/occapi/v1/hei/{heiId}</code>)
+      <td>The URL of the OCCAPI path for a given HEI<br>(e.g., <code>https://domain.tld/occapi/v2/hei/{heiId}</code>)
    </table>
    <h2 class="heading settled" data-level="6" id="access-control"><span class="secno">6. </span><span class="content">Access Control</span><a class="self-link" href="#access-control"></a></h2>
    <p>Currently all transport methods operate over HTTP. Hence the following access control strategies can all be used for either method.</p>
@@ -3123,19 +3145,19 @@ function parseHTML(markup) {
 {
 let dfnPanelData = {
 "aggregator": {"dfnID":"aggregator","dfnText":"aggregator","external":false,"refSections":[{"refs":[{"id":"ref-for-aggregator"}],"title":"3.3. Access control"},{"refs":[{"id":"ref-for-aggregator\u2460"}],"title":"4. Requirements"},{"refs":[{"id":"ref-for-aggregator\u2461"}],"title":"5. Methods"},{"refs":[{"id":"ref-for-aggregator\u2462"}],"title":"5.1.2. Incremental Transport"},{"refs":[{"id":"ref-for-aggregator\u2463"}],"title":"5.2. OOAPI"},{"refs":[{"id":"ref-for-aggregator\u2464"}],"title":"5.2.1. Required Fields"},{"refs":[{"id":"ref-for-aggregator\u2465"}],"title":"5.2.3. Metadata"},{"refs":[{"id":"ref-for-aggregator\u2466"}],"title":"5.3. Edu-API"},{"refs":[{"id":"ref-for-aggregator\u2467"},{"id":"ref-for-aggregator\u2468"},{"id":"ref-for-aggregator\u2460\u24ea"},{"id":"ref-for-aggregator\u2460\u2460"},{"id":"ref-for-aggregator\u2460\u2461"}],"title":"5.3.2. Incremental Updates"},{"refs":[{"id":"ref-for-aggregator\u2460\u2462"}],"title":"5.3.3. Metadata"},{"refs":[{"id":"ref-for-aggregator\u2460\u2463"}],"title":"5.3.4. Authentication with OAuth 2.0"},{"refs":[{"id":"ref-for-aggregator\u2460\u2464"}],"title":"5.4. OCCAPI"},{"refs":[{"id":"ref-for-aggregator\u2460\u2465"},{"id":"ref-for-aggregator\u2460\u2466"}],"title":"6. Access Control"},{"refs":[{"id":"ref-for-aggregator\u2460\u2467"},{"id":"ref-for-aggregator\u2460\u2468"}],"title":"6.1. Based on IP address"},{"refs":[{"id":"ref-for-aggregator\u2461\u24ea"},{"id":"ref-for-aggregator\u2461\u2460"},{"id":"ref-for-aggregator\u2461\u2461"},{"id":"ref-for-aggregator\u2461\u2462"},{"id":"ref-for-aggregator\u2461\u2463"}],"title":"6.2. HTTP Request Header"},{"refs":[{"id":"ref-for-aggregator\u2461\u2464"},{"id":"ref-for-aggregator\u2461\u2465"},{"id":"ref-for-aggregator\u2461\u2466"},{"id":"ref-for-aggregator\u2461\u2467"},{"id":"ref-for-aggregator\u2461\u2468"}],"title":"6.3. OAuth 2.0"},{"refs":[{"id":"ref-for-aggregator\u2462\u24ea"},{"id":"ref-for-aggregator\u2462\u2460"},{"id":"ref-for-aggregator\u2462\u2461"},{"id":"ref-for-aggregator\u2462\u2462"},{"id":"ref-for-aggregator\u2462\u2463"},{"id":"ref-for-aggregator\u2462\u2464"}],"title":"6.4. HTTP Signature"},{"refs":[{"id":"ref-for-aggregator\u2462\u2465"}],"title":"7. Security Considerations"}],"url":"#aggregator"},
-"course": {"dfnID":"course","dfnText":"course","external":false,"refSections":[{"refs":[{"id":"ref-for-course"},{"id":"ref-for-course\u2460"}],"title":"2. Key Concepts"},{"refs":[{"id":"ref-for-course\u2461"},{"id":"ref-for-course\u2462"}],"title":"5.4.1. Required fields"}],"url":"#course"},
-"data-provider": {"dfnID":"data-provider","dfnText":"data provider","external":false,"refSections":[{"refs":[{"id":"ref-for-data-provider"},{"id":"ref-for-data-provider\u2460"}],"title":"2. Key Concepts"},{"refs":[{"id":"ref-for-data-provider\u2461"}],"title":"3.2. Efficient aggregation"},{"refs":[{"id":"ref-for-data-provider\u2462"}],"title":"3.3. Access control"},{"refs":[{"id":"ref-for-data-provider\u2463"},{"id":"ref-for-data-provider\u2464"},{"id":"ref-for-data-provider\u2465"}],"title":"4. Requirements"},{"refs":[{"id":"ref-for-data-provider\u2466"},{"id":"ref-for-data-provider\u2467"}],"title":"5. Methods"},{"refs":[{"id":"ref-for-data-provider\u2468"}],"title":"5.1.2. Incremental Transport"},{"refs":[{"id":"ref-for-data-provider\u2460\u24ea"},{"id":"ref-for-data-provider\u2460\u2460"}],"title":"5.1.3. Metadata"},{"refs":[{"id":"ref-for-data-provider\u2460\u2461"}],"title":"5.2.2. Incremental Transport"},{"refs":[{"id":"ref-for-data-provider\u2460\u2462"},{"id":"ref-for-data-provider\u2460\u2463"}],"title":"5.2.3. Metadata"},{"refs":[{"id":"ref-for-data-provider\u2460\u2464"}],"title":"5.3.1. Required Fields"},{"refs":[{"id":"ref-for-data-provider\u2460\u2465"}],"title":"5.3.2. Incremental Updates"},{"refs":[{"id":"ref-for-data-provider\u2460\u2466"},{"id":"ref-for-data-provider\u2460\u2467"}],"title":"5.3.3. Metadata"},{"refs":[{"id":"ref-for-data-provider\u2460\u2468"}],"title":"5.3.4. Authentication with OAuth 2.0"},{"refs":[{"id":"ref-for-data-provider\u2461\u24ea"}],"title":"5.4.2. Metadata"},{"refs":[{"id":"ref-for-data-provider\u2461\u2460"},{"id":"ref-for-data-provider\u2461\u2461"}],"title":"6. Access Control"},{"refs":[{"id":"ref-for-data-provider\u2461\u2462"},{"id":"ref-for-data-provider\u2461\u2463"}],"title":"6.1. Based on IP address"},{"refs":[{"id":"ref-for-data-provider\u2461\u2464"},{"id":"ref-for-data-provider\u2461\u2465"},{"id":"ref-for-data-provider\u2461\u2466"},{"id":"ref-for-data-provider\u2461\u2467"}],"title":"6.2. HTTP Request Header"},{"refs":[{"id":"ref-for-data-provider\u2461\u2468"},{"id":"ref-for-data-provider\u2462\u24ea"},{"id":"ref-for-data-provider\u2462\u2460"},{"id":"ref-for-data-provider\u2462\u2461"},{"id":"ref-for-data-provider\u2462\u2462"},{"id":"ref-for-data-provider\u2462\u2463"}],"title":"6.3. OAuth 2.0"},{"refs":[{"id":"ref-for-data-provider\u2462\u2464"},{"id":"ref-for-data-provider\u2462\u2465"},{"id":"ref-for-data-provider\u2462\u2466"},{"id":"ref-for-data-provider\u2462\u2467"},{"id":"ref-for-data-provider\u2462\u2468"},{"id":"ref-for-data-provider\u2463\u24ea"},{"id":"ref-for-data-provider\u2463\u2460"},{"id":"ref-for-data-provider\u2463\u2461"},{"id":"ref-for-data-provider\u2463\u2462"}],"title":"6.4. HTTP Signature"},{"refs":[{"id":"ref-for-data-provider\u2463\u2463"},{"id":"ref-for-data-provider\u2463\u2464"}],"title":"7. Security Considerations"}],"url":"#data-provider"},
+"course": {"dfnID":"course","dfnText":"course","external":false,"refSections":[{"refs":[{"id":"ref-for-course"},{"id":"ref-for-course\u2460"}],"title":"2. Key Concepts"},{"refs":[{"id":"ref-for-course\u2461"},{"id":"ref-for-course\u2462"}],"title":"5.4.1. Required fields"},{"refs":[{"id":"ref-for-course\u2463"},{"id":"ref-for-course\u2464"}],"title":"5.4.2. Recommended fields"}],"url":"#course"},
+"data-provider": {"dfnID":"data-provider","dfnText":"data provider","external":false,"refSections":[{"refs":[{"id":"ref-for-data-provider"},{"id":"ref-for-data-provider\u2460"}],"title":"2. Key Concepts"},{"refs":[{"id":"ref-for-data-provider\u2461"}],"title":"3.2. Efficient aggregation"},{"refs":[{"id":"ref-for-data-provider\u2462"}],"title":"3.3. Access control"},{"refs":[{"id":"ref-for-data-provider\u2463"},{"id":"ref-for-data-provider\u2464"},{"id":"ref-for-data-provider\u2465"}],"title":"4. Requirements"},{"refs":[{"id":"ref-for-data-provider\u2466"},{"id":"ref-for-data-provider\u2467"}],"title":"5. Methods"},{"refs":[{"id":"ref-for-data-provider\u2468"}],"title":"5.1.2. Incremental Transport"},{"refs":[{"id":"ref-for-data-provider\u2460\u24ea"},{"id":"ref-for-data-provider\u2460\u2460"}],"title":"5.1.3. Metadata"},{"refs":[{"id":"ref-for-data-provider\u2460\u2461"}],"title":"5.2.2. Incremental Transport"},{"refs":[{"id":"ref-for-data-provider\u2460\u2462"},{"id":"ref-for-data-provider\u2460\u2463"}],"title":"5.2.3. Metadata"},{"refs":[{"id":"ref-for-data-provider\u2460\u2464"}],"title":"5.3.1. Required Fields"},{"refs":[{"id":"ref-for-data-provider\u2460\u2465"}],"title":"5.3.2. Incremental Updates"},{"refs":[{"id":"ref-for-data-provider\u2460\u2466"},{"id":"ref-for-data-provider\u2460\u2467"}],"title":"5.3.3. Metadata"},{"refs":[{"id":"ref-for-data-provider\u2460\u2468"}],"title":"5.3.4. Authentication with OAuth 2.0"},{"refs":[{"id":"ref-for-data-provider\u2461\u24ea"}],"title":"5.4.3. Metadata"},{"refs":[{"id":"ref-for-data-provider\u2461\u2460"},{"id":"ref-for-data-provider\u2461\u2461"}],"title":"6. Access Control"},{"refs":[{"id":"ref-for-data-provider\u2461\u2462"},{"id":"ref-for-data-provider\u2461\u2463"}],"title":"6.1. Based on IP address"},{"refs":[{"id":"ref-for-data-provider\u2461\u2464"},{"id":"ref-for-data-provider\u2461\u2465"},{"id":"ref-for-data-provider\u2461\u2466"},{"id":"ref-for-data-provider\u2461\u2467"}],"title":"6.2. HTTP Request Header"},{"refs":[{"id":"ref-for-data-provider\u2461\u2468"},{"id":"ref-for-data-provider\u2462\u24ea"},{"id":"ref-for-data-provider\u2462\u2460"},{"id":"ref-for-data-provider\u2462\u2461"},{"id":"ref-for-data-provider\u2462\u2462"},{"id":"ref-for-data-provider\u2462\u2463"}],"title":"6.3. OAuth 2.0"},{"refs":[{"id":"ref-for-data-provider\u2462\u2464"},{"id":"ref-for-data-provider\u2462\u2465"},{"id":"ref-for-data-provider\u2462\u2466"},{"id":"ref-for-data-provider\u2462\u2467"},{"id":"ref-for-data-provider\u2462\u2468"},{"id":"ref-for-data-provider\u2463\u24ea"},{"id":"ref-for-data-provider\u2463\u2460"},{"id":"ref-for-data-provider\u2463\u2461"},{"id":"ref-for-data-provider\u2463\u2462"}],"title":"6.4. HTTP Signature"},{"refs":[{"id":"ref-for-data-provider\u2463\u2463"},{"id":"ref-for-data-provider\u2463\u2464"}],"title":"7. Security Considerations"}],"url":"#data-provider"},
 "education-provider": {"dfnID":"education-provider","dfnText":"education provider","external":false,"refSections":[{"refs":[{"id":"ref-for-education-provider"},{"id":"ref-for-education-provider\u2460"}],"title":"2. Key Concepts"},{"refs":[{"id":"ref-for-education-provider\u2461"}],"title":"5.2. OOAPI"},{"refs":[{"id":"ref-for-education-provider\u2462"}],"title":"5.3. Edu-API"}],"url":"#education-provider"},
 "higher-education-institution": {"dfnID":"higher-education-institution","dfnText":"higher education institution","external":false,"refSections":[{"refs":[{"id":"ref-for-higher-education-institution"},{"id":"ref-for-higher-education-institution\u2460"},{"id":"ref-for-higher-education-institution\u2461"}],"title":"2. Key Concepts"},{"refs":[{"id":"ref-for-higher-education-institution\u2462"}],"title":"3.1. Feed data"},{"refs":[{"id":"ref-for-higher-education-institution\u2463"}],"title":"3.2. Efficient aggregation"},{"refs":[{"id":"ref-for-higher-education-institution\u2464"}],"title":"4. Requirements"},{"refs":[{"id":"ref-for-higher-education-institution\u2465"}],"title":"5.4. OCCAPI"},{"refs":[{"id":"ref-for-higher-education-institution\u2466"},{"id":"ref-for-higher-education-institution\u2467"}],"title":"5.4.1. Required fields"}],"url":"#higher-education-institution"},
 "joint-programme": {"dfnID":"joint-programme","dfnText":"joint programme","external":false,"refSections":[],"url":"#joint-programme"},
 "learning-opportunity": {"dfnID":"learning-opportunity","dfnText":"learning opportunity","external":false,"refSections":[{"refs":[{"id":"ref-for-learning-opportunity"},{"id":"ref-for-learning-opportunity\u2460"},{"id":"ref-for-learning-opportunity\u2461"},{"id":"ref-for-learning-opportunity\u2462"},{"id":"ref-for-learning-opportunity\u2463"},{"id":"ref-for-learning-opportunity\u2464"},{"id":"ref-for-learning-opportunity\u2465"}],"title":"2. Key Concepts"},{"refs":[{"id":"ref-for-learning-opportunity\u2466"}],"title":"5.3.1. Required Fields"},{"refs":[{"id":"ref-for-learning-opportunity\u2467"}],"title":"6.3. OAuth 2.0"},{"refs":[{"id":"ref-for-learning-opportunity\u2468"}],"title":"7. Security Considerations"}],"url":"#learning-opportunity"},
 "learning-opportunity-instance": {"dfnID":"learning-opportunity-instance","dfnText":"learning opportunity instance","external":false,"refSections":[],"url":"#learning-opportunity-instance"},
 "learning-opportunity-specification": {"dfnID":"learning-opportunity-specification","dfnText":"learning opportunity specification","external":false,"refSections":[{"refs":[{"id":"ref-for-learning-opportunity-specification"}],"title":"2. Key Concepts"}],"url":"#learning-opportunity-specification"},
-"manifest-file": {"dfnID":"manifest-file","dfnText":"manifest file","external":false,"refSections":[{"refs":[{"id":"ref-for-manifest-file"}],"title":"5. Methods"},{"refs":[{"id":"ref-for-manifest-file\u2460"}],"title":"5.1.3. Metadata"},{"refs":[{"id":"ref-for-manifest-file\u2461"}],"title":"5.2.3. Metadata"},{"refs":[{"id":"ref-for-manifest-file\u2462"}],"title":"5.3.3. Metadata"},{"refs":[{"id":"ref-for-manifest-file\u2463"}],"title":"5.4.2. Metadata"},{"refs":[{"id":"ref-for-manifest-file\u2464"}],"title":"6.1. Based on IP address"},{"refs":[{"id":"ref-for-manifest-file\u2465"}],"title":"6.2. HTTP Request Header"},{"refs":[{"id":"ref-for-manifest-file\u2466"}],"title":"6.3. OAuth 2.0"},{"refs":[{"id":"ref-for-manifest-file\u2467"},{"id":"ref-for-manifest-file\u2468"}],"title":"6.4. HTTP Signature"}],"url":"#manifest-file"},
+"manifest-file": {"dfnID":"manifest-file","dfnText":"manifest file","external":false,"refSections":[{"refs":[{"id":"ref-for-manifest-file"}],"title":"5. Methods"},{"refs":[{"id":"ref-for-manifest-file\u2460"}],"title":"5.1.3. Metadata"},{"refs":[{"id":"ref-for-manifest-file\u2461"}],"title":"5.2.3. Metadata"},{"refs":[{"id":"ref-for-manifest-file\u2462"}],"title":"5.3.3. Metadata"},{"refs":[{"id":"ref-for-manifest-file\u2463"}],"title":"5.4.3. Metadata"},{"refs":[{"id":"ref-for-manifest-file\u2464"}],"title":"6.1. Based on IP address"},{"refs":[{"id":"ref-for-manifest-file\u2465"}],"title":"6.2. HTTP Request Header"},{"refs":[{"id":"ref-for-manifest-file\u2466"}],"title":"6.3. OAuth 2.0"},{"refs":[{"id":"ref-for-manifest-file\u2467"},{"id":"ref-for-manifest-file\u2468"}],"title":"6.4. HTTP Signature"}],"url":"#manifest-file"},
 "micro-credential": {"dfnID":"micro-credential","dfnText":"micro-credential","external":false,"refSections":[{"refs":[{"id":"ref-for-micro-credential"}],"title":"2. Key Concepts"}],"url":"#micro-credential"},
 "module": {"dfnID":"module","dfnText":"module","external":false,"refSections":[{"refs":[{"id":"ref-for-module"},{"id":"ref-for-module\u2460"}],"title":"2. Key Concepts"}],"url":"#module"},
 "other-provider": {"dfnID":"other-provider","dfnText":"other provider","external":false,"refSections":[{"refs":[{"id":"ref-for-other-provider"},{"id":"ref-for-other-provider\u2460"}],"title":"2. Key Concepts"}],"url":"#other-provider"},
-"programme": {"dfnID":"programme","dfnText":"programme","external":false,"refSections":[{"refs":[{"id":"ref-for-programme"},{"id":"ref-for-programme\u2460"},{"id":"ref-for-programme\u2461"}],"title":"2. Key Concepts"},{"refs":[{"id":"ref-for-programme\u2462"}],"title":"5.4. OCCAPI"},{"refs":[{"id":"ref-for-programme\u2463"},{"id":"ref-for-programme\u2464"}],"title":"5.4.1. Required fields"}],"url":"#programme"},
+"programme": {"dfnID":"programme","dfnText":"programme","external":false,"refSections":[{"refs":[{"id":"ref-for-programme"},{"id":"ref-for-programme\u2460"},{"id":"ref-for-programme\u2461"}],"title":"2. Key Concepts"},{"refs":[{"id":"ref-for-programme\u2462"}],"title":"5.4. OCCAPI"},{"refs":[{"id":"ref-for-programme\u2463"},{"id":"ref-for-programme\u2464"}],"title":"5.4.1. Required fields"},{"refs":[{"id":"ref-for-programme\u2465"}],"title":"5.4.2. Recommended fields"}],"url":"#programme"},
 };
 
 document.addEventListener("DOMContentLoaded", ()=>{
