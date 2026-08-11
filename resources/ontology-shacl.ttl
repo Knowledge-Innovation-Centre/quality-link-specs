@@ -35,8 +35,9 @@
     dcterms:abstract "The QualityLink ontology and application profile build on the European Learning Model (ELM). They defines additional classes and properties to describe things not currently covered in ELM."@en ;
     widoco:introduction "This ontology and application profile were developed as part of the QualityLink Erasmus+ project."@en ;
     dcterms:created "2025-02-13"^^xsd:date ;
+    dcterms:issued "2025-02-13"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
-    dcterms:modified "2025-11-28"^^xsd:date ;
+    dcterms:modified "2026-05-31"^^xsd:date ;
     dcterms:publisher <https://quality-link.eu/> ;
     dcterms:title "QualityLink Ontology and Application Profile"@en ;
     rdfs:label "QualityLink"@en ;

@@ -86,7 +86,9 @@ jobs:
       - name: Generate HTML from SHACL
         run: |
           for infile in main-branch/resources/*.ttl ; do
-            GRAPHVIZ_DOT=/usr/bin/dot java -jar ~/shacl-play.jar doc -i $infile -l en -o gh-pages-branch/resources/`basename -s .ttl $infile`.html
+            BASENAME="$(basename -s .ttl $infile)"
+            GRAPHVIZ_DOT=/usr/bin/dot java -jar ~/shacl-play.jar doc -i $infile -l en -o gh-pages-branch/resources/${BASENAME}.html
+            sed -i -e "s|latestVersion:\s*null\s*,|edDraftURI: null, latestVersion: \"https://specs.quality-link.eu/resources/${BASENAME}.html\",|" gh-pages-branch/resources/${BASENAME}.html
           done
 
       - name: Cache WIDOCO app
