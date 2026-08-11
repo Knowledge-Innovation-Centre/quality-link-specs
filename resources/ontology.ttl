@@ -1,5 +1,5 @@
 #################################################################
-#    QualityLink Ontology and Constraints - v0.4.0
+#    QualityLink Ontology and Constraints - v1.2.0
 #################################################################
 
 # QualityLink prefix
@@ -24,6 +24,7 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix doap: <http://usefulinc.com/ns/doap#> .
 @prefix widoco: <https://w3id.org/widoco/vocab#> .
+@prefix shacl-play: <https://shacl-play.sparna.fr/ontology#> .
 
 @base <http://data.quality-link.eu/ontology/v1#> .
 
@@ -47,6 +48,8 @@ The additional classes and properties describe things not currently covered in E
 
 QualityLink further defines an application profile defined as SHACL constraints, which are based on the ELM Learning Opportunities and Qualifications (LOQ) application profile. The application profile is used by the QualityLink pilot aggregator. The QualityLink profile only adds optional properties to the ELM profile, no required ones.
 
+The QualityLink ontology and profile were originally developed based on ELM 3.2 and ELM 3.3.1 (LOQ profile v1.3.0).
+
 The profile references the [ELM controlled vocabularies](https://op.europa.eu/en/web/eu-vocabularies/europasstables) published by the EU."""@en ;
     doap:repository <https://github.com/Knowledge-Innovation-Centre/quality-link-specs> ;
     dcat:distribution [
@@ -62,7 +65,7 @@ The profile references the [ELM controlled vocabularies](https://op.europa.eu/en
         dcterms:format <https://www.iana.org/assignments/media-types/application/n-triples> ;
         dcat:downloadURL <https://specs.quality-link.eu/resources/ontology-shacl.nt> ;
     ] ;
-    owl:versionInfo "1.1.0-alpha" .
+    owl:versionInfo "1.2.0" .
 
 
 #################################################################
@@ -71,12 +74,11 @@ The profile references the [ELM controlled vocabularies](https://op.europa.eu/en
 
 ###  http://data.quality-link.eu/ontology/v1#HigherEducationInstitution
 ql:HigherEducationInstitution
-    a owl:Class, sh:NodeShape ;
-    rdfs:subClassOf elm:Organisation ;
-    sh:node loq:OrganisationShape ;
+    a rdfs:Class, sh:NodeShape ;
     rdfs:label "Higher Education Institution"@en ;
     rdfs:comment "An entity that has full degree awarding powers at higher education level (i.e. EQF levels 5 to 8; QF-EHEA cycle first to third) recognised by at least one national authority."@en ;
-    sh:order 30 ;
+    shacl-play:main "false"^^xsd:boolean ;
+    sh:order 10 ;
     sh:property [
         sh:name "identifier"@en ;
         sh:description "ORGREG or SCHAC identifier"@en ;
@@ -89,49 +91,100 @@ ql:HigherEducationInstitution
             ]
         ) ;
         sh:minCount 1;
+        sh:order 10 ;
         sh:path adms:identifier ;
     ], [
-        sh:class elm:Organisation ;
+        sh:name "legal name"@en ;
+        sh:description "The legal name of the institution. It may have more than one legal name, particularly in countries with more than one official language. In such cases the language of the string should be identified."@en ;
+        sh:minCount 1 ;
+        sh:order 20 ;
+        sh:path rov:legalName ;
+        sh:datatype rdf:langString ;
+    ], [
+        sh:name "primary name"@en ;
+        sh:description "Preferred display name of the institution."@en ;
+        sh:minCount 1;
+        sh:maxCount 1;
+        sh:order 30 ;
+        sh:path skos:prefLabel ;
+        sh:datatype rdf:langString ;
+    ], [
+        sh:name "alternative name"@en ;
+        sh:description "Alternative names under which the institution is known, including former names."@en ;
+        sh:order 40 ;
+        sh:path skos:altLabel ;
+        sh:datatype rdf:langString ;
+    ], [
+        sh:name "location"@en ;
+        sh:description "The physical sites of the institution."@en ;
+        sh:order 50 ;
+        sh:path elm:location ;
+        sh:class dcterms:Location ;
+    ], [
+        sh:name "homepage"@en ;
+        sh:description "The official website of the institution."@en ;
+        sh:order 60 ;
+        sh:path foaf:homepage ;
+        sh:class elm:WebResource ;
+        sh:node loq:URLRegexRestriction ;
+    ], [
+        sh:order 70 ;
+        sh:class ql:GroupOfHEIs ;
         sh:path ql:isMemberOf ;
-    ] .
+    ].
 
 ###  http://data.quality-link.eu/ontology/v1#GroupOfHEIs
 ql:GroupOfHEIs
-    a owl:Class, sh:NodeShape ;
-    rdfs:subClassOf elm:Group ;
-    sh:node loq:GroupShape ;
+    a rdfs:Class, sh:NodeShape ;
     rdfs:label "Group of Higher Education Institutions"@en ;
     rdfs:comment "A group or alliance of higher education institutions"@en ;
-    sh:order 33 ;
+    shacl-play:main "false"^^xsd:boolean ;
+    sh:order 11 ;
     sh:property [
+        sh:name "primary name"@en ;
+        sh:description "Preferred display name of the institution."@en ;
+        sh:minCount 1;
+        sh:maxCount 1;
+        sh:order 10 ;
+        sh:path skos:prefLabel ;
+        sh:datatype rdf:langString ;
+    ], [
         sh:name "has member"@en ;
         sh:class ql:HigherEducationInstitution ;
         sh:minCount 2 ;
+        sh:order 20 ;
         sh:path foaf:member ;
     ] .
 
 ###  http://data.quality-link.eu/ontology/v1#EuropeanUniversityAlliance
 ql:EuropeanUniversityAlliance
-    a owl:Class, sh:NodeShape ;
+    a rdfs:Class, sh:NodeShape ;
     rdfs:subClassOf ql:GroupOfHEIs ;
-    sh:node ql:GroupOfHEIs ;
-    sh:order 34 ;
     rdfs:label "European University Alliance"@en ;
-    rdfs:comment "An alliance of higher education institutions that is part of the EU's European Universities programme"@en .
+    rdfs:comment "An alliance of higher education institutions that is part of the EU's European Universities programme"@en ;
+    shacl-play:main "false"^^xsd:boolean ;
+    sh:order 12 ;
+    sh:property [
+        sh:name "identifier"@en ;
+        sh:description "ORGREG identifier"@en ;
+        sh:minCount 1;
+        sh:path adms:identifier ;
+        sh:class ql:OrgRegIdentifier ;
+    ] .
 
 ###  http://data.quality-link.eu/ontology/v1#OrgRegIdentifier
 ql:OrgRegIdentifier
     a rdfs:Class, sh:NodeShape ;
-    rdfs:subClassOf elm:Identifier ;
-    sh:node loq:IdentifierShape ;
     rdfs:label "OrgReg ID"@en ;
     rdfs:comment "The identifier assigned to a higher education institution or other organisation in the Register of Public Sector Organisations (OrgReg)"@en ;
-    sh:order 31 ;
+    shacl-play:main "false"^^xsd:boolean ;
+    sh:order 71 ;
     sh:property [
         sh:name "scheme ID "@en ;
         sh:description "Identification of the scheme."@en ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
+        sh:order 10 ;
         sh:path elm:schemeId ;
         sh:hasValue ql:OrgReg ;
     ], [
@@ -139,24 +192,33 @@ ql:OrgRegIdentifier
         sh:description "The OrgReg identifier of the format XX1111."@en ;
         sh:maxCount 1 ;
         sh:minCount 1 ;
+        sh:order 20 ;
         sh:nodeKind sh:Literal ;
         sh:pattern "^(INT|[A-Z]{2})[0-9]{4}$" ;
         sh:path skos:notation ;
+    ], [
+        sh:name "scheme name"@en ;
+        sh:description "The name of the identifier scheme."@en ;
+        sh:maxCount 1 ;
+        sh:order 30 ;
+        sh:path elm:schemeName ;
+        sh:datatype xsd:string ;
     ] .
+
 
 ###  http://data.quality-link.eu/ontology/v1#SchacIdentifier
 ql:SchacIdentifier
-    a owl:Class, sh:NodeShape ;
-    rdfs:subClassOf elm:Identifier ;
-    sh:node loq:IdentifierShape ;
+    a rdfs:Class, sh:NodeShape ;
     rdfs:label "SCHAC Code"@en ;
     rdfs:comment "The SCHAC code (schacHomeOrganization) is a domain name used to identify a higher education institution."@en ;
-    sh:order 32 ;
+    shacl-play:main "false"^^xsd:boolean ;
+    sh:order 72 ;
     sh:property [
         sh:name "scheme ID "@en ;
         sh:description "Identification of the scheme."@en ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
+        sh:order 10 ;
         sh:path elm:schemeId ;
         sh:hasValue ql:Schac ;
     ], [
@@ -164,17 +226,27 @@ ql:SchacIdentifier
         sh:description "The SCHAC (schacHomeOrganisation) identifier. Must be a valid DNS domain name."@en ;
         sh:maxCount 1 ;
         sh:minCount 1 ;
+        sh:order 20 ;
         sh:nodeKind sh:Literal ;
         sh:path skos:notation ;
+    ], [
+        sh:name "scheme name"@en ;
+        sh:description "The name of the identifier scheme."@en ;
+        sh:maxCount 1 ;
+        sh:order 30 ;
+        sh:path elm:schemeName ;
+        sh:datatype xsd:string ;
     ] .
 
 
 ###  http://data.quality-link.eu/ontology/v1#LearnerGroupConditions
 ql:LearnerGroupConditions
-    a owl:Class, sh:NodeShape ;
+    a rdfs:Class, sh:NodeShape ;
     rdfs:label "Learner Group Conditions"@en ;
     rdfs:comment "Defines specific conditions for a defined target group of learners to whom a Learning Opportunity is offered, e.g. specific fees or registration portals"@en ;
-    sh:order 20 ;
+    sh:targetClass ql:LearnerGroupConditions ;
+    shacl-play:main "false"^^xsd:boolean ;
+    sh:order 30 ;
     sh:property [
         sh:minCount 1 ;
         sh:path ql:learnerGroup ;
@@ -226,10 +298,11 @@ ql:LearnerGroupConditions
 
 ###  http://data.quality-link.eu/ontology/v1#LearnerGroup
 ql:LearnerGroup
-    a owl:Class, sh:NodeShape ;
+    a rdfs:Class, sh:NodeShape ;
     rdfs:label "Learner Group"@en ;
     rdfs:comment "Defines a target group of learners to whom a Learning Opportunity is offered, e.g. students of a specific alliance or HEI"@en ;
-    sh:order 21 ;
+    sh:order 31 ;
+    shacl-play:main "false"^^xsd:boolean ;
     sh:property [
         sh:uniqueLang true ;
         sh:name "title"@en ;
@@ -301,8 +374,10 @@ ql:LearnerGroup
     ] .
 
 
-###
+### adjusted from ELM shape
 ql:LearningOutcome a sh:NodeShape ;
+    sh:order 20 ;
+    shacl-play:main "false"^^xsd:boolean ;
 	sh:targetClass elm:LearningOutcome ;
 	sh:property [
 		sh:name "more information"@en ;
@@ -345,13 +420,117 @@ ql:LearningOutcome a sh:NodeShape ;
 		sh:path elm:relatedESCOSkill ;
 	] ;
 	rdfs:comment "A statement regarding what a learner knows, understands and is able to do on completion of a learning process, which are defined in terms of knowledge, skills and responsibility and autonomy."@en ;
-	rdfs:label "Learning Outcome Shape"@en .
+	rdfs:label "Learning Outcome"@en .
+
+###  adjusted from loq:IdentifierShape
+ql:Identifier a sh:NodeShape ;
+    rdfs:label "Identifier"@en ;
+    rdfs:comment "A character string that identifies a course or another unique object."@en ;
+    sh:targetClass elm:Identifier ;
+    shacl-play:main "false"^^xsd:boolean ;
+    sh:order 70 ;
+    sh:property loq:Identifier-adms_schemeAgency,
+        loq:Identifier-dc_creator,
+        loq:Identifier-dc_issued,
+        loq:Identifier-elm_schemeId,
+        loq:Identifier-elm_schemeName,
+        loq:Identifier-elm_schemeVersion,
+        loq:Identifier-skos_notation .
+
+loq:Identifier-adms_schemeAgency
+    rdfs:isDefinedBy <http://data.europa.eu/snb/model/application-profile/loq-constraints> ;
+    sh:datatype rdf:langString ;
+    sh:description "The name of the agency that issued the identifier."@en ;
+    sh:maxCount 1 ;
+    sh:name "schema agency"@en ;
+    sh:order 1 ;
+    sh:path <http://www.w3.org/ns/adms#schemeAgency> ;
+    sh:severity sh:Violation .
+
+loq:Identifier-dc_creator
+    rdfs:isDefinedBy <http://data.europa.eu/snb/model/application-profile/loq-constraints> ;
+    sh:description "An entity responsible for assigning the identifier."@en ;
+    sh:maxCount 1 ;
+    sh:name "creator"@en ;
+    sh:nodeKind sh:IRI ;
+    sh:order 4 ;
+    sh:path dcterms:creator ;
+    sh:severity sh:Violation .
+
+loq:Identifier-dc_issued
+    rdfs:isDefinedBy <http://data.europa.eu/snb/model/application-profile/loq-constraints> ;
+    sh:datatype xsd:dateTime ;
+    sh:description "Date of formal issuance of the identifier."@en ;
+    sh:maxCount 1 ;
+    sh:name "date issued"@en ;
+    sh:order 4 ;
+    sh:path dcterms:issued ;
+    sh:severity sh:Violation .
+
+loq:Identifier-elm_schemeId
+    rdfs:isDefinedBy <http://data.europa.eu/snb/model/application-profile/loq-constraints> ;
+    sh:datatype xsd:anyURI ;
+    sh:description "Identification of the identifier scheme."@en ;
+    sh:maxCount 1 ;
+    sh:name "scheme ID"@en ;
+    sh:order 4 ;
+    sh:path elm:schemeId ;
+    sh:severity sh:Violation .
+
+loq:Identifier-elm_schemeName
+    rdfs:isDefinedBy <http://data.europa.eu/snb/model/application-profile/loq-constraints> ;
+    sh:datatype xsd:string ;
+    sh:description "The name of the identifier scheme."@en ;
+    sh:maxCount 1 ;
+    sh:name "scheme name"@en ;
+    sh:order 1 ;
+    sh:path elm:schemeName ;
+    sh:severity sh:Violation .
+
+loq:Identifier-elm_schemeVersion
+    rdfs:isDefinedBy <http://data.europa.eu/snb/model/application-profile/loq-constraints> ;
+    sh:datatype xsd:string ;
+    sh:description "Identification of the version of the identifier scheme."@en ;
+    sh:maxCount 1 ;
+    sh:name "scheme version"@en ;
+    sh:order 4 ;
+    sh:path elm:schemeVersion ;
+    sh:severity sh:Violation .
+
+loq:Identifier-skos_notation
+    rdfs:isDefinedBy <http://data.europa.eu/snb/model/application-profile/loq-constraints> ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "notation"@en ;
+    sh:nodeKind sh:Literal ;
+    sh:order 3 ;
+    sh:path skos:notation ;
+    sh:severity sh:Violation .
+
+
+###  loq:URLRegexRestriction
+loq:URLRegexRestriction a sh:NodeShape ;
+    rdfs:label "URL"@en ;
+    rdfs:comment "This shape does not apply on a class. This shape is for checking if the value of contentUrl is well formed."@en ;
+    rdfs:isDefinedBy <http://data.europa.eu/snb/model/application-profile/loq-constraints> ;
+    sh:order 80 ;
+    sh:property loq:URLRegex-elm_contentUrl .
+
+loq:URLRegex-elm_contentUrl
+    rdfs:isDefinedBy <http://data.europa.eu/snb/model/application-profile/loq-constraints> ;
+    sh:and ( [ sh:pattern "^(?i)(http|https):(//(([^@\\[/?#]*)@)?(\\[[[A-Fa-f0-9]\\:\\.]*[%[\\p{L}\\p{Nl}\\p{Nd}]]*\\]|[^\\[/?#:]*)(:(\\d*(?:\\{[^/]+?\\})?))?)?([^?#]*)(\\?([^#]*))?(#(.*))?" ] [ sh:pattern "^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\\?([^#]*))?(#(.*))?" ] ) ;
+    sh:description "The public access URL for the subsidy, awarded financially or in-kind, which does not require repayment."@en,
+        "The public access URL."@en ;
+    sh:name "content URL"@en,
+        "contentURL"@en ;
+    sh:order 12 ;
+    sh:path elm:contentUrl ;
+    sh:severity sh:Violation .
 
 
 ###  http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecification
 ql:LearningOpportunitySpecification
-    a owl:Class, sh:NodeShape ;
-    rdfs:subClassOf elm:LearningAchievementSpecification ;
+    a sh:NodeShape ;
     rdfs:label "Learning Opportunity Specification"@en ;
     rdfs:comment """The asbtract specification of an opportunity to acquire a given set of learning outcomes, e.g. the general specification of a course, programme or module offered by an education provider.
 
@@ -359,7 +538,8 @@ This class and its shape are based on the ELM *LearningAchievementSpecificationS
 
 Different from the ELM LOQ profile, the shapes are defined as open. Properties that are not used/interpreted by the QualityLink data aggregator have been omitted to simplify the shapes."""@en ;
     sh:order 1 ;
-    sh:targetClass elm:Qualification , elm:LearningAchievementSpecification , ql:LearningOpportunitySpecification ;
+    shacl-play:main "true"^^xsd:boolean ;
+    sh:targetClass elm:Qualification , elm:LearningAchievementSpecification ;
     sh:property [
         sh:name "publisher"@en ;
         sh:description "Publisher, typically the education provider that will offer instances of this learning opportunity; if not provided, the publisher will be inferred to be the institution providing the data source."@en ;
@@ -519,7 +699,7 @@ Different from the ELM LOQ profile, the shapes are defined as open. Properties t
         sh:order 110 ;
     ], [
         sh:path ql:entryRequirementLearningOpportunity ;
-        sh:class ql:LearningOpportunitySpecificationReference ;
+        sh:or ( [ sh:class elm:LearningAchievementSpecification ] [ sh:class ql:LearningOpportunitySpecificationReference ] ) ;
         sh:order 112 ;
     ], [
         sh:path ql:entryRequirementLearningOutcome ;
@@ -551,32 +731,32 @@ Different from the ELM LOQ profile, the shapes are defined as open. Properties t
         sh:path ql:version ;
         sh:order 310 ;
     ], [
-        sh:class ql:LearningOpportunitySpecificationReference ;
         sh:path ql:superseded ;
+        sh:or ( [ sh:class elm:LearningAchievementSpecification ] [ sh:class ql:LearningOpportunitySpecificationReference ] ) ;
         sh:order 320 ;
     ], [
         sh:name "is part of"@en ;
         sh:description "Another learning opportunity of which this one is a part, e.g. a course can be part of a programme"@en ;
-        sh:class ql:LearningOpportunitySpecificationReference ;
         sh:path elm:isPartOf ;
+        sh:or ( [ sh:class elm:LearningAchievementSpecification ] [ sh:class ql:LearningOpportunitySpecificationReference ] ) ;
         sh:order 330 ;
     ], [
         sh:name "has part"@en ;
         sh:description "Another learning opportunity that is part of this one, e.g. a programme can consist of several courses"@en ;
-        sh:class ql:LearningOpportunitySpecificationReference ;
         sh:path elm:hasPart ;
+        sh:or ( [ sh:class elm:LearningAchievementSpecification ] [ sh:class ql:LearningOpportunitySpecificationReference ] ) ;
         sh:order 340 ;
     ], [
         sh:name "specialisation of"@en ;
         sh:description "A specification (e.g. a qualification standard) that this learning opportunity implements"@en ;
-        sh:class ql:LearningOpportunitySpecificationReference ;
         sh:path elm:specialisationOf ;
+        sh:or ( [ sh:class elm:LearningAchievementSpecification ] [ sh:class ql:LearningOpportunitySpecificationReference ] ) ;
         sh:order 350 ;
     ], [
         sh:name "instance"@en ;
         sh:description "A concrete instance or offering of this specification"@en ;
-        sh:class ql:LearningOpportunityInstance ;
         sh:path elm:learningOpportunity ;
+        sh:class elm:LearningOpportunity ;
         sh:order 400 ;
     ], [
         sh:name "banner image"@en ;
@@ -596,12 +776,12 @@ Different from the ELM LOQ profile, the shapes are defined as open. Properties t
 
 ###  http://data.quality-link.eu/ontology/v1#LearningOpportunityInstance
 ql:LearningOpportunityInstance
-    a owl:Class, sh:NodeShape ;
-    rdfs:subClassOf elm:LearningOpportunity ;
+    a sh:NodeShape ;
     rdfs:label "Learning Opportunity Instance"@en ;
     rdfs:comment "A concrete instance or offering of a learning opportunity, e.g. a course, programme or module as offered in a specific academic year or semester."@en ;
     sh:order 10 ;
-    sh:targetClass elm:LearningOpportunity , ql:LearningOpportunityInstance ;
+    shacl-play:main "true"^^xsd:boolean ;
+    sh:targetClass elm:LearningOpportunity ;
     sh:property [
         sh:name "learning opportunity specification"@en ;
         sh:maxCount 1 ;
@@ -781,10 +961,11 @@ ql:LearningOpportunityInstance
 
 ###  http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecificationReference
 ql:LearningOpportunitySpecificationReference
-    a owl:Class, sh:NodeShape ;
+    a rdfs:Class, sh:NodeShape ;
     rdfs:label "Learning Opportunity Specification Reference"@en ;
     rdfs:comment "A reference to another Learning Opportunity specification, identified by a provider and a (local) identifier, without further details."@en ;
-    sh:order 2 ;
+    sh:order 91 ;
+    shacl-play:main "false"^^xsd:boolean ;
     sh:property [
         sh:name "provided by"@en ;
         sh:description "Higher Education Institution that offers the LO."@en ;
@@ -805,10 +986,11 @@ ql:LearningOpportunitySpecificationReference
 
 ###  http://data.quality-link.eu/ontology/v1#LearningOpportunityInstanceReference
 ql:LearningOpportunityInstanceReference
-    a owl:Class, sh:NodeShape ;
+    a rdfs:Class, sh:NodeShape ;
     rdfs:label "Learning Opportunity Instance Reference"@en ;
     rdfs:comment "A reference to another Learning Opportunity Instance, identified by a provider and a (local) identifier, without further details."@en ;
-    sh:order 11 ;
+    sh:order 92 ;
+    shacl-play:main false ;
     sh:property [
         sh:name "provided by"@en ;
         sh:description "Higher Education Institution that offers the LO."@en ;
@@ -834,6 +1016,7 @@ ql:GradingSchemeSchape
     rdfs:label "Grading Scheme"@en ;
     rdfs:comment "Information on the grading scheme used."@en ;
     sh:order 40 ;
+    shacl-play:main false ;
     sh:property [
         sh:name "title"@en ;
         sh:description "The title of the grading scheme. One value per language is permitted."@en ;
@@ -875,6 +1058,7 @@ ql:GradeDistributionShape
     rdfs:label "Grade Distribution "@en ;
     rdfs:comment "It describes a histogram of grades achieved by learners within a specific reference group."@en ;
     sh:order 42 ;
+    shacl-play:main false ;
     sh:property [
         sh:class ql:LearnerGroup ;
         sh:path ql:referenceGroup ;
@@ -896,6 +1080,7 @@ ql:GradeShape
     rdfs:label "Grade"@en ;
     rdfs:comment "Description of a single grade within a histogram of results."@en ;
     sh:order 44 ;
+    shacl-play:main false ;
     sh:property [
         sh:name "label"@en ;
         sh:description "The label of the grade according to the grading scheme it is part of, e.g. 'C', '2+' or '10'."@en ;
@@ -916,6 +1101,47 @@ ql:GradeShape
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:order 30 ;
+    ] .
+
+###  class for student/staff ratios sourced from ETER
+ql:StudentStaffRatio
+    a owl:Class, sh:NodeShape ;
+    sh:targetClass ql:StudentStaffRatio ;
+    rdfs:label "Student-staff ratio"@en ;
+    rdfs:comment "Statistical information on the student-staff ration in a given reference year, either institution-wide or related to a specified ISCED-F broad field."@en ;
+    sh:order 50 ;
+    sh:property [
+        sh:name "institution"@en ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:path ql:aboutOrganisation ;
+        sh:class ql:HigherEducationInstitution ;
+        sh:order 10 ;
+    ], [
+        sh:description "ISCED-F 2013 broad field to which the student/staff ratio relates"@en ;
+        sh:maxCount 1 ;
+        sh:path ql:ISCEDFBroadField ;
+        sh:class skos:Concept ;
+        sh:order 20 ;
+    ], [
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:path ql:ratioValue ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:double ;
+        sh:order 30 ;
+    ], [
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:path ql:referenceYear ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:gYear ;
+        sh:order 40 ;
+    ], [
+        sh:name "data source"@en ;
+        sh:description "Database from which this indicator was fetched."@en ;
+        sh:path dcterms:source ;
+        sh:order 50 ;
     ] .
 
 ###  http://data.quality-link.eu/ontology/v1#Kajmak
@@ -1067,6 +1293,14 @@ ql:ISCEDFNarrowField
     rdfs:label "thematic area (narrow field)"@en ;
     rdfs:comment "ISCED-F 2013 field, truncated to 3-digit narrow field"@en .
 
+
+### indicate about which HEI statistics are
+ql:aboutOrganisation
+    a owl:ObjectProperty ;
+    rdfs:range ql:HigherEducationInstitution ;
+    rdfs:label "organisation"@en ;
+    rdfs:comment "Education provider the indicator describes."@en .
+
 #################################################################
 #    Data properties
 #################################################################
@@ -1138,6 +1372,19 @@ ql:gradePercentage a owl:DatatypeProperty ;
     rdfs:label "percentage"@en ;
     rdfs:comment "The percentage of learners earning this grade."@en .
 
+###  student-staff or similar ratios
+ql:ratioValue
+    a owl:DatatypeProperty ;
+    rdfs:range xsd:double ;
+    rdfs:label "ratio"@en ;
+    rdfs:comment "The student-staff ratio for this institution/ISCED-F field/course."@en .
+
+###  reference year for statistical data
+ql:referenceYear
+    a owl:DatatypeProperty ;
+    rdfs:range xsd:gYear ;
+    rdfs:label "reference year"@en ;
+    rdfs:comment "The reference year to which this statistical indicator relates."@en .
 
 #################################################################
 #    Individuals

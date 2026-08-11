@@ -17,7 +17,7 @@
 
 
 <!-- SCHEMA.ORG METADATA -->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"http://data.quality-link.eu/ontology/v1#","image":"http://vowl.visualdataweb.org/webvowl/#iri=http://data.quality-link.eu/ontology/v1#","name":"QualityLink Ontology and Application Profile", "headline":"The QualityLink ontology and application profile build on the European Learning Model (ELM). They defines additional classes and properties to describe things not currently covered in ELM.", "dateReleased":"2025-02-13", "dateModified":"2026-05-31", "version":"1.1.0-alpha", "license":"https://creativecommons.org/licenses/by/4.0/", "codeRepository":"https://github.com/Knowledge-Innovation-Centre/quality-link-specs"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"http://data.quality-link.eu/ontology/v1#","image":"http://vowl.visualdataweb.org/webvowl/#iri=http://data.quality-link.eu/ontology/v1#","name":"QualityLink Ontology and Application Profile", "headline":"The QualityLink ontology and application profile build on the European Learning Model (ELM). They defines additional classes and properties to describe things not currently covered in ELM.", "dateReleased":"2025-02-13", "dateModified":"2026-05-31", "version":"1.2.0", "license":"https://creativecommons.org/licenses/by/4.0/", "codeRepository":"https://github.com/Knowledge-Innovation-Centre/quality-link-specs"}</script>
 
 <script src="resources/jquery.js"></script> 
 <script src="resources/marked.min.js"></script> 
@@ -72,7 +72,7 @@ $(function(){
 <dl>
 <dt>Modified on: 2026-05-31</dt>
 <dt>Revision:</dt>
-<dd>1.1.0-alpha</dd>
+<dd>1.2.0</dd>
 <dt>Issued on:</dt>
 <dd>2025-02-13</dd>
 <dt>Publisher:</dt>
@@ -82,7 +82,7 @@ $(function(){
 
 <dt>Download serialization:</dt><dd><span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.owl" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License:</dt><dd><a href="https://creativecommons.org/licenses/by/4.0/" target="_blank"><img src="https://img.shields.io/badge/License-https://creativecommons.org/licenses/by/4.0/-blue.svg" alt="https://creativecommons.org/licenses/by/4.0/" /></a>
 </dd><!-- <dt>Evaluation:</dt><dd><a href="OOPSevaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Cite as:</dt>
-<dd> QualityLink Ontology and Application Profile. Revision: 1.1.0-alpha.</dd>
+<dd> QualityLink Ontology and Application Profile. Revision: 1.2.0.</dd>
 <dt>Vocabulary maintained at:</dt>
 <dd><a href="https://github.com/Knowledge-Innovation-Centre/quality-link-specs">https://github.com/Knowledge-Innovation-Centre/quality-link-specs</a></dd>
 </dl>
@@ -119,43 +119,7 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
-      <a href="#GroupOfHEIs"
-         title="http://data.quality-link.eu/ontology/v1#GroupOfHEIs">
-         <span>Group of Higher Education Institutions</span>
-      </a>
-   </li>
-   <li>
-      <a href="#HigherEducationInstitution"
-         title="http://data.quality-link.eu/ontology/v1#HigherEducationInstitution">
-         <span>Higher Education Institution</span>
-      </a>
-   </li>
-   <li>
       <a href="#Kajmak" title="http://data.quality-link.eu/ontology/v1#Kajmak">kaymak</a>
-   </li>
-   <li>
-      <a href="#LearningOpportunityInstance"
-         title="http://data.quality-link.eu/ontology/v1#LearningOpportunityInstance">
-         <span>Learning Opportunity Instance</span>
-      </a>
-   </li>
-   <li>
-      <a href="#LearningOpportunitySpecification"
-         title="http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecification">
-         <span>Learning Opportunity Specification</span>
-      </a>
-   </li>
-   <li>
-      <a href="#OrgRegIdentifier"
-         title="http://data.quality-link.eu/ontology/v1#OrgRegIdentifier">
-         <span>OrgReg ID</span>
-      </a>
-   </li>
-   <li>
-      <a href="#SchacIdentifier"
-         title="http://data.quality-link.eu/ontology/v1#SchacIdentifier">
-         <span>SCHAC Code</span>
-      </a>
    </li>
 </ul><h4>Object Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -178,6 +142,10 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#minimumEQFLevel"
          title="http://data.quality-link.eu/ontology/v1#minimumEQFLevel">minimum EQF Level</a>
+   </li>
+   <li>
+      <a href="#aboutOrganisation"
+         title="http://data.quality-link.eu/ontology/v1#aboutOrganisation">organisation</a>
    </li>
    <li>
       <a href="#referenceGroup"
@@ -278,6 +246,14 @@ This ontology has the following classes and properties.</span>
          title="http://data.quality-link.eu/ontology/v1#gradePercentage">percentage</a>
    </li>
    <li>
+      <a href="#ratioValue"
+         title="http://data.quality-link.eu/ontology/v1#ratioValue">ratio</a>
+   </li>
+   <li>
+      <a href="#referenceYear"
+         title="http://data.quality-link.eu/ontology/v1#referenceYear">reference year</a>
+   </li>
+   <li>
       <a href="#registrationPortal"
          title="http://data.quality-link.eu/ontology/v1#registrationPortal">registration portal</a>
    </li>
@@ -318,6 +294,10 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
+      <a href="#Identifier"
+         title="http://data.quality-link.eu/ontology/v1#Identifier">Identifier</a>
+   </li>
+   <li>
       <a href="#LearnerGroup"
          title="http://data.quality-link.eu/ontology/v1#LearnerGroup">
          <span>Learner Group</span>
@@ -355,7 +335,7 @@ This ontology has the following classes and properties.</span>
    </li>
    <li>
       <a href="#LearningOutcome"
-         title="http://data.quality-link.eu/ontology/v1#LearningOutcome">Learning Outcome Shape</a>
+         title="http://data.quality-link.eu/ontology/v1#LearningOutcome">Learning Outcome</a>
    </li>
    <li>
       <a href="#OrgReg" title="http://data.quality-link.eu/ontology/v1#OrgReg">OrgReg (identifier scheme)</a>
@@ -375,6 +355,16 @@ This ontology has the following classes and properties.</span>
          <span>SCHAC Code</span>
       </a>
    </li>
+   <li>
+      <a href="#StudentStaffRatio"
+         title="http://data.quality-link.eu/ontology/v1#StudentStaffRatio">
+         <span>Student-staff ratio</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://data.europa.eu/snb/model/application-profile/loq-constraints/URLRegexRestriction"
+         title="http://data.europa.eu/snb/model/application-profile/loq-constraints/URLRegexRestriction">URL</a>
+   </li>
 </ul>
 </div>
   
@@ -388,6 +378,8 @@ The additional classes and properties describe things not currently covered in E
 
 QualityLink further defines an application profile defined as SHACL constraints, which are based on the ELM Learning Opportunities and Qualifications (LOQ) application profile. The application profile is used by the QualityLink pilot aggregator. The QualityLink profile only adds optional properties to the ELM profile, no required ones.
 
+The QualityLink ontology and profile were originally developed based on ELM 3.2 and ELM 3.3.1 (LOQ profile v1.3.0).
+
 The profile references the [ELM controlled vocabularies](https://op.europa.eu/en/web/eu-vocabularies/europasstables) published by the EU.</span></div>
    
 
@@ -398,13 +390,7 @@ This section provides details for each class and property defined by QualityLink
  <h3 id="classes-headline" class="list">Classes</h3>
  <ul class="hlist">
   <li><a href="#EuropeanUniversityAlliance" title="http://data.quality-link.eu/ontology/v1#EuropeanUniversityAlliance"> <span>European University Alliance</span> </a></li>
-  <li><a href="#GroupOfHEIs" title="http://data.quality-link.eu/ontology/v1#GroupOfHEIs"> <span>Group of Higher Education Institutions</span> </a></li>
-  <li><a href="#HigherEducationInstitution" title="http://data.quality-link.eu/ontology/v1#HigherEducationInstitution"> <span>Higher Education Institution</span> </a></li>
   <li><a href="#Kajmak" title="http://data.quality-link.eu/ontology/v1#Kajmak">kaymak</a></li>
-  <li><a href="#LearningOpportunityInstance" title="http://data.quality-link.eu/ontology/v1#LearningOpportunityInstance"> <span>Learning Opportunity Instance</span> </a></li>
-  <li><a href="#LearningOpportunitySpecification" title="http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecification"> <span>Learning Opportunity Specification</span> </a></li>
-  <li><a href="#OrgRegIdentifier" title="http://data.quality-link.eu/ontology/v1#OrgRegIdentifier"> <span>OrgReg ID</span> </a></li>
-  <li><a href="#SchacIdentifier" title="http://data.quality-link.eu/ontology/v1#SchacIdentifier"> <span>SCHAC Code</span> </a></li>
  </ul>
  <div class="entity" id="EuropeanUniversityAlliance">
   <h3>European University Alliance<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
@@ -414,55 +400,13 @@ This section provides details for each class and property defined by QualityLink
     has super-classes
    </dt>
    <dd>
-    <a href="#GroupOfHEIs" title="http://data.quality-link.eu/ontology/v1#GroupOfHEIs">Group of Higher Education Institutions</a> <sup class="type-c" title="class">c</sup>
+    <a href="http://data.quality-link.eu/ontology/v1#GroupOfHEIs" target="_blank" title="http://data.quality-link.eu/ontology/v1#GroupOfHEIs">Group of Higher Education Institutions</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>
     is also defined as
    </dt>
    <dd>
     <a href="#EuropeanUniversityAlliance">named individual</a>
-   </dd>
-  </dl>
- </div>
- <div class="entity" id="GroupOfHEIs">
-  <h3>Group of Higher Education Institutions<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
-  <p><strong>IRI:</strong> http://data.quality-link.eu/ontology/v1#GroupOfHEIs</p>
-  <dl class="description">
-   <dt>
-    has super-classes
-   </dt>
-   <dd>
-    <a href="http://data.europa.eu/snb/model/ontology/Group" target="_blank" title="http://data.europa.eu/snb/model/ontology/Group">Group</a> <sup class="type-c" title="class">c</sup>
-   </dd>
-   <dt>
-    has sub-classes
-   </dt>
-   <dd>
-    <a href="#EuropeanUniversityAlliance" title="http://data.quality-link.eu/ontology/v1#EuropeanUniversityAlliance">European University Alliance</a> <sup class="type-c" title="class">c</sup>
-   </dd>
-   <dt>
-    is also defined as
-   </dt>
-   <dd>
-    <a href="#GroupOfHEIs">named individual</a>
-   </dd>
-  </dl>
- </div>
- <div class="entity" id="HigherEducationInstitution">
-  <h3>Higher Education Institution<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
-  <p><strong>IRI:</strong> http://data.quality-link.eu/ontology/v1#HigherEducationInstitution</p>
-  <dl class="description">
-   <dt>
-    has super-classes
-   </dt>
-   <dd>
-    <a href="http://data.europa.eu/snb/model/ontology/Organisation" target="_blank" title="http://data.europa.eu/snb/model/ontology/Organisation">Organisation</a> <sup class="type-c" title="class">c</sup>
-   </dd>
-   <dt>
-    is also defined as
-   </dt>
-   <dd>
-    <a href="#HigherEducationInstitution">named individual</a>
    </dd>
   </dl>
  </div>
@@ -489,90 +433,6 @@ This section provides details for each class and property defined by QualityLink
    </dd>
   </dl>
  </div>
- <div class="entity" id="LearningOpportunityInstance">
-  <h3>Learning Opportunity Instance<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
-  <p><strong>IRI:</strong> http://data.quality-link.eu/ontology/v1#LearningOpportunityInstance</p>
-  <dl class="description">
-   <dt>
-    has super-classes
-   </dt>
-   <dd>
-    <a href="http://data.europa.eu/snb/model/ontology/LearningOpportunity" target="_blank" title="http://data.europa.eu/snb/model/ontology/LearningOpportunity">Learning Opportunity</a> <sup class="type-c" title="class">c</sup>
-   </dd>
-   <dt>
-    is in domain of
-   </dt>
-   <dd>
-    <a href="#learnerGroup" title="http://data.quality-link.eu/ontology/v1#learnerGroup">learner group</a> <sup class="type-op" title="object property">op</sup>, <a href="#learnerGroupConditions" title="http://data.quality-link.eu/ontology/v1#learnerGroupConditions">specific conditions for learner group</a> <sup class="type-op" title="object property">op</sup>, <a href="#virtualLearningEnvironment" title="http://data.quality-link.eu/ontology/v1#virtualLearningEnvironment">virtual learning environment</a> <sup class="type-op" title="object property">op</sup>
-   </dd>
-   <dt>
-    is also defined as
-   </dt>
-   <dd>
-    <a href="#LearningOpportunityInstance">named individual</a>
-   </dd>
-  </dl>
- </div>
- <div class="entity" id="LearningOpportunitySpecification">
-  <h3>Learning Opportunity Specification<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
-  <p><strong>IRI:</strong> http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecification</p>
-  <dl class="description">
-   <dt>
-    has super-classes
-   </dt>
-   <dd>
-    <a href="http://data.europa.eu/snb/model/ontology/LearningAchievementSpecification" target="_blank" title="http://data.europa.eu/snb/model/ontology/LearningAchievementSpecification">Learning Achievement Specification</a> <sup class="type-c" title="class">c</sup>
-   </dd>
-   <dt>
-    is in domain of
-   </dt>
-   <dd>
-    <a href="#superseded" title="http://data.quality-link.eu/ontology/v1#superseded">superseded</a> <sup class="type-op" title="object property">op</sup>, <a href="#supersededBy" title="http://data.quality-link.eu/ontology/v1#supersededBy">superseded by</a> <sup class="type-op" title="object property">op</sup>
-   </dd>
-   <dt>
-    is also defined as
-   </dt>
-   <dd>
-    <a href="#LearningOpportunitySpecification">named individual</a>
-   </dd>
-  </dl>
- </div>
- <div class="entity" id="OrgRegIdentifier">
-  <h3>OrgReg ID<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
-  <p><strong>IRI:</strong> http://data.quality-link.eu/ontology/v1#OrgRegIdentifier</p>
-  <dl class="description">
-   <dt>
-    has super-classes
-   </dt>
-   <dd>
-    <a href="http://data.europa.eu/snb/model/ontology/Identifier" target="_blank" title="http://data.europa.eu/snb/model/ontology/Identifier">Identifier</a> <sup class="type-c" title="class">c</sup>
-   </dd>
-   <dt>
-    is also defined as
-   </dt>
-   <dd>
-    <a href="#OrgRegIdentifier">named individual</a>
-   </dd>
-  </dl>
- </div>
- <div class="entity" id="SchacIdentifier">
-  <h3>SCHAC Code<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
-  <p><strong>IRI:</strong> http://data.quality-link.eu/ontology/v1#SchacIdentifier</p>
-  <dl class="description">
-   <dt>
-    has super-classes
-   </dt>
-   <dd>
-    <a href="http://data.europa.eu/snb/model/ontology/Identifier" target="_blank" title="http://data.europa.eu/snb/model/ontology/Identifier">Identifier</a> <sup class="type-c" title="class">c</sup>
-   </dd>
-   <dt>
-    is also defined as
-   </dt>
-   <dd>
-    <a href="#SchacIdentifier">named individual</a>
-   </dd>
-  </dl>
- </div>
 </div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="objectproperties">
  <h3 id="properties" class="list">Object Properties</h3>
  <ul class="hlist">
@@ -581,6 +441,7 @@ This section provides details for each class and property defined by QualityLink
   <li><a href="#isMemberOf" title="http://data.quality-link.eu/ontology/v1#isMemberOf">is member of</a></li>
   <li><a href="#learnerGroup" title="http://data.quality-link.eu/ontology/v1#learnerGroup">learner group</a></li>
   <li><a href="#minimumEQFLevel" title="http://data.quality-link.eu/ontology/v1#minimumEQFLevel">minimum EQF Level</a></li>
+  <li><a href="#aboutOrganisation" title="http://data.quality-link.eu/ontology/v1#aboutOrganisation">organisation</a></li>
   <li><a href="#referenceGroup" title="http://data.quality-link.eu/ontology/v1#referenceGroup">reference group</a></li>
   <li><a href="#relatedTo" title="http://data.quality-link.eu/ontology/v1#relatedTo">related to</a></li>
   <li><a href="#entryRequirementLearningOpportunity" title="http://data.quality-link.eu/ontology/v1#entryRequirementLearningOpportunity">required learning opportunity for entry</a></li>
@@ -664,7 +525,7 @@ This section provides details for each class and property defined by QualityLink
      has domain
     </dt>
     <dd>
-     <a href="#LearningOpportunityInstance" title="http://data.quality-link.eu/ontology/v1#LearningOpportunityInstance">Learning Opportunity Instance</a> <sup class="type-c" title="class">c</sup>
+     <a href="http://data.quality-link.eu/ontology/v1#LearningOpportunityInstance" target="_blank" title="http://data.quality-link.eu/ontology/v1#LearningOpportunityInstance">Learning Opportunity Instance</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
@@ -688,6 +549,23 @@ This section provides details for each class and property defined by QualityLink
     </dt>
     <dd>
      <a href="http://data.quality-link.eu/ontology/v1#LearnerGroup" target="_blank" title="http://data.quality-link.eu/ontology/v1#LearnerGroup">Learner Group</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="aboutOrganisation">
+  <h3>organisation<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://data.quality-link.eu/ontology/v1#aboutOrganisation</p>
+  <div class="comment">
+   <span class="markdown">Education provider the indicator describes.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://data.quality-link.eu/ontology/v1#HigherEducationInstitution" target="_blank" title="http://data.quality-link.eu/ontology/v1#HigherEducationInstitution">Higher Education Institution</a> <sup class="type-c" title="class">c</sup>
     </dd>
    </dl>
   </div>
@@ -779,7 +657,7 @@ This section provides details for each class and property defined by QualityLink
      has domain
     </dt>
     <dd>
-     <a href="#LearningOpportunityInstance" title="http://data.quality-link.eu/ontology/v1#LearningOpportunityInstance">Learning Opportunity Instance</a> <sup class="type-c" title="class">c</sup>
+     <a href="http://data.quality-link.eu/ontology/v1#LearningOpportunityInstance" target="_blank" title="http://data.quality-link.eu/ontology/v1#LearningOpportunityInstance">Learning Opportunity Instance</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
@@ -871,7 +749,7 @@ This section provides details for each class and property defined by QualityLink
      has domain
     </dt>
     <dd>
-     <a href="#LearningOpportunitySpecification" title="http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecification">Learning Opportunity Specification</a> <sup class="type-c" title="class">c</sup>
+     <a href="http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecification" target="_blank" title="http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecification">Learning Opportunity Specification</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      is inverse of
@@ -900,7 +778,7 @@ This section provides details for each class and property defined by QualityLink
      has domain
     </dt>
     <dd>
-     <a href="#LearningOpportunitySpecification" title="http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecification">Learning Opportunity Specification</a> <sup class="type-c" title="class">c</sup>
+     <a href="http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecification" target="_blank" title="http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecification">Learning Opportunity Specification</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      is inverse of
@@ -937,7 +815,7 @@ This section provides details for each class and property defined by QualityLink
      has domain
     </dt>
     <dd>
-     <a href="#LearningOpportunityInstance" title="http://data.quality-link.eu/ontology/v1#LearningOpportunityInstance">Learning Opportunity Instance</a> <sup class="type-c" title="class">c</sup>
+     <a href="http://data.quality-link.eu/ontology/v1#LearningOpportunityInstance" target="_blank" title="http://data.quality-link.eu/ontology/v1#LearningOpportunityInstance">Learning Opportunity Instance</a> <sup class="type-c" title="class">c</sup>
     </dd>
    </dl>
   </div>
@@ -956,6 +834,8 @@ This section provides details for each class and property defined by QualityLink
   <li><a href="#gradeOrder" title="http://data.quality-link.eu/ontology/v1#gradeOrder">order</a></li>
   <li><a href="#passingRate" title="http://data.quality-link.eu/ontology/v1#passingRate">passing rate</a></li>
   <li><a href="#gradePercentage" title="http://data.quality-link.eu/ontology/v1#gradePercentage">percentage</a></li>
+  <li><a href="#ratioValue" title="http://data.quality-link.eu/ontology/v1#ratioValue">ratio</a></li>
+  <li><a href="#referenceYear" title="http://data.quality-link.eu/ontology/v1#referenceYear">reference year</a></li>
   <li><a href="#registrationPortal" title="http://data.quality-link.eu/ontology/v1#registrationPortal">registration portal</a></li>
   <li><a href="#version" title="http://data.quality-link.eu/ontology/v1#version">version</a></li>
  </ul>
@@ -1146,6 +1026,40 @@ This section provides details for each class and property defined by QualityLink
    </dl>
   </div>
  </div>
+ <div class="entity" id="ratioValue">
+  <h3>ratio<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://data.quality-link.eu/ontology/v1#ratioValue</p>
+  <div class="comment">
+   <span class="markdown">The student-staff ratio for this institution/ISCED-F field/course.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#double" target="_blank" title="http://www.w3.org/2001/XMLSchema#double">double</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="referenceYear">
+  <h3>reference year<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://data.quality-link.eu/ontology/v1#referenceYear</p>
+  <div class="comment">
+   <span class="markdown">The reference year to which this statistical indicator relates.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#gYear" target="_blank" title="http://www.w3.org/2001/XMLSchema#gYear">g Year</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
  <div class="entity" id="registrationPortal">
   <h3>registration portal<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> http://data.quality-link.eu/ontology/v1#registrationPortal</p>
@@ -1189,17 +1103,20 @@ This section provides details for each class and property defined by QualityLink
   <li><a href="#GradingSchemeSchape" title="http://data.quality-link.eu/ontology/v1#GradingSchemeSchape">Grading Scheme</a></li>
   <li><a href="#GroupOfHEIs" title="http://data.quality-link.eu/ontology/v1#GroupOfHEIs"> <span>Group of Higher Education Institutions</span> </a></li>
   <li><a href="#HigherEducationInstitution" title="http://data.quality-link.eu/ontology/v1#HigherEducationInstitution"> <span>Higher Education Institution</span> </a></li>
+  <li><a href="#Identifier" title="http://data.quality-link.eu/ontology/v1#Identifier">Identifier</a></li>
   <li><a href="#LearnerGroup" title="http://data.quality-link.eu/ontology/v1#LearnerGroup"> <span>Learner Group</span> </a></li>
   <li><a href="#LearnerGroupConditions" title="http://data.quality-link.eu/ontology/v1#LearnerGroupConditions"> <span>Learner Group Conditions</span> </a></li>
   <li><a href="#LearningOpportunityInstance" title="http://data.quality-link.eu/ontology/v1#LearningOpportunityInstance"> <span>Learning Opportunity Instance</span> </a></li>
   <li><a href="#LearningOpportunityInstanceReference" title="http://data.quality-link.eu/ontology/v1#LearningOpportunityInstanceReference"> <span>Learning Opportunity Instance Reference</span> </a></li>
   <li><a href="#LearningOpportunitySpecification" title="http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecification"> <span>Learning Opportunity Specification</span> </a></li>
   <li><a href="#LearningOpportunitySpecificationReference" title="http://data.quality-link.eu/ontology/v1#LearningOpportunitySpecificationReference"> <span>Learning Opportunity Specification Reference</span> </a></li>
-  <li><a href="#LearningOutcome" title="http://data.quality-link.eu/ontology/v1#LearningOutcome">Learning Outcome Shape</a></li>
+  <li><a href="#LearningOutcome" title="http://data.quality-link.eu/ontology/v1#LearningOutcome">Learning Outcome</a></li>
   <li><a href="#OrgReg" title="http://data.quality-link.eu/ontology/v1#OrgReg">OrgReg (identifier scheme)</a></li>
   <li><a href="#OrgRegIdentifier" title="http://data.quality-link.eu/ontology/v1#OrgRegIdentifier"> <span>OrgReg ID</span> </a></li>
   <li><a href="#Schac" title="http://data.quality-link.eu/ontology/v1#Schac">SCHAC (identifier scheme)</a></li>
   <li><a href="#SchacIdentifier" title="http://data.quality-link.eu/ontology/v1#SchacIdentifier"> <span>SCHAC Code</span> </a></li>
+  <li><a href="#StudentStaffRatio" title="http://data.quality-link.eu/ontology/v1#StudentStaffRatio"> <span>Student-staff ratio</span> </a></li>
+  <li><a href="#http://data.europa.eu/snb/model/application-profile/loq-constraints/URLRegexRestriction" title="http://data.europa.eu/snb/model/application-profile/loq-constraints/URLRegexRestriction">URL</a></li>
  </ul>
  <div class="entity" id="EuropeanUniversityAlliance">
   <h3>European University Alliance<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
@@ -1250,6 +1167,9 @@ This section provides details for each class and property defined by QualityLink
    <dd>
     <a href="http://www.w3.org/ns/shacl#targetClass" target="_blank" title="http://www.w3.org/ns/shacl#targetClass">target Class</a> <sup class="type-ap" title="annotation property">ap</sup> <a href="http://data.europa.eu/snb/model/ontology/ResultCategory" target="_blank" title="http://data.europa.eu/snb/model/ontology/ResultCategory">Result Category</a> <sup class="type-ep" title="external property">ep</sup>
    </dd>
+   <dd>
+    <a href="https://shacl-play.sparna.fr/ontology#main" target="_blank" title="https://shacl-play.sparna.fr/ontology#main">main</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">"false"^^<a href="http://www.w3.org/2001/XMLSchema#boolean" target="_blank" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</a> </span>
+   </dd>
   </dl>
  </div>
  <div class="entity" id="GradeDistributionShape">
@@ -1279,6 +1199,9 @@ This section provides details for each class and property defined by QualityLink
    </dd>
    <dd>
     <a href="http://www.w3.org/ns/shacl#targetClass" target="_blank" title="http://www.w3.org/ns/shacl#targetClass">target Class</a> <sup class="type-ap" title="annotation property">ap</sup> <a href="http://data.europa.eu/snb/model/ontology/ResultDistribution" target="_blank" title="http://data.europa.eu/snb/model/ontology/ResultDistribution">Result Distribution</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dd>
+    <a href="https://shacl-play.sparna.fr/ontology#main" target="_blank" title="https://shacl-play.sparna.fr/ontology#main">main</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">"false"^^<a href="http://www.w3.org/2001/XMLSchema#boolean" target="_blank" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</a> </span>
    </dd>
   </dl>
  </div>
@@ -1319,6 +1242,9 @@ This section provides details for each class and property defined by QualityLink
    <dd>
     <a href="http://www.w3.org/ns/shacl#targetClass" target="_blank" title="http://www.w3.org/ns/shacl#targetClass">target Class</a> <sup class="type-ap" title="annotation property">ap</sup> <a href="http://data.europa.eu/snb/model/ontology/GradingScheme" target="_blank" title="http://data.europa.eu/snb/model/ontology/GradingScheme">Grading Scheme</a> <sup class="type-ep" title="external property">ep</sup>
    </dd>
+   <dd>
+    <a href="https://shacl-play.sparna.fr/ontology#main" target="_blank" title="https://shacl-play.sparna.fr/ontology#main">main</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">"false"^^<a href="http://www.w3.org/2001/XMLSchema#boolean" target="_blank" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</a> </span>
+   </dd>
   </dl>
  </div>
  <div class="entity" id="GroupOfHEIs">
@@ -1335,7 +1261,7 @@ This section provides details for each class and property defined by QualityLink
     is also defined as
    </dt>
    <dd>
-    <a href="#GroupOfHEIs">class</a>
+    class
    </dd>
   </dl>
  </div>
@@ -1353,7 +1279,55 @@ This section provides details for each class and property defined by QualityLink
     is also defined as
    </dt>
    <dd>
-    <a href="#HigherEducationInstitution">class</a>
+    class
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Identifier">
+  <h3>Identifier<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://data.quality-link.eu/ontology/v1#Identifier</p>
+  <div class="comment">
+   <span class="markdown">A character string that identifies a course or another unique object.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#NodeShape" target="_blank" title="http://www.w3.org/ns/shacl#NodeShape">Node Shape</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#order" target="_blank" title="http://www.w3.org/ns/shacl#order">order</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">"70"^^<a href="http://www.w3.org/2001/XMLSchema#integer" target="_blank" title="http://www.w3.org/2001/XMLSchema#integer">integer</a> </span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <a href="#d4e1451" title="http://data.europa.eu/snb/model/application-profile/loq-constraints/Identifier-adms_schemeAgency">Identifier adms scheme Agency</a> <sup class="type-ep" title="external property">ep</sup>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <a href="#d4e1475" title="http://data.europa.eu/snb/model/application-profile/loq-constraints/Identifier-dc_creator">Identifier dc creator</a> <sup class="type-ep" title="external property">ep</sup>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <a href="#d4e1500" title="http://data.europa.eu/snb/model/application-profile/loq-constraints/Identifier-dc_issued">Identifier dc issued</a> <sup class="type-ep" title="external property">ep</sup>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <a href="#d4e1524" title="http://data.europa.eu/snb/model/application-profile/loq-constraints/Identifier-elm_schemeId">Identifier elm scheme Id</a> <sup class="type-ep" title="external property">ep</sup>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <a href="#d4e1548" title="http://data.europa.eu/snb/model/application-profile/loq-constraints/Identifier-elm_schemeName">Identifier elm scheme Name</a> <sup class="type-ep" title="external property">ep</sup>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <a href="#d4e1572" title="http://data.europa.eu/snb/model/application-profile/loq-constraints/Identifier-elm_schemeVersion">Identifier elm scheme Version</a> <sup class="type-ep" title="external property">ep</sup>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <a href="#d4e1596" title="http://data.europa.eu/snb/model/application-profile/loq-constraints/Identifier-skos_notation">Identifier skos notation</a> <sup class="type-ep" title="external property">ep</sup>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#targetClass" target="_blank" title="http://www.w3.org/ns/shacl#targetClass">target Class</a> <sup class="type-ap" title="annotation property">ap</sup> <a href="http://data.europa.eu/snb/model/ontology/Identifier" target="_blank" title="http://data.europa.eu/snb/model/ontology/Identifier">Identifier</a> <sup class="type-ep" title="external property">ep</sup>
+   </dd>
+   <dd>
+    <a href="https://shacl-play.sparna.fr/ontology#main" target="_blank" title="https://shacl-play.sparna.fr/ontology#main">main</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">"false"^^<a href="http://www.w3.org/2001/XMLSchema#boolean" target="_blank" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</a> </span>
    </dd>
   </dl>
  </div>
@@ -1407,7 +1381,7 @@ This section provides details for each class and property defined by QualityLink
     is also defined as
    </dt>
    <dd>
-    <a href="#LearningOpportunityInstance">class</a>
+    class
    </dd>
   </dl>
  </div>
@@ -1443,7 +1417,7 @@ This section provides details for each class and property defined by QualityLink
     is also defined as
    </dt>
    <dd>
-    <a href="#LearningOpportunitySpecification">class</a>
+    class
    </dd>
   </dl>
  </div>
@@ -1466,7 +1440,7 @@ This section provides details for each class and property defined by QualityLink
   </dl>
  </div>
  <div class="entity" id="LearningOutcome">
-  <h3>Learning Outcome Shape<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <h3>Learning Outcome<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
   <p><strong>IRI:</strong> http://data.quality-link.eu/ontology/v1#LearningOutcome</p>
   <div class="comment">
    <span class="markdown">A statement regarding what a learner knows, understands and is able to do on completion of a learning process, which are defined in terms of knowledge, skills and responsibility and autonomy.</span>
@@ -1481,6 +1455,9 @@ This section provides details for each class and property defined by QualityLink
    <dt>
     has facts
    </dt>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#order" target="_blank" title="http://www.w3.org/ns/shacl#order">order</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">"20"^^<a href="http://www.w3.org/2001/XMLSchema#integer" target="_blank" title="http://www.w3.org/2001/XMLSchema#integer">integer</a> </span>
+   </dd>
    <dd>
     <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">""</span>
    </dd>
@@ -1504,6 +1481,9 @@ This section provides details for each class and property defined by QualityLink
    </dd>
    <dd>
     <a href="http://www.w3.org/ns/shacl#targetClass" target="_blank" title="http://www.w3.org/ns/shacl#targetClass">target Class</a> <sup class="type-ap" title="annotation property">ap</sup> <a href="http://data.europa.eu/snb/model/ontology/LearningOutcome" target="_blank" title="http://data.europa.eu/snb/model/ontology/LearningOutcome">Learning Outcome</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dd>
+    <a href="https://shacl-play.sparna.fr/ontology#main" target="_blank" title="https://shacl-play.sparna.fr/ontology#main">main</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">"false"^^<a href="http://www.w3.org/2001/XMLSchema#boolean" target="_blank" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</a> </span>
    </dd>
   </dl>
  </div>
@@ -1536,7 +1516,7 @@ This section provides details for each class and property defined by QualityLink
     is also defined as
    </dt>
    <dd>
-    <a href="#OrgRegIdentifier">class</a>
+    class
    </dd>
   </dl>
  </div>
@@ -1569,7 +1549,57 @@ This section provides details for each class and property defined by QualityLink
     is also defined as
    </dt>
    <dd>
-    <a href="#SchacIdentifier">class</a>
+    class
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="StudentStaffRatio">
+  <h3>Student-staff ratio<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://data.quality-link.eu/ontology/v1#StudentStaffRatio</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#NodeShape" target="_blank" title="http://www.w3.org/ns/shacl#NodeShape">Node Shape</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is also defined as
+   </dt>
+   <dd>
+    class
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://data.europa.eu/snb/model/application-profile/loq-constraints/URLRegexRestriction">
+  <h3>URL<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://data.europa.eu/snb/model/application-profile/loq-constraints/URLRegexRestriction</p>
+  <div class="comment">
+   <span class="markdown">This shape does not apply on a class. This shape is for checking if the value of contentUrl is well formed.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://data.europa.eu/snb/model/application-profile/loq-constraints">http://data.europa.eu/snb/model/application-profile/loq-constraints</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#NodeShape" target="_blank" title="http://www.w3.org/ns/shacl#NodeShape">Node Shape</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#order" target="_blank" title="http://www.w3.org/ns/shacl#order">order</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">"80"^^<a href="http://www.w3.org/2001/XMLSchema#integer" target="_blank" title="http://www.w3.org/2001/XMLSchema#integer">integer</a> </span>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/shacl#property" target="_blank" title="http://www.w3.org/ns/shacl#property">property</a> <sup class="type-ap" title="annotation property">ap</sup> <a href="#d4e1620" title="http://data.europa.eu/snb/model/application-profile/loq-constraints/URLRegex-elm_contentUrl">U R L Regex elm content Url</a> <sup class="type-ep" title="external property">ep</sup>
    </dd>
   </dl>
  </div>
