@@ -1,5 +1,5 @@
 #################################################################
-#    QualityLink Ontology and Constraints - v1.2.0
+#    QualityLink Ontology and Constraints - v1.3.0
 #################################################################
 
 # QualityLink prefix
@@ -65,7 +65,7 @@ The profile references the [ELM controlled vocabularies](https://op.europa.eu/en
         dcterms:format <https://www.iana.org/assignments/media-types/application/n-triples> ;
         dcat:downloadURL <https://specs.quality-link.eu/resources/ontology-shacl.nt> ;
     ] ;
-    owl:versionInfo "1.2.0" .
+    owl:versionInfo "1.3.0" .
 
 
 #################################################################
