@@ -7,6 +7,7 @@ from accept_types import get_best_match
 app = FastAPI()
 
 SPECS_BASE_URL = os.environ.get("SPECS_BASE_URL", "https://specs.quality-link.eu/resources")
+COURSES_BASE_URL = os.environ.get("COURSES_BASE_URL", "https://courses.app.quality-link.eu/course")
 
 # Mapping
 
@@ -52,6 +53,15 @@ def negotiate_content(accept_header: str, path: str) -> str | None:
 @app.get("/health")
 async def health():
     return {"status": "ok"}
+
+
+@app.api_route("/courses/{provider}/{uuid}", methods=["GET", "OPTIONS"])
+async def redirect_courses(request: Request, provider: str, uuid: str):
+    location = urljoin(COURSES_BASE_URL + "/", uuid.lower())
+    return RedirectResponse(
+        url=location,
+        status_code=302,
+    )
 
 
 @app.api_route("/{path:path}", methods=["GET", "OPTIONS"])

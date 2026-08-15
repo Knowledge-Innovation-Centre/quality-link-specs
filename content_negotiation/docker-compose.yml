@@ -5,3 +5,4 @@ services:
       - "8000:8000"
     environment:
       - SPECS_BASE_URL=https://specs.quality-link.eu/resources
+      - COURSES_BASE_URL=https://courses.app.quality-link.eu/course
