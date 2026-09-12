@@ -1,0 +1,12 @@
+FROM amazoncorretto:17-alpine
+
+RUN apk add --no-cache graphviz
+
+ADD --chmod=644 https://github.com/sparna-git/shacl-play/releases/download/0.12.3/shacl-play-app-0.12.3-onejar.jar /opt/shacl-play.jar
+
+ENV GRAPHVIZ_DOT=/usr/bin/dot
+
+ENTRYPOINT [ "/usr/bin/java", "-jar", "/opt/shacl-play.jar" ]
+
+CMD [ "doc" ]
+

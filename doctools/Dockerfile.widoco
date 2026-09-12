@@ -1,0 +1,6 @@
+FROM amazoncorretto:17-alpine
+
+ADD --chmod=644 https://github.com/dgarijo/Widoco/releases/download/v1.4.25/widoco-1.4.25-jar-with-dependencies_JDK-17.jar /opt/widoco.jar
+
+ENTRYPOINT [ "/usr/bin/java", "-jar", "/opt/widoco.jar" ]
+
