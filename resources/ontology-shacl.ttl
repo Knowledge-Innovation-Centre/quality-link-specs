@@ -50,7 +50,11 @@ QualityLink further defines an application profile defined as SHACL constraints,
 
 The QualityLink ontology and profile were originally developed based on ELM 3.2 and ELM 3.3.1 (LOQ profile v1.3.0).
 
-The profile references the [ELM controlled vocabularies](https://op.europa.eu/en/web/eu-vocabularies/europasstables) published by the EU."""@en ;
+The profile references the [ELM controlled vocabularies](https://op.europa.eu/en/web/eu-vocabularies/europasstables) published by the EU.
+
+![Co-founded by the European Union](eu-co-funded-small.png)
+
+*Funded by the European Union. Views and opinions expressed are however those of the authors only and do not necessarily reflect those of the European Union or Erasmus+ National Agency for Higher Education (German Academic Exchange Service). Neither the European Union nor the granting authority can be held responsible for them.*"""@en ;
     doap:repository <https://github.com/Knowledge-Innovation-Centre/quality-link-specs> ;
     dcat:distribution [
         dcterms:format <https://www.iana.org/assignments/media-types/text/turtle> ;
